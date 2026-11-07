@@ -1,6 +1,6 @@
-# Claude Code Changelog (unofficial)
+# Claude Code Changelog
 
-> Claude Code release notes, synced once a day, with Chinese translations. Not affiliated with Anthropic.
+> Claude Code release notes from Anthropic's official CHANGELOG, synced once a day, with Chinese translations. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog
 
 ## Data
 - [latest.json](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.json): the last 7 release days. `latest` = newest version; `releases[]` = versions with `counts` and `entries[]` (`type`, `en`, `zh`).

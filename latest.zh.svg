@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="440" height="110" viewBox="0 0 440 110" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Noto Sans SC',Helvetica,Arial,sans-serif">
-<rect x=".5" y=".5" width="439" height="109" rx="12" fill="#faf9f5" stroke="#e4e2dc"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="128" viewBox="0 0 440 128" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Noto Sans SC',Helvetica,Arial,sans-serif">
+<rect x=".5" y=".5" width="439" height="127" rx="12" fill="#faf9f5" stroke="#e4e2dc"/>
 <text x="20" y="32" font-size="13" fill="#777">Claude Code 最新版本</text>
-<text x="420" y="32" font-size="11" fill="#999" text-anchor="end">非官方 · 每日同步</text>
+<text x="420" y="32" font-size="11" fill="#999" text-anchor="end">来源官方 · 每日同步</text>
 <text x="20" y="66" font-size="30" font-weight="600" fill="#c96442">v2.1.319</text>
 <text x="20" y="92" font-size="13" fill="#1f1f1f">2026-11-06 · 新增 18 · 改进 36 · 修复 90 · 移除 2</text>
+<text x="20" y="114" font-size="11" fill="#999">github.com/gaoxiaoyu1228/claude-code-changelog</text>
 </svg>
