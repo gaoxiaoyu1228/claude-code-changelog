@@ -1,8 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="440" height="128" viewBox="0 0 440 128" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Noto Sans SC',Helvetica,Arial,sans-serif">
-<rect x=".5" y=".5" width="439" height="127" rx="12" fill="#faf9f5" stroke="#e4e2dc"/>
-<text x="20" y="32" font-size="13" fill="#777">Claude Code 最新版本</text>
-<text x="420" y="32" font-size="11" fill="#999" text-anchor="end">来源官方 · 每日同步</text>
-<text x="20" y="66" font-size="30" font-weight="600" fill="#c96442">v2.1.319</text>
-<text x="20" y="92" font-size="13" fill="#1f1f1f">2026-11-06 · 新增 18 · 改进 36 · 修复 90 · 移除 2</text>
-<text x="20" y="114" font-size="11" fill="#999">github.com/gaoxiaoyu1228/claude-code-changelog</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="176" viewBox="0 0 440 176" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC',Helvetica,Arial,sans-serif">
+<rect x=".5" y=".5" width="439" height="175" rx="12" fill="#fff" stroke="#e4e2dc"/>
+<text x="20" y="30" font-size="13" fill="#6b6a66">Claude Code 最新版本</text>
+<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.319</text>
+<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-06 · 00:58 UTC</text>
+<rect x="20" y="102" width="58" height="22" rx="5" fill="#e3f3e8"/><text x="28" y="117" font-size="12" fill="#1d6b3f">新增 18</text>
+<rect x="83.75999999999999" y="102" width="58" height="22" rx="5" fill="#e3eefb"/><text x="91.75999999999999" y="117" font-size="12" fill="#1f5fb8">改进 36</text>
+<rect x="147.51999999999998" y="102" width="58" height="22" rx="5" fill="#fbf0d9"/><text x="155.51999999999998" y="117" font-size="12" fill="#8a5a00">修复 90</text>
+<rect x="211.27999999999997" y="102" width="51" height="22" rx="5" fill="#fbe5e3"/><text x="219.27999999999997" y="117" font-size="12" fill="#a32d2d">移除 2</text>
+<line x1="20" x2="420" y1="140" y2="140" stroke="#e4e2dc"/>
+<text x="20" y="160" font-size="11" fill="#6b6a66">gaoxiaoyu1228.github.io/claude-code-changelog</text>
 </svg>

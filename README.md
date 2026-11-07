@@ -13,18 +13,32 @@ Claude Code release notes from Anthropic's official CHANGELOG, synced once a day
 | Way | What you get | Address |
 |---|---|---|
 | RSS | One item per version in any reader, or an RSS bot in Slack / Teams | [`feed.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.xml) · [`feed.zh.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.zh.xml) |
-| Card | An image that always shows the latest version | see below |
+| Card | An image that always shows the latest version — summary or detailed | see below |
 | Agents | The last 7 release days as JSON | [`latest.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.json) · [`llms.txt`](https://gaoxiaoyu1228.github.io/claude-code-changelog/llms.txt) |
 | Webhook | A message in your own Slack / Discord / Feishu / WeCom / DingTalk group | copy [`templates/notify-webhook.yml`](templates/notify-webhook.yml) into your repo |
 | Full data | Every entry since 2025-03 | [`data/all.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog/data/all.json) · [`changelog.csv`](https://gaoxiaoyu1228.github.io/claude-code-changelog/changelog.csv) |
 
-Embed the card:
+## Latest version card
+
+Two versions, both refreshed daily. Add `.zh` before `.svg` for Chinese (`latest.zh.svg`, `latest-detail.zh.svg`).
+
+| Version | Shows | Good for | Image |
+|---|---|---|---|
+| Summary (default) | Version, publish time (UTC), count per type | README, profile page, docs sidebar | `latest.svg` |
+| Detailed | The above + first 5 entries of each type | Weekly notes, team wiki, chat shares | `latest-detail.svg` |
 
 ```markdown
-![Claude Code latest](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.svg)
+[![Claude Code latest](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.svg)](https://gaoxiaoyu1228.github.io/claude-code-changelog/)
 ```
 
 ![Claude Code latest](latest.svg)
+
+How to use it (any tool):
+
+1. **Keeps itself current:** paste the Markdown above anywhere that renders Markdown (README, Notion, blog, wiki).
+2. **No Markdown?** Use the image URL with your editor's "insert image from link".
+3. Some platforms cache images, so a new version can show up a few hours late.
+4. **For chat, email or slides:** open the page → Subscribe → Latest version card → Download image (PNG). A downloaded image does not update.
 
 ## Data format
 
@@ -53,7 +67,7 @@ Claude Code 版本更新记录，来源 Anthropic 官方 CHANGELOG，每天同�
 | 方式 | 效果 | 地址 |
 |---|---|---|
 | RSS | 每个版本一条，放进阅读器或 Slack、飞书的 RSS 机器人 | `feed.zh.xml`（中文）/ `feed.xml`（英文） |
-| 最新版本卡片 | 贴进 README 或 Notion，图片每天自动变成最新版本 | `latest.zh.svg` / `latest.svg` |
+| 最新版本卡片 | 概要版（版本号、时间、各类条数）/ 明细版（再加每类前 5 条），每天自动变成最新版本；网页「订阅」里可复制代码或下载 PNG | 概要 `latest.zh.svg` · 明细 `latest-detail.zh.svg` |
 | 给 Agent 用 | 最近 7 个发布日的整理结果（JSON） | `latest.json`，字段说明见 `llms.txt` |
 | Webhook | 推到你自己的群机器人 | 把 `templates/notify-webhook.yml` 复制到你自己的仓库，填上地址；地址只存在你那里 |
 

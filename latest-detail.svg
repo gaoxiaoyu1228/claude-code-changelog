@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="698" viewBox="0 0 560 698" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC',Helvetica,Arial,sans-serif">
+<rect x=".5" y=".5" width="559" height="697" rx="12" fill="#fff" stroke="#e4e2dc"/>
+<text x="20" y="30" font-size="13" fill="#6b6a66">Claude Code latest</text>
+<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.319</text>
+<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-06 · 00:58 UTC</text>
+<rect x="20" y="110" width="58" height="22" rx="5" fill="#e3f3e8"/><text x="28" y="125" font-size="12" fill="#1d6b3f">New 18</text>
+<text x="28" y="152" font-size="12.5" fill="#1f1f1f">· Added support for MCP tasks in the terminal: when an MCP server runs a tool c…</text>
+<text x="28" y="172" font-size="12.5" fill="#1f1f1f">· Added the `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND` environment…</text>
+<text x="28" y="192" font-size="12.5" fill="#1f1f1f">· Added `permissions.denyInsteadOfPrompting` setting: a tool call that would wait…</text>
+<text x="28" y="212" font-size="12.5" fill="#1f1f1f">· Added `/claude-api latency-optimize` to find where your Claude API code make…</text>
+<text x="28" y="232" font-size="12.5" fill="#1f1f1f">· Added the `CLAUDE_CODE_DISABLE_FEATURE_FLAGS` environment variabl…</text>
+<text x="36" y="252" font-size="12" fill="#6b6a66">… 13 more</text>
+<rect x="20" y="266" width="92" height="22" rx="5" fill="#e3eefb"/><text x="28" y="281" font-size="12" fill="#1f5fb8">Improved 36</text>
+<text x="28" y="308" font-size="12.5" fill="#1f1f1f">· Changed auto mode with telemetry or feature flags off, including behind LLM g…</text>
+<text x="28" y="328" font-size="12.5" fill="#1f1f1f">· Changed auto mode behind an LLM gateway: `CLAUDE_CODE_AUTO_MODE_SE…</text>
+<text x="28" y="348" font-size="12.5" fill="#1f1f1f">· Improved config saves on Windows: Claude Code waits longer for a file anothe…</text>
+<text x="28" y="368" font-size="12.5" fill="#1f1f1f">· Improved Claude in Chrome after a brief disconnect: it waits up to 6 seconds f…</text>
+<text x="28" y="388" font-size="12.5" fill="#1f1f1f">· Improved Claude in Chrome: `javascript_tool` results of up to 60,000 characte…</text>
+<text x="36" y="408" font-size="12" fill="#6b6a66">… 31 more</text>
+<rect x="20" y="422" width="67" height="22" rx="5" fill="#fbf0d9"/><text x="28" y="437" font-size="12" fill="#8a5a00">Fixed 90</text>
+<text x="28" y="464" font-size="12.5" fill="#1f1f1f">· Fixed MCP servers on the older handshake failing to connect, or returning emp…</text>
+<text x="28" y="484" font-size="12.5" fill="#1f1f1f">· Fixed a long-running MCP tool call on a claude.ai connector sometimes never r…</text>
+<text x="28" y="504" font-size="12.5" fill="#1f1f1f">· Fixed a session's diff failing to load on claude.ai and the mobile apps when the …</text>
+<text x="28" y="524" font-size="12.5" fill="#1f1f1f">· Fixed `/diff` showing "Diff unavailable" when a git repository has a file or fol…</text>
+<text x="28" y="544" font-size="12.5" fill="#1f1f1f">· Fixed the `/diff` pane opening blank in sessions where 64 or more turns edited …</text>
+<text x="36" y="564" font-size="12" fill="#6b6a66">… 85 more</text>
+<rect x="20" y="578" width="78" height="22" rx="5" fill="#fbe5e3"/><text x="28" y="593" font-size="12" fill="#a32d2d">Removed 2</text>
+<text x="28" y="620" font-size="12.5" fill="#1f1f1f">· Removed `shortcuts_list` and `shortcuts_execute`, which listed and started shor…</text>
+<text x="28" y="640" font-size="12.5" fill="#1f1f1f">· Self-hosted runner: Removed the end-of-session upload of a session's debug …</text>
+<line x1="20" x2="540" y1="662" y2="662" stroke="#e4e2dc"/>
+<text x="20" y="682" font-size="11" fill="#6b6a66">All 146 entries → gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.319</text>
+</svg>

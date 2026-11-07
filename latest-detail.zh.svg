@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="698" viewBox="0 0 560 698" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC',Helvetica,Arial,sans-serif">
+<rect x=".5" y=".5" width="559" height="697" rx="12" fill="#fff" stroke="#e4e2dc"/>
+<text x="20" y="30" font-size="13" fill="#6b6a66">Claude Code 最新版本</text>
+<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.319</text>
+<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-06 · 00:58 UTC</text>
+<rect x="20" y="110" width="58" height="22" rx="5" fill="#e3f3e8"/><text x="28" y="125" font-size="12" fill="#1d6b3f">新增 18</text>
+<text x="28" y="152" font-size="12.5" fill="#1f1f1f">· 添加了对终端中 MCP 任务的支持：当 MCP 服务器将工具调用作为任务运行时，Claude …</text>
+<text x="28" y="172" font-size="12.5" fill="#1f1f1f">· 添加了“CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND”环境变量，使 Cla…</text>
+<text x="28" y="192" font-size="12.5" fill="#1f1f1f">· 添加了“permissions.denyInsteadOfPrompting”设置：在终端会话、子代理和队友中…</text>
+<text x="28" y="212" font-size="12.5" fill="#1f1f1f">· 添加了 `/claude-api Latent-optimize` 来查找您的 Claude API 代码让人们等待的地…</text>
+<text x="28" y="232" font-size="12.5" fill="#1f1f1f">· 添加了“CLAUDE_CODE_DISABLE_FEATURE_FLAGS”环境变量，该变量可在不关…</text>
+<text x="36" y="252" font-size="12" fill="#6b6a66">… 另 13 条</text>
+<rect x="20" y="266" width="58" height="22" rx="5" fill="#e3eefb"/><text x="28" y="281" font-size="12" fill="#1f5fb8">改进 36</text>
+<text x="28" y="308" font-size="12.5" fill="#1f1f1f">· 更改了遥测或功能标记关闭的自动模式，包括在 LLM 网关后面：服务器无法检查的呼叫…</text>
+<text x="28" y="328" font-size="12.5" fill="#1f1f1f">· 更改了 LLM 网关后面的自动模式：即使设置了“CLAUDE_CODE_DISABLE_EXPER…</text>
+<text x="28" y="348" font-size="12.5" fill="#1f1f1f">· 改进了 Windows 上的配置保存：Claude Code 等待另一个程序打开的文件的时间更长，…</text>
+<text x="28" y="368" font-size="12.5" fill="#1f1f1f">· 改进了 Chrome 中短暂断开连接后的 Claude：在选择另一个浏览器之前，它会等待最多 …</text>
+<text x="28" y="388" font-size="12.5" fill="#1f1f1f">· 改进了 Chrome 中的 Claude：最多 60,000 个字符的“javascript_tool”结果现在保留…</text>
+<text x="36" y="408" font-size="12" fill="#6b6a66">… 另 31 条</text>
+<rect x="20" y="422" width="58" height="22" rx="5" fill="#fbf0d9"/><text x="28" y="437" font-size="12" fill="#8a5a00">修复 90</text>
+<text x="28" y="464" font-size="12.5" fill="#1f1f1f">· 修复了旧握手上的 MCP 服务器无法连接或返回空结果的问题，因为 Claude Code 声明…</text>
+<text x="28" y="484" font-size="12.5" fill="#1f1f1f">· 修复了 claude.ai 连接器上长时间运行的 MCP 工具调用有时在“--resume”之后从不报…</text>
+<text x="28" y="504" font-size="12.5" fill="#1f1f1f">· 修复了当 Claude Code 运行的文件夹包含名为“HEAD”的文件或文件夹时，会话的差异…</text>
+<text x="28" y="524" font-size="12.5" fill="#1f1f1f">· 修复了当 git 存储库在其顶层有名为“HEAD”的文件或文件夹时“/diff”显示“Diff unav…</text>
+<text x="28" y="544" font-size="12.5" fill="#1f1f1f">· 修复了在 64 个或更多轮次编辑文件的会话中打开空白的“/diff”窗格</text>
+<text x="36" y="564" font-size="12" fill="#6b6a66">… 另 85 条</text>
+<rect x="20" y="578" width="51" height="22" rx="5" fill="#fbe5e3"/><text x="28" y="593" font-size="12" fill="#a32d2d">移除 2</text>
+<text x="28" y="620" font-size="12.5" fill="#1f1f1f">· 从 Claude Code 的 Chrome 内置 Claude 工具中删除了 `shortcuts_list` 和 `shortcut…</text>
+<text x="28" y="640" font-size="12.5" fill="#1f1f1f">· 自托管运行器：删除了会话调试日志的会话结束上传；除非设置了“--remove-session-…</text>
+<line x1="20" x2="540" y1="662" y2="662" stroke="#e4e2dc"/>
+<text x="20" y="682" font-size="11" fill="#6b6a66">全部 146 条 → gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.319</text>
+</svg>
