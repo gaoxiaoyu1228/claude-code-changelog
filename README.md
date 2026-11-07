@@ -4,7 +4,7 @@ Claude Code release notes from Anthropic's official CHANGELOG, synced once a day
 
 **Page:** https://gaoxiaoyu1228.github.io/claude-code-changelog/
 
-> Source: Anthropic's official [CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm release data, synced daily. Original text © Anthropic; Chinese text is AI-translated, English is authoritative. Dates and times are UTC, based on npm publish time.
+> Source: Anthropic's official [CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm release data, synced daily. Original text © Anthropic. Dates and times are UTC, based on npm publish time.
 >
 > Curated by @ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog](https://github.com/gaoxiaoyu1228/claude-code-changelog)
 
@@ -71,6 +71,6 @@ Claude Code 版本更新记录，来源 Anthropic 官方 CHANGELOG，每天同�
 | 给 Agent 用 | 最近 7 个发布日的整理结果（JSON） | `latest.json`，字段说明见 `llms.txt` |
 | Webhook | 推到你自己的群机器人 | 把 `templates/notify-webhook.yml` 复制到你自己的仓库，填上地址；地址只存在你那里 |
 
-内容来自 Anthropic 官方 CHANGELOG.md 与 npm 发布记录，每日自动同步；原文版权归 Anthropic，中文为 AI 翻译，以英文原文为准。
+内容来自 Anthropic 官方 CHANGELOG.md 与 npm 发布记录，每日自动同步；原文版权归 Anthropic。
 
 整理：@ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog](https://github.com/gaoxiaoyu1228/claude-code-changelog)
