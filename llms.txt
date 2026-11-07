@@ -10,5 +10,5 @@
 
 ## Notes
 - `type` is one of: new, improved, fixed, removed, other.
-- `date` is UTC+8, from the npm publish time; `published` is the exact ISO time.
+- `date` is in UTC, from the npm publish time; `published` is the exact ISO time (UTC).
 - Original text © Anthropic: https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md

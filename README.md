@@ -4,7 +4,7 @@ Claude Code release notes from Anthropic's official CHANGELOG, synced once a day
 
 **Page:** https://gaoxiaoyu1228.github.io/claude-code-changelog/
 
-> Source: Anthropic's official [CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm release data, synced daily. Original text © Anthropic; Chinese text is AI-translated, English is authoritative. Dates are UTC+8, based on npm publish time.
+> Source: Anthropic's official [CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm release data, synced daily. Original text © Anthropic; Chinese text is AI-translated, English is authoritative. Dates and times are UTC, based on npm publish time.
 >
 > Curated by @ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog](https://github.com/gaoxiaoyu1228/claude-code-changelog)
 
@@ -48,7 +48,7 @@ Every version has a stable link: `…/claude-code-changelog/#v2.1.319`.
 
 ## 中文说明
 
-Claude Code 版本更新记录，来源 Anthropic 官方 CHANGELOG，每天同步一次。网页默认英文，右上角可切换中文；其他语言请用浏览器自带的翻译。
+Claude Code 版本更新记录，来源 Anthropic 官方 CHANGELOG，每天同步一次。日期和时间均为 UTC（国际标准时间）。网页默认英文，右上角可切换中文；其他语言请用浏览器自带的翻译。
 
 | 方式 | 效果 | 地址 |
 |---|---|---|

@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-07T11:33:29Z",
- "note": "Source: Anthropic's official CHANGELOG.md (https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm publish times, synced daily. Chinese text is AI-translated; English is authoritative. Dates are UTC+8. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog",
+ "generated": "2026-11-07T11:50:12Z",
+ "note": "Source: Anthropic's official CHANGELOG.md (https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm publish times, synced daily. Chinese text is AI-translated; English is authoritative. Dates and times are UTC. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog",
  "latest": {
   "version": "2.1.319",
   "date": "2026-11-06",
@@ -760,7 +760,7 @@
   },
   {
    "version": "2.1.318",
-   "date": "2026-11-04",
+   "date": "2026-11-03",
    "published": "2026-11-03T21:55:17.247Z",
    "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.318",
    "counts": {
@@ -1194,7 +1194,7 @@
   },
   {
    "version": "2.1.317",
-   "date": "2026-11-03",
+   "date": "2026-11-02",
    "published": "2026-11-02T23:57:53.069Z",
    "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.317",
    "counts": {
@@ -2540,7 +2540,7 @@
   },
   {
    "version": "2.1.312",
-   "date": "2026-10-28",
+   "date": "2026-10-27",
    "published": "2026-10-27T18:36:10.160Z",
    "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.312",
    "counts": {
@@ -2748,7 +2748,7 @@
   },
   {
    "version": "2.1.311",
-   "date": "2026-10-27",
+   "date": "2026-10-26",
    "published": "2026-10-26T19:47:57.395Z",
    "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.311",
    "counts": {
