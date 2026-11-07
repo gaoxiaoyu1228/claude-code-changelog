@@ -1,0 +1,14 @@
+# Claude Code Changelog (unofficial)
+
+> Claude Code release notes, synced once a day, with Chinese translations. Not affiliated with Anthropic.
+
+## Data
+- [latest.json](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.json): the last 7 release days. `latest` = newest version; `releases[]` = versions with `counts` and `entries[]` (`type`, `en`, `zh`).
+- [data/all.json](https://gaoxiaoyu1228.github.io/claude-code-changelog/data/all.json): full history. `entries[]` = one line each (`date`, `version`, `type`, `en`, `zh`); `focus[]` = monthly highlights.
+- [feed.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.xml) / [feed.zh.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.zh.xml): RSS, one item per version, newest 30.
+- [changelog.csv](https://gaoxiaoyu1228.github.io/claude-code-changelog/changelog.csv): same as all.json, as CSV.
+
+## Notes
+- `type` is one of: new, improved, fixed, removed, other.
+- `date` is UTC+8, from the npm publish time; `published` is the exact ISO time.
+- Original text © Anthropic: https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
