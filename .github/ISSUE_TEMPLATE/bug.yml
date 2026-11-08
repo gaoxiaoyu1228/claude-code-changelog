@@ -1,0 +1,18 @@
+name: Something's wrong / 有问题
+description: Wrong data, broken page, RSS, card or webhook not working / 数据不对、页面出错、RSS、卡片或 Webhook 不工作
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where / 哪里有问题
+      options: [Web page / 网页, Data or translation / 数据或翻译, RSS, Latest version card / 最新版本卡片, Agent data (JSON, llms.txt) / 给 Agent 用的数据, Webhook / 群推送, Other / 其他]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened / 发生了什么
+      description: What you expected, what you saw, and a link or version number if you have one. Never paste your webhook URL. / 你期望看到什么、实际看到什么，有链接或版本号更好。不要贴你的 Webhook 地址。
+    validations:
+      required: true
