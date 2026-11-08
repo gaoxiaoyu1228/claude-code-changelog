@@ -25,7 +25,7 @@ Two versions, both refreshed daily. Add `.zh` before `.svg` for Chinese (`latest
 | Version | Shows | Good for | Image |
 |---|---|---|---|
 | Summary (default) | Version, publish time (UTC), count per type | README, profile page, docs sidebar | `latest.svg` |
-| Detailed | The above + first 5 entries of each type | Weekly notes, team wiki, chat shares | `latest-detail.svg` |
+| Detailed | The above + every entry, grouped by type | Weekly notes, team wiki, chat shares | `latest-detail.svg` |
 
 ```markdown
 [![Claude Code latest](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.svg)](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/)
@@ -67,7 +67,7 @@ Every version has a stable link: `…/claude-code-changelog-calendar/#v2.1.319`.
 | 方式 | 效果 | 地址 |
 |---|---|---|
 | RSS | 每个版本一篇，按类型分小标题，保留代码和链接格式，附来源链接；放进阅读器或 Slack、飞书的 RSS 机器人；直接贴网址也能自动找到 | `feed.zh.xml`（中文）/ `feed.xml`（英文） |
-| 最新版本卡片 | 概要版（版本号、时间、各类条数）/ 明细版（再加每类前 5 条），每天自动变成最新版本；网页「订阅」里可复制代码或下载 PNG | 概要 `latest.zh.svg` · 明细 `latest-detail.zh.svg` |
+| 最新版本卡片 | 概要版（版本号、时间、各类条数）/ 明细版（再加全部条目，按类型分组），每天自动变成最新版本；网页「订阅」里可复制代码或下载 PNG | 概要 `latest.zh.svg` · 明细 `latest-detail.zh.svg` |
 | 给 Agent 用 | 最近 7 个发布日的整理结果（JSON） | `latest.json`，字段说明见 `llms.txt` |
 | Webhook | 推到你自己的群机器人 | 把 `templates/notify-webhook.yml` 复制到你自己的仓库，填上地址；地址只存在你那里 |
 
