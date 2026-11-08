@@ -1,32 +1,362 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="698" viewBox="0 0 560 698" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC',Helvetica,Arial,sans-serif">
-<rect x=".5" y=".5" width="559" height="697" rx="12" fill="#fff" stroke="#e4e2dc"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="6686" viewBox="0 0 560 6686" role="img" aria-label="Claude Code v2.1.319" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC',Helvetica,Arial,sans-serif">
+<rect x=".5" y=".5" width="559" height="6685" rx="12" fill="#fff" stroke="#e4e2dc"/>
 <text x="20" y="30" font-size="13" fill="#6b6a66">Claude Code latest</text>
 <text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.319</text>
 <text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-06 · 00:58 UTC</text>
 <rect x="20" y="110" width="58" height="22" rx="5" fill="#c8e8d2"/><text x="28" y="125" font-size="12" fill="#1d6b3f">New 18</text>
-<text x="28" y="152" font-size="12.5" fill="#1f1f1f">· Added support for MCP tasks in the terminal: when an MCP server runs a tool c…</text>
-<text x="28" y="172" font-size="12.5" fill="#1f1f1f">· Added the `CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND` environment…</text>
-<text x="28" y="192" font-size="12.5" fill="#1f1f1f">· Added `permissions.denyInsteadOfPrompting` setting: a tool call that would wait…</text>
-<text x="28" y="212" font-size="12.5" fill="#1f1f1f">· Added `/claude-api latency-optimize` to find where your Claude API code make…</text>
-<text x="28" y="232" font-size="12.5" fill="#1f1f1f">· Added the `CLAUDE_CODE_DISABLE_FEATURE_FLAGS` environment variabl…</text>
-<text x="36" y="252" font-size="12" fill="#6b6a66">… 13 more</text>
-<rect x="20" y="266" width="92" height="22" rx="5" fill="#cddff7"/><text x="28" y="281" font-size="12" fill="#1f5fb8">Improved 36</text>
-<text x="28" y="308" font-size="12.5" fill="#1f1f1f">· Changed auto mode with telemetry or feature flags off, including behind LLM g…</text>
-<text x="28" y="328" font-size="12.5" fill="#1f1f1f">· Changed auto mode behind an LLM gateway: `CLAUDE_CODE_AUTO_MODE_SE…</text>
-<text x="28" y="348" font-size="12.5" fill="#1f1f1f">· Improved config saves on Windows: Claude Code waits longer for a file anothe…</text>
-<text x="28" y="368" font-size="12.5" fill="#1f1f1f">· Improved Claude in Chrome after a brief disconnect: it waits up to 6 seconds f…</text>
-<text x="28" y="388" font-size="12.5" fill="#1f1f1f">· Improved Claude in Chrome: `javascript_tool` results of up to 60,000 characte…</text>
-<text x="36" y="408" font-size="12" fill="#6b6a66">… 31 more</text>
-<rect x="20" y="422" width="67" height="22" rx="5" fill="#f6e1ad"/><text x="28" y="437" font-size="12" fill="#8a5a00">Fixed 90</text>
-<text x="28" y="464" font-size="12.5" fill="#1f1f1f">· Fixed MCP servers on the older handshake failing to connect, or returning emp…</text>
-<text x="28" y="484" font-size="12.5" fill="#1f1f1f">· Fixed a long-running MCP tool call on a claude.ai connector sometimes never r…</text>
-<text x="28" y="504" font-size="12.5" fill="#1f1f1f">· Fixed a session's diff failing to load on claude.ai and the mobile apps when the …</text>
-<text x="28" y="524" font-size="12.5" fill="#1f1f1f">· Fixed `/diff` showing "Diff unavailable" when a git repository has a file or fol…</text>
-<text x="28" y="544" font-size="12.5" fill="#1f1f1f">· Fixed the `/diff` pane opening blank in sessions where 64 or more turns edited …</text>
-<text x="36" y="564" font-size="12" fill="#6b6a66">… 85 more</text>
-<rect x="20" y="578" width="78" height="22" rx="5" fill="#f6cdc9"/><text x="28" y="593" font-size="12" fill="#a32d2d">Removed 2</text>
-<text x="28" y="620" font-size="12.5" fill="#1f1f1f">· Removed `shortcuts_list` and `shortcuts_execute`, which listed and started shor…</text>
-<text x="28" y="640" font-size="12.5" fill="#1f1f1f">· Self-hosted runner: Removed the end-of-session upload of a session's debug …</text>
-<line x1="20" x2="540" y1="662" y2="662" stroke="#e4e2dc"/>
-<text x="20" y="682" font-size="11" fill="#6b6a66">All 146 entries → gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.319</text>
+<text x="28" y="152" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="152" font-size="12.5" fill="#1f1f1f">Added support for MCP tasks in the terminal: when an MCP server runs a tool </text>
+<text x="38" y="169" font-size="12.5" fill="#1f1f1f">call as a task, Claude Code moves it to the background right away and tells </text>
+<text x="38" y="186" font-size="12.5" fill="#1f1f1f">Claude the result when it finishes</text>
+<text x="28" y="206" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="206" font-size="12.5" fill="#1f1f1f">Added the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND</tspan> environment variable to </text>
+<text x="38" y="223" font-size="12.5" fill="#1f1f1f">make Claude Code wait for an MCP task inside its tool call instead of moving it to </text>
+<text x="38" y="240" font-size="12.5" fill="#1f1f1f">the background right away</text>
+<text x="28" y="260" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="260" font-size="12.5" fill="#1f1f1f">Added <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">permissions.denyInsteadOfPrompting</tspan> setting: a tool call that would wait on </text>
+<text x="38" y="277" font-size="12.5" fill="#1f1f1f">a permission prompt is denied and the turn continues, in terminal sessions, </text>
+<text x="38" y="294" font-size="12.5" fill="#1f1f1f">subagents and teammates</text>
+<text x="28" y="314" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="314" font-size="12.5" fill="#1f1f1f">Added <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/claude-api latency-optimize</tspan> to find where your Claude API code </text>
+<text x="38" y="331" font-size="12.5" fill="#1f1f1f">makes people wait and try faster settings against your eval</text>
+<text x="28" y="351" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="351" font-size="12.5" fill="#1f1f1f">Added the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_DISABLE_FEATURE_FLAGS</tspan> environment variable, which </text>
+<text x="38" y="368" font-size="12.5" fill="#1f1f1f">stops feature-flag fetching without turning off telemetry; every flag then uses </text>
+<text x="38" y="385" font-size="12.5" fill="#1f1f1f">its built-in default</text>
+<text x="28" y="405" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="405" font-size="12.5" fill="#1f1f1f">Added spend for today, this week and this month to <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/usage</tspan> for developers behind </text>
+<text x="38" y="422" font-size="12.5" fill="#1f1f1f">a Claude apps gateway who have no spend limit, when the gateway runs this </text>
+<text x="38" y="439" font-size="12.5" fill="#1f1f1f">version or later</text>
+<text x="28" y="459" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="459" font-size="12.5" fill="#1f1f1f">Added <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">admin.pooled_conflict_rule</tspan> and <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">admin.pooled_priority_order</tspan> to the </text>
+<text x="38" y="476" font-size="12.5" fill="#1f1f1f">Claude apps gateway, to set which pooled group budget pays first for a </text>
+<text x="38" y="493" font-size="12.5" fill="#1f1f1f">developer in several groups</text>
+<text x="28" y="513" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="513" font-size="12.5" fill="#1f1f1f">Added an optional <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">login_notice</tspan> setting to the Claude apps gateway that shows an </text>
+<text x="38" y="530" font-size="12.5" fill="#1f1f1f">operator-defined message on the gateway's browser verification page and on </text>
+<text x="38" y="547" font-size="12.5" fill="#1f1f1f">Claude Code's sign-in screen</text>
+<text x="28" y="567" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="567" font-size="12.5" fill="#1f1f1f">Added <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_GATEWAY_LOG_FORMAT=json</tspan> to the Claude apps gateway: operational </text>
+<text x="38" y="584" font-size="12.5" fill="#1f1f1f">log lines become JSON with <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">severity</tspan>, <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">time</tspan> and <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">message</tspan>, for log collectors that </text>
+<text x="38" y="601" font-size="12.5" fill="#1f1f1f">read the level from a field</text>
+<text x="28" y="621" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="621" font-size="12.5" fill="#1f1f1f">Added a Claude apps gateway boot warning for a case where another policy's </text>
+<text x="38" y="638" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">availableModels</tspan> also allows a custom model id that one policy lists by name</text>
+<text x="28" y="658" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="658" font-size="12.5" fill="#1f1f1f">Added start-up warnings to the Claude apps gateway for policies with no </text>
+<text x="38" y="675" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">desktopHome</tspan> that rely on <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">coworkTabEnabled: false</tspan> or </text>
+<text x="38" y="692" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">chatSessionRetentionDays</tspan>, ahead of Claude Desktop's November 10 change</text>
+<text x="28" y="712" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="712" font-size="12.5" fill="#1f1f1f">Added a warning when your claude.ai login ends and Claude Code continues on </text>
+<text x="38" y="729" font-size="12.5" fill="#1f1f1f">the sign-in from <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">ant auth login</tspan>, which bills usage to your Claude Console </text>
+<text x="38" y="746" font-size="12.5" fill="#1f1f1f">organization</text>
+<text x="28" y="766" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="766" font-size="12.5" fill="#1f1f1f">Added a line at startup naming the Claude Console organization that is billed in a </text>
+<text x="38" y="783" font-size="12.5" fill="#1f1f1f">case where Claude Code uses the sign-in from <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">ant auth login</tspan></text>
+<text x="28" y="803" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="803" font-size="12.5" fill="#1f1f1f">Added an "Earlier in this session" row to <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/tasks</tspan> that lists finished subagents, </text>
+<text x="38" y="820" font-size="12.5" fill="#1f1f1f">so you can reopen one and message it even after it leaves the list or you restart</text>
+<text x="28" y="840" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="840" font-size="12.5" fill="#1f1f1f">Added a note to <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/loop</tspan> confirmations in cloud sessions that a timer stops with its </text>
+<text x="38" y="857" font-size="12.5" fill="#1f1f1f">container, with an offer of a loop that survives</text>
+<text x="28" y="877" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="877" font-size="12.5" fill="#1f1f1f">Gateway: Added startup warnings for upstreams that mix AWS GovCloud with </text>
+<text x="38" y="894" font-size="12.5" fill="#1f1f1f">other upstreams, and for base URL variables in the gateway's environment</text>
+<text x="28" y="914" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="914" font-size="12.5" fill="#1f1f1f">Gateway: Added a start-up log warning when managed settings name an Amazon </text>
+<text x="38" y="931" font-size="12.5" fill="#1f1f1f">Bedrock <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">guardrail</tspan> in a header, which the gateway doesn't forward, and no </text>
+<text x="38" y="948" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">bedrock</tspan> upstream sets a <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">guardrail</tspan></text>
+<text x="28" y="968" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="968" font-size="12.5" fill="#1f1f1f">[Claude Tag] Added a Claude Tag row to the Models admin page for Enterprise </text>
+<text x="38" y="985" font-size="12.5" fill="#1f1f1f">orgs with Claude Tag connected, linking to where its model defaults are managed</text>
+<rect x="20" y="999" width="92" height="22" rx="5" fill="#cddff7"/><text x="28" y="1014" font-size="12" fill="#1f5fb8">Improved 36</text>
+<text x="28" y="1041" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1041" font-size="12.5" fill="#1f1f1f">Changed auto mode with telemetry or feature flags off, including behind LLM </text>
+<text x="38" y="1058" font-size="12.5" fill="#1f1f1f">gateways: calls the server can't check are asked about or denied, with no </text>
+<text x="38" y="1075" font-size="12.5" fill="#1f1f1f">fallback to the built-in classifier; set <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_AUTO_MODE_SERVER=0</tspan> to keep </text>
+<text x="38" y="1092" font-size="12.5" fill="#1f1f1f">using it (Bedrock, Vertex and Foundry are unchanged)</text>
+<text x="28" y="1112" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1112" font-size="12.5" fill="#1f1f1f">Changed auto mode behind an LLM gateway: <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_AUTO_MODE_SERVER=1</tspan> </text>
+<text x="38" y="1129" font-size="12.5" fill="#1f1f1f">turns on the server-side check even with </text>
+<text x="38" y="1146" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS</tspan> set; if managed settings set the latter, </text>
+<text x="38" y="1163" font-size="12.5" fill="#1f1f1f">they must set the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">1</tspan> too</text>
+<text x="28" y="1183" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1183" font-size="12.5" fill="#1f1f1f">Improved config saves on Windows: Claude Code waits longer for a file another </text>
+<text x="38" y="1200" font-size="12.5" fill="#1f1f1f">program has open, so a kill during a save is less likely to leave <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">~/.claude.json</tspan> </text>
+<text x="38" y="1217" font-size="12.5" fill="#1f1f1f">empty</text>
+<text x="28" y="1237" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1237" font-size="12.5" fill="#1f1f1f">Improved Claude in Chrome after a brief disconnect: it waits up to 6 seconds </text>
+<text x="38" y="1254" font-size="12.5" fill="#1f1f1f">for the session's own browser to return before picking another</text>
+<text x="28" y="1274" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1274" font-size="12.5" fill="#1f1f1f">Improved Claude in Chrome: <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">javascript_tool</tspan> results of up to 60,000 characters </text>
+<text x="38" y="1291" font-size="12.5" fill="#1f1f1f">now stay in the conversation instead of being saved to a file</text>
+<text x="28" y="1311" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1311" font-size="12.5" fill="#1f1f1f">Improved <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude purge</tspan> and the clean-up of old sessions to retry a folder that </text>
+<text x="38" y="1328" font-size="12.5" fill="#1f1f1f">could not be fully deleted, and to report it as an error if it remains</text>
+<text x="28" y="1348" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1348" font-size="12.5" fill="#1f1f1f">Improved the refusal for a path outside the working directories on macOS and </text>
+<text x="38" y="1365" font-size="12.5" fill="#1f1f1f">Windows: when only its letter case differs from a path inside them, the message </text>
+<text x="38" y="1382" font-size="12.5" fill="#1f1f1f">names that spelling</text>
+<text x="28" y="1402" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1402" font-size="12.5" fill="#1f1f1f">Improved the contrast of faint gray secondary text, such as hints, details in </text>
+<text x="38" y="1419" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/stats</tspan>, <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/model</tspan> and <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/sandbox</tspan>, and rejected-action messages</text>
+<text x="28" y="1439" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1439" font-size="12.5" fill="#1f1f1f">Improved the artifact database error when an update targets a document that </text>
+<text x="38" y="1456" font-size="12.5" fill="#1f1f1f">does not exist, and when the service pauses repeated refused writes</text>
+<text x="28" y="1476" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1476" font-size="12.5" fill="#1f1f1f">Improved the Claude apps gateway's warnings about a failed upstream call: each </text>
+<text x="38" y="1493" font-size="12.5" fill="#1f1f1f">now names the upstream, not only its provider</text>
+<text x="28" y="1513" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1513" font-size="12.5" fill="#1f1f1f">Improved the Claude apps gateway's spend limit error: it reads "spend limit </text>
+<text x="38" y="1530" font-size="12.5" fill="#1f1f1f">reached · resets Dec 1", then <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">admin.blocked_message</tspan> if one is set</text>
+<text x="28" y="1550" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1550" font-size="12.5" fill="#1f1f1f">Improved the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/model</tspan> picker: older models are now grouped under a "More </text>
+<text x="38" y="1567" font-size="12.5" fill="#1f1f1f">models" row instead of being listed after the current ones</text>
+<text x="28" y="1587" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1587" font-size="12.5" fill="#1f1f1f">Improved <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/context</tspan> at the terminal so the table Claude reads stays short: each </text>
+<text x="38" y="1604" font-size="12.5" fill="#1f1f1f">list keeps its 10 largest rows, and MCP tools that load on demand share one row </text>
+<text x="38" y="1621" font-size="12.5" fill="#1f1f1f">per server until they're called</text>
+<text x="28" y="1641" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1641" font-size="12.5" fill="#1f1f1f">Improved <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/usage</tspan> in cloud sessions: it now links to Settings → Usage on claude.ai </text>
+<text x="38" y="1658" font-size="12.5" fill="#1f1f1f">in a case where plan limits can't be shown</text>
+<text x="28" y="1678" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1678" font-size="12.5" fill="#1f1f1f">[VSCode] Improved the confirmation for removing a plugin marketplace: it now </text>
+<text x="38" y="1695" font-size="12.5" fill="#1f1f1f">checks which of its plugins are installed at that moment</text>
+<text x="28" y="1715" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1715" font-size="12.5" fill="#1f1f1f">Changed MCP tasks to work in the terminal without feature-flag fetching </text>
+<text x="38" y="1732" font-size="12.5" fill="#1f1f1f">(Bedrock, Vertex, Foundry, LLM gateways, <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">DISABLE_TELEMETRY</tspan>); set </text>
+<text x="38" y="1749" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_DISABLE_MCP_TASKS=1</tspan> to turn them off</text>
+<text x="28" y="1769" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1769" font-size="12.5" fill="#1f1f1f">Changed auto mode so that a project's settings files or a plugin can no longer </text>
+<text x="38" y="1786" font-size="12.5" fill="#1f1f1f">switch its server-side check back on once you have switched it off outside the </text>
+<text x="38" y="1803" font-size="12.5" fill="#1f1f1f">project</text>
+<text x="28" y="1823" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1823" font-size="12.5" fill="#1f1f1f">Changed Monitor's WebSocket watch to follow a rule on every Bash command: a </text>
+<text x="38" y="1840" font-size="12.5" fill="#1f1f1f">deny refuses it, and under an ask rule an allow on Monitor, bypass mode or auto </text>
+<text x="38" y="1857" font-size="12.5" fill="#1f1f1f">mode no longer skips the prompt</text>
+<text x="28" y="1877" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1877" font-size="12.5" fill="#1f1f1f">Changed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_PROXY_RESOLVES_HOSTS</tspan> so that settings files can no longer </text>
+<text x="38" y="1894" font-size="12.5" fill="#1f1f1f">set it where the host manages the network; set it in the process environment</text>
+<text x="28" y="1914" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1914" font-size="12.5" fill="#1f1f1f">Changed a session's exact Bash or PowerShell ask rule to be refused, not asked </text>
+<text x="38" y="1931" font-size="12.5" fill="#1f1f1f">about, when a broader deny rule covers the command</text>
+<text x="28" y="1951" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1951" font-size="12.5" fill="#1f1f1f">Changed the Bash tool to ask for permission before running <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">which</tspan> with flags </text>
+<text x="38" y="1968" font-size="12.5" fill="#1f1f1f">outside a lookup/display set</text>
+<text x="28" y="1988" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="1988" font-size="12.5" fill="#1f1f1f">Changed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--add-dir</tspan> directories to register plugin marketplaces only once that </text>
+<text x="38" y="2005" font-size="12.5" fill="#1f1f1f">directory's own trust dialog has been accepted</text>
+<text x="28" y="2025" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2025" font-size="12.5" fill="#1f1f1f">Changed nested skill loading: with the Bash sandbox on, skills in <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">.claude/skills</tspan> </text>
+<text x="38" y="2042" font-size="12.5" fill="#1f1f1f">folders below the starting folder load only if you start Claude Code there or <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/cd</tspan> </text>
+<text x="38" y="2059" font-size="12.5" fill="#1f1f1f">there</text>
+<text x="28" y="2079" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2079" font-size="12.5" fill="#1f1f1f">Changed self-paced <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/loop</tspan> to end when a turn finishes without rescheduling, </text>
+<text x="38" y="2096" font-size="12.5" fill="#1f1f1f">instead of scheduling a fallback wakeup; set <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_LOOP_KEEPALIVE=1</tspan> to </text>
+<text x="38" y="2113" font-size="12.5" fill="#1f1f1f">keep the old behavior</text>
+<text x="28" y="2133" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2133" font-size="12.5" fill="#1f1f1f">Changed PostToolUse hooks to run, with up to 10 seconds to finish, on tool calls </text>
+<text x="38" y="2150" font-size="12.5" fill="#1f1f1f">that finish after a new message interrupts the turn</text>
+<text x="28" y="2170" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2170" font-size="12.5" fill="#1f1f1f">Changed what Claude is told after safeguards stop a subagent: retry with a </text>
+<text x="38" y="2187" font-size="12.5" fill="#1f1f1f">narrower prompt or tell you, instead of doing the work itself</text>
+<text x="28" y="2207" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2207" font-size="12.5" fill="#1f1f1f">Changed cloud sessions to drop session-scoped allow rules at a move to a new </text>
+<text x="38" y="2224" font-size="12.5" fill="#1f1f1f">worker when their deny and ask rules can't all be kept, so you may be asked </text>
+<text x="38" y="2241" font-size="12.5" fill="#1f1f1f">again</text>
+<text x="28" y="2261" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2261" font-size="12.5" fill="#1f1f1f">Changed the automatic certificate repair behind a TLS-inspecting proxy: it no </text>
+<text x="38" y="2278" font-size="12.5" fill="#1f1f1f">longer runs when <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">ALL_PROXY</tspan> is the only proxy variable set. Set <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">HTTPS_PROXY</tspan> to </text>
+<text x="38" y="2295" font-size="12.5" fill="#1f1f1f">the proxy's http:// URL instead</text>
+<text x="28" y="2315" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2315" font-size="12.5" fill="#1f1f1f">Changed artifact database saves of rows others may have written: each file gets </text>
+<text x="38" y="2332" font-size="12.5" fill="#1f1f1f">a hidden marker file, and existing files without one, earlier versions' exports </text>
+<text x="38" y="2349" font-size="12.5" fill="#1f1f1f">among them, are left alone and reported</text>
+<text x="28" y="2369" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2369" font-size="12.5" fill="#1f1f1f">Updated <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/claude-api managed-agents-onboard</tspan> templates to match the Claude </text>
+<text x="38" y="2386" font-size="12.5" fill="#1f1f1f">Console: removed Performance tuner, renamed two, and turned off web search </text>
+<text x="38" y="2403" font-size="12.5" fill="#1f1f1f">and fetch in five whose prompts don't use them</text>
+<text x="28" y="2423" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2423" font-size="12.5" fill="#1f1f1f">Self-hosted runner: Changed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_RUNNER_CHECKOUT_PATH</tspan> so that each </text>
+<text x="38" y="2440" font-size="12.5" fill="#1f1f1f">repository in a session gets its own folder: a folder name already taken in the </text>
+<text x="38" y="2457" font-size="12.5" fill="#1f1f1f">session gets <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">-2</tspan>, <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">-3</tspan>, … at the end</text>
+<text x="28" y="2477" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2477" font-size="12.5" fill="#1f1f1f">[VSCode] Improved the "not signed in" message behind a Claude apps gateway: </text>
+<text x="38" y="2494" font-size="12.5" fill="#1f1f1f">it now looks like an error and has a Sign in link</text>
+<text x="28" y="2514" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2514" font-size="12.5" fill="#1f1f1f">[VSCode] Changed links in Claude's replies that point at Claude sign-in, </text>
+<text x="38" y="2531" font-size="12.5" fill="#1f1f1f">connector or API addresses to show as text with the address, instead of </text>
+<text x="38" y="2548" font-size="12.5" fill="#1f1f1f">opening in the browser</text>
+<text x="28" y="2568" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2568" font-size="12.5" fill="#1f1f1f">[VSCode] Improved the chat panel's diagnostics tool for large workspaces: it </text>
+<text x="38" y="2585" font-size="12.5" fill="#1f1f1f">leaves out files with no problems, returns compact JSON, and accepts an </text>
+<text x="38" y="2602" font-size="12.5" fill="#1f1f1f">optional minimum severity</text>
+<text x="28" y="2622" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2622" font-size="12.5" fill="#1f1f1f">[Cloud sessions] Improved the stalled-setup warning on self-hosted </text>
+<text x="38" y="2639" font-size="12.5" fill="#1f1f1f">environments: its link now prefers your organization's default or an </text>
+<text x="38" y="2656" font-size="12.5" fill="#1f1f1f">environment with a live runner, and names it</text>
+<text x="28" y="2676" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2676" font-size="12.5" fill="#1f1f1f">[Code Review] Changed unlinking a GitHub organization to also turn off its All </text>
+<text x="38" y="2693" font-size="12.5" fill="#1f1f1f">repositories setting in Code Review; it stays off after you relink until you turn it </text>
+<text x="38" y="2710" font-size="12.5" fill="#1f1f1f">back on</text>
+<rect x="20" y="2724" width="67" height="22" rx="5" fill="#f6e1ad"/><text x="28" y="2739" font-size="12" fill="#8a5a00">Fixed 90</text>
+<text x="28" y="2766" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2766" font-size="12.5" fill="#1f1f1f">Fixed MCP servers on the older handshake failing to connect, or returning </text>
+<text x="38" y="2783" font-size="12.5" fill="#1f1f1f">empty results, because Claude Code declared an extension that it only uses with </text>
+<text x="38" y="2800" font-size="12.5" fill="#1f1f1f">newer servers</text>
+<text x="28" y="2820" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2820" font-size="12.5" fill="#1f1f1f">Fixed a long-running MCP tool call on a claude.ai connector sometimes never </text>
+<text x="38" y="2837" font-size="12.5" fill="#1f1f1f">reporting its result after <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--resume</tspan></text>
+<text x="28" y="2857" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2857" font-size="12.5" fill="#1f1f1f">Fixed a session's diff failing to load on claude.ai and the mobile apps when the </text>
+<text x="38" y="2874" font-size="12.5" fill="#1f1f1f">folder Claude Code runs in has a file or folder named <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">HEAD</tspan></text>
+<text x="28" y="2894" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2894" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/diff</tspan> showing "Diff unavailable" when a git repository has a file or </text>
+<text x="38" y="2911" font-size="12.5" fill="#1f1f1f">folder named <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">HEAD</tspan> at its top level</text>
+<text x="28" y="2931" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2931" font-size="12.5" fill="#1f1f1f">Fixed the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/diff</tspan> pane opening blank in sessions where 64 or more turns edited </text>
+<text x="38" y="2948" font-size="12.5" fill="#1f1f1f">files</text>
+<text x="28" y="2968" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="2968" font-size="12.5" fill="#1f1f1f">Fixed slash commands typed after a leading space, tab or newline being sent to </text>
+<text x="38" y="2985" font-size="12.5" fill="#1f1f1f">Claude as plain text instead of running</text>
+<text x="28" y="3005" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3005" font-size="12.5" fill="#1f1f1f">Fixed a request that kept failing with a 401 refreshing your login on every retry </text>
+<text x="38" y="3022" font-size="12.5" fill="#1f1f1f">and causing 401s in your other sessions</text>
+<text x="28" y="3042" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3042" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/context</tspan> sending its full visual grid to Claude on every later turn; Claude </text>
+<text x="38" y="3059" font-size="12.5" fill="#1f1f1f">now reads only the table</text>
+<text x="28" y="3079" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3079" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude -p</tspan> exiting 0 in auto mode when its actions were refused because no </text>
+<text x="38" y="3096" font-size="12.5" fill="#1f1f1f">safety check was available: text and JSON output now exit 1</text>
+<text x="28" y="3116" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3116" font-size="12.5" fill="#1f1f1f">Fixed a case where Claude Code listed every project file at start on Linux for </text>
+<text x="38" y="3133" font-size="12.5" fill="#1f1f1f">projects on a network file system (NFS, SMB, Lustre and similar)</text>
+<text x="28" y="3153" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3153" font-size="12.5" fill="#1f1f1f">Fixed a case where auto mode was wrongly refused when a client sent a model </text>
+<text x="38" y="3170" font-size="12.5" fill="#1f1f1f">change and a request for auto mode back to back</text>
+<text x="28" y="3190" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3190" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/status</tspan> showing "Auto mode server: Enabled" when the server-side </text>
+<text x="38" y="3207" font-size="12.5" fill="#1f1f1f">review isn't reaching the session, for example behind an LLM gateway that drops </text>
+<text x="38" y="3224" font-size="12.5" fill="#1f1f1f">it</text>
+<text x="28" y="3244" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3244" font-size="12.5" fill="#1f1f1f">Fixed Claude-drafted feedback, surveys and <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/feedback</tspan> continuing to appear </text>
+<text x="38" y="3261" font-size="12.5" fill="#1f1f1f">after the server refused feedback for your organization</text>
+<text x="28" y="3281" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3281" font-size="12.5" fill="#1f1f1f">Fixed Claude drafting feedback on third-party gateways, where it can't be sent</text>
+<text x="28" y="3301" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3301" font-size="12.5" fill="#1f1f1f">Fixed auto mode refusing actions without saying why when permission rules or </text>
+<text x="38" y="3318" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">autoMode</tspan> settings are very large: it now explains and, unless <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">autoMode</tspan> deny </text>
+<text x="38" y="3335" font-size="12.5" fill="#1f1f1f">rules are set, asks you in the terminal</text>
+<text x="28" y="3355" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3355" font-size="12.5" fill="#1f1f1f">Fixed a case where Bash deny and ask rules missed commands written with </text>
+<text x="38" y="3372" font-size="12.5" fill="#1f1f1f">quoted words</text>
+<text x="28" y="3392" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3392" font-size="12.5" fill="#1f1f1f">Fixed subagent hand-back reports showing an internal marker and provenance </text>
+<text x="38" y="3409" font-size="12.5" fill="#1f1f1f">note when expanded outside verbose mode</text>
+<text x="28" y="3429" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3429" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude -p --resume</tspan> with a prompt losing a deferred tool call when its MCP </text>
+<text x="38" y="3446" font-size="12.5" fill="#1f1f1f">server is missing: the run now exits 1, keeps the call and refuses later input</text>
+<text x="28" y="3466" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3466" font-size="12.5" fill="#1f1f1f">Fixed a case where text was dropped from informational messages sent to SDK </text>
+<text x="38" y="3483" font-size="12.5" fill="#1f1f1f">clients</text>
+<text x="28" y="3503" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3503" font-size="12.5" fill="#1f1f1f">Fixed a case where Agent SDK hosts got a generic exit-code error instead of a </text>
+<text x="38" y="3520" font-size="12.5" fill="#1f1f1f">failed run's own error message when the disk was full</text>
+<text x="28" y="3540" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3540" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_RESUME_INTERRUPTED_TURN</tspan> re-running a turn that was </text>
+<text x="38" y="3557" font-size="12.5" fill="#1f1f1f">interrupted in plan mode when the session resumes in another permission mode</text>
+<text x="28" y="3577" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3577" font-size="12.5" fill="#1f1f1f">Fixed edits to a settings file being ignored when made within a few seconds of </text>
+<text x="38" y="3594" font-size="12.5" fill="#1f1f1f">Claude Code writing that file</text>
+<text x="28" y="3614" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3614" font-size="12.5" fill="#1f1f1f">Fixed a config file left at the legacy name hiding your setup with no warning: </text>
+<text x="38" y="3631" font-size="12.5" fill="#1f1f1f">Claude Code now says on stderr when a home holds two config files, and which is </text>
+<text x="38" y="3648" font-size="12.5" fill="#1f1f1f">in use</text>
+<text x="28" y="3668" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3668" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">~/.claude.json</tspan>, settings and edited files ending up empty or cut off when </text>
+<text x="38" y="3685" font-size="12.5" fill="#1f1f1f">the disk fills during a save in a read-only folder or to a bind-mounted file (one </text>
+<text x="38" y="3702" font-size="12.5" fill="#1f1f1f">session saving at a time)</text>
+<text x="28" y="3722" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3722" font-size="12.5" fill="#1f1f1f">Fixed Write ending the turn as a refusal when it couldn't read the file to </text>
+<text x="38" y="3739" font-size="12.5" fill="#1f1f1f">overwrite</text>
+<text x="28" y="3759" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3759" font-size="12.5" fill="#1f1f1f">Fixed background Bash commands that finish almost instantly losing their output </text>
+<text x="38" y="3776" font-size="12.5" fill="#1f1f1f">while being reported as completed</text>
+<text x="28" y="3796" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3796" font-size="12.5" fill="#1f1f1f">Fixed the Bash tool's diff of changed files missing a file that the command wrote </text>
+<text x="38" y="3813" font-size="12.5" fill="#1f1f1f">just before it ended</text>
+<text x="28" y="3833" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3833" font-size="12.5" fill="#1f1f1f">Fixed a mistyped model name, such as <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">opus-5-5</tspan>, telling you to update Claude Code </text>
+<text x="38" y="3850" font-size="12.5" fill="#1f1f1f">instead of suggesting the model you meant</text>
+<text x="28" y="3870" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3870" font-size="12.5" fill="#1f1f1f">Fixed a case where <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">NotebookEdit</tspan> changed the wrong cell when the notebook </text>
+<text x="38" y="3887" font-size="12.5" fill="#1f1f1f">changed while a permission prompt was open</text>
+<text x="28" y="3907" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3907" font-size="12.5" fill="#1f1f1f">Fixed a ~0.5s hang after pressing Enter on the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/login</tspan> success screen: the </text>
+<text x="38" y="3924" font-size="12.5" fill="#1f1f1f">dialog now dismisses immediately and the post-login refresh runs in the </text>
+<text x="38" y="3941" font-size="12.5" fill="#1f1f1f">background</text>
+<text x="28" y="3961" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3961" font-size="12.5" fill="#1f1f1f">Fixed Ctrl+G not opening the external editor while typing an "Other" answer to a </text>
+<text x="38" y="3978" font-size="12.5" fill="#1f1f1f">question in screen reader mode</text>
+<text x="28" y="3998" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="3998" font-size="12.5" fill="#1f1f1f">Fixed Monitor's WebSocket watch failing with "could not resolve" behind a proxy </text>
+<text x="38" y="4015" font-size="12.5" fill="#1f1f1f">when <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_PROXY_RESOLVES_HOSTS</tspan> is set and the machine has no DNS of </text>
+<text x="38" y="4032" font-size="12.5" fill="#1f1f1f">its own</text>
+<text x="28" y="4052" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4052" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude plugin eval</tspan> warnings suggesting <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">max: 0</tspan> for a tool that must not be </text>
+<text x="38" y="4069" font-size="12.5" fill="#1f1f1f">called, which could never pass</text>
+<text x="28" y="4089" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4089" font-size="12.5" fill="#1f1f1f">Fixed background plugin auto-update not installing a dependency added by the </text>
+<text x="38" y="4106" font-size="12.5" fill="#1f1f1f">updated plugin version</text>
+<text x="28" y="4126" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4126" font-size="12.5" fill="#1f1f1f">Fixed Cmd+click not opening links in Ghostty over tmux in sessions opened from </text>
+<text x="38" y="4143" font-size="12.5" fill="#1f1f1f">the agents view</text>
+<text x="28" y="4163" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4163" font-size="12.5" fill="#1f1f1f">Fixed a mod's hot reload in <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">.claude/skills</tspan> missing a file that was deleted just </text>
+<text x="38" y="4180" font-size="12.5" fill="#1f1f1f">after it appeared, and missing its return</text>
+<text x="28" y="4200" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4200" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/rewind</tspan> failing with "No files were restored" when restoring code to a </text>
+<text x="38" y="4217" font-size="12.5" fill="#1f1f1f">checkpoint from before <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/branch</tspan></text>
+<text x="28" y="4237" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4237" font-size="12.5" fill="#1f1f1f">Fixed the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/claude-api</tspan> skill saying Console web settings don't apply to Managed </text>
+<text x="38" y="4254" font-size="12.5" fill="#1f1f1f">Agents sessions, and tightened its credential and permission examples</text>
+<text x="28" y="4274" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4274" font-size="12.5" fill="#1f1f1f">Fixed needless permission prompts for read-only commands wrapped in a plain </text>
+<text x="38" y="4291" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">timeout DURATION</tspan>, such as <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">timeout 30 rg foo</tspan></text>
+<text x="28" y="4311" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4311" font-size="12.5" fill="#1f1f1f">Fixed WebFetch describing claude.ai shared-chat links as empty pages; it now </text>
+<text x="38" y="4328" font-size="12.5" fill="#1f1f1f">says shared chats can't be read and to paste the conversation instead</text>
+<text x="28" y="4348" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4348" font-size="12.5" fill="#1f1f1f">Fixed Artifact database calls being re-sent to artifacts without a database; </text>
+<text x="38" y="4365" font-size="12.5" fill="#1f1f1f">errors now say whether republishing helps</text>
+<text x="28" y="4385" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4385" font-size="12.5" fill="#1f1f1f">Fixed a case where artifact database reads that save to a folder (<tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">out_dir</tspan>) </text>
+<text x="38" y="4402" font-size="12.5" fill="#1f1f1f">were refused</text>
+<text x="28" y="4422" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4422" font-size="12.5" fill="#1f1f1f">Fixed detailed beta tracing not presenting <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_CLIENT_CERT</tspan> to collectors </text>
+<text x="38" y="4439" font-size="12.5" fill="#1f1f1f">that require a client certificate</text>
+<text x="28" y="4459" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4459" font-size="12.5" fill="#1f1f1f">Fixed the OpenTelemetry <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude_code.session.count</tspan> metric counting Agent SDK </text>
+<text x="38" y="4476" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">prewarm()</tspan> processes that were never claimed; a pre-started process now counts </text>
+<text x="38" y="4493" font-size="12.5" fill="#1f1f1f">once, when it is claimed</text>
+<text x="28" y="4513" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4513" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/clear</tspan> killing running commands of background agents, teammates and </text>
+<text x="38" y="4530" font-size="12.5" fill="#1f1f1f">workflows that keep running, and foreground subagents of background agents </text>
+<text x="38" y="4547" font-size="12.5" fill="#1f1f1f">and teammates</text>
+<text x="28" y="4567" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4567" font-size="12.5" fill="#1f1f1f">Fixed a terminal whose Claude apps gateway sign-in had expired sending </text>
+<text x="38" y="4584" font-size="12.5" fill="#1f1f1f">telemetry and managed-settings requests that the gateway refused and logged as </text>
+<text x="38" y="4601" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">invalid_token</tspan></text>
+<text x="28" y="4621" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4621" font-size="12.5" fill="#1f1f1f">Fixed the agents view appearing to send a reply to a background session waiting </text>
+<text x="38" y="4638" font-size="12.5" fill="#1f1f1f">on a permission prompt; the reply now stays in the box with a hint to open the </text>
+<text x="38" y="4655" font-size="12.5" fill="#1f1f1f">session and answer</text>
+<text x="28" y="4675" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4675" font-size="12.5" fill="#1f1f1f">Fixed agent view removing a draft saved by another agent view in the same </text>
+<text x="38" y="4692" font-size="12.5" fill="#1f1f1f">directory when exiting</text>
+<text x="28" y="4712" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4712" font-size="12.5" fill="#1f1f1f">Fixed a case where agent view came back with another agent view's input text </text>
+<text x="38" y="4729" font-size="12.5" fill="#1f1f1f">after restarting itself for an update</text>
+<text x="28" y="4749" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4749" font-size="12.5" fill="#1f1f1f">Fixed the agents view preview cutting off long commands, results and status </text>
+<text x="38" y="4766" font-size="12.5" fill="#1f1f1f">lines without an ellipsis, and dropping <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">**</tspan>, backticks and tags from commands </text>
+<text x="38" y="4783" font-size="12.5" fill="#1f1f1f">waiting for approval</text>
+<text x="28" y="4803" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4803" font-size="12.5" fill="#1f1f1f">Fixed Claude in Chrome reporting the extension as not connected when the </text>
+<text x="38" y="4820" font-size="12.5" fill="#1f1f1f">connection dropped mid-action; Claude now checks the page before repeating an </text>
+<text x="38" y="4837" font-size="12.5" fill="#1f1f1f">action that may have run</text>
+<text x="28" y="4857" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4857" font-size="12.5" fill="#1f1f1f">Fixed Remote Control sessions still showing "Limit reached" on other devices </text>
+<text x="38" y="4874" font-size="12.5" fill="#1f1f1f">after a usage limit was lifted outside the session</text>
+<text x="28" y="4894" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4894" font-size="12.5" fill="#1f1f1f">Fixed the file card sometimes missing in the Claude iOS app when Claude sent a </text>
+<text x="38" y="4911" font-size="12.5" fill="#1f1f1f">single file</text>
+<text x="28" y="4931" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4931" font-size="12.5" fill="#1f1f1f">Fixed self-hosted runner sessions failing with no explanation when the server </text>
+<text x="38" y="4948" font-size="12.5" fill="#1f1f1f">keeps refusing to renew model access: the runner now retries sooner and posts </text>
+<text x="38" y="4965" font-size="12.5" fill="#1f1f1f">a warning in the session</text>
+<text x="28" y="4985" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="4985" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/permissions</tspan> in cloud sessions replying only that it isn't available; it now </text>
+<text x="38" y="5002" font-size="12.5" fill="#1f1f1f">says where the session's rules live and how to change them</text>
+<text x="28" y="5022" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5022" font-size="12.5" fill="#1f1f1f">Fixed cloud sessions losing session-scoped deny and ask permission rules, </text>
+<text x="38" y="5039" font-size="12.5" fill="#1f1f1f">such as those a PermissionRequest hook adds, when the session moves to a new </text>
+<text x="38" y="5056" font-size="12.5" fill="#1f1f1f">worker</text>
+<text x="28" y="5076" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5076" font-size="12.5" fill="#1f1f1f">Fixed mod hot-reloading turning off for the session when you typed three </text>
+<text x="38" y="5093" font-size="12.5" fill="#1f1f1f">messages instead of answering its question in a cloud session</text>
+<text x="28" y="5113" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5113" font-size="12.5" fill="#1f1f1f">Fixed background tasks that keep running after <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/clear</tspan> disappearing from the </text>
+<text x="38" y="5130" font-size="12.5" fill="#1f1f1f">task list in Claude Code on the web until another task started or ended</text>
+<text x="28" y="5150" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5150" font-size="12.5" fill="#1f1f1f">Fixed hidden commands appearing in the slash command menu of cloud sessions </text>
+<text x="38" y="5167" font-size="12.5" fill="#1f1f1f">on mobile and web</text>
+<text x="28" y="5187" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5187" font-size="12.5" fill="#1f1f1f">Fixed a case where <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/rewind</tspan> could restore or delete a file through a directory </text>
+<text x="38" y="5204" font-size="12.5" fill="#1f1f1f">symlink</text>
+<text x="28" y="5224" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5224" font-size="12.5" fill="#1f1f1f">Fixed a case where a <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">sed</tspan> command could skip the permission check in </text>
+<text x="38" y="5241" font-size="12.5" fill="#1f1f1f">accept-edits and auto mode</text>
+<text x="28" y="5261" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5261" font-size="12.5" fill="#1f1f1f">Fixed a case where <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_AUTO_MODE_SERVER=1</tspan> in managed settings was </text>
+<text x="38" y="5278" font-size="12.5" fill="#1f1f1f">ignored behind an LLM gateway when the gateway's URL is set only there and </text>
+<text x="38" y="5295" font-size="12.5" fill="#1f1f1f">server-managed settings can't be fetched</text>
+<text x="28" y="5315" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5315" font-size="12.5" fill="#1f1f1f">Fixed a Bash permission bypass where a crafted environment prefix could hide </text>
+<text x="38" y="5332" font-size="12.5" fill="#1f1f1f">part of a command from permission checks</text>
+<text x="28" y="5352" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5352" font-size="12.5" fill="#1f1f1f">Fixed a case where deny and ask rules, hook matchers and <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">disallowedTools</tspan> </text>
+<text x="38" y="5369" font-size="12.5" fill="#1f1f1f">entries written with a claude.ai connector's terminal name </text>
+<text x="38" y="5386" font-size="12.5" fill="#1f1f1f">(<tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">mcp__claude_ai_Slack</tspan>) were ignored in Claude Desktop (takes effect once </text>
+<text x="38" y="5403" font-size="12.5" fill="#1f1f1f">Claude Desktop includes this version)</text>
+<text x="28" y="5423" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5423" font-size="12.5" fill="#1f1f1f">Fixed a sandbox escape when creating a worktree</text>
+<text x="28" y="5443" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5443" font-size="12.5" fill="#1f1f1f">Fixed self-hosted runners: <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--trust-workspace false</tspan> now also stops hooks in </text>
+<text x="38" y="5460" font-size="12.5" fill="#1f1f1f">the repository's settings files and skills from running</text>
+<text x="28" y="5480" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5480" font-size="12.5" fill="#1f1f1f">Fixed a case where idle background sessions started through a shell-exported </text>
+<text x="38" y="5497" font-size="12.5" fill="#1f1f1f">LLM gateway left the gateway after an update</text>
+<text x="28" y="5517" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5517" font-size="12.5" fill="#1f1f1f">Fixed help links in <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/status</tspan> and the auto mode billing notice opening only part of </text>
+<text x="38" y="5534" font-size="12.5" fill="#1f1f1f">the address when they wrap</text>
+<text x="28" y="5554" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5554" font-size="12.5" fill="#1f1f1f">Fixed a case where certificate errors behind a TLS-inspecting proxy persisted </text>
+<text x="38" y="5571" font-size="12.5" fill="#1f1f1f">when <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC</tspan> was set. With it set, Claude </text>
+<text x="38" y="5588" font-size="12.5" fill="#1f1f1f">Code now makes a TLS handshake with the configured API host after a </text>
+<text x="38" y="5605" font-size="12.5" fill="#1f1f1f">certificate failure, through your http:// proxy if one is set; it sends no API </text>
+<text x="38" y="5622" font-size="12.5" fill="#1f1f1f">request</text>
+<text x="28" y="5642" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5642" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude remote-control</tspan> exiting silently with status 0 when a first-run </text>
+<text x="38" y="5659" font-size="12.5" fill="#1f1f1f">question gets no answer (scripts, services, batch jobs, Ctrl+C); it now says why </text>
+<text x="38" y="5676" font-size="12.5" fill="#1f1f1f">and exits 1</text>
+<text x="28" y="5696" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5696" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude remote-control</tspan> ignoring a piped <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">y</tspan> that has no newline after it at </text>
+<text x="38" y="5713" font-size="12.5" fill="#1f1f1f">the first-run question; it now counts as a <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">y</tspan>es</text>
+<text x="28" y="5733" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5733" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/rename</tspan> reporting plain success when the new name could not be saved to </text>
+<text x="38" y="5750" font-size="12.5" fill="#1f1f1f">the session transcript; it now warns that the new name may not last</text>
+<text x="28" y="5770" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5770" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">${CLAUDE_PLUGIN_ROOT}</tspan> not being substituted in a plugin-provided </text>
+<text x="38" y="5787" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">subagentStatusLine</tspan> command, which can now reference the plugin's own scripts</text>
+<text x="28" y="5807" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5807" font-size="12.5" fill="#1f1f1f">Fixed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude plugin update</tspan> and <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/plugin</tspan> "Update now" not installing </text>
+<text x="38" y="5824" font-size="12.5" fill="#1f1f1f">dependencies added by the new plugin version</text>
+<text x="28" y="5844" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5844" font-size="12.5" fill="#1f1f1f">Fixed subagents being told after compaction to expect a completion notice for </text>
+<text x="38" y="5861" font-size="12.5" fill="#1f1f1f">background agents they neither started nor took over</text>
+<text x="28" y="5881" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5881" font-size="12.5" fill="#1f1f1f">Fixed a case where a background agent's later report was lost silently: the </text>
+<text x="38" y="5898" font-size="12.5" fill="#1f1f1f">notification now says it was refused and how to ask for it</text>
+<text x="28" y="5918" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5918" font-size="12.5" fill="#1f1f1f">Gateway: Fixed Claude Desktop offering a web search tool that always failed </text>
+<text x="38" y="5935" font-size="12.5" fill="#1f1f1f">when every upstream is Amazon Bedrock</text>
+<text x="28" y="5955" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5955" font-size="12.5" fill="#1f1f1f">Self-hosted runner: Fixed a runner started with <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--use-anthropic-git-proxy</tspan> or </text>
+<text x="38" y="5972" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--configure-git</tspan> registering before a failed startup check made it exit; it now </text>
+<text x="38" y="5989" font-size="12.5" fill="#1f1f1f">exits first</text>
+<text x="28" y="6009" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6009" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed prompts over 50,000 characters being cut off silently: the </text>
+<text x="38" y="6026" font-size="12.5" fill="#1f1f1f">prompt now stays in the chat box with a notice, and a paste over the limit is </text>
+<text x="38" y="6043" font-size="12.5" fill="#1f1f1f">refused with a notice</text>
+<text x="28" y="6063" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6063" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed a click on the survey or "Report a problem" buttons sending the </text>
+<text x="38" y="6080" font-size="12.5" fill="#1f1f1f">unfinished prompt</text>
+<text x="28" y="6100" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6100" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed cloud sessions opened from the extension's Web tab bringing </text>
+<text x="38" y="6117" font-size="12.5" fill="#1f1f1f">back turns that <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">/clear</tspan>, or Retry or Edit of a typed prompt, had removed</text>
+<text x="28" y="6137" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6137" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed a deleted session's file coming back when that session was </text>
+<text x="38" y="6154" font-size="12.5" fill="#1f1f1f">renamed in the extension</text>
+<text x="28" y="6174" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6174" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed Claude carrying out an unapproved plan after a window reload: </text>
+<text x="38" y="6191" font-size="12.5" fill="#1f1f1f">a step interrupted in plan mode now stops with a notice when the session comes </text>
+<text x="38" y="6208" font-size="12.5" fill="#1f1f1f">back in another permission mode</text>
+<text x="28" y="6228" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6228" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed a possible chat panel freeze when a dropped item's path </text>
+<text x="38" y="6245" font-size="12.5" fill="#1f1f1f">contains a very long run of "/" characters</text>
+<text x="28" y="6265" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6265" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed the <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">claude-vscode.toggleDictation</tspan> command starting dictation </text>
+<text x="38" y="6282" font-size="12.5" fill="#1f1f1f">in every open Claude view at once; it now acts only in the view you are using, and </text>
+<text x="38" y="6299" font-size="12.5" fill="#1f1f1f">a second press stops it</text>
+<text x="28" y="6319" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6319" font-size="12.5" fill="#1f1f1f">[VSCode] Fixed the chat panel slowing down while a reply with many unclosed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">$$</tspan> </text>
+<text x="38" y="6336" font-size="12.5" fill="#1f1f1f">math fences, each shorter than the last, streams in</text>
+<text x="28" y="6356" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6356" font-size="12.5" fill="#1f1f1f">[Cloud sessions] Fixed scheduled tasks silently dropping a connector named </text>
+<text x="38" y="6373" font-size="12.5" fill="#1f1f1f">memory: runs now keep it, mounted under that name plus a short suffix</text>
+<text x="28" y="6393" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6393" font-size="12.5" fill="#1f1f1f">[Cloud sessions] Fixed Send now on a waiting message in cloud sessions ending </text>
+<text x="38" y="6410" font-size="12.5" fill="#1f1f1f">running background agents; they now keep running</text>
+<text x="28" y="6430" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6430" font-size="12.5" fill="#1f1f1f">[Claude Tag] Fixed Claude Tag setup blocking launch when the channel list </text>
+<text x="38" y="6447" font-size="12.5" fill="#1f1f1f">couldn't fully load; admins can now launch without picking a channel</text>
+<text x="28" y="6467" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6467" font-size="12.5" fill="#1f1f1f">[Claude Tag] Fixed saving auto mode allow rules in Claude Tag admin settings </text>
+<text x="38" y="6484" font-size="12.5" fill="#1f1f1f">overwriting another admin's changes; the save is now refused with a message</text>
+<rect x="20" y="6498" width="78" height="22" rx="5" fill="#f6cdc9"/><text x="28" y="6513" font-size="12" fill="#a32d2d">Removed 2</text>
+<text x="28" y="6540" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6540" font-size="12.5" fill="#1f1f1f">Removed <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">shortcuts_list</tspan> and <tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">shortcuts_execute</tspan>, which listed and started </text>
+<text x="38" y="6557" font-size="12.5" fill="#1f1f1f">shortcuts saved in the extension, from Claude Code's built-in Claude in Chrome </text>
+<text x="38" y="6574" font-size="12.5" fill="#1f1f1f">tools</text>
+<text x="28" y="6594" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="6594" font-size="12.5" fill="#1f1f1f">Self-hosted runner: Removed the end-of-session upload of a session's debug </text>
+<text x="38" y="6611" font-size="12.5" fill="#1f1f1f">log; a failed session's log stays on the runner host unless </text>
+<text x="38" y="6628" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--remove-session-state</tspan> is set</text>
+<line x1="20" x2="540" y1="6650" y2="6650" stroke="#e4e2dc"/>
+<text x="20" y="6670" font-size="11" fill="#6b6a66">All 146 entries → gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.319</text>
 </svg>
