@@ -54,6 +54,7 @@ The page adapts to small screens and follows your system's light or dark setting
 | Card | An image that always shows the latest version — summary or detailed | see below |
 | Agents | A ready-to-paste prompt (on the page: Subscribe → For agents), plus JSON your agent can poll: a small index of the newest 30 versions and one file per version, so it only fetches what is new | [`releases/index.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/index.json) · [`llms.txt`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/llms.txt) (guide for agents) · [`latest.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.json) (last 7 release days) |
 | Webhook | A message in your own Slack / Discord / Feishu / WeCom / DingTalk group | copy [`templates/notify-webhook.yml`](templates/notify-webhook.yml) into your repo |
+| GitHub | Follow the official repo to see each new version as it ships | [anthropics/claude-code](https://github.com/anthropics/claude-code) |
 | Full data | Every entry since 2025-03 | [`data/all.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/data/all.json) · [`changelog.csv`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/changelog.csv) |
 
 ## Latest version card
@@ -137,6 +138,7 @@ Every version has a stable link: `…/claude-code-changelog-calendar/#v2.1.319`.
 | 最新版本卡片 | 概要版（版本号、时间、各类条数）/ 明细版（再加全部条目，按类型分组），每天自动变成最新版本；网页「订阅」里可复制代码或下载 PNG | 概要 `latest.zh.svg` · 明细 `latest-detail.zh.svg` |
 | 给 Agent 用 | 网页「订阅 → 给 Agent 用」可复制一段指令直接贴给 Agent；数据按版本拆分（最近 30 个版本的目录 + 每个版本一个文件），Agent 只取比上次新的 | `releases/index.json`；`llms.txt` 是写给 Agent 的说明书；`latest.json` 是最近 7 个发布日 |
 | Webhook | 推到你自己的群机器人 | 把 `templates/notify-webhook.yml` 复制到你自己的仓库，填上地址；地址只存在你那里 |
+| 关注 GitHub | 关注 Claude Code 官方仓库，第一时间看到每个新版本 | [anthropics/claude-code](https://github.com/anthropics/claude-code) |
 
 内容来自 Anthropic 官方 CHANGELOG.md 与 npm 发布记录，每日自动同步；原文版权归 Anthropic。
 
