@@ -8,6 +8,44 @@ Not a flat changelog: a release calendar built from Anthropic's official Claude 
 >
 > Curated by @ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog-calendar](https://github.com/gaoxiaoyu1228/claude-code-changelog-calendar)
 
+![The year view: a release overview timeline above a calendar for each year](screenshots/year.png)
+
+## A tour of the page
+
+The page has five views. Switch between them with the tabs at the top, and switch language with **English / 中文**.
+
+| View | What it shows | Try this |
+|---|---|---|
+| **Latest** | The most recent release days, every entry tagged *New*, *Improved*, *Fixed*, *Removed* or *Other* | Click the link icon next to a version to copy a stable link to it |
+| **Month** | A calendar of the month; each day shows its versions and how many changes of each type | Click a day for its full list, then click a type to filter |
+| **Year** | A release overview timeline, then a calendar for each year. Day colors mark the major version (0.2, 1.0, 2.0, 2.1), so you can see where each series begins | Drag the timeline; the month cards move with it. Click a month card to scroll to that month's calendar |
+| **Stats** | Heatmaps of daily updates and new features, plus daily and weekly charts by type | Hover a cell or bar for details |
+| **Monthly focus** | The main themes of each month, with the versions behind them | Read it as a monthly summary |
+
+Search works across every view.
+
+### Month
+
+![The month view: each day shows versions and counts per type, with the selected day's entries below](screenshots/month.png)
+
+### Latest
+
+![The latest view: the newest release days with every entry tagged by type](screenshots/latest.png)
+
+### Stats
+
+![The stats view: heatmaps of daily updates and new features, and daily charts by type](screenshots/stats.png)
+
+### Monthly focus
+
+![The monthly focus view: the main themes of each month](screenshots/focus.png)
+
+### On your phone, in dark mode
+
+The page adapts to small screens and follows your system's light or dark setting.
+
+<p><img src="screenshots/mobile-month.png" alt="The month view on a phone" width="260"> &nbsp; <img src="screenshots/year-dark.png" alt="The year view in dark mode" width="560"></p>
+
 ## Get updates
 
 | Way | What you get | Address |
@@ -75,6 +113,23 @@ Every version has a stable link: `…/claude-code-changelog-calendar/#v2.1.319`.
 ## 中文说明
 
 **Claude Code 更新日历**：不是一份平铺的更新日志，而是基于 Anthropic 官方 CHANGELOG 做的「更新日历」，用最自然的方式（看日历）了解 Claude Code 的变化。每天同步一次。日期和时间均为 UTC（国际标准时间）。网页默认英文，右上角可切换中文；其他语言请用浏览器自带的翻译。
+
+
+### 网页怎么看
+
+![中文界面的「最新」视图](screenshots/latest-zh.png)
+
+| 视图 | 看什么 | 怎么用 |
+|---|---|---|
+| **最新** | 最近几个发布日的全部更新，每条标出新增、改进、修复、移除或其他 | 点版本号旁的链接图标，复制这个版本的固定链接 |
+| **月历** | 一个月的日历，每天显示发布了哪些版本、各类更新多少条 | 点某一天看全部条目，再点类型筛选 |
+| **年历** | 上面是发布概览时间轴，下面是每一年的日历；日期底色代表大版本（0.2、1.0、2.0、2.1），一眼看出每个大版本从哪天开始 | 拖动时间轴，月份卡片跟着走；点月份卡片，下面直接滚到那个月的日历 |
+| **统计** | 每日更新、每日新功能的热力图，以及按类型的每日、每周图表 | 鼠标停在格子或柱子上看详情 |
+| **月度重点** | 每个月的主要变化和对应版本 | 当作月度总结来读 |
+
+搜索框在所有视图里都能用。手机上自动适配窄屏，深色模式跟随系统设置。
+
+### 订阅方式
 
 | 方式 | 效果 | 地址 |
 |---|---|---|
