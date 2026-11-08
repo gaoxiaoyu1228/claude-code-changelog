@@ -1,0 +1,32 @@
+{
+ "version": "1.0.44",
+ "date": "2025-07-07",
+ "published": "2025-07-07T20:55:13.221Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.44",
+ "counts": {
+  "new": 3,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "New /export command lets you quickly export a conversation for sharing",
+   "zh": "新增 /export 命令，可快速导出对话用于分享"
+  },
+  {
+   "type": "new",
+   "en": "MCP: resource_link tool results are now supported",
+   "zh": "MCP：现在支持 resource_link 类型的工具返回结果"
+  },
+  {
+   "type": "new",
+   "en": "MCP: tool annotations and tool titles now display in /mcp view",
+   "zh": "MCP：工具注解和工具标题现在显示在 /mcp 视图中"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Ctrl+Z to suspend Claude Code. Resume by running `fg`. Prompt input undo is now Ctrl+U.",
+   "zh": "更改了 Ctrl+Z 以暂停 Claude Code。通过运行`fg`恢复。提示输入撤消现在是 Ctrl+U。"
+  }
+ ]
+}

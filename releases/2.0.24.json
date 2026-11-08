@@ -1,0 +1,33 @@
+{
+ "version": "2.0.24",
+ "date": "2025-10-20",
+ "published": "2025-10-20T18:36:49.330Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.24",
+ "counts": {
+  "new": 2,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Claude Code Web: Support for Web -> CLI teleport",
+   "zh": "Claude Code Web：支持 Web -> CLI teleport"
+  },
+  {
+   "type": "new",
+   "en": "Sandbox: Releasing a sandbox mode for the BashTool on Linux & Mac",
+   "zh": "沙箱：为 Linux 和 Mac 上的 BashTool 发布沙箱模式"
+  },
+  {
+   "type": "improved",
+   "en": "Bedrock: Display awsAuthRefresh output when auth is required",
+   "zh": "Bedrock：需要身份验证时显示 awsAuthRefresh 输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where project-level skills were not loading when --setting-sources 'project' was specified",
+   "zh": "修复了指定 --setting-sources 'project' 时未加载项目级技能的错误"
+  }
+ ]
+}

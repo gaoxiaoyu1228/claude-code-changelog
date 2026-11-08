@@ -1,0 +1,16 @@
+{
+ "version": "2.1.137",
+ "date": "2026-05-09",
+ "published": "2026-05-09T00:04:08.277Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.137",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed extension failing to activate on Windows",
+   "zh": "[VSCode] 修复扩展在 Windows 上无法激活的问题"
+  }
+ ]
+}

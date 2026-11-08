@@ -1,0 +1,26 @@
+{
+ "version": "1.0.86",
+ "date": "2025-08-20",
+ "published": "2025-08-20T22:10:29.765Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.86",
+ "counts": {
+  "new": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added /context to help users self-serve debug context issues",
+   "zh": "添加了 /context 以帮助用户自助调试上下文问题"
+  },
+  {
+   "type": "new",
+   "en": "SDK: Added UUID support for all SDK messages",
+   "zh": "SDK：所有 SDK 消息都支持 UUID"
+  },
+  {
+   "type": "new",
+   "en": "SDK: Added `--replay-user-messages` to replay user messages back to stdout",
+   "zh": "SDK：新增 `--replay-user-messages`，可把用户消息回放到标准输出"
+  }
+ ]
+}

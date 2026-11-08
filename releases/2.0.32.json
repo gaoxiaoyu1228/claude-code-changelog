@@ -1,0 +1,28 @@
+{
+ "version": "2.0.32",
+ "date": "2025-11-03",
+ "published": "2025-11-03T23:09:10.512Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.32",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `companyAnnouncements` setting for displaying announcements on startup",
+   "zh": "添加了`companyAnnouncements`设置，用于在启动时显示公告"
+  },
+  {
+   "type": "improved",
+   "en": "Un-deprecate output styles based on community feedback",
+   "zh": "根据社区反馈，取消输出风格的弃用标记"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook progress messages not updating correctly during PostToolUse hook execution",
+   "zh": "修复了 PostToolUse 挂钩执行期间挂钩进度消息未正确更新的问题"
+  }
+ ]
+}

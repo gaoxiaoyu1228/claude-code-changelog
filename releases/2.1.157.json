@@ -1,0 +1,179 @@
+{
+ "version": "2.1.157",
+ "date": "2026-05-29",
+ "published": "2026-05-29T17:30:02.357Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.157",
+ "counts": {
+  "new": 4,
+  "improved": 9,
+  "fixed": 18,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Plugins in `.claude/skills` directories are now automatically loaded, no marketplace required",
+   "zh": "`.claude/skills` 目录中的插件现在会自动加载，无需插件市场"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude plugin init <name>` to scaffold a new plugin in `.claude/skills`",
+   "zh": "添加了`claude plugin init <name>`以在`.claude/skills`中搭建新插件"
+  },
+  {
+   "type": "new",
+   "en": "Added autocomplete for `/plugin` arguments: subcommands, installed plugin names, and plugins from known marketplaces",
+   "zh": "添加了`/plugin`参数的自动完成功能：子命令、已安装的插件名称以及来自已知市场的插件"
+  },
+  {
+   "type": "new",
+   "en": "Added a \"Workflow keyword trigger\" setting in /config to stop the word \"workflow\" in a prompt from triggering a dynamic workflow",
+   "zh": "在 /config 中添加了“工作流关键字触发器”设置，以阻止提示中的“工作流”一词触发动态工作流"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: the `agent` field in `settings.json` is now honored for dispatched sessions, with `--agent <name>` to override it",
+   "zh": "`claude agents`：`settings.json` 中的 `agent` 字段现在会对派发的会话生效，并可用 `--agent <name>` 覆盖"
+  },
+  {
+   "type": "improved",
+   "en": "`EnterWorktree` can now switch between Claude-managed worktrees mid-session",
+   "zh": "`EnterWorktree` 现在可以在会话中途切换到 Claude 管理的 worktree"
+  },
+  {
+   "type": "improved",
+   "en": "`tool_decision` telemetry events now include `tool_parameters` (bash commands, MCP/skill names) when `OTEL_LOG_TOOL_DETAILS=1`",
+   "zh": "设置 `OTEL_LOG_TOOL_DETAILS=1` 后，`tool_decision` 遥测事件现在会包含 `tool_parameters`（bash 命令、MCP/skill 名称）"
+  },
+  {
+   "type": "improved",
+   "en": "Worktrees managed by Claude are now left unlocked when the agent finishes, so `git worktree remove`/`prune` can clean them up",
+   "zh": "Claude 管理的工作树在智能体结束后保持解锁，这样 `git worktree remove`/`prune` 就能清理它们"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance of long and resumed conversations by eliminating redundant message-rendering recomputations",
+   "zh": "改进长对话和恢复会话的性能：去掉重复的消息渲染计算"
+  },
+  {
+   "type": "improved",
+   "en": "`/terminal-setup` now disables GPU acceleration in VS Code/Cursor/Windsurf integrated terminals to prevent garbled-text rendering",
+   "zh": "`/terminal-setup` 现在会在 VS Code/Cursor/Windsurf 集成终端中关闭 GPU 加速，以防止文字显示乱码"
+  },
+  {
+   "type": "improved",
+   "en": "The Feature of the Week credit-claim status now appears as a notification in the status area instead of a line above the prompt",
+   "zh": "\"Feature of the Week\" 的积分领取状态现在以通知形式显示在状态区，而不再显示在提示上方的一行中"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: slash-command autocomplete in the dispatch input now matches substrings",
+   "zh": "`claude agents`：派发输入框中的斜杠命令自动补全现在支持子串匹配"
+  },
+  {
+   "type": "improved",
+   "en": "Pressing backspace right after a workflow trigger keyword now dismisses the workflow request (same as alt+w) instead of deleting a character",
+   "zh": "工作流触发关键词后立刻按退格键，现在会取消该工作流请求（与 `alt+w` 相同），不再删除一个字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unprocessable images (zero-byte, corrupt) attached via paste, MCP, or dialog crashing the request instead of becoming a text placeholder",
+   "zh": "修复通过粘贴、MCP 或对话框附加的无法处理的图片（零字节、损坏）导致请求崩溃，而不是变为文本占位符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandbox network permission prompts appearing in auto and bypass-permissions mode when using the desktop app, IDE extensions, or SDK",
+   "zh": "修复了使用桌面应用程序、IDE 扩展或 SDK 时在自动和绕过权限模式下出现的沙箱网络权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` completed sessions not retiring when an idle subagent was still parked or had leaked a backgrounded shell",
+   "zh": "修复了“克劳德代理”完成的会话在空闲子代理仍处于停放状态或泄漏了后台 shell 时不会退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` pressing Esc not cancelling a slow \"opening…\", leaving the list unresponsive",
+   "zh": "修复了按 Esc 键的“克劳德特工”不会取消缓慢的“打开…”，导致列表无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent worktrees under `.claude/worktrees/` being orphaned after the 30-day job retention sweep",
+   "zh": "修复了`.claude/worktrees/`下的后台代理工作树在 30 天的工作保留扫描后被孤立的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions re-attached after a sleep/wake not telling the model the correct date",
+   "zh": "修复了睡眠/唤醒后重新连接的后台会话不告诉模型正确的日期的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed copy-on-select in `claude agents` not reaching the system clipboard inside tmux with `set-clipboard on` (regression in 2.1.153)",
+   "zh": "修复了“claude Agents”中的“copy-on-select”无法通过`set-clipboard on`到达 tmux 内的系统剪贴板的问题（2.1.153 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` not reporting background subagents that were running when the previous Claude Code process exited",
+   "zh": "修复了`--resume`不报告前一个 Claude Code 进程退出时正在运行的后台子代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `--resume` session picker leaving its contents on the terminal after exiting in fullscreen mode",
+   "zh": "修复全屏模式下退出 `--resume` 会话选择器后，其内容残留在终端上的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--worktree` and `--worktree --tmux` returning to the canonical repo root instead of the current linked worktree",
+   "zh": "修复了 `--worktree` 和 `--worktree --tmux` 返回规范存储库根而不是当前链接的工作树"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/model` picker showing an incorrect \"Newer version available\" hint when the selected model is already the newest in its family; the pinned-model row now shows the model's description instead of its raw ID",
+   "zh": "修复所选模型已是同系列最新版本时，`/model` 选择器仍错误显示\"Newer version available\"提示的问题；固定模型的一行现在显示模型说明，而不是原始 ID"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed literal markdown markers (backticks, asterisks) appearing in the in-progress message text in fullscreen mode",
+   "zh": "修复了全屏模式下正在进行的消息文本中出现的文字降价标记（反引号、星号）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal freezing after approving the managed-settings security dialog at startup",
+   "zh": "修复启动时批准托管设置安全对话框后终端冻结的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare duplicate line appearing in scrollback after the terminal UI redraws",
+   "zh": "修复了终端 UI 重绘后回滚中出现的罕见重复行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed right-click paste duplicating the clipboard in the VS Code, Cursor, and Windsurf integrated terminals",
+   "zh": "修复了在 VS Code、Cursor 和 Windsurf 集成终端中右键单击粘贴复制剪贴板的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "WSL: fixed image paste (`alt+v` keybinding), screenshot paste on Windows 11, and added support for dragging images from Windows Explorer",
+   "zh": "WSL：修复了图片粘贴（`alt+v` 快捷键）和 Windows 11 上的截图粘贴，并新增支持从 Windows 资源管理器拖入图片"
+  },
+  {
+   "type": "fixed",
+   "en": "[IDE] Fixed clicking Stop while a background subagent is running not actually stopping it",
+   "zh": "[IDE] 修复后台子智能体运行时点击 Stop 没有真正停止它的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the fast mode indicator not appearing on Opus 4.8",
+   "zh": "[VSCode] 修复快速模式指示器在 Opus 4.8 上不显示的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the \"bash commands will be sandboxed\" startup banner — sandbox status still shows in `/status` and when a command is blocked",
+   "zh": "移除 \"bash commands will be sandboxed\" 启动横幅；沙箱状态仍会显示在 `/status` 中，并在命令被拦截时提示"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the \"/ide for …\" startup hint toast",
+   "zh": "移除启动时 \"/ide for …\" 的提示小弹窗"
+  }
+ ]
+}

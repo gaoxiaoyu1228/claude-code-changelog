@@ -1,0 +1,21 @@
+{
+ "version": "1.0.85",
+ "date": "2025-08-19",
+ "published": "2025-08-19T21:11:17.988Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.85",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Status line input now includes session cost info",
+   "zh": "状态栏输入现在包含会话费用信息"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Introduced SessionEnd hook",
+   "zh": "Hooks：新增 SessionEnd 钩子"
+  }
+ ]
+}

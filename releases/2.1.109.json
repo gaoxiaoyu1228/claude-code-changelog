@@ -1,0 +1,16 @@
+{
+ "version": "2.1.109",
+ "date": "2026-04-15",
+ "published": "2026-04-15T03:45:21.462Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.109",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved the extended-thinking indicator with a rotating progress hint",
+   "zh": "改进扩展思考指示器：增加了轮换显示的进度提示"
+  }
+ ]
+}

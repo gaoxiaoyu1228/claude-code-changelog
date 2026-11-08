@@ -1,0 +1,178 @@
+{
+ "version": "2.1.247",
+ "date": "2026-08-26",
+ "published": "2026-08-26T18:02:01.046Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.247",
+ "counts": {
+  "new": 4,
+  "improved": 10,
+  "fixed": 19
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added the `SendFeedback` tool: when something goes wrong in a session, Claude can draft a feedback report for you to review and send from `/feedback` (turn off with the `feedbackDrafts` setting)",
+   "zh": "添加了`SendFeedback`工具：当会话中出现问题时，Claude 可以起草反馈报告供您查看并从`/feedback`发送（使用`feedbackDrafts`设置关闭）"
+  },
+  {
+   "type": "new",
+   "en": "Added `{id, text, cooldownSessions, priority}` entries, `tipsFile`, and `label` to `spinnerTipsOverride`, so organizations can rotate their own tips alongside the built-in ones",
+   "zh": "在`spinnerTipsOverride`中添加了“{id、text、cooldownSessions、priority}”条目、`tipsFile`和`label`，以便组织可以将自己的提示与内置提示一起轮换"
+  },
+  {
+   "type": "new",
+   "en": "Added a tip on Bash permission prompts pointing to auto mode, with a one-keystroke \"Yes, and switch to auto mode\" option",
+   "zh": "添加了关于 Bash 权限提示指向自动模式的提示，并带有一键“是，并切换到自动模式”选项"
+  },
+  {
+   "type": "new",
+   "en": "Added `/claude-api cost-optimize` to profile an existing project's Claude API spend and work through cost levers (caching, token hygiene, batch, effort, model choice) one measured change at a time",
+   "zh": "添加了`/claude-api cost-optimize`来分析现有项目的 Claude API 支出，并通过成本杠杆（缓存、令牌卫生、批量、工作量、模型选择）一次测量一个变化"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the `/claude-api` skill with Admin API coverage (organization members, invites, workspaces, API keys, rate limit reports, workload identity federation, CMEK)",
+   "zh": "`/claude-api` 技能新增 Admin API 覆盖范围（组织成员、邀请、工作区、API 密钥、限流报告、工作负载身份联合、CMEK）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plugin marketplace hardening: names containing control or invisible characters are rejected, and marketplace-supplied text in `/plugin` and `claude plugin` output is escape-safe",
+   "zh": "加强插件市场安全：名称中含控制字符或不可见字符的会被拒绝；市场提供的文字在 `/plugin` 和 `claude plugin` 输出中会做转义处理，确保安全"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Bedrock, Vertex, and Foundry sessions (and any with telemetry disabled): Claude is now told when a configured MCP server failed to connect, instead of concluding its tools don't exist",
+   "zh": "改进：在 Bedrock、Vertex、Foundry 会话中（或禁用遥测时），Claude 现在会被告知某个已配置的 MCP 服务器连接失败，而不是误以为工具不存在"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Sonnet 5's default auto-compact window to its full 1M context, so sessions on the 1M window now auto-compact at about 967K tokens instead of about 934K",
+   "zh": "将 Sonnet 5 的默认自动压缩窗口更改为完整的 1M 上下文，因此 1M 窗口上的会话现在自动压缩为大约 967K 令牌，而不是大约 934K"
+  },
+  {
+   "type": "improved",
+   "en": "Changed cross-session peer messages to collapse by default to a one-line `Message from @<sender>: <first line>` preview; Ctrl+O expands the full body",
+   "zh": "更改了跨会话对等消息，默认折叠为单行“来自@<发件人>的消息：<第一行>”预览； Ctrl+O 展开全身"
+  },
+  {
+   "type": "improved",
+   "en": "Changed terminal hyperlinks in rendered markdown: link targets that point at a network or automounter path, contain a control character, or lead with an invisible character now render as plain text",
+   "zh": "更改了呈现的 Markdown 中的终端超链接：指向网络或自动安装程序路径、包含控制字符或带有不可见字符的引导的链接目标现在呈现为纯文本"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the prompt-footer PR badge to skip its GitHub re-check on terminal refocus when the last check is under a minute old",
+   "zh": "更改了提示页脚 PR 徽章，以在最后一次检查不到一分钟时跳过终端重新聚焦时的 GitHub 重新检查"
+  },
+  {
+   "type": "improved",
+   "en": "Changed analytics to stay off from startup, not only after login, when managed settings force gateway login or a custom OAuth deployment is configured",
+   "zh": "更改了分析以阻止启动，不仅是在登录后，当托管设置强制网关登录或配置自定义 OAuth 部署时"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Claude apps gateway sign-in requests to identify Claude Code (a `surface=claude_code` device-authorization parameter and a `claude-code/<version>` User-Agent)",
+   "zh": "更改了 Claude 应用程序网关登录请求以识别 Claude Code（`surface=claude_code`设备授权参数和`claude-code/<version>`用户代理）"
+  },
+  {
+   "type": "improved",
+   "en": "Changed organization sign-in enforcement to exit at start when the administrator's managed settings cannot be read, even if host-supplied or per-user Windows registry settings exist",
+   "zh": "将组织登录强制更改为在无法读取管理员的托管设置时在启动时退出，即使存在主机提供的或每用户的 Windows 注册表设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fast arrow-key + Enter sequences acting on the row above the one you navigated to in history search, `/config`, `/mcp`, `/skills`, background tasks, and `/model`",
+   "zh": "修复了快速箭头键 + 输入序列作用于您在历史搜索中导航到的行上方的行、`/config`、`/mcp`、`/skills`、后台任务和`/model`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sub-agents dying on a first-call model 404: they now use the session's fallback model chain, and the error returned to the parent includes the error type, status, request id, and model",
+   "zh": "修复了子代理因首次调用模型 404 而死亡的问题：它们现在使用会话的后备模型链，并且返回给父级的错误包括错误类型、状态、请求 ID 和模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hook or background agent that printed megabytes of error output being able to overflow the conversation and wedge the session on \"Prompt is too long\"",
+   "zh": "修复了打印兆字节错误输出的挂钩或后台代理，能够溢出对话并将会话楔入“提示太长”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl keyboard shortcuts not firing under non-Latin (e.g. Cyrillic) keyboard layouts in kitty-protocol terminals",
+   "zh": "修复了 Ctrl 键盘快捷键在 kitty 协议终端中的非拉丁语（例如西里尔语）键盘布局下不触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed text like `<35;150;7M` being inserted into the prompt when a mouse report arrived split across reads right after the escape prefix",
+   "zh": "修复鼠标报告在转义前缀之后被分段读取时，类似 `<35;150;7M` 的文本被插入提示框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Bash sandbox's after-command cleanup deleting a dotfile-managed `~/.claude/settings.json` symlink (nix/home-manager, stow) when it is repointed outside the sandbox's writable area",
+   "zh": "修复了 Bash 沙箱的命令后清理，当它被重新指向沙箱的可写区域之外时，会删除点文件管理的`~/.claude/settings.json`符号链接（nix/home-manager，stow）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/terminal-setup` overwriting your entire Zed `keymap.json` instead of merging in its keybinding",
+   "zh": "修复了`/terminal-setup`覆盖整个 Zed`keymap.json`而不是合并到其键绑定中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/rename` silently confirming when the session registry could not be updated; it now says other sessions may still show the old name",
+   "zh": "修复了会话注册表无法更新时以静默方式确认的`/rename`；现在它说其他会话可能仍显示旧名称"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/compact` and \"Summarize from here\" in sessions started with `--agent` summarizing under the default system prompt instead of the conversation's own",
+   "zh": "修复了以`--agent`开始的会话中的`/compact`和“从这里总结”，在默认系统提示下而不是对话自己的提示下进行总结"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a background session showing \"opening…\" forever in `claude agents` after its terminal host process died; the row now fails within seconds with the reason, and Enter restarts it",
+   "zh": "修复了终端主机进程死亡后，后台会话在“claude Agents”中永远显示“正在打开...”的问题；该行现在会在几秒钟内失败并显示原因，然后按 Enter 重新启动它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded memory growth when a hook's or background task's output file could not be written; the file now notes where output was lost",
+   "zh": "修复钩子或后台任务的输出文件无法写入时内存无限增长的问题；现在该文件会注明输出在何处丢失"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/install-github-app` over SSH: the copy shortcut now says how the sign-in URL was copied instead of always claiming success, and the URL appears immediately when no browser can open",
+   "zh": "通过 SSH 修复了`/install-github-app`：复制快捷方式现在显示如何复制登录 URL，而不是始终声明成功，并且当没有浏览器可以打开时，该 URL 会立即出现"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell commands carried over from the foreground logging an internal error or showing a misleading `[exited with code -1]` line when they finish in background sessions",
+   "zh": "修复了从前台继承的 shell 命令，记录内部错误或在后台会话中完成时显示误导性的`[exited with code -1]`行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a version-less marketplace plugin's live cache directory being deleted and recreated on a second-scope install, which could disrupt a running session using it",
+   "zh": "修复了无版本市场插件的实时缓存目录被删除并在第二范围安装上重新创建的问题，这可能会中断使用它的正在运行的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions started with `/remote-control` not reporting the working-tree diff to connected clients",
+   "zh": "修复了以`/remote-control`启动的远程控制会话不向连接的客户端报告工作树差异的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed self-hosted runner sessions reporting `running` before Claude Code had started, which could trigger a premature \"Claude is waiting for your input\" notification from the Claude desktop app",
+   "zh": "修复了在 Claude Code 启动之前自托管的运行器会话报告“正在运行”的问题，这可能会触发来自 Claude 桌面应用程序的过早“Claude 正在等待您的输入”通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed first-run setup exiting with \"Unable to connect to Anthropic services\" when managed settings configure Claude apps gateway sign-in and Anthropic endpoints are unreachable",
+   "zh": "修复了当托管设置配置 Claude 应用程序网关登录且 Anthropic 端点无法访问时，首次运行设置会退出并显示“无法连接到 Anthropic 服务”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions (Claude Code on the web, desktop and mobile apps) sometimes showing the previous permission mode when you switch modes right after sending a message",
+   "zh": "修复了当您在发送消息后立即切换模式时，云会话（Web、桌面和移动应用程序上的 Claude Code）有时会显示之前的权限模式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions going silent when the session's container restarts between turns while a background agent, shell, or monitor is still running — the resumed session now reports the lost work",
+   "zh": "修复了当会话的容器在轮次之间重新启动而后台代理、shell 或监视器仍在运行时，云会话会变得静默的问题 — 恢复的会话现在会报告丢失的工作"
+  }
+ ]
+}

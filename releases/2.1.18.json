@@ -1,0 +1,16 @@
+{
+ "version": "2.1.18",
+ "date": "2026-01-22",
+ "published": "2026-01-22T22:44:46.204Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.18",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added customizable keyboard shortcuts. Configure keybindings per context, create chord sequences, and personalize your workflow. Run `/keybindings` to get started. Learn more at https://code.claude.com/docs/en/keybindings",
+   "zh": "添加了可自定义的键盘快捷键。根据上下文配置键绑定、创建和弦序列并个性化您的工作流程。运行`/keybindings`即可开始。了解更多信息，请访问 https://code.claude.com/docs/en/keybindings"
+  }
+ ]
+}

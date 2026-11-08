@@ -1,0 +1,32 @@
+{
+ "version": "2.0.22",
+ "date": "2025-10-17",
+ "published": "2025-10-17T21:40:29.277Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.22",
+ "counts": {
+  "new": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "IDE: Add toggle to enable/disable thinking.",
+   "zh": "IDE：新增开关，可开启或关闭 thinking"
+  },
+  {
+   "type": "new",
+   "en": "Add support for enterprise managed MCP allowlist and denylist",
+   "zh": "添加对企业管理的 MCP 允许列表和拒绝列表的支持"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed content layout shift when scrolling through slash commands",
+   "zh": "修复了滚动斜杠命令时内容布局发生变化的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix bug causing duplicate permission prompts with parallel tool calls",
+   "zh": "修复导致并行工具调用重复权限提示的错误"
+  }
+ ]
+}

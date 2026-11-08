@@ -1,0 +1,16 @@
+{
+ "version": "1.0.72",
+ "date": "2025-08-08",
+ "published": "2025-08-08T17:55:21.349Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.72",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Ask permissions: have Claude Code always ask for confirmation to use specific tools with /permissions",
+   "zh": "询问权限：让 Claude Code 始终要求确认使用具有 /permissions 的特定工具"
+  }
+ ]
+}

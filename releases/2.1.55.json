@@ -1,0 +1,16 @@
+{
+ "version": "2.1.55",
+ "date": "2026-02-25",
+ "published": "2026-02-25T02:42:12.579Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.55",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed BashTool failing on Windows with EINVAL error",
+   "zh": "修复了 BashTool 在 Windows 上失败并出现 EINVAL 错误的问题"
+  }
+ ]
+}

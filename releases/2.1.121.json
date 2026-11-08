@@ -1,0 +1,208 @@
+{
+ "version": "2.1.121",
+ "date": "2026-04-27",
+ "published": "2026-04-27T19:39:46.659Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.121",
+ "counts": {
+  "new": 7,
+  "improved": 11,
+  "fixed": 21
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `alwaysLoad` option to MCP server config — when `true`, all tools from that server skip tool-search deferral and are always available",
+   "zh": "在 MCP 服务器配置中添加了`alwaysLoad`选项 - 当`true`时，该服务器中的所有工具都会跳过工具搜索延迟并始终可用"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude plugin prune` to remove orphaned auto-installed plugin dependencies; `plugin uninstall --prune` cascades",
+   "zh": "添加了`claude plugin prune`以删除孤立的自动安装插件依赖项； `插件卸载 --prune` 级联"
+  },
+  {
+   "type": "new",
+   "en": "Added a type-to-filter search box to `/skills` so you can find a skill in long lists without scrolling",
+   "zh": "在`/skills`中添加了一个类型过滤搜索框，这样您就可以在长列表中找到技能而无需滚动"
+  },
+  {
+   "type": "new",
+   "en": "PostToolUse hooks can now replace tool output for all tools via `hookSpecificOutput.updatedToolOutput` (previously MCP-only)",
+   "zh": "PostToolUse hook 现在可以通过 `hookSpecificOutput.updatedToolOutput` 替换所有工具的输出（之前只支持 MCP 工具）"
+  },
+  {
+   "type": "new",
+   "en": "Vertex AI: support X.509 certificate-based Workload Identity Federation (mTLS ADC)",
+   "zh": "Vertex AI：支持基于 X.509 证书的工作负载身份联合（mTLS ADC）"
+  },
+  {
+   "type": "new",
+   "en": "SDK: `mcp_authenticate` now supports `redirectUri` for custom scheme completion and claude.ai connectors",
+   "zh": "SDK：`mcp_authenticate` 现在支持 `redirectUri`，用于自定义协议完成认证以及 claude.ai 连接器"
+  },
+  {
+   "type": "new",
+   "en": "OpenTelemetry: added `stop_reason`, `gen_ai.response.finish_reasons`, and `user_system_prompt` (gated behind `OTEL_LOG_USER_PROMPTS`) to LLM request spans",
+   "zh": "OpenTelemetry：LLM 请求 span 中新增 `stop_reason`、`gen_ai.response.finish_reasons` 和 `user_system_prompt`（后者需设置 `OTEL_LOG_USER_PROMPTS` 才会记录）"
+  },
+  {
+   "type": "improved",
+   "en": "Dialogs that overflow the terminal are now scrollable with arrow keys, PgUp/PgDn, home/end, and mouse wheel in both fullscreen and non-fullscreen modes",
+   "zh": "现在，在全屏和非全屏模式下，可以使用箭头键、PgUp/PgDn、home/end 和鼠标滚轮滚动溢出终端的对话框"
+  },
+  {
+   "type": "improved",
+   "en": "Clicking any line of a long URL that wraps across rows in fullscreen mode now opens the full URL",
+   "zh": "现在，单击在全屏模式下跨行换行的长 URL 的任何行都会打开完整 URL"
+  },
+  {
+   "type": "improved",
+   "en": "`--dangerously-skip-permissions` no longer prompts for writes to `.claude/skills/`, `.claude/agents/`, and `.claude/commands/`",
+   "zh": "`--dangerously-skip-permissions` 不再对写入 `.claude/skills/`、`.claude/agents/` 和 `.claude/commands/` 进行提示"
+  },
+  {
+   "type": "improved",
+   "en": "`/terminal-setup` now enables iTerm2's \"Applications in terminal may access clipboard\" setting so `/copy` works, including from tmux",
+   "zh": "`/terminal-setup` 现在会开启 iTerm2 的 \"Applications in terminal may access clipboard\" 设置，使 `/copy` 可用，包括在 tmux 中"
+  },
+  {
+   "type": "improved",
+   "en": "MCP servers that hit a transient error during startup now auto-retry up to 3 times instead of staying disconnected",
+   "zh": "启动时遇到暂时性错误的 MCP 服务器，现在会自动重试最多 3 次，而不是一直保持断开"
+  },
+  {
+   "type": "improved",
+   "en": "The terminal tab session title is now generated in your configured `language` setting",
+   "zh": "终端标签页的会话标题现在使用你配置的 `language` 设置生成"
+  },
+  {
+   "type": "improved",
+   "en": "Faster startup after upgrading: removed the Recent Activity panel from the release-notes splash",
+   "zh": "升级后启动速度更快：从发行说明启动中删除了“最近的活动”面板"
+  },
+  {
+   "type": "improved",
+   "en": "LSP diagnostic summaries now expand on click/ctrl+o and show the expand hint",
+   "zh": "LSP 诊断摘要现在可以点击或按 ctrl+o 展开，并显示展开提示"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Voice dictation now respects the `accessibility.voice.speechLanguage` setting when no Claude Code language is configured",
+   "zh": "[VSCode] 未配置 Claude Code 语言时，语音听写现在会遵循 `accessibility.voice.speechLanguage` 设置"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] `/context` now opens a native token usage dialog",
+   "zh": "[VSCode] `/context` 现在会打开原生的 token 用量对话框"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced peak file descriptor usage during `find` in the Bash tool on large directory trees",
+   "zh": "在大目录树上使用 Bash 工具运行 `find` 时，文件描述符峰值用量降低"
+  },
+  {
+   "type": "fixed",
+   "en": "Fullscreen mode: typing into the prompt no longer jumps scroll back to the bottom after you've scrolled up to read earlier output",
+   "zh": "全屏模式：向上滚动阅读历史输出后，在输入框打字不再把滚动位置跳回底部"
+  },
+  {
+   "type": "fixed",
+   "en": "SDK and `claude -p`: `CLAUDE_CODE_FORK_SUBAGENT=1` now works in non-interactive sessions",
+   "zh": "SDK 和 `claude -p`：`CLAUDE_CODE_FORK_SUBAGENT=1` 现在可在非交互式会话中使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Claude.ai connectors with the same upstream URL are now deduplicated instead of appearing as duplicates",
+   "zh": "具有相同上游 URL 的 Claude.ai 连接器现在已进行重复数据删除，而不是显示为重复项"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded memory growth (multi-GB RSS) when processing many images in a session",
+   "zh": "修复会话中处理大量图片时，内存无限增长（RSS 达数 GB）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` leaking up to ~2GB of memory on machines with large transcript histories",
+   "zh": "修复了在具有大量转录历史记录的计算机上`/usage`泄漏高达约 2GB 内存的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak when long-running tools fail to emit a clear progress event",
+   "zh": "修复了长时间运行的工具无法发出清晰的进度事件时的内存泄漏问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool becoming permanently unusable when the directory Claude was started in is deleted or moved mid-session",
+   "zh": "修复了当 Claude 启动目录在会话中被删除或移动时 Bash 工具永久无法使用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` crashing on startup in external builds",
+   "zh": "修复了外部构建中启动时`--resume`崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` failing on large sessions when a transcript line was corrupted by an unclean shutdown — the corrupt line is now skipped",
+   "zh": "修复了当转录行因不干净的关闭而损坏时`--resume`在大型会话中失败的问题 - 现在会跳过损坏的行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `thinking.type.enabled is not supported` error when using Bedrock application inference profile ARNs",
+   "zh": "修复了使用 Bedrock 应用程序推理配置文件 ARN 时的“不支持thinking.type.enabled”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Microsoft 365 MCP OAuth failing with duplicate or unsupported `prompt` parameter",
+   "zh": "修复了 Microsoft 365 MCP OAuth 因重复或不受支持的“提示”参数而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrollback duplication when pressing Ctrl+L or triggering a redraw in non-fullscreen mode on tmux, GNOME Terminal, Windows Terminal, and Konsole",
+   "zh": "修复了在 tmux、GNOME 终端、Windows 终端和 Konsole 上按 Ctrl+L 或在非全屏模式下触发重绘时的回滚重复问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed claude.ai MCP connectors silently disappearing when the connector-list fetch hits a transient auth error at startup",
+   "zh": "修复了当连接器列表获取在启动时遇到暂时性身份验证错误时 claude.ai MCP 连接器默默消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Always allow\" rules for built-in tools in remote sessions not surviving worker restarts",
+   "zh": "修复了远程会话中内置工具的“始终允许”规则在工作进程重新启动后无法幸存的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `NO_PROXY` not being respected for all HTTP clients when set via `managed-settings.json` under the native build",
+   "zh": "修复了在本机构建下通过`managed-settings.json`设置时所有 HTTP 客户端都不会遵守`NO_PROXY`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed settings approval prompt exiting the session even when accepted — now applies settings and continues",
+   "zh": "修复了托管设置批准提示即使在接受时也会退出会话的问题 - 现在应用设置并继续"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` returning \"rate limited\" after a stale OAuth token — now refreshes automatically",
+   "zh": "修复了`/usage`在过时的 OAuth 令牌后返回“速率受限”的问题 - 现在会自动刷新"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed invalid legacy enum values in `settings.json` invalidating the entire settings file",
+   "zh": "修复了`settings.json`中无效的旧枚举值，导致整个设置文件无效"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` dialog content being clipped when no-flicker mode is off",
+   "zh": "修复了无闪烁模式关闭时`/usage`对话框内容被剪辑的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/focus` showing \"Unknown command\" when the fullscreen renderer is off — now explains how to enable it",
+   "zh": "修复了当全屏渲染器关闭时`/focus`显示“未知命令”的问题 - 现在解释了如何启用它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed embedded grep/find/rg shell wrappers failing when the running binary is deleted mid-session — now falls back to installed tools",
+   "zh": "修复了在会话中删除正在运行的二进制文件时嵌入式 grep/find/rg shell 包装器失败的问题 - 现在回退到已安装的工具"
+  }
+ ]
+}

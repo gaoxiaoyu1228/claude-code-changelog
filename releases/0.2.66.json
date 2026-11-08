@@ -1,0 +1,22 @@
+{
+ "version": "0.2.66",
+ "date": "2025-04-09",
+ "published": "2025-04-09T00:04:46.906Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.66",
+ "counts": {
+  "new": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Print mode (-p) now supports streaming output via --output-format=stream-json",
+   "zh": "打印模式（`-p`）现在支持通过 `--output-format=stream-json` 流式输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed issue where pasting could trigger memory or bash mode unexpectedly",
+   "zh": "修复了粘贴可能意外触发内存或 bash 模式的问题"
+  }
+ ]
+}

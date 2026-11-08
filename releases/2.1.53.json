@@ -1,0 +1,51 @@
+{
+ "version": "2.1.53",
+ "date": "2026-02-24",
+ "published": "2026-02-24T22:44:13.059Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.53",
+ "counts": {
+  "fixed": 8
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a UI flicker where user input would briefly disappear after submission before the message rendered",
+   "zh": "修复了用户输入在提交后、消息渲染之前会短暂消失的 UI 闪烁问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bulk agent kill (ctrl+f) to send a single aggregate notification instead of one per agent, and to properly clear the command queue",
+   "zh": "修复了批量代理终止（ctrl+f）以发送单个聚合通知而不是每个代理一个，并正确清除命令队列"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed graceful shutdown sometimes leaving stale sessions when using Remote Control by parallelizing teardown network calls",
+   "zh": "通过并行拆卸网络调用，修复了使用远程控制时有时会留下陈旧会话的正常关闭问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--worktree` sometimes being ignored on first launch",
+   "zh": "修复了首次启动时有时会忽略`--worktree`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a panic (\"switch on corrupted value\") on Windows",
+   "zh": "修复了 Windows 上的恐慌（“打开损坏的值”）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash that could occur when spawning many processes on Windows",
+   "zh": "修复了在 Windows 上生成多个进程时可能发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash in the WebAssembly interpreter on Linux x64 & Windows x64",
+   "zh": "修复了 Linux x64 和 Windows x64 上的 WebAssembly 解释器崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash that sometimes occurred after 2 minutes on Windows ARM64",
+   "zh": "修复了 Windows ARM64 上有时 2 分钟后发生的崩溃"
+  }
+ ]
+}

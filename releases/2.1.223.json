@@ -1,0 +1,108 @@
+{
+ "version": "2.1.223",
+ "date": "2026-08-05",
+ "published": "2026-08-05T22:51:13.206Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.223",
+ "counts": {
+  "new": 3,
+  "improved": 4,
+  "fixed": 12
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added owner wildcard entries (`\"owner/*\"`) to the `strictKnownMarketplaces` and `blockedMarketplaces` managed settings for allowing or blocking all marketplace repos under a GitHub org",
+   "zh": "将所有者通配符条目（“owner/*”）添加到`strictKnownMarketplaces`和`blockedMarketplaces`托管设置中，以允许或阻止 GitHub 组织下的所有市场存储库"
+  },
+  {
+   "type": "new",
+   "en": "Added a warning when workflow agents, forked skills, slash commands, or resumed background agents' requested subagent model is restricted and the parent model runs instead",
+   "zh": "添加了当工作流代理、分叉技能、斜线命令或恢复的后台代理请求的子代理模型受到限制而运行父模型时的警告"
+  },
+  {
+   "type": "new",
+   "en": "Added a `/teleport` hint in cloud sessions showing how to continue locally with `claude --teleport <session id>`",
+   "zh": "在云会话中添加了`/teleport`提示，显示如何使用`claude --teleport <session id>`在本地继续"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `CLAUDE_CODE_DISABLE_1M_CONTEXT` to hold every Claude model with a native 1M window to 200K via auto-compaction, not just a fixed list; a startup warning now appears when auto-compaction isn't holding the session to 200K",
+   "zh": "更改了`CLAUDE_CODE_DISABLE_1M_CONTEXT`，以通过自动压缩将具有本机 1M 窗口的每个 Claude 模型保存到 200K，而不仅仅是固定列表；当自动压缩未将会话保持在 200K 时，现在会出现启动警告"
+  },
+  {
+   "type": "improved",
+   "en": "Changed auto-compact to keep sessions on unrecognized model IDs within the assumed context window instead of letting them grow past it; set `CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT=1` to restore the previous behavior",
+   "zh": "更改了自动压缩，以将无法识别的模型 ID 上的会话保留在假定的上下文窗口内，而不是让它们增长超过它；设置“CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCMENT=1”以恢复之前的行为"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/review` to be an alias of `/code-review`, which reviews the current diff or a PR (`/code-review <level> <pr#>`); use `/code-review ultra` for a deep cloud review",
+   "zh": "将 `/review` 更改为 `/code-review` 的别名，用于审查当前差异或 PR (`/code-review <level> <pr#>`)；使用`/code-review ultra`进行深度云审查"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/code-review` with no effort level to reuse the level you typed last; type a level like `/code-review high` to change it",
+   "zh": "更改了`/code-review`，无需费力即可重用您上次输入的级别；输入`/code-review high`之类的级别来更改它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Bash permission bypass where a crafted command could hide parts of itself from permission checks",
+   "zh": "修复了 Bash 权限绕过问题，其中精心设计的命令可能会隐藏其部分内容以防止权限检查"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission prompts so commands padded with tabs or invisible Unicode can no longer hide part of the command from the approval dialog",
+   "zh": "修复了权限提示，因此用选项卡或不可见 Unicode 填充的命令无法再在批准对话框中隐藏部分命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed workflow scripts being able to use dynamic `import()` to run code outside the workflow sandbox",
+   "zh": "修复工作流脚本可以使用动态 `import()` 在工作流沙盒之外运行代码的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a permission gap where an agent definition's `bypassPermissions` mode ignored the org bypass-permissions disable policy",
+   "zh": "修复了代理定义的`bypassPermissions`模式忽略组织旁路权限禁用策略的权限差距"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a session after a mid-session `/cd` coming back empty",
+   "zh": "修复了会话中`/cd`返回空后恢复会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed gateway model discovery hiding Claude models registered under provider-prefixed IDs such as `vertex_ai/claude-*` or `bedrock/anthropic.claude-*`",
+   "zh": "修复了网关模型发现隐藏在提供商前缀 ID（例如`vertex_ai/claude-*`或`bedrock/anthropic.claude-*`）下注册的 Claude 模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `modelOverrides` keys that aren't Anthropic model IDs being treated as the session's canonical model ID; unknown keys are now ignored as documented",
+   "zh": "修复了非 Anthropic 模型 ID 的`modelOverrides`键被视为会话的规范模型 ID 的问题；正如记录的那样，未知的键现在被忽略"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed settings: server-delivered settings no longer disable the env block of a machine-local `managed-settings.json` or MDM profile; admin env now merges per key",
+   "zh": "修复了托管设置：服务器提供的设置不再禁用计算机本地`managed-settings.json`或 MDM 配置文件的 env 块；管理环境现在按键合并"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandboxed commands failing to start on Linux when `sandbox.filesystem.denyWrite` covers the working directory",
+   "zh": "修复了当`sandbox.filesystem.denyWrite`覆盖工作目录时沙盒命令无法在 Linux 上启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed forked background agents getting stuck \"already resuming\" for the rest of the session when rebuilding the fork's parent prompt failed during resume",
+   "zh": "修复了在恢复期间重建分叉的父提示失败时，分叉的后台代理在会话的其余部分中陷入“已恢复”状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a resumed session failing every turn, or leaving the interactive app on an unresponsive error screen, when its history held a malformed diagnostics attachment",
+   "zh": "修复了当其历史记录包含格式错误的诊断附件时，恢复的会话每次都会失败，或者使交互式应用程序处于无响应的错误屏幕上的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare hang when parsing unusual `git push` output",
+   "zh": "修复了解析异常“git Push”输出时罕见的挂起问题"
+  }
+ ]
+}

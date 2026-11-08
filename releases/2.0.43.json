@@ -1,0 +1,52 @@
+{
+ "version": "2.0.43",
+ "date": "2025-11-17",
+ "published": "2025-11-17T22:19:17.451Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.43",
+ "counts": {
+  "new": 4,
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `permissionMode` field for custom agents",
+   "zh": "为自定义代理添加了`permissionMode`字段"
+  },
+  {
+   "type": "new",
+   "en": "Added `tool_use_id` field to `PreToolUseHookInput` and `PostToolUseHookInput` types",
+   "zh": "将`tool_use_id`字段添加到`PreToolUseHookInput`和`PostToolUseHookInput`类型"
+  },
+  {
+   "type": "new",
+   "en": "Added skills frontmatter field to declare skills to auto-load for subagents",
+   "zh": "添加了技能 frontmatter 字段来声明为子代理自动加载的技能"
+  },
+  {
+   "type": "new",
+   "en": "Added the `SubagentStart` hook event",
+   "zh": "添加了`SubagentStart`挂钩事件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed nested `CLAUDE.md` files not loading when @-mentioning files",
+   "zh": "修复了@提及文件时未加载嵌套的`CLAUDE.md`文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate rendering of some messages in the UI",
+   "zh": "修复了 UI 中某些消息的重复渲染"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed some visual flickers",
+   "zh": "修复了一些视觉闪烁问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed NotebookEdit tool inserting cells at incorrect positions when cell IDs matched the pattern `cell-N`",
+   "zh": "修复了当单元格 ID 与模式`cell-N`匹配时，NotebookEdit 工具在不正确的位置插入单元格的问题"
+  }
+ ]
+}

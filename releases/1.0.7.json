@@ -1,0 +1,43 @@
+{
+ "version": "1.0.7",
+ "date": "2025-05-30",
+ "published": "2025-05-30T16:29:49.709Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.7",
+ "counts": {
+  "improved": 3,
+  "fixed": 2,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Renamed /allowed-tools -> /permissions",
+   "zh": "`/allowed-tools` 改名为 `/permissions`"
+  },
+  {
+   "type": "improved",
+   "en": "Migrated allowedTools and ignorePatterns from .claude.json -> settings.json",
+   "zh": "将 `allowedTools` 和 `ignorePatterns` 从 .claude.json 迁移到 settings.json"
+  },
+  {
+   "type": "improved",
+   "en": "Improved error handling for /install-github-app",
+   "zh": "改进 `/install-github-app` 的错误处理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where --dangerously-skip-permissions sometimes didn't work in --print mode",
+   "zh": "修复了 --dangerously-skip-permissions 有时在 --print 模式下不起作用的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Bugfixes, UI polish, and tool reliability improvements",
+   "zh": "错误修复、UI 优化和工具可靠性改进"
+  },
+  {
+   "type": "removed",
+   "en": "Deprecated claude config commands in favor of editing settings.json",
+   "zh": "已弃用 claude 配置命令，改为编辑 settings.json"
+  }
+ ]
+}

@@ -1,0 +1,243 @@
+{
+ "version": "2.1.208",
+ "date": "2026-07-13",
+ "published": "2026-07-13T21:31:27.921Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.208",
+ "counts": {
+  "new": 4,
+  "improved": 12,
+  "fixed": 30
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added screen reader mode: opt-in plain-text rendering for screen reader users. Run `claude --ax-screen-reader`, set CLAUDE_AX_SCREEN_READER=1, or add \"axScreenReader\": true to settings.",
+   "zh": "添加了屏幕阅读器模式：为屏幕阅读器用户选择纯文本渲染。运行 `claude --ax-screen-reader`，设置 CLAUDE_AX_SCREEN_READER=1，或将 \"axScreenReader\": true 添加到设置中。"
+  },
+  {
+   "type": "new",
+   "en": "Added `vimInsertModeRemaps` setting: map two-key insert-mode sequences like `jj` to Escape in vim mode",
+   "zh": "添加了 `vimInsertModeRemaps` 设置：将像 `jj` 这样的两键插入模式序列映射到 vim 模式下的 Escape"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_PROCESS_WRAPPER`: agent view and the background service now honor a corporate launcher by running every Claude Code self-spawn through a required wrapper executable",
+   "zh": "添加了`CLAUDE_CODE_PROCESS_WRAPPER`：代理视图和后台服务现在通过所需的包装器可执行文件运行每个克劳德代码自生成，从而支持企业启动器"
+  },
+  {
+   "type": "new",
+   "en": "Added mouse-click support for multi-select menus and \"Other\" input rows in fullscreen mode",
+   "zh": "添加了对全屏模式下多选菜单和“其他”输入行的鼠标单击支持"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the Fable 5 usage-credits consent prompt to start with the decline option focused",
+   "zh": "将《神鬼寓言 5》使用积分同意提示更改为以拒绝选项为重点"
+  },
+  {
+   "type": "improved",
+   "en": "Improved input responsiveness while agent task lists update — task updates no longer re-render the entire UI",
+   "zh": "改进 agent 任务列表更新时的输入响应：任务更新不再重新渲染整个界面"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced per-tool-call CPU overhead in print/SDK sessions with many MCP tools by caching tool-pool assembly (up to 7x faster tool rounds at high tool counts)",
+   "zh": "在有大量 MCP 工具的 print/SDK 会话中，通过缓存工具池的组装，每次工具调用的 CPU 开销降低（工具数很多时，工具轮次最多快 7 倍）"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced memory usage by bounding the file edit read cache to 16 MB instead of pinning up to 1,000 full files",
+   "zh": "文件编辑读取缓存上限设为 16 MB，不再最多占住 1000 个完整文件，内存占用降低"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced session transcript size (up to 79x in edit-heavy sessions) and bounded checkpoint disk usage by pruning superseded file-history backups",
+   "zh": "通过清理已被替代的文件历史备份，会话记录体积减小（编辑较多的会话最多减小 79 倍），检查点的磁盘占用也设了上限"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced memory usage when resuming sessions with background agents or forks spawned from large conversations",
+   "zh": "恢复带有后台代理或从大型对话派生出的分支的会话时，内存占用降低"
+  },
+  {
+   "type": "improved",
+   "en": "Completed background agents now stay listed in `/tasks` until cleanup instead of vanishing the moment they finish",
+   "zh": "已完成的后台代理现在会保留在`/tasks`中，直到清理，而不是在完成后立即消失"
+  },
+  {
+   "type": "improved",
+   "en": "Attaching to a stopped background agent now shows its transcript immediately while the session warms up, instead of a blank \"Session is starting\" screen",
+   "zh": "现在，连接到已停止的后台代理会在会话预热时立即显示其脚本，而不是空白的“会话正在启动”屏幕"
+  },
+  {
+   "type": "improved",
+   "en": "Catastrophic removals (e.g. `rm -rf ~`) in commands containing `$(…)`/backticks/`<(…)` now prompt in `--dangerously-skip-permissions` and auto mode, matching the plain form",
+   "zh": "包含`$(…)`/反引号/`<(…)`的命令中的灾难性删除（例如`rm -rf ~`）现在会在`--dangerously-skip-permissions`和自动模式下提示，与普通形式匹配"
+  },
+  {
+   "type": "improved",
+   "en": "`/install-github-app` and the `/mcp` settings menu no longer open in background sessions",
+   "zh": "`/install-github-app` 和 `/mcp` 设置菜单不再在后台会话中打开"
+  },
+  {
+   "type": "improved",
+   "en": "MCP servers configured with an empty URL now show as \"not configured\" in `/mcp` instead of a config error",
+   "zh": "配置了空 URL 的 MCP 服务器现在在 `/mcp` 中显示为「未配置」，而不是配置错误"
+  },
+  {
+   "type": "improved",
+   "en": "`/usage` now shows your last-known usage bars with an \"as of\" note when the usage endpoint is rate-limited, instead of an error screen",
+   "zh": "当用量接口被限速时，`/usage` 现在会显示最近一次已知的用量进度条并附带 \"as of\" 说明，而不再显示错误界面"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fast mode staying off after switching back to a model that supports it — it now restores automatically when enabled in settings",
+   "zh": "修复了切换回支持快速模式后保持关闭状态的问题 - 现在在设置中启用后会自动恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed replies typed to a background agent being lost when delivery fails — the text is now saved and delivered when the session restarts",
+   "zh": "修复了在传递失败时输入给后台代理的回复丢失的问题 - 现在，文本会在会话重新启动时保存并传递"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-session attach failing permanently (\"Couldn't start the background daemon\") after an update replaced the binary a running `claude agents` process was launched from",
+   "zh": "修复了更新替换二进制文件后，后台会话附加永久失败（“无法启动后台守护进程”）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the context window (and auto-compact indicator) briefly resetting to 200k after the CLI auto-updates, causing a false \"100% context used\" when resuming long-context sessions",
+   "zh": "修复 CLI 自动更新后，上下文窗口（及自动压缩指示器）短暂重置为 200k，导致恢复长上下文会话时误报\"100% context used\"的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed supervised and background sessions crashing when a server closed an HTTP/2 connection with a GOAWAY while requests were in flight",
+   "zh": "修复了当请求正在进行时服务器关闭带有 GOAWAY 的 HTTP/2 连接时受监督和后台会话崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed truncated stream-json/JSON output and missing result message when piping large responses from `claude -p`",
+   "zh": "修复 `claude -p` 通过管道输出大型回复时，stream-json/JSON 输出被截断、缺少结果消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_MAX_OUTPUT_TOKENS` and similar env vars silently using the mantissa of scientific-notation values (`1e6` became `1`)",
+   "zh": "使用科学记数法值的尾数静默修复了`CLAUDE_CODE_MAX_OUTPUT_TOKENS`和类似的环境变量（`1e6`变为`1`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed very large markdown tables stalling rendering or using excessive memory; tables over 200 rows show the first 200 with a \"… N more rows\" notice",
+   "zh": "修复超大 Markdown 表格导致渲染停滞或占用过多内存的问题；超过 200 行的表格现在只显示前 200 行，并附带\"… N more rows\"提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Edit tool failing on files modified after reading when the target text still matches uniquely",
+   "zh": "修复 Edit 工具在文件读取后又被修改时编辑失败、但目标文本仍唯一匹配的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Read reporting empty files as \"shorter than offset\", Grep silently returning \"No files found\" for invalid regex patterns, Grep count mode under-reporting totals when paginated, and Glob crashing with an unclear error when the pattern, path, or working directory contained a null byte",
+   "zh": "修复了 Read 将空文件报告为“短于偏移量”、Grep 对于无效的正则表达式模式默默地返回“未找到文件”、Grep 计数模式在分页时报告总数不足以及当模式、路径或工作目录包含空字节时 Glob 因不清楚错误而崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `apiKeyHelper` script failures being hidden behind a generic 401 after ~10 silent retries; the script's own error is now shown within 3 attempts",
+   "zh": "修复了大约 10 次静默重试后隐藏在通用 401 后面的`apiKeyHelper`脚本故障；脚本自身的错误现在会在 3 次尝试内显示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock streaming requests failing with a misleading \"Truncated event message received\" when a gateway transforms the response — the error now names the content-type and points at the proxy",
+   "zh": "修复了当网关转换响应时基岩流请求失败并出现误导性的“已收到截断的事件消息”的问题 — 该错误现在命名内容类型并指向代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/upgrade` showing a login flow instead of the upgrade URL when the browser fails to open",
+   "zh": "修复了浏览器无法打开时显示登录流程而不是升级 URL 的`/upgrade`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stream-json input killing the session on blank CRLF or whitespace-only lines from Windows-style SDK hosts",
+   "zh": "修复了 Windows 风格 SDK 主机中的流 json 输入终止空白 CRLF 或仅空白行上的会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed headless stream-json sessions hanging permanently when a `control_request` carried a non-string `set_model` payload; the CLI now answers with an error response",
+   "zh": "修复了当`control_request`携带非字符串`set_model`负载时无头stream-json会话永久挂起的问题； CLI 现在给出错误响应"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed repeated \"No completion record was found\" notices on session resume — orphaned background tasks now collapse into a single summary",
+   "zh": "修复了会话恢复时重复出现的“未找到完成记录”通知 — 孤立的后台任务现在折叠为单个摘要"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control clients attaching to a terminal-hosted session not seeing background agents and workflow progress until a task started or stopped",
+   "zh": "修复了附加到终端托管会话的远程控制客户端在任务启动或停止之前看不到后台代理和工作流程进度的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Agent tool launching with no tools when a subagent's `tools` list resolves to nothing — it now returns a clear error naming the unrecognized entries",
+   "zh": "修复了当子代理的“工具”列表解析为空时，代理工具在没有工具的情况下启动 - 它现在返回一个明确的错误，命名无法识别的条目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` showing stale cached bars over fresher data, and `/mcp` not reclassifying placeholder servers after config edits",
+   "zh": "修复了`/usage`在更新的数据上显示陈旧的缓存栏，以及`/mcp`在配置编辑后不重新分类占位符服务器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Change directory\" in SDK hosts (e.g. Claude Desktop) failing with \"A turn is in progress\" on idle sessions that have a running background task",
+   "zh": "修复了 SDK 主机（例如 Claude Desktop）中的“更改目录”在具有正在运行的后台任务的空闲会话上失败并显示“轮次正在进行中”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the workflow save dialog showing `~/.claude/workflows/` instead of the `CLAUDE_CONFIG_DIR` location for user-scope saves",
+   "zh": "修复用户级保存时，工作流保存对话框显示 `~/.claude/workflows/` 而非 `CLAUDE_CONFIG_DIR` 所指位置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/release-notes` adding the viewed notes to the model's context — \"Show all\" previously injected the entire changelog into every subsequent request",
+   "zh": "修复了`/release-notes`将查看的注释添加到模型上下文中的问题——“显示全部”之前将整个变更日志注入到每个后续请求中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak in the agent view where pasted images were retained for the screen's lifetime after sending peek replies",
+   "zh": "修复了代理视图中的内存泄漏，其中粘贴的图像在发送查看回复后在屏幕的整个生命周期内保留"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK sessions losing agents defined via the initialize request when a plugin refresh ran before the client attached",
+   "zh": "修复了在客户端连接之前运行插件刷新时 SDK 会话丢失通过初始化请求定义的代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several memory leaks in long sessions: MCP stdio server stderr accumulating up to 64 MB per server, LSP documents staying open indefinitely (now LRU with 50-doc cap), async hook output retained after backgrounding, and unbounded growth in headless/SDK sessions from large tool-result payloads",
+   "zh": "修复了长会话中的多个内存泄漏：MCP stdio 服务器 stderr 每台服务器累积高达 64 MB，LSP 文档无限期保持打开状态（现在为 LRU，上限为 50 个文档），后台后保留异步挂钩输出，以及来自大型工具结果负载的无头/SDK 会话无限增长"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory blowup when reading files with extremely long single lines using offset/limit — the read now returns a clean error instead of loading the whole line",
+   "zh": "修复了使用偏移/限制读取具有极长单行的文件时的内存爆炸问题 - 读取现在返回一个干净的错误，而不是加载整行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-second per-turn slowdowns in sessions with many permission deny/ask rules — rule matchers are now compiled once and cached",
+   "zh": "修复了具有许多权限拒绝/询问规则的会话中每回合多秒的减速问题 - 规则匹配器现在编译一次并缓存"
+  },
+  {
+   "type": "fixed",
+   "en": "Background sessions: an older daemon no longer silently restarts workers spawned by a newer version onto the older binary",
+   "zh": "后台会话：旧的守护进程不再默默地将新版本生成的工作进程重新启动到旧二进制文件上"
+  },
+  {
+   "type": "fixed",
+   "en": "Agent view: Ctrl+X now deletes renamed-branch worktrees, never destroys unpushed commits, keeps the session row when a worktree is kept, and reused worktree names reset to the current base",
+   "zh": "代理视图：Ctrl+X 现在删除重命名的分支工作树，从不销毁未推送的提交，在保留工作树时保留会话行，并将重用的工作树名称重置为当前基数"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock auth failing with \"Session token not found or invalid\" for AWS SSO profiles whose sso_region differs from the Bedrock region (2.1.207 regression)",
+   "zh": "修复了 sso_region 与 Bedrock 区域不同的 AWS SSO 配置文件的 Bedrock 身份验证失败并显示“会话令牌未找到或无效”的问题（207 年 1 月回归）"
+  }
+ ]
+}

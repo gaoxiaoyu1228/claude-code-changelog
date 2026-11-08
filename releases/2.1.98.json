@@ -1,0 +1,298 @@
+{
+ "version": "2.1.98",
+ "date": "2026-04-09",
+ "published": "2026-04-09T18:08:49.739Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.98",
+ "counts": {
+  "new": 7,
+  "improved": 12,
+  "fixed": 38
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added interactive Google Vertex AI setup wizard accessible from the login screen when selecting \"3rd-party platform\", guiding you through GCP authentication, project and region configuration, credential verification, and model pinning",
+   "zh": "添加了交互式 Google Vertex AI 设置向导，可在选择“第 3 方平台”时从登录屏幕访问，指导您完成 GCP 身份验证、项目和区域配置、凭证验证和模型固定"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_PERFORCE_MODE` env var: when set, Edit/Write/NotebookEdit fail on read-only files with a `p4 edit` hint instead of silently overwriting them",
+   "zh": "添加了`CLAUDE_CODE_PERFORCE_MODE`环境变量：设置后，编辑/写入/笔记本编辑在只读文件上失败，并显示`p4 edit`提示，而不是默默地覆盖它们"
+  },
+  {
+   "type": "new",
+   "en": "Added Monitor tool for streaming events from background scripts",
+   "zh": "添加了用于从后台脚本流式传输事件的监视器工具"
+  },
+  {
+   "type": "new",
+   "en": "Added subprocess sandboxing with PID namespace isolation on Linux when `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is set, and `CLAUDE_CODE_SCRIPT_CAPS` env var to limit per-session script invocations",
+   "zh": "设置`CLAUDE_CODE_SUBPROCESS_ENV_SCRUB`时，在 Linux 上添加了具有 PID 命名空间隔离的子进程沙箱，并且设置了`CLAUDE_CODE_SCRIPT_CAPS`环境变量以限制每个会话脚本调用"
+  },
+  {
+   "type": "new",
+   "en": "Added `--exclude-dynamic-system-prompt-sections` flag to print mode for improved cross-user prompt caching",
+   "zh": "在打印模式中添加了`--exclude-dynamic-system-prompt-sections`标志，以改进跨用户提示缓存"
+  },
+  {
+   "type": "new",
+   "en": "Added `workspace.git_worktree` to the status line JSON input, set whenever the current directory is inside a linked git worktree",
+   "zh": "将`workspace.git_worktree`添加到状态行 JSON 输入，只要当前目录位于链接的 git 工作树中即可设置"
+  },
+  {
+   "type": "new",
+   "en": "Added W3C `TRACEPARENT` env var to Bash tool subprocesses when OTEL tracing is enabled, so child-process spans correctly parent to Claude Code's trace tree",
+   "zh": "当启用 OTEL 跟踪时，将 W3C `TRACEPARENT` env var 添加到 Bash 工具子进程，因此子进程正确地跨越 Claude Code 跟踪树的父进程"
+  },
+  {
+   "type": "improved",
+   "en": "LSP: Claude Code now identifies itself to language servers via `clientInfo` in the initialize request",
+   "zh": "LSP：Claude Code 现在会在 initialize 请求的 `clientInfo` 中向语言服务器标明自己的身份"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/resume` filter hint labels and added project/worktree/branch names in the filter indicator",
+   "zh": "改进 `/resume` 的筛选提示标签，并在筛选指示器中加入项目、worktree 和分支名称"
+  },
+  {
+   "type": "improved",
+   "en": "Improved footer indicators (Focus, notifications) to stay on the mode-indicator row instead of wrapping at narrow terminal widths",
+   "zh": "改进页脚指示器（专注模式、通知）：在窄终端中保持在模式指示行上，不再换行"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/agents` with a tabbed layout: a Running tab shows live subagents, and the Library tab adds Run agent and View running instance actions",
+   "zh": "改进 `/agents`：采用标签页布局，“Running”标签显示正在运行的子代理；“Library”标签新增“运行代理”和“查看运行中实例”操作"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/reload-plugins` to pick up plugin-provided skills without requiring a restart",
+   "zh": "改进 `/reload-plugins`：无需重启即可加载插件提供的技能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Accept Edits mode to auto-approve filesystem commands prefixed with safe env vars or process wrappers",
+   "zh": "改进“接受编辑”模式：对带有安全环境变量或进程包装器前缀的文件系统命令自动批准"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Vim mode: `j`/`k` in NORMAL mode now navigate history and select the footer pill at the input boundary",
+   "zh": "改进 Vim 模式：NORMAL 模式下，`j`/`k` 可在输入框边界处切换历史记录，并选中底部的状态胶囊"
+  },
+  {
+   "type": "improved",
+   "en": "Improved hook errors in the transcript to include the first line of stderr for self-diagnosis without `--debug`",
+   "zh": "改进 transcript 中的 hook 错误：包含 stderr 的第一行，不加 `--debug` 也能自行排查"
+  },
+  {
+   "type": "improved",
+   "en": "Improved OTEL tracing: interaction spans now correctly wrap full turns under concurrent SDK calls, and headless turns end spans per-turn",
+   "zh": "改进 OTEL 追踪：并发 SDK 调用下，交互 span 现在能正确包住完整的一轮对话；无界面模式的每轮结束时都会结束对应的 span"
+  },
+  {
+   "type": "improved",
+   "en": "Improved transcript entries to carry final token usage instead of streaming placeholders",
+   "zh": "改进转录记录：带上最终的 token 用量，而不是流式输出的占位值"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the `/claude-api` skill to cover Managed Agents alongside Claude API",
+   "zh": "`/claude-api` 技能现在涵盖 Managed Agents 以及 Claude API"
+  },
+  {
+   "type": "improved",
+   "en": "Dropped `/compact` hints when `DISABLE_COMPACT` is set.",
+   "zh": "设置`DISABLE_COMPACT`时删除`/compact`提示。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Bash tool permission bypass where a backslash-escaped flag could be auto-allowed as read-only and lead to arbitrary code execution",
+   "zh": "修复了 Bash 工具权限绕过，其中反斜杠转义标志可以自动允许为只读并导致任意代码执行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed compound Bash commands bypassing forced permission prompts for safety checks and explicit ask rules in auto and bypass-permissions modes",
+   "zh": "修复了复合 Bash 命令绕过自动和旁路权限模式下的安全检查和显式询问规则的强制权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed read-only commands with env-var prefixes not prompting unless the var is known-safe (`LANG`, `TZ`, `NO_COLOR`, etc.)",
+   "zh": "修复了带有 env-var 前缀的只读命令，除非该 var 是已知安全的（`LANG`、`TZ`、`NO_COLOR`等），否则不会提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed redirects to `/dev/tcp/...` or `/dev/udp/...` not prompting instead of auto-allowing",
+   "zh": "修复了重定向到`/dev/tcp/...`或`/dev/udp/...`时不提示而不是自动允许的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stalled streaming responses timing out instead of falling back to non-streaming mode",
+   "zh": "修复了停滞的流响应超时而不是回退到非流模式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed 429 retries burning all attempts in ~13s when the server returns a small `Retry-After` — exponential backoff now applies as a minimum",
+   "zh": "修复了当服务器返回一个小的`Retry-After`时，429 次重试会在约 13 秒内烧毁所有尝试 - 指数退避现在适用于最小值"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth `oauth.authServerMetadataUrl` config override not being honored on token refresh after restart, affecting ADFS and similar IdPs",
+   "zh": "修复了重新启动后令牌刷新时不支持 MCP OAuth `oauth.authServerMetadataUrl` 配置覆盖，从而影响 ADFS 和类似的 IdP"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed capital letters being dropped to lowercase on xterm and VS Code integrated terminal when the kitty keyboard protocol is active",
+   "zh": "修复了当 kitty 键盘协议处于活动状态时，xterm 和 VS Code 集成终端上的大写字母被删除为小写的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed macOS text replacements deleting the trigger word instead of inserting the substitution",
+   "zh": "修复了 macOS 文本替换删除触发词而不是插入替换的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--dangerously-skip-permissions` being silently downgraded to accept-edits mode after approving a write to a protected path via Bash",
+   "zh": "修复了通过 Bash 批准写入受保护路径后`--dangerously-skip-permissions`被默默降级为接受编辑模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed-settings allow rules remaining active after an admin removed them, until process restart",
+   "zh": "固定的托管设置允许规则在管理员删除规则后保持活动状态，直到进程重新启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `permissions.additionalDirectories` changes not applying mid-session — removed directories lose access immediately and added ones work without restart",
+   "zh": "修复了`permissions.additionalDirectories`更改未在会话中应用的问题 - 删除的目录立即失去访问权限，添加的目录无需重新启动即可工作"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed removing a directory from `additionalDirectories` revoking access to the same directory passed via `--add-dir`",
+   "zh": "修复了从`additionalDirectories`中删除目录并撤销通过`--add-dir`传递的同一目录的访问权限的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Bash(cmd:*)` and `Bash(git commit *)` wildcard permission rules failing to match commands with extra spaces or tabs",
+   "zh": "修复了 `Bash(cmd:*)` 和 `Bash(git commit *)` 通配符权限规则无法匹配带有额外空格或制表符的命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Bash(...)` deny rules being downgraded to a prompt for piped commands that mix `cd` with other segments",
+   "zh": "修复了`Bash(...)`拒绝规则被降级为提示将`cd`与其他段混合的管道命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false Bash permission prompts for `cut -d /`, `paste -d /`, `column -s /`, `awk '{print $1}' file`, and filenames containing `%`",
+   "zh": "修复了`cut -d /`、`paste -d /`、`column -s /`、`awk '{print $1}' file`和包含`%`的文件名的错误 Bash 权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission rules with names matching JavaScript prototype properties (e.g. `toString`) causing `settings.json` to be silently ignored",
+   "zh": "修复了名称与 JavaScript 原型属性（例如`toString`）匹配的权限规则，导致`settings.json`被默默忽略"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent team members not inheriting the leader's permission mode when using `--dangerously-skip-permissions`",
+   "zh": "修复了使用`--dangerously-skip-permissions`时代理团队成员不继承领导者权限模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash in fullscreen mode when hovering over MCP tool results",
+   "zh": "修复了将鼠标悬停在 MCP 工具结果上时全屏模式下的崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed copying wrapped URLs in fullscreen mode inserting spaces at line breaks",
+   "zh": "修复了在全屏模式下复制包装 URL 时在换行符处插入空格的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file-edit diffs disappearing from the UI on `--resume` when the edited file was larger than 10KB",
+   "zh": "修复了当编辑的文件大于 10KB 时，文件编辑差异在`--resume`上从 UI 中消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several `/resume` picker issues: `--resume <name>` opening uneditable, filter reload wiping search state, empty list swallowing arrow keys, cross-project staleness, and transient task-status text replacing conversation summaries",
+   "zh": "修复了几个`/resume`选择器问题：`--resume <name>`打开不可编辑、过滤器重新加载擦除搜索状态、空列表吞噬箭头键、跨项目陈旧性以及临时任务状态文本替换对话摘要"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/export` not honoring absolute paths and `~`, and silently rewriting user-supplied extensions to `.txt`",
+   "zh": "修复了`/export`不支持绝对路径和`~`，并以静默方式将用户提供的扩展名重写为`.txt`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/effort max` being denied for unknown or future model IDs",
+   "zh": "修复了未知或未来模型 ID 拒绝`/effort max`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash command picker breaking when a plugin's frontmatter `name` is a YAML boolean keyword",
+   "zh": "修复了当插件的 frontmatter `name` 是 YAML 布尔关键字时斜杠命令选择器中断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rate-limit upsell text being hidden after message remounts",
+   "zh": "修复了消息重新安装后隐藏的速率限制追加销售文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tools with `_meta[\"anthropic/maxResultSizeChars\"]` not bypassing the token-based persist layer",
+   "zh": "修复了带有 `_meta[\"anthropic/maxResultSizeChars\"]` 的 MCP 工具不绕过基于令牌的持久层"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode leaking dozens of space characters into the input when re-holding the push-to-talk key while the previous transcript is still processing",
+   "zh": "修复上一段转录仍在处理时重新按住一键通话键，导致数十个空格被插入输入框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `DISABLE_AUTOUPDATER` not fully suppressing the npm registry version check and symlink modification on npm-based installs",
+   "zh": "修复了`DISABLE_AUTOUPDATER`未完全抑制基于 npm 安装的 npm 注册表版本检查和符号链接修改"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak where Remote Control permission handler entries were retained for the lifetime of the session",
+   "zh": "修复了内存泄漏，其中远程控制权限处理程序条目在会话的生命周期内保留"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background subagents that fail with an error not reporting partial progress to the parent agent",
+   "zh": "修复了因不向父代理报告部分进度而失败的后台子代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt-type Stop/SubagentStop hooks failing on long sessions, and hook evaluator API errors showing \"JSON validation failed\" instead of the real message",
+   "zh": "修复了提示类型 Stop/SubagentStop 挂钩在长时间会话中失败的问题，以及挂钩评估器 API 错误显示“JSON 验证失败”而不是真实消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feedback survey rendering when dismissed",
+   "zh": "修复了反馈调查被驳回时的渲染问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash `grep -f FILE` / `rg -f FILE` not prompting when reading a pattern file outside the working directory",
+   "zh": "修复了 Bash `grep -f FILE` / `rg -f FILE` 在读取工作目录之外的模式文件时不提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stale subagent worktree cleanup removing worktrees that contain untracked files",
+   "zh": "修复了过时的子代理工作树清理，删除包含未跟踪文件的工作树"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `sandbox.network.allowMachLookup` not taking effect on macOS",
+   "zh": "修复了 `sandbox.network.allowMachLookup` 在 macOS 上不生效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed false-positive \"requires git-bash\" error on Windows when `CLAUDE_CODE_GIT_BASH_PATH` is set or Git is installed at a default location",
+   "zh": "[VSCode] 修复在 Windows 上设置了 `CLAUDE_CODE_GIT_BASH_PATH` 或 Git 安装在默认位置时，误报 \"requires git-bash\" 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_MAX_CONTEXT_TOKENS` to honor `DISABLE_COMPACT` when it is set.",
+   "zh": "修复了`CLAUDE_CODE_MAX_CONTEXT_TOKENS`以在设置时遵守`DISABLE_COMPACT`。"
+  }
+ ]
+}

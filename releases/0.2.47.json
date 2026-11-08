@@ -1,0 +1,26 @@
+{
+ "version": "0.2.47",
+ "date": "2025-03-18",
+ "published": "2025-03-18T01:42:37.884Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.47",
+ "counts": {
+  "new": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Press Tab to auto-complete file and folder names",
+   "zh": "按 Tab 自动补全文件名和文件夹名"
+  },
+  {
+   "type": "new",
+   "en": "Press Shift + Tab to toggle auto-accept for file edits",
+   "zh": "按 Shift + Tab 可切换文件编辑的自动接受模式"
+  },
+  {
+   "type": "new",
+   "en": "Automatic conversation compaction for infinite conversation length (toggle with /config)",
+   "zh": "自动对话压缩以实现无限对话长度（使用 /config 切换）"
+  }
+ ]
+}

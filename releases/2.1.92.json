@@ -1,0 +1,119 @@
+{
+ "version": "2.1.92",
+ "date": "2026-04-04",
+ "published": "2026-04-04T00:05:59.607Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.92",
+ "counts": {
+  "new": 4,
+  "improved": 3,
+  "fixed": 12,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `forceRemoteSettingsRefresh` policy setting: when set, the CLI blocks startup until remote managed settings are freshly fetched, and exits if the fetch fails (fail-closed)",
+   "zh": "添加了`forceRemoteSettingsRefresh`策略设置：设置后，CLI 会阻止启动，直到重新获取远程托管设置为止，如果获取失败则退出（失败关闭）"
+  },
+  {
+   "type": "new",
+   "en": "Added interactive Bedrock setup wizard accessible from the login screen when selecting \"3rd-party platform\" — guides you through AWS authentication, region configuration, credential verification, and model pinning",
+   "zh": "添加了选择“第 3 方平台”时可从登录屏幕访问的交互式 Bedrock 设置向导 — 指导您完成 AWS 身份验证、区域配置、凭证验证和模型固定"
+  },
+  {
+   "type": "new",
+   "en": "Added per-model and cache-hit breakdown to `/cost` for subscription users",
+   "zh": "为订阅用户添加了每个模型和缓存命中的细分到`/cost`"
+  },
+  {
+   "type": "new",
+   "en": "Pro users now see a footer hint when returning to a session after the prompt cache has expired, showing roughly how many tokens the next turn will send uncached",
+   "zh": "Pro 用户回到会话时，如果提示词缓存已过期，底部会出现提示，告诉你下一轮大约有多少 token 将不走缓存发送"
+  },
+  {
+   "type": "improved",
+   "en": "`/release-notes` is now an interactive version picker",
+   "zh": "`/release-notes` 现在是交互式的版本选择器"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control session names now use your hostname as the default prefix (e.g. `myhost-graceful-unicorn`), overridable with `--remote-control-session-name-prefix`",
+   "zh": "Remote Control 会话名称现在默认以主机名作为前缀（例如 `myhost-graceful-unicorn`），可用 `--remote-control-session-name-prefix` 覆盖"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Write tool diff computation speed for large files (60% faster on files with tabs/`&`/`$`)",
+   "zh": "改进 Write 工具计算大文件差异（diff）的速度：含制表符、`&`、`$` 的文件快 60%"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagent spawning permanently failing with \"Could not determine pane count\" after tmux windows are killed or renumbered during a long-running session",
+   "zh": "修复了在长时间运行的会话期间 tmux 窗口被终止或重新编号后，子代理生成永久失败并显示“无法确定窗格计数”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt-type Stop hooks incorrectly failing when the small fast model returns `ok:false`, and restored `preventContinuation:true` semantics for non-Stop prompt-type hooks",
+   "zh": "修复了当小型快速模型返回 `ok:false` 时提示类型 Stop 钩子错误地失败的问题，并恢复了非 Stop 提示类型钩子的 `preventContinuation:true` 语义"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tool input validation failures when streaming emits array/object fields as JSON-encoded strings",
+   "zh": "修复流式输出时数组或对象字段以 JSON 字符串形式发出，导致工具输入校验失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an API 400 error that could occur when extended thinking produced a whitespace-only text block alongside real content",
+   "zh": "修复了扩展思维在实际内容旁边生成纯空白文本块时可能发生的 API 400 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed accidental feedback survey submissions from auto-pilot keypresses and consecutive-prompt digit collisions",
+   "zh": "修复了自动驾驶按键和连续提示数字碰撞导致的意外反馈调查提交"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed misleading \"esc to interrupt\" hint appearing alongside \"esc to clear\" when a text selection exists in fullscreen mode during processing",
+   "zh": "修复了处理过程中全屏模式下存在文本选择时，“esc 中断”提示与“esc 清除”旁边出现的误导性“esc 中断”提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Homebrew install update prompts to use the cask's release channel (`claude-code` → stable, `claude-code@latest` → latest)",
+   "zh": "修复了 Homebrew 安装更新提示使用 cask 的发布通道（`claude-code` → 稳定，`claude-code@latest` → 最新）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ctrl+e` jumping to the end of the next line when already at end of line in multiline prompts",
+   "zh": "修复了在多行提示中已位于行尾时`ctrl+e`跳转到下一行末尾的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where the same message could appear at two positions when scrolling up in fullscreen mode (iTerm2, Ghostty, and other terminals with DEC 2026 support)",
+   "zh": "修复了在全屏模式下向上滚动时同一消息可能出现在两个位置的问题（iTerm2、Ghostty 和其他支持 DEC 2026 的终端）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed idle-return \"/clear to save X tokens\" hint showing cumulative session tokens instead of current context size",
+   "zh": "修复了空闲返回“/clear 以保存 X 令牌”提示，显示累积会话令牌而不是当前上下文大小"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin MCP servers stuck \"connecting\" on session start when they duplicate a claude.ai connector that is unauthenticated",
+   "zh": "修复了插件 MCP 服务器在复制未经身份验证的 claude.ai 连接器时在会话启动时陷入“连接”状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Linux sandbox now ships the `apply-seccomp` helper in both npm and native builds, restoring unix-socket blocking for sandboxed commands",
+   "zh": "Linux 沙盒现在在 npm 和原生构建版本中都附带 `apply-seccomp` 辅助程序，恢复了对沙盒命令的 unix 套接字拦截"
+  },
+  {
+   "type": "removed",
+   "en": "Removed `/tag` command",
+   "zh": "移除 `/tag` 命令"
+  },
+  {
+   "type": "removed",
+   "en": "Removed `/vim` command (toggle vim mode via `/config` → Editor mode)",
+   "zh": "移除 `/vim` 命令（请通过 `/config` → Editor mode 切换 vim 模式）"
+  }
+ ]
+}

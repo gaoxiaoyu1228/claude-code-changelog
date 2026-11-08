@@ -1,0 +1,559 @@
+{
+ "version": "2.1.0",
+ "date": "2026-01-07",
+ "published": "2026-01-07T02:43:04.533Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.0",
+ "counts": {
+  "new": 28,
+  "improved": 25,
+  "fixed": 54,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added automatic skill hot-reload - skills created or modified in `~/.claude/skills` or `.claude/skills` are now immediately available without restarting the session",
+   "zh": "添加了自动技能热重载 - 在 `~/.claude/skills` 或 `.claude/skills` 中创建或修改的技能现在无需重新启动会话即可立即可用"
+  },
+  {
+   "type": "new",
+   "en": "Added support for running skills and slash commands in a forked sub-agent context using `context: fork` in skill frontmatter",
+   "zh": "添加了对在技能 frontmatter 中使用`context: fork`的分叉子代理上下文中运行技能和斜线命令的支持"
+  },
+  {
+   "type": "new",
+   "en": "Added support for `agent` field in skills to specify agent type for execution",
+   "zh": "添加了对技能中`agent`字段的支持，以指定要执行的代理类型"
+  },
+  {
+   "type": "new",
+   "en": "Added `language` setting to configure Claude's response language (e.g., language: \"japanese\")",
+   "zh": "添加了“语言”设置来配置克劳德的响应语言（例如，语言：“日语”）"
+  },
+  {
+   "type": "new",
+   "en": "Added `respectGitignore` support in `settings.json` for per-project control over @-mention file picker behavior",
+   "zh": "在`settings.json`中添加了`respectGitignore`支持，用于按项目控制 @-mention 文件选择器行为"
+  },
+  {
+   "type": "new",
+   "en": "Added `IS_DEMO` environment variable to hide email and organization from the UI, useful for streaming or recording sessions",
+   "zh": "添加了`IS_DEMO`环境变量以隐藏 UI 中的电子邮件和组织，对于流式传输或录制会话非常有用"
+  },
+  {
+   "type": "new",
+   "en": "Added wildcard pattern matching for Bash tool permissions using `*` at any position in rules (e.g., `Bash(npm *)`, `Bash(* install)`, `Bash(git * main)`)",
+   "zh": "在规则中的任何位置使用`*`添加了 Bash 工具权限的通配符模式匹配（例如，`Bash(npm *)`、`Bash(* install)`、`Bash(git * main)`）"
+  },
+  {
+   "type": "new",
+   "en": "Added unified Ctrl+B backgrounding for both bash commands and agents - pressing Ctrl+B now backgrounds all running foreground tasks simultaneously",
+   "zh": "为 bash 命令和代理添加了统一的 Ctrl+B 后台 - 按 Ctrl+B 现在可以同时后台所有正在运行的前台任务"
+  },
+  {
+   "type": "new",
+   "en": "Added support for MCP `list_changed` notifications, allowing MCP servers to dynamically update their available tools, prompts, and resources without requiring reconnection",
+   "zh": "添加了对 MCP`list_changed`通知的支持，允许 MCP 服务器动态更新其可用工具、提示和资源，而无需重新连接"
+  },
+  {
+   "type": "new",
+   "en": "Added `/teleport` and `/remote-env` slash commands for claude.ai subscribers, allowing them to resume and configure remote sessions",
+   "zh": "为 claude.ai 订阅者添加了`/teleport`和`/remote-env`斜杠命令，允许他们恢复和配置远程会话"
+  },
+  {
+   "type": "new",
+   "en": "Added support for disabling specific agents using `Task(AgentName)` syntax in settings.json permissions or the `--disallowedTools` CLI flag",
+   "zh": "添加了对使用 settings.json 权限中的 `Task(AgentName)` 语法或 `--disallowedTools` CLI 标志禁用特定代理的支持"
+  },
+  {
+   "type": "new",
+   "en": "Added hooks support to agent frontmatter, allowing agents to define PreToolUse, PostToolUse, and Stop hooks scoped to the agent's lifecycle",
+   "zh": "为代理 frontmatter 添加了钩子支持，允许代理定义作用于代理生命周期的 PreToolUse、PostToolUse 和 Stop 钩子"
+  },
+  {
+   "type": "new",
+   "en": "Added hooks support for skill and slash command frontmatter",
+   "zh": "添加了对技能和斜杠命令 frontmatter 的钩子支持"
+  },
+  {
+   "type": "new",
+   "en": "Added new Vim motions: `;` and `,` to repeat f/F/t/T motions, `y` operator for yank with `yy`/`Y`, `p`/`P` for paste, text objects (`iw`, `aw`, `iW`, `aW`, `i\"`, `a\"`, `i'`, `a'`, `i(`, `a(`, `i[`, `a[`, `i{`, `a{`), `>>` and `<<` for indent/dedent, and `J` to join lines",
+   "zh": "添加了新的 Vim 动作：`;` 和 `,` 来重复 f/F/t/T 动作，`y` 运算符用于用 `yy`/`Y` 进行拉取，`p`/`P` 用于粘贴，文本对象（`iw`、`aw`、`iW`、`aW`、`i\"`、`a\"`、`i'`、`a'`、`i(`、`a(`、`i[`、`a[`、 `i{`、`a{`)、`>>` 和 `<<` 用于缩进/缩进，`J` 用于连接行"
+  },
+  {
+   "type": "new",
+   "en": "Added `/plan` command shortcut to enable plan mode directly from the prompt",
+   "zh": "添加了`/plan`命令快捷方式以直接从提示符启用计划模式"
+  },
+  {
+   "type": "new",
+   "en": "Added slash command autocomplete support when `/` appears anywhere in input, not just at the beginning",
+   "zh": "当`/`出现在输入中的任何位置（而不仅仅是开头）时，添加了斜杠命令自动完成支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `--tools` flag support in interactive mode to restrict which built-in tools Claude can use during interactive sessions",
+   "zh": "在交互模式下添加了`--tools`标志支持，以限制克劳德在交互会话期间可以使用哪些内置工具"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS` environment variable to override the default file read token limit",
+   "zh": "添加了`CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS`环境变量以覆盖默认文件读取令牌限制"
+  },
+  {
+   "type": "new",
+   "en": "Added support for `once: true` config for hooks",
+   "zh": "添加了对钩子`once: true`配置的支持"
+  },
+  {
+   "type": "new",
+   "en": "Added support for YAML-style lists in frontmatter `allowed-tools` field for cleaner skill declarations",
+   "zh": "在 frontmatter `allowed-tools` 字段中添加了对 YAML 样式列表的支持，以实现更清晰的技能声明"
+  },
+  {
+   "type": "new",
+   "en": "Added support for prompt and agent hook types from plugins (previously only command hooks were supported)",
+   "zh": "添加了对插件中的提示和代理挂钩类型的支持（以前仅支持命令挂钩）"
+  },
+  {
+   "type": "new",
+   "en": "Added Cmd+V support for image paste in iTerm2 (maps to Ctrl+V)",
+   "zh": "在 iTerm2 中添加了对图像粘贴的 Cmd+V 支持（映射到 Ctrl+V）"
+  },
+  {
+   "type": "new",
+   "en": "Added left/right arrow key navigation for cycling through tabs in dialogs",
+   "zh": "添加了左/右箭头键导航，用于循环浏览对话框中的选项卡"
+  },
+  {
+   "type": "new",
+   "en": "Added real-time thinking block display in Ctrl+O transcript mode",
+   "zh": "新增Ctrl+O转录模式下实时思维块显示"
+  },
+  {
+   "type": "new",
+   "en": "Added filepath to full output in background bash task details dialog",
+   "zh": "在后台 bash 任务详细信息对话框中将文件路径添加到完整输出"
+  },
+  {
+   "type": "new",
+   "en": "Added Skills as a separate category in the context visualization",
+   "zh": "在上下文可视化中添加了技能作为单独的类别"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added currently selected model name to the context menu",
+   "zh": "[VSCode] 右键菜单中新增当前所选模型的名称"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added descriptive labels on auto-accept permission button (e.g., \"Yes, allow npm for this project\" instead of \"Yes, and don't ask again\")",
+   "zh": "[VSCode] 自动接受权限按钮新增描述性标签（例如「Yes, allow npm for this project」，而非「Yes, and don't ask again」）"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Shift+Enter to work out of the box in iTerm2, WezTerm, Ghostty, and Kitty without modifying terminal configs",
+   "zh": "将 Shift+Enter 更改为在 iTerm2、WezTerm、Ghostty 和 Kitty 中开箱即用，无需修改终端配置"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced permission prompts for complex bash commands",
+   "zh": "复杂 bash 命令的权限提示减少"
+  },
+  {
+   "type": "improved",
+   "en": "Improved CLI help output to display options and subcommands in alphabetical order for easier navigation",
+   "zh": "改进 CLI 帮助输出：选项和子命令按字母顺序排列，便于查找"
+  },
+  {
+   "type": "improved",
+   "en": "Multiple optimizations to improve startup performance",
+   "zh": "多项优化，提升启动性能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved terminal rendering performance when using native installer or Bun, especially for text with emoji, ANSI codes, and Unicode characters",
+   "zh": "改进使用原生安装器或 Bun 时的终端渲染性能，对带表情符号、ANSI 代码和 Unicode 字符的文本尤其明显"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance when reading Jupyter notebooks with many cells",
+   "zh": "改进读取含大量单元格的 Jupyter 笔记本时的性能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved reliability for piped input like `cat refactor.md | claude`",
+   "zh": "改进管道输入（如 `cat refactor.md | claude`）的可靠性"
+  },
+  {
+   "type": "improved",
+   "en": "Improved reliability for AskQuestion tool",
+   "zh": "改进 AskQuestion 工具的可靠性"
+  },
+  {
+   "type": "improved",
+   "en": "Improved sed in-place edit commands to render as file edits with diff preview",
+   "zh": "改进 sed 原地编辑命令：以带差异预览的文件编辑形式显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Claude to automatically continue when response is cut off due to output token limit, instead of showing an error message",
+   "zh": "改进：回复因输出 token 上限被截断时，Claude 会自动继续，不再直接显示错误信息"
+  },
+  {
+   "type": "improved",
+   "en": "Improved compaction reliability",
+   "zh": "改进压缩的可靠性"
+  },
+  {
+   "type": "improved",
+   "en": "Improved subagents (Task tool) to continue working after permission denial, allowing them to try alternative approaches",
+   "zh": "改进子智能体（Task 工具）：权限被拒绝后仍可继续工作，可以尝试其他方法"
+  },
+  {
+   "type": "improved",
+   "en": "Improved skills to show progress while executing, displaying tool uses as they happen",
+   "zh": "改进技能执行体验：执行过程中显示进度，实时展示每次工具调用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved skills from `/skills/` directories to be visible in the slash command menu by default (opt-out with `user-invocable: false` in frontmatter)",
+   "zh": "改进 `/skills/` 目录中的技能：默认就会出现在斜杠命令菜单中（如需关闭，在 frontmatter 中写 `user-invocable: false`）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved skill suggestions to prioritize recently and frequently used skills",
+   "zh": "改进技能推荐：优先推荐最近和常用的技能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved spinner feedback when waiting for the first response token",
+   "zh": "改进等待第一个回复字符时的加载动画提示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved token count display in spinner to include tokens from background agents",
+   "zh": "改进加载动画中的 token 计数显示：现在包含后台智能体的 token"
+  },
+  {
+   "type": "improved",
+   "en": "Improved incremental output for async agents to give the main thread more control and visibility",
+   "zh": "改进异步 agent 的增量输出，让主线程拥有更多控制力和可见性"
+  },
+  {
+   "type": "improved",
+   "en": "Improved permission prompt UX with Tab hint moved to footer, cleaner Yes/No input labels with contextual placeholders",
+   "zh": "改进权限提示界面：Tab 提示移到底部，Yes/No 选项标签更简洁，并带有上下文占位提示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Claude in Chrome notification with shortened help text and persistent display until dismissed",
+   "zh": "改进 Claude in Chrome 通知：帮助文字缩短，并且会一直显示直到你关闭"
+  },
+  {
+   "type": "improved",
+   "en": "Improved macOS screenshot paste reliability with TIFF format support",
+   "zh": "改进 macOS 截图粘贴的可靠性，增加 TIFF 格式支持"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/stats` output",
+   "zh": "改进 `/stats` 的输出"
+  },
+  {
+   "type": "improved",
+   "en": "Updated Atlassian MCP integration to use a more reliable default configuration (streamable HTTP)",
+   "zh": "Atlassian MCP 集成改用更可靠的默认配置（streamable HTTP）"
+  },
+  {
+   "type": "improved",
+   "en": "Changed \"Interrupted\" message color from red to grey for a less alarming appearance",
+   "zh": "将“中断”消息颜色从红色更改为灰色，以减少令人惊慌的外观"
+  },
+  {
+   "type": "improved",
+   "en": "[SDK] Changed minimum zod peer dependency to ^4.0.0",
+   "zh": "[SDK] 将 zod 的最低 peer 依赖版本改为 ^4.0.0"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed security issue where sensitive data (OAuth tokens, API keys, passwords) could be exposed in debug logs",
+   "zh": "修复了敏感数据（OAuth 令牌、API 密钥、密码）可能在调试日志中暴露的安全问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed files and skills not being properly discovered when resuming sessions with `-c` or `--resume`",
+   "zh": "修复了使用`-c`或`--resume`恢复会话时无法正确发现文件和技能的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasted content being lost when replaying prompts from history using up arrow or Ctrl+R search",
+   "zh": "修复了使用向上箭头或 Ctrl+R 搜索重播历史提示时粘贴的内容丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc key with queued prompts to only move them to input without canceling the running task",
+   "zh": "修复了带有排队提示的 Esc 键，仅将它们移至输入而不取消正在运行的任务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed command search to prioritize exact and prefix matches on command names over fuzzy matches in descriptions",
+   "zh": "修复了命令搜索，以优先考虑命令名称中的精确匹配和前缀匹配而不是描述中的模糊匹配"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PreToolUse hooks to allow `updatedInput` when returning `ask` permission decision, enabling hooks to act as middleware while still requesting user consent",
+   "zh": "修复了 PreToolUse 挂钩，以在返回`ask`权限决策时允许`updatedInput`，使挂钩能够充当中间件，同时仍然请求用户同意"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin path resolution for file-based marketplace sources",
+   "zh": "修复了基于文件的市场源的插件路径解析"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed LSP tool being incorrectly enabled when no LSP servers were configured",
+   "zh": "修复了未配置 LSP 服务器时错误启用 LSP 工具的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background tasks failing with \"git repository not found\" error for repositories with dots in their names",
+   "zh": "修复了名称中带有点的存储库的后台任务失败并出现“未找到 git 存储库”错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude in Chrome support for WSL environments",
+   "zh": "修复了 Chrome 中的 Claude 对 WSL 环境的支持"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows native installer silently failing when executable creation fails",
+   "zh": "修复了可执行文件创建失败时 Windows 本机安装程序静默失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OAuth token refresh not triggering when server reports token expired but local expiration check disagrees",
+   "zh": "修复了当服务器报告令牌过期但本地过期检查不同意时不触发 OAuth 令牌刷新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session persistence getting stuck after transient server errors by recovering from 409 conflicts when the entry was actually stored",
+   "zh": "通过在实际存储条目时从 409 冲突中恢复，修复了短暂服务器错误后会话持久性卡住的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session resume failures caused by orphaned tool results during concurrent tool execution",
+   "zh": "修复了并发工具执行期间由孤立工具结果导致的会话恢复失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race condition where stale OAuth tokens could be read from the keychain cache during concurrent token refresh attempts",
+   "zh": "修复了在并发令牌刷新尝试期间可以从钥匙串缓存中读取过时的 OAuth 令牌的竞争条件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed AWS Bedrock subagents not inheriting EU/APAC cross-region inference model configuration, causing 403 errors when IAM permissions are scoped to specific regions",
+   "zh": "修复了 AWS Bedrock 子代理不继承 EU/APAC 跨区域推理模型配置，导致 IAM 权限范围仅限于特定区域时出现 403 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API context overflow when background tasks produce large output by truncating to 30K chars with file path reference",
+   "zh": "修复了当后台任务通过文件路径引用截断为 30K 字符来产生大量输出时 API 上下文溢出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hang when reading FIFO files by skipping symlink resolution for special file types",
+   "zh": "通过跳过特殊文件类型的符号链接解析，修复了读取 FIFO 文件时的挂起问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal keyboard mode not being reset on exit in Ghostty, iTerm2, Kitty, and WezTerm",
+   "zh": "修复在 Ghostty、iTerm2、Kitty 和 WezTerm 中退出后，终端键盘模式未被重置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Alt+B and Alt+F (word navigation) not working in iTerm2, Ghostty, Kitty, and WezTerm",
+   "zh": "修复了 Alt+B 和 Alt+F（单词导航）在 iTerm2、Ghostty、Kitty 和 WezTerm 中不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `${CLAUDE_PLUGIN_ROOT}` not being substituted in plugin `allowed-tools` frontmatter, which caused tools to incorrectly require approval",
+   "zh": "修复了插件`allowed-tools`frontmatter 中的`${CLAUDE_PLUGIN_ROOT}`未被替换，导致工具错误地需要批准的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed files created by the Write tool using hardcoded 0o600 permissions instead of respecting the system umask",
+   "zh": "修复了写入工具使用硬编码 0o600 权限而不是遵循系统 umask 创建的文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed commands with `$()` command substitution failing with parse errors",
+   "zh": "修复了带有`$()`命令替换的命令因解析错误而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-line bash commands with backslash continuations being incorrectly split and flagged for permissions",
+   "zh": "修复了带有反斜杠延续的多行 bash 命令被错误地分割和标记为权限的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bash command prefix extraction to correctly identify subcommands after global options (e.g., `git -C /path log` now correctly matches `Bash(git log:*)` rules)",
+   "zh": "修复了 bash 命令前缀提取，以正确识别全局选项后的子命令（例如，`git -C /path log` 现在可以正确匹配 `Bash(git log:*)` 规则）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash commands passed as CLI arguments (e.g., `claude /context`) not being executed properly",
+   "zh": "修复了作为 CLI 参数传递的斜杠命令（例如`claude /context`）未正确执行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing Enter after Tab-completing a slash command selecting a different command instead of submitting the completed one",
+   "zh": "修复了在 Tab 完成斜线命令后按 Enter 键选择其他命令而不是提交已完成的命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash command argument hint flickering and inconsistent display when typing commands with arguments",
+   "zh": "修复了输入带有参数的命令时斜杠命令参数提示闪烁和显示不一致的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude sometimes redundantly invoking the Skill tool when running slash commands directly",
+   "zh": "修复了克劳德在直接运行斜杠命令时有时会多余地调用技能工具的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skill token estimates in `/context` to accurately reflect frontmatter-only loading",
+   "zh": "修复了`/context`中的技能标记估计，以准确反映仅 frontmatter 的加载"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents sometimes not inheriting the parent's model by default",
+   "zh": "修复了子代理有时默认不继承父代理的模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model picker showing incorrect selection for Bedrock/Vertex users using `--model haiku`",
+   "zh": "修复了使用`--model haiku`为 Bedrock/Vertex 用户显示错误选择的模型选择器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate Bash commands appearing in permission request option labels",
+   "zh": "修复了权限请求选项标签中出现的重复 Bash 命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed noisy output when background tasks complete - now shows clean completion message instead of raw output",
+   "zh": "修复了后台任务完成时的嘈杂输出 - 现在显示干净的完成消息而不是原始输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background task completion notifications to appear proactively with bullet point",
+   "zh": "修复了后台任务完成通知，以主动显示项目符号点"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed forked slash commands showing \"AbortError\" instead of \"Interrupted\" message when cancelled",
+   "zh": "修复了取消时显示“AbortError”而不是“Interrupted”消息的分叉斜杠命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cursor disappearing after dismissing permission dialogs",
+   "zh": "修复了关闭权限对话框后光标消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/hooks` menu selecting wrong hook type when scrolling to a different option",
+   "zh": "修复了`/hooks`菜单在滚动到不同选项时选择错误的挂钩类型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed images in queued prompts showing as \"[object Object]\" when pressing Esc to cancel",
+   "zh": "修复了按 Esc 取消时排队提示中的图像显示为“[对象对象]”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed images being silently dropped when queueing messages while backgrounding a task",
+   "zh": "修复了在后台执行任务时排队消息时图像被默默删除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed large pasted images failing with \"Image was too large\" error",
+   "zh": "修复了大型粘贴图像因“图像太大”错误而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed extra blank lines in multiline prompts containing CJK characters (Japanese, Chinese, Korean)",
+   "zh": "修复了包含 CJK 字符（日语、中文、韩语）的多行提示中的额外空白行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ultrathink keyword highlighting being applied to wrong characters when user prompt text wraps to multiple lines",
+   "zh": "修复用户提示文字换行成多行时，ultrathink 关键词高亮应用到错误字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed collapsed \"Reading X files…\" indicator incorrectly switching to past tense when thinking blocks appear mid-stream",
+   "zh": "修复了当思维块出现在中流时折叠的“正在阅读 X 文件…”指示器错误地切换到过去时态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash read commands (like `ls` and `cat`) not being counted in collapsed read/search groups, causing groups to incorrectly show \"Read 0 files\"",
+   "zh": "修复了 Bash 读取命令（如`ls`和`cat`）未计入折叠的读取/搜索组中，导致组错误地显示“读取 0 个文件”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spinner token counter to properly accumulate tokens from subagents during execution",
+   "zh": "修复了旋转器令牌计数器，以便在执行期间正确累积来自子代理的令牌"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in git diff parsing where sliced strings retained large parent strings",
+   "zh": "修复了 git diff 解析中的内存泄漏，其中切片字符串保留了较大的父字符串"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed race condition where LSP tool could return \"no server available\" during startup",
+   "zh": "修复了 LSP 工具在启动期间可能返回“无可用服务器”的竞争条件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feedback submission hanging indefinitely when network requests timeout",
+   "zh": "修复了网络请求超时时反馈提交无限期挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed search mode in plugin discovery and log selector views exiting when pressing up arrow",
+   "zh": "修复了按向上箭头时退出插件发现和日志选择器视图中的搜索模式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook success message showing trailing colon when hook has no output",
+   "zh": "修复了当钩子没有输出时显示尾随冒号的钩子成功消息"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed paragraph breaks not rendering in markdown content",
+   "zh": "[VSCode] 修复 Markdown 内容中段落分隔不显示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed scrolling in the extension inadvertently scrolling the parent iframe",
+   "zh": "[VSCode] 修复扩展中的滚动会意外带动父级 iframe 滚动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Windows] Fixed issue with improper rendering",
+   "zh": "[Windows] 修复了渲染不正确的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed permission prompt when entering plan mode - users can now enter plan mode without approval",
+   "zh": "进入计划模式不再弹出权限提示，用户无需审批即可进入计划模式"
+  },
+  {
+   "type": "removed",
+   "en": "Removed underline styling from image reference links",
+   "zh": "移除图片引用链接的下划线样式"
+  }
+ ]
+}

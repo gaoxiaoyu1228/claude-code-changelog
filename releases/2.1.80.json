@@ -1,0 +1,98 @@
+{
+ "version": "2.1.80",
+ "date": "2026-03-19",
+ "published": "2026-03-19T21:01:31.134Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.80",
+ "counts": {
+  "new": 5,
+  "improved": 6,
+  "fixed": 6
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `rate_limits` field to statusline scripts for displaying Claude.ai rate limit usage (5-hour and 7-day windows with `used_percentage` and `resets_at`)",
+   "zh": "在状态行脚本中添加了`rate_limits`字段，用于显示 Claude.ai 速率限制使用情况（带有`used_percentage`和`resets_at`的 5 小时和 7 天窗口）"
+  },
+  {
+   "type": "new",
+   "en": "Added `source: 'settings'` plugin marketplace source — declare plugin entries inline in settings.json",
+   "zh": "添加了 `source: 'settings'` 插件市场源 — 在 settings.json 中内嵌声明插件条目"
+  },
+  {
+   "type": "new",
+   "en": "Added CLI tool usage detection to plugin tips, in addition to file pattern matching",
+   "zh": "除了文件模式匹配之外，还为插件提示添加了 CLI 工具使用情况检测"
+  },
+  {
+   "type": "new",
+   "en": "Added `effort` frontmatter support for skills and slash commands to override the model effort level when invoked",
+   "zh": "添加了对技能和斜杠命令的“努力”frontmatter 支持，以在调用时覆盖模型努力水平"
+  },
+  {
+   "type": "new",
+   "en": "Added `--channels` (research preview) — allow MCP servers to push messages into your session",
+   "zh": "添加了`--channels`（研究预览）——允许 MCP 服务器将消息推送到您的会话中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved responsiveness of `@` file autocomplete in large git repositories",
+   "zh": "改进大型 git 仓库中 `@` 文件自动补全的响应速度"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/effort` to show what auto currently resolves to, matching the status bar indicator",
+   "zh": "改进 `/effort`：显示 auto 当前实际解析为哪个级别，与状态栏指示一致"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/permissions` — Tab and arrow keys now switch tabs from within a list",
+   "zh": "改进 `/permissions`：在列表内按 Tab 和方向键即可切换标签页"
+  },
+  {
+   "type": "improved",
+   "en": "Improved background tasks panel — left arrow now closes from the list view",
+   "zh": "改进后台任务面板：在列表视图中按左方向键即可关闭"
+  },
+  {
+   "type": "improved",
+   "en": "Simplified plugin install tips to use a single `/plugin install` command instead of a two-step flow",
+   "zh": "插件安装提示简化为一条 `/plugin install` 命令，不再是两步流程"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced memory usage on startup in large repositories (~80 MB saved on 250k-file repos)",
+   "zh": "大型代码仓库的启动内存占用降低（25 万文件的仓库节省约 80 MB）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` dropping parallel tool results — sessions with parallel tool calls now restore all tool_use/tool_result pairs instead of showing `[Tool result missing]` placeholders",
+   "zh": "修复了`--resume`删除并行工具结果的问题 - 具有并行工具调用的会话现在恢复所有 tool_use/tool_result 对，而不是显示“[工具结果丢失]”占位符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode WebSocket failures caused by Cloudflare bot detection on non-browser TLS fingerprints",
+   "zh": "修复非浏览器 TLS 指纹被 Cloudflare 机器人检测拦截，导致语音模式 WebSocket 失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed 400 errors when using fine-grained tool streaming through API proxies, Bedrock, or Vertex",
+   "zh": "修复了通过 API 代理、Bedrock 或 Vertex 使用细粒度工具流时的 400 个错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/remote-control` appearing for gateway and third-party provider deployments where it cannot function",
+   "zh": "修复了网关和第三方提供商部署中出现的`/remote-control`无法运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/sandbox` tab switching not responding to Tab or arrow keys",
+   "zh": "修复了`/sandbox`选项卡切换不响应 Tab 或箭头键的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed settings (`enabledPlugins`, `permissions.defaultMode`, policy-set env vars) not being applied at startup when `remote-settings.json` was cached from a prior session",
+   "zh": "修复了当从先前会话缓存`remote-settings.json`时，启动时未应用托管设置（`enabledPlugins`、`permissions.defaultMode`、策略集环境变量）"
+  }
+ ]
+}

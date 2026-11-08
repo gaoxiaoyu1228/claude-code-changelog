@@ -1,0 +1,58 @@
+{
+ "version": "2.0.51",
+ "date": "2025-11-24",
+ "published": "2025-11-24T18:27:18.026Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.51",
+ "counts": {
+  "new": 3,
+  "improved": 4,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added Opus 4.5! https://www.anthropic.com/news/claude-opus-4-5",
+   "zh": "添加了 Opus 4.5！ https://www.anthropic.com/news/claude-opus-4-5"
+  },
+  {
+   "type": "new",
+   "en": "Introducing Claude Code for Desktop: https://claude.com/download",
+   "zh": "推出 Claude Code 桌面版：https://claude.com/download"
+  },
+  {
+   "type": "new",
+   "en": "Pro users can now purchase extra usage for access to Opus 4.5 in Claude Code",
+   "zh": "Pro 用户现在可以额外购买用量，以便在 Claude Code 中使用 Opus 4.5"
+  },
+  {
+   "type": "improved",
+   "en": "To give you room to try out our new model, we've updated usage limits for Claude Code users. See the Claude Opus 4.5 blog for full details",
+   "zh": "为了让你试用新模型，我们调整了 Claude Code 用户的用量限额。详情请见 Claude Opus 4.5 博客"
+  },
+  {
+   "type": "improved",
+   "en": "Plan Mode now builds more precise plans and executes more thoroughly",
+   "zh": "计划模式现在能制定更精确的计划，执行也更彻底"
+  },
+  {
+   "type": "improved",
+   "en": "Usage limit notifications now easier to understand",
+   "zh": "用量限制通知的文字更容易理解"
+  },
+  {
+   "type": "improved",
+   "en": "Switched `/usage` back to \"% used\"",
+   "zh": "`/usage` 改回显示 \"% used\""
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed handling of thinking errors",
+   "zh": "修正了思维错误的处理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed performance regression",
+   "zh": "固定性能回归"
+  }
+ ]
+}

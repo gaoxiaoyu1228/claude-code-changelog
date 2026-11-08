@@ -1,0 +1,32 @@
+{
+ "version": "1.0.94",
+ "date": "2025-08-27",
+ "published": "2025-08-27T20:13:08.204Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.94",
+ "counts": {
+  "new": 3,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Vertex: add support for global endpoints for supported models",
+   "zh": "Vertex：支持的模型现在可使用全局端点"
+  },
+  {
+   "type": "new",
+   "en": "SDK: Add custom tools as callbacks",
+   "zh": "SDK：支持将自定义工具作为回调添加"
+  },
+  {
+   "type": "new",
+   "en": "Added /todos command to list current todo items",
+   "zh": "添加了 /todos 命令来列出当前待办事项"
+  },
+  {
+   "type": "improved",
+   "en": "/memory command now allows direct editing of all imported memory files",
+   "zh": "/memory 命令现在允许直接编辑所有导入的内存文件"
+  }
+ ]
+}

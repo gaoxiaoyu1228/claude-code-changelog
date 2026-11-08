@@ -1,0 +1,38 @@
+{
+ "version": "1.0.88",
+ "date": "2025-08-22",
+ "published": "2025-08-22T00:43:54.508Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.88",
+ "counts": {
+  "new": 2,
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Status line input now includes `exceeds_200k_tokens`",
+   "zh": "状态栏输入现在包含 `exceeds_200k_tokens`"
+  },
+  {
+   "type": "new",
+   "en": "Introduced `ANTHROPIC_DEFAULT_SONNET_MODEL` and `ANTHROPIC_DEFAULT_OPUS_MODEL` for controlling model aliases opusplan, opus, and sonnet.",
+   "zh": "新增 `ANTHROPIC_DEFAULT_SONNET_MODEL` 和 `ANTHROPIC_DEFAULT_OPUS_MODEL`，用于控制 opusplan、opus 和 sonnet 等模型别名"
+  },
+  {
+   "type": "improved",
+   "en": "Bedrock: Updated default Sonnet model to Sonnet 4",
+   "zh": "基岩：将默认 Sonnet 模型更新为 Sonnet 4"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed issue causing \"OAuth authentication is currently not supported\"",
+   "zh": "修复了导致“当前不支持 OAuth 身份验证”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed incorrect usage tracking in /cost.",
+   "zh": "修复了 /cost 中不正确的使用情况跟踪。"
+  }
+ ]
+}

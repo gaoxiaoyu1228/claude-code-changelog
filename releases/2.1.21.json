@@ -1,0 +1,63 @@
+{
+ "version": "2.1.21",
+ "date": "2026-01-28",
+ "published": "2026-01-28T01:37:44.595Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.21",
+ "counts": {
+  "new": 2,
+  "improved": 2,
+  "fixed": 6
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for full-width (zenkaku) number input from Japanese IME in option selection prompts",
+   "zh": "在选项选择提示中添加了对从日语 IME 输入全角 (zenkaku) 数字的支持"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added automatic Python virtual environment activation, ensuring `python` and `pip` commands use the correct interpreter (configurable via `claudeCode.usePythonEnvironment` setting)",
+   "zh": "[VSCode] 新增自动激活 Python 虚拟环境，确保 `python` 和 `pip` 命令使用正确的解释器（可通过 `claudeCode.usePythonEnvironment` 设置配置）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved read/search progress indicators to show \"Reading…\" while in progress and \"Read\" when complete",
+   "zh": "改进读取/搜索进度指示：进行中显示「Reading…」，完成后显示「Read」"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Claude to prefer file operation tools (Read, Edit, Write) over bash equivalents (cat, sed, awk)",
+   "zh": "改进：Claude 优先使用文件操作工具（Read、Edit、Write），而不是 bash 的等价命令（cat、sed、awk）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell completion cache files being truncated on exit",
+   "zh": "修复了 shell 完成缓存文件在退出时被截断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API errors when resuming sessions that were interrupted during tool execution",
+   "zh": "修复了恢复工具执行期间中断的会话时的 API 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto-compact triggering too early on models with large output token limits",
+   "zh": "修复了在具有大输出令牌限制的模型上过早触发自动压缩的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed task IDs potentially being reused after deletion",
+   "zh": "修复任务 ID 在删除后可能被复用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file search not working in VS Code extension on Windows",
+   "zh": "修复了文件搜索在 Windows 上的 VS Code 扩展中不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed message action buttons having incorrect background colors",
+   "zh": "[VSCode] 修复消息操作按钮的背景颜色不正确的问题"
+  }
+ ]
+}

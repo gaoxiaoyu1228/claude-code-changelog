@@ -1,0 +1,58 @@
+{
+ "version": "2.0.28",
+ "date": "2025-10-27",
+ "published": "2025-10-27T20:45:04.126Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.28",
+ "counts": {
+  "new": 5,
+  "improved": 1,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Plan mode: introduced new Plan subagent",
+   "zh": "计划模式：引入新的 Plan 子智能体"
+  },
+  {
+   "type": "new",
+   "en": "Subagents: claude can now choose to resume subagents",
+   "zh": "Claude 现在可以选择恢复（resume）子代理"
+  },
+  {
+   "type": "new",
+   "en": "Subagents: claude can dynamically choose the model used by its subagents",
+   "zh": "Claude 可以动态选择子代理使用的模型"
+  },
+  {
+   "type": "new",
+   "en": "SDK: added --max-budget-usd flag",
+   "zh": "SDK：新增 `--max-budget-usd` 参数"
+  },
+  {
+   "type": "new",
+   "en": "Add branch and tag support for git-based plugins and marketplaces using fragment syntax (e.g., `owner/repo#branch`)",
+   "zh": "使用片段语法为基于 git 的插件和市场添加分支和标签支持（例如`owner/repo#branch`）"
+  },
+  {
+   "type": "improved",
+   "en": "Discovery of custom slash commands, subagents, and output styles no longer respects .gitignore",
+   "zh": "自定义斜线命令、子代理和输出样式的发现不再遵循 .gitignore"
+  },
+  {
+   "type": "fixed",
+   "en": "Stop `/terminal-setup` from adding backslash to `Shift + Enter` in VS Code",
+   "zh": "阻止 `/terminal-setup` 在 VS Code 中把 `Shift + Enter` 加上反斜杠"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where macOS permission prompts would show up upon initial launch when launching from home directory",
+   "zh": "修复了从主目录启动时首次启动时会显示 macOS 权限提示的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Various other bug fixes",
+   "zh": "其他若干错误修复"
+  }
+ ]
+}

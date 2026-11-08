@@ -1,0 +1,608 @@
+{
+ "version": "2.1.314",
+ "date": "2026-10-30",
+ "published": "2026-10-30T00:12:56.911Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.314",
+ "counts": {
+  "new": 6,
+  "improved": 32,
+  "fixed": 81
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `permissions.blockWritesOutsideWorkingDirectories`: Write, Edit and NotebookEdit refuse paths outside the working directories in every permission mode",
+   "zh": "添加了`permissions.blockWritesOutsideWorkingDirectories`：在每个权限模式下，Write、Edit 和 NotebookEdit 拒绝工作目录之外的路径"
+  },
+  {
+   "type": "new",
+   "en": "Added an optional `groups` list to Claude apps gateway upstreams: only developers in the listed IdP groups are sent to that upstream, on failover too",
+   "zh": "向 Claude 应用程序网关上游添加了可选的“组”列表：只有列出的 IdP 组中的开发人员才会被发送到该上游，故障转移时也是如此"
+  },
+  {
+   "type": "new",
+   "en": "Added `guardrail_trace` to Claude apps gateway Bedrock upstreams, to log which Amazon Bedrock guardrail filter fired on a request, without the matched text",
+   "zh": "将`guardrail_trace`添加到 Claude 应用程序网关 Bedrock 上游，以记录哪个 Amazon Bedrock 护栏过滤器根据请求触发，无需匹配的文本"
+  },
+  {
+   "type": "new",
+   "en": "Added idle compaction to VS Code and Claude Desktop's Code tab: a 200K+ token conversation left idle is summarized, and the summary is used on your next message if the prompt cache has expired",
+   "zh": "向 VS Code 和 Claude Desktop 的“代码”选项卡添加了空闲压缩：对闲置的 200K+ 令牌对话进行总结，如果提示缓存已过期，则该摘要将用于您的下一条消息"
+  },
+  {
+   "type": "new",
+   "en": "[Cloud sessions] Added an Include completed button to the Scheduled tasks page when finished one-off tasks are the only ones hidden, so you can show them without opening the Sort menu",
+   "zh": "[云会话] 当完成的一次性任务是唯一隐藏的任务时，在“计划任务”页面中添加了“包含已完成”按钮，这样您就可以在不打开“排序”菜单的情况下显示它们"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Tag] Added a dismissible link to the Claude Tag API docs on the Bundles and Channels tabs in admin settings, for Enterprise organizations with Slack connected",
+   "zh": "[Claude Tag] 在管理设置的“捆绑包”和“频道”选项卡上添加了指向 Claude Tag API 文档的可关闭链接，适用于已连接 Slack 的企业组织"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory use in long headless and SDK turns that run many subagents: the parent session no longer keeps each subagent's tool results until the turn ends",
+   "zh": "改进了运行许多子代理的长无头和 SDK 轮次中的内存使用情况：父会话不再保留每个子代理的工具结果，直到轮次结束"
+  },
+  {
+   "type": "improved",
+   "en": "Improved prompt history: Ctrl+R now matches text inside collapsed `[Pasted text]` pills",
+   "zh": "改进的提示历史记录：Ctrl+R 现在匹配折叠的“[粘贴文本]”药丸内的文本"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/design-sync` upload prompt to show the folder, the project and the files it will upload or delete",
+   "zh": "改进了`/design-sync`上传提示以显示文件夹、项目及其将上传或删除的文件"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/permissions` review tab, now called Recently blocked: the footer says what Esc will do with marked rows",
+   "zh": "改进了`/permissions`查看选项卡，现在称为“最近被阻止”：页脚显示 Esc 将如何处理标记的行"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode's blocked calls: messages name the command, say Claude may retry and auto mode checks again, and point to `/permissions` to review",
+   "zh": "改进了自动模式的阻止呼叫：消息命名命令，说克劳德可以重试并再次自动模式检查，并指向“/权限”进行审查"
+  },
+  {
+   "type": "improved",
+   "en": "Improved permission prompts: a long reason takes fewer rows, so it pushes the command being approved off the screen on fewer terminals",
+   "zh": "改进的权限提示：较长的原因需要较少的行，因此它将在较少的终端上将正在批准的命令推离屏幕"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the cloud session error shown while a request refused for your claude.ai login is still being retried: it now also suggests `claude auth login`",
+   "zh": "改进了在重试 claude.ai 登录请求被拒绝时显示的云会话错误：它现在还建议`claude auth login`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the behavior of stored claude.ai, Team, and Enterprise logins when MDM and remote settings differ on base URL or `apiKeyHelper`",
+   "zh": "改进了当 MDM 和远程设置在基本 URL 或`apiKeyHelper`上不同时存储的 claude.ai、团队和企业登录的行为"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/config` in agent view to say how to stop agent view opening by default",
+   "zh": "改进了代理视图中的`/config`，以说明如何默认停止打开代理视图"
+  },
+  {
+   "type": "improved",
+   "en": "Improved session auto-titles: a session that starts with a skill or a prompt-based command such as `/security-review` now gets a title from it instead of staying untitled",
+   "zh": "改进的会话自动标题：以技能或基于提示的命令（例如`/security-review`）启动的会话现在可以从中获取标题，而不是保持无标题"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `--resume` speed and memory use on damaged transcripts",
+   "zh": "改进了受损转录本的`--resume`速度和内存使用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/context` speed in sessions with ten thousand or more MCP tools",
+   "zh": "提高了使用一万个或更多 MCP 工具进行会话时的`/context`速度"
+  },
+  {
+   "type": "improved",
+   "en": "Self-hosted runner: Improved the error shown when a session's branch isn't on the git remote: it now covers a never-pushed branch, says how to fix each case, and no longer suggests retrying",
+   "zh": "自托管运行器：改进了当会话的分支不在 git 远程上时显示的错误：它现在涵盖从未推送的分支，说明如何修复每种情况，并且不再建议重试"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the `/claude-api` skill: its Datadog setup for API tracing now sends the `dd-llmobs-enabled: true` header, as the Console does, and its `ant` install instructions drop the outdated macOS `xattr` step",
+   "zh": "更新了`/claude-api`技能：其用于 API 跟踪的 Datadog 设置现在会发送`dd-llmobs-enabled: true`标头，就像控制台一样，并且其`ant`安装指令会删除过时的 macOS`xattr`步骤"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the bundled dataviz skill to advise printing y-axis tick labels in full under 10,000, and horizontal ones in full under a million where they fit",
+   "zh": "更新了捆绑的 dataviz 技能，建议在适合的情况下打印完整的 y 轴刻度标签（小于 10,000）和水平刻度标签（小于一百万）"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the bundled dataviz skill to answer donut and pie chart requests with ranked bars or a segmented bar that prints its values",
+   "zh": "更新了捆绑的数据可视化技能，以使用排名条形图或打印其值的分段条形图来回答圆环图和饼图请求"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Claude's file tools to ask before editing the local copy of your organization's server-managed settings, as they do for your settings files",
+   "zh": "更改了克劳德的文件工具，在编辑组织的服务器管理设置的本地副本之前进行询问，就像它们对设置文件所做的那样"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/ultrareview` to check workspace trust before it runs git, as `claude ultrareview` does",
+   "zh": "更改了`/ultrareview`以在运行 git 之前检查工作区信任，就像`claude ultrareview`那样"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the Bash tool's shell to clear any inherited `which` alias or function and to stop passing exported `which`/`unsetenv` functions to commands, so `which` is the system command or zsh builtin",
+   "zh": "更改了 Bash 工具的 shell，以清除任何继承的 `which` 别名或函数，并停止将导出的 `which`/`unsetenv` 函数传递给命令，因此 `which` 是系统命令或 zsh 内置命令"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/permissions` Recently blocked to refuse approving a call you can't read in full, including one the terminal is too short to show",
+   "zh": "更改了`/permissions`最近被阻止拒绝批准您无法完整阅读的呼叫，包括终端太短而无法显示的呼叫"
+  },
+  {
+   "type": "improved",
+   "en": "Changed auto mode in Cowork cloud sessions: a hook's allow of an MCP tool call now counts as no answer, so the classifier or a permission prompt decides",
+   "zh": "更改了 Cowork 云会话中的自动模式：挂钩允许 MCP 工具调用现在算作无应答，因此由分类器或权限提示决定"
+  },
+  {
+   "type": "improved",
+   "en": "Changed hook `if` conditions such as `Monitor(tail *)` to match the Monitor tool's shell commands as `Bash(tail *)` matches Bash's",
+   "zh": "更改了钩子`if`条件，例如`Monitor(tail *)`，以匹配 Monitor 工具的 shell 命令，因为`Bash(tail *)`与 Bash 的匹配"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the `claude-api` skill to ask to read a Managed Agents workflow run's workflow before changing the agent to improve that run",
+   "zh": "更改了`claude-api`技能，要求在更改代理以改进运行之前读取托管代理工作流运行的工作流"
+  },
+  {
+   "type": "improved",
+   "en": "Changed flagged requests to retry on another model, not end in a refusal, when `ANTHROPIC_DEFAULT_OPUS_MODEL`, `availableModels` or `deniedModels` leaves only an older Opus model, or none",
+   "zh": "当`ANTHROPIC_DEFAULT_OPUS_MODEL`、`availableModels`或`deniedModels`仅留下较旧的 Opus 模型或没有留下任何模型时，更改了在另一个模型上重试的标记请求，而不是以拒绝结束"
+  },
+  {
+   "type": "improved",
+   "en": "Changed idle compaction to also run for subscribers with telemetry turned off, and on Bedrock, Vertex, Foundry and LLM gateways once the one-hour prompt cache is on",
+   "zh": "更改了空闲压缩，以便在遥测关闭的情况下也为订阅者运行，并且一旦一小时提示缓存打开，就可以在 Bedrock、Vertex、Foundry 和 LLM 网关上运行"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `FORCE_HYPERLINK=false` (also `no` and `off`) to turn hyperlinks off instead of on",
+   "zh": "更改了`FORCE_HYPERLINK=false`（还有`no`和`off`）以关闭而不是打开超链接"
+  },
+  {
+   "type": "improved",
+   "en": "macOS: Changed `git grep` in most commands that Claude runs to use the C locale, to avoid a reported memory leak in macOS's regex library on files that aren't valid UTF-8",
+   "zh": "macOS：更改了 Claude 运行的大多数命令中的`git grep`以使用 C 语言环境，以避免 macOS 的正则表达式库中报告的非有效 UTF-8 文件的内存泄漏"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Changed `CLAUDE_CODE_DISABLE_CFC_PROMPT` to also stop the extension adding the Claude in Chrome instructions to a session's messages; the browser tools stay available",
+   "zh": "[VSCode] 更改了`CLAUDE_CODE_DISABLE_CFC_PROMPT`，以阻止扩展程序将 Chrome 中的 Claude 指令添加到会话消息中；浏览器工具保持可用"
+  },
+  {
+   "type": "improved",
+   "en": "[Cloud sessions] Improved scheduled tasks: runs in Anthropic's cloud now load the plugins enabled on your claude.ai account",
+   "zh": "[云会话] 改进的计划任务：在 Anthropic 的云中运行现在加载在您的 claude.ai 帐户上启用的插件"
+  },
+  {
+   "type": "improved",
+   "en": "[Cloud sessions] Improved Test connection for GitHub Enterprise in admin settings to also connect the way cloud sessions do, and to warn you when that second test fails",
+   "zh": "[云会话] 改进了管理设置中 GitHub Enterprise 的测试连接，也可以按照云会话的方式进行连接，并在第二次测试失败时向您发出警告"
+  },
+  {
+   "type": "improved",
+   "en": "[Cloud sessions] Improved cloud session transcripts: a rename row now names the new title, and repository and environment lists show as a table instead of one line of JSON",
+   "zh": "[云会话] 改进了云会话记录：重命名行现在命名新标题，存储库和环境列表显示为表格而不是一行 JSON"
+  },
+  {
+   "type": "improved",
+   "en": "[Cloud sessions] Changed cloud sessions from the web, desktop and mobile apps to start even when a setup script exits with an error, instead of failing to start",
+   "zh": "[云会话] 将 Web、桌面和移动应用程序中的云会话更改为即使在安装脚本因错误退出时也会启动，而不是无法启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions failing turn after turn with \"Invalid effort level\" when an organization's admin caps a model's effort: Claude Code now lowers the effort, retries, and says which level it uses",
+   "zh": "当组织的管理员限制模型的工作量时，修复了会话一次又一次失败并显示“无效的工作量级别”的问题：Claude Code 现在会降低工作量，重试，并说明它使用哪个级别"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p` exiting with code 0 and no output when startup failed; it now prints the error and exits 1",
+   "zh": "修复了`claude -p`在启动失败时以代码 0 退出且无输出的问题；现在打印错误并退出 1"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock sessions with many images failing every turn and `/compact` with \"400 Input is too long.\" instead of removing older images and compacting",
+   "zh": "修复了基岩会话中许多图像每回合都会失败以及`/compact`“400 输入太长”的问题。而不是删除旧图像并压缩"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Microsoft Foundry sessions failing when the resource has no deployment for the default Sonnet, Opus or Haiku model: Claude Code now falls back to an older model of that family",
+   "zh": "修复了当资源没有部署默认 Sonnet、Opus 或 Haiku 模型时 Microsoft Foundry 会话失败的问题：Claude Code 现在回退到该系列的旧模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed repeated refused requests behind a gateway that doesn't accept tool search's `tool_reference` blocks: the request is sent again once without tool search, and the session remembers",
+   "zh": "修复了不接受工具搜索的`tool_reference`块的网关后面重复拒绝的请求：请求在没有工具搜索的情况下再次发送一次，并且会话会记住"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed TLS connections failing with `UNABLE_TO_GET_ISSUER_CERT` when the system certificate store holds a renewed root certificate that is cross-signed with its predecessor",
+   "zh": "修复了当系统证书存储持有与其前身交叉签名的续订根证书时，TLS 连接失败并显示`UNABLE_TO_GET_ISSUER_CERT`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers that also work without sign-in showing \"needs authentication\" after their stored sign-in stopped working; they are now used signed out",
+   "zh": "修复了在存储的登录停止工作后，无需登录也可以工作的 MCP 服务器显示“需要身份验证”的问题；它们现在用于注销"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude mcp logout` reporting success when the MCP sign-in was not removed, for example while the macOS keychain is locked over SSH",
+   "zh": "修复了未删除 MCP 登录时（例如，通过 SSH 锁定 macOS 钥匙串时）`claude mcp logout`报告成功的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed extra sign-in renewals when several sessions share an Anthropic profile login and the credentials lock is busy",
+   "zh": "修复了当多个会话共享 Anthropic 配置文件登录且凭据锁繁忙时额外的登录续订问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude ultrareview` and `claude remote-control` asking the workspace trust question in a CI job that has a terminal; with `CI` set they now refuse an untrusted folder at once",
+   "zh": "修复了`claude ultrareview`和“claude Remote-control”在具有终端的 CI 作业中询问工作区信任问题的问题；设置`CI`后，他们现在立即拒绝不受信任的文件夹"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an administrator's TLS trust settings in managed settings not being applied in Claude Desktop sessions",
+   "zh": "修复了托管设置中管理员的 TLS 信任设置未应用于 Claude Desktop 会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model switching being refused on machines with managed plugin settings when one of your own `--plugin-dir` or `--plugin-url` plugins had a broken manifest or failed to download",
+   "zh": "修复了当您自己的`--plugin-dir`或`--plugin-url`插件之一的清单损坏或无法下载时，在具有托管插件设置的计算机上拒绝模型切换的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Bedrock and Vertex model upgrade offer coming back at every start when managed settings pin the model",
+   "zh": "修复了当托管设置固定模型时基岩和顶点模型升级优惠在每次启动时都会返回"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `forceRemoteSettingsRefresh` set only in remote managed settings no longer applying once the stored copy had expired, which let sessions start without policy when the server could not be reached",
+   "zh": "修复了仅在远程管理设置中设置的`forceRemoteSettingsRefresh`，一旦存储的副本过期就不再应用，这使得会话在无法访问服务器时无需策略即可启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Continue automatically at usage limit\" continuing more than three times without a prompt from you when a task restarted itself between waits (a /goal check-in, a background or scheduled task)",
+   "zh": "修复了当任务在等待之间自行重新启动时，“在使用限制下自动继续”持续超过 3 次而没有提示的问题（/目标签入、后台或计划任务）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background and cloud sessions started with Ultracode turning it back on at their next start after it had been switched off",
+   "zh": "修复了后台和云会话启动时 Ultracode 在关闭后下次启动时将其重新打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the last broken reply and its retry prompts staying in the conversation after Claude gave up on a tool call that could not be parsed",
+   "zh": "修复了克劳德放弃无法解析的工具调用后最后一个损坏的回复及其重试提示留在对话中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a PreCompact hook with very large output making compaction fail or repeat; each hook's output is now cut at 10,000 characters",
+   "zh": "修复了具有非常大输出的 PreCompact 钩子导致压缩失败或重复的问题；每个钩子的输出现在被削减为 10,000 个字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background diff refreshes briefly taking the repository's index lock, which could make a git command run at the same moment fail with \"Unable to create '.git/index.lock': File exists\"",
+   "zh": "修复了背景差异刷新短暂获取存储库索引锁定的问题，这可能会使同时运行的 git 命令失败，并显示“无法创建‘.git/index.lock’：文件存在”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown tables jumping between grid and stacked layouts on half-typed rows while streaming, and long tables falling back to raw pipes",
+   "zh": "修复了流式传输时，降价表在网格和半类型行上的堆叠布局之间跳转，以及长表回落到原始管道的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the /resume picker showing the text of CLAUDE.md or CLAUDE.local.md as a session's title when the session only ran slash commands",
+   "zh": "修复了当会话仅运行斜杠命令时 /resume 选择器将 CLAUDE.md 或 CLAUDE.local.md 的文本显示为会话标题的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/btw` answering from the main conversation when asked from a subagent's open transcript",
+   "zh": "修复了当从子代理的开放记录中询问时从主对话中回答`/btw`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasting an image over SSH to a Linux machine doing nothing silently; the prompt now says to copy the file over and paste its path",
+   "zh": "修复了通过 SSH 将图像粘贴到 Linux 机器上不执行任何操作的问题；现在提示说复制文件并粘贴其路径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude remote-control` sessions that failed to start when the session service was slow for a moment: the worker's registration is now retried with growing waits",
+   "zh": "修复了当会话服务暂时缓慢时无法启动的“克劳德远程控制”会话：现在随着等待时间的增加，工作人员的注册将被重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model switches over Remote Control that take over 8 seconds getting a \"still pending\" error instead of the final result",
+   "zh": "修复了模型切换远程控制需要超过 8 秒的时间，出现“仍待处理”错误而不是最终结果的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `sandbox.excludedCommands` setting description saying listed commands always run outside the sandbox; it now says every command in a call must match an entry",
+   "zh": "修复了`sandbox.excludedCommands`设置描述，指出列出的命令始终在沙箱外运行；现在它说调用中的每个命令都必须与一个条目匹配"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell and MCP calls that auto mode, a deny rule or a PreToolUse hook blocked, or that otherwise did not run, reading as if they ran in a collapsed tool group",
+   "zh": "修复了自动模式、拒绝规则或 PreToolUse 挂钩被阻止或未运行的 shell 和 MCP 调用，读起来就好像它们在折叠的工具组中运行一样"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandbox protections not applying to a worktree entered by `claude -p --resume` or `--continue`",
+   "zh": "修复了沙箱保护不适用于通过`claude -p --resume`或`--continue`输入的工作树"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hooks matching Bash not running on shell commands started by the Monitor tool; such hooks can block or ask, but not approve or rewrite those commands",
+   "zh": "修复了与 Bash 匹配的钩子无法在 Monitor 工具启动的 shell 命令上运行的问题；此类挂钩可以阻止或询问，但不能批准或重写这些命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a settings file excluded with `--setting-sources` still supplying some settings, such as auto mode rules and saved permission consents",
+   "zh": "修复了`--setting-sources`排除的设置文件仍然提供一些设置，例如自动模式规则和保存的权限同意"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode reporting a call as blocked, and listing it in `/permissions`, when its safety check gave no verdict",
+   "zh": "修复了自动模式在安全检查未给出结论时将呼叫报告为已阻止并将其列在“/权限”中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Claude apps gateway Vertex upstream hanging for minutes when a Google token endpoint accepts the connection and never answers",
+   "zh": "修复了当 Google 令牌端点接受连接且从不应答时 Claude 应用程序网关 Vertex 上游挂起几分钟的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Claude apps gateway's start-up warning for a deprecated Claude Desktop key that it still serves as written saying \"stops being accepted\" after the key's end date",
+   "zh": "修复了克劳德应用程序网关对已弃用的克劳德桌面密钥的启动警告，该警告在密钥结束日期后仍按书面形式显示“停止被接受”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/upgrade` opening the browser and starting a new login for plans billed through the App Store or Google Play; it now says where to change the plan",
+   "zh": "修复了`/upgrade`打开浏览器并为通过 App Store 或 Google Play 计费的计划启动新登录的问题；现在它说在哪里更改计划"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume`, and rewinding past a switch to another model after a refusal, moving a session on a model name Claude Code doesn't recognize to a different model",
+   "zh": "修复了`--resume`，并在拒绝后倒回切换到另一个模型，将模型名称上的会话移动到 Claude Code 无法识别到其他模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed requests failing when a gateway or cloud provider refuses one of Claude Code's beta headers by name: the request is sent again without it",
+   "zh": "修复了当网关或云提供商按名称拒绝 Claude Code 的 beta 标头之一时请求失败的问题：请求在没有它的情况下再次发送"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model IDs spelled with a dot behind an LLM gateway, such as `claude-opus-4.8`, being treated as an older model with the wrong context window, output limit, effort, thinking mode and cost",
+   "zh": "修复了 LLM 网关后面用点拼写的模型 ID，例如`claude-opus-4.8`，被视为具有错误上下文窗口、输出限制、工作量、思维模式和成本的旧模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control clients showing a stray \"Compacted (ctrl+o to see full summary)\" row after /compact",
+   "zh": "修复了远程控制客户端在 /compact 之后显示杂散的“Compacted（ctrl+o 查看完整摘要）”行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the cloud sessions tip and the Remote Control idle notice showing when an organization's policy turns those features off",
+   "zh": "修复了组织策略关闭这些功能时显示的云会话提示和远程控制空闲通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a resumed claude.ai cloud session making a model call nobody asked for when the previous worker stopped just after receiving a new chat's files",
+   "zh": "修复了一个恢复的 claude.ai 云会话，当前一个工作人员在收到新的聊天文件后立即停止时，无人要求进行模型调用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed WebFetch in Cowork cloud sessions silently dropping a PDF's text past 100,000 characters; it now says how much was unread and where to read on",
+   "zh": "修复了 Cowork 云会话中的 WebFetch 静默删除超过 100,000 个字符的 PDF 文本的问题；现在它会显示有多少内容未读以及在哪里继续阅读"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude being told only that a command was declined after you stopped it with Esc or Stop in a cloud session or the IDE; it now also hears that the command may have run",
+   "zh": "修复了在云会话或 IDE 中使用 Esc 或 Stop 停止命令后，Claude 仅被告知命令被拒绝的问题；现在它还得知该命令可能已运行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed blank lines at the top of a code block disappearing when the code block opens a quote",
+   "zh": "修复了当代码块打开引用时代码块顶部的空白行消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a blank line appearing above some `⎿` rows in the transcript view (Ctrl+O)",
+   "zh": "修复了转录视图中某些`⎿`行上方出现的空行（Ctrl+O）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode `dw`, `dW`, `yw` and `yW` carrying on past the end of the line, and made `w` and `W` stop on empty lines",
+   "zh": "修复了 vim 模式 `dw`、`dW`、`yw` 和 `yW` 超出行尾的问题，并使 `w` 和 `W` 在空行上停止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed x and Enter in the agent panel sometimes acting on the wrong agent when another agent started or finished",
+   "zh": "修复了当另一个代理启动或完成时，代理面板中的 x 和 Enter 有时会作用于错误的代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasted text and dragged-in files being lost in Claude's question dialog unless the \"Other\" row had focus",
+   "zh": "修复了粘贴的文本和拖入的文件在克劳德的问题对话框中丢失的问题，除非“其他”行具有焦点"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasted text being lost when a row in the prompt footer was selected",
+   "zh": "修复了选择提示页脚中的一行时粘贴的文本丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode `p` over a character selection ignoring whether the yanked text was whole lines",
+   "zh": "修复了字符选择上的 vim 模式`p`，忽略拉出的文本是否是整行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode `aw` and `iw` taking the line break at the end of a line",
+   "zh": "修复了 vim 模式 `aw` 和 `iw` 在行尾换行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ↓ selecting footer items hidden by the ? help menu, the command list or a paste hint",
+   "zh": "修复了 ↓ 选择被 ? 隐藏的页脚项目帮助菜单、命令列表或粘贴提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc on a command's panel, such as `/btw`, also interrupting the subagent whose transcript is open",
+   "zh": "修复了命令面板上的 Esc（例如`/btw`）也会中断转录本打开的子代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the welcome header in fullscreen mode showing the session's model while viewing a subagent or teammate that runs on a different model",
+   "zh": "修复了在全屏模式下显示会话模型的欢迎标题，同时查看在不同模型上运行的子代理或队友"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the fullscreen transcript being left mid-conversation after \"Restore conversation\" in the rewind menu while scrolled up",
+   "zh": "修复了向上滚动时倒带菜单中的“恢复对话”后，全屏记录在对话中留下的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare case where a deleted session could reappear in the resume list as an almost empty entry",
+   "zh": "修复了一种罕见的情况，即已删除的会话可能会作为几乎空的条目重新出现在简历列表中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompts containing tags such as `<bash-stdout>` or `<local-command-stdout>` not being acknowledged to a local stream-json host",
+   "zh": "修复了包含`<bash-stdout>`或`<local-command-stdout>`等标签的提示未被本地stream-json主机确认"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions staying untitled when the first prompt failed (for example on a usage limit) and the conversation continued afterward",
+   "zh": "修复了当第一次提示失败（例如使用限制）并且对话随后继续时会话保持无标题的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the skill file watcher checking every removed skill kept in `~/.claude/skills/.trash`, which added file system load that grew with each removal",
+   "zh": "修复了技能文件观察器检查`~/.claude/skills/.trash`中保存的每个已删除技能，这增加了随着每次删除而增长的文件系统负载"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the session name from /rename disappearing while Claude asks for permission or a plan decision, so side-by-side sessions stay identifiable",
+   "zh": "修复了克劳德请求许可或计划决定时 /rename 中的会话名称消失的问题，因此并排会话保持可识别性"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions that fail to start being reported as a deleted daemon binary when the binary is still on disk",
+   "zh": "修复了当二进制文件仍在磁盘上时无法开始将后台会话报告为已删除的守护程序二进制文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the tip and idle reminder about push notifications appearing when the push settings in `/config` are hidden or your organization has turned off Remote Control",
+   "zh": "修复了当隐藏`/config`中的推送设置或您的组织已关闭远程控制时出现的有关推送通知的提示和空闲提醒"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `~/.claude/skills/.trash` and `~/.claude/plugins/.trash` growing without limit: each now holds about 1024 entries, whatever `cleanupPeriodDays` says",
+   "zh": "修复了 `~/.claude/skills/.trash` 和 `~/.claude/plugins/.trash` 无限制增长的问题：每个条目现在拥有大约 1024 个条目，无论 `cleanupPeriodDays` 说什么"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Bash edit diff listing a whole file as changed when a CRLF file under git's line-ending conversion was re-saved unchanged or had one line edited",
+   "zh": "修复了当 git 的行结束转换下的 CRLF 文件重新保存不变或编辑了一行时，Bash 编辑差异列出了整个文件已更改的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed an idle session moving to another runner instead of pausing when the runner's request to pause it lost its connection before Anthropic answered",
+   "zh": "自托管运行器：修复了当运行器的暂停请求在 Anthropic 应答之前丢失连接时，空闲会话移动到另一个运行器而不是暂停的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed \"Clear authentication\" for MCP servers reporting success when the saved sign-in could not be removed",
+   "zh": "[VSCode] 修复了在无法删除保存的登录信息时报告成功的 MCP 服务器的“清除身份验证”问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed missing spinner and Stop button while a queued message's hooks run",
+   "zh": "[VSCode] 修复了排队消息的挂钩运行时丢失的微调器和停止按钮"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed session group changes that cannot be saved, such as a delete, failing silently; an error notification now appears",
+   "zh": "[VSCode] 修复了无法保存的会话组更改，例如删除，静默失败；现在出现错误通知"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Cmd+F / Ctrl+F not opening the find widget in the plan preview tab",
+   "zh": "[VSCode] 修复了 Cmd+F / Ctrl+F 未在计划预览选项卡中打开查找小部件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the voice dictation shortcut (Ctrl+D) doing nothing under non-Latin keyboard layouts such as Russian, Greek or Hebrew",
+   "zh": "[VSCode] 修复了语音听写快捷键 (Ctrl+D) 在非拉丁键盘布局（例如俄语、希腊语或希伯来语）下不执行任何操作的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed missed one-time saved scheduled tasks being deleted without asking when the extension opened without a chat",
+   "zh": "[VSCode] 修复了错过的一次性保存的计划任务被删除而不询问扩展程序何时在没有聊天的情况下打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed recently used self-hosted environments never appearing among the recent environments on the new session card",
+   "zh": "[云会话]修复了最近使用的自托管环境从未出现在新会话卡上的最近环境中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed cloud sessions reporting uncommitted changes every turn after Claude moved a branch to a commit it had pushed from another worktree",
+   "zh": "[云会话]修复了克劳德将分支移动到从另一个工作树推送的提交后，每次都会报告未提交更改的云会话"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed the self-hosted environment details dialog in admin settings squeezing its content out of view in very short windows or at high zoom; the dialog now scrolls",
+   "zh": "[云会话] 修复了管理设置中的自托管环境详细信息对话框，在非常短的窗口或高缩放比例下将其内容挤压到视图之外；对话框现在滚动"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed the permission mode picker staying on Auto after a running cloud or Remote Control session refused the switch; it now shows the mode in use and tells you",
+   "zh": "[云会话] 修复了正在运行的云或远程控制会话拒绝切换后，权限模式选择器停留在自动状态的问题；它现在显示正在使用的模式并告诉您"
+  },
+  {
+   "type": "fixed",
+   "en": "[Remote Control] Fixed the permission mode button in Remote Control sessions showing the wrong mode until you typed; while your computer is online it now shows the real mode on open",
+   "zh": "[远程控制] 修复了远程控制会话中的权限模式按钮在您键入之前显示错误的模式；当您的计算机在线时，它现在显示打开的真实模式"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed `@Claude !restart` giving up after one failed workspace check in channels shared across Enterprise Grid workspaces; it now retries, then asks you to run it again",
+   "zh": "[Claude Tag] 修复了`@Claude !restart`在跨企业网格工作区共享的通道中工作区签入失败后放弃的问题；它现在重试，然后要求您再次运行它"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed a second confirmation DM and channel note when you connect your Claude account from Slack twice from the same link within a few minutes",
+   "zh": "[Claude Tag] 修复了当您在几分钟内通过同一链接两次从 Slack 连接 Claude 帐户时出现的第二次确认 DM 和频道注释"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed follow-up messages in Slack showing no sign of progress while Claude's session waits for a self-hosted runner; Claude now posts a wait notice in the thread",
+   "zh": "[Claude Tag] 修复了当 Claude 的会话等待自托管运行程序时 Slack 中的后续消息显示没有进度迹象的问题；克劳德现在在线程中发布等待通知"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude sometimes not answering a tag in its own thread in Slack Connect channels where both organizations have installed Claude",
+   "zh": "[Claude Tag] 修复了 Claude 有时不会在两个组织都安装了 Claude 的 Slack Connect 通道中的自己的线程中回答标签的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Retry on plugin and skill pages in Claude Tag admin settings discarding unsaved access changes after a failed load; your edits now stay in place",
+   "zh": "[Claude Tag] 修复了 Claude Tag 管理设置中的插件和技能页面上的重试问题，在加载失败后丢弃未保存的访问更改；您的编辑现在保留在原处"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed the repositories control in Claude Tag admin settings showing the same action twice; its menu now lists only what the button doesn't already do",
+   "zh": "[Claude Tag] 修复了 Claude Tag 管理设置中的存储库控件显示相同操作两次的问题；它的菜单现在只列出按钮尚未执行的操作"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "1.0.0",
+ "date": "2025-05-22",
+ "published": "2025-05-22T16:57:18.061Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.0",
+ "counts": {
+  "new": 1,
+  "other": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Introducing Sonnet 4 and Opus 4 models",
+   "zh": "推出 Sonnet 4 和 Opus 4 模型"
+  },
+  {
+   "type": "other",
+   "en": "Claude Code is now generally available",
+   "zh": "克劳德代码现已普遍可用"
+  }
+ ]
+}

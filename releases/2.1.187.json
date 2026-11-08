@@ -1,0 +1,118 @@
+{
+ "version": "2.1.187",
+ "date": "2026-06-23",
+ "published": "2026-06-23T17:55:41.991Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.187",
+ "counts": {
+  "new": 3,
+  "improved": 3,
+  "fixed": 15
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `sandbox.credentials` setting to block sandboxed commands from reading credential files and secret environment variables",
+   "zh": "添加了`sandbox.credentials`设置以阻止沙盒命令读取凭证文件和秘密环境变量"
+  },
+  {
+   "type": "new",
+   "en": "Added org-configured model restrictions to the model picker, `--model`, `/model`, and `ANTHROPIC_MODEL`, with a \"restricted by your organization's settings\" message when a restricted model is selected",
+   "zh": "向模型选择器`--model`、`/model`和`ANTHROPIC_MODEL`添加了组织配置的模型限制，当选择受限模型时会显示“受组织设置限制”消息"
+  },
+  {
+   "type": "new",
+   "en": "Added mouse click support to select menus (permission prompts, `/model`, `/config`, etc.) in fullscreen mode",
+   "zh": "添加了鼠标单击支持在全屏模式下选择菜单（权限提示、`/model`、`/config` 等）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/install-github-app`: GitHub Actions workflow setup is now optional — you can install just the GitHub App and skip the workflow/secret steps",
+   "zh": "改进 `/install-github-app`：GitHub Actions 工作流设置改为可选，可以只安装 GitHub App，跳过工作流和密钥步骤"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/btw` with ←/→ arrow navigation to step through earlier answers",
+   "zh": "改进 `/btw`：支持用 ←/→ 方向键切换查看之前的回答"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/plugin` to surface plugins you haven't used recently so you can clean them up",
+   "zh": "改进 `/plugin`：会列出你最近没用过的插件，方便清理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` failing with \"No conversation found\" when the original `-p` run produced no model turns",
+   "zh": "修复了当原始`-p`运行没有产生模型转向时`--resume`失败并显示“未找到对话”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--json-schema` and workflow `agent({schema})` structured output: the model can no longer re-call `StructuredOutput` indefinitely after a successful call, and follow-up turns now reliably return structured output",
+   "zh": "修复了 `--json-schema` 和工作流程 `agent({schema})` 结构化输出：模型无法在成功调用后无限期地重新调用 `StructuredOutput`，并且后续轮次现在可以可靠地返回结构化输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote MCP tool calls that hang with no response for 5 minutes — they now abort with an error instead of blocking indefinitely (override with `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT`)",
+   "zh": "修复了 5 分钟内挂起且无响应的远程 MCP 工具调用 — 它们现在会因错误而中止，而不是无限期地阻塞（使用`CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT`覆盖）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code Remote sessions taking ~2.7s longer to start after the agent proxy CA system-trust install was added",
+   "zh": "修复了添加代理 CA 系统信任安装后 Claude Code 远程会话启动时间延长约 2.7 秒的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasted Korean/CJK text turning into mojibake in terminals that deliver paste as per-byte extended-key events",
+   "zh": "修复了粘贴的韩语/CJK 文本在以每字节扩展键事件形式提供粘贴的终端中变成 mojibake 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/update` over Remote Control hanging when a startup trust dialog would have shown",
+   "zh": "修复了当显示启动信任对话框时`/update`在远程控制上挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background jobs in the agents view getting stuck in \"working\" indefinitely when the agent ended a turn without producing structured output",
+   "zh": "修复了当代理结束回合而不产生结构化输出时，代理视图中的后台作业无限期地陷入“工作”状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed channel connections dropping after navigating to the agents view and back, and after `/bg`, `/tui`, or `/update`",
+   "zh": "修复了导航到代理视图并返回后以及在`/bg`、`/tui`或`/update`之后通道连接丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent stop notifications not correctly attributing who stopped the agent, and improved wording (\"finished\"/\"stopped\" instead of \"came to rest\")",
+   "zh": "修复了代理停止通知无法正确归因谁停止代理的问题，并改进了措辞（“完成”/“停止”而不是“开始休息”）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagent depth tracking: resumed subagents now restore their original spawn depth, and forked subagents now count toward the depth cap",
+   "zh": "修复了子代理深度跟踪：恢复的子代理现在恢复其原始生成深度，分叉的子代理现在计入深度上限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed leaked agent worktree registrations: locked `.git/worktrees/` entries from killed agents are now cleaned up automatically",
+   "zh": "修复了泄漏的代理工作树注册：现在会自动清除被杀死的代理中锁定的`.git/worktrees/`条目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Cmd+click not opening URLs in fullscreen mode in Ghostty on macOS",
+   "zh": "修复了 macOS 上的 Ghostty 中 Cmd+click 无法在全屏模式下打开 URL 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --help` not listing the `--bg`/`--background` flag",
+   "zh": "修复了`claude --help`未列出`--bg`/`--background`标志的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc, Ctrl-C, and Ctrl-D not working while `/share` is uploading",
+   "zh": "修复了`/share`上传时 Esc、Ctrl-C 和 Ctrl-D 不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed extension becoming unresponsive when resuming a large session",
+   "zh": "[VSCode] 修复恢复大型会话时扩展失去响应的问题"
+  }
+ ]
+}

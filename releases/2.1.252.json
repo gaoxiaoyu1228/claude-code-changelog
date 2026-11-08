@@ -1,0 +1,31 @@
+{
+ "version": "2.1.252",
+ "date": "2026-08-31",
+ "published": "2026-08-31T17:07:28.168Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.252",
+ "counts": {
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed Bash commands failing with \"task output swap refused (tasks dir moved or linked)\" on some Macs",
+   "zh": "修复了某些 Mac 上的 Bash 命令因“任务输出交换被拒绝（任务目录已移动或链接）”而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"always allow\" not saving in a project that has no .claude/settings.local.json yet",
+   "zh": "修复了“始终允许”不保存在还没有 .claude/settings.local.json 的项目中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions hosted by Claude Desktop or VS Code stalling for minutes after a tool finished when the connection to claude.ai was degraded",
+   "zh": "修复了当与 claude.ai 的连接降级时，工具完成后由 Claude Desktop 或 VS Code 托管的远程控制会话会停滞几分钟的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background task notifications with very large failure output (for example git errors on a full disk) making the conversation exceed the API request size limit",
+   "zh": "修复了具有非常大的失败输出（例如完整磁盘上的 git 错误）的后台任务通知，导致对话超出 API 请求大小限制"
+  }
+ ]
+}

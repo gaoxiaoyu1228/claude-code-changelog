@@ -1,0 +1,16 @@
+{
+ "version": "2.1.12",
+ "date": "2026-01-17",
+ "published": "2026-01-17T15:40:35.547Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.12",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed message rendering bug",
+   "zh": "修复消息渲染错误"
+  }
+ ]
+}

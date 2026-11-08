@@ -1,0 +1,83 @@
+{
+ "version": "2.1.225",
+ "date": "2026-08-07",
+ "published": "2026-08-07T23:08:56.171Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.225",
+ "counts": {
+  "new": 3,
+  "improved": 1,
+  "fixed": 10
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added gateway spend-limit support to Claude Code's usage warning; the limit-reached message now names the cap, its reset time, and the operator's message (requires the gateway on 2.1.225)",
+   "zh": "为 Claude Code 的使用警告添加了网关支出限制支持；达到限制的消息现在命名上限、其重置时间和操作员的消息（需要 2.1.225 上的网关）"
+  },
+  {
+   "type": "new",
+   "en": "Added a workspace trust prompt to `claude agents` for untrusted directories, matching the behavior of `claude`",
+   "zh": "为不受信任的目录添加了工作区信任提示，以匹配`claude`的行为"
+  },
+  {
+   "type": "new",
+   "en": "SendMessage can now start a conversation with your Remote Control sessions on other machines by name (`ListAgents` shows them as `name [ref]`), instead of only replying after they message you first",
+   "zh": "SendMessage 现在可以按名称（`ListAgents` 显示为 `name [ref]`）与其他机器上的 Remote Control 会话开始对话，而不再只能在对方先发消息后回复"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control: photos attached from the Claude app are now shown to Claude directly instead of being read from disk with a separate tool call",
+   "zh": "改进远程控制：从 Claude 应用附加的照片，现在直接展示给 Claude，而不是用单独的工具调用从磁盘读取"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a transient 401 replacing a long-lived `CLAUDE_CODE_OAUTH_TOKEN` with a stored login's short-lived token, breaking headless sessions until restart",
+   "zh": "修复了瞬态 401，用存储的登录名的短期令牌替换长期的`CLAUDE_CODE_OAUTH_TOKEN`，从而中断无头会话直到重新启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth servers on macOS intermittently failing with a burst of 401 errors, as if never authenticated, after a keychain read timed out",
+   "zh": "修复了钥匙串读取超时后，macOS 上的 MCP OAuth 服务器间歇性失败并出现大量 401 错误，就好像从未经过身份验证一样"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode counting a safety-filter refusal of its own permission check toward the consecutive-block limit; the action is still denied, but the model is now told to move on rather than retry",
+   "zh": "修复了自动模式，将安全过滤器拒绝其自身权限检查的次数计入连续块限制；该操作仍然被拒绝，但模型现在被告知继续前进而不是重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cross-session messages staying parked without a notice or expiry in headless sessions and during startup",
+   "zh": "修复了无头会话和启动期间跨会话消息在没有通知或过期的情况下保持停放状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed conversation history breaking on Remote Control session resume after very large conversations were compacted",
+   "zh": "修复了压缩非常大的对话后，远程控制会话恢复时对话历史记录中断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hovering over a session in another project in the agents list changing the directory the next agent starts in",
+   "zh": "修复了将鼠标悬停在代理列表中另一个项目中的会话上更改下一个代理启动的目录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude self-hosted-runner` registering and then failing every session when `--base-dir` cannot be created or written; it now exits at startup with a clear error",
+   "zh": "修复了`claude self-hosted-runner`注册，然后在无法创建或写入`--base-dir`时每个会话失败的问题；现在它在启动时退出并出现明显错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code on the web sessions being misreported as stuck, re-sending a growing event backlog on every reconnect",
+   "zh": "修复了网络会话上的克劳德代码被错误报告为卡住的问题，每次重新连接时都会重新发送不断增长的事件积压"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Focus view folding away the latest to-do list, a pending question's context, and settled answers; thinking-only folds show \"Thought for Ns\" and re-collapse when their turn completes",
+   "zh": "[VSCode] 修复 Focus 视图折叠掉最新的待办列表、待回答问题的上下文以及已结束的回答的问题；仅含思考的折叠项会显示 \"Thought for Ns\"，并在该轮次完成后重新折叠"
+  },
+  {
+   "type": "fixed",
+   "en": "SendMessage: a Remote Control recipient you already confirmed is never swapped for a same-named session on this machine when its own list couldn't be checked",
+   "zh": "SendMessage：已确认的 Remote Control 接收方，在其自身列表无法核实时，永远不会被本机上同名的会话替换"
+  }
+ ]
+}

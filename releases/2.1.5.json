@@ -1,0 +1,16 @@
+{
+ "version": "2.1.5",
+ "date": "2026-01-11",
+ "published": "2026-01-11T21:30:08.609Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.5",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_TMPDIR` environment variable to override the temp directory used for internal temp files, useful for environments with custom temp directory requirements",
+   "zh": "添加了`CLAUDE_CODE_TMPDIR`环境变量来覆盖用于内部临时文件的临时目录，对于具有自定义临时目录要求的环境非常有用"
+  }
+ ]
+}

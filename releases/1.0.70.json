@@ -1,0 +1,28 @@
+{
+ "version": "1.0.70",
+ "date": "2025-08-06",
+ "published": "2025-08-06T19:15:54.940Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.70",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for @-mentions in slash command arguments",
+   "zh": "添加了对斜杠命令参数中 @-mentions 的支持"
+  },
+  {
+   "type": "improved",
+   "en": "Performance: Optimized message rendering for better performance with large contexts",
+   "zh": "优化消息渲染，在上下文很大时性能更好"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed native file search, ripgrep, and subagent functionality",
+   "zh": "Windows：修复了原生文件搜索、ripgrep 和子代理功能的问题"
+  }
+ ]
+}

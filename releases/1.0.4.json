@@ -1,0 +1,16 @@
+{
+ "version": "1.0.4",
+ "date": "2025-05-28",
+ "published": "2025-05-28T17:42:44.392Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.4",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where MCP tool errors weren't being parsed correctly",
+   "zh": "修复了 MCP 工具错误未正确解析的错误"
+  }
+ ]
+}

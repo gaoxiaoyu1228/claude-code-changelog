@@ -1,0 +1,26 @@
+{
+ "version": "2.0.36",
+ "date": "2025-11-07",
+ "published": "2025-11-07T21:54:57.368Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.36",
+ "counts": {
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed: DISABLE_AUTOUPDATER environment variable now properly disables package manager update notifications",
+   "zh": "修复：`DISABLE_AUTOUPDATER` 环境变量现在能正确禁用包管理器的更新通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed queued messages being incorrectly executed as bash commands",
+   "zh": "修复了排队消息被错误地执行为 bash 命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed input being lost when typing while a queued message is processed",
+   "zh": "修复了在处理排队消息时键入时丢失输入的问题"
+  }
+ ]
+}

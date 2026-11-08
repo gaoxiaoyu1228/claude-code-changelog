@@ -1,0 +1,108 @@
+{
+ "version": "2.1.30",
+ "date": "2026-02-03",
+ "published": "2026-02-03T16:34:38.489Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.30",
+ "counts": {
+  "new": 7,
+  "improved": 3,
+  "fixed": 9
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `pages` parameter to the Read tool for PDFs, allowing specific page ranges to be read (e.g., `pages: \"1-5\"`). Large PDFs (>10 pages) now return a lightweight reference when `@` mentioned instead of being inlined into context.",
+   "zh": "在 PDF 的读取工具中添加了`pages`参数，允许读取特定的页面范围（例如`pages: \"1-5\"`）。现在，大型 PDF（>10 页）在提及`@`时返回轻量级引用，而不是内联到上下文中。"
+  },
+  {
+   "type": "new",
+   "en": "Added pre-configured OAuth client credentials for MCP servers that don't support Dynamic Client Registration (e.g., Slack). Use `--client-id` and `--client-secret` with `claude mcp add`.",
+   "zh": "为不支持动态客户端注册（例如 Slack）的 MCP 服务器添加了预配置的 OAuth 客户端凭据。将 `--client-id` 和 `--client-secret` 与 `claude mcp add` 一起使用。"
+  },
+  {
+   "type": "new",
+   "en": "Added `/debug` for Claude to help troubleshoot the current session",
+   "zh": "为 Claude 添加了`/debug`以帮助排除当前会话的故障"
+  },
+  {
+   "type": "new",
+   "en": "Added support for additional `git log` and `git show` flags in read-only mode (e.g., `--topo-order`, `--cherry-pick`, `--format`, `--raw`)",
+   "zh": "添加了对只读模式下的附加 `git log` 和 `git show` 标志的支持（例如，`--topo-order`、`--cherry-pick`、`--format`、`--raw`）"
+  },
+  {
+   "type": "new",
+   "en": "Added token count, tool uses, and duration metrics to Task tool results",
+   "zh": "在任务工具结果中添加了令牌计数、工具使用和持续时间指标"
+  },
+  {
+   "type": "new",
+   "en": "Added reduced motion mode to the config",
+   "zh": "在配置中添加了简化运动模式"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added multiline input support to the \"Other\" text input in question dialogs (use Shift+Enter for new lines)",
+   "zh": "[VSCode] 问题对话框中的「Other」文本输入框支持多行输入（使用 Shift+Enter 换行）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage for `--resume` (68% reduction for users with many sessions) by replacing the session index with lightweight stat-based loading and progressive enrichment",
+   "zh": "改进 `--resume` 的内存占用（拥有大量会话的用户降低 68%）：用轻量的、基于文件状态信息的加载方式替换会话索引，并逐步补全信息"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `TaskStop` tool to display the stopped command/task description in the result line instead of a generic \"Task stopped\" message",
+   "zh": "改进 `TaskStop` 工具：结果行显示被停止的命令或任务描述，而不是笼统的“Task stopped”"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/model` to execute immediately instead of being queued",
+   "zh": "将 `/model` 更改为立即执行而不是排队"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed phantom \"(no content)\" text blocks appearing in API conversation history, reducing token waste and potential model confusion",
+   "zh": "修复了 API 对话历史记录中出现的虚拟“（无内容）”文本块，减少了令牌浪费和潜在的模型混乱"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt cache not correctly invalidating when tool descriptions or input schemas changed, only when tool names changed",
+   "zh": "修复了当工具描述或输入模式更改时，仅当工具名称更改时，提示缓存不会正确失效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed 400 errors that could occur after running `/login` when the conversation contained thinking blocks",
+   "zh": "修复了当对话包含思维障碍时运行`/login`后可能出现的 400 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hang when resuming sessions with corrupted transcript files containing `parentUuid` cycles",
+   "zh": "修复了使用包含`parentUuid`循环的损坏的转录文件恢复会话时的挂起"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rate limit message showing incorrect \"/upgrade\" suggestion for Max 20x users when extra-usage is unavailable",
+   "zh": "修复了当额外使用不可用时，为最多 20 倍用户显示错误的“/升级”建议的速率限制消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission dialogs stealing focus while actively typing",
+   "zh": "修复了主动打字时权限对话框窃取焦点的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents not being able to access SDK-provided MCP tools because they were not synced to the shared application state",
+   "zh": "修复了子代理无法访问 SDK 提供的 MCP 工具的问题，因为它们未同步到共享应用程序状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a regression where Windows users with a `.bashrc` file could not run bash commands",
+   "zh": "修复了具有`.bashrc`文件的 Windows 用户无法运行 bash 命令的回归问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed duplicate sessions appearing in the session list when starting a new conversation",
+   "zh": "[VSCode] 修复新建对话时，会话列表中出现重复会话的问题"
+  }
+ ]
+}

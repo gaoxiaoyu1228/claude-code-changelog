@@ -1,0 +1,132 @@
+{
+ "version": "2.1.207",
+ "date": "2026-07-10",
+ "published": "2026-07-10T22:25:09.430Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.207",
+ "counts": {
+  "improved": 6,
+  "fixed": 18
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Auto mode is now available without `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in on Bedrock, Vertex AI, and Foundry; disable via `disableAutoMode` in settings",
+   "zh": "现在无需在 Bedrock、Vertex AI 和 Foundry 上选择`CLAUDE_CODE_ENABLE_AUTO_MODE`即可使用自动模式；通过设置中的`disableAutoMode`禁用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved agent view: pasting the same text again now expands the collapsed `[Pasted text #N]` placeholder instead of adding a second one",
+   "zh": "改进 agent 视图：再次粘贴相同文本时，展开已折叠的 `[Pasted text #N]` 占位符，而不是新增第二个"
+  },
+  {
+   "type": "improved",
+   "en": "Improved agent view: blocked session peeks now lead with the question and show a worded staleness clock (`waiting 3m`) instead of the same timestamp twice",
+   "zh": "改进 agent 视图：阻塞中的会话预览先显示问题本身，并用文字化的停滞时长（如 `waiting 3m`）代替重复的同一时间戳"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Bedrock, Vertex, and Claude Platform on AWS to default to Claude Opus 4.8",
+   "zh": "将 AWS 上的 Bedrock、Vertex 和 Claude Platform 更改为默认为 Claude Opus 4.8"
+  },
+  {
+   "type": "improved",
+   "en": "Changed auto mode to no longer read `autoMode` from `.claude/settings.local.json` (repo-resident); use `~/.claude/settings.json` instead",
+   "zh": "更改了自动模式，不再从`.claude/settings.local.json`（存储库驻留）读取`autoMode`；使用 `~/.claude/settings.json` 代替"
+  },
+  {
+   "type": "improved",
+   "en": "Plugin option values (`pluginConfigs`) are no longer read from project-level `.claude/settings.json`; only user, `--settings`, and managed settings are honored",
+   "zh": "插件选项值（`pluginConfigs`）不再从项目级 `.claude/settings.json` 读取，只采用用户级、`--settings` 和托管设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal freezing and keystrokes lagging while streaming responses containing very long lists, tables, paragraphs, or code blocks",
+   "zh": "修复流式输出包含超长列表、表格、段落或代码块时，终端冻结且按键延迟的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote managed settings from a non-interactive run (`claude -p`, the SDK) being permanently recorded as consented without ever showing the security consent dialog",
+   "zh": "修复了非交互式运行（`claude -p`，SDK）中的远程管理设置被永久记录为同意的情况，而不会显示安全同意对话框"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spurious prompt-injection warnings triggered by benign system-generated conversation updates",
+   "zh": "修复了由良性系统生成的对话更新触发的虚假提示注入警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the auto-updater overwriting a custom launcher script or symlink at `~/.local/bin/claude` on every release; `/doctor` now reports an externally managed launcher",
+   "zh": "修复自动更新程序每次发布都会覆盖 `~/.local/bin/claude` 上自定义启动脚本或符号链接的问题；`/doctor` 现在会报告启动器由外部管理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed compound commands with `cd` prompting for permission when the only output redirect was to `/dev/null`",
+   "zh": "当唯一的输出重定向到`/dev/null`时，修复了带有`cd`提示权限的复合命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the transcript jumping above the start of the answer when a response finishes streaming",
+   "zh": "修复回复流式输出完成时，转录视图跳到回答开头之上的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `extensions.worktreeConfig` being left in the repo's `.git/config` (breaking go-git tools like `tea`) after the last `worktree.sparsePaths` worktree was removed",
+   "zh": "修复了删除最后一个`worktree.sparsePaths`工作树后，留在存储库的`.git/config`中的`extensions.worktreeConfig`（破坏了`tea`等 go-git 工具）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed malformed bracket patterns in rules globs, skill paths, `.ignore`, and `.worktreeinclude` breaking file reads, file suggestions, and worktree creation",
+   "zh": "修复了规则全局、技能路径、`.ignore`和`.worktreeinclude`中格式错误的括号模式，破坏了文件读取、文件建议和工作树创建"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash loop in agent teams where a malformed teammate mailbox message caused repeated errors every second until the mailbox file was manually deleted",
+   "zh": "修复了代理团队中的崩溃循环，其中格式错误的队友邮箱消息每秒导致重复错误，直到手动删除邮箱文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions auto-named by accepting a plan not showing that name on their agent-view row",
+   "zh": "修复了后台会话通过接受未在其代理视图行上显示该名称的计划来自动命名的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions that entered a git worktree resuming blank after a cold reopen from the agent list",
+   "zh": "修复了从代理列表冷重新打开后进入 git 工作树的后台会话恢复为空白的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control task status updates being lost when the connection recovered from a network interruption or credential refresh",
+   "zh": "修复了当连接从网络中断或凭据刷新中恢复时远程控制任务状态更新丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions hosted by the desktop app not showing background agent and workflow progress on mobile and web",
+   "zh": "修复了桌面应用程序托管的远程控制会话不显示移动设备和 Web 上的后台代理和工作流程进度的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Deep research runs labeling every Fetch-phase agent \"unknown\" — chips now show the source hostname",
+   "zh": "修复了深度研究运行，将每个获取阶段代理标记为“未知”——芯片现在显示源主机名"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock repeatedly requesting fresh AWS SSO credentials from IAM Identity Center on every API request",
+   "zh": "修复了 Bedrock 在每次 API 请求时反复从 IAM Identity Center 请求新的 AWS SSO 凭证的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an indefinite hang on Windows when AWS credential resolution stalls (e.g. a stuck `credential_process`): the 60-second stall guard now fires instead of waiting forever.",
+   "zh": "修复了当 AWS 凭证解析停止时 Windows 上无限期挂起的问题（例如`credential_process`卡住）：现在会触发 60 秒的停止保护，而不是永远等待。"
+  },
+  {
+   "type": "fixed",
+   "en": "Plugin hooks/monitors/MCP headersHelper: `${user_config.*}` in shell-form commands is now rejected (shell-injection fix). Hooks: use exec form (`args` array) or `$CLAUDE_PLUGIN_OPTION_<KEY>`; monitors and headersHelper: read the value inside the script (config file or the server's `env` block).",
+   "zh": "插件 hook/monitors/MCP headersHelper：shell 形式的命令中若含 `${user_config.*}`，现在会被拒绝（修复命令注入漏洞）。hook 请使用 exec 形式（`args` 数组）或 `$CLAUDE_PLUGIN_OPTION_<KEY>`；monitors 和 headersHelper 请在脚本内部读取值（配置文件或服务器的 `env` 块）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage-credits` amount inputs silently stripping malformed values (e.g. a pasted timestamp) to digits; malformed amounts are now rejected with an error, and amounts over $1,000 require a typed confirmation",
+   "zh": "修复了`/usage-credits`金额输入，默默地将格式错误的值（例如粘贴的时间戳）剥离为数字；现在，格式错误的金额会被拒绝并显示错误，超过 1,000 美元的金额需要打字确认"
+  }
+ ]
+}

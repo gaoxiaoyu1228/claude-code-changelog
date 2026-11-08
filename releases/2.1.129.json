@@ -1,0 +1,148 @@
+{
+ "version": "2.1.129",
+ "date": "2026-05-05",
+ "published": "2026-05-05T18:22:55.515Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.129",
+ "counts": {
+  "new": 3,
+  "improved": 7,
+  "fixed": 17
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `--plugin-url <url>` flag to fetch a plugin `.zip` archive from a URL for the current session",
+   "zh": "添加了 `--plugin-url <url>` 标志以从当前会话的 URL 获取插件 `.zip` 存档"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_FORCE_SYNC_OUTPUT=1` env var to force-enable synchronized output on terminals that auto-detection misses (e.g. Emacs `eat`)",
+   "zh": "添加了 `CLAUDE_CODE_FORCE_SYNC_OUTPUT=1` 环境变量，以在自动检测错过的终端上强制启用同步输出（例如 Emacs `eat`）"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE`: when set on Homebrew or WinGet installations, Claude Code runs the upgrade command in the background and prompts to restart",
+   "zh": "添加了`CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE`：在 Homebrew 或 WinGet 安装上设置时，Claude Code 在后台运行升级命令并提示重新启动"
+  },
+  {
+   "type": "improved",
+   "en": "Plugin manifests: `themes` and `monitors` should now be declared under `\"experimental\": { ... }`. Top-level declarations still work but `claude plugin validate` will warn",
+   "zh": "插件清单：`themes` 和 `monitors` 现应声明在 `\"experimental\": { ... }` 下。顶层声明仍然有效，但 `claude plugin validate` 会发出警告"
+  },
+  {
+   "type": "improved",
+   "en": "Gateway `/v1/models` discovery for the `/model` picker is now opt-in via `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` (was automatic in 2.1.126–2.1.128)",
+   "zh": "`/model` 选择器的网关 `/v1/models` 发现功能改为可选，需设置 `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1`（在 2.1.126–2.1.128 版本中是自动开启的）"
+  },
+  {
+   "type": "improved",
+   "en": "Ctrl+R history picker now defaults to searching all prompts across all projects, matching pre-2.1.124 behavior. Press Ctrl+S to narrow to the current project or session",
+   "zh": "Ctrl+R 历史记录选择器现在默认搜索所有项目中的所有提示，与 2.1.124 之前的行为相匹配。按 Ctrl+S 缩小到当前项目或会话"
+  },
+  {
+   "type": "improved",
+   "en": "Third-party deployments (Bedrock, Vertex, Foundry, or `ANTHROPIC_BASE_URL` gateway) no longer see spinner tips pointing at first-party Anthropic surfaces",
+   "zh": "第三方部署（Bedrock、Vertex、Foundry 或 `ANTHROPIC_BASE_URL` 网关）不再看到指向 Anthropic 官方产品的加载提示"
+  },
+  {
+   "type": "improved",
+   "en": "`skillOverrides` setting now works: `off` hides from model and `/`, `user-invocable-only` hides from model only, `name-only` collapses description",
+   "zh": "`skillOverrides` 设置现在生效：`off` 对模型和 `/` 都隐藏，`user-invocable-only` 只对模型隐藏，`name-only` 则会折叠描述"
+  },
+  {
+   "type": "improved",
+   "en": "The `claude_code.pull_request.count` OTel metric now counts PRs/MRs created via MCP tools, not just shell commands",
+   "zh": "`claude_code.pull_request.count` OTel 指标现在也统计通过 MCP 工具创建的 PR/MR，而不只是 shell 命令创建的"
+  },
+  {
+   "type": "improved",
+   "en": "Policy refusal error messages now include the API Request ID for easier support debugging",
+   "zh": "策略拒绝的报错信息现在包含 API 请求 ID，便于支持人员排查"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API errors with unrecognized 400 status codes showing raw JSON instead of the underlying error message",
+   "zh": "修复了 API 错误，其中无法识别的 400 状态代码显示原始 JSON，而不是底层错误消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/clear` not resetting the terminal tab title after a conversation",
+   "zh": "修复了对话后`/clear`不重置终端选项卡标题的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session title chip from `/rename` disappearing while a permission or other dialog is active",
+   "zh": "修复了权限或其他对话框处于活动状态时“/重命名”中的会话标题芯片消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent panel below the prompt being hidden when subagents are running (regression in 2.1.122)",
+   "zh": "修复了子代理运行时提示下方的代理面板被隐藏的问题（2.1.122 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed external-editor handoff (Ctrl+G) blanking the conversation history above the prompt",
+   "zh": "修复了外部编辑器切换 (Ctrl+G) 使提示上方的对话历史记录清空的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/context` dumping its rendered ASCII visualization grid into the conversation, wasting ~1.6k tokens per call",
+   "zh": "修复了`/context`将其渲染的 ASCII 可视化网格转储到对话中，每次调用浪费约 1.6k 令牌的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/agents` Library list arrow-key navigation: the highlighted agent now stays visible when the list exceeds the viewport",
+   "zh": "修复了`/agents`库列表箭头键导航：当列表超出视口时，突出显示的代理现在保持可见"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/branch` success message not including the new branch's session id for `/resume`",
+   "zh": "修复了`/branch`成功消息不包括`/resume`的新分支的会话 ID"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bold headers with keycap/ZWJ/skin-tone emoji losing trailing characters in fullscreen mode",
+   "zh": "修复了带有键帽/ZWJ/肤色表情符号的粗体标题在全屏模式下丢失尾随字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed server-managed settings policy not applying for enterprise/team users whose stored OAuth credentials lacked the `user:inference` scope",
+   "zh": "修复了服务器管理的设置策略不适用于存储的 OAuth 凭据缺少`user:inference`范围的企业/团队用户的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OAuth refresh race after wake-from-sleep that could log out all running sessions",
+   "zh": "修复了从睡眠中唤醒后可能会注销所有正在运行的会话的 OAuth 刷新竞赛"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed 1-hour prompt cache TTL being silently downgraded to 5 minutes",
+   "zh": "修复了 1 小时提示缓存 TTL 被静默降级为 5 分钟的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cache-miss warning appearing spuriously after `/clear` or compaction when changing `/effort` or `/model`",
+   "zh": "修复了更改`/effort`或`/model`时`/clear`或压缩后虚假出现的缓存未命中警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Bash(mkdir *)`, `Bash(touch *)` and similar allow rules not being honored for in-project paths",
+   "zh": "修复了项目内路径不遵守`Bash(mkdir *)`、`Bash(touch *)`和类似允许规则的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `deniedMcpServers` patterns with a `*://` scheme wildcard not matching mixed-case hostnames",
+   "zh": "修复了带有`*://`方案通配符的`deniedMcpServers`模式与混合大小写主机名不匹配的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed harmless WebSocket warning being logged as an error in `--debug` during voice mode",
+   "zh": "修复了无害的 WebSocket 警告在语音模式下被记录为`--debug`中的错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed `/clear` not clearing the conversation context and displayed transcript",
+   "zh": "[VSCode] 修复 `/clear` 无法清除对话上下文和显示的记录的问题"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "version": "2.1.306",
+ "date": "2026-10-21",
+ "published": "2026-10-21T02:28:47.495Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.306",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p` inside cloud sessions reporting \"Not logged in\" when started without the session's environment variables",
+   "zh": "修复了在没有会话环境变量的情况下启动时云会话中报告“未登录”的`claude -p`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an API error being replaced by \"prompt is too long\", and an unneeded compaction, in sessions with many MCP tools",
+   "zh": "修复了在使用许多 MCP 工具的会话中 API 错误被“提示太长”替换以及不必要的压缩的问题"
+  }
+ ]
+}

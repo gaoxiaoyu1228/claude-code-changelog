@@ -1,0 +1,28 @@
+{
+ "version": "0.2.59",
+ "date": "2025-04-02",
+ "published": "2025-04-02T00:24:59.952Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.59",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Copy+paste images directly into your prompt",
+   "zh": "将图像直接复制+粘贴到提示中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved progress indicators for bash and fetch tools",
+   "zh": "改进 bash 和 fetch 工具的进度指示"
+  },
+  {
+   "type": "fixed",
+   "en": "Bugfixes for non-interactive mode (-p)",
+   "zh": "非交互模式的错误修复 (-p)"
+  }
+ ]
+}

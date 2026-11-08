@@ -1,0 +1,63 @@
+{
+ "version": "2.0.72",
+ "date": "2025-12-17",
+ "published": "2025-12-17T21:21:00.969Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.72",
+ "counts": {
+  "new": 3,
+  "improved": 5,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added Claude in Chrome (Beta) feature that works with the Chrome extension (https://claude.ai/chrome) to let you control your browser directly from Claude Code",
+   "zh": "在 Chrome (Beta) 中添加了 Claude 功能，可与 Chrome 扩展 (https://claude.ai/chrome) 配合使用，让您直接从 Claude 代码控制浏览器"
+  },
+  {
+   "type": "new",
+   "en": "Added scannable QR code to mobile app tip for quick app downloads",
+   "zh": "在移动应用程序提示中添加了可扫描的二维码，以便快速下载应用程序"
+  },
+  {
+   "type": "new",
+   "en": "Added loading indicator when resuming conversations for better feedback",
+   "zh": "恢复对话时添加加载指示器以获得更好的反馈"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced terminal flickering",
+   "zh": "减少终端闪烁"
+  },
+  {
+   "type": "improved",
+   "en": "Improved @ mention file suggestion speed (~3× faster in git repositories)",
+   "zh": "改进 @ 提及文件建议的速度（在 git 仓库中约快 3 倍）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved file suggestion performance in repos with `.ignore` or `.rgignore` files",
+   "zh": "改进含 `.ignore` 或 `.rgignore` 文件的仓库中的文件建议性能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved settings validation errors to be more prominent",
+   "zh": "改进设置验证报错，使其更醒目"
+  },
+  {
+   "type": "improved",
+   "en": "Changed thinking toggle from Tab to Alt+T to avoid accidental triggers",
+   "zh": "将思维切换从 Tab 更改为 Alt+T，以避免意外触发"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/context` command not respecting custom system prompts in non-interactive mode",
+   "zh": "修复了非交互模式下`/context`命令不遵守自定义系统提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed order of consecutive Ctrl+K lines when pasting with Ctrl+Y",
+   "zh": "修复了使用 Ctrl+Y 粘贴时连续 Ctrl+K 行的顺序"
+  }
+ ]
+}

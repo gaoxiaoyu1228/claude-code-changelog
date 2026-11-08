@@ -1,0 +1,203 @@
+{
+ "version": "2.1.305",
+ "date": "2026-10-20",
+ "published": "2026-10-20T19:29:36.816Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.305",
+ "counts": {
+  "new": 4,
+  "improved": 12,
+  "fixed": 22
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `sandbox.allowNestedUserNamespaces` so sandboxed commands on Linux can create user namespaces (Chromium, rootless podman); this lets them get around the sandbox's file protections",
+   "zh": "添加了`sandbox.allowNestedUserNamespaces`，因此 Linux 上的沙盒命令可以创建用户命名空间（Chromium、rootless podman）；这让他们可以绕过沙箱的文件保护"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS` so unattended retry mode (`CLAUDE_CODE_RETRY_WATCHDOG`) notices a usage limit that was lifted before its reset",
+   "zh": "添加了`CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS`，因此无人值守重试模式（`CLAUDE_CODE_RETRY_WATCHDOG`）会注意到在重置之前已解除的使用限制"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a \"Running start-up hooks\" spinner status, with a screen reader announcement, while SessionStart or Setup hooks run",
+   "zh": "[VSCode] SessionStart 或 Setup 钩子运行时，新增「Running start-up hooks」加载状态，并向屏幕阅读器播报"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Tag] Added public Slack channels Claude hasn't joined to the Claude Tag admin Add place search, so admins can set one up from there",
+   "zh": "[Claude Tag] Claude Tag 管理设置的「Add」频道搜索框中，新增 Claude 尚未加入的公开 Slack 频道，管理员可以直接从这里为其设置"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/usage`: each warning is now a one-line fix that names its source, and `f` applies the fixes; the same fixes appear in VS Code and `/doctor`",
+   "zh": "改进 `/usage`：每条警告都是一行的修复建议，并注明来源；按 `f` 可应用这些修复；VS Code 和 `/doctor` 中也显示同样的修复"
+  },
+  {
+   "type": "improved",
+   "en": "Improved MCP consent dialogs so an Enter meant for the prompt is less likely to be taken as Accept",
+   "zh": "改进 MCP 同意对话框：减少把本来给提示词的 Enter 误当成“接受”的情况"
+  },
+  {
+   "type": "improved",
+   "en": "Improved a mod's `Image` to draw its picture in iTerm2 3.5 and later with fullscreen rendering, where it showed only its `alt` text",
+   "zh": "改进 mod 的 `Image`：在 iTerm2 3.5 及更高版本的全屏渲染中能画出图片，此前只显示 `alt` 文本"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control: Improved the spawn-mode messages: pressing `w` now says the new mode is saved for the folder, and a later `claude remote-control` start that uses the saved mode says where it came from",
+   "zh": "Remote Control 的启动模式提示已改进：按 `w` 会说明新模式已为该文件夹保存；之后用 `claude remote-control` 启动并使用已保存模式时，会说明该模式的来源"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `allowedMcpServers` to stop filtering `managed-mcp.json` stdio servers that use `${VAR}` only in `env`: one your allowlist left out now loads on upgrade; use `deniedMcpServers` to keep it off",
+   "zh": "更改了`allowedMcpServers`以停止过滤仅在`env`中使用`${VAR}`的“management-mcp.json”stdio 服务器：您遗漏的许可列表现在会在升级时加载；使用 `deniedMcpServers` 来阻止它"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plugins that Claude Desktop mounts by path to no longer keep their `allowed-tools` when your organization's managed settings set `allowManagedPermissionRulesOnly`",
+   "zh": "更改了 Claude Desktop 通过路径安装的插件，当您的组织的托管设置设置为`allowManagedPermissionRulesOnly`时，不再保留其“允许的工具”"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the `/artifacts` delete confirmation to take 1 or Enter to keep, 2 to delete, and Esc to cancel; `y` and `n` no longer answer it",
+   "zh": "修改`/artifacts`删除确认为1或Enter保留，2删除，Esc取消； `y` 和 `n` 不再回答它"
+  },
+  {
+   "type": "improved",
+   "en": "Changed a mod's docked pane to stay within 45% of the terminal's width, including a width kept from a wider terminal",
+   "zh": "更改了 mod 的停靠窗格，使其保持在终端宽度的 45% 范围内，包括与更宽的终端保持的宽度"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Changed the message shown when a session does not start in time and no hook is running: it now leads with the output logs and lists causes instead of pointing to sign-in and network first",
+   "zh": "[VSCode] 调整了会话长时间无法启动、且没有 hook 在运行时的提示：现在开头先提示查看输出日志，并列出可能的原因，不再首先指向登录和网络"
+  },
+  {
+   "type": "improved",
+   "en": "[Cloud sessions] Improved deleting a self-hosted environment so the dialog and error messages say what blocks the delete and what it will affect",
+   "zh": "[Cloud sessions] 改进删除自托管环境：对话框和错误信息会说明阻止删除的原因以及删除会影响什么"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Improved Claude Tag admin pages in large organizations so plugin, skill and bundle edits work while the channel list is still loading",
+   "zh": "[Claude Tag] 改进大型组织中的 Claude Tag 管理页面：频道列表仍在加载时，也可以编辑插件、技能和访问包"
+  },
+  {
+   "type": "improved",
+   "en": "[Code Review] Changed Code Review re-reviews so they no longer open with LGTM while earlier blocking findings are still open",
+   "zh": "[Code Review] 改进 Code Review 的重新审查：当较早的阻塞性问题仍未关闭时，不再以 LGTM 开头"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed every request failing on Vertex, Bedrock and other providers when the endpoint or a gateway rejects tool search, and behind gateways with ToolSearch disallowed or left out of `--tools` (a 2.1.304 regression): Claude Code now retries without it",
+   "zh": "修复了当端点或网关拒绝工具搜索时，Vertex、Bedrock 和其他提供程序上的每个请求失败，以及在网关后面的 ToolSearch 不允许或被排除在`--tools`之外（2.1.304 回归）：克劳德代码现在在没有它的情况下重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/effort` and `/autocompact` settings not applying when the model name differed from a `modelOverrides` value by letter case or a `[1m]` tag",
+   "zh": "修复了当模型名称因字母大小写或`[1m]`标签与`modelOverrides`值不同时`/effort`和`/autocompact`设置不适用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed new worktrees in a bare repository sometimes starting from local HEAD instead of the default branch, and unchanged subagent worktrees sometimes not being cleaned up",
+   "zh": "修复了裸存储库中的新工作树有时从本地 HEAD 而不是默认分支开始，以及未更改的子代理工作树有时未被清理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash commands on a full disk failing with a raw `ENOSPC` file path: the error now says the disk is full and that nothing ran",
+   "zh": "修复了完整磁盘上的 Bash 命令因原始`ENOSPC`文件路径而失败的问题：错误现在表明磁盘已满并且没有运行任何内容"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an MCP server passed by a cloud session or by the SDK's `setMcpServers` being replaced later in the session by a same-named server from your own settings",
+   "zh": "修复了云会话或 SDK 的`setMcpServers`传递的 MCP 服务器稍后在会话中被您自己的设置中的同名服务器替换的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude naming the wrong model for a subagent's work after the subagent switched to a fallback model",
+   "zh": "修复了在子代理切换到后备模型后，克劳德为子代理的工作命名错误的模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions and teammates not telling Claude when a compaction had to leave the oldest messages out of its summary to fit",
+   "zh": "修复了云会话和队友在压缩必须将最旧的消息从其摘要中留下来以适应时不告诉克劳德的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed more cases of scheduled Cowork cloud sessions waiting five minutes for each subagent whose WebFetch needed a URL approval that nobody was there to give",
+   "zh": "修复了更多已安排的 Cowork 云会话等待五分钟的情况，每个子代理的 WebFetch 需要 URL 批准，但没有人在那里给予批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Workflow resume re-running already-completed `pipeline()` and `parallel()` agents instead of serving them from the run's journal",
+   "zh": "修复了工作流程恢复重新运行已完成的`pipeline()`和`parallel()`代理，而不是从运行日志中提供服务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control leaving empty \"(session)\" entries in `/resume` after switching conversations with `/resume`",
+   "zh": "修复了使用`/resume`切换对话后，远程控制在`/resume`中留下空的“（会话）”条目的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` rows being cut off in narrow terminals",
+   "zh": "修复了`/usage`行在狭窄终端中被切断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed startup warnings printing as raw text above the logo: they now go to the debug log, and permission rules that restrict nothing show as warning rows under the banner",
+   "zh": "修复了在徽标上方打印为原始文本的启动警告：它们现在转到调试日志，并且不限制任何内容的权限规则在横幅下显示为警告行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed screen reader mode: search boxes now say \"Search:\" instead of a symbol VoiceOver read as \"telephone recorder\", and highlighted prompt text, such as Ctrl+R search matches and \"ultrathink\", no longer has spaces inside words",
+   "zh": "修复了屏幕阅读器模式：搜索框现在显示“搜索：”，而不是符号 VoiceOver 读取为“电话录音机”，并且突出显示的提示文本，例如 Ctrl+R 搜索匹配项和“ultrathink”，单词内不再有空格"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed a start script that shares only its stdout with the runner or orchestrator failing with `Resource temporarily unavailable` when `TERM` is set (a 2.1.300 regression)",
+   "zh": "修复了只与运行器或编排器共享标准输出的启动脚本，在设置了 `TERM` 时报 `Resource temporarily unavailable` 的问题（2.1.300 的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed repository access failing since 2.1.296 when a git credential helper or askpass program reads its settings through `GIT_CONFIG`",
+   "zh": "修复了 2.1.296 起，git 凭据助手或 askpass 程序通过 `GIT_CONFIG` 读取设置时，仓库访问失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed the orchestrator reporting a spawn-runner hook as timed out when a runner it started in the background kept its output open",
+   "zh": "修复了编排器把后台启动的运行器钩子误报为超时的问题（该运行器保持输出打开）"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the spinner cutting off \"Compacting...\" when your `spinnerVerbs` setting replaces the built-in verbs with short ones",
+   "zh": "[VSCode] 修复设置 `spinnerVerbs` 用简短词替换内置动词时，加载动画会截断 \"Compacting...\" 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed the Cloud environments admin page wrongly refusing to save an existing environment with an \"installs packages\" error",
+   "zh": "[Cloud sessions] 修复云端环境管理页面错误拒绝保存已有环境并提示「installs packages」错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude Tag access bundles so a repository that moved to another GitHub account can be added again",
+   "zh": "[Claude Tag] 修复 Claude Tag 访问包中，已转移到另一个 GitHub 账户的仓库无法再次添加的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed a routine set up in a Slack DM thread no longer posting after another routine in that thread restarted the conversation; both now keep posting there",
+   "zh": "[Claude Tag] 修复 Slack 私信话题中设置的例程，在同一话题中另一个例程重启对话后不再发帖的问题；现在两者都会继续在该话题中发帖"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed routines set up in a Slack thread reporting success without posting after the conversation ended; those runs are now skipped and the creator is told",
+   "zh": "[Claude Tag] 修复在 Slack 话题中设置的例程，在对话结束后报告成功却没有发帖的问题；现在这些运行会被跳过，并通知创建者"
+  },
+  {
+   "type": "fixed",
+   "en": "[Code Review] Fixed Code Review sometimes not reviewing the newest commit when several pushes landed on a pull request during a review",
+   "zh": "[Code Review] 修复审查期间拉取请求上有多次推送时，Code Review 有时不审查最新提交的问题"
+  }
+ ]
+}

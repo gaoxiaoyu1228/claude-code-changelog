@@ -1,0 +1,26 @@
+{
+ "version": "0.2.54",
+ "date": "2025-03-25",
+ "published": "2025-03-25T20:44:47.993Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.54",
+ "counts": {
+  "new": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Quickly add to Memory by starting your message with '#'",
+   "zh": "以 `#` 开头输入消息，即可快速添加到记忆中"
+  },
+  {
+   "type": "new",
+   "en": "Press ctrl+r to see full output for long tool results",
+   "zh": "按 `ctrl+r` 查看长工具结果的完整输出"
+  },
+  {
+   "type": "new",
+   "en": "Added support for MCP SSE transport",
+   "zh": "添加了对 MCP SSE 传输的支持"
+  }
+ ]
+}

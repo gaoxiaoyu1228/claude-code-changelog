@@ -1,0 +1,123 @@
+{
+ "version": "2.1.163",
+ "date": "2026-06-04",
+ "published": "2026-06-04T17:56:01.880Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.163",
+ "counts": {
+  "new": 5,
+  "improved": 4,
+  "fixed": 13
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `requiredMinimumVersion` and `requiredMaximumVersion` managed settings — Claude Code refuses to start if its version is outside the allowed range and directs the user to an approved version",
+   "zh": "添加了`requiredMinimumVersion`和`requiredMaximumVersion`托管设置 - 如果版本超出允许范围，Claude Code 将拒绝启动，并引导用户使用批准的版本"
+  },
+  {
+   "type": "new",
+   "en": "Added `/plugin list` command to list installed plugins, with `--enabled`/`--disabled` filters",
+   "zh": "添加了`/plugin list`命令来列出已安装的插件，并带有`--enabled`/`--disabled`过滤器"
+  },
+  {
+   "type": "new",
+   "en": "Added a \"c to copy\" shortcut to `/btw` that copies the raw markdown answer to the clipboard, preserving formatting when pasted elsewhere",
+   "zh": "添加了`/btw`的“c to copy”快捷方式，将原始 Markdown 答案复制到剪贴板，在粘贴到其他地方时保留格式"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Stop and SubagentStop hooks can now return `hookSpecificOutput.additionalContext` to give Claude feedback and keep the turn going without being labeled a hook error",
+   "zh": "Stop 和 SubagentStop 钩子现在可以返回 `hookSpecificOutput.additionalContext`，向 Claude 反馈并让本轮继续，且不会被当成 hook 错误"
+  },
+  {
+   "type": "new",
+   "en": "Skills: added `\\$` escape syntax to include a literal `$` before a digit in command bodies",
+   "zh": "命令正文中新增 `\\$` 转义语法，可在数字前输出字面量 `$`"
+  },
+  {
+   "type": "improved",
+   "en": "Background agent sessions now update to a new Claude Code version in the background, so opening a session after an update no longer waits on a cold restart",
+   "zh": "后台代理会话现在在后台更新到新的克劳德代码版本，因此更新后打开会话不再等待冷重启"
+  },
+  {
+   "type": "improved",
+   "en": "Clearer descriptions for built-in commands and skills in the / menu",
+   "zh": "/ 菜单中内置命令和技能的描述更加清晰"
+  },
+  {
+   "type": "improved",
+   "en": "The subscription-switch suggestion now shows in the startup announcement slot instead of a toast",
+   "zh": "订阅切换建议现在显示在启动公告位置，而不再以弹窗形式出现"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents` dispatching from the state-grouped view now starts the session in the directory the agent view was opened from",
+   "zh": "在按状态分组的视图中，`claude agents` 派发会话时，现在会在打开 agent 视图的目录中启动会话"
+  },
+  {
+   "type": "fixed",
+   "en": "stdio MCP servers now receive the same `CLAUDE_CODE_SESSION_ID` as hooks/Bash on `--resume`",
+   "zh": "stdio MCP 服务器在 `--resume` 时，现在会与 hook/Bash 收到相同的 `CLAUDE_CODE_SESSION_ID`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p` hanging forever after its final result when a backgrounded command never exits — background shells are now stopped ~5s after the result once stdin closes",
+   "zh": "修复了当后台命令永远不会退出时，`claude -p`在其最终结果后永远挂起的问题 - 一旦标准输入关闭，后台 shell 现在会在结果后约 5 秒停止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p` failing with \"ANTHROPIC_API_KEY required\" on Bedrock/Vertex/Foundry when `CI=true` and no Anthropic API key is set",
+   "zh": "修复了当`CI=true`且未设置 Anthropic API 密钥时，`claude -p`在 Bedrock/Vertex/Foundry 上失败并显示“需要 ANTHROPIC_API_KEY”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bash commands failing under bazel and EDR-protected Go workflows: `$TMPDIR` was overridden to `/tmp/claude-{uid}` for all commands instead of only sandboxed ones (regression in 2.1.154)",
+   "zh": "修复了 bash 命令在 bazel 和受 EDR 保护的 Go 工作流程下失败的问题：所有命令的`$TMPDIR`被覆盖为`/tmp/claude-{uid}`，而不仅仅是沙盒命令（2.1.154 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash commands failing on Windows with \"EEXIST: file already exists\" on the session-env directory when it has the read-only attribute or is inside OneDrive",
+   "zh": "修复了当会话环境目录具有只读属性或位于 OneDrive 内时，Bash 命令在 Windows 上失败并显示“EEXIST：文件已存在”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed org-managed permission rules not applying for the entire session when the managed settings fetch completed during startup on a fresh config directory",
+   "zh": "修复了在新配置目录上启动期间完成托管设置提取时，组织管理的权限规则不适用于整个会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions in `claude agents` losing their running background tasks when reattached after a Claude Code update",
+   "zh": "修复了“克劳德代理”中的后台会话在克劳德代码更新后重新连接时丢失正在运行的后台任务的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal misalignment and a multi-second hang when exiting the agent view by pressing Esc",
+   "zh": "修复按 Esc 退出智能体视图时终端错位以及挂起数秒的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clicking Stop on a background-task chip in the desktop app not clearing the chip when the underlying process was already gone",
+   "zh": "修复了当底层进程已经消失时，在桌面应用程序中单击后台任务芯片上的“停止”不会清除芯片的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed keyboard input becoming permanently unresponsive after a paste operation whose end marker is dropped by the terminal",
+   "zh": "修复了粘贴操作结束标记被终端丢弃后键盘输入永久无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook `if: \"Bash(...)\"` conditions firing on every Bash command containing `$()` or `$VAR`; the pattern now matches against commands inside subshells and backticks too",
+   "zh": "修复了钩子 `if: \"Bash(...)\"` 在每个包含 `$()` 或 `$VAR` 的 Bash 命令上触发的条件；该模式现在也与子 shell 和反引号内的命令匹配"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed deny rules on home-directory paths (e.g. `Read(~/Desktop/**)`) not blocking Bash commands that reference the path via `$HOME`",
+   "zh": "修复了主目录路径上的拒绝规则（例如`Read(~/Desktop/**)`），不会阻止通过`$HOME`引用路径的 Bash 命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a stray \"(no content)\" line left in the transcript after closing panel dialogs like /mcp and /plugins",
+   "zh": "修复了关闭 /mcp 和 /plugins 等面板对话框后记录中留下的杂散“（无内容）”行"
+  }
+ ]
+}

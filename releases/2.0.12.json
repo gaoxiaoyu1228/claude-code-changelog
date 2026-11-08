@@ -1,0 +1,69 @@
+{
+ "version": "2.0.12",
+ "date": "2025-10-09",
+ "published": "2025-10-09T15:43:28.593Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.12",
+ "counts": {
+  "new": 4,
+  "improved": 4,
+  "fixed": 1,
+  "other": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "**Plugin System Released**: Extend Claude Code with custom commands, agents, hooks, and MCP servers from marketplaces",
+   "zh": "**插件系统发布**：使用来自市场的自定义命令、代理、挂钩和 MCP 服务器扩展 Claude Code"
+  },
+  {
+   "type": "new",
+   "en": "`/plugin install`, `/plugin enable/disable`, `/plugin marketplace` commands for plugin management",
+   "zh": "用于插件管理的 `/plugin install`、`/plugin enable/disable`、`/plugin marketplace` 命令"
+  },
+  {
+   "type": "new",
+   "en": "Repository-level plugin configuration via `extraKnownMarketplaces` for team collaboration",
+   "zh": "通过 `extraKnownMarketplaces` 支持仓库级插件配置，便于团队协作"
+  },
+  {
+   "type": "new",
+   "en": "`/plugin validate` command for validating plugin structure and configuration",
+   "zh": "用于校验插件结构和配置的 `/plugin validate` 命令"
+  },
+  {
+   "type": "improved",
+   "en": "Comprehensive error messages and diagnostics via `/doctor` command",
+   "zh": "通过`/doctor`命令提供全面的错误消息和诊断"
+  },
+  {
+   "type": "improved",
+   "en": "Improvements to `/help`",
+   "zh": "改进 `/help`"
+  },
+  {
+   "type": "improved",
+   "en": "Avoid mentioning hooks in `/resume` summaries",
+   "zh": "避免在`/resume`摘要中提及钩子"
+  },
+  {
+   "type": "improved",
+   "en": "Changes to the \"verbose\" setting in `/config` now persist across sessions",
+   "zh": "对`/config`中“详细”设置的更改现在在会话中持续存在"
+  },
+  {
+   "type": "fixed",
+   "en": "Avoid flickering in `/model` selector",
+   "zh": "避免`/model`选择器中闪烁"
+  },
+  {
+   "type": "other",
+   "en": "Plugin announcement blog post at https://www.anthropic.com/news/claude-code-plugins",
+   "zh": "插件发布博客文章：https://www.anthropic.com/news/claude-code-plugins"
+  },
+  {
+   "type": "other",
+   "en": "Plugin documentation available at https://code.claude.com/docs/en/plugins",
+   "zh": "插件文档：https://code.claude.com/docs/en/plugins"
+  }
+ ]
+}

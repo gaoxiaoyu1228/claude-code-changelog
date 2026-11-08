@@ -1,0 +1,21 @@
+{
+ "version": "2.0.15",
+ "date": "2025-10-14",
+ "published": "2025-10-14T17:18:10.785Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.15",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed bug with resuming where previously created files needed to be read again before writing",
+   "zh": "修复了恢复之前创建的文件在写入之前需要再次读取的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bug with `-p` mode where @-mentioned files needed to be read again before writing",
+   "zh": "修复了`-p`模式下@提到的文件在写入之前需要再次读取的错误"
+  }
+ ]
+}

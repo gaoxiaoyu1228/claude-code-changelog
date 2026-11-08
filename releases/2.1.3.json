@@ -1,0 +1,78 @@
+{
+ "version": "2.1.3",
+ "date": "2026-01-09",
+ "published": "2026-01-09T21:05:42.894Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.3",
+ "counts": {
+  "new": 3,
+  "improved": 4,
+  "fixed": 6
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added release channel (`stable` or `latest`) toggle to `/config`",
+   "zh": "添加了发布通道（“稳定”或“最新”）切换到`/config`"
+  },
+  {
+   "type": "new",
+   "en": "Added detection and warnings for unreachable permission rules, with warnings in `/doctor` and after saving rules that include the source of each rule and actionable fix guidance",
+   "zh": "添加了对无法访问的权限规则的检测和警告，并在`/doctor`中以及保存规则后发出警告，其中包括每个规则的来源和可操作的修复指南"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added clickable destination selector for permission requests, allowing you to choose where settings are saved (this project, all projects, shared with team, or session only)",
+   "zh": "[VSCode] 权限请求新增可点击的保存位置选择器，可选择保存到本项目、所有项目、与团队共享或仅本次会话"
+  },
+  {
+   "type": "improved",
+   "en": "Merged slash commands and skills, simplifying the mental model with no change in behavior",
+   "zh": "斜杠命令与技能合并，简化了使用时的理解方式，行为不变"
+  },
+  {
+   "type": "improved",
+   "en": "Improved terminal rendering stability by preventing uncontrolled writes from corrupting cursor state",
+   "zh": "改进终端渲染稳定性：防止不受控的写入破坏光标状态"
+  },
+  {
+   "type": "improved",
+   "en": "Improved slash command suggestion readability by truncating long descriptions to 2 lines",
+   "zh": "改进斜杠命令建议的可读性：过长的描述截断为 2 行"
+  },
+  {
+   "type": "improved",
+   "en": "Changed tool hook execution timeout from 60 seconds to 10 minutes",
+   "zh": "将工具挂钩执行超时从 60 秒更改为 10 分钟"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan files persisting across `/clear` commands, now ensuring a fresh plan file is used after clearing a conversation",
+   "zh": "修复了在`/clear`命令中持续存在的计划文件，现在确保在清除对话后使用新的计划文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false skill duplicate detection on filesystems with large inodes (e.g., ExFAT) by using 64-bit precision for inode values",
+   "zh": "通过对 inode 值使用 64 位精度，修复了具有大型 inode（例如 ExFAT）的文件系统上的错误技能重复检测"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mismatch between background task count in status bar and items shown in tasks dialog",
+   "zh": "修复了状态栏中的后台任务计数与任务对话框中显示的项目之间的不匹配问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sub-agents using the wrong model during conversation compaction",
+   "zh": "修复了子代理在对话压缩期间使用错误模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed web search in sub-agents using incorrect model",
+   "zh": "修复子智能体中的网页搜索使用了错误模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed trust dialog acceptance when running from the home directory not enabling trust-requiring features like hooks during the session",
+   "zh": "修复在主目录中运行时，接受信任对话框后，钩子等需要信任的功能在本会话中未启用的问题"
+  }
+ ]
+}

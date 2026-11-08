@@ -1,0 +1,22 @@
+{
+ "version": "1.0.81",
+ "date": "2025-08-14",
+ "published": "2025-08-14T16:41:20.746Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.81",
+ "counts": {
+  "new": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Released output styles, including new built-in educational output styles \"Explanatory\" and \"Learning\". Docs: https://code.claude.com/docs/en/output-styles",
+   "zh": "正式推出输出风格，包括新增的内置教学型输出风格 \"Explanatory\" 和 \"Learning\"。文档：https://code.claude.com/docs/en/output-styles"
+  },
+  {
+   "type": "fixed",
+   "en": "Agents: Fix custom agent loading when agent files are unparsable",
+   "zh": "代理：修复代理文件无法解析时加载自定义代理的问题"
+  }
+ ]
+}

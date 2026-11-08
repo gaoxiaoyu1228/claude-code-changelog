@@ -1,0 +1,43 @@
+{
+ "version": "2.0.31",
+ "date": "2025-10-31",
+ "published": "2025-10-31T21:19:12.609Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.31",
+ "counts": {
+  "new": 2,
+  "improved": 1,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Vertex: add support for Web Search on supported models",
+   "zh": "Vertex：支持的模型现在可使用网页搜索"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Adding the respectGitIgnore configuration to include .gitignored files in file searches (defaults to true)",
+   "zh": "VS Code：新增 respectGitIgnore 配置，可在文件搜索中包含被 .gitignore 忽略的文件（默认为 true）"
+  },
+  {
+   "type": "improved",
+   "en": "Windows: native installation uses shift+tab as shortcut for mode switching, instead of alt+m",
+   "zh": "Windows：原生安装版改用 shift+tab 切换模式，不再用 alt+m"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug with subagents and MCP servers related to \"Tool names must be unique\" error",
+   "zh": "修复了与“工具名称必须是唯一的”错误相关的子代理和 MCP 服务器的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed issue causing `/compact` to fail with `prompt_too_long` by making it respect existing compact boundaries",
+   "zh": "修复了导致`/compact`因`prompt_too_long`而失败的问题，使其尊重现有的紧凑边界"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin uninstall not removing plugins",
+   "zh": "修复了插件卸载不删除插件的问题"
+  }
+ ]
+}

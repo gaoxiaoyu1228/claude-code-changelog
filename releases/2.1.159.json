@@ -1,0 +1,16 @@
+{
+ "version": "2.1.159",
+ "date": "2026-05-31",
+ "published": "2026-05-31T17:50:06.818Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.159",
+ "counts": {
+  "other": 1
+ },
+ "entries": [
+  {
+   "type": "other",
+   "en": "Internal infrastructure improvements (no user-facing changes)",
+   "zh": "内部基础设施改进（对用户无可见变化）"
+  }
+ ]
+}

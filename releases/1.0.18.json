@@ -1,0 +1,53 @@
+{
+ "version": "1.0.18",
+ "date": "2025-06-09",
+ "published": "2025-06-09T23:27:59.204Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.18",
+ "counts": {
+  "new": 5,
+  "improved": 2,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added --add-dir CLI argument for specifying additional working directories",
+   "zh": "添加了 --add-dir CLI 参数以指定其他工作目录"
+  },
+  {
+   "type": "new",
+   "en": "Added streaming input support without require -p flag",
+   "zh": "添加了流输入支持，无需 -p 标志"
+  },
+  {
+   "type": "new",
+   "en": "Added CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR environment variable to freeze working directory for bash commands",
+   "zh": "添加了 CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR 环境变量以冻结 bash 命令的工作目录"
+  },
+  {
+   "type": "new",
+   "en": "Added detailed MCP server tools display (/mcp)",
+   "zh": "添加了详细的 MCP 服务器工具显示 (/mcp)"
+  },
+  {
+   "type": "new",
+   "en": "Added auto-reconnection for MCP SSE connections on disconnect",
+   "zh": "添加了断开连接时 MCP SSE 连接的自动重新连接"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance and session storage performance",
+   "zh": "改进启动性能和会话存储性能"
+  },
+  {
+   "type": "improved",
+   "en": "MCP authentication and permission improvements",
+   "zh": "改进 MCP 认证和权限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed issue where pasted content was lost when dialogs appeared",
+   "zh": "修复了出现对话框时粘贴内容丢失的问题"
+  }
+ ]
+}

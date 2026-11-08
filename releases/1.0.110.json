@@ -1,0 +1,28 @@
+{
+ "version": "1.0.110",
+ "date": "2025-09-09",
+ "published": "2025-09-09T22:06:44.373Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.110",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "/terminal-setup command now supports WezTerm",
+   "zh": "/terminal-setup 命令现在支持 WezTerm"
+  },
+  {
+   "type": "improved",
+   "en": "MCP: OAuth tokens now proactively refresh before expiration",
+   "zh": "MCP：OAuth 令牌现在会在过期前主动刷新"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed reliability issues with background Bash processes",
+   "zh": "修复了后台 Bash 进程的可靠性问题"
+  }
+ ]
+}

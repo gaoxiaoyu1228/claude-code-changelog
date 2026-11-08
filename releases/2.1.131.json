@@ -1,0 +1,21 @@
+{
+ "version": "2.1.131",
+ "date": "2026-05-06",
+ "published": "2026-05-06T07:41:53.401Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.131",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed VS Code extension failing to activate on Windows due to a hardcoded build path in the bundled SDK (`createRequire` polyfill bug)",
+   "zh": "修复了由于捆绑 SDK 中的硬编码构建路径而导致 VS Code 扩展无法在 Windows 上激活的问题（`createRequire`polyfill 错误）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Mantle endpoint authentication failing with missing `x-api-key` header",
+   "zh": "修复了 Mantle 端点身份验证因缺少`x-api-key`标头而失败的问题"
+  }
+ ]
+}

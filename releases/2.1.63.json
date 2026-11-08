@@ -1,0 +1,143 @@
+{
+ "version": "2.1.63",
+ "date": "2026-02-28",
+ "published": "2026-02-28T02:43:42.865Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.63",
+ "counts": {
+  "new": 6,
+  "improved": 3,
+  "fixed": 17
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `/simplify` and `/batch` bundled slash commands",
+   "zh": "添加了`/simplify`和`/batch`捆绑斜杠命令"
+  },
+  {
+   "type": "new",
+   "en": "Added `ENABLE_CLAUDEAI_MCP_SERVERS=false` env var to opt out from making claude.ai MCP servers available",
+   "zh": "添加了`ENABLE_CLAUDEAI_MCP_SERVERS=false`环境变量以选择不使 claude.ai MCP 服务器可用"
+  },
+  {
+   "type": "new",
+   "en": "Added HTTP hooks, which can POST JSON to a URL and receive JSON instead of running a shell command",
+   "zh": "添加了 HTTP 挂钩，它可以将 JSON POST 到 URL 并接收 JSON，而不是运行 shell 命令"
+  },
+  {
+   "type": "new",
+   "en": "Added manual URL paste fallback during MCP OAuth authentication. If the automatic localhost redirect doesn't work, you can paste the callback URL to complete authentication.",
+   "zh": "在 MCP OAuth 身份验证期间添加了手动 URL 粘贴回退。如果自动本地主机重定向不起作用，您可以粘贴回调 URL 以完成身份验证。"
+  },
+  {
+   "type": "new",
+   "en": "Added \"Always copy full response\" option to the `/copy` picker. When selected, future `/copy` commands will skip the code block picker and copy the full response directly.",
+   "zh": "在`/copy`选择器中添加了“始终复制完整响应”选项。选择后，未来的`/copy`命令将跳过代码块选择器并直接复制完整响应。"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added session rename and remove actions to the sessions list",
+   "zh": "VS Code：会话列表中新增会话重命名和删除操作"
+  },
+  {
+   "type": "improved",
+   "en": "Project configs & auto memory now shared across git worktrees of the same repository",
+   "zh": "项目配置和自动记忆现在可以在同一个 git 仓库的多个 worktree 之间共享"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/model` command to show the currently active model in the slash command menu",
+   "zh": "改进 `/model` 命令：在斜杠命令菜单中显示当前生效的模型"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage in long sessions with subagents by stripping heavy progress message payloads during context compaction",
+   "zh": "改进含子代理的长会话的内存占用：压缩上下文时，去掉繁重的进度消息负载"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed local slash command output like /cost appearing as user-sent messages instead of system messages in the UI",
+   "zh": "修复了本地斜杠命令输出（例如 /cost）在 UI 中显示为用户发送的消息而不是系统消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed listener leak in bridge polling loop",
+   "zh": "修复了桥接轮询循环中的侦听器泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed listener leak in MCP OAuth flow cleanup",
+   "zh": "修复了 MCP OAuth 流清理中的侦听器泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak when navigating hooks configuration menu",
+   "zh": "修复了导航钩子配置菜单时的内存泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed listener leak in interactive permission handler during auto-approvals",
+   "zh": "修复了自动批准期间交互式权限处理程序中的侦听器泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file count cache ignoring glob ignore patterns",
+   "zh": "修复了忽略 glob 忽略模式的文件计数缓存"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in bash command prefix cache",
+   "zh": "修复了 bash 命令前缀缓存中的内存泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool/resource cache leak on server reconnect",
+   "zh": "修复了服务器重新连接时的 MCP 工具/资源缓存泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed IDE host IP detection cache incorrectly sharing results across ports",
+   "zh": "修复了 IDE 主机 IP 检测缓存错误地跨端口共享结果的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed WebSocket listener leak on transport reconnect",
+   "zh": "修复了传输重新连接时的 WebSocket 侦听器泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in git root detection cache that could cause unbounded growth in long-running sessions",
+   "zh": "修复了 git root 检测缓存中的内存泄漏，该泄漏可能导致长时间运行的会话无限增长"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in JSON parsing cache that grew unbounded over long sessions",
+   "zh": "修复了 JSON 解析缓存中的内存泄漏，该泄漏在长时间会话中无限增长"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed remote sessions not appearing in conversation history",
+   "zh": "VS Code：修复了远程会话不显示在对话历史中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race condition in the REPL bridge where new messages could arrive at the server interleaved with historical messages during the initial connection flush, causing message ordering issues.",
+   "zh": "修复 REPL 桥接中的竞态条件：初次连接刷新时，新消息可能与历史消息交错到达服务器，导致消息顺序错乱的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak where long-running teammates retained all messages in AppState even after conversation compaction",
+   "zh": "修复了内存泄漏，即使在对话压缩后，长时间运行的队友仍保留 AppState 中的所有消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak where MCP server fetch caches were not cleared on disconnect, causing growing memory usage with servers that reconnect frequently",
+   "zh": "修复了内存泄漏，其中 MCP 服务器获取缓存在断开连接时未清除，导致频繁重新连接的服务器内存使用量增加"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/clear` not resetting cached skills, which could cause stale skill content to persist in the new conversation",
+   "zh": "修复了`/clear`不重置缓存技能的问题，这可能导致过时的技能内容保留在新对话中"
+  }
+ ]
+}

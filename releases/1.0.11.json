@@ -1,0 +1,37 @@
+{
+ "version": "1.0.11",
+ "date": "2025-06-04",
+ "published": "2025-06-04T16:41:55.904Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.11",
+ "counts": {
+  "new": 2,
+  "improved": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Claude Code can now also be used with a Claude Pro subscription",
+   "zh": "Claude Code 现在也可以与 Claude Pro 订阅一起使用"
+  },
+  {
+   "type": "new",
+   "en": "Added /upgrade for smoother switching to Claude Max plans",
+   "zh": "添加/升级以更平滑地切换到 Claude Max 计划"
+  },
+  {
+   "type": "improved",
+   "en": "Improved UI for authentication from API keys and Bedrock/Vertex/external auth tokens",
+   "zh": "改进 API 密钥以及 Bedrock/Vertex/外部认证令牌的认证界面"
+  },
+  {
+   "type": "improved",
+   "en": "Improved shell configuration error handling",
+   "zh": "改进 shell 配置错误的处理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved todo list handling during compaction",
+   "zh": "改进压缩期间的待办列表处理"
+  }
+ ]
+}

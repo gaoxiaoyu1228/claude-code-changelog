@@ -1,0 +1,32 @@
+{
+ "version": "0.2.105",
+ "date": "2025-05-08",
+ "published": "2025-05-08T16:41:34.425Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.105",
+ "counts": {
+  "new": 2,
+  "improved": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Claude can now search the web",
+   "zh": "克劳德现在可以搜索网络了"
+  },
+  {
+   "type": "new",
+   "en": "Added word movement keybindings for Vim",
+   "zh": "为 Vim 添加了文字移动键绑定"
+  },
+  {
+   "type": "improved",
+   "en": "Moved system & account status to /status",
+   "zh": "系统和账户状态移至 `/status`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved latency for startup, todo tool, and file edits",
+   "zh": "改进启动、todo 工具和文件编辑的延迟"
+  }
+ ]
+}

@@ -1,0 +1,198 @@
+{
+ "version": "2.1.211",
+ "date": "2026-07-15",
+ "published": "2026-07-15T19:24:07.013Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.211",
+ "counts": {
+  "new": 1,
+  "improved": 10,
+  "fixed": 26
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `--forward-subagent-text` flag and `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` environment variable to include subagent text and thinking in stream-json output",
+   "zh": "添加了`--forward-subagent-text`标志和`CLAUDE_CODE_FORWARD_SUBAGENT_TEXT`环境变量，以包含子代理文本和stream-json输出中的思考"
+  },
+  {
+   "type": "improved",
+   "en": "Improved terminal layout and rendering performance",
+   "zh": "改进终端布局和渲染性能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved background agent result reporting — Claude now reports the status of still-running agents and waits for the real completion instead of fabricating results",
+   "zh": "改进后台 agent 结果报告：Claude 会报告仍在运行的代理的状态，并等待真正完成，不再编造结果"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the memory index over-limit warning to measure only loaded content, excluding frontmatter and HTML comments",
+   "zh": "改进记忆索引超限警告：只统计已加载的内容，不计入 frontmatter 和 HTML 注释"
+  },
+  {
+   "type": "improved",
+   "en": "Updated integer environment variables (timeouts, token budgets, retry counts) to accept scientific notation and digit-separator spellings like `1e6` and `64_000`",
+   "zh": "整数类环境变量（超时、token 预算、重试次数）现在可接受科学计数法和带数字分隔符的写法，如 `1e6` 和 `64_000`"
+  },
+  {
+   "type": "improved",
+   "en": "Updated documentation links to the current docs sites",
+   "zh": "文档链接已更新为当前的文档站点"
+  },
+  {
+   "type": "improved",
+   "en": "Changed \"always allow\" permission rules to save at the repository root, so approvals granted in a git worktree persist across sessions and worktrees",
+   "zh": "更改了“始终允许”权限规则以保存在存储库根目录中，因此 git 工作树中授予的批准可以跨会话和工作树保留"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/usage-credits` to ask for confirmation before sending a request to organization admins",
+   "zh": "更改了`/usage-credits`以在向组织管理员发送请求之前要求确认"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Vim mode `s` and `S` (substitute char/line) to work in NORMAL mode, matching vim behavior",
+   "zh": "更改了 Vim 模式 `s` 和 `S`（替换字符/行）以在正常模式下工作，匹配 vim 行为"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Updated the Remote Control banner to describe what it does",
+   "zh": "[VSCode] 更新了 Remote Control 横幅的说明文字，使其描述功能用途"
+  },
+  {
+   "type": "improved",
+   "en": "Claude in Chrome: hardened file-upload path validation",
+   "zh": "Chrome 中的 Claude：强化文件上传路径验证"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission previews relayed to chat channels not neutralizing bidirectional-override, zero-width, and look-alike quote characters, so tool inputs cannot visually alter the approval message",
+   "zh": "修复了转发到聊天频道的权限预览，不会中和双向覆盖、零宽度和相似的引号字符，因此工具输入无法在视觉上改变批准消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode overriding a PreToolUse hook's `ask` decision for unsandboxed Bash — a hook `ask` now floors the decision at a prompt",
+   "zh": "修复了自动模式覆盖 PreToolUse 钩子对未沙盒 Bash 的`ask`决定的问题 — 钩子`ask`现在会在提示时做出决定"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed parallel Claude Code sessions all logging out simultaneously after wake-from-sleep when many sessions share one credential store",
+   "zh": "修复了当许多会话共享一个凭证存储时，并行 Claude Code 会话在从睡眠中唤醒后同时注销的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin MCP servers not reconnecting after an idle web session woke, leaving MCP calls failing until the next message",
+   "zh": "修复了插件 MCP 服务器在空闲 Web 会话唤醒后无法重新连接，导致 MCP 调用失败直到下一条消息为止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code on Vertex and Bedrock attempting the default Opus model at startup and printing a spurious fallback notice when a model is explicitly configured",
+   "zh": "修复了 Vertex 和 Bedrock 上的 Claude 代码在启动时尝试默认 Opus 模型并在显式配置模型时打印虚假后备通知的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents spawned with an explicit model override reverting to the parent's model when resumed or sent a follow-up message",
+   "zh": "修复了使用显式模型覆盖生成的子代理在恢复或发送后续消息时恢复到父级模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed nested `.claude/rules/*.md` files loading even when setting sources exclude project settings",
+   "zh": "修复了嵌套的`.claude/rules/*.md`文件加载，即使设置源排除项目设置也是如此"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file upload validation: filenames ending in a DOS device suffix (`.prn`) or trailing dot are now accepted, and files with multiple hard links are refused",
+   "zh": "修复了文件上传验证：现在接受以 DOS 设备后缀 (`.prn`) 或尾随点结尾的文件名，并拒绝具有多个硬链接的文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file uploads to Claude in Chrome from remote and CLI sessions",
+   "zh": "修复了 Chrome 中从远程和 CLI 会话将文件上传到 Claude 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed edits that leave the input as \"?\" being silently swallowed and toggling the shortcuts panel",
+   "zh": "修复了将输入保留为“？”的编辑被无声地吞噬并切换快捷方式面板"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a startup hang when the Claude in Chrome extension is enabled but Chrome is not running",
+   "zh": "修复了启用 Chrome 扩展程序但 Chrome 未运行时启动挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a 300ms delay revealing async content (Settings tabs, Stats, diff views, and other loading states)",
+   "zh": "修复了显示异步内容（设置选项卡、统计信息、差异视图和其他加载状态）的 300 毫秒延迟"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed reopening a just-stopped background session from the agents view starting a blank conversation under the same session id",
+   "zh": "修复了从代理视图重新打开刚刚停止的后台会话在同一会话 ID 下启动空白对话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/loop` hiding the session from `/resume` after a single use",
+   "zh": "修复了`/loop`在单次使用后隐藏`/resume`会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed screen reader users losing the audible terminal bell after `/terminal-setup` or onboarding terminal setup",
+   "zh": "修复了屏幕阅读器用户在`/terminal-setup`或载入终端设置后丢失终端声音的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background jobs on LLM gateway auth (`ANTHROPIC_AUTH_TOKEN` + `ANTHROPIC_BASE_URL`) coming back \"Not logged in\" after the daemon respawns them",
+   "zh": "修复了 LLM 网关身份验证（`ANTHROPIC_AUTH_TOKEN` + `ANTHROPIC_BASE_URL`）上的后台作业在守护进程重新生成后返回“未登录”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` jobs becoming permanently undeletable when git no longer recognizes their worktree — the row now shows why the delete was refused instead of silently reappearing",
+   "zh": "修复了当 git 不再识别其工作树时“claude Agents”作业永久不可删除的问题 - 该行现在显示删除被拒绝而不是默默重新出现的原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/clear` not resetting the session cost counter — the statusline's cost now starts at $0 after `/clear`",
+   "zh": "修复了`/clear`不重置会话成本计数器的问题 - 在`/clear`之后状态栏的成本现在从 0 美元开始"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude in Chrome setup pages failing to open in the browser on Windows",
+   "zh": "修复了 Chrome 设置页面中的 Claude 无法在 Windows 浏览器中打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed headless print-mode sessions on Windows crashing or silently exiting when stdin is unreadable",
+   "zh": "修复了当标准输入不可读时 Windows 上的无头打印模式会话崩溃或无提示退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background session titles in the agents view showing the naming model's refusal text when the prompt contains a link",
+   "zh": "修复了当提示包含链接时代理视图中显示命名模型的拒绝文本的后台会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents killed by the user auto-respawning, and revived agents re-running stale prompts from old sessions",
+   "zh": "修复了后台代理被用户自动重生杀死的问题，并恢复了代理从旧会话中重新运行陈旧提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed routines with no schedule reporting a next run time in the year 1",
+   "zh": "修复了没有时间表报告第一年下一次运行时间的例程"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened synced skill/plugin directory naming on Windows and kept CCR web fetch/search proxies working after `/clear`",
+   "zh": "加固 Windows 上同步技能/插件的目录命名，并确保 `/clear` 之后 CCR 网页抓取/搜索代理仍能正常工作"
+  },
+  {
+   "type": "fixed",
+   "en": "Claude in Chrome: `save_to_disk` on screenshot actions now writes the image to disk and returns the path; previously it did nothing",
+   "zh": "Chrome 中的 Claude：屏幕截图操作中的`save_to_disk`现在将图像写入磁盘并返回路径；之前它什么也没做"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a prompt-caching regression on Bedrock, Vertex, Mantle, and Foundry that billed the trailing system context block as fresh input tokens on every request.",
+   "zh": "修复 Bedrock、Vertex、Mantle 和 Foundry 上的提示词缓存回归问题：每次请求都把末尾的系统上下文块当作新输入 token 计费"
+  }
+ ]
+}

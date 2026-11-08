@@ -1,0 +1,22 @@
+{
+ "version": "0.2.125",
+ "date": "2025-05-21",
+ "published": "2025-05-21T18:00:11.547Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.125",
+ "counts": {
+  "improved": 1,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Breaking change: Bedrock ARN passed to `ANTHROPIC_MODEL` or `ANTHROPIC_SMALL_FAST_MODEL` should no longer contain an escaped slash (specify `/` instead of `%2F`)",
+   "zh": "重大更改：传递给`ANTHROPIC_MODEL`或`ANTHROPIC_SMALL_FAST_MODEL`的基岩 ARN 不应再包含转义斜杠（指定`/`而不是`%2F`）"
+  },
+  {
+   "type": "removed",
+   "en": "Removed `DEBUG=true` in favor of `ANTHROPIC_LOG=debug`, to log all requests",
+   "zh": "移除 `DEBUG=true`，改用 `ANTHROPIC_LOG=debug` 来记录所有请求"
+  }
+ ]
+}

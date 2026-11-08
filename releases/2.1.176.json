@@ -1,0 +1,123 @@
+{
+ "version": "2.1.176",
+ "date": "2026-06-12",
+ "published": "2026-06-12T19:45:41.757Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.176",
+ "counts": {
+  "new": 1,
+  "improved": 3,
+  "fixed": 18
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `footerLinksRegexes` setting for regex-matched link badges in the footer row, configurable via user or managed settings",
+   "zh": "为页脚行中正则表达式匹配的链接徽章添加了`footerLinksRegexes`设置，可通过用户或托管设置进行配置"
+  },
+  {
+   "type": "improved",
+   "en": "Session titles are now generated in the language of your conversation (set the `language` setting to pin a specific language)",
+   "zh": "会话标题现在使用对话所用的语言生成（可用 `language` 设置固定为某种语言）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Bedrock credential caching: credentials from `awsCredentialExport` are now cached until their `Expiration` instead of a fixed 1 hour",
+   "zh": "改进 Bedrock 凭证缓存：`awsCredentialExport` 的凭证现在缓存到其 `Expiration` 时间为止，不再固定为 1 小时"
+  },
+  {
+   "type": "improved",
+   "en": "Background sessions now show clearer guidance when a window left open across an auto-update can't submit a reply, and `claude daemon status` explains version-skew behavior",
+   "zh": "当自动更新中保持打开状态的窗口无法提交回复时，后台会话现在会显示更清晰的指导，并且`claude daemon status`解释了版本偏差行为"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `availableModels` enforcement: alias model picks can no longer be redirected to a blocked model via `ANTHROPIC_DEFAULT_*_MODEL` environment variables, and `/fast` now refuses to toggle when it would switch to a model outside the allowlist",
+   "zh": "修复了`availableModels`强制执行：别名模型选择不再可以通过`ANTHROPIC_DEFAULT_*_MODEL`环境变量重定向到被阻止的模型，并且`/fast`现在拒绝在切换到允许列表之外的模型时进行切换"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode failing on Fable 5 for organizations without Opus 4.8 enabled — the classifier now falls back to the best available Opus model",
+   "zh": "修复了未启用 Opus 4.8 的组织在《神鬼寓言 5》中自动模式失败的问题 — 分类器现在回落到最佳可用 Opus 模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook `if` conditions for Read/Edit/Write tool paths: documented patterns like `Edit(src/**)`, `Read(~/.ssh/**)`, and `Read(.env)` now match correctly",
+   "zh": "修复了读取/编辑/写入工具路径的钩子`if`条件：记录的模式如`Edit(src/**)`、`Read(~/.ssh/**)`和`Read(.env)`现在可以正确匹配"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Linux sandbox failing to start when `.claude/settings.json` is a symlink with an absolute target",
+   "zh": "修复了当 `.claude/settings.json` 是具有绝对目标的符号链接时 Linux 沙箱无法启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/copy` and mouse-selection copy not reaching the system clipboard inside tmux over SSH, and tmux paste buffer not loading on versions older than 3.2",
+   "zh": "修复了`/copy`和鼠标选择副本无法通过 SSH 到达 tmux 内的系统剪贴板，以及 tmux 粘贴缓冲区无法在 3.2 之前的版本上加载的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control connecting from web/mobile silently switching the session's model",
+   "zh": "修复了从网络/移动设备进行远程控制连接时静默切换会话模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control disconnect notifications showing a bare numeric code instead of a human-readable reason, and connection failures adding a duplicate line to the conversation transcript",
+   "zh": "修复了远程控制断开连接通知显示裸露的数字代码而不是人类可读的原因，以及连接失败在对话记录中添加重复行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions not disconnecting when you sign in to a different account",
+   "zh": "修复了登录其他帐户时远程控制会话不会断开连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/cd` and worktree moves leaving the session reporting the previous directory's git branch",
+   "zh": "修复了`/cd`和工作树移动导致会话报告上一个目录的 git 分支的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents`: pressing back in one window no longer detaches other windows attached to the same session",
+   "zh": "修复了“克劳德代理”：在一个窗口中按回键不再分离附加到同一会话的其他窗口"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed backgrounded sessions showing \"Working\" forever when `/bg` mid-turn had nothing left to continue",
+   "zh": "修复了当`/bg`中途没有任何内容可以继续时后台会话永远显示“工作”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent search by PR URL: PRs opened during scheduled wakeups or while a job was blocked now appear in `claude agents` search",
+   "zh": "通过 PR URL 修复了后台代理搜索：在计划唤醒期间或作业被阻止时打开的 PR 现在显示在“claude Agents”搜索中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the agents view input showing no text cursor on Windows",
+   "zh": "修复 Windows 上智能体视图的输入框不显示文字光标的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --bg -cn <name>` not seeding the session name",
+   "zh": "修复了 `claude --bg -cn <name>` 未播种会话名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions to neutralize Windows network paths in persisted state before respawn",
+   "zh": "修复了后台会话，以在重生前消除处于持久状态的 Windows 网络路径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-session respawn rejecting malformed resume IDs from corrupted state files",
+   "zh": "修复了后台会话重生拒绝来自损坏的状态文件的格式错误的简历 ID 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Windows background-service daemon not starting when `~/.claude/daemon` has the ReadOnly attribute set",
+   "zh": "修复 `~/.claude/daemon` 设置了只读属性时，Windows 后台服务守护进程无法启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions failing with \"Could not resolve authentication method\" when idle for too long before being claimed",
+   "zh": "修复了云会话在被认领之前闲置时间过长时失败并显示“无法解析身份验证方法”的问题"
+  }
+ ]
+}

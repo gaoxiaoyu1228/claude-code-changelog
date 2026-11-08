@@ -1,0 +1,278 @@
+{
+ "version": "2.1.267",
+ "date": "2026-09-09",
+ "published": "2026-09-09T18:25:42.820Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.267",
+ "counts": {
+  "new": 3,
+  "improved": 9,
+  "fixed": 41
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `maxEffortLevel` setting (top-level or per model under `modelSettings`): caps the effort level on every provider, including Bedrock, Vertex and Foundry; users can still pick a lower level",
+   "zh": "添加了`maxEffortLevel`设置（顶级或`modelSettings`下的每个模型）：限制每个提供商的工作量级别，包括 Bedrock、Vertex 和 Foundry；用户仍然可以选择较低的级别"
+  },
+  {
+   "type": "new",
+   "en": "Added `--system-prompt-snapshot off` to render the system prompt fresh on every request instead of reusing the conversation's recorded prompt (for iterating on prompt text)",
+   "zh": "添加了`--system-prompt-snapshot off`，以在每个请求上呈现新鲜的系统提示，而不是重用对话的记录提示（用于迭代提示文本）"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Tag] Added a \"Use a custom connector\" link to the preset connection forms in Claude Tag admin settings, so you can switch to a custom connection without starting over",
+   "zh": "[Claude Tag] 在 Claude Tag 管理设置的预设连接表单中新增「Use a custom connector」链接，无需重新开始即可切换为自定义连接"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/diff` panel: it no longer flashes \"0 files changed\" and a spinner before settling, and its empty state is centered in the panel",
+   "zh": "改进 `/diff` 面板：不再先闪现「0 files changed」和加载动画才稳定下来，空状态居中显示在面板中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Bash tool's description guidance so Claude describes what a command does in plain words instead of echoing the command",
+   "zh": "改进 Bash 工具的描述指引：Claude 用大白话说明命令的作用，而不是原样复述命令"
+  },
+  {
+   "type": "improved",
+   "en": "Improved sandbox guidance so Claude suggests `/copy` when clipboard commands such as `pbcopy` fail inside the sandbox",
+   "zh": "改进沙盒提示：`pbcopy` 等剪贴板命令在沙盒内失败时，Claude 会建议使用 `/copy`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `--resume` first-render time for sessions with many Bash tool calls",
+   "zh": "改进 `--resume` 对含大量 Bash 工具调用的会话的首次渲染速度"
+  },
+  {
+   "type": "improved",
+   "en": "Improved prompt input responsiveness: keystrokes no longer occasionally wait a frame behind spinner or streaming repaints",
+   "zh": "改进提示输入的响应速度：按键不再偶尔要等一帧，才能跟上加载动画或流式输出的重绘"
+  },
+  {
+   "type": "improved",
+   "en": "Improved prompt-cache stability: subagents and sessions started with `--system-prompt` or `--append-system-prompt` now record the system prompt and tool definitions once instead of re-rendering them",
+   "zh": "改进提示缓存稳定性：使用 `--system-prompt` 或 `--append-system-prompt` 启动的子智能体和会话，现在只记录一次系统提示和工具定义，不再反复渲染"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Artifact tool publish errors: when a publish is refused, the message now says why and what to do about it",
+   "zh": "改进 Artifact 发布错误：发布被拒绝时，消息会说明原因以及该怎么处理"
+  },
+  {
+   "type": "improved",
+   "en": "Self-hosted runner: Changed `--use-anthropic-git-proxy` to be reported to the server at registration and to print a warning for each session that still clones through the legacy git proxy",
+   "zh": "自托管运行器：`--use-anthropic-git-proxy` 现在会在注册时上报给服务器；每个仍通过旧 git 代理克隆的会话，都会打印一条警告"
+  },
+  {
+   "type": "improved",
+   "en": "Gateway: Changed `forward_user_identity` upstreams to return a 429 as-is to a developer whose email was forwarded, instead of failing over to the next upstream, so the proxy's per-user limits hold",
+   "zh": "网关：`forward_user_identity` 上游遇到 429 时，原样返回给邮箱已被转发的开发者，不再切换到下一个上游，确保代理的单用户限额生效"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Cowork scheduled tasks in the cloud failing at startup for organizations whose managed settings require sandboxing",
+   "zh": "修复了托管设置需要沙箱的组织在启动时失败的云中 Cowork 计划任务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/context` and other local command output rendering blank on mobile clients",
+   "zh": "修复了`/context`和其他本地命令输出在移动客户端上呈现空白的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shift+enter and option+backspace not working after reconnecting to a tmux or ssh session inside an agent view",
+   "zh": "修复了重新连接到代理视图内的 tmux 或 ssh 会话后，shift+enter 和 option+backspace 不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the dim last-prompt header not appearing at the top of the conversation when scrolling up in fullscreen mode",
+   "zh": "修复全屏模式下向上滚动时，灰色的\"上一条提示\"标题不出现在对话顶部的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Workflow `agent()` calls with large output schemas being refused in auto mode instead of being checked by the safety classifier",
+   "zh": "修复了在自动模式下拒绝大型输出模式的工作流程`agent()`调用，而不是由安全分类器检查"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a case where a marketplace entry path containing a backslash could bypass the containment check for fetched marketplaces on macOS and Linux",
+   "zh": "修复了包含反斜杠的市场入口路径可能绕过 macOS 和 Linux 上获取的市场的遏制检查的情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed expired AWS or Google Cloud credentials under a host app such as Claude Desktop retrying ten times with a generic \"request failed\" before the re-authenticate error appeared",
+   "zh": "修复了主机应用程序（例如 Claude Desktop）下过期的 AWS 或 Google Cloud 凭证在出现重新身份验证错误之前重试十次并出现通用“请求失败”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a session after `/compact` or another slash command ran via `-p --resume`: a spurious \"Continue from where you left off.\" turn is no longer inserted",
+   "zh": "修复了在通过`-p --resume`运行`/compact`或另一个斜杠命令后恢复会话的问题：虚假的“从您离开的地方继续”。不再插入转弯"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a large session (transcript over 5 MB): parallel tool calls and their hook output are no longer dropped from the reloaded conversation",
+   "zh": "修复了恢复大型会话（超过 5 MB 的脚本）：并行工具调用及其挂钩输出不再从重新加载的对话中删除"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed `allowedHttpHookUrls`, `httpHookAllowedEnvVars` and `allowedChannelPlugins` to admit nothing, not everything, when unreadable",
+   "zh": "修复了托管的`allowedHttpHookUrls`、`httpHookAllowedEnvVars`和`allowedChannelPlugins`，在不可读时不承认任何内容，而不是所有内容"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/login` on machines whose managed settings require Claude apps gateway sign-in: Esc now closes the dialog instead of doing nothing",
+   "zh": "修复了托管设置需要 Claude 应用程序网关登录的计算机上的`/login`：Esc 现在关闭对话框而不是不执行任何操作"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed artifact publishes cut off by a dropped connection mid-upload: they now retry once when Claude Code can tell the upload never completed, instead of reporting an unknown outcome",
+   "zh": "修复了工件发布因上传过程中连接断开而中断的问题：现在，当克劳德代码可以告诉上传从未完成时，它们会重试一次，而不是报告未知的结果"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `effort:` frontmatter on custom commands, skills, and subagents being ignored on models whose default effort is still pinned (Opus 4.7, Opus 4.8, Fable 5)",
+   "zh": "修复了自定义命令、技能和子代理上的“工作量：”在默认工作量仍然固定的模型上被忽略的问题（Opus 4.7、Opus 4.8、Fable 5）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed artifact publish failing with an unhelpful error when the page file isn't valid UTF-8 or contains a replacement character (U+FFFD); the error now names the line and column to fix",
+   "zh": "修复了当页面文件不是有效的 UTF-8 或包含替换字符 (U+FFFD) 时工件发布失败并出现无用错误的问题；错误现在指定了要修复的行和列"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` `@` directory menu not listing repositories created after the session started",
+   "zh": "修复了“claude Agents”`@`目录菜单未列出会话启动后创建的存储库的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control clients that join a Claude Desktop or VS Code session showing a stale permission mode until it was changed again",
+   "zh": "修复了加入 Claude Desktop 或 VS Code 会话的远程控制客户端显示过时的权限模式，直到再次更改为止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude remote-control` exiting and dropping every attached session when its server credential expires (about 30 days after start); the host now re-registers and keeps going",
+   "zh": "修复了“claude Remote-control”在服务器凭证过期时（启动后大约 30 天）退出并删除每个附加会话的问题；主机现在重新注册并继续"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the usage-limit warning flickering on and off during a session when requests for different models or modes report different limit windows",
+   "zh": "修复会话中不同模型或模式的请求报告不同的限额窗口时，用量上限警告在开启和关闭之间闪烁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed earlier reasoning being dropped when an MCP server re-sends, or a built-in tool re-renders, a tool the model already loaded",
+   "zh": "修复了当 MCP 服务器重新发送或内置工具重新渲染模型已加载的工具时早期推理被丢弃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a tool that disappears mid-conversation, from a disconnected MCP server or an upgrade, rewriting the tool list and discarding earlier thinking",
+   "zh": "修复了一个工具在对话过程中从断开连接的 MCP 服务器或升级中消失的问题，重写了工具列表并放弃了之前的想法"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a background worker forked from a conversation adding EnterWorktree to the conversation's tool block mid-session, which broke prompt-cache reuse",
+   "zh": "修复了从会话中分叉的后台工作人员将 EnterWorktree 添加到会话中的会话工具块，这会破坏提示缓存重用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mid-session MCP and plugin tools being added to the tool list in sessions without ToolSearch, which broke prompt-cache reuse; supported models now receive them as deferred definitions",
+   "zh": "修复了在没有 ToolSearch 的会话中将会话中 MCP 和插件工具添加到工具列表中的问题，这会破坏提示缓存的重用；支持的模型现在将它们作为延迟定义接收"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed switching models with /model re-sending every tool definition (a prompt-cache miss); commit and PR attribution text now arrives as a conversation note that updates on model changes",
+   "zh": "修复了使用 /model 重新发送每个工具定义的切换模型（提示缓存未命中）；提交和 PR 归属文本现在作为对话注释到达，更新模型更改"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resumed sessions rewriting the inline tool set when an MCP connector reconnects at a different moment than before",
+   "zh": "修复了当 MCP 连接器在与之前不同的时刻重新连接时恢复的会话重写内联工具集的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resumed sessions re-rendering tool descriptions instead of replaying the recorded ones when the first turn ran a tool",
+   "zh": "修复了第一轮运行工具时恢复的会话重新渲染工具描述，而不是重播记录的描述"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt-cache misses and dropped extended thinking when a claude.ai connector's tools change between a session and its resume",
+   "zh": "修复了当 claude.ai 连接器的工具在会话和恢复之间发生变化时提示缓存未命中并放弃扩展思考的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resumed sessions rewriting earlier MCP tool announcements (and dropping extended thinking) before their connectors reconnect",
+   "zh": "修复了恢复会话在连接器重新连接之前重写早期 MCP 工具公告（并放弃扩展思考）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a prompt-cache break when a print-mode (`-p`) conversation is resumed interactively: the system prompt prefix no longer changes",
+   "zh": "修复了交互恢复打印模式 (`-p`) 对话时的提示缓存中断：系统提示前缀不再更改"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the extension host hanging at 100% CPU when forking, editing an earlier message, or rewinding in a conversation whose saved transcript contains a cyclic parent link",
+   "zh": "[VSCode] 修复对话的已保存记录中存在循环父级链接时，分叉、编辑早先消息或回退会导致扩展宿主 CPU 占用 100% 而卡死的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed pasting a screenshot on WSL2/WSLg inserting raw image bytes into the chat input; the image is now attached when the clipboard provides it, otherwise the paste is ignored",
+   "zh": "[VSCode] 修复在 WSL2/WSLg 中粘贴截图时，原始图片字节被插入聊天输入框的问题；现在剪贴板提供图片时会附加图片，否则忽略此次粘贴"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed chat diff blocks always rendering with a dark editor theme; they now follow the active VS Code color theme, including high contrast",
+   "zh": "[VSCode] 修复聊天中的差异块始终以深色编辑器主题渲染的问题；现在会跟随当前 VS Code 配色主题，包括高对比度主题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed mixed right-to-left and English text rendering in the wrong order while typing in the message input",
+   "zh": "[VSCode] 修复在消息输入框中输入时，从右到左文本与英文混排顺序错乱的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed accepting an edit in the diff view on a file with Windows (CRLF) line endings failing with \"String not found in file\"",
+   "zh": "[VSCode] 修复在使用 Windows（CRLF）换行符的文件中，于差异视图里接受编辑时报 \"String not found in file\" 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed @-mentions dropping files whose paths contain spaces",
+   "zh": "[VSCode] 修复 @ 提及时，路径中含空格的文件被丢弃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the sessions list view failing to load in windows connected over Remote-SSH when the workspace folder exists only on the remote host",
+   "zh": "[VSCode] 修复通过 Remote-SSH 连接的窗口中，工作区文件夹只存在于远程主机时，会话列表视图无法加载的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed runaway ripgrep processes when viewing files in large or symlink-heavy workspaces",
+   "zh": "[VSCode] 修复在大型或含大量符号链接的工作区中查看文件时，ripgrep 进程失控的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed GitHub Enterprise Server sessions showing your GitHub account as disconnected once its token expired; PR and issue operations now refresh it automatically",
+   "zh": "[Claude Code on the web] 修复 GitHub Enterprise Server 会话在令牌过期后显示 GitHub 账户已断开的问题；PR 和 issue 操作现在会自动刷新令牌"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed `gh` and GitHub API calls failing in organizations without the Claude GitHub App; they now use your connected GitHub account and say so when none is connected",
+   "zh": "[Claude Code on the web] 修复在未安装 Claude GitHub App 的组织中 `gh` 和 GitHub API 调用失败的问题；现在会使用你已连接的 GitHub 账户，若未连接则会明确提示"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude replying \"The API rejected the request as invalid\" when the organization has run out of usage credits; the reply now says so and explains how to add more",
+   "zh": "[Claude Tag] 修复组织用尽用量额度时，Claude 回复「The API rejected the request as invalid」的问题；现在回复会说明原因，并告诉你如何充值"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed thread requests to edit or delete a message Claude posted at the channel's top level being answered with a correction instead of reaching the session that posted it",
+   "zh": "[Claude Tag] 修复在话题中要求编辑或删除 Claude 在频道顶层发出的消息时，得到的是更正提示，而非转交给发出该消息的会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed **Connect** on Tool access requests under Admin settings > Review requests failing with \"Authorization failed\" or showing the requested access bundle as deleted",
+   "zh": "[Claude Tag] 修复管理设置 > Review requests 下的工具访问请求中，点击 **Connect** 时出现「Authorization failed」，或把所请求的访问包显示为已删除的问题"
+  }
+ ]
+}

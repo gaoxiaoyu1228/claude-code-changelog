@@ -1,0 +1,123 @@
+{
+ "version": "2.1.120",
+ "date": "2026-04-24",
+ "published": "2026-04-24T23:02:49.608Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.120",
+ "counts": {
+  "new": 4,
+  "improved": 7,
+  "fixed": 11
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `claude ultrareview [target]` subcommand to run `/ultrareview` non-interactively from CI or scripts — prints findings to stdout (`--json` for raw output) and exits 0 on completion or 1 on failure",
+   "zh": "添加了`claude ultrareview [target]`子命令，以便从 CI 或脚本以非交互方式运行`/ultrareview`——将结果打印到 stdout（原始输出为`--json`）并在完成时退出 0 或在失败时退出 1"
+  },
+  {
+   "type": "new",
+   "en": "Skills can now reference the current effort level with `${CLAUDE_EFFORT}` in their content",
+   "zh": "技能内容现在可以使用 `${CLAUDE_EFFORT}` 引用当前的强度级别"
+  },
+  {
+   "type": "new",
+   "en": "Set `AI_AGENT` environment variable for subprocesses so `gh` can attribute traffic to Claude Code",
+   "zh": "为子进程设置 `AI_AGENT` 环境变量，使 `gh` 能把流量归因于 Claude Code"
+  },
+  {
+   "type": "new",
+   "en": "Show a \"use PgUp/PgDn to scroll\" hint when the terminal sends arrow keys instead of scroll events",
+   "zh": "当终端发送方向键而不是滚动事件时，显示 \"use PgUp/PgDn to scroll\" 提示"
+  },
+  {
+   "type": "improved",
+   "en": "Windows: Git for Windows (Git Bash) is no longer required — when absent, Claude Code uses PowerShell as the shell tool",
+   "zh": "Windows：不再必须安装 Git for Windows（Git Bash）；未安装时，Claude Code 会使用 PowerShell 作为 shell 工具"
+  },
+  {
+   "type": "improved",
+   "en": "Spinner tips that recommend installing the desktop app or creating skills/agents are now hidden when you already have them",
+   "zh": "如果你已安装桌面应用或已创建技能/代理，相关的推荐提示现在会隐藏"
+  },
+  {
+   "type": "improved",
+   "en": "Faster session start when you have many claude.ai connectors configured but not authorized",
+   "zh": "当您配置了许多 claude.ai 连接器但未授权时，会话启动速度更快"
+  },
+  {
+   "type": "improved",
+   "en": "The auto mode denial message now links to the configuration docs",
+   "zh": "自动模式的拒绝消息现在会链接到配置文档"
+  },
+  {
+   "type": "improved",
+   "en": "`claude plugin validate` now accepts `$schema`, `version`, and `description` at the top level of `marketplace.json` and `$schema` in `plugin.json`",
+   "zh": "`claude plugin validate` 现在在 `marketplace.json` 顶层接受 `$schema`、`version` 和 `description`，并在 `plugin.json` 中接受 `$schema`"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] `/usage` now opens the native Account & Usage dialog instead of returning plain-text session cost",
+   "zh": "[VSCode] `/usage` 现在会打开原生的 Account & Usage 对话框，而不再返回纯文本的会话费用"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Voice dictation now respects the `language` setting in `~/.claude/settings.json`",
+   "zh": "[VSCode] 语音听写现在会遵循 `~/.claude/settings.json` 中的 `language` 设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Auto-compact in auto mode now displays `auto` (lowercase, no token count) instead of a misleading token value",
+   "zh": "自动模式下的自动压缩现在显示`auto`（小写，无令牌计数）而不是误导性的令牌值"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing Esc during a stdio MCP tool call closing the entire server connection (regression in 2.1.105)",
+   "zh": "修复了在 stdio MCP 工具调用期间按 Esc 关闭整个服务器连接的问题（2.1.105 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/rewind` and other interactive overlays not responding to keyboard input after launching with `claude --resume`",
+   "zh": "修复了使用`claude --resume`启动后`/rewind`和其他交互式叠加层不响应键盘输入的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal scrollback duplication in non-fullscreen mode (resize, dialog dismiss, long sessions)",
+   "zh": "修复非全屏模式下终端滚动缓冲区内容重复的问题（调整大小、关闭对话框、长会话时）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `DISABLE_TELEMETRY` / `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` not suppressing usage metrics telemetry for API and enterprise users",
+   "zh": "修复了`DISABLE_TELEMETRY`/`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`不抑制 API 和企业用户的使用指标遥测的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false-positive \"Dangerous rm operation\" permission prompts in auto mode for multi-line bash commands containing both a pipe and a redirect",
+   "zh": "修复了自动模式下包含管道和重定向的多行 bash 命令的误报“危险 rm 操作”权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed long selection menus clipping below the terminal in fullscreen mode — the focused option now stays on screen as you scroll",
+   "zh": "修复了全屏模式下长选择菜单在终端下方剪辑的问题 - 当您滚动时，焦点选项现在保留在屏幕上"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Write tool output collapsing instead of expanding when clicking \"+N lines\" in fullscreen",
+   "zh": "修复了在全屏中单击“+N 行”时写入工具输出折叠而不是展开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash command picker jumping while typing, and improved highlight to only match contiguous substrings in blue",
+   "zh": "修复了打字时斜杠命令选择器跳跃的问题，并改进了突出显示以仅匹配蓝色的连续子字符串"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` marketplace failing to load when one entry uses an unrecognized source format — that entry is shown but installing it prompts you to update",
+   "zh": "修复了当一个条目使用无法识别的源格式时`/plugin`市场无法加载的问题 - 该条目已显示，但安装它会提示您更新"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `find` in the Bash tool exhausting open file descriptors on large directory trees, causing host-wide crashes (macOS/Linux native builds)",
+   "zh": "修复了 Bash 工具中的`find`耗尽大型目录树上打开的文件描述符，导致主机范围崩溃（macOS/Linux 本机构建）"
+  }
+ ]
+}

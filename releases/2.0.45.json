@@ -1,0 +1,26 @@
+{
+ "version": "2.0.45",
+ "date": "2025-11-18",
+ "published": "2025-11-18T16:31:06.710Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.45",
+ "counts": {
+  "new": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for Microsoft Foundry! See https://code.claude.com/docs/en/azure-ai-foundry",
+   "zh": "添加了对 Microsoft Foundry 的支持！请参阅 https://code.claude.com/docs/en/azure-ai-foundry"
+  },
+  {
+   "type": "new",
+   "en": "Added `PermissionRequest` hook to automatically approve or deny tool permission requests with custom logic",
+   "zh": "添加了`PermissionRequest`挂钩，以使用自定义逻辑自动批准或拒绝工具权限请求"
+  },
+  {
+   "type": "new",
+   "en": "Send background tasks to Claude Code on the web by starting a message with `&`",
+   "zh": "在消息开头输入 `&`，即可把后台任务发送到 Claude Code on the web"
+  }
+ ]
+}

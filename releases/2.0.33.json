@@ -1,0 +1,27 @@
+{
+ "version": "2.0.33",
+ "date": "2025-11-04",
+ "published": "2025-11-04T22:27:11.403Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.33",
+ "counts": {
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Native binary installs now launch quicker.",
+   "zh": "原生二进制安装版启动更快"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude doctor` incorrectly detecting Homebrew vs npm-global installations by properly resolving symlinks",
+   "zh": "通过正确解析符号链接修复了`claude doctor`错误地检测 Homebrew 与 npm-global 安装的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude mcp serve` exposing tools with incompatible outputSchemas",
+   "zh": "修复了“claude mcpserve”暴露具有不兼容输出模式的工具"
+  }
+ ]
+}

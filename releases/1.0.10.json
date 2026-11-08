@@ -1,0 +1,22 @@
+{
+ "version": "1.0.10",
+ "date": "2025-06-03",
+ "published": "2025-06-03T18:01:21.056Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.10",
+ "counts": {
+  "new": 1,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added markdown table support",
+   "zh": "添加了 Markdown 表格支持"
+  },
+  {
+   "type": "improved",
+   "en": "Improved streaming performance",
+   "zh": "改进流式输出性能"
+  }
+ ]
+}

@@ -1,0 +1,255 @@
+{
+ "version": "2.1.212",
+ "date": "2026-07-16",
+ "published": "2026-07-16T19:20:24.324Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.212",
+ "counts": {
+  "new": 5,
+  "improved": 13,
+  "fixed": 28,
+  "removed": 1,
+  "other": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `claude auto-mode reset` to restore the default auto-mode configuration, with a confirmation prompt (pass `--yes` to skip)",
+   "zh": "添加 `claude auto-mode Reset` 以恢复默认自动模式配置，并带有确认提示（通过 `--yes` 跳过）"
+  },
+  {
+   "type": "new",
+   "en": "Added a session-wide limit on WebSearch tool calls (default 200, tunable via `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`) to stop runaway search loops",
+   "zh": "添加了对 WebSearch 工具调用的会话范围限制（默认 200，可通过`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION`进行调整）以阻止失控的搜索循环"
+  },
+  {
+   "type": "new",
+   "en": "Added a per-session cap on subagent spawns (default 200, override with `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`) to stop runaway delegation loops; `/clear` resets the budget",
+   "zh": "添加了子代理生成的每会话上限（默认 200，用`CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`覆盖）以阻止失控的委托循环； `/clear` 重置预算"
+  },
+  {
+   "type": "new",
+   "en": "MCP tool calls running longer than 2 minutes now move to the background automatically so the session stays usable; configure the threshold or disable with `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS`",
+   "zh": "运行超过 2 分钟的 MCP 工具调用现在会自动转入后台，使会话保持可用；可通过 `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` 设置阈值，或将其关闭"
+  },
+  {
+   "type": "new",
+   "en": "Typing `/resume` in the agent view now opens a picker of past sessions — including sessions deleted from the list — and resumes your pick as a background session",
+   "zh": "在代理视图中输入 `/resume`，会打开过去会话的选择器（包括已从列表中删除的会话），选中后以后台会话的形式恢复"
+  },
+  {
+   "type": "improved",
+   "en": "`/fork` now copies your conversation into a new background session (its own row in `claude agents`) while you keep working; the in-session subagent it used to launch is now `/subtask`",
+   "zh": "`/fork` 现在会把你的对话复制到一个新的后台会话中（在 `claude agents` 中有自己的一行），你可以继续工作；原先在会话内启动的子 agent 现在改用 `/subtask`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved web search and web fetch reliability by retrying 529 errors and rate-limited requests with bounded backoff",
+   "zh": "改进网页搜索和网页抓取的可靠性：遇到 529 错误和被限流的请求，会以有上限的退避方式重试"
+  },
+  {
+   "type": "improved",
+   "en": "Improved prompt caching: the mid-conversation system block now works behind LLM gateways and custom base URLs (Bedrock, Vertex, 1P)",
+   "zh": "改进中途系统块的提示缓存：现在可在 LLM 网关和自定义 base URL（Bedrock、Vertex、一方接口）后正常工作"
+  },
+  {
+   "type": "improved",
+   "en": "Improved background agent attach: cold-attaching now instantly shows the formatted transcript while the session boots, instead of a blank wait",
+   "zh": "改进后台 agent 连接：冷连接时立即显示格式化的对话记录，会话启动期间不再是空白等待"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced token usage in inter-agent messaging: `SendMessage` bodies are no longer duplicated into replayed history and tool results",
+   "zh": "减少代理间通信的 token 用量：`SendMessage` 的正文不再重复写入回放的历史和工具结果中"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/fork` to name the copy after your prompt when the session has no title, so the row is recognizable in the agent view",
+   "zh": "当会话没有标题时，更改了`/fork`以在提示后命名副本，以便在代理视图中可以识别该行"
+  },
+  {
+   "type": "improved",
+   "en": "Changed bare `/btw` to reopen the side-question panel on your most recent exchange so you can browse earlier answers",
+   "zh": "更改了裸露的`/btw`以重新打开最近交流中的附带问题面板，以便您可以浏览之前的答案"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the `←` footer hint to pulse `N done` for a moment when a background agent finishes while nothing needs your input",
+   "zh": "当后台代理完成而无需您输入任何内容时，将`←`页脚提示更改为“N 完成”一段时间"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Enterprise `forceLoginMethod` to be enforced for VS Code extension, SDK, `setup-token`, and `install-github-app` logins, not just the terminal",
+   "zh": "更改了企业`forceLoginMethod`，以强制 VS Code 扩展、SDK、`setup-token`和`install-github-app`登录，而不仅仅是终端"
+  },
+  {
+   "type": "improved",
+   "en": "Changed session transcripts to record the reasoning effort level on each assistant message",
+   "zh": "更改了会话记录以记录每条助理消息的推理工作水平"
+  },
+  {
+   "type": "improved",
+   "en": "Changed headless/SDK sessions to apply a `set_model` control request mid-turn; the next model round-trip uses the new model instead of waiting for the next turn",
+   "zh": "更改了 headless/SDK 会话以在中途应用`set_model`控制请求；下一个模型往返使用新模型而不是等待下一个转弯"
+  },
+  {
+   "type": "improved",
+   "en": "Changed agent view / `claude agents --json`: sessions waiting on a sandbox, MCP-input, or managed-settings prompt now show as \"Needs input\" instead of \"Working\"",
+   "zh": "更改了代理视图/`claude Agents --json`：等待沙箱、MCP 输入或托管设置提示的会话现在显示为“需要输入”而不是“正在工作”"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the auth status panel title from \"Cloud authentication\" to \"Authentication\"",
+   "zh": "设置中认证状态面板的标题从 \"Cloud authentication\" 改为 \"Authentication\""
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan mode auto-running file-modifying Bash commands (e.g. `touch`, `rm`) without a permission prompt or SDK `canUseTool` callback",
+   "zh": "修复了计划模式自动运行文件修改 Bash 命令（例如 `touch`、`rm`）而没有权限提示或 SDK `canUseTool` 回调的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree creation following a repository-committed symlink at `.claude/worktrees`, which could create files outside the repository",
+   "zh": "修复工作树创建会跟随仓库中提交的 `.claude/worktrees` 符号链接，可能在仓库之外创建文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a `continue:false` hook's halt being dropped when the tool fails or completes mid-stream, and hook infrastructure errors being misreported as user rejections",
+   "zh": "修复了当工具失败或中途完成时“继续：假”挂钩的停止被删除，以及挂钩基础设施错误被错误报告为用户拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SIGTERM during a running Bash tool orphaning the command's process tree in print/SDK mode; the CLI now aborts the turn, kills the tree, and exits 143",
+   "zh": "修复了在打印/SDK 模式下运行 Bash 工具期间孤立命令的进程树期间的 SIGTERM； CLI 现在中止转弯，杀死树，并退出 143"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/background` and `claude --bg` failing with \"EUNKNOWN: unknown error, uv_spawn\" on Windows when Group Policy blocks PowerShell 5.1; the daemon now prefers PowerShell 7",
+   "zh": "修复了当组策略阻止 PowerShell 5.1 时 Windows 上`/background`和`claude --bg`失败并显示“EUNKNOWN：未知错误，uv_spawn”的问题；守护进程现在更喜欢 PowerShell 7"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell mode (`!`) not executing commands containing file paths while the path autocomplete popup was open",
+   "zh": "修复了当路径自动完成弹出窗口打开时 shell 模式 (`!`) 不执行包含文件路径的命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto-mode denial notifications rendering broken characters when a long denial reason was truncated mid-emoji",
+   "zh": "修复了当表情符号中长拒绝原因被截断时，自动模式拒绝通知会呈现损坏的字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+J not inserting a newline in the agent view dispatch input on terminals with extended key reporting, and surfaced the newline shortcut in the `?` help overlay",
+   "zh": "修复了 Ctrl+J 未在具有扩展键报告的终端上的代理视图调度输入中插入换行符的问题，并在`?`帮助叠加层中显示换行符快捷方式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview` rejecting PR references like `#123`, `PR 123`, and pasted PR URLs; error hints now name the command you actually typed",
+   "zh": "修复了`/ultrareview`拒绝 PR 引用（例如`#123`、`PR 123`和粘贴的 PR URL）的问题；错误提示现在命名您实际输入的命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview <branch>` not fetching the branch from origin when it exists remotely; it now suggests the closest branch name on typos",
+   "zh": "修复了`/ultrareview <branch>`在远程存在时不从原点获取分支的问题；现在它会建议拼写错误时最接近的分支名称"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview` skipping the billing confirmation in a new conversation after `/clear`",
+   "zh": "修复了`/ultrareview`在`/clear`之后在新对话中跳过账单确认的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview`'s \"not a git repository\" error on Claude Desktop now suggesting the project's repository folder instead of terminal commands",
+   "zh": "修复了 Claude Desktop 上`/ultrareview`的“不是 git 存储库”错误，现在建议使用项目的存储库文件夹而不是终端命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hosted (host-managed) sessions failing at startup when repository settings configured mTLS certs, extra CA bundles, or OAuth scopes; these transport settings are now ignored with a warning",
+   "zh": "修复了当存储库设置配置 mTLS 证书、额外 CA 捆绑包或 OAuth 范围时托管（主机管理）会话在启动时失败的问题；现在将忽略这些传输设置并显示警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a spurious \"File has not been read yet\" error when editing a file that had been read with offset/limit before resuming a session",
+   "zh": "修复了在恢复会话之前编辑已使用偏移/限制读取的文件时出现的虚假“文件尚未读取”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ExitWorktree` failing with \"no active EnterWorktree session\" after resuming a session with `--continue`/`--resume` in print/SDK mode",
+   "zh": "修复了在打印/SDK 模式下使用`--continue`/`--resume`恢复会话后`ExitWorktree`失败并显示“没有活动的 EnterWorktree 会话”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the workflow agent grid staying empty for Remote Control clients that join a session mid-run",
+   "zh": "修复运行中途加入会话的 Remote Control 客户端，工作流智能体网格一直为空的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed streaming-mode control requests being marked complete before their handler finished, which could lose the request on session restart",
+   "zh": "修复了流模式控制请求在其处理程序完成之前被标记为完成的问题，这可能会在会话重新启动时丢失请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions created with `/fork` losing their live-parent protection after a state write failure",
+   "zh": "修复了使用`/fork`创建的后台会话在状态写入失败后失去其实时父保护的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed reopening a stopped background session from the agent view failing silently — it now resumes the session, or shows why it can't and lets you force a restart",
+   "zh": "修复了从代理视图重新打开停止的后台会话失败的问题 - 现在它可以恢复会话，或者显示为什么不能恢复并让您强制重新启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent teams: a stopping teammate could send the leader duplicate idle notifications when team initialization re-ran within a session",
+   "zh": "修复了代理团队：当团队初始化在会话中重新运行时，停止的队友可能会向领导者发送重复的空闲通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the plan-approval dialog footer splitting \"ctrl+g to edit in <editor>\" apart when the file path is long",
+   "zh": "修复文件路径很长时，计划审批对话框底部的\"ctrl+g 在 <编辑器> 中编辑\"被拆开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the welcome banner keeping its old panel widths after a combined width+height terminal resize in fullscreen mode",
+   "zh": "修复全屏模式下同时改变终端宽度和高度后，欢迎横幅仍保留旧面板宽度的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed diff previews losing their line numbers and +/- markers in narrow layouts",
+   "zh": "修复了差异预览在狭窄布局中丢失行号和 +/- 标记的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed @-mentions attaching nothing after a partial file read, plugin uninstall targeting the wrong marketplace, and false \"Command timed out\" on exit code 143",
+   "zh": "修复了读取部分文件后不附加任何内容的 @-提及、针对错误市场的插件卸载以及退出代码 143 上的错误“命令超时”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OpenTelemetry HTTP exports being rejected with 411/400 by Azure Monitor and other endpoints that don't accept chunked transfer encoding",
+   "zh": "修复了 OpenTelemetry HTTP 导出被 Azure Monitor 和其他不接受分块传输编码的终结点拒绝并显示 411/400 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OTLP event log records missing `trace_id`/`span_id` when `TRACEPARENT` is set in SDK/headless mode",
+   "zh": "修复了在 SDK/headless 模式下设置 `TRACEPARENT` 时 OTLP 事件日志记录丢失 `trace_id`/`span_id` 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed conversations with many images incorrectly failing with \"Request too large\" errors, and improved the error message to explain the actual cause",
+   "zh": "修复了与许多图像的对话因“请求太大”错误而错误失败的问题，并改进了错误消息以解释实际原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed web search and web fetch returning \"API Error\" text as search results or page content when the API was overloaded",
+   "zh": "修复 API 过载时，网页搜索和网页抓取把\"API Error\"文字当作搜索结果或页面内容返回的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Deprecated the Task tool's `mode` parameter (now ignored); subagents inherit the parent session's permission mode by default",
+   "zh": "已弃用任务工具的`mode`参数（现已忽略）；子代理默认继承父会话的权限模式"
+  },
+  {
+   "type": "other",
+   "en": "Corrected an earlier release note (2.1.200): tmux through the 3.6 series lacks synchronized output; newer tmux with support is detected automatically",
+   "zh": "更正了早期的发行说明 (2.1.200)：3.6 系列中的 tmux 缺乏同步输出；自动检测支持的较新 tmux"
+  }
+ ]
+}

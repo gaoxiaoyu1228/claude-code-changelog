@@ -1,0 +1,134 @@
+{
+ "version": "2.1.142",
+ "date": "2026-05-14",
+ "published": "2026-05-14T20:17:28.262Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.142",
+ "counts": {
+  "new": 3,
+  "improved": 4,
+  "fixed": 16,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added new `claude agents` flags: `--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, and `--dangerously-skip-permissions` to configure dispatched background sessions",
+   "zh": "添加了新的“claude Agents”标志：`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`、`--permission-mode`、`--model`、`--effort`和`--dangerously-skip-permissions`来配置分派的后台会话"
+  },
+  {
+   "type": "new",
+   "en": "Plugins with a root-level `SKILL.md` and no `skills/` subdirectory are now surfaced as a skill",
+   "zh": "根目录下有 `SKILL.md` 且没有 `skills/` 子目录的插件，现在会被识别为一个技能"
+  },
+  {
+   "type": "new",
+   "en": "The `/plugin` details pane and `claude plugin details` now show LSP servers a plugin provides",
+   "zh": "`/plugin` 的详情面板和 `claude plugin details` 现在会显示插件提供的 LSP 服务器"
+  },
+  {
+   "type": "improved",
+   "en": "Fast mode now uses Opus 4.7 by default (previously Opus 4.6). Set `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1` to pin fast mode to Opus 4.6",
+   "zh": "快速模式现在默认使用 Opus 4.7（之前为 Opus 4.6）。设置 `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE=1` 将快速模式固定到 Opus 4.6"
+  },
+  {
+   "type": "improved",
+   "en": "`/web-setup` warns before replacing an existing GitHub App connection",
+   "zh": "`/web-setup` 在替换已有的 GitHub App 连接前会先给出警告"
+  },
+  {
+   "type": "improved",
+   "en": "Improved reactive compaction: the first summarize attempt now seeds from the original request's overflow size, avoiding a wasted near-full-context retry",
+   "zh": "改进响应式压缩：第一次摘要尝试会以原始请求的超出长度为起点，避免一次接近满上下文的无效重试"
+  },
+  {
+   "type": "improved",
+   "en": "Improved hook configuration error: configuring a prompt- or agent-type hook for `SessionStart`/`Setup`/`SubagentStart` now shows a clear \"use a command-type hook instead\" error",
+   "zh": "改进 hook 配置错误提示：为 `SessionStart`、`Setup`、`SubagentStart` 配置 prompt 或 agent 类型的 hook 时，会明确提示“请改用 command 类型的 hook”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `MCP_TOOL_TIMEOUT` not raising the per-request fetch timeout for remote HTTP and SSE MCP servers, which capped tool calls at 60 seconds regardless of the configured value",
+   "zh": "修复了`MCP_TOOL_TIMEOUT`不会提高远程 HTTP 和 SSE MCP 服务器的每个请求获取超时的问题，这将工具调用限制为 60 秒，无论配置的值如何"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions not recognizing pre-existing git worktrees, blocking Edit while EnterWorktree refused to create a duplicate",
+   "zh": "修复了后台会话无法识别预先存在的 git 工作树、阻止编辑而 EnterWorktree 拒绝创建重复项的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions disappearing and daemon reconnect failing after macOS sleep/wake — the daemon now detects clock jumps instead of treating them as elapsed idle time",
+   "zh": "修复了 macOS 睡眠/唤醒后后台会话消失和守护程序重新连接失败的问题 - 守护程序现在检测时钟跳跃，而不是将其视为已用的空闲时间"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed daemon not exiting cleanly after the binary is upgraded (e.g. `brew upgrade`), causing dispatched agents to crash-loop on the deleted path",
+   "zh": "修复了二进制文件升级后守护进程未完全退出的问题（例如“brew升级”），导致调度的代理在已删除的路径上崩溃循环"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents crash-looping when the Claude-in-Chrome extension is connected without a shared tab",
+   "zh": "修复了在没有共享选项卡的情况下连接 Claude-in-Chrome 扩展程序时后台代理崩溃循环的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clicking links in an attached `claude agents` session — the background worker's headless browser shim no longer applies while attached",
+   "zh": "修复了附加的“克劳德代理”会话中的单击链接 - 后台工作人员的无头浏览器垫片在附加时不再适用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` \"v to open in editor\" using the daemon's default editor instead of your shell's `$EDITOR`/`$VISUAL`",
+   "zh": "使用守护程序的默认编辑器而不是 shell 的`$EDITOR`/`$VISUAL`修复了“claude Agents”“v 在编辑器中打开”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` deadlocking on Windows with network-drive working directories; Ctrl+C now works during startup",
+   "zh": "修复了 Windows 上使用网络驱动器工作目录的“claude Agents”死锁问题； Ctrl+C 现在可以在启动期间使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-color bleed when attaching to a `claude agents` session from Apple Terminal or other 256-color-only terminals",
+   "zh": "修复了从 Apple 终端或其他仅 256 色终端连接到“claude Agents”会话时出现的背景颜色溢出问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --bg --dangerously-skip-permissions` not persisting across retire/wake",
+   "zh": "修复了`claude --bg --dangerously-skip-permissions`在退休/唤醒期间不持续存在的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session titles being derived from the URL when the first message is a link",
+   "zh": "修复了当第一条消息是链接时从 URL 派生的会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed redundant `set_model` requests from remote clients injecting duplicate `/model` breadcrumbs into the transcript",
+   "zh": "修复了来自远程客户端的冗余`set_model`请求，将重复的`/model`面包屑注入到转录本中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugins using `skills: [\"./\"]` showing a false \"path escapes plugin directory\" error",
+   "zh": "修复了使用 `skills: [\"./\"]` 的插件显示错误的“路径转义插件目录”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin cache cleanup deleting the active plugin version directory when no installation metadata is present",
+   "zh": "修复了插件缓存清理在不存在安装元数据时删除活动插件版本目录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` browse pane showing \"0 installs\" for newly published plugins",
+   "zh": "修复了新发布插件的`/plugin`浏览窗格显示“0 安装”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin advisories not naming every `plugin.json` key that shadows a default folder",
+   "zh": "修复了插件建议未命名每个隐藏默认文件夹的`plugin.json`键的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed stale `/model claude-sonnet-4-20250514` suggestion from Usage Policy refusal messages",
+   "zh": "用量政策拒绝消息中，移除了过时的 `/model claude-sonnet-4-20250514` 建议"
+  }
+ ]
+}

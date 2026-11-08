@@ -1,0 +1,108 @@
+{
+ "version": "2.1.235",
+ "date": "2026-08-18",
+ "published": "2026-08-18T18:24:10.210Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.235",
+ "counts": {
+  "new": 1,
+  "improved": 7,
+  "fixed": 11
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added an optional `spellcheck` setting that underlines misspelled words in the prompt input as you type, using your installed `aspell`, `hunspell`, or `ispell`",
+   "zh": "添加了可选的“拼写检查”设置，可使用安装的`aspell`、`hunspell`或`ispell`在您键入时在提示输入中强调拼写错误的单词"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory and CPU usage while cloud sessions such as `/ultrareview` or `/autofix-pr` run in the background — their event streams are no longer re-scanned and re-rendered on every update",
+   "zh": "改进 `/ultrareview`、`/autofix-pr` 等云会话在后台运行时的内存和 CPU 占用：事件流不再在每次更新时被重新扫描和重新渲染"
+  },
+  {
+   "type": "improved",
+   "en": "Improved permission dialogs: display text and \"don't ask again\" options now always match what a grant would cover, and \"don't ask again\" is withheld when contents cannot be fully displayed",
+   "zh": "改进权限对话框：显示的文字和「不再询问」选项现在始终与授权范围一致；内容无法完整显示时，不提供「不再询问」"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the embedded `grep` in native macOS/Linux builds: pathological patterns now fail fast instead of exhausting memory, and `-m N` with `-A/-C` prints correct context",
+   "zh": "改进原生 macOS/Linux 版本内置的 `grep`：病态正则会快速失败，而不是耗尽内存；`-m N` 配合 `-A/-C` 时输出正确的上下文"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the context-limit error to say when auto-compact is off and point to `/config` to re-enable it",
+   "zh": "改进上下文超限报错：会说明自动压缩已关闭，并指向 `/config` 以重新开启"
+  },
+  {
+   "type": "improved",
+   "en": "Vim mode: NORMAL mode and cursor position are now preserved when toggling the detailed transcript (ctrl+o) or closing a panel",
+   "zh": "Vim 模式：切换详细转录（ctrl+o）或关闭面板时，NORMAL 模式和光标位置现在会保留"
+  },
+  {
+   "type": "improved",
+   "en": "`SendMessage` now refuses messages too large for cross-session delivery up front instead of silently dropping them",
+   "zh": "`SendMessage` 现在会预先拒绝超出跨会话投递大小限制的消息，而不是静默丢弃"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control: `claude rc` now applies the same enterprise-gateway availability check as interactive startup",
+   "zh": "`claude rc` 现在和交互式启动一样，执行企业网关可用性检查"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed whole-prompt-cache invalidation when a language server disconnected or reconnected mid-session",
+   "zh": "修复会话中途语言服务器断开或重连时，整个提示词缓存被失效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed nested markdown list items misaligning at depth 3+ and added a hanging indent to wrapped list items in the terminal UI",
+   "zh": "修复了嵌套 Markdown 列表项在深度 3+ 处未对齐的问题，并在终端 UI 中向包装列表项添加了悬挂缩进"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt input highlights (slash commands, keywords, mentions) appearing shifted by one or more characters in some multi-line prompts",
+   "zh": "修复了在某些多行提示中提示输入突出显示（斜杠命令、关键字、提及）出现一个或多个字符偏移的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Shift+Tab inside the permission prompt's comment field approving the edit and granting session-wide edit permission instead of closing the field",
+   "zh": "修复了权限提示注释字段内的 Shift+Tab 批准编辑并授予会话范围编辑权限而不是关闭字段的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Agent tool advertising a general-purpose default in sessions where that agent is unavailable: an omitted `subagent_type` there now gets a clear error listing the available agents",
+   "zh": "修复了代理工具在代理不可用的会话中广告通用默认值的问题：省略的`subagent_type`现在会出现列出可用代理的明显错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed notebook cell delete/replace approval dialogs silently omitting the existing cell content when the notebook or cell could not be read; the dialog now says why",
+   "zh": "修复了笔记本单元格删除/替换批准对话框在无法读取笔记本或单元格时默默地忽略现有单元格内容；对话框现在说明了原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash commands run while Claude is responding showing HTML entities instead of the actual characters",
+   "zh": "修复了克劳德响应时运行的斜杠命令显示 HTML 实体而不是实际字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the prompt footer not showing the \"Update installed\" restart notice after a background auto-update",
+   "zh": "修复后台自动更新完成后，提示框页脚不显示\"Update installed\"重启提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the expanded task list (`ctrl+t`) always starting collapsed when resuming or relaunching into a session that still has open tasks",
+   "zh": "修复恢复或重新启动仍有未完成任务的会话时，展开的任务列表（`ctrl+t`）总是默认折叠的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Dialogs: arrow keys and Enter pressed in quick succession now select the option you navigated to instead of the previously highlighted one",
+   "zh": "对话框：快速连续按下箭头键和 Enter 现在选择您导航到的选项，而不是之前突出显示的选项"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed focus jumping between open Claude tabs on its own when a window with several Claude panels is restored or reloaded",
+   "zh": "[VSCode] 修复恢复或重新加载包含多个 Claude 面板的窗口时，焦点在已打开的 Claude 标签页之间自行跳转的问题"
+  }
+ ]
+}

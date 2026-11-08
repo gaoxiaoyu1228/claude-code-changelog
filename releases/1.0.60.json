@@ -1,0 +1,16 @@
+{
+ "version": "1.0.60",
+ "date": "2025-07-24",
+ "published": "2025-07-24T20:52:22.104Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.60",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "You can now create custom subagents for specialized tasks! Run /agents to get started",
+   "zh": "你现在可以创建专门处理特定任务的自定义子智能体！运行 /agents 即可开始"
+  }
+ ]
+}

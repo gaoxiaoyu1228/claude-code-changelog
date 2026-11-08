@@ -1,0 +1,22 @@
+{
+ "version": "1.0.24",
+ "date": "2025-06-14",
+ "published": "2025-06-14T00:57:41.575Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.24",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved /mcp output",
+   "zh": "改进 /mcp 的输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where settings arrays got overwritten instead of merged",
+   "zh": "修复了设置数组被覆盖而不是合并的错误"
+  }
+ ]
+}

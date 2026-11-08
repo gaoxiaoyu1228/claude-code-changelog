@@ -1,0 +1,73 @@
+{
+ "version": "2.0.41",
+ "date": "2025-11-14",
+ "published": "2025-11-14T01:55:35.892Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.41",
+ "counts": {
+  "new": 3,
+  "improved": 2,
+  "fixed": 7
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `model` parameter to prompt-based stop hooks, allowing users to specify a custom model for hook evaluation",
+   "zh": "为基于提示的停止挂钩添加了`model`参数，允许用户指定用于挂钩评估的自定义模型"
+  },
+  {
+   "type": "new",
+   "en": "SDK: Support custom timeouts for hooks",
+   "zh": "SDK：支持为钩子设置自定义超时"
+  },
+  {
+   "type": "new",
+   "en": "Plugins: Added support for sharing and installing output styles",
+   "zh": "插件：支持分享和安装输出样式"
+  },
+  {
+   "type": "improved",
+   "en": "Allow more safe git commands to run without approval",
+   "zh": "允许更安全的 git 命令在未经批准的情况下运行"
+  },
+  {
+   "type": "improved",
+   "en": "Teleporting a session from web will automatically set the upstream branch",
+   "zh": "从网页端传送会话时，会自动设置上游分支"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash commands from user settings being loaded twice, which could cause rendering issues",
+   "zh": "修复了用户设置中的斜杠命令被加载两次，这可能会导致渲染问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed incorrect labeling of user settings vs project settings in command descriptions",
+   "zh": "修复了命令描述中用户设置与项目设置的错误标签"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crash when plugin command hooks timeout during execution",
+   "zh": "修复了插件命令在执行过程中挂钩超时时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: Bedrock users no longer see duplicate Opus entries in the /model picker when using `--model haiku`",
+   "zh": "修复：使用 `--model haiku` 时，Bedrock 用户在 /model 选择器中不再看到重复的 Opus 条目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed broken security documentation links in trust dialogs and onboarding",
+   "zh": "修复了信任对话框和入门中损坏的安全文档链接"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed issue where pressing ESC to close the diff modal would also interrupt the model",
+   "zh": "修复了按 ESC 关闭 diff 模式也会中断模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "ctrl-r history search landing on a slash command no longer cancels the search",
+   "zh": "ctrl-r 历史搜索跳到斜杠命令时，不再取消搜索"
+  }
+ ]
+}

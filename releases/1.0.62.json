@@ -1,0 +1,32 @@
+{
+ "version": "1.0.62",
+ "date": "2025-07-28",
+ "published": "2025-07-28T22:04:35.525Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.62",
+ "counts": {
+  "new": 3,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added @-mention support with typeahead for custom agents. @<your-custom-agent> to invoke it",
+   "zh": "为自定义代理添加了 @-mention 支持和 typeahead。 @<your-custom-agent> 来调用它"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Added SessionStart hook for new session initialization",
+   "zh": "Hooks：新增 SessionStart 钩子，用于新会话初始化"
+  },
+  {
+   "type": "new",
+   "en": "/add-dir command now supports typeahead for directory paths",
+   "zh": "/add-dir 命令现在支持目录路径的预先输入"
+  },
+  {
+   "type": "improved",
+   "en": "Improved network connectivity check reliability",
+   "zh": "改进网络连接检查的可靠性"
+  }
+ ]
+}

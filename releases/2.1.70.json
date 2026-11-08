@@ -1,0 +1,158 @@
+{
+ "version": "2.1.70",
+ "date": "2026-03-06",
+ "published": "2026-03-06T00:09:06.874Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.70",
+ "counts": {
+  "new": 3,
+  "improved": 6,
+  "fixed": 20
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "[VSCode] Added spark icon in VS Code activity bar that lists all Claude Code sessions, with sessions opening as full editors",
+   "zh": "[VSCode] VS Code 活动栏新增火花图标，列出所有 Claude Code 会话，会话以完整编辑器打开"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added full markdown document view for plans in VS Code, with support for adding comments to provide feedback",
+   "zh": "[VSCode] 计划可在 VS Code 中以完整 Markdown 文档视图查看，并支持添加批注提供反馈"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added native MCP server management dialog — use `/mcp` in the chat panel to enable/disable servers, reconnect, and manage OAuth authentication without switching to the terminal",
+   "zh": "[VSCode] 新增原生 MCP 服务器管理对话框：在聊天面板中使用 `/mcp` 即可启用或禁用服务器、重新连接，并管理 OAuth 认证，无需切换到终端"
+  },
+  {
+   "type": "improved",
+   "en": "Improved error message when microphone captures silence to distinguish from \"no speech detected\"",
+   "zh": "改进麦克风录到静音时的错误提示，使其与“未检测到语音”区分开"
+  },
+  {
+   "type": "improved",
+   "en": "Improved compaction to preserve images in the summarizer request, allowing prompt cache reuse for faster and cheaper compaction",
+   "zh": "改进压缩：摘要器请求中保留图片，可以复用提示词缓存，使压缩更快、更省"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/rename` to work while Claude is processing, instead of being silently queued",
+   "zh": "改进 `/rename`：Claude 处理中也能使用，不再被悄悄排队"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced prompt input re-renders during turns by ~74%",
+   "zh": "一轮对话期间，输入框的重渲染减少约 74%"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced startup memory by ~426KB for users without custom CA certificates",
+   "zh": "没有自定义 CA 证书的用户，启动内存减少约 426KB"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced Remote Control `/poll` rate to once per 10 minutes while connected (was 1–2s), cutting server load ~300×. Reconnection is unaffected — transport loss immediately wakes fast polling.",
+   "zh": "连接时，Remote Control 的 `/poll` 频率降为每 10 分钟一次（原为每 1–2 秒），服务器负载降低约 300 倍。断线重连不受影响：连接断开会立即唤醒快速轮询。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API 400 errors when using `ANTHROPIC_BASE_URL` with a third-party gateway — tool search now correctly detects proxy endpoints and disables `tool_reference` blocks",
+   "zh": "修复了将`ANTHROPIC_BASE_URL`与第三方网关一起使用时的 API 400 错误 - 工具搜索现在可以正确检测代理端点并禁用`tool_reference`块"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `API Error: 400 This model does not support the effort parameter` when using custom Bedrock inference profiles or other model identifiers not matching standard Claude naming patterns",
+   "zh": "修复了使用自定义基岩推理配置文件或与标准 Claude 命名模式不匹配的其他模型标识符时“API 错误：400 该模型不支持工作量参数”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed empty model responses immediately after `ToolSearch` — the server renders tool schemas with system-prompt-style tags at the prompt tail, which could confuse models into stopping early",
+   "zh": "修复了`ToolSearch`之后立即出现的空模型响应 - 服务器在提示尾部使用系统提示样式标签呈现工具架构，这可能会混淆模型以提前停止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt-cache bust when an MCP server with `instructions` connects after the first turn",
+   "zh": "修复了带有“指令”的 MCP 服务器在第一回合后连接时提示缓存崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Enter inserting a newline instead of submitting when typing over a slow SSH connection",
+   "zh": "修复了通过慢速 SSH 连接键入时 Enter 插入换行符而不是提交的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clipboard corrupting non-ASCII text (CJK, emoji) on Windows/WSL by using PowerShell `Set-Clipboard`",
+   "zh": "使用 PowerShell `Set-Clipboard` 修复了剪贴板在 Windows/WSL 上损坏非 ASCII 文本（CJK、表情符号）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed extra VS Code windows opening at startup on Windows when running from the VS Code integrated terminal",
+   "zh": "修复了从 VS Code 集成终端运行时在 Windows 上启动时打开的额外 VS Code 窗口"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode failing on Windows native binary with \"native audio module could not be loaded\"",
+   "zh": "修复 Windows 原生二进制中语音模式报\"native audio module could not be loaded\"而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed push-to-talk not activating on session start when `voiceEnabled: true` was set in settings",
+   "zh": "修复了在设置中设置`voiceEnabled: true`时，一键通无法在会话开始时激活的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown links containing `#NNN` references incorrectly pointing to the current repository instead of the linked URL",
+   "zh": "修复了包含`#NNN`引用的 Markdown 链接错误地指向当前存储库而不是链接的 URL"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed repeated \"Model updated to Opus 4.6\" notification when a project's `.claude/settings.json` has a legacy Opus model string pinned",
+   "zh": "修复了当项目的 `.claude/settings.json` 固定了旧版 Opus 模型字符串时重复出现的“模型已更新到 Opus 4.6”通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugins showing as inaccurately installed in `/plugin`",
+   "zh": "修复了在`/plugin`中显示不正确安装的插件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugins showing \"not found in marketplace\" errors on fresh startup by auto-refreshing after marketplace installation",
+   "zh": "修复了在市场安装后通过自动刷新重新启动时显示“在市场中找不到”错误的插件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/security-review` command failing with `unknown option merge-base` on older git versions",
+   "zh": "修复了旧 git 版本上的`/security-review`命令因“未知选项合并基础”而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/color` command having no way to reset back to the default color — `/color default`, `/color gray`, `/color reset`, and `/color none` now restore the default",
+   "zh": "修复了`/color`命令无法重置回默认颜色的问题 - `/color default`、“/color grey”、“/color Reset”和`/color none`现在恢复默认值"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a performance regression in the `AskUserQuestion` preview dialog that re-ran markdown rendering on every keystroke in the notes input",
+   "zh": "修复了`AskUserQuestion`预览对话框中的性能回归，该对话框在笔记输入中的每次击键时重新运行 Markdown 渲染"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feature flags read during early startup never refreshing their disk cache, causing stale values to persist across sessions",
+   "zh": "修复了早期启动期间读取的功能标志从不刷新其磁盘缓存，导致过时的值在会话中持续存在的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `permissions.defaultMode` settings values other than `acceptEdits` or `plan` being applied in Claude Code Remote environments — they are now ignored",
+   "zh": "修复了在 Claude Code Remote 环境中应用除`acceptEdits`或`plan`之外的`permissions.defaultMode`设置值 - 它们现在被忽略"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skill listing being re-injected on every `--resume` (~600 tokens saved per resume)",
+   "zh": "修复了在每个`--resume`上重新注入的技能列表（每个简历保存约 600 个令牌）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed teleport marker not rendering in VS Code teleported sessions",
+   "zh": "修复 VS Code 中被传送（teleport）的会话里，传送标记不显示的问题"
+  }
+ ]
+}

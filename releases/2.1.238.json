@@ -1,0 +1,208 @@
+{
+ "version": "2.1.238",
+ "date": "2026-08-20",
+ "published": "2026-08-20T18:01:54.712Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.238",
+ "counts": {
+  "new": 4,
+  "improved": 12,
+  "fixed": 23
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added a `keybindingFlavor` setting: set it to `\"readline\"` to make Ctrl+W in the prompt delete back to the previous whitespace, as in Bash; the default (`\"classic\"`) is unchanged",
+   "zh": "添加了 `keybindingFlavor` 设置：将其设置为 `\"readline\"` 以使提示符中的 Ctrl+W 删除回之前的空格，如 Bash 中一样；默认值（“classic”）不变"
+  },
+  {
+   "type": "new",
+   "en": "Plugin marketplaces: `headersHelper` on a url marketplace or a catalog entry runs a command that mints HTTP headers (e.g. a short-lived token) for catalog and same-origin archive fetches",
+   "zh": "插件市场：url 类型市场或目录条目上的 `headersHelper` 会运行一条命令，为目录和同源归档获取请求生成 HTTP 请求头（如短期令牌）"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude self-hosted-runner --defer-shutdown-max-min <minutes>`: on SIGTERM, keep serving attached sessions, park what is left after that many minutes, then exit",
+   "zh": "添加了“claude self-hosted-runner --defer-shutdown-max-min <分钟>”：在 SIGTERM 上，继续提供附加会话，在几分钟后保留剩余的会话，然后退出"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude self-hosted-runner --proxy-authorization-command` / `--proxy-authorization-file` for egress proxies that require a freshly issued `Proxy-Authorization` header on every connection",
+   "zh": "为每个连接上需要新发布的`Proxy-Authorization`标头的出口代理添加了`claude self-hosted-runner --proxy-authorization-command`/`--proxy-authorization-file`"
+  },
+  {
+   "type": "improved",
+   "en": "A catalog entry's `headersHelper` runs only when you install or update that plugin, after its command is shown; `claude plugin install/update` ask `[y/N]` (or pass `-y`)",
+   "zh": "仅当您安装或更新该插件时，在显示其命令后，目录条目的`headersHelper`才会运行； `claude 插件安装/更新` 询问 `[y/N]` （或传递 `-y`）"
+  },
+  {
+   "type": "improved",
+   "en": "Cross-session messaging: sending to a session on this machine that refuses inbound messages (e.g. `crossSessionInbound: \"refuse\"`) now reports \"refused\" to the sender instead of a silent success",
+   "zh": "跨会话消息传递：发送到本机上拒绝入站消息的会话（例如“crossSessionInbound：“拒绝””）现在向发送者报告“拒绝”，而不是静默成功"
+  },
+  {
+   "type": "improved",
+   "en": "Cross-session messaging: a session whose inbox drops your messages (rate limit or full queue) now tells your session, instead of the messages vanishing silently",
+   "zh": "跨会话消息传递：收件箱丢弃消息（速率限制或已满队列）的会话现在会告诉您的会话，而不是消息默默消失"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup: bare `claude` starts sooner on macOS",
+   "zh": "改进启动：在 macOS 上，裸 `claude` 启动更快"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Bash tool permission checking for zsh-specific syntax in shell conditionals",
+   "zh": "改进 Bash 工具权限检查：支持条件语句中 zsh 特有的语法"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control connection resilience: brief HTTP 403 refusals from a network edge, VPN, or proxy are now tolerated for up to 3 minutes, with the refusing party named when a block persists",
+   "zh": "改进远程控制连接的韧性：来自网络边缘、VPN 或代理的短暂 HTTP 403 拒绝，最多容忍 3 分钟；若持续被拦截，会指出是哪一方在拒绝"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup responsiveness: the automatic update check now runs about 10 seconds after launch instead of competing with startup for CPU",
+   "zh": "改进启动响应速度：自动更新检查改为启动约 10 秒后再运行，不再与启动争抢 CPU"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the bundled `claude-api` skill for the Managed Agents Aug 19 release: web search/fetch domain settings and memory stores on self-hosted sandboxes",
+   "zh": "`claude-api` 技能配合 Managed Agents 8 月 19 日的发布更新：网页搜索/抓取的域名设置，以及自托管沙箱上的记忆存储"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Ctrl+L and Cmd+K in fullscreen to always just repaint — the double-press `/clear` shortcut was removed, and 1-row nvim terminals no longer trigger automatic `/clear` loops",
+   "zh": "将全屏中的 Ctrl+L 和 Cmd+K 更改为始终重新绘制 - 删除了双击`/clear`快捷键，并且 1 行 nvim 终端不再触发自动`/clear`循环"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `claude mcp list` and `claude mcp get` to show disabled servers as `⊘ Disabled` instead of connecting to them for a health check",
+   "zh": "更改了`claude mcp list`和`claude mcp get`以将禁用的服务器显示为“⊘已禁用”，而不是连接到它们进行运行状况检查"
+  },
+  {
+   "type": "improved",
+   "en": "MCP `headersHelper` in a project `.mcp.json`, and inline MCP servers in project or `--add-dir` agent files, now require that folder's trust dialog to have been accepted (also under `claude -p`)",
+   "zh": "项目 `.mcp.json` 中的 MCP `headersHelper`，以及项目或 `--add-dir` 智能体文件中的内联 MCP 服务器，现在要求该文件夹的信任对话框已被接受（`claude -p` 下同样适用）"
+  },
+  {
+   "type": "improved",
+   "en": "MCP `headersHelper` from a project `.mcp.json`, plugin, or agent file runs without inherited credential env vars; user, managed and claude.ai-scope helpers now run from the Claude config dir",
+   "zh": "项目 `.mcp.json`、插件或智能体文件中的 MCP `headersHelper`，现在运行时不再继承凭证环境变量；用户级、托管级和 claude.ai 范围的 helper 则从 Claude 配置目录运行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded memory growth in long interactive sessions: subagent tool results are now released once they leave the recent display window",
+   "zh": "修复长交互会话中内存无限增长的问题：子智能体工具结果在移出最近显示窗口后即会释放"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom, project, and plugin output styles drifting back to the default voice mid-session",
+   "zh": "修复了自定义、项目和插件输出样式在会话中移回默认语音的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=true` not keeping prompt suggestions on when your account is near, but not over, its usage limit",
+   "zh": "修复了`CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=true`在您的帐户接近但未超过其使用限制时不保留提示建议的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree-isolation Bash refusals telling you to remove a redirect when the command had none",
+   "zh": "修复工作树隔离拒绝 Bash 命令时，即使命令中没有重定向，仍提示你删除重定向的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed self-hosted runners occasionally being removed by the server after a single slow or lost poll request, handing their healthy session to another runner",
+   "zh": "修复了在单个缓慢或丢失的轮询请求后，自托管运行程序偶尔会被服务器删除，将其健康会话交给另一个运行程序的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP elicitation dialogs showing nothing for URLs longer than 4,096 characters, and permission prompts dropping the \"don't ask again\" option when the project path didn't fit the terminal width",
+   "zh": "修复了 MCP 诱导对话框对于长度超过 4,096 个字符的 URL 不显示任何内容，并且当项目路径不适合终端宽度时，权限提示会删除“不再询问”选项"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed leftover `/tmp/claude-*-cwd` files when a Bash command is killed, times out, or is interrupted",
+   "zh": "修复了 Bash 命令被终止、超时或中断时剩余的`/tmp/claude-*-cwd`文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed held Backspace being ignored on terminals that send Ctrl+H for Backspace when keystrokes arrive in large bursts (slow SSH/mosh links)",
+   "zh": "修复了当大量按键到达时发送 Ctrl+H 进行退格键的终端上保留的退格键被忽略的问题（缓慢的 SSH/mosh 链接）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed text-wrapping in permission prompt diffs: lines containing wide multi-code-point characters (such as emoji) or tabs are no longer clipped",
+   "zh": "修复了权限提示差异中的文本换行：包含宽多代码点字符（例如表情符号）或制表符的行不再被剪切"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed killing a suspended (Ctrl+Z) session sometimes leaving the terminal in bracketed-paste mode with the cursor hidden",
+   "zh": "修复了终止挂起的 (Ctrl+Z) 会话有时会使终端处于括号粘贴模式且光标隐藏的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stdio MCP servers receiving a `server/discover` request before `initialize`, forcing lazy servers to start their backend on every session open",
+   "zh": "修复了 stdio MCP 服务器在“初始化”之前接收“服务器/发现”请求，强制惰性服务器在每个打开的会话时启动其后端"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a proxy's refusal of a connection being reported as a generic network error instead of naming the proxy",
+   "zh": "修复了代理拒绝连接被报告为一般网络错误而不是命名代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/model` and `/effort` cache-miss warning appearing when the prompt cache had already expired",
+   "zh": "修复提示词缓存已过期时，`/model` 和 `/effort` 仍显示缓存未命中警告的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed per-task Stop from the Remote Control tasks panel doing nothing on CLI-hosted sessions",
+   "zh": "修复了从远程控制任务面板按任务停止在 CLI 托管会话上不执行任何操作的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote sessions exiting when a client delivered a user message without a valid role",
+   "zh": "修复了当客户端在没有有效角色的情况下传递用户消息时远程会话退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions started by `claude remote-control` inheriting session-scoped environment variables from the launching shell",
+   "zh": "修复了由“claude Remote-control”启动的远程控制会话从启动 shell 继承会话范围的环境变量"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Remote Control session whose process crashed staying unavailable until `claude remote-control` was restarted; it can now be reused when you next message it",
+   "zh": "修复了一个远程控制会话，该会话的进程崩溃后一直不可用，直到“claude Remote-control”重新启动为止；现在，当您下次向它发送消息时，可以重复使用它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control messages sent from the web or Desktop while Claude is mid-turn disappearing from the transcript after the turn finishes",
+   "zh": "修复了克劳德在回合中途从网络或桌面发送的远程控制消息在回合结束后从记录中消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control model picks made on a phone or web not updating the model shown in the terminal",
+   "zh": "修复了在电话或网络上进行的远程控制模型选择不会更新终端中显示的模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control disconnecting with \"login expired\" when a brief network hiccup delays renewing your sign-in; it now retries and stays connected",
+   "zh": "修复了当短暂的网络故障延迟更新登录时，远程控制会因“登录已过期”而断开连接的问题；它现在重试并保持连接"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control reporting a failed reconnect on sign-out; signing out now ends the session with a clear message",
+   "zh": "修复了远程控制在注销时报告重新连接失败的问题；现在注销并以明确的消息结束会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ListAgents`/`SendMessage` reporting \"Remote Control is not connected\" in sessions run by `claude remote-control` (server mode) or Desktop/IDE hosts; they now list and reach Remote Control peers",
+   "zh": "修复了`ListAgents`/`SendMessage`在“claude Remote-control”（服务器模式）或桌面/IDE 主机运行的会话中报告“远程控制未连接”的问题；他们现在列出并联系远程控制伙伴"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ListAgents` and `SendMessage` exposing the idle worker that the agent view pre-warms for your next background session; it now appears only once a task claims it",
+   "zh": "修复了`ListAgents`和`SendMessage`暴露了代理视图为下一个后台会话预热的空闲工作线程；现在只有当任务声明它时它才会出现"
+  }
+ ]
+}

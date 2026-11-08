@@ -1,0 +1,22 @@
+{
+ "version": "0.2.53",
+ "date": "2025-03-21",
+ "published": "2025-03-21T18:04:02.580Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.53",
+ "counts": {
+  "new": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "New web fetch tool lets Claude view URLs that you paste in",
+   "zh": "新的网页抓取工具让 Claude 可以查看你粘贴的 URL"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug with JPEG detection",
+   "zh": "修复了 JPEG 检测的错误"
+  }
+ ]
+}

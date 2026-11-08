@@ -1,0 +1,22 @@
+{
+ "version": "1.0.111",
+ "date": "2025-09-10",
+ "published": "2025-09-10T22:16:23.609Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.111",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "/model now validates provided model names",
+   "zh": "/model 现在验证提供的模型名称"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool crashes caused by malformed shell syntax parsing",
+   "zh": "修复了由格式错误的 shell 语法解析导致的 Bash 工具崩溃"
+  }
+ ]
+}

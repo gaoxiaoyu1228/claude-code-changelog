@@ -1,0 +1,113 @@
+{
+ "version": "2.1.145",
+ "date": "2026-05-19",
+ "published": "2026-05-19T17:40:52.477Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.145",
+ "counts": {
+  "new": 5,
+  "improved": 3,
+  "fixed": 12
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `claude agents --json` to list live Claude sessions as JSON for scripting (tmux-resurrect, status bars, session pickers)",
+   "zh": "添加了 `claude Agents --json` 以将实时 Claude 会话列为 JSON 以便编写脚本（tmux-resurrect、状态栏、会话选择器）"
+  },
+  {
+   "type": "new",
+   "en": "Added `agent_id` and `parent_agent_id` attributes to `claude_code.tool` OTEL spans, and fixed trace parenting so background subagent spans nest under the dispatching Agent tool span",
+   "zh": "向`claude_code.tool`OTEL 跨度添加了`agent_id`和`parent_agent_id`属性，并修复了跟踪父子关系，以便后台子代理跨度嵌套在调度代理工具跨度下"
+  },
+  {
+   "type": "new",
+   "en": "Status line JSON input now includes GitHub repo and PR information when detected",
+   "zh": "状态栏的 JSON 输入现在包含检测到的 GitHub 仓库和 PR 信息"
+  },
+  {
+   "type": "new",
+   "en": "Slash command and @-mention suggestion list now supports mouse hover and click in fullscreen mode",
+   "zh": "全屏模式下，斜杠命令和 @ 提及的建议列表现在支持鼠标悬停和点击"
+  },
+  {
+   "type": "new",
+   "en": "Stop and SubagentStop hook input now includes `background_tasks` and `session_crons` fields",
+   "zh": "Stop 和 SubagentStop 钩子的输入现在包含 `background_tasks` 和 `session_crons` 字段"
+  },
+  {
+   "type": "improved",
+   "en": "`/plugin` Discover and Browse screens now show a plugin's commands, agents, skills, hooks, and MCP/LSP servers before installation",
+   "zh": "`/plugin` 的 Discover 和 Browse 页面现在会在安装前显示插件的命令、agent、skill、hook 以及 MCP/LSP 服务器"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents` terminal tab title now shows the awaiting-input count so an alt-tabbed window tells you when an agent needs attention",
+   "zh": "`claude agents` 的终端标签标题现在会显示等待输入的数量，这样切换到其他窗口时就能知道哪个 agent 需要处理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Read tool to return a truncated first page with a \"PARTIAL view\" notice instead of a hard error when a whole-file read exceeds the token limit",
+   "zh": "改进 Read 工具：整个文件读取超出 token 上限时，不再直接报错，而是返回截断的第一页，并带有「PARTIAL view」提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a permission-prompt bypass where bare variable assignments to non-allowlisted environment variables in Bash commands were auto-approved",
+   "zh": "修复了权限提示旁路，其中 Bash 命令中对非白名单环境变量的裸变量分配被自动批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP prompt slash commands showing raw server validation errors when a required argument is omitted — the error now names the missing argument and shows expected usage",
+   "zh": "修复了 MCP 提示斜杠命令在省略必需参数时显示原始服务器验证错误 — 该错误现在命名缺少的参数并显示预期用法"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the spinner and elapsed-time display freezing until a keypress after the terminal was resized or refocused",
+   "zh": "修复终端调整大小或重新获得焦点后，旋转指示器和已用时间显示冻结，直到按下一个键才恢复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the cross-project resume hint failing in default Windows PowerShell 5.1 — Windows now uses `;` as the command separator",
+   "zh": "修复默认的 Windows PowerShell 5.1 中跨项目恢复提示失效的问题；现在 Windows 使用 `;` 作为命令分隔符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice push-to-talk not working in the agent view's reply pane",
+   "zh": "修复智能体视图的回复窗格中，语音一键通话不工作的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed task lists rendering in random order when several tasks are created at once",
+   "zh": "修复同时创建多个任务时，任务列表顺序随机的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stale \"Failed to install Anthropic marketplace\" banner showing when the marketplace is already installed",
+   "zh": "修复了市场已安装时显示的陈旧“无法安装 Anthropic 市场”横幅"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the PR badge in the footer not updating immediately after `gh pr create` and other PR-state-changing commands run in-session",
+   "zh": "修复在会话中运行 `gh pr create` 等改变 PR 状态的命令后，页脚的 PR 标记不会立即更新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Agent Teams teammates with non-ASCII names failing every API call due to invalid header encoding",
+   "zh": "修复了具有非 ASCII 名称的 Agent Teams 队友由于标头编码无效而导致每次 API 调用失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/review` using a deprecated `projectCards` GraphQL query that errored on repos with Classic Projects",
+   "zh": "修复了使用已弃用的`projectCards`GraphQL 查询的`/review`，该查询在经典项目的存储库上出错"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin validate` not flagging `skills:` entries that point at a file instead of a directory — the error now suggests the parent directory",
+   "zh": "修复了`claude plugin validate`不标记指向文件而不是目录的`skills:`条目——错误现在建议父目录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an infinite loop where a skill using `context: fork` could repeatedly re-invoke itself instead of running",
+   "zh": "修复了一个无限循环，其中使用“context:fork”的技能可以重复地重新调用自身而不是运行"
+  }
+ ]
+}

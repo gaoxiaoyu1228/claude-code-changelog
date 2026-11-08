@@ -1,0 +1,27 @@
+{
+ "version": "1.0.33",
+ "date": "2025-06-23",
+ "published": "2025-06-23T20:31:06.405Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.33",
+ "counts": {
+  "new": 1,
+  "improved": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added prompt input undo functionality (Ctrl+Z and vim 'u' command)",
+   "zh": "添加提示输入撤消功能（Ctrl+Z 和 vim 'u' 命令）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved logging functionality with session ID support",
+   "zh": "改进日志功能，支持会话 ID"
+  },
+  {
+   "type": "improved",
+   "en": "Improvements to plan mode",
+   "zh": "改进计划模式"
+  }
+ ]
+}

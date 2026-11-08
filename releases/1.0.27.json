@@ -1,0 +1,31 @@
+{
+ "version": "1.0.27",
+ "date": "2025-06-17",
+ "published": "2025-06-17T17:52:47.797Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.27",
+ "counts": {
+  "new": 4
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Streamable HTTP MCP servers are now supported",
+   "zh": "现在支持可流式 HTTP 的 MCP 服务器"
+  },
+  {
+   "type": "new",
+   "en": "Remote MCP servers (SSE and HTTP) now support OAuth",
+   "zh": "远程 MCP 服务器（SSE 和 HTTP）现在支持 OAuth"
+  },
+  {
+   "type": "new",
+   "en": "MCP resources can now be @-mentioned",
+   "zh": "MCP 资源现在可以用 @ 提及"
+  },
+  {
+   "type": "new",
+   "en": "/resume slash command to switch conversations within Claude Code",
+   "zh": "/resume 斜线命令用于在 Claude Code 中切换对话"
+  }
+ ]
+}

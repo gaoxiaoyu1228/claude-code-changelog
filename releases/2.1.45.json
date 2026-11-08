@@ -1,0 +1,88 @@
+{
+ "version": "2.1.45",
+ "date": "2026-02-17",
+ "published": "2026-02-17T17:33:48.506Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.45",
+ "counts": {
+  "new": 4,
+  "improved": 4,
+  "fixed": 7
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for Claude Sonnet 4.6",
+   "zh": "添加了对克劳德十四行诗 4.6 的支持"
+  },
+  {
+   "type": "new",
+   "en": "Added support for reading `enabledPlugins` and `extraKnownMarketplaces` from `--add-dir` directories",
+   "zh": "添加了对从`--add-dir`目录读取`enabledPlugins`和`extraKnownMarketplaces`的支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `spinnerTipsOverride` setting to customize spinner tips — configure `tips` with an array of custom tip strings, and optionally set `excludeDefault: true` to show only your custom tips instead of the built-in ones",
+   "zh": "添加了`spinnerTipsOverride`设置来自定义微调器提示 - 使用自定义提示字符串数组配置`tips`，并可选择设置`excludeDefault: true`以仅显示自定义提示而不是内置提示"
+  },
+  {
+   "type": "new",
+   "en": "Added `SDKRateLimitInfo` and `SDKRateLimitEvent` types to the SDK, enabling consumers to receive rate limit status updates including utilization, reset times, and overage information",
+   "zh": "在 SDK 中添加了`SDKRateLimitInfo`和`SDKRateLimitEvent`类型，使消费者能够接收速率限制状态更新，包括利用率、重置时间和超额信息"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance by removing eager loading of session history for stats caching",
+   "zh": "改进启动性能：不再为统计缓存预先加载全部会话历史"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage for shell commands that produce large output — RSS no longer grows unboundedly with command output size",
+   "zh": "改进产生大量输出的 shell 命令的内存占用：常驻内存不再随命令输出大小无限增长"
+  },
+  {
+   "type": "improved",
+   "en": "Improved collapsed read/search groups to show the current file or search pattern being processed beneath the summary line while active",
+   "zh": "改进折叠的读取/搜索分组：运行时，在摘要行下方显示当前正在处理的文件或搜索模式"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Improved permission destination choice (project/user/session) to persist across sessions",
+   "zh": "[VSCode] 改进权限保存位置（项目/用户/会话）的选择，使其能跨会话保留"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Agent Teams teammates failing on Bedrock, Vertex, and Foundry by propagating API provider environment variables to tmux-spawned processes (anthropics/claude-code#23561)",
+   "zh": "通过将 API 提供程序环境变量传播到 tmux 生成的进程，修复了 Agent Teams 队友在 Bedrock、Vertex 和 Foundry 上失败的问题 (anthropics/claude-code#23561)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandbox \"operation not permitted\" errors when writing temporary files on macOS by using the correct per-user temp directory (anthropics/claude-code#21654)",
+   "zh": "修复了使用正确的每用户临时目录在 macOS 上写入临时文件时沙箱“不允许操作”的错误 (anthropics/claude-code#21654)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Task tool (backgrounded agents) crashing with a `ReferenceError` on completion (anthropics/claude-code#22087)",
+   "zh": "修复了任务工具（后台代理）在完成时因`ReferenceError`崩溃的问题（anthropics/claude-code#22087）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed autocomplete suggestions not being accepted on Enter when images are pasted in the input",
+   "zh": "修复了当图像粘贴到输入中时，在 Enter 上不接受自动完成建议的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills invoked by subagents incorrectly appearing in main session context after compaction",
+   "zh": "修复了压缩后子代理调用的技能错误地出现在主会话上下文中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed excessive `.claude.json.backup` files accumulating on every startup",
+   "zh": "修复了每次启动时累积过多的`.claude.json.backup`文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin-provided commands, agents, and hooks not being available immediately after installation without requiring a restart",
+   "zh": "修复了插件提供的命令、代理和挂钩在安装后无法立即使用而无需重新启动的问题"
+  }
+ ]
+}

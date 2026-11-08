@@ -1,0 +1,109 @@
+{
+ "version": "2.1.90",
+ "date": "2026-04-01",
+ "published": "2026-04-01T23:31:39.018Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.90",
+ "counts": {
+  "new": 3,
+  "improved": 5,
+  "fixed": 10,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `/powerup` — interactive lessons teaching Claude Code features with animated demos",
+   "zh": "添加了`/powerup`——通过动画演示教授 Claude Code 功能的互动课程"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE` env var to keep the existing marketplace cache when `git pull` fails, useful in offline environments",
+   "zh": "添加了`CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE`环境变量，以在`git pull`失败时保留现有的市场缓存，这在离线环境中很有用"
+  },
+  {
+   "type": "new",
+   "en": "Added `.husky` to protected directories (acceptEdits mode)",
+   "zh": "将 `.husky` 添加到受保护目录（acceptEdits 模式）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance: eliminated per-turn JSON.stringify of MCP tool schemas on cache-key lookup",
+   "zh": "改进性能：去掉了每轮对话在缓存键查找时对 MCP 工具定义做的 JSON.stringify"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance: SSE transport now handles large streamed frames in linear time (was quadratic)",
+   "zh": "改进性能：SSE 传输现在以线性时间处理大的流式数据帧（之前是平方级）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance: SDK sessions with long conversations no longer slow down quadratically on transcript writes",
+   "zh": "改进性能：长对话的 SDK 会话写入转录时不再随长度呈平方级变慢"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/resume` all-projects view to load project sessions in parallel, improving load times for users with many projects",
+   "zh": "改进 `/resume` 的全部项目视图：并行加载各项目的会话，项目多的用户加载更快"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `--resume` picker to no longer show sessions created by `claude -p` or SDK invocations",
+   "zh": "更改了`--resume`选择器，不再显示由`claude -p`或 SDK 调用创建的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an infinite loop where the rate-limit options dialog would repeatedly auto-open after hitting your usage limit, eventually crashing the session",
+   "zh": "修复了无限循环，其中速率限制选项对话框在达到使用限制后会重复自动打开，最终导致会话崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` causing a full prompt-cache miss on the first request for users with deferred tools, MCP servers, or custom agents (regression since v2.1.69)",
+   "zh": "修复了`--resume`导致使用延迟工具、MCP 服务器或自定义代理的用户在第一次请求时出现完全提示缓存未命中的问题（自 v2.1.69 以来的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Edit`/`Write` failing with \"File content has changed\" when a PostToolUse format-on-save hook rewrites the file between consecutive edits",
+   "zh": "修复了当 PostToolUse 保存格式挂钩在连续编辑之间重写文件时，“编辑”/“写入”失败并显示“文件内容已更改”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `PreToolUse` hooks that emit JSON to stdout and exit with code 2 not correctly blocking the tool call",
+   "zh": "修复了将 JSON 发送到 stdout 并以代码 2 退出的`PreToolUse`挂钩，未正确阻止工具调用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed collapsed search/read summary badge appearing multiple times in fullscreen scrollback when a CLAUDE.md file auto-loads during a tool call",
+   "zh": "修复了在工具调用期间自动加载 CLAUDE.md 文件时，折叠搜索/阅读摘要徽章在全屏回滚中多次出现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode not respecting explicit user boundaries (\"don't push\", \"wait for X before Y\") even when the action would otherwise be allowed",
+   "zh": "修复了自动模式不尊重明确用户边界的问题（“不要推送”、“在 Y 之前等待 X”），即使该操作本来是允许的"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed click-to-expand hover text being nearly invisible on light terminal themes",
+   "zh": "修复了点击展开悬停文本在轻型终端主题上几乎不可见的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed UI crash when malformed tool input reached the permission dialog",
+   "zh": "修复了格式错误的工具输入到达权限对话框时 UI 崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed headers disappearing when scrolling `/model`, `/config`, and other selection screens",
+   "zh": "修复了滚动`/model`、`/config`和其他选择屏幕时标题消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened PowerShell tool permission checks: fixed trailing `&` background job bypass, `-ErrorAction Break` debugger hang, archive-extraction TOCTOU, and parse-fail fallback deny-rule degradation",
+   "zh": "加固 PowerShell 工具的权限检查：修复末尾 `&` 后台任务绕过、`-ErrorAction Break` 导致调试器挂起、归档解压的 TOCTOU 问题，以及解析失败时拒绝规则降级的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed `Get-DnsClientCache` and `ipconfig /displaydns` from auto-allow (DNS cache privacy)",
+   "zh": "从自动允许列表中移除 `Get-DnsClientCache` 和 `ipconfig /displaydns`（保护 DNS 缓存隐私）"
+  }
+ ]
+}

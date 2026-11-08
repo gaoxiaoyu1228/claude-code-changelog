@@ -1,0 +1,83 @@
+{
+ "version": "2.1.19",
+ "date": "2026-01-23",
+ "published": "2026-01-23T21:14:31.264Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.19",
+ "counts": {
+  "new": 4,
+  "improved": 2,
+  "fixed": 8
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added env var `CLAUDE_CODE_ENABLE_TASKS`, set to `false` to keep the old system temporarily",
+   "zh": "添加了环境变量`CLAUDE_CODE_ENABLE_TASKS`，设置为`false`以暂时保留旧系统"
+  },
+  {
+   "type": "new",
+   "en": "Added shorthand `$0`, `$1`, etc. for accessing individual arguments in custom commands",
+   "zh": "添加了简写`$0`、`$1`等，用于访问自定义命令中的各个参数"
+  },
+  {
+   "type": "new",
+   "en": "[SDK] Added replay of `queued_command` attachment messages as `SDKUserMessageReplay` events when `replayUserMessages` is enabled",
+   "zh": "[SDK] 启用 `replayUserMessages` 时，新增将 `queued_command` 附件消息作为 `SDKUserMessageReplay` 事件回放"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Enabled session forking and rewind functionality for all users",
+   "zh": "[VSCode] 对所有用户开启会话分叉（fork）和回退（rewind）功能"
+  },
+  {
+   "type": "improved",
+   "en": "Changed skills without additional permissions or hooks to be allowed without requiring approval",
+   "zh": "无需额外权限即可更改技能或无需批准即可允许挂钩"
+  },
+  {
+   "type": "improved",
+   "en": "Changed indexed argument syntax from `$ARGUMENTS.0` to `$ARGUMENTS[0]` (bracket syntax)",
+   "zh": "将索引参数语法从`$ARGUMENTS.0`更改为`$ARGUMENTS[0]`（括号语法）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crashes on processors without AVX instruction support",
+   "zh": "修复了不支持 AVX 指令的处理器上的崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed dangling Claude Code processes when terminal is closed by catching EIO errors from `process.exit()` and using SIGKILL as fallback",
+   "zh": "通过从`process.exit()`捕获 EIO 错误并使用 SIGKILL 作为后备，修复了终端关闭时悬空的 Claude Code 进程"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/rename` and `/tag` not updating the correct session when resuming from a different directory (e.g., git worktrees)",
+   "zh": "修复了从不同目录（例如 git worktrees）恢复时`/rename`和`/tag`不更新正确会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming sessions by custom title not working when run from a different directory",
+   "zh": "修复了从不同目录运行时按自定义标题恢复会话不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasted text content being lost when using prompt stash (Ctrl+S) and restore",
+   "zh": "修复了使用提示存储 (Ctrl+S) 和恢复时粘贴的文本内容丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent list displaying \"Sonnet (default)\" instead of \"Inherit (default)\" for agents without an explicit model setting",
+   "zh": "修复了没有显式模型设置的代理列表显示“Sonnet（默认）”而不是“继承（默认）”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed backgrounded hook commands not returning early, potentially causing the session to wait on a process that was intentionally backgrounded",
+   "zh": "修复了后台挂钩命令未提前返回，可能导致会话等待有意后台进程的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file write preview omitting empty lines",
+   "zh": "修复了文件写入预览省略空行的问题"
+  }
+ ]
+}

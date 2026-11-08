@@ -1,0 +1,42 @@
+{
+ "version": "2.0.65",
+ "date": "2025-12-11",
+ "published": "2025-12-11T02:41:29.924Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.65",
+ "counts": {
+  "new": 4,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added ability to switch models while writing a prompt using alt+p (linux, windows), option+p (macos).",
+   "zh": "添加了使用 alt+p（linux、windows）、option+p（macos）编写提示时切换模型的功能。"
+  },
+  {
+   "type": "new",
+   "en": "Added context window information to status line input",
+   "zh": "将上下文窗口信息添加到状态行输入"
+  },
+  {
+   "type": "new",
+   "en": "Added `fileSuggestion` setting for custom `@` file search commands",
+   "zh": "为自定义`@`文件搜索命令添加了`fileSuggestion`设置"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_SHELL` environment variable to override automatic shell detection (useful when login shell differs from actual working shell)",
+   "zh": "添加了 `CLAUDE_CODE_SHELL` 环境变量来覆盖自动 shell 检测（当登录 shell 与实际工作 shell 不同时有用）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt not being saved to history when aborting a query with Escape",
+   "zh": "修复了使用 Escape 中止查询时提示未保存到历史记录中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Read tool image handling to identify format from bytes instead of file extension",
+   "zh": "修复了读取工具图像处理，以从字节而不是文件扩展名识别格式"
+  }
+ ]
+}

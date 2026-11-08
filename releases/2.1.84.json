@@ -1,0 +1,213 @@
+{
+ "version": "2.1.84",
+ "date": "2026-03-25",
+ "published": "2026-03-25T23:50:13.505Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.84",
+ "counts": {
+  "new": 11,
+  "improved": 14,
+  "fixed": 15
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added PowerShell tool for Windows as an opt-in preview. Learn more at https://code.claude.com/docs/en/tools-reference#powershell-tool",
+   "zh": "添加了适用于 Windows 的 PowerShell 工具作为选择加入预览。了解更多信息 https://code.claude.com/docs/en/tools-reference#powershell-tool"
+  },
+  {
+   "type": "new",
+   "en": "Added `ANTHROPIC_DEFAULT_{OPUS,SONNET,HAIKU}_MODEL_SUPPORTS` env vars to override effort/thinking capability detection for pinned default models for 3p (Bedrock, Vertex, Foundry), and `_MODEL_NAME`/`_DESCRIPTION` to customize the `/model` picker label",
+   "zh": "添加了 `ANTHROPIC_DEFAULT_{OPUS,SONNET,HAIKU}_MODEL_SUPPORTS` 环境变量以覆盖 3p（Bedrock、Vertex、Foundry）固定默认模型的努力/思考能力检测，并添加了 `_MODEL_NAME`/`_DESCRIPTION` 以自定义 `/model` 选择器标签"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_STREAM_IDLE_TIMEOUT_MS` env var to configure the streaming idle watchdog threshold (default 90s)",
+   "zh": "添加了 `CLAUDE_STREAM_IDLE_TIMEOUT_MS` 环境变量来配置流空闲看门狗阈值（默认 90 秒）"
+  },
+  {
+   "type": "new",
+   "en": "Added `TaskCreated` hook that fires when a task is created via `TaskCreate`",
+   "zh": "添加了`TaskCreated`钩子，当通过`TaskCreate`创建任务时会触发该钩子"
+  },
+  {
+   "type": "new",
+   "en": "Added `WorktreeCreate` hook support for `type: \"http\"` — return the created worktree path via `hookSpecificOutput.worktreePath` in the response JSON",
+   "zh": "添加了对 `type: \"http\"` 的 `WorktreeCreate` 钩子支持 — 通过响应 JSON 中的 `hookSpecificOutput.worktreePath` 返回创建的工作树路径"
+  },
+  {
+   "type": "new",
+   "en": "Added `allowedChannelPlugins` managed setting for team/enterprise admins to define a channel plugin allowlist",
+   "zh": "添加了`allowedChannelPlugins`托管设置，供团队/企业管理员定义通道插件白名单"
+  },
+  {
+   "type": "new",
+   "en": "Added `x-client-request-id` header to API requests for debugging timeouts",
+   "zh": "在 API 请求中添加了`x-client-request-id`标头以调试超时"
+  },
+  {
+   "type": "new",
+   "en": "Added idle-return prompt that nudges users returning after 75+ minutes to `/clear`, reducing unnecessary token re-caching on stale sessions",
+   "zh": "添加了空闲返回提示，促使用户在 75 分钟以上后返回`/clear`，从而减少过时会话中不必要的令牌重新缓存"
+  },
+  {
+   "type": "new",
+   "en": "Rules and skills `paths:` frontmatter now accepts a YAML list of globs",
+   "zh": "规则和技能的 `paths:` 前置字段现在支持 YAML 列表形式的 glob"
+  },
+  {
+   "type": "new",
+   "en": "Background bash tasks that appear stuck on an interactive prompt now surface a notification after ~45 seconds",
+   "zh": "出现在交互式提示上的后台 bash 任务现在会在约 45 秒后显示通知"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added rate limit warning banner with usage percentage and reset time",
+   "zh": "[VSCode] 新增速率限制警告横幅，显示用量百分比和重置时间"
+  },
+  {
+   "type": "improved",
+   "en": "Deep links (`claude-cli://`) now open in your preferred terminal instead of whichever terminal happens to be first in the detection list",
+   "zh": "深层链接 (`claude-cli://`) 现在在您的首选终端中打开，而不是在检测列表中恰好位于第一个的终端中打开"
+  },
+  {
+   "type": "improved",
+   "en": "MCP tool descriptions and server instructions are now capped at 2KB to prevent OpenAPI-generated servers from bloating context",
+   "zh": "MCP 工具描述和服务器说明现在上限为 2KB，防止由 OpenAPI 生成的服务器占满上下文"
+  },
+  {
+   "type": "improved",
+   "en": "MCP servers configured both locally and via claude.ai connectors are now deduplicated — the local config wins",
+   "zh": "同时在本地和通过 claude.ai 连接器配置的 MCP 服务器现在会去重，以本地配置为准"
+  },
+  {
+   "type": "improved",
+   "en": "Token counts ≥1M now display as \"1.5m\" instead of \"1512.6k\"",
+   "zh": "不小于 1M 的 token 数现在显示为 \"1.5m\"，而不是 \"1512.6k\""
+  },
+  {
+   "type": "improved",
+   "en": "Improved detection for dangerous removals of Windows drive roots (`C:\\`, `C:\\Windows`, etc.)",
+   "zh": "改进对 Windows 驱动器根目录危险删除（如 `C:\\`、`C:\\Windows`）的检测"
+  },
+  {
+   "type": "improved",
+   "en": "Improved interactive startup by ~30ms by running `setup()` in parallel with slash command and agent loading",
+   "zh": "改进交互式启动：`setup()` 与斜杠命令、agent 的加载并行执行，启动快约 30 毫秒"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup for `claude \"prompt\"` with MCP servers — the REPL now renders immediately instead of blocking until all servers connect",
+   "zh": "改进带 MCP 服务器的 `claude \"prompt\"` 启动：REPL 立即显示，不再等所有服务器连接完成才出现"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control to show a specific reason when blocked instead of a generic \"not yet enabled\" message",
+   "zh": "改进远程控制：被阻止时显示具体原因，不再是笼统的“未启用”"
+  },
+  {
+   "type": "improved",
+   "en": "Improved p90 prompt cache rate",
+   "zh": "改进 p90 提示词缓存命中率"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced scroll-to-top resets in long sessions by making the message window immune to compaction and grouping changes",
+   "zh": "通过让消息窗口不受压缩和分组变化影响，长会话中滚动回到顶部的情况减少"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced terminal flickering when animated tool progress scrolls above the viewport",
+   "zh": "动画形式的工具进度滚动到视口上方时，终端闪烁减少"
+  },
+  {
+   "type": "improved",
+   "en": "Changed issue/PR references to only become clickable links when written as `owner/repo#123` — bare `#123` is no longer auto-linked",
+   "zh": "将问题/PR 引用更改为仅在编写为`owner/repo#123`时才变为可点击链接 - 裸露的`#123`不再自动链接"
+  },
+  {
+   "type": "improved",
+   "en": "Slash commands unavailable for the current auth setup (`/voice`, `/mobile`, `/chrome`, `/upgrade`, etc.) are now hidden instead of shown",
+   "zh": "当前认证方式不可用的斜杠命令（如 `/voice`、`/mobile`、`/chrome`、`/upgrade` 等）现在会被隐藏，而不是显示出来"
+  },
+  {
+   "type": "improved",
+   "en": "Stats screenshot (Ctrl+S in /stats) now works in all builds and is 16× faster",
+   "zh": "状态截图（`/stats` 中的 Ctrl+S）现在在所有版本中可用，且速度快了 16 倍"
+  },
+  {
+   "type": "fixed",
+   "en": "Global system-prompt caching now works when `ToolSearch` is enabled, including for users with MCP tools configured",
+   "zh": "启用 `ToolSearch` 时，全局系统提示缓存现在也能生效，包括配置了 MCP 工具的用户"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice push-to-talk: holding the voice key no longer leaks characters into the text input, and transcripts now insert at the correct position",
+   "zh": "修复语音一键通话：长按语音键不再把字符泄漏到文本输入框中，转录内容现在会插入到正确位置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed up/down arrow keys being unresponsive when a footer item is focused",
+   "zh": "修复页脚项目获得焦点时，上/下方向键无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Ctrl+U` (kill-to-line-start) being a no-op at line boundaries in multiline input, so repeated `Ctrl+U` now clears across lines",
+   "zh": "修复了`Ctrl+U`（kill-to-line-start）在多行输入中的行边界处无操作的问题，因此重复的`Ctrl+U`现在可以跨行清除"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed null-unbinding a default chord binding (e.g. `\"ctrl+x ctrl+k\": null`) still entering chord-wait mode instead of freeing the prefix key",
+   "zh": "修复了空解除绑定默认和弦绑定（例如 `\"ctrl+x ctrl+k\": null`）仍进入和弦等待模式而不是释放前缀键的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mouse events inserting literal \"mouse\" text into transcript search input",
+   "zh": "修复了鼠标事件，将文字“鼠标”文本插入转录搜索输入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed workflow subagents failing with API 400 when the outer session uses `--json-schema` and the subagent also specifies a schema",
+   "zh": "修复外层会话使用 `--json-schema`，且子智能体也指定了 schema 时，工作流子智能体报 API 400 失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed missing background color behind certain emoji in user message bubbles on some terminals",
+   "zh": "修复了某些终端上用户消息气泡中某些表情符号背后缺少背景颜色的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the \"allow Claude to edit its own settings for this session\" permission option not sticking for users with `Edit(.claude)` allow rules",
+   "zh": "修复了“允许 Claude 编辑此会话的自己的设置”权限选项不适用于具有“编辑（.claude）”允许规则的用户"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hang when generating attachment snippets for large edited files",
+   "zh": "修复了为大型编辑文件生成附件片段时的挂起问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool/resource cache leak on server reconnect",
+   "zh": "修复了服务器重新连接时的 MCP 工具/资源缓存泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a startup performance issue where partial clone repositories (Scalar/GVFS) triggered mass blob downloads",
+   "zh": "修复了部分克隆存储库 (Scalar/GVFS) 触发大量 Blob 下载的启动性能问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed native terminal cursor not tracking the text input caret, so IME composition (CJK input) now renders inline and screen readers can follow the input position",
+   "zh": "修复了本机终端光标不跟踪文本输入插入符的问题，因此 IME 组合（CJK 输入）现在呈现内联，并且屏幕阅读器可以跟随输入位置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spurious \"Not logged in\" errors on macOS caused by transient keychain read failures",
+   "zh": "修复了 macOS 上因暂时钥匙串读取失败而导致的虚假“未登录”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cold-start race where core tools could be deferred without their bypass active, causing Edit/Write to fail with InputValidationError on typed parameters",
+   "zh": "修复了冷启动竞赛，其中核心工具可能会在没有激活旁路的情况下被推迟，从而导致编辑/写入失败，并在类型参数上出现 InputValidationError"
+  }
+ ]
+}

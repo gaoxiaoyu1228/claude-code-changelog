@@ -1,0 +1,180 @@
+{
+ "version": "2.1.198",
+ "date": "2026-07-01",
+ "published": "2026-07-01T16:50:16.245Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.198",
+ "counts": {
+  "new": 3,
+  "improved": 10,
+  "fixed": 18,
+  "removed": 1,
+  "other": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added background agent notifications in `claude agents` — sessions that need input or finish now fire the `Notification` hook (`agent_needs_input` / `agent_completed`)",
+   "zh": "在“claude Agents”中添加了后台代理通知 - 需要输入或完成的会话现在会触发`Notification`挂钩（`agent_needs_input`/`agent_completed`）"
+  },
+  {
+   "type": "new",
+   "en": "Added `/dataviz` skill for chart and dashboard design guidance with a runnable color-palette validator",
+   "zh": "添加了`/dataviz`技能，用于使用可运行的调色板验证器来指导图表和仪表板设计"
+  },
+  {
+   "type": "new",
+   "en": "Gateway: added Claude Platform on AWS (anthropicAws) as an upstream provider; model-not-found responses now advance the failover chain",
+   "zh": "网关：新增 Claude Platform on AWS（anthropicAws）作为上游提供商；“找不到模型”的响应现在会推进故障切换链"
+  },
+  {
+   "type": "improved",
+   "en": "Subagents now run in the background by default, so Claude keeps working while they run and is notified when they finish (previously a gradual rollout)",
+   "zh": "子代理现在默认在后台运行，Claude 可在它们运行时继续工作，并在完成时收到通知（此前为逐步推出）"
+  },
+  {
+   "type": "improved",
+   "en": "Background agents launched from `claude agents` now commit, push, and open a draft PR when they finish code work in a worktree, instead of stopping to ask",
+   "zh": "从“claude Agents”启动的后台代理现在在完成工作树中的代码工作时提交、推送和打开草稿 PR，而不是停下来询问"
+  },
+  {
+   "type": "improved",
+   "en": "The built-in Explore agent now inherits the main session's model (capped at opus) instead of running on haiku",
+   "zh": "内置的 Explore 代理现在继承主会话的模型（最高到 opus），不再固定使用 haiku"
+  },
+  {
+   "type": "improved",
+   "en": "Subagents and context compaction now inherit the session's extended thinking configuration, improving output quality on delegated tasks",
+   "zh": "子代理和上下文压缩现在会继承会话的扩展思考配置，委派任务的输出质量更高"
+  },
+  {
+   "type": "improved",
+   "en": "Improved focus mode: subagents launched in a turn now appear in its activity summary, and completed background notifications fold into a single count",
+   "zh": "改进专注模式：本轮启动的子代理会出现在活动摘要中，已完成的后台通知合并为一个计数"
+  },
+  {
+   "type": "improved",
+   "en": "Improved syntax highlighting accuracy in code blocks, diffs, and file previews by upgrading to highlight.js 11",
+   "zh": "改进代码块、差异和文件预览的语法高亮准确度：升级到 highlight.js 11"
+  },
+  {
+   "type": "improved",
+   "en": "Keyboard shortcut hints now show opt/cmd instead of alt/super when connected from a Mac over SSH",
+   "zh": "通过 SSH 从 Mac 连接时，快捷键提示现在显示 opt/cmd，而不是 alt/super"
+  },
+  {
+   "type": "improved",
+   "en": "Improved API retry UX: the error reason is now shown after the second attempt, and a status page link replaces the spinner tip when the API is overloaded",
+   "zh": "改进 API 重试体验：第二次尝试后会显示出错原因；API 过载时，用状态页链接代替加载提示"
+  },
+  {
+   "type": "improved",
+   "en": "`/login` now opens the sign-in dialog from the `claude agents` view instead of saying it isn't available",
+   "zh": "`/login` 现在会从 `claude agents` 视图打开登录对话框，而不再提示不可用"
+  },
+  {
+   "type": "improved",
+   "en": "Subagents now treat messages from the agent that launched them as normal task direction; an agent's message is still never treated as the user's approval",
+   "zh": "子代理现在把启动它的代理发来的消息视为正常的任务指示；但代理的消息仍然绝不会被当作用户的批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed brief network drops mid-response aborting the turn — transient errors like ECONNRESET now retry with backoff instead of failing",
+   "zh": "修复了短暂的网络中止响应中止转弯的问题 - 像 ECONNRESET 这样的暂时性错误现在会通过退避重试，而不是失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed excessive background classifier requests when sandboxed processes repeatedly accessed the same network host",
+   "zh": "修复了沙盒进程重复访问同一网络主机时过多的后台分类器请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background tasks in web, desktop, and VS Code task panels getting stuck on \"Running\" after they finish or after resuming a session",
+   "zh": "修复了 Web、桌面和 VS Code 任务面板中的后台任务在完成后或恢复会话后卡在“正在运行”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent teams: a teammate that dies on an API error now reports \"failed\" to the lead, and messaging a stuck teammate wakes it to retry immediately",
+   "zh": "修复了代理团队：因 API 错误而死亡的队友现在向领导报告“失败”，并且向卡住的队友发送消息会唤醒其立即重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/diff` panel not refreshing when you switch branches or commit outside the session",
+   "zh": "修复在会话外切换分支或提交后，`/diff` 面板不会刷新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown tables overflowing and wrapping their right border when rendered in fullscreen mode",
+   "zh": "修复了在全屏模式下渲染时 Markdown 表格溢出并包裹其右边框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Platform on AWS and Mantle sessions dead-ending with \"Please run /login\" when the STS token expires — `awsAuthRefresh` now runs automatically",
+   "zh": "修复了 AWS 上的 Claude Platform 和 Mantle 会话在 STS 令牌过期时出现“请运行 /login”的死胡同 — `awsAuthRefresh` 现在会自动运行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"no route to host\" for local-network hosts in macOS background agent sessions by declaring Local Network entitlements",
+   "zh": "通过声明本地网络权利，修复了 macOS 后台代理会话中本地网络主机的“无主机路由”问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/desktop` failing with \"Cannot determine working directory\" after entering and exiting a worktree",
+   "zh": "修复了进入和退出工作树后`/desktop`失败并显示“无法确定工作目录”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents repeatedly showing \"Reconnecting…\" every ~52 seconds on macOS while the agents view was open",
+   "zh": "修复了代理视图打开时，后台代理在 macOS 上每约 52 秒重复显示“正在重新连接...”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing `←` inside `claude attach <id>` exiting to the shell instead of opening the agent view",
+   "zh": "修复了在“claude Attach <id>”内按`←`退出 shell 而不是打开代理视图的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --bg` silently creating an unattachable session when combined with `--print`/`-p`; the conflicting flags are now rejected up front",
+   "zh": "修复了`claude --bg`与`--print`/`-p`组合时静默创建不可附加会话的问题；冲突的标志现在被预先拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the workflow progress view dropping the earliest agents from the list while the phase counter stayed correct in SDK and desktop-app sessions",
+   "zh": "修复在 SDK 和桌面应用会话中，工作流进度视图丢弃列表中最早的智能体、而阶段计数器仍正确的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `.claude/rules/` conditional rules not loading when the target file is reached via a symlinked path",
+   "zh": "修复了通过符号链接路径到达目标文件时不加载`.claude/rules/`条件规则的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Cmd+click not opening URLs in fullscreen mode in Warp on macOS",
+   "zh": "修复了 Cmd+click 在 macOS 上的 Warp 中无法以全屏模式打开 URL 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed double-click word selection in fullscreen mode to select the entire URL including the scheme",
+   "zh": "修复了全屏模式下双击单词选择以选择整个 URL（包括方案）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan mode not auto-allowing read-only tool calls when a session starts in plan mode",
+   "zh": "修复了当会话在计划模式下启动时，计划模式不会自动允许只读工具调用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/branch` deriving its default fork name from the compaction summary instead of the first real prompt",
+   "zh": "修复了从压缩摘要而不是第一个真实提示中派生默认分叉名称的`/branch`"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the `/agents` wizard; ask Claude to create or manage subagents, or edit `.claude/agents/` directly",
+   "zh": "移除 `/agents` 向导；请让 Claude 创建或管理子代理，或直接编辑 `.claude/agents/`"
+  },
+  {
+   "type": "other",
+   "en": "Claude in Chrome is now generally available",
+   "zh": "Chrome 中的 Claude 现已全面可用"
+  }
+ ]
+}

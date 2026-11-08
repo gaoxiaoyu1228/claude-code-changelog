@@ -1,0 +1,138 @@
+{
+ "version": "2.1.50",
+ "date": "2026-02-20",
+ "published": "2026-02-20T23:09:38.385Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.50",
+ "counts": {
+  "new": 6,
+  "improved": 5,
+  "fixed": 14
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for `startupTimeout` configuration for LSP servers",
+   "zh": "添加了对 LSP 服务器`startupTimeout`配置的支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `WorktreeCreate` and `WorktreeRemove` hook events, enabling custom VCS setup and teardown when agent worktree isolation creates or removes worktrees.",
+   "zh": "添加了`WorktreeCreate`和`WorktreeRemove`挂钩事件，以便在代理工作树隔离创建或删除工作树时启用自定义 VCS 设置和拆卸。"
+  },
+  {
+   "type": "new",
+   "en": "Added support for `isolation: worktree` in agent definitions, allowing agents to declaratively run in isolated git worktrees.",
+   "zh": "在代理定义中添加了对`isolation: worktree`的支持，允许代理以声明方式在隔离的 git 工作树中运行。"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude agents` CLI command to list all configured agents",
+   "zh": "添加了“claudeagents”CLI 命令来列出所有已配置的代理"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_DISABLE_1M_CONTEXT` environment variable to disable 1M context window support",
+   "zh": "添加了`CLAUDE_CODE_DISABLE_1M_CONTEXT`环境变量以禁用 1M 上下文窗口支持"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added `/extra-usage` command support in VS Code sessions",
+   "zh": "VS Code：在 VS Code 会话中新增 `/extra-usage` 命令支持"
+  },
+  {
+   "type": "improved",
+   "en": "`CLAUDE_CODE_SIMPLE` mode now also disables MCP tools, attachments, hooks, and CLAUDE.md file loading for a fully minimal experience.",
+   "zh": "`CLAUDE_CODE_SIMPLE` 模式现在还会禁用 MCP 工具、附件、hook 和 CLAUDE.md 文件加载，实现完全精简的体验。"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage during long sessions by clearing internal caches after compaction",
+   "zh": "改进长会话的内存占用：压缩后清理内部缓存"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage during long sessions by clearing large tool results after they have been processed",
+   "zh": "改进长会话的内存占用：大的工具结果在处理完后被清理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance for headless mode (`-p` flag) by deferring Yoga WASM and UI component imports",
+   "zh": "改进无头模式（`-p` 参数）的启动性能：推迟加载 Yoga WASM 和界面组件"
+  },
+  {
+   "type": "improved",
+   "en": "Opus 4.6 (fast mode) now includes the full 1M context window",
+   "zh": "Opus 4.6（快速模式）现在包含完整的 100 万 token 上下文窗口"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where resumed sessions could be invisible when the working directory involved symlinks, because the session storage path was resolved at different times during startup. Also fixed session data loss on SSH disconnect by flushing session data before hooks and analytics in the graceful shutdown sequence.",
+   "zh": "修复了当工作目录涉及符号链接时恢复的会话可能不可见的错误，因为会话存储路径是在启动过程中的不同时间解析的。还通过在正常关闭序列中的挂钩和分析之前刷新会话数据，修复了 SSH 断开连接时的会话数据丢失问题。"
+  },
+  {
+   "type": "fixed",
+   "en": "Linux: Fixed native modules not loading on systems with glibc older than 2.30 (e.g., RHEL 8)",
+   "zh": "Linux：修复了在 glibc 版本低于 2.30 的系统（如 RHEL 8）上原生模块无法加载的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in agent teams where completed teammate tasks were never garbage collected from session state",
+   "zh": "修复了代理团队中的内存泄漏问题，其中已完成的队友任务从未从会话状态中进行垃圾收集"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_SIMPLE` to fully strip down skills, session memory, custom agents, and CLAUDE.md token counting",
+   "zh": "修复了`CLAUDE_CODE_SIMPLE`以完全精简技能、会话内存、自定义代理和 CLAUDE.md 令牌计数"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/mcp reconnect` freezing the CLI when given a server name that doesn't exist",
+   "zh": "修复了`/mcp reconnect`在给定不存在的服务器名称时冻结 CLI 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak where completed task state objects were never removed from AppState",
+   "zh": "修复了内存泄漏，已完成的任务状态对象从未从 AppState 中删除"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bug where MCP tools were not discovered when tool search is enabled and a prompt is passed in as a launch argument",
+   "zh": "修复了启用工具搜索并且提示作为启动参数传入时未发现 MCP 工具的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak where LSP diagnostic data was never cleaned up after delivery, causing unbounded memory growth in long sessions",
+   "zh": "修复了 LSP 诊断数据在交付后从未清理的内存泄漏，导致长会话中内存无限增长"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak where completed task output was not freed from memory, reducing memory usage in long sessions with many tasks",
+   "zh": "修复了内存泄漏，其中已完成的任务输出未从内存中释放，从而减少了具有许多任务的长会话中的内存使用量"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt suggestion cache regression that reduced cache hit rates",
+   "zh": "修复了提示建议缓存回归，降低了缓存命中率"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded memory growth in long sessions by capping file history snapshots",
+   "zh": "修复长会话中文件历史快照无上限导致内存增长的问题；现在会对快照数量设置上限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak where TaskOutput retained recent lines after cleanup",
+   "zh": "修复了 TaskOutput 在清理后保留最近行的内存泄漏问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in CircularBuffer where cleared items were retained in the backing array",
+   "zh": "修复了 CircularBuffer 中的内存泄漏问题，其中已清除的项目保留在后备数组中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in shell command execution where ChildProcess and AbortController references were retained after cleanup",
+   "zh": "修复了 shell 命令执行中的内存泄漏，其中 ChildProcess 和 AbortController 引用在清理后被保留"
+  }
+ ]
+}

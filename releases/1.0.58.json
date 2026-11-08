@@ -1,0 +1,27 @@
+{
+ "version": "1.0.58",
+ "date": "2025-07-22",
+ "published": "2025-07-22T22:29:42.405Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.58",
+ "counts": {
+  "new": 2,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for reading PDFs",
+   "zh": "添加了对阅读 PDF 的支持"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Added CLAUDE_PROJECT_DIR env var for hook commands",
+   "zh": "Hooks：为 hook 命令新增 CLAUDE_PROJECT_DIR 环境变量"
+  },
+  {
+   "type": "improved",
+   "en": "MCP: Improved server health status display in 'claude mcp list'",
+   "zh": "MCP：改进 `claude mcp list` 中服务器健康状态的显示"
+  }
+ ]
+}

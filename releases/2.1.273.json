@@ -1,0 +1,334 @@
+{
+ "version": "2.1.273",
+ "date": "2026-09-15",
+ "published": "2026-09-15T18:06:34.098Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.273",
+ "counts": {
+  "new": 4,
+  "improved": 23,
+  "fixed": 36,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `x-claude-code-request-class`, `x-claude-code-agent-type`, `x-claude-code-prev-tool-durations`, `x-claude-code-compaction` and `x-claude-code-context-compacted` request headers for LLM gateways; opt in with `CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`",
+   "zh": "为 LLM 网关添加了 `x-claude-code-request-class`、`x-claude-code-agent-type`、`x-claude-code-prev-tool-durations`、`x-claude-code-compaction` 和 `x-claude-code-context-compacted` 请求标头；使用`CLAUDE_CODE_GATEWAY_HINT_HEADERS=1`选择加入"
+  },
+  {
+   "type": "new",
+   "en": "Added a notification when an MCP server disconnects mid-session and automatic reconnection gives up, pointing at `/mcp`",
+   "zh": "添加了当 MCP 服务器在会话中断开连接并且自动重新连接放弃时的通知，指向`/mcp`"
+  },
+  {
+   "type": "new",
+   "en": "Added forking a session started with `claude --remote-control` or `/remote-control` from the Claude app; the fork runs as a background session on your computer",
+   "zh": "添加了从 Claude 应用程序中分叉以`claude --remote-control`或`/remote-control`启动的会话；该 fork 在您的计算机上作为后台会话运行"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Code on the web] Added a \"Discard unsaved changes?\" confirmation before the New routine page or the Edit routine dialog throws away a routine name, prompt or edit you typed",
+   "zh": "[Claude Code on the web] 在「New routine」页面或「Edit routine」对话框会丢弃你输入的例程名称、提示或修改时，新增「Discard unsaved changes?」确认提示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved responsiveness in long sessions: hook progress and sub-agent activity no longer re-process the whole conversation on every update",
+   "zh": "改进长会话响应速度：hook 进度和子智能体活动更新时，不再重新处理整段对话"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Artifact tool's error when a publish includes a file type artifacts don't serve: Claude is told which types are served and what to do instead, and the terminal shows one plain line",
+   "zh": "改进 Artifact 工具报错：发布时包含 Artifact 不提供的文件类型时，会告诉 Claude 支持哪些类型以及该怎么做，终端只显示一行简短说明"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Artifact tool's page read to state the capabilities and database rules the artifact service holds for the page, for anyone who can publish to it",
+   "zh": "改进 Artifact 工具的页面读取：会说明 Artifact 服务为该页面设定的功能和数据库规则，供有发布权限的人查看"
+  },
+  {
+   "type": "improved",
+   "en": "Improved artifact database writes: an update can now remove a single field instead of rewriting the whole document",
+   "zh": "改进 artifact 数据库写入：更新操作可以只删除单个字段，不必重写整个文档"
+  },
+  {
+   "type": "improved",
+   "en": "Improved artifact publishing: a publish whose connection drops after reaching claude.ai is now re-sent safely instead of failing or creating a duplicate version",
+   "zh": "改进 artifact 发布：到达 claude.ai 后连接中断的发布，现在会被安全地重新发送，不再失败，也不会产生重复版本"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the cloud-session GitHub error for an IP allow list, a suspended app installation or SAML single sign-on to show the cause instead of a generic install hint",
+   "zh": "改进云端会话 GitHub 报错：对于 IP 白名单、应用安装被暂停或 SAML 单点登录的问题，会显示具体原因，而不是笼统的安装提示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/autofix-pr`: when `gh pr view` fails it now shows gh's own error (sign-in, SAML, rate limit) instead of a generic exit-code line",
+   "zh": "改进 `/autofix-pr`：`gh pr view` 失败时，显示 gh 自己的错误（登录、SAML、限流等），而不是笼统的退出码提示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/autofix-pr` to say why GitHub webhook delivery couldn't be set up for the PR (for example, no linked GitHub account) instead of a generic warning",
+   "zh": "改进 `/autofix-pr`：无法为 PR 设置 GitHub webhook 时，会说明原因（例如未关联 GitHub 账号），不再只给笼统的警告"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/web-setup` errors: a refused GitHub token now lists the likely reasons and the fix, and a connection failure names a configured proxy or TLS certificate problem",
+   "zh": "改进 `/web-setup` 错误提示：GitHub 令牌被拒绝时，列出可能原因和解决办法；连接失败时指出是否为已配置的代理或 TLS 证书问题"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the in-session SSL certificate and proxy connection errors to name the error code and what to fix, such as `NODE_EXTRA_CA_CERTS` for an untrusted corporate CA",
+   "zh": "改进会话中的 SSL 证书和代理连接报错：会写出错误代码和修复方法，例如不受信任的企业 CA 可设置 `NODE_EXTRA_CA_CERTS`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the error when a cloud session can't be created because your Claude login expired or was revoked: it now tells you to run `/login`",
+   "zh": "改进 Claude 登录过期或被撤销导致云端会话无法创建时的报错：会提示你运行 `/login`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the error shown when an MCP server's sign-in expires mid-session to say how to re-authenticate (`/mcp`)",
+   "zh": "改进会话中 MCP 服务器登录过期时的报错：会说明如何重新认证（`/mcp`）"
+  },
+  {
+   "type": "improved",
+   "en": "Changed auto mode on Bedrock, Vertex and Foundry to use the local classifier by default for now; set `CLAUDE_CODE_AUTO_MODE_SERVER=1` to use the platform's server-side classifier",
+   "zh": "更改了 Bedrock、Vertex 和 Foundry 上的自动模式，暂时默认使用本地分类器；设置`CLAUDE_CODE_AUTO_MODE_SERVER=1`以使用平台的服务器端分类器"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `OTEL_LOG_TOOL_DETAILS=1` to also include real agent, skill, plugin and MCP server names on cost and token metrics",
+   "zh": "更改了`OTEL_LOG_TOOL_DETAILS=1`，以在成本和令牌指标上包含真实代理、技能、插件和 MCP 服务器名称"
+  },
+  {
+   "type": "improved",
+   "en": "Changed sign-in with a Claude account to also request access to your claude.ai plugins",
+   "zh": "更改了使用 Claude 帐户的登录方式，以请求访问您的 claude.ai 插件"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/bug` and `/feedback` reports to include only model-behavior params (model, system prompt, tools) from the last API request, omitting request metadata and `CLAUDE_CODE_EXTRA_BODY` fields",
+   "zh": "更改了`/bug`和`/feedback`报告，使其仅包含上次 API 请求中的模型行为参数（模型、系统提示、工具），省略请求元数据和`CLAUDE_CODE_EXTRA_BODY`字段"
+  },
+  {
+   "type": "improved",
+   "en": "Windows: Improved the network-path permission check for UNC paths when a mapped network drive was added with `--add-dir`",
+   "zh": "Windows：为使用 `--add-dir` 添加映射网络驱动器时，改进了 UNC 路径的网络路径权限检查"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Code on the web] Changed the admin \"Share cloud sessions\" setting to live under Data and privacy instead of the Claude Code page, where Data and privacy admins can also manage it",
+   "zh": "[Claude Code on the web] 管理员的「Share cloud sessions」设置移到「Data and privacy」下，不再在 Claude Code 页面中；具有 Data and privacy 权限的管理员也可以在那里管理"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Code on the web] Improved the routine detail page: menu and rename in the breadcrumb, the on/off switch and Run now at the top, and run history beside the routine's settings",
+   "zh": "[Claude Code on the web] 改进例程详情页：面包屑中提供菜单和重命名，顶部提供开关和「Run now」，运行历史显示在例程设置旁边"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Improved AWS connection failures: when a request can't be signed, such as a hostname with no region, Claude is told why and how to fix it instead of a bare error",
+   "zh": "[Claude Tag] 改进 AWS 连接失败的提示：当请求无法签名（例如主机名中没有区域）时，Claude 会被告知原因和修复方法，而不只是一个笼统错误"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Changed Claude to start watching related public channels on its own, such as an incident channel a conversation depends on, instead of only when asked",
+   "zh": "[Claude Tag] Claude 现在会主动开始关注相关的公开频道（例如某次对话所依赖的事故频道），而不只是在被要求时才关注"
+  },
+  {
+   "type": "improved",
+   "en": "[Code Review] Improved suggested fixes to say what the fix must keep working when other code depends on the behavior being changed",
+   "zh": "[Code Review] 改进修复建议：当其他代码依赖被修改的行为时，说明修复必须保证哪些功能仍然正常"
+  },
+  {
+   "type": "improved",
+   "en": "[Code Review] Improved review comments that point to a second affected location to state that location's issue in a full sentence instead of a cut-off stub",
+   "zh": "[Code Review] 改进指向第二个受影响位置的审查评论：该位置的问题改为完整句子说明，而不是残缺的简短描述"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash commands the permission checker cannot fully analyze skipping the prompt under `permissions.blockReadsOutsideWorkingDirectories`, and a subshell hiding a dangerous `rm` in bypass mode",
+   "zh": "修复了权限检查器无法完全分析的 Bash 命令，跳过`permissions.blockReadsOutsideWorkingDirectories`下的提示，以及在旁路模式下隐藏危险`rm`的子 shell"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills synced from claude.ai staying available after your organization turns Skills off; they now move to the recoverable trash",
+   "zh": "修复了从 claude.ai 同步的技能在您的组织关闭技能后仍然可用的问题；他们现在转移到可回收垃圾中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `allowManagedMcpServersOnly`, `deniedMcpServers` and `disableClaudeAiConnectors` set via MDM or `managed-settings.json` being ignored when server-managed settings are also present",
+   "zh": "修复了当服务器管理的设置也存在时，通过 MDM 设置的`allowManagedMcpServersOnly`、`deniedMcpServers`和`disableClaudeAiConnectors`被忽略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed 401/403 errors on Bedrock, Vertex and Foundry, and Claude apps gateway 403s, telling you to run `/login`; the message now names the credential to refresh or points to your gateway administrator",
+   "zh": "修复了 Bedrock、Vertex 和 Foundry 以及 Claude 应用程序网关 403 上的 401/403 错误，告诉您运行`/login`；该消息现在指定要刷新的凭据或指向您的网关管理员"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/login`, `/upgrade`, and `/extra-usage` discarding earlier thinking from the conversation, which forced a full prompt-cache rewrite on the next request",
+   "zh": "修复了`/login`、`/upgrade`和`/extra-usage`丢弃对话中早期想法的问题，这会强制在下一个请求上进行完整的提示缓存重写"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode stopping for approval when the Artifact tool uploads a file you attached to the chat in a cloud or Remote Control session",
+   "zh": "修复了当 Artifact 工具上传您附加到云或远程控制会话中的聊天的文件时，自动模式停止等待批准的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a long-running session recreating a stub `.git/info/exclude` after the repository's `.git` directory was removed or moved away",
+   "zh": "修复了在删除或移走存储库的`.git`目录后重新创建存根`.git/info/exclude`的长时间运行会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the main prompt dropping a `!` typed at the start while already in shell mode, so negated commands like `! grep …` can be typed",
+   "zh": "修复已处于 shell 模式时，在提示框开头输入的 `!` 被丢弃的问题，现在可以输入类似 `! grep …` 这样的取反命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Read on macOS refusing a dragged-in screenshot, or any file the system reports under a second path, with \"symlink resolution changed after permission was checked\"",
+   "zh": "修复了 macOS 上的 Read 拒绝拖入屏幕截图或系统在第二个路径下报告的任何文件的问题，并显示“检查权限后符号链接分辨率已更改”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `permissions.blockReadsOutsideWorkingDirectories`: a memory directory chosen by a repository's settings is no longer loaded into the prompt, recalled, indexed, or used by memory extraction",
+   "zh": "修复了`permissions.blockReadsOutsideWorkingDirectories`：由存储库设置选择的内存目录不再加载到提示中、调用、索引或由内存提取使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sub-agents and background agents being reported as failed, with their result never delivered, when the final streamed reply omitted token usage or carried no model id",
+   "zh": "修复了当最终流式回复省略令牌使用或不携带模型 ID 时，子代理和后台代理被报告为失败，其结果从未交付的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the context meter and auto-compact counting advisor-tool turns at roughly twice their real context size, which made auto-compact fire at about half the real window",
+   "zh": "修复上下文计量表和自动压缩把顾问工具的回合按约两倍于实际的上下文大小计算，导致自动压缩在约一半的实际窗口时就触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/tui` refusing to restart because of an agent-team teammate that had already finished its work and was no longer shown in the agents panel",
+   "zh": "修复了`/tui`由于代理团队队友已经完成工作并且不再显示在代理面板中而拒绝重新启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed saved scheduled tasks running in the wrong session after `.claude/scheduled_tasks.json` was copied into another folder, such as a new worktree",
+   "zh": "修复了将`.claude/scheduled_tasks.json`复制到另一个文件夹（例如新的工作树）后在错误会话中运行的已保存计划任务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK and `--output-format stream-json` output dropping a subagent's remaining messages and final report after it is moved to the background mid-run (e.g. by `CLAUDE_AUTO_BACKGROUND_TASKS`)",
+   "zh": "修复了 SDK 和 `--output-format stream-json` 输出在运行中移动到后台后丢弃子代理的剩余消息和最终报告的问题（例如通过 `CLAUDE_AUTO_BACKGROUND_TASKS`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/install-github-app` reporting a SAML single sign-on block as \"admin permissions required\"",
+   "zh": "修复了`/install-github-app`将 SAML 单点登录块报告为“需要管理员权限”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control clients attached to a Claude Desktop, VS Code or JetBrains session being refused when they ask for the session's context window usage",
+   "zh": "修复了附加到 Claude Desktop、VS Code 或 JetBrains 会话的远程控制客户端在请求会话的上下文窗口使用情况时被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the spinner showing a doubled ellipsis (\"……\") on compaction status lines such as \"Running PreCompact hooks…\"",
+   "zh": "修复压缩状态行（如 \"Running PreCompact hooks…\"）上的旋转指示器显示双省略号（\"……\"）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a false-positive spinner tip suggesting the frontend-design plugin after reading or publishing Artifacts",
+   "zh": "修复了阅读或发布工件后建议使用前端设计插件的误报旋转提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Reverted a 2.1.268 change that checked Read and Edit deny rules on Bash lines the permission checker can't analyze (`eval`, `env -C`); commands like `time -p make build` prompt again instead of being denied",
+   "zh": "撤销了 2.1.268 中的一项变更：该变更会对权限检查器无法分析的 Bash 命令（如 `eval`、`env -C`）检查 Read 和 Edit 的拒绝规则；`time -p make build` 之类的命令会重新弹出提示，而不是被直接拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed \"Report a problem\" still appearing, and `/bug` / `/feedback` opening a report form, for organizations that have product feedback disabled",
+   "zh": "[VSCode] 对于已关闭产品反馈功能的组织，修复仍显示 \"Report a problem\"，以及 `/bug` / `/feedback` 仍打开反馈表单的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a red \"Claude Code process exited with code 4294967295\" banner appearing after completed turns on Windows",
+   "zh": "[VSCode] 修复 Windows 上完成轮次后偶尔出现红色横幅 \"Claude Code process exited with code 4294967295\" 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed routines losing access to an organization connector, and still calling the old one, after an admin removed and re-added that connector",
+   "zh": "[Claude Code on the web] 修复管理员移除并重新添加某个组织连接器后，例程失去该连接器的访问权限、仍在调用旧连接器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed creating a self-hosted environment from organization settings occasionally failing with a server error and leaving a half-created environment behind",
+   "zh": "[Claude Code on the web] 修复在组织设置中创建自托管环境时，偶尔因服务器错误失败并留下半成品环境的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude going silent minutes after reinstalling the app when an Enterprise Grid was disconnected but one of its workspaces stayed connected",
+   "zh": "[Claude Tag] 修复 Enterprise Grid 已断开、但其中一个工作区仍保持连接时，重新安装应用后几分钟 Claude 就沉默的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed scheduled tasks set up in an organization-shared private Slack channel silently never posting; they now keep running in the thread they were created in",
+   "zh": "[Claude Tag] 修复组织共享的私密 Slack 频道中设置的定时任务悄悄不再发帖的问题；现在它们会继续在创建时所在的话题中运行"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed replying in an older Slack thread while Claude is mid-task sometimes restarting it from scratch and losing work it had not pushed yet",
+   "zh": "[Claude Tag] 修复 Claude 正在执行任务时，在较早的 Slack 话题中回复，有时会让它从头重启，并丢失尚未推送的工作的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude occasionally dropping a message with an incorrect \"couldn't find a Claude Code environment\" notice right after your account token refreshed",
+   "zh": "[Claude Tag] 修复账户令牌刷新后，Claude 偶尔丢弃消息并错误提示「couldn't find a Claude Code environment」的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed AWS connections refusing region-less endpoints such as Budgets, Savings Plans, WAF Classic and Import/Export; Global Accelerator requests now sign correctly",
+   "zh": "[Claude Tag] 修复 AWS 连接拒绝不带区域的端点（如 Budgets、Savings Plans、WAF Classic、Import/Export）的问题；Global Accelerator 请求现在可以正确签名"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed OAuth client-credentials and JWT-bearer connections failing with providers that return a lowercase token type; requests now send the standard Bearer scheme",
+   "zh": "[Claude Tag] 修复 OAuth 客户端凭据和 JWT-bearer 连接，与返回小写令牌类型的服务商连接失败的问题；请求现在使用标准的 Bearer 方案"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed adding a channel manager being refused on Enterprise Grid shared channels, on channels where Claude hasn't been used yet, and on legacy private channels",
+   "zh": "[Claude Tag] 修复在 Enterprise Grid 共享频道、尚未使用过 Claude 的频道和旧版私密频道上，添加频道管理员被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed the admin Memory page not listing Slack channels Claude set up on its own even when they had saved memory; admins can now open, edit and delete that memory",
+   "zh": "[Claude Tag] 修复管理员的 Memory 页面不列出 Claude 自行设置的 Slack 频道的问题，即使这些频道已保存记忆；管理员现在可以打开、编辑和删除这些记忆"
+  },
+  {
+   "type": "fixed",
+   "en": "[Code Review] Fixed merging the base branch into a PR whose earlier review listed \"Additional findings\" triggering a full re-review; these pushes now get the lighter follow-up review",
+   "zh": "[Code Review] 修复将基础分支合并到较早审查列出「Additional findings」的 PR 时，触发完整重新审查的问题；现在这类推送会得到较轻量的后续审查"
+  },
+  {
+   "type": "fixed",
+   "en": "[Code Review] Fixed a whole REVIEW.md being ignored because of an @-mention, a code span wrapped across lines, or a backticked HTML tag; only lines linking to changed files are withheld",
+   "zh": "[Code Review] 修复整个 REVIEW.md 因一个 @ 提及、跨行的代码片段或带反引号的 HTML 标签而被忽略的问题；现在只忽略链接到已更改文件的行"
+  },
+  {
+   "type": "fixed",
+   "en": "[Code Review] Fixed `/ultrareview --post` so a retry after a GitHub error posts the findings comment exactly once instead of never or twice; the comment now names the reviewed commit",
+   "zh": "[Code Review] 修复 `/ultrareview --post` 在 GitHub 出错后重试时，发布结果评论的次数不正确（从不发布或发布两次）的问题；现在会精确发布一次，并注明所审查的提交"
+  },
+  {
+   "type": "fixed",
+   "en": "[Code Review] Fixed empty or content-identical pushes being re-reviewed on GitHub repositories whose owner or name contains a capital letter; these pushes are now skipped",
+   "zh": "[Code Review] 修复在所有者或仓库名包含大写字母的 GitHub 仓库中，空推送或内容相同的推送被重新审查的问题；现在这些推送会被跳过"
+  },
+  {
+   "type": "removed",
+   "en": "[Claude Code on the web] Removed the full-page desktop-app download screen that new users without a cloud environment saw on Mac and Windows; they now go straight to setup",
+   "zh": "[Claude Code on the web] 移除了 Mac 和 Windows 上没有云端环境的新用户原本会看到的整页桌面应用下载界面；他们现在直接进入设置"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "1.0.40",
+ "date": "2025-07-01",
+ "published": "2025-07-01T22:13:49.506Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.40",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a bug causing API connection errors with UNABLE_TO_GET_ISSUER_CERT_LOCALLY if `NODE_EXTRA_CA_CERTS` was set",
+   "zh": "修复了如果设置了`NODE_EXTRA_CA_CERTS`则导致 API 连接错误且出现 UNABLE_TO_GET_ISSUER_CERT_LOCALLY 的错误"
+  }
+ ]
+}

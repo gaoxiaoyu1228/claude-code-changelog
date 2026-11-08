@@ -1,0 +1,88 @@
+{
+ "version": "2.1.7",
+ "date": "2026-01-13",
+ "published": "2026-01-13T22:55:49.806Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.7",
+ "counts": {
+  "new": 3,
+  "improved": 3,
+  "fixed": 9
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `showTurnDuration` setting to hide turn duration messages (e.g., \"Cooked for 1m 6s\")",
+   "zh": "添加了`showTurnDuration`设置以隐藏回合持续时间消息（例如“煮了 1m 6s”）"
+  },
+  {
+   "type": "new",
+   "en": "Added ability to provide feedback when accepting permission prompts",
+   "zh": "添加了在接受权限提示时提供反馈的功能"
+  },
+  {
+   "type": "new",
+   "en": "Added inline display of agent's final response in task notifications, making it easier to see results without reading the full transcript file",
+   "zh": "在任务通知中添加了代理最终响应的内联显示，无需阅读完整的记录文件即可更轻松地查看结果"
+  },
+  {
+   "type": "improved",
+   "en": "Improved typing responsiveness by reducing memory allocation overhead in terminal rendering",
+   "zh": "改进输入响应速度：减少终端渲染中的内存分配开销"
+  },
+  {
+   "type": "improved",
+   "en": "Enabled MCP tool search auto mode by default for all users. When MCP tool descriptions exceed 10% of the context window, they are automatically deferred and discovered via the MCPSearch tool instead of being loaded upfront. This reduces context usage for users with many MCP tools configured. Users can disable this by adding `MCPSearch` to `disallowedTools` in their settings.",
+   "zh": "默认为所有用户启用 MCP 工具搜索自动模式。当 MCP 工具描述超过上下文窗口的 10% 时，它们会自动延迟并通过 MCPSearch 工具发现，而不是预先加载。这可以减少配置了许多 MCP 工具的用户的上下文使用情况。用户可以通过将`MCPSearch`添加到其设置中的`disallowedTools`来禁用此功能。"
+  },
+  {
+   "type": "improved",
+   "en": "Changed OAuth and API Console URLs from console.anthropic.com to platform.claude.com",
+   "zh": "将 OAuth 和 API 控制台 URL 从 console.anthropic.com 更改为 platform.claude.com"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed security vulnerability where wildcard permission rules could match compound commands containing shell operators",
+   "zh": "修复了通配符权限规则可能与包含 shell 运算符的复合命令相匹配的安全漏洞"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false \"file modified\" errors on Windows when cloud sync tools, antivirus scanners, or Git touch file timestamps without changing content",
+   "zh": "修复了当云同步工具、防病毒扫描程序或 Git 触摸文件时间戳而不更改内容时 Windows 上的错误“文件已修改”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed orphaned tool_result errors when sibling tools fail during streaming execution",
+   "zh": "修复了同级工具在流执行期间失败时出现的孤立 tool_result 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed context window blocking limit being calculated using the full context window instead of the effective context window (which reserves space for max output tokens)",
+   "zh": "修复了使用完整上下文窗口而不是有效上下文窗口（为最大输出令牌保留空间）计算的上下文窗口阻塞限制"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spinner briefly flashing when running local slash commands like `/model` or `/theme`",
+   "zh": "修复了运行`/model`或`/theme`等本地斜杠命令时微调器短暂闪烁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal title animation jitter by using fixed-width braille characters",
+   "zh": "修复终端标题动画抖动的问题，改用等宽盲文字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugins with git submodules not being fully initialized when installed",
+   "zh": "修复了 git 子模块的插件在安装时未完全初始化的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bash commands failing on Windows when temp directory paths contained characters like `t` or `n` that were misinterpreted as escape sequences",
+   "zh": "修复了当临时目录路径包含`t`或`n`等被误解为转义序列的字符时，bash 命令在 Windows 上失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed `claudeProcessWrapper` setting passing the wrapper path instead of the Claude binary path",
+   "zh": "[VSCode] 修复 `claudeProcessWrapper` 设置传入的是包装器路径而不是 Claude 二进制文件路径的问题"
+  }
+ ]
+}

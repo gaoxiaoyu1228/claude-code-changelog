@@ -1,0 +1,16 @@
+{
+ "version": "2.1.204",
+ "date": "2026-07-08",
+ "published": "2026-07-08T00:04:57.555Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.204",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed hook events not streaming during SessionStart hooks in headless sessions, which could cause remote workers to be idle-reaped mid-hook",
+   "zh": "修复了在无头会话中的 SessionStart 挂钩期间挂钩事件未流式传输的问题，这可能导致远程工作人员在挂钩中处于空闲状态"
+  }
+ ]
+}

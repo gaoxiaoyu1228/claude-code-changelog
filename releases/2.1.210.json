@@ -1,0 +1,178 @@
+{
+ "version": "2.1.210",
+ "date": "2026-07-14",
+ "published": "2026-07-14T19:39:21.730Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.210",
+ "counts": {
+  "new": 3,
+  "improved": 6,
+  "fixed": 24
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added a live elapsed-time counter to the collapsed tool summary line so long-running tool calls visibly tick instead of looking stuck",
+   "zh": "在折叠的工具摘要行中添加了一个实时运行时间计数器，因此长时间运行的工具调用会明显地勾选而不是看起来被卡住"
+  },
+  {
+   "type": "new",
+   "en": "Added a startup warning for `Write(path)`, `NotebookEdit(path)`, and `Glob(path)` permission rules — use `Edit(path)` or `Read(path)` instead",
+   "zh": "添加了针对`Write(path)`、`NotebookEdit(path)`和`Glob(path)`权限规则的启动警告 - 请改用`Edit(path)`或`Read(path)`"
+  },
+  {
+   "type": "new",
+   "en": "Screen reader mode now announces permission mode changes aloud when cycling modes with Shift+Tab",
+   "zh": "屏幕阅读器模式下，用 Shift+Tab 切换权限模式时，会语音播报模式变化"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Bash/PowerShell tool message when a command hits its timeout and is auto-backgrounded, so the model can distinguish a hang from an explicit background request",
+   "zh": "改进 Bash/PowerShell 工具消息：命令超时并自动转入后台时，模型能区分是卡住还是明确要求后台运行"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode: the permission classifier now defaults to Sonnet 5 for external sessions, validated on the session's first request and pinned for the session",
+   "zh": "改进自动模式：外部会话的权限分类器默认使用 Sonnet 5，并在会话的第一个请求时验证，之后固定使用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the bundled dataviz skill's chart color validation with perceptual OKLab color difference and recalibrated color-blindness thresholds",
+   "zh": "改进内置 dataviz 技能的图表颜色校验：采用感知型 OKLab 色差，并重新校准了色盲阈值"
+  },
+  {
+   "type": "improved",
+   "en": "Memory writes that leave a MEMORY.md index over its read limit now produce an explicit error instead of silent truncation",
+   "zh": "使 MEMORY.md 索引超过读取上限的记忆写入现在会报出明确错误，而不是悄悄截断"
+  },
+  {
+   "type": "improved",
+   "en": "The agents footer hint now shows how many background agents are waiting on your input, with a brief color emphasis when the count changes",
+   "zh": "代理底部提示现在会显示有多少后台代理正在等待你的输入，数字变化时会短暂高亮"
+  },
+  {
+   "type": "improved",
+   "en": "Fable temporarily shows as unavailable in the advisor picker while a server-side issue causing Fable advisor failures is fixed",
+   "zh": "Fable 暂时在 Advisor 选择器中显示为不可用，同时修复了导致 Fable Advisor 失败的服务器端问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `isolation: 'worktree'` subagents being able to run git-mutating commands against the main repo checkout instead of their own isolated worktree",
+   "zh": "修复了“隔离：‘工作树’”子代理能够针对主存储库签出运行 git-mutating 命令，而不是针对其自己的隔离工作树"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `ultracode` keyword opt-in firing on non-human-originated input such as webhook payloads and relayed PR comments",
+   "zh": "修复 `ultracode` 关键词选择加入功能会被非人工输入（如 webhook 负载和转发的 PR 评论）触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rendered text fragment leaking into crash telemetry when a UI component returned content outside a styled text element",
+   "zh": "修复了当 UI 组件返回样式文本元素之外的内容时渲染的文本片段泄漏到崩溃遥测中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed paste markers leaking into external editors opened from Claude Code, which could appear as stray È/É characters around pasted text",
+   "zh": "修复了粘贴标记泄漏到从 Claude Code 打开的外部编辑器中的问题，这些标记可能在粘贴的文本周围显示为杂散 È/É 字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude attach` sometimes failing with \"job not found\" or \"agent is still starting\" errors during session transitions — attach now waits for the daemon to settle, and terminal resizes during a slow attach are applied once it completes",
+   "zh": "修复了“claude Attach”有时会在会话转换期间失败并出现“未找到作业”或“代理仍在启动”错误的问题 - 连接现在等待守护进程稳定下来，并且一旦完成，就会应用慢速连接期间的终端调整大小"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a session crash when a tool's result renderer returned a numeric bigint value or plain text instead of a UI element",
+   "zh": "修复了当工具的结果渲染器返回数字 bigint 值或纯文本而不是 UI 元素时会话崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hook callback timeout being misreported to the model as a user rejection, which made unattended sessions stop and wait",
+   "zh": "修复了钩子回调超时被错误报告给模型作为用户拒绝，这导致无人值守会话停止并等待"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude assuming a `cd` took effect after its command was moved to the background; the tool result now states the working directory is unchanged",
+   "zh": "修复了克劳德假设`cd`在其命令移至后台后生效的问题；工具结果现在表明工作目录未更改"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin-provided MCP servers being torn down when MCP servers are re-synced mid-session",
+   "zh": "修复了在会话中重新同步 MCP 服务器时插件提供的 MCP 服务器被拆除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan approvals without edits being labeled \"(edited by user)\" and overwriting the plan file with a stale snapshot",
+   "zh": "修复了计划批准，无需将编辑标记为“（由用户编辑）”并用过时的快照覆盖计划文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/doctor` skipping its auto-mode-default proposal on Bedrock, Vertex, and Foundry, where auto mode no longer needs an opt-in",
+   "zh": "修复了`/doctor`在 Bedrock、Vertex 和 Foundry 上跳过其自动模式默认建议的问题，其中自动模式不再需要选择加入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Grep content mode claiming \"No matches found\" when paginating past the end of results",
+   "zh": "修复了 Grep 内容模式在对结果末尾进行分页时声称“未找到匹配项”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unmatched `$1`/`$2` positional placeholders in skills and commands being silently stripped; they are now preserved verbatim",
+   "zh": "修复技能和命令中未匹配的 `$1`/`$2` 位置占位符被静默删除的问题；现在会原样保留"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin cache writes leaving temp files behind on failure and failing on locked-file renames on Windows and network filesystems",
+   "zh": "修复了插件缓存写入失败时留下临时文件以及 Windows 和网络文件系统上锁定文件重命名失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background workers crash-looping when a client resets its connection to the background service",
+   "zh": "修复了客户端重置与后台服务的连接时后台工作人员崩溃循环的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents --effort ultracode` not reaching dispatched sessions; the value was silently dropped",
+   "zh": "修复了“claude Agents --effort ultracode”未到达已调度会话的问题；价值悄然下降"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing ← to open the agents view dropping the task tracker when returning to the session",
+   "zh": "修复了返回会话时按 ← 打开代理视图并删除任务跟踪器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the agents dashboard retaining pasted images from abandoned reply drafts after their session was deleted",
+   "zh": "修复会话被删除后，智能体仪表盘仍保留已放弃回复草稿中粘贴图片的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed killed background sessions leaving a permanent `git worktree lock` behind; the periodic sweep now releases locks whose owning process is gone",
+   "zh": "修复了被杀死的后台会话留下永久的`git worktree lock`的问题；定期扫描现在会释放其所属进程已消失的锁"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK MCP servers registered via an `initialize` control request waiting until the next turn to start connecting",
+   "zh": "修复了通过“初始化”控制请求注册的 SDK MCP 服务器等待下一轮开始连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed returning to the agents view from a session leaving overlapping ghost frames with `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1`",
+   "zh": "修复了从会话返回代理视图时留下重叠幻影帧的问题，其中包含`CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed late-appearing `.claude/*` symlinks not being reconciled into the sandbox deny-write list",
+   "zh": "修复了后期出现的`.claude/*`符号链接未协调到沙箱拒绝写入列表中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened the Agent tool against indirect prompt injection via content a subagent read",
+   "zh": "加固 Agent 工具，防止子代理读取的内容里夹带的间接提示注入"
+  },
+  {
+   "type": "fixed",
+   "en": "Agent view: the session you pressed ← from stays visibly marked even after mouse hover or arrow keys move the selection",
+   "zh": "代理视图：即使在鼠标悬停或箭头键移动选择后，您按下 ← 的会话仍会保持明显标记"
+  }
+ ]
+}

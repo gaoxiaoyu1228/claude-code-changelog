@@ -1,0 +1,16 @@
+{
+ "version": "2.1.61",
+ "date": "2026-02-26",
+ "published": "2026-02-26T21:40:54.613Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.61",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed concurrent writes corrupting config file on Windows",
+   "zh": "修复了 Windows 上并发写入损坏配置文件的问题"
+  }
+ ]
+}

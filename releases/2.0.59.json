@@ -1,0 +1,27 @@
+{
+ "version": "2.0.59",
+ "date": "2025-12-04",
+ "published": "2025-12-04T21:59:34.519Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.59",
+ "counts": {
+  "new": 2,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added --agent CLI flag to override the agent setting for the current session",
+   "zh": "添加了 --agent CLI 标志以覆盖当前会话的代理设置"
+  },
+  {
+   "type": "new",
+   "en": "Added `agent` setting to configure main thread with a specific agent's system prompt, tool restrictions, and model",
+   "zh": "添加了`agent`设置，以使用特定代理的系统提示、工具限制和模型配置主线程"
+  },
+  {
+   "type": "fixed",
+   "en": "VS Code: Fixed .claude.json config file being read from incorrect location",
+   "zh": "VS Code：修复了从错误位置读取 `.claude.json` 配置文件的问题"
+  }
+ ]
+}

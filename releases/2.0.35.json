@@ -1,0 +1,38 @@
+{
+ "version": "2.0.35",
+ "date": "2025-11-06",
+ "published": "2025-11-06T20:25:20.114Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.35",
+ "counts": {
+  "new": 1,
+  "improved": 3,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_EXIT_AFTER_STOP_DELAY` environment variable to automatically exit SDK mode after a specified idle duration, useful for automated workflows and scripts",
+   "zh": "添加了`CLAUDE_CODE_EXIT_AFTER_STOP_DELAY`环境变量，以在指定的空闲持续时间后自动退出 SDK 模式，对于自动化工作流程和脚本非常有用"
+  },
+  {
+   "type": "improved",
+   "en": "Improve fuzzy search results when searching commands",
+   "zh": "改进搜索命令时的模糊匹配结果"
+  },
+  {
+   "type": "improved",
+   "en": "Improved VS Code extension to respect `chat.fontSize` and `chat.fontFamily` settings throughout the entire UI, and apply font changes immediately without requiring reload",
+   "zh": "改进 VS Code 扩展：整个界面都遵循 `chat.fontSize` 和 `chat.fontFamily` 设置，字体修改立即生效，无需重新加载"
+  },
+  {
+   "type": "improved",
+   "en": "Migrated `ignorePatterns` from project config to deny permissions in the localSettings.",
+   "zh": "将 `ignorePatterns` 从项目配置迁移为 localSettings 中的拒绝权限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed menu navigation getting stuck on items with empty string or other falsy values (e.g., in the `/hooks` menu)",
+   "zh": "修复了菜单导航卡在具有空字符串或其他虚假值的项目上的问题（例如，在`/hooks`菜单中）"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "2.1.266",
+ "date": "2026-09-08",
+ "published": "2026-09-08T23:32:32.880Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.266",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a 2.1.265 regression affecting LLM-gateway and proxy setups: the undocumented `CLAUDE_CODE_USE_GATEWAY` environment variable, previously ignored unless `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN` were both set, began forcing Cloud-gateway sign-in on its own in 2.1.265, so configurations that set it alongside an API key, `apiKeyHelper`, or custom auth headers failed every request with \"Not signed in to the Cloud gateway\". The variable on its own is ignored again; no configuration change is needed",
+   "zh": "修复了影响 LLM 网关和代理设置的 2.1.265 回归：未记录的`CLAUDE_CODE_USE_GATEWAY`环境变量之前被忽略，除非同时设置了`ANTHROPIC_BASE_URL`和`ANTHROPIC_AUTH_TOKEN`，在 2.1.265 中开始强制云网关自行登录，因此将其与 API 密钥、`apiKeyHelper`或自定义一起设置的配置auth 标头因“未登录云网关”而导致每个请求失败。变量本身再次被忽略；无需更改配置"
+  }
+ ]
+}

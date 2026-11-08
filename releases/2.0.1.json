@@ -1,0 +1,22 @@
+{
+ "version": "2.0.1",
+ "date": "2025-09-30",
+ "published": "2025-09-30T01:53:50.434Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.1",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Skip Sonnet 4.5 default model setting change for Bedrock and Vertex",
+   "zh": "Bedrock 和 Vertex 跳过 Sonnet 4.5 默认模型设置的变更"
+  },
+  {
+   "type": "fixed",
+   "en": "Various bug fixes and presentation improvements",
+   "zh": "各种错误修复和展示效果改进"
+  }
+ ]
+}

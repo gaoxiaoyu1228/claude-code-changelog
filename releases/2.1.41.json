@@ -1,0 +1,123 @@
+{
+ "version": "2.1.41",
+ "date": "2026-02-13",
+ "published": "2026-02-13T01:12:41.057Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.41",
+ "counts": {
+  "new": 4,
+  "improved": 3,
+  "fixed": 15
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added guard against launching Claude Code inside another Claude Code session",
+   "zh": "添加了防止在另一个 Claude Code 会话中启动 Claude Code 的防护"
+  },
+  {
+   "type": "new",
+   "en": "Added `speed` attribute to OTel events and trace spans for fast mode visibility",
+   "zh": "为 OTel 事件和跟踪范围添加了“速度”属性，以实现快速模式可见性"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude auth login`, `claude auth status`, and `claude auth logout` CLI subcommands",
+   "zh": "添加了`claude auth login`、`claude auth status`和`claude auth logout`CLI 子命令"
+  },
+  {
+   "type": "new",
+   "en": "Added Windows ARM64 (win32-arm64) native binary support",
+   "zh": "添加了 Windows ARM64 (win32-arm64) 本机二进制支持"
+  },
+  {
+   "type": "improved",
+   "en": "Improved model error messages for Bedrock/Vertex/Foundry users with fallback suggestions",
+   "zh": "改进 Bedrock、Vertex、Foundry 用户的模型错误提示，并附上备选方案建议"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/rename` to auto-generate session name from conversation context when called without arguments",
+   "zh": "改进 `/rename`：不带参数调用时，可根据对话内容自动生成会话名称"
+  },
+  {
+   "type": "improved",
+   "en": "Improved narrow terminal layout for prompt footer",
+   "zh": "改进窄终端下提示栏底部的布局"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Agent Teams using wrong model identifier for Bedrock, Vertex, and Foundry customers",
+   "zh": "修复了代理团队对 Bedrock、Vertex 和 Foundry 客户使用错误模型标识符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when MCP tools return image content during streaming",
+   "zh": "修复了 MCP 工具在流式传输期间返回图像内容时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed /resume session previews showing raw XML tags instead of readable command names",
+   "zh": "修复了 /resume 会话预览显示原始 XML 标签而不是可读命令名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin browse showing misleading \"Space to Toggle\" hint for already-installed plugins",
+   "zh": "修复了插件浏览显示已安装插件的误导性“空格切换”提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook blocking errors (exit code 2) not showing stderr to the user",
+   "zh": "修复了钩子阻塞错误（退出代码 2），不向用户显示 stderr"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file resolution failing for @-mentions with anchor fragments (e.g., `@README.md#installation`)",
+   "zh": "修复了带有锚片段的@提及时文件解析失败的问题（例如`@README.md#installation`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed FileReadTool blocking the process on FIFOs, `/dev/stdin`, and large files",
+   "zh": "修复了 FileReadTool 阻塞 FIFO、`/dev/stdin`和大文件上的进程的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background task notifications not being delivered in streaming Agent SDK mode",
+   "zh": "修复了流式 Agent SDK 模式下未传递后台任务通知的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cursor jumping to end on each keystroke in classifier rule input",
+   "zh": "修复了分类器规则输入中每次击键时光标跳到末尾的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown link display text being dropped for raw URL",
+   "zh": "修复了原始 URL 被删除的 Markdown 链接显示文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto-compact failure error notifications being shown to users",
+   "zh": "修复了向用户显示的自动压缩失败错误通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission wait time being included in subagent elapsed time display",
+   "zh": "修复了子代理经过时间显示中包含的权限等待时间"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed proactive ticks firing while in plan mode",
+   "zh": "修复了计划模式下主动滴答声触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clear stale permission rules when settings change on disk",
+   "zh": "修复了磁盘上设置更改时清除过时权限规则的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook blocking errors showing stderr content in UI",
+   "zh": "修复了 UI 中显示 stderr 内容的钩子阻塞错误"
+  }
+ ]
+}

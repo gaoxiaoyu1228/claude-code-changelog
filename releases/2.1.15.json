@@ -1,0 +1,33 @@
+{
+ "version": "2.1.15",
+ "date": "2026-01-21",
+ "published": "2026-01-21T21:25:20.551Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.15",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added deprecation notification for npm installations - run `claude install` or see https://code.claude.com/docs/en/setup for more options",
+   "zh": "添加了 npm 安装的弃用通知 - 运行 `claude install` 或参阅 https://code.claude.com/docs/en/setup 了解更多选项"
+  },
+  {
+   "type": "improved",
+   "en": "Improved UI rendering performance with React Compiler",
+   "zh": "借助 React Compiler 提升界面渲染性能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the \"Context left until auto-compact\" warning not disappearing after running `/compact`",
+   "zh": "修复了运行`/compact`后“上下文剩余直至自动压缩”警告不消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP stdio server timeout not killing child process, which could cause UI freezes",
+   "zh": "修复了 MCP stdio 服务器超时未终止子进程，这可能导致 UI 冻结的问题"
+  }
+ ]
+}

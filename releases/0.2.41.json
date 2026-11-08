@@ -1,0 +1,22 @@
+{
+ "version": "0.2.41",
+ "date": "2025-03-14",
+ "published": "2025-03-14T01:34:42.240Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.41",
+ "counts": {
+  "new": 1,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "MCP server startup timeout can now be configured via MCP_TIMEOUT environment variable",
+   "zh": "MCP 服务器启动超时现在可以通过 MCP_TIMEOUT 环境变量配置"
+  },
+  {
+   "type": "improved",
+   "en": "MCP server startup no longer blocks the app from starting up",
+   "zh": "MCP 服务器启动不再阻塞应用的启动"
+  }
+ ]
+}

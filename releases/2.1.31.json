@@ -1,0 +1,69 @@
+{
+ "version": "2.1.31",
+ "date": "2026-02-04",
+ "published": "2026-02-04T00:02:11.559Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.31",
+ "counts": {
+  "new": 2,
+  "improved": 3,
+  "fixed": 5,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added session resume hint on exit, showing how to continue your conversation later",
+   "zh": "添加了退出时的会话恢复提示，显示稍后如何继续对话"
+  },
+  {
+   "type": "new",
+   "en": "Added support for full-width (zenkaku) space input from Japanese IME in checkbox selection",
+   "zh": "在复选框选择中添加了对从日语 IME 输入全角 (zenkaku) 空格的支持"
+  },
+  {
+   "type": "improved",
+   "en": "Improved system prompts to more clearly guide the model toward using dedicated tools (Read, Edit, Glob, Grep) instead of bash equivalents (`cat`, `sed`, `grep`, `find`), reducing unnecessary bash command usage",
+   "zh": "改进系统提示，更明确地引导模型优先使用专用工具（Read、Edit、Glob、Grep），而不是 bash 等价命令（`cat`、`sed`、`grep`、`find`），减少不必要的 bash 命令"
+  },
+  {
+   "type": "improved",
+   "en": "Improved PDF and request size error messages to show actual limits (100 pages, 20MB)",
+   "zh": "改进 PDF 和请求大小的错误提示：显示实际限制（100 页、20MB）"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced layout jitter in the terminal when the spinner appears and disappears during streaming",
+   "zh": "回复流式输出时，加载动画出现或消失造成的终端排版抖动减少"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PDF too large errors permanently locking up sessions, requiring users to start a new conversation",
+   "zh": "修复了 PDF 太大错误，永久锁定会话，要求用户开始新对话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bash commands incorrectly reporting failure with \"Read-only file system\" errors when sandbox mode was enabled",
+   "zh": "修复了启用沙箱模式时 bash 命令错误地报告失败并出现“只读文件系统”错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash that made sessions unusable after entering plan mode when project config in `~/.claude.json` was missing default fields",
+   "zh": "修复了当`~/.claude.json`中的项目配置缺少默认字段时导致会话在进入计划模式后无法使用的崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `temperatureOverride` being silently ignored in the streaming API path, causing all streaming requests to use the default temperature (1) regardless of the configured override",
+   "zh": "修复了“温度覆盖”在流 API 路径中被静默忽略的问题，导致所有流请求都使用默认温度 (1)，无论配置的覆盖如何"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed LSP shutdown/exit compatibility with strict language servers that reject null params",
+   "zh": "修复了 LSP 关闭/退出与拒绝空参数的严格语言服务器的兼容性"
+  },
+  {
+   "type": "removed",
+   "en": "Removed misleading Anthropic API pricing from model selector for third-party provider (Bedrock, Vertex, Foundry) users",
+   "zh": "第三方提供商（Bedrock、Vertex、Foundry）用户的模型选择器中，已移除容易引起误解的 Anthropic API 价格"
+  }
+ ]
+}

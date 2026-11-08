@@ -1,0 +1,21 @@
+{
+ "version": "1.0.71",
+ "date": "2025-08-07",
+ "published": "2025-08-07T21:33:10.140Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.71",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Background commands: (Ctrl-b) to run any Bash command in the background so Claude can keep working (great for dev servers, tailing logs, etc.)",
+   "zh": "后台命令：(Ctrl-b) 在后台运行任何 Bash 命令，以便 Claude 可以继续工作（非常适合开发服务器、跟踪日志等）"
+  },
+  {
+   "type": "new",
+   "en": "Customizable status line: add your terminal prompt to Claude Code with /statusline",
+   "zh": "可定制的状态行：使用 /statusline 将终端提示添加到 Claude Code"
+  }
+ ]
+}

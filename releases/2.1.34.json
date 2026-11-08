@@ -1,0 +1,21 @@
+{
+ "version": "2.1.34",
+ "date": "2026-02-06",
+ "published": "2026-02-06T06:38:12.412Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.34",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when agent teams setting changed between renders",
+   "zh": "修复了代理团队设置在渲染之间更改时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where commands excluded from sandboxing (via `sandbox.excludedCommands` or `dangerouslyDisableSandbox`) could bypass the Bash ask permission rule when `autoAllowBashIfSandboxed` was enabled",
+   "zh": "修复了启用`autoAllowBashIfSandboxed`时从沙箱中排除的命令（通过`sandbox.excludedCommands`或`dangerouslyDisableSandbox`）可能绕过 Bash 询问权限规则的错误"
+  }
+ ]
+}

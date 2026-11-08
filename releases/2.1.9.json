@@ -1,0 +1,57 @@
+{
+ "version": "2.1.9",
+ "date": "2026-01-15",
+ "published": "2026-01-15T23:59:29.275Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.9",
+ "counts": {
+  "new": 6,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `auto:N` syntax for configuring the MCP tool search auto-enable threshold, where N is the context window percentage (0-100)",
+   "zh": "添加了用于配置 MCP 工具搜索自动启用阈值的`auto:N`语法，其中 N 是上下文窗口百分比 (0-100)"
+  },
+  {
+   "type": "new",
+   "en": "Added `plansDirectory` setting to customize where plan files are stored",
+   "zh": "添加了`plansDirectory`设置以自定义计划文件的存储位置"
+  },
+  {
+   "type": "new",
+   "en": "Added external editor support (Ctrl+G) in AskUserQuestion \"Other\" input field",
+   "zh": "在 AskUserQuestion“其他”输入字段中添加了外部编辑器支持 (Ctrl+G)"
+  },
+  {
+   "type": "new",
+   "en": "Added session URL attribution to commits and PRs created from web sessions",
+   "zh": "添加了对从网络会话创建的提交和 PR 的会话 URL 属性"
+  },
+  {
+   "type": "new",
+   "en": "Added support for `PreToolUse` hooks to return `additionalContext` to the model",
+   "zh": "添加了对`PreToolUse`挂钩的支持，以将`additionalContext`返回到模型"
+  },
+  {
+   "type": "new",
+   "en": "Added `${CLAUDE_SESSION_ID}` string substitution for skills to access the current session ID",
+   "zh": "添加了`${CLAUDE_SESSION_ID}`字符串替换来访问当前会话 ID 的技能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed long sessions with parallel tool calls failing with an API error about orphan tool_result blocks",
+   "zh": "修复了并行工具调用的长会话因有关孤立 tool_result 块的 API 错误而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP server reconnection hanging when cached connection promise never resolves",
+   "zh": "修复了缓存连接承诺从未解决时 MCP 服务器重新连接挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+Z suspend not working in terminals using Kitty keyboard protocol (Ghostty, iTerm2, kitty, WezTerm)",
+   "zh": "修复了 Ctrl+Z 暂停在使用 Kitty 键盘协议的终端（Ghostty、iTerm2、kitty、WezTerm）中不起作用的问题"
+  }
+ ]
+}

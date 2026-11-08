@@ -1,0 +1,78 @@
+{
+ "version": "2.1.140",
+ "date": "2026-05-12",
+ "published": "2026-05-12T19:50:28.781Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.140",
+ "counts": {
+  "new": 1,
+  "improved": 2,
+  "fixed": 10
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Plugins now warn when a default component folder (e.g. `commands/`) is silently ignored because `plugin.json` sets the matching key. Shown in `/doctor`, `claude plugin list`, and `/plugin`.",
+   "zh": "当 `plugin.json` 设置了对应的键，导致默认组件目录（如 `commands/`）被静默忽略时，插件现在会发出警告。会显示在 `/doctor`、`claude plugin list` 和 `/plugin` 中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Agent tool `subagent_type` matching to accept case- and separator-insensitive values (e.g. `\"Code Reviewer\"` resolves to `code-reviewer`)",
+   "zh": "改进 Agent 工具的 `subagent_type` 匹配：忽略大小写和分隔符差异（如 `\"Code Reviewer\"` 可匹配到 `code-reviewer`）"
+  },
+  {
+   "type": "improved",
+   "en": "Updated agent color palette",
+   "zh": "更新了代理的颜色方案"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/goal` silently hanging when `disableAllHooks` or `allowManagedHooksOnly` is set — now shows a clear message instead of an indicator that never resolves",
+   "zh": "修复了设置`disableAllHooks`或`allowManagedHooksOnly`时`/goal`静默挂起的问题 - 现在显示一条清晰的消息，而不是永远无法解析的指示器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a regression in settings hot-reload where symlinked settings files caused misattributed change events and spurious `ConfigChange` hooks",
+   "zh": "修复了设置热重载中的回归，其中符号链接的设置文件导致错误归因的更改事件和虚假的`ConfigChange`挂钩"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --bg` failing with \"connection dropped mid-request\" when the background service was about to idle-exit",
+   "zh": "修复了当后台服务即将空闲退出时`claude --bg`因“连接在请求中丢失”而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background service startup failing on machines with enterprise endpoint security by allowing more time",
+   "zh": "通过允许更多时间，修复了具有企业端点安全性的计算机上后台服务启动失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote managed settings not retrying on 401 — now retries once with a force-refreshed token",
+   "zh": "修复了远程管理设置不在 401 上重试的问题 - 现在使用强制刷新令牌重试一次"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed `extraKnownMarketplaces` auto-update policy not being persisted to `known_marketplaces.json`",
+   "zh": "修复了托管`extraKnownMarketplaces`自动更新策略未保留到`known_marketplaces.json`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/loop` scheduling redundant wakeups to poll for background tasks that already notify on completion",
+   "zh": "修复了`/loop`调度冗余唤醒以轮询已通知完成的后台任务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a recurring event-loop stall on Windows when a missing executable (e.g. `gh`) triggered synchronous `where.exe` re-spawns on every check",
+   "zh": "修复了当缺少的可执行文件（例如`gh`）在每次检查时触发同步`where.exe`重新生成时，Windows 上重复发生的事件循环停顿的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Read` tool calls failing validation when `offset` is passed as a whitespace-padded or `+`-prefixed string",
+   "zh": "修复了当`offset`作为空格填充或`+`前缀字符串传递时，`Read`工具调用验证失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed native terminal cursor not staying at the input caret when the terminal loses focus",
+   "zh": "修复了当终端失去焦点时本机终端光标不停留在输入插入符处的问题"
+  }
+ ]
+}

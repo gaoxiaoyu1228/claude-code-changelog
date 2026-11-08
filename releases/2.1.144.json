@@ -1,0 +1,263 @@
+{
+ "version": "2.1.144",
+ "date": "2026-05-18",
+ "published": "2026-05-18T19:57:54.760Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.144",
+ "counts": {
+  "new": 3,
+  "improved": 14,
+  "fixed": 33
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `/resume` support for background sessions — sessions started via `claude --bg` or agent view now appear alongside interactive ones, marked with `bg`",
+   "zh": "添加了对后台会话的`/resume`支持 - 通过`claude --bg`或代理视图启动的会话现在显示在交互式会话旁边，并标记为`bg`"
+  },
+  {
+   "type": "new",
+   "en": "Added elapsed duration to background subagent completion notifications (e.g. \"Agent completed · 3h 2m 5s\")",
+   "zh": "在后台子代理完成通知中添加了经过的持续时间（例如“代理已完成 · 3h 2m 5s”）"
+  },
+  {
+   "type": "new",
+   "en": "The `/plugin` browse and discover panes now show when a plugin was last updated",
+   "zh": "`/plugin` 的浏览和发现面板现在会显示插件的最后更新时间"
+  },
+  {
+   "type": "improved",
+   "en": "`/model` now changes the model for the current session only; press `d` in the model picker to set a default for new sessions",
+   "zh": "`/model` 现在只更改当前会话的模型；在模型选择器中按 `d` 可设置新会话的默认值"
+  },
+  {
+   "type": "improved",
+   "en": "Renamed \"extra usage\" to \"usage credits\" across CLI copy; `/extra-usage` is now `/usage-credits` (old name still works)",
+   "zh": "CLI 文案中的 \"extra usage\" 改称 \"usage credits\"；`/extra-usage` 改为 `/usage-credits`（旧名称仍可用）"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced terminal rendering glitches in VS Code by reducing spinner animation color count",
+   "zh": "通过减少加载动画的颜色数量，减少 VS Code 中终端的渲染异常"
+  },
+  {
+   "type": "improved",
+   "en": "`/bg` and `←`-detach now preserve directories added via `/add-dir`",
+   "zh": "`/bg` 和 `←` 分离现在会保留通过 `/add-dir` 添加的目录"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents` / `--bg` rejection messages now name the specific gate (non-TTY, env var, or setting) instead of a generic message",
+   "zh": "`claude agents` 和 `--bg` 的拒绝信息现在会指明具体限制条件（非 TTY、环境变量或设置），而不是通用提示"
+  },
+  {
+   "type": "improved",
+   "en": "`claude --bg --name <label>` now echoes the name in the post-spawn confirmation",
+   "zh": "`claude --bg --name <label>` 现在会在启动后的确认信息中显示该名称"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: renaming a background session with Ctrl+R now updates the attached session's banner immediately",
+   "zh": "`claude agents`：用 Ctrl+R 重命名后台会话后，已附加会话的横幅会立即更新"
+  },
+  {
+   "type": "improved",
+   "en": "Background session worktree isolation guard now applies for non-git VCS users with `WorktreeCreate` hooks configured",
+   "zh": "后台会话工作树隔离防护现在适用于配置了`WorktreeCreate`挂钩的非 git VCS 用户"
+  },
+  {
+   "type": "improved",
+   "en": "`/plugin` now returns to the Installed list after enabling, disabling, or uninstalling a plugin",
+   "zh": "`/plugin` 在启用、禁用或卸载插件后，现在会返回 Installed 列表"
+  },
+  {
+   "type": "improved",
+   "en": "`/doctor` now shows an exec-form example when a command hook is missing the `command` field",
+   "zh": "当命令 hook 缺少 `command` 字段时，`/doctor` 现在会显示 exec 形式的示例"
+  },
+  {
+   "type": "improved",
+   "en": "Skill-listing truncation is no longer shown as a startup notification — run `/doctor` for the full breakdown",
+   "zh": "技能列表截断不再作为启动通知显示；如需完整说明，请运行 `/doctor`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved recovery from rare pre-response stream stalls — now retries streaming once instead of falling back to a slower non-streaming request",
+   "zh": "改进响应前偶发的流卡顿恢复：现在会重试一次流式请求，而不是退回到较慢的非流式请求"
+  },
+  {
+   "type": "improved",
+   "en": "Improved SDK/headless MCP startup: pre-wait now overlaps startup instead of blocking before the first turn (up to 2s faster with slow MCP servers)",
+   "zh": "改进 SDK 和无界面模式的 MCP 启动：预等待与启动过程重叠，不再阻塞第一轮对话（MCP 服务器较慢时最多快 2 秒）"
+  },
+  {
+   "type": "improved",
+   "en": "The post-survey follow-up hint now appears after every non-dismiss survey response with context-aware copy, making it easier to share more detail via /feedback.",
+   "zh": "每次非“不再提示”的问卷反馈后，现在都会出现后续提示，文案会根据上下文变化，方便通过 /feedback 分享更多细节"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed startup hanging up to 75s when `api.anthropic.com` is unreachable (captive portal, firewall, VPN issues) — side-channel API calls now time out after 15s",
+   "zh": "修复了当`api.anthropic.com`无法访问时启动挂起长达 75 秒的问题（强制门户、防火墙、VPN 问题）——侧通道 API 调用现在在 15 秒后超时"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed garbled terminal output after a missed window-resize event (e.g. dragging a VS Code split-pane divider) — now self-heals on the next frame instead of requiring Ctrl+L",
+   "zh": "修复了错过窗口调整大小事件（例如拖动 VS Code 分割窗格分隔线）后出现乱码的终端输出 — 现在可以在下一帧上自我修复，而不需要使用 Ctrl+L"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed progressive terminal display corruption (stale/garbled glyphs) that could appear in very long sessions and only cleared on terminal resize or restart",
+   "zh": "修复了渐进式终端显示损坏（陈旧/乱码），该损坏可能出现在很长的会话中，并且仅在终端调整大小或重新启动时清除"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed macOS background sessions crashing with \"exit 1 before init\" when the project lives under a Full Disk Access-protected folder (regression in 2.1.143)",
+   "zh": "修复了当项目位于受全盘访问保护的文件夹下时，macOS 后台会话因“init 之前退出 1”而崩溃的问题（2.1.143 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an unrecoverable conversation when reading a file whose image extension doesn't match its contents (e.g. HTML saved as .png) — now falls back to text",
+   "zh": "修复了读取图像扩展名与其内容不匹配的文件时出现的不可恢复的对话（例如，保存为 .png 的 HTML）——现在回退到文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fewer spurious tool errors during search: `head`/`tail` file views now satisfy the read-before-edit check, and a \"no matches\" result (exit code 1) from `egrep`, `fgrep`, `git grep`, or `git diff` is no longer reported as a command failure",
+   "zh": "搜索过程中的虚假工具错误更少：`head`/`tail`文件视图现在满足编辑前读取检查，并且来自`egrep`、`fgrep`、`git grep`或`git diff`的“不匹配”结果（退出代码 1）不再报告为命令失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/branch` failing with \"No conversation to branch\" after entering a worktree or in some background sessions",
+   "zh": "修复了进入工作树或某些后台会话后`/branch`失败并出现“无分支对话”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing Escape in the AskUserQuestion notes field aborting the turn instead of returning to answer selection",
+   "zh": "修复了在 AskUserQuestion 注释字段中按 Escape 会中止回合而不是返回答案选择的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model selection not applying when changed via the IDE model picker or `applyFlagSettings` after startup",
+   "zh": "修复了启动后通过 IDE 模型选择器或`applyFlagSettings`更改时模型选择不应用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Resumed sessions now keep the model they were using instead of picking up another session's `/model` choice",
+   "zh": "恢复的会话现在保留其原本使用的模型，不再沿用其他会话的 `/model` 选择"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock and Vertex users unable to select \"Opus (1M context)\" from the `/model` picker (regression in v2.1.129)",
+   "zh": "修复了 Bedrock 和 Vertex 用户无法从`/model`选择器中选择“Opus（1M 上下文）”的问题（v2.1.129 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote-session login failing with \"Can't access this organization\" for users with `forceLoginMethod` and `forceLoginOrgUUID` set",
+   "zh": "修复了设置了`forceLoginMethod`和`forceLoginOrgUUID`的用户远程会话登录失败并显示“无法访问此组织”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers with paginated `tools/list` responses only returning the first page, silently dropping tools",
+   "zh": "修复了 MCP 服务器的分页“工具/列表”响应仅返回第一页，默默地删除工具"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP images with unsupported MIME types (e.g. SVG) breaking the conversation — now saved to disk and referenced in the tool result",
+   "zh": "修复了具有不支持的 MIME 类型（例如 SVG）的 MCP 图像，从而破坏了对话 - 现在保存到磁盘并在工具结果中引用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file descriptor exhaustion when a build runs inside a skill directory — non-`.md` files no longer trigger skill reloads",
+   "zh": "修复了构建在技能目录中运行时文件描述符耗尽的问题 - 非`.md`文件不再触发技能重新加载"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session title being generated from plugin monitor output instead of the user's first prompt",
+   "zh": "修复了从插件监视器输出而不是用户的第一个提示生成的会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Skill tool failing with permission error in headless mode (regression in v2.1.141)",
+   "zh": "修复了无头模式下技能工具因权限错误而失败的问题（v2.1.141 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugins enabled in your own settings showing \"not cached\" errors after first load on a fresh machine; plugins enabled only by a project's `.claude/settings.json` now show an actionable `claude plugin install` hint",
+   "zh": "修复了在您自己的设置中启用的插件在首次加载到新计算机上后显示“未缓存”错误的问题；仅由项目的`.claude/settings.json`启用的插件现在显示可操作的“claude 插件安装”提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude mcp list` silently reporting no servers when `.mcp.json` can't be parsed (e.g. using VS Code's `\"servers\"` key instead of `\"mcpServers\"`) — now shows configuration errors",
+   "zh": "修复了当无法解析`.mcp.json`时`claude mcp list`静默报告没有服务器的问题（例如，使用 VS Code 的“servers”键而不是“mcpServers”）——现在显示配置错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background side-queries on custom `ANTHROPIC_BASE_URL` setups and Bedrock Mantle not using Haiku — now falls back correctly when a first-party API key is configured or no Haiku model is set",
+   "zh": "修复了自定义`ANTHROPIC_BASE_URL`设置和基岩地幔不使用俳句的后台侧查询 - 现在，当配置第一方 API 密钥或未设置俳句模型时，可以正确回退"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrolling in attached background sessions on Windows — PgUp/PgDn, mouse wheel, and Ctrl+O transcript navigation now work",
+   "zh": "修复了 Windows 上附加后台会话中的滚动问题 - PgUp/PgDn、鼠标滚轮和 Ctrl+O 转录导航现在可以使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when closing the terminal while attached to a background session",
+   "zh": "修复了连接到后台会话时关闭终端时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed on Windows, pressing ← in `claude agents` leaving the list unresponsive to keyboard input",
+   "zh": "修复了在 Windows 上，在“claude Agents”中按 ← 使列表对键盘输入无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ghost characters at the left edge when switching panes in Agent View on Windows Terminal with CJK content",
+   "zh": "修复了在 Windows 终端上的代理视图中切换带有 CJK 内容的窗格时左侧边缘出现重影字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Edit/Write refusing with \"background session hasn't isolated its changes yet\" right after detaching a session that was already editing in place",
+   "zh": "修复了在分离已就位编辑的会话后立即拒绝编辑/写入的问题，并显示“后台会话尚未隔离其更改”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude respawn <id>` on a stopped background session showing \"stopped\" instead of running",
+   "zh": "修复了`claude respawn <id>`在已停止的后台会话上显示“已停止”而不是正在运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume` picker not showing sessions forked from a background session",
+   "zh": "修复了`/resume`选择器不显示从后台会话分叉的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed opening a session from `claude agents` or running `claude logs <id>` hanging when the background service is unresponsive — now times out after 10s with a recovery hint",
+   "zh": "修复了当后台服务无响应时从“claudeagents”打开会话或运行“claudelogs<id>”挂起的问题 - 现在在 10 秒后超时，并显示恢复提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background Bash tasks spawned by subagents staying \"Running\" in SDK task panels after the process exits",
+   "zh": "修复了进程退出后在 SDK 任务面板中保持“运行”状态的子代理生成的后台 Bash 任务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed completed or stopped background sessions briefly failing to wake being permanently marked as a startup crash",
+   "zh": "修复了已完成或停止的后台会话暂时无法唤醒并被永久标记为启动崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown links in `claude agents` attached sessions rendering as plain text instead of clickable hyperlinks",
+   "zh": "修复了“克劳德代理”附加会话中的降价链接呈现为纯文本而不是可点击的超链接"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom `spinnerVerbs` applying to the post-turn duration message — past-tense built-ins like \"Worked for 5s\" are restored there",
+   "zh": "修复了应用于回合后持续时间消息的自定义`spinnerVerbs` - 过去时内置项（例如“工作了 5 秒”）在那里恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "Plugin marketplace add/update now respects `CLAUDE_CODE_PLUGIN_PREFER_HTTPS`",
+   "zh": "插件市场的添加和更新现在遵循 `CLAUDE_CODE_PLUGIN_PREFER_HTTPS`"
+  }
+ ]
+}

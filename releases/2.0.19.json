@@ -1,0 +1,22 @@
+{
+ "version": "2.0.19",
+ "date": "2025-10-15",
+ "published": "2025-10-15T21:35:23.345Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.19",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Auto-background long-running bash commands instead of killing them. Customize with BASH_DEFAULT_TIMEOUT_MS",
+   "zh": "自动在后台运行长时间运行的 bash 命令而不是终止它们。使用 BASH_DEFAULT_TIMEOUT_MS 进行自定义"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where Haiku was unnecessarily called in print mode",
+   "zh": "修复了在打印模式下不必要地调用俳句的错误"
+  }
+ ]
+}

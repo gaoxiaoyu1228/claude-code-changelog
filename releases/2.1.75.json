@@ -1,0 +1,109 @@
+{
+ "version": "2.1.75",
+ "date": "2026-03-13",
+ "published": "2026-03-13T15:51:07.443Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.75",
+ "counts": {
+  "new": 5,
+  "improved": 2,
+  "fixed": 11,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added 1M context window for Opus 4.6 by default for Max, Team, and Enterprise plans (previously required extra usage)",
+   "zh": "Max、Team 和 Enterprise 计划默认为 Opus 4.6 添加 1M 上下文窗口（之前需要额外使用）"
+  },
+  {
+   "type": "new",
+   "en": "Added `/color` command for all users to set a prompt-bar color for your session",
+   "zh": "添加了`/color`命令，供所有用户为会话设置提示栏颜色"
+  },
+  {
+   "type": "new",
+   "en": "Added session name display on the prompt bar when using `/rename`",
+   "zh": "添加使用`/rename`时提示栏上显示会话名称"
+  },
+  {
+   "type": "new",
+   "en": "Added last-modified timestamps to memory files, helping Claude reason about which memories are fresh vs. stale",
+   "zh": "向内存文件添加了最后修改的时间戳，帮助 Claude 推断哪些内存是新鲜的，哪些是陈旧的"
+  },
+  {
+   "type": "new",
+   "en": "Added hook source display (settings/plugin/skill) in permission prompts when a hook requires confirmation",
+   "zh": "新增Hook需要确认时权限提示中的Hook来源显示（设置/插件/技能）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance on macOS non-MDM machines by skipping unnecessary subprocess spawns",
+   "zh": "改进非 MDM 管理的 macOS 机器的启动性能：跳过不必要的子进程启动"
+  },
+  {
+   "type": "improved",
+   "en": "Suppressed async hook completion messages by default (visible with `--verbose` or transcript mode)",
+   "zh": "默认隐藏异步钩子的完成消息（加上 `--verbose` 或转录模式后可见）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode not activating correctly on fresh installs without toggling `/voice` twice",
+   "zh": "修复全新安装后，语音模式需要切换两次 `/voice` 才能正确激活的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Claude Code header not updating the displayed model name after switching models with `/model` or Option+P",
+   "zh": "修复了使用`/model`或 Option+P 切换模型后 Claude Code 标头不更新显示的模型名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session crash when an attachment message computation returns undefined values",
+   "zh": "修复了附件消息计算返回未定义值时会话崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool mangling `!` in piped commands (e.g., `jq 'select(.x != .y)'` now works correctly)",
+   "zh": "修复了 Bash 工具在管道命令中损坏 `!`（例如，`jq 'select(.x != .y)'` 现在可以正常工作）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed-disabled plugins showing up in the `/plugin` Installed tab — plugins force-disabled by your organization are now hidden",
+   "zh": "修复了`/plugin`“已安装”选项卡中显示的托管禁用插件 - 由您的组织强制禁用的插件现在已隐藏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed token estimation over-counting for thinking and `tool_use` blocks, preventing premature context compaction",
+   "zh": "修复思考和 `tool_use` 块的 token 估算过高，导致上下文过早被压缩的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed corrupted marketplace config path handling",
+   "zh": "修复了损坏的市场配置路径处理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume` losing session names after resuming a forked or continued session",
+   "zh": "修复了恢复分叉或连续会话后`/resume`丢失会话名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc not closing the `/status` dialog after visiting the Config tab",
+   "zh": "修复了访问“配置”选项卡后 Esc 未关闭`/status`对话框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed input handling when accepting or rejecting a plan",
+   "zh": "修复了接受或拒绝计划时的输入处理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed footer hint in agent teams showing \"↓ to expand\" instead of the correct \"shift + ↓ to expand\"",
+   "zh": "修复了代理团队中的页脚提示，显示“↓ 展开”，而不是正确的“shift + ↓ 展开”"
+  },
+  {
+   "type": "removed",
+   "en": "Breaking change: Removed deprecated Windows managed settings fallback at `C:\\ProgramData\\ClaudeCode\\managed-settings.json` — use `C:\\Program Files\\ClaudeCode\\managed-settings.json`",
+   "zh": "重大更改：删除了“C:\\ProgramData\\ClaudeCode\\driven-settings.json”中已弃用的 Windows 托管设置回退 — 使用“C:\\Program Files\\ClaudeCode\\driven-settings.json”"
+  }
+ ]
+}

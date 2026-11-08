@@ -1,0 +1,193 @@
+{
+ "version": "2.1.218",
+ "date": "2026-07-22",
+ "published": "2026-07-22T19:55:32.144Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.218",
+ "counts": {
+  "new": 3,
+  "improved": 10,
+  "fixed": 23
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added screen-reader announcements of deleted text for word and line deletions (`Option+Delete`, `Ctrl+W`, `Cmd+Backspace`, `Ctrl+U`, `Ctrl+K`) in `--ax-screen-reader` mode",
+   "zh": "在`--ax-screen-reader`模式下添加了针对单词和行删除的已删除文本的屏幕阅读器公告（`Option+Delete`、`Ctrl+W`、`Cmd+Backspace`、`Ctrl+U`、`Ctrl+K`）"
+  },
+  {
+   "type": "new",
+   "en": "Added an announcement when fast mode changes as a result of switching models via `/config model=<x>` or Remote Control",
+   "zh": "添加了由于通过`/config model=<x>`或远程控制切换模型而导致快速模式更改时的公告"
+  },
+  {
+   "type": "new",
+   "en": "Added `yes`/`no`/`on`/`off`/`1`/`0` (case-insensitive) as accepted values for skill and plugin frontmatter booleans, alongside `true`/`false`",
+   "zh": "添加了`yes`/`no`/`on`/`off`/`1`/`0`（不区分大小写）作为技能和插件 frontmatter 布尔值的可接受值，以及`true`/`false`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/code-review` to run as a background subagent, so review work no longer fills your conversation and keeps stacked slash commands as its review target",
+   "zh": "将`/code-review`更改为作为后台子代理运行，因此审核工作不再填满您的对话，并将堆叠的斜杠命令保留为审核目标"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/ultrareview` error feedback so Claude can correct an invalid argument instead of retrying it unchanged",
+   "zh": "改进 `/ultrareview` 的错误反馈：Claude 可以修正无效参数，而不是原样重试"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode: the dangerous-rm, background-`&`, and suspicious-Windows-path checks no longer open permission dialogs; the auto-mode classifier adjudicates them instead",
+   "zh": "改进自动模式：危险 rm、后台 `&` 和可疑的 Windows 路径检查不再弹出权限对话框，改由自动模式分类器裁定"
+  },
+  {
+   "type": "improved",
+   "en": "Improved sandbox command restrictions for IDE interactions",
+   "zh": "改进 IDE 交互时的沙盒命令限制"
+  },
+  {
+   "type": "improved",
+   "en": "Improved trust dialogs to name the repository root the grant covers",
+   "zh": "改进信任对话框：会写出授权所覆盖的仓库根目录"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/deep-research` to start only when invoked manually; Claude no longer launches it on its own",
+   "zh": "将 `/deep-research` 更改为仅在手动调用时启动；克劳德不再单独推出它"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plan mode with auto to no longer prompt for Bash commands the static analyzer can't prove read-only; the auto-mode classifier judges them instead",
+   "zh": "将计划模式更改为自动，不再提示输入静态分析器无法证明只读的 Bash 命令；自动模式分类器会判断它们"
+  },
+  {
+   "type": "improved",
+   "en": "Changed server-managed settings so benign feature and cost toggles no longer trigger the settings-approval prompt",
+   "zh": "更改了服务器管理的设置，因此良性功能和成本切换不再触发设置批准提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed agent markdown files to reject agent names containing `:`, which is reserved for plugin namespacing",
+   "zh": "更改了代理降价文件以拒绝包含`:`的代理名称，该名称是为插件命名空间保留的"
+  },
+  {
+   "type": "improved",
+   "en": "Changed skills with `context: fork` to run in the background by default; opt out per skill with `background: false`",
+   "zh": "更改了 `context: fork` 的技能默认在后台运行；通过`background: false`选择退出每项技能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows paths with `\\u`-prefixed segments (like `C:\\Users\\unicorn`) being corrupted into CJK characters in tool inputs, which made those files inaccessible",
+   "zh": "修复了带有`\\u`前缀段的 Windows 路径（例如`C:\\Users\\unicorn`）在工具输入中被损坏为 CJK 字符，从而导致这些文件无法访问"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the left arrow key discarding the conversation with no undo: presses right after editing now ask to confirm, and Esc in the agent view returns to the conversation it backgrounded",
+   "zh": "修复左方向键会在没有撤销的情况下丢弃对话的问题：编辑后按右方向键现在会要求确认，智能体视图中按 Esc 会返回其切到后台的对话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-line paste collapsing into one line with `j` in place of newlines in terminals that encode pasted newlines as Ctrl+J",
+   "zh": "修复了多行粘贴折叠成一行，并用`j`代替终端中的换行符，将粘贴的换行符编码为 Ctrl+J"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/context` reporting stale pre-compact token usage after compacting from the message picker",
+   "zh": "修复了从消息选择器压缩后报告过时的预压缩令牌使用情况的`/context`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview` failing on descriptive arguments like \"review my auth changes\" — they now run a review of your current branch with the text applied as a note to the findings",
+   "zh": "修复了`/ultrareview`在描述性参数（例如“查看我的身份验证更改”）上失败的问题 - 他们现在对您当前的分支进行审查，并将文本用作结果注释"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/code-review ultra` silently running a local review in non-interactive sessions — it now launches the cloud review",
+   "zh": "修复了`/code-review ultra`在非交互式会话中静默运行本地审核的问题 - 现在启动云审核"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed gateway spend metering to price Bedrock application-inference-profile ARNs and other config-mapped upstream model IDs at the configured model's rates",
+   "zh": "固定网关支出计量，以按配置模型的费率对 Bedrock 应用程序推理配置文件 ARN 和其他配置映射的上游模型 ID 进行定价"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mojibake when a long IDE selection was truncated mid-emoji, and a case where a tool executor error could be silently dropped",
+   "zh": "修复了长 IDE 选择在表情符号中间被截断时的 mojibake，以及工具执行器错误可能会被静默删除的情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an engine teardown race that could start and abandon a phantom turn, and made input pushed after close consistently rejected",
+   "zh": "修复了一个引擎拆卸竞赛，该竞赛可能会启动并放弃幻象转弯，并在关闭后持续拒绝输入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spurious \"[Request interrupted by user]\" messages after interrupted tool calls, and an unpaired `tool_use` block left in the transcript when a tool aborted mid-response",
+   "zh": "修复了中断工具调用后的虚假“[请求被用户中断]”消息，以及当工具在响应中中止时记录中留下不成对的`tool_use`块"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed VoiceOver reading \"new line\" instead of echoing the typed space at the end of the input in `--ax-screen-reader` mode",
+   "zh": "修复了 VoiceOver 读取“新行”的问题，而不是在`--ax-screen-reader`模式下回显输入末尾的键入空格"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin and settings panels not moving the terminal cursor to the focused row, so screen readers and magnifiers can follow arrow-key navigation",
+   "zh": "修复了插件和设置面板未将终端光标移动到焦点行的问题，因此屏幕阅读器和放大器可以遵循箭头键导航"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crashes (maximum call stack exceeded) when a deeply nested watched directory tree was deleted or moved, and when rendering deeply nested UI trees",
+   "zh": "修复了删除或移动深层嵌套的监视目录树以及渲染深层嵌套的 UI 树时发生的崩溃（超出最大调用堆栈）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pull request events occasionally being lost when a session exited immediately after creating or linking a PR",
+   "zh": "修复了创建或链接 PR 后会话立即退出时偶尔会丢失拉取请求事件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Bedrock setup wizard failing profile verification for assume-role profiles in partitioned AWS regions and on proxy-only networks",
+   "zh": "修复了 Bedrock 设置向导在分区 AWS 区域和仅代理网络上无法对假设角色配置文件进行配置文件验证的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rare negative or incorrect turn duration measurements after a system clock adjustment by timing turns with a monotonic clock",
+   "zh": "修复了通过使用单调时钟计时轮次进行系统时钟调整后罕见的负值或不正确的轮次持续时间测量"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the \"N MCP servers need authentication\" startup notice over-counting claude.ai connectors that aren't connected in claude.ai",
+   "zh": "修复了“N MCP 服务器需要身份验证”启动通知过度计数 claude.ai 中未连接的 claude.ai 连接器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt history entries being dropped or duplicated when history writes raced or failed",
+   "zh": "修复了历史记录写入争用或失败时提示历史记录条目被删除或重复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a retry loop that re-sent identical doomed requests after a context-overflow error with a large thinking budget; `Ctrl+B` backgrounding now applies the same background-shell caps as other paths",
+   "zh": "修复了一个重试循环，该循环会在上下文溢出错误后以大量思考预算重新发送相同的注定失败的请求； `Ctrl+B` 背景现在应用与其他路径相同的背景外壳上限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent frontmatter hooks running from untrusted folders: hooks now require the agent file's own folder to have accepted workspace trust",
+   "zh": "修复了从不受信任的文件夹运行的代理 frontmatter 挂钩：挂钩现在要求代理文件自己的文件夹接受工作区信任"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fork-session lineage being lost after compaction in headless and SDK sessions",
+   "zh": "修复了在无头会话和 SDK 会话中压缩后分叉会话沿袭丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a resumed session failing every turn, or crashing on resume, when its history held a malformed delta attachment",
+   "zh": "修复了当其历史记录包含格式错误的增量附件时，恢复的会话每次都会失败或恢复时崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote sessions continuing to send heartbeats after their worker was replaced, which left long-lived desktop and IDE processes retrying a rejected request every few seconds forever",
+   "zh": "修复了远程会话在工作线程被替换后继续发送心跳的问题，这导致长期存在的桌面和 IDE 进程每隔几秒就永远重试被拒绝的请求"
+  }
+ ]
+}

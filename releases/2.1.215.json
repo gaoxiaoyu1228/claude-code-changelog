@@ -1,0 +1,16 @@
+{
+ "version": "2.1.215",
+ "date": "2026-07-19",
+ "published": "2026-07-19T00:53:37.170Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.215",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Claude no longer runs the `/verify` and `/code-review` skills on its own; invoke them with `/verify` or `/code-review` when you want them",
+   "zh": "克劳德不再单独运行`/verify`和`/code-review`技能；当您需要它们时，使用`/verify`或`/code-review`调用它们"
+  }
+ ]
+}

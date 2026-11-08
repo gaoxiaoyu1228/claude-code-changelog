@@ -1,0 +1,118 @@
+{
+ "version": "2.1.222",
+ "date": "2026-08-04",
+ "published": "2026-08-04T20:37:17.953Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.222",
+ "counts": {
+  "improved": 4,
+  "fixed": 16,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved auto mode safety: messages sent to other agent sessions via `SendMessage` are now evaluated by the permission classifier before dispatch",
+   "zh": "改进自动模式安全性：通过 `SendMessage` 发给其他代理会话的消息，发送前会先由权限分类器审查"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the refusal when Claude tries to invoke a skill with `disable-model-invocation`: Claude is now told to ask you to run the skill instead of replicating its workflow",
+   "zh": "改进 Claude 试图调用带 `disable-model-invocation` 的技能时的拒绝提示：现在会让 Claude 请你自己运行该技能，而不是复制它的工作流程"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/diff` view, the Remote Control workspace diff, and file-edit diffs in Claude Code on the web sessions to use raw git blob content, ignoring workspace-configured diff drivers and textconv",
+   "zh": "改进 `/diff` 视图、Remote Control 工作区差异，以及 Claude Code 网页版会话中的文件编辑差异：改用原始 git blob 内容，忽略工作区配置的 diff 驱动和 textconv"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Remote Control auto-start so repo-local settings (`.claude/settings.json` or `.claude/settings.local.json`) can no longer turn it on (they can still turn it off); enable it at user scope via `/config`",
+   "zh": "更改了远程控制自动启动，因此存储库本地设置（`.claude/settings.json` 或 `.claude/settings.local.json`）无法再打开它（他们仍然可以将其关闭）；通过 `/config` 在用户范围内启用它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree-isolated sessions and their subagents being able to run destructive git commands against the main checkout; isolation now applies to file edits and Bash in every session type",
+   "zh": "修复工作树隔离的会话及其子智能体可以对主检出目录运行破坏性 git 命令的问题；隔离现在适用于所有会话类型的文件编辑和 Bash"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PreToolUse auto-allow hooks bypassing tool restrictions in background agent tasks (summaries, compaction, renames)",
+   "zh": "修复了 PreToolUse 自动允许钩子绕过后台代理任务中的工具限制（摘要、压缩、重命名）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage-credits` on Team and Enterprise showing \"you've already sent a usage credit request\" for members whose earlier request was dismissed, blocking them from sending a new one",
+   "zh": "修复了团队和企业上的`/usage-credits`，对于先前请求被驳回的成员显示“您已经发送了使用积分请求”，阻止他们发送新的请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the startup connectivity check hanging and then failing behind an HTTPS proxy; it now uses the same proxy-aware transport as API requests and times out with a clear message",
+   "zh": "修复启动时的连通性检查在 HTTPS 代理后挂起然后失败的问题；现在它使用与 API 请求相同的代理感知传输，并会以清晰的消息超时"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Connection closed mid-response\" errors being reported on responses that had actually completed",
+   "zh": "修复了实际完成的响应中报告的“连接在响应中关闭”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` overattributing usage to MCP servers: a server's share now reflects only the requests that actually consumed its tool results, instead of every turn after any call to it",
+   "zh": "修复了`/usage`将使用过度归因于 MCP 服务器的问题：服务器的共享现在仅反映实际消耗其工具结果的请求，而不是调用它后的每个回合"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions not linking to pull requests created after the branch was pushed, including through the GitHub REST API",
+   "zh": "修复了会话未链接到推送分支后创建的拉取请求的问题，包括通过 GitHub REST API"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed org-restricted `model: opus`-style subagent and teammate family aliases dropping to the parent model instead of stepping down to the newest org-allowed model in the family",
+   "zh": "修复了组织限制的“模型：opus”风格的子代理和队友家族别名下降到父模型，而不是下降到家族中最新的组织允许的模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stream idle timeout firing on custom `ANTHROPIC_BASE_URL` gateways despite server keep-alive pings arriving on the wire",
+   "zh": "修复了自定义`ANTHROPIC_BASE_URL`网关上的流空闲超时触发，尽管服务器保持活动 ping 已到达网络"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed claude.ai connectors being falsely marked as needing authorization when the session token is invalid — they now show a `/login` hint instead",
+   "zh": "修复了当会话令牌无效时 claude.ai 连接器被错误地标记为需要授权的问题 — 它们现在显示`/login`提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tool errors not being displayed for tools no longer available locally, for example after an MCP server is removed",
+   "zh": "修复对于本地已不可用的工具（例如 MCP 服务器被移除后），工具错误不显示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SendMessage` rejecting a long summary — it now truncates instead, so sends no longer fail on a character limit",
+   "zh": "修复了`SendMessage`拒绝长摘要的问题 - 现在它会截断，因此发送不再因字符限制而失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the spinner's effort label in a subagent's transcript view showing the session's effort level instead of the subagent's own `effort:` setting",
+   "zh": "修复子智能体转录视图中，旋转指示器的努力级别标签显示的是会话的努力级别，而非子智能体自身 `effort:` 设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rare crashes when a file watcher hit a filesystem error or during file-watcher teardown",
+   "zh": "修复了文件观察器遇到文件系统错误或文件观察器拆卸期间罕见的崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed screen readers re-reading the whole input line on every backspace in `--ax-screen-reader` mode — end-of-line deletions now echo just the deleted characters",
+   "zh": "修复了屏幕阅读器在`--ax-screen-reader`模式下在每个退格键上重新读取整个输入行的问题 - 行尾删除现在仅回显已删除的字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed host model-selection keys not taking precedence over a stale on-disk `managed-settings.json` when `CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST` is set",
+   "zh": "修复了设置`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`时，主机模型选择键不优先于过时的磁盘上“management-settings.json”的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed ultraplan feature",
+   "zh": "移除 ultraplan 功能"
+  }
+ ]
+}

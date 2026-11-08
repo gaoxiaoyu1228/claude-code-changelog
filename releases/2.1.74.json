@@ -1,0 +1,98 @@
+{
+ "version": "2.1.74",
+ "date": "2026-03-11",
+ "published": "2026-03-11T23:31:27.307Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.74",
+ "counts": {
+  "new": 2,
+  "improved": 2,
+  "fixed": 13
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added actionable suggestions to `/context` command — identifies context-heavy tools, memory bloat, and capacity warnings with specific optimization tips",
+   "zh": "向`/context`命令添加了可操作的建议——通过特定的优化提示识别上下文繁重的工具、内存膨胀和容量警告"
+  },
+  {
+   "type": "new",
+   "en": "Added `autoMemoryDirectory` setting to configure a custom directory for auto-memory storage",
+   "zh": "添加了`autoMemoryDirectory`设置来配置自动内存存储的自定义目录"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `--plugin-dir` so local dev copies now override installed marketplace plugins with the same name (unless that plugin is force-enabled by managed settings)",
+   "zh": "更改了`--plugin-dir`，因此本地开发副本现在会覆盖已安装的同名市场插件（除非该插件由托管设置强制启用）"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Improved scroll wheel responsiveness in the integrated terminal with terminal-aware acceleration",
+   "zh": "[VSCode] 改进集成终端的滚轮响应：加入了感知终端的加速"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak where streaming API response buffers were not released when the generator was terminated early, causing unbounded RSS growth on the Node.js/npm code path",
+   "zh": "修复了生成器提前终止时未释放流式 API 响应缓冲区的内存泄漏，导致 Node.js/npm 代码路径上的 RSS 无限增长"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed policy `ask` rules being bypassed by user `allow` rules or skill `allowed-tools`",
+   "zh": "修复了用户“允许”规则或技能“允许工具”绕过托管策略“询问”规则的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed full model IDs (e.g., `claude-opus-4-5`) being silently ignored in agent frontmatter `model:` field and `--agents` JSON config — agents now accept the same model values as `--model`",
+   "zh": "修复了代理 frontmatter `model:` 字段和 `--agents` JSON 配置中默默忽略的完整模型 ID（例如，`claude-opus-4-5`） — 代理现在接受与 `--model` 相同的模型值"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth authentication hanging when the callback port is already in use",
+   "zh": "修复了回调端口已在使用时 MCP OAuth 身份验证挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth refresh never prompting for re-auth after the refresh token expires, for OAuth servers that return errors with HTTP 200 (e.g. Slack)",
+   "zh": "修复了 MCP OAuth 刷新在刷新令牌过期后从不提示重新验证的问题，对于返回 HTTP 200 错误的 OAuth 服务器（例如 Slack）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode silently failing on the macOS native binary for users whose terminal had never been granted microphone permission — the binary now includes the `audio-input` entitlement so macOS prompts correctly",
+   "zh": "修复终端从未被授予麦克风权限的 macOS 用户，语音模式在原生二进制下静默失败的问题；现在二进制包含 `audio-input` 授权，macOS 会正确弹出请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SessionEnd` hooks being killed after 1.5 s on exit regardless of `hook.timeout` — now configurable via `CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS`",
+   "zh": "修复了`SessionEnd`挂钩在退出 1.5 秒后被终止的问题，无论`hook.timeout`如何——现在可通过`CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS`进行配置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin install` failing inside the REPL for marketplace plugins with local sources",
+   "zh": "修复了带有本地源的市场插件在 REPL 内`/plugin install`失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed marketplace update not syncing git submodules — plugin sources in submodules no longer break after update",
+   "zh": "修复了市场更新不同步 git 子模块的问题 - 子模块中的插件源在更新后不再中断"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unknown slash commands with arguments silently dropping input — now shows your input as a warning",
+   "zh": "修复带参数的未知斜杠命令会静默丢弃输入的问题；现在会把你的输入作为警告显示出来"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Hebrew, Arabic, and other RTL text not rendering correctly in Windows Terminal, conhost, and VS Code integrated terminal",
+   "zh": "修复了希伯来语、阿拉伯语和其他 RTL 文本在 Windows 终端、conhost 和 VS Code 集成终端中无法正确呈现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed LSP servers not working on Windows due to malformed file URIs",
+   "zh": "修复了由于文件 URI 格式错误而导致 LSP 服务器无法在 Windows 上运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed delete button not working for Untitled sessions",
+   "zh": "[VSCode] 修复未命名（Untitled）会话的删除按钮无法使用的问题"
+  }
+ ]
+}

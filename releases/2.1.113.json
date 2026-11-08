@@ -1,0 +1,203 @@
+{
+ "version": "2.1.113",
+ "date": "2026-04-17",
+ "published": "2026-04-17T19:09:22.930Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.113",
+ "counts": {
+  "new": 2,
+  "improved": 7,
+  "fixed": 29
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `sandbox.network.deniedDomains` setting to block specific domains even when a broader `allowedDomains` wildcard would otherwise permit them",
+   "zh": "添加了`sandbox.network.deniedDomains`设置以阻止特定域，即使更广泛的`allowedDomains`通配符允许它们"
+  },
+  {
+   "type": "new",
+   "en": "Remote Control clients can now query `@`-file autocomplete suggestions",
+   "zh": "Remote Control 客户端现在可以查询 `@` 文件自动补全的建议"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the CLI to spawn a native Claude Code binary (via a per-platform optional dependency) instead of bundled JavaScript",
+   "zh": "更改了 CLI 以生成本机 Claude Code 二进制文件（通过每个平台的可选依赖项）而不是捆绑的 JavaScript"
+  },
+  {
+   "type": "improved",
+   "en": "Fullscreen mode: Shift+↑/↓ now scrolls the viewport when extending a selection past the visible edge",
+   "zh": "全屏模式：扩展选区超出可见边缘时，Shift+↑/↓ 现在会滚动视口"
+  },
+  {
+   "type": "improved",
+   "en": "`Ctrl+A` and `Ctrl+E` now move to the start/end of the current logical line in multiline input, matching readline behavior",
+   "zh": "多行输入中，`Ctrl+A` 和 `Ctrl+E` 现在会移动到当前逻辑行的开头/结尾，与 readline 的行为一致"
+  },
+  {
+   "type": "improved",
+   "en": "Long URLs in responses and bash output stay clickable when they wrap across lines (in terminals with OSC 8 hyperlinks)",
+   "zh": "回复和 bash 输出中的长 URL 即使换行后也保持可点击（需要终端支持 OSC 8 超链接）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/loop`: pressing Esc now cancels pending wakeups, and wakeups display as \"Claude resuming /loop wakeup\" for clarity",
+   "zh": "改进 `/loop`：按 Esc 可取消待执行的唤醒；唤醒显示为“Claude resuming /loop wakeup”，更清楚"
+  },
+  {
+   "type": "improved",
+   "en": "`/extra-usage` now works from Remote Control (mobile/web) clients",
+   "zh": "`/extra-usage` 现在可在 Remote Control（手机/网页）客户端中使用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/ultrareview`: faster launch with parallelized checks, diffstat in the launch dialog, and animated launching state",
+   "zh": "改进 `/ultrareview`：检查并行化，启动更快；启动对话框显示差异统计，并有启动中的动画"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: `Ctrl+Backspace` now deletes the previous word",
+   "zh": "Windows：`Ctrl+Backspace` 现在会删除前一个单词"
+  },
+  {
+   "type": "fixed",
+   "en": "Subagents that stall mid-stream now fail with a clear error after 10 minutes instead of hanging silently",
+   "zh": "子代理如果在流式输出中途卡住，现在会在 10 分钟后报出清晰的错误，而不是无声挂起"
+  },
+  {
+   "type": "fixed",
+   "en": "Bash tool: multi-line commands whose first line is a comment now show the full command in the transcript, closing a UI-spoofing vector",
+   "zh": "Bash 工具：第一行是注释的多行命令现在显示记录中的完整命令，从而关闭 UI 欺骗向量"
+  },
+  {
+   "type": "fixed",
+   "en": "Running `cd <current-directory> && git …` no longer triggers a permission prompt when the `cd` is a no-op",
+   "zh": "当 `cd` 是空操作时，`cd <当前目录> && git …` 不再触发权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Security: on macOS, `/private/{etc,var,tmp,home}` paths are now treated as dangerous removal targets under `Bash(rm:*)` allow rules",
+   "zh": "安全（macOS）：在 `Bash(rm:*)` 允许规则下，`/private/{etc,var,tmp,home}` 路径现在被视为危险的删除目标"
+  },
+  {
+   "type": "fixed",
+   "en": "Security: Bash deny rules now match commands wrapped in `env`/`sudo`/`watch`/`ionice`/`setsid` and similar exec wrappers",
+   "zh": "安全：Bash 拒绝规则现在可匹配被 `env`/`sudo`/`watch`/`ionice`/`setsid` 等执行包装器包裹的命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Security: `Bash(find:*)` allow rules no longer auto-approve `find -exec`/`-delete`",
+   "zh": "安全：`Bash(find:*)` 允许规则不再自动批准 `find -exec`/`-delete`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP concurrent-call timeout handling where a message for one tool call could silently disarm another call's watchdog",
+   "zh": "修复了 MCP 并发调用超时处理，其中一个工具调用的消息可能会静默解除另一个调用的看门狗"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Cmd-backspace / `Ctrl+U` to once again delete from the cursor to the start of the line",
+   "zh": "修复了 Cmd-backspace / `Ctrl+U` 以再次从光标删除到行首"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown tables breaking when a cell contains an inline code span with a pipe character",
+   "zh": "修复了当单元格包含带竖线字符的内联代码范围时 Markdown 表中断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session recap auto-firing while composing unsent text in the prompt",
+   "zh": "修复了在提示中撰写未发送文本时自动触发会话回顾的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/copy` \"Full response\" not aligning markdown table columns for pasting into GitHub, Notion, or Slack",
+   "zh": "修复了`/copy`“完整响应”未对齐 Markdown 表列以粘贴到 GitHub、Notion 或 Slack 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed messages typed while viewing a running subagent being hidden from its transcript and misattributed to the parent AI",
+   "zh": "修复了查看正在运行的子代理时键入的消息被隐藏在其记录中并被错误归因于父 AI 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash `dangerouslyDisableSandbox` running commands outside the sandbox without a permission prompt",
+   "zh": "修复了 Bash `dangerouslyDisableSandbox` 在没有权限提示的情况下在沙箱外运行命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/effort auto` confirmation — now says \"Effort level set to max\" to match the status bar label",
+   "zh": "修复了`/effort auto`确认 - 现在显示“Effort level set to max”以匹配状态栏标签"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the \"copied N chars\" toast overcounting emoji and other multi-code-unit characters",
+   "zh": "修复了“复制 N 个字符”toast 过多计算表情符号和其他多代码单元字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/insights` crashing with `EBUSY` on Windows",
+   "zh": "修复了 Windows 上`/insights`因`EBUSY`而崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed exit confirmation dialog mislabeling one-shot scheduled tasks as recurring — now shows a countdown",
+   "zh": "修复了退出确认对话框将一次性计划任务错误标记为重复任务 - 现在显示倒计时"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash/@ completion menu not sitting flush against the prompt border in fullscreen mode",
+   "zh": "修复了斜杠/@完成菜单在全屏模式下未与提示边框齐平的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_EXTRA_BODY` `output_config.effort` causing 400 errors on subagent calls to models that don't support effort and on Vertex AI",
+   "zh": "修复了`CLAUDE_CODE_EXTRA_BODY``output_config.effort`在对不支持工作量的模型和 Vertex AI 上的子代理调用时导致 400 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt cursor disappearing when `NO_COLOR` is set",
+   "zh": "修复了设置`NO_COLOR`时提示光标消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ToolSearch` ranking so pasted MCP tool names surface the actual tool instead of description-matching siblings",
+   "zh": "修复了`ToolSearch`排名，以便粘贴的 MCP 工具名称显示实际工具而不是描述匹配的同级工具"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed compacting a resumed long-context session failing with \"Extra usage is required for long context requests\"",
+   "zh": "修复了压缩已恢复的长上下文会话失败并显示“长上下文请求需要额外使用”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `plugin install` succeeding when a dependency version conflicts with an already-installed plugin — now reports `range-conflict`",
+   "zh": "修复了当依赖项版本与已安装的插件冲突时“插件安装”成功的问题 - 现在报告“范围冲突”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Refine with Ultraplan\" not showing the remote session URL in the transcript",
+   "zh": "修复了“Refine with Ultraplan”在记录中不显示远程会话 URL 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK image content blocks that fail to process crashing the session — now degrade to a text placeholder",
+   "zh": "修复了无法处理导致会话崩溃的 SDK 图像内容块 — 现在降级为文本占位符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions not streaming subagent transcripts",
+   "zh": "修复了远程控制会话不传输子代理记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions not being archived when Claude Code exits",
+   "zh": "修复了 Claude Code 退出时远程控制会话未存档的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `thinking.type.enabled is not supported` 400 error when using Opus 4.7 via a Bedrock Application Inference Profile ARN",
+   "zh": "修复了通过 Bedrock 应用程序推理配置文件 ARN 使用 Opus 4.7 时出现的“不支持thinking.type.enabled”400 错误"
+  }
+ ]
+}

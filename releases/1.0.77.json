@@ -1,0 +1,32 @@
+{
+ "version": "1.0.77",
+ "date": "2025-08-12",
+ "published": "2025-08-12T19:12:14.663Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.77",
+ "counts": {
+  "new": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "SDK: Add session support and permission denial tracking",
+   "zh": "SDK：新增会话支持和权限拒绝记录"
+  },
+  {
+   "type": "new",
+   "en": "Opus Plan Mode: New setting in `/model` to run Opus only in plan mode, Sonnet otherwise",
+   "zh": "Opus 计划模式：在 `/model` 中新增设置，使 Opus 只在计划模式下运行，其余时间使用 Sonnet"
+  },
+  {
+   "type": "fixed",
+   "en": "Bash tool: Fix heredoc and multiline string escaping, improve stderr redirection handling",
+   "zh": "Bash 工具：修复heredoc和多行字符串转义，改进stderr重定向处理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix token limit errors in conversation summarization",
+   "zh": "修复对话摘要中的令牌限制错误"
+  }
+ ]
+}

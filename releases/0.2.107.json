@@ -1,0 +1,16 @@
+{
+ "version": "0.2.107",
+ "date": "2025-05-09",
+ "published": "2025-05-09T16:15:03.847Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.107",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "CLAUDE.md files can now import other files. Add @path/to/file.md to ./CLAUDE.md to load additional files on launch",
+   "zh": "CLAUDE.md 文件现在可以导入其他文件。将 @path/to/file.md 添加到 ./CLAUDE.md 以在启动时加载其他文件"
+  }
+ ]
+}

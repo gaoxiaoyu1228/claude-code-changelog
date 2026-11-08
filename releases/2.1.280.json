@@ -1,0 +1,584 @@
+{
+ "version": "2.1.280",
+ "date": "2026-09-22",
+ "published": "2026-09-22T15:44:39.443Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.280",
+ "counts": {
+  "new": 12,
+  "improved": 31,
+  "fixed": 70,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added Claude Opus 5.5 (`claude-opus-5-5`), now the default Opus model — 1M context, $4/$20 per Mtok with $0.20/Mtok cache reads",
+   "zh": "添加了 Claude Opus 5.5 (`claude-opus-5-5`)，现在是默认 Opus 模型 — 1M 上下文，每个 Mtok 4 美元/20 美元，每 Mtok 缓存读取 0.20 美元"
+  },
+  {
+   "type": "new",
+   "en": "Added mouse support to more lists in fullscreen mode: the wheel scrolls the `/skills` list, and a skill's state options in `/plugin` can be clicked",
+   "zh": "在全屏模式下为更多列表添加了鼠标支持：滚轮滚动`/skills`列表，并且可以单击`/plugin`中的技能状态选项"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH` to change the 2,048-character cap on MCP tool descriptions and server instructions for every MCP server in the session",
+   "zh": "添加了`CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH`，以更改会话中每个 MCP 服务器的 MCP 工具描述和服务器指令的 2,048 个字符上限"
+  },
+  {
+   "type": "new",
+   "en": "Added hook output sizes and the number of oversized outputs saved to a file to the `hook_execution_complete` OpenTelemetry event",
+   "zh": "添加了挂钩输出大小以及保存到文件中的超大输出数量到`hook_execution_complete` OpenTelemetry 事件"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a Status dialog, with a typed `/status`, showing the session's version, account, model and server details",
+   "zh": "[VSCode] 新增 Status 对话框，可输入 `/status` 打开，显示会话的版本、账户、模型和服务器信息"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a Sandbox dialog for the sandbox mode, the unsandboxed fallback and excluded commands, opened from the panel menu or by typing `/sandbox`",
+   "zh": "[VSCode] 新增沙盒对话框，用于设置沙盒模式、非沙盒回退和排除的命令，可从面板菜单打开，或输入 `/sandbox`"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a Claude in Chrome dialog (extension status, the install, reconnect and permissions pages, the enabled-by-default setting), opened from the panel menu or by typing `/chrome`",
+   "zh": "[VSCode] 新增 Claude in Chrome 对话框（显示扩展状态、安装、重新连接和权限页面，以及默认启用设置），可从面板菜单打开，或输入 `/chrome`"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added Export conversation, with a typed `/export`, to copy or save the conversation as plain text",
+   "zh": "[VSCode] 新增「Export conversation」，也可输入 `/export`，将对话复制或保存为纯文本"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added each skill's source, token estimate and on/off state to the Slash commands dialog, with a click to change the state, and a typed `/skills` that opens it",
+   "zh": "[VSCode] 斜杠命令对话框中显示每个技能的来源、token 估算和开关状态，点击即可切换；输入 `/skills` 即可打开"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a typed `/plan` that switches to plan mode, sends a first planning prompt, or shows the session's plan",
+   "zh": "[VSCode] 新增 `/plan` 命令，可切换到计划模式、发送第一条规划提示，或显示当前会话的计划"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Tag] Added Slack's native Working indicator, Stop button and thread title to Claude's threads in channels; the indicator stays up until Claude finishes, and Stop interrupts the task",
+   "zh": "[Claude Tag] Claude 在频道中的话题新增 Slack 原生的「Working」指示器、停止按钮和话题标题；指示器会一直显示到 Claude 完成，点击停止即可中断任务"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Tag] Added a short notice in the Slack channel when a guest joining, or the last guest leaving, changes how Claude responds there under a Restrict or Channel only guest setting",
+   "zh": "[Claude Tag] 当有访客加入，或最后一位访客离开，并因此改变 Claude 在该频道中的回复方式（Restrict 或 Channel only 访客设置）时，Slack 频道中会出现简短通知"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/permissions`: focus returns to the rule list after viewing, adding or deleting a rule, and the delete-rule and remove-directory confirmations now default to No",
+   "zh": "改进 `/permissions`：查看、添加或删除规则后，焦点回到规则列表；删除规则和移除目录的确认默认选“否”"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/permissions` tab navigation: ←/→ and Tab pressed in a rule list now switch tabs without moving focus to the tab bar",
+   "zh": "改进 `/permissions` 标签切换：在规则列表中按 ←/→ 或 Tab，可直接切换标签页，不必把焦点移到标签栏"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/cost` cache-miss causes to name thinking mode and thinking display changes",
+   "zh": "改进 `/cost` 的缓存未命中原因说明：会指出 thinking 模式和 thinking 显示方式的变化"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Artifact tool so that when Claude cannot read an artifact link it was given, it tells the user before continuing",
+   "zh": "改进 Artifact 工具：Claude 无法读取所给的 Artifact 链接时，会在继续之前先告诉用户"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/install-github-app`: the GitHub CLI check and repository selection steps now show \"Esc to cancel\"",
+   "zh": "改进 `/install-github-app`：GitHub CLI 检查和仓库选择步骤现在显示“Esc to cancel”"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/artifacts` and `/workflows` lists: a scrollbar at the right edge shows how much of a long list is hidden and where you are in it",
+   "zh": "改进 `/artifacts` 和 `/workflows` 列表：右侧滚动条会显示长列表中被隐藏的部分有多少，以及你当前所在的位置"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the workflow progress tree: running agents and phases now show a dim dot instead of ⟳",
+   "zh": "改进工作流进度树：运行中的智能体和阶段现在显示暗色圆点，不再用 ⟳"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/plugin`'s Add Marketplace form in fullscreen: it no longer draws a box inside the pane, and its text and key hints line up with the rest of `/plugin`",
+   "zh": "改进全屏模式下 `/plugin` 的“添加市场”表单：不再在面板内画框，文字和按键提示与 `/plugin` 的其他部分对齐"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/workflows` detail view in fullscreen: it no longer draws a second horizontal rule under the pane's divider",
+   "zh": "改进全屏模式下的 `/workflows` 详情视图：不再在窗格分隔线下方多画一条横线"
+  },
+  {
+   "type": "improved",
+   "en": "Improved code blocks that don't name a language: they are now colored like inline code, so commands stand out from the surrounding text",
+   "zh": "改进未注明语言的代码块：与行内代码一样着色，命令能从周围的文字中凸显出来"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/btw` asked while a tool is still running: the side question now knows that call is in progress instead of reading it as a failed one",
+   "zh": "改进 `/btw`：工具仍在运行时提出的侧边问题，会知道该调用仍在进行中，而不会把它当成失败"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the UserPromptSubmit hook timeout notice and the debug log to name which hook command timed out",
+   "zh": "改进 UserPromptSubmit hook 超时提示和调试日志：会写出是哪条 hook 命令超时"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `@` file suggestions: a file whose name contains the query now ranks above one that only matches across its folder names",
+   "zh": "改进 `@` 文件建议：文件名包含查询词的，排在只在文件夹名中匹配的前面"
+  },
+  {
+   "type": "improved",
+   "en": "Improved artifact pages: no Print buttons, confirm dialogs or device features the viewer blocks, email and phone details shown as text, and dark mode that reaches form controls and scrollbars",
+   "zh": "改进 artifact 页面：去掉打印按钮、确认对话框以及查看者屏蔽的设备功能；邮箱和电话以文字显示；暗色模式覆盖表单控件和滚动条"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/ultrareview` uploads: renamed copies of key files, such as `id_rsa copy` or `kubeconfig (1).yaml`, now also stay on your machine",
+   "zh": "改进 `/ultrareview` 上传：`id_rsa copy`、`kubeconfig (1).yaml` 等重命名的关键文件副本，也会留在你的电脑上，不会上传"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the cross-session messaging startup warning to explain that `--debug-file` writes a debug log to a path you choose",
+   "zh": "改进跨会话消息的启动警告：说明 `--debug-file` 会把调试日志写入你指定的路径"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the default model on Pro and Team Standard plans from Sonnet to Opus, matching Max, Team Premium, and Enterprise",
+   "zh": "将 Pro 和 Team Standard 计划的默认模型从 Sonnet 更改为 Opus，匹配 Max、Team Premium 和 Enterprise"
+  },
+  {
+   "type": "improved",
+   "en": "Changed an effort level saved before `/effort` became per-model to no longer apply to newly released models such as Opus 5.5; they start at their default until you pick a level",
+   "zh": "更改了`/effort`成为每个模型之前保存的工作级别，不再适用于新发布的模型，例如 Opus 5.5；它们从默认值开始，直到您选择一个级别"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Opus 4.7, Opus 4.8 and Fable 5 to stop holding their launch-default effort over `/effort` in `-p` or the Agent SDK, a project, managed or `--settings` `effortLevel`, or a per-model level",
+   "zh": "更改了 Opus 4.7、Opus 4.8 和 Fable 5，以停止在`-p`或 Agent SDK、项目、托管或`--settings`、`effortLevel`或每个模型级别中的`/effort`上保留其启动默认工作量"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/autocompact`'s footer hint to name ←/→, the keys that adjust other ordered values",
+   "zh": "将 `/autocompact` 的页脚提示更改为 ←/→，调整其他有序值的键"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/fast`'s footer to name Space as the toggle key",
+   "zh": "更改了`/fast`的页脚以命名 Space 作为切换键"
+  },
+  {
+   "type": "improved",
+   "en": "Self-hosted runner: Changed git in lifecycle hooks to ignore hook folders and programs named in the runner's shared git files; local-path and `git://` remotes there now need `GIT_ALLOW_PROTOCOL`",
+   "zh": "生命周期钩子中的 git 现在会忽略运行器共享 git 文件中指定的钩子目录和程序；这些位置的本地路径和 `git://` 远程仓库需要设置 `GIT_ALLOW_PROTOCOL`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plugin marketplaces whose name imitates a reserved marketplace name to be refused when added, and to stop loading if one was already added",
+   "zh": "更改了名称模仿保留市场名称的插件市场，添加时将被拒绝，如果已添加则停止加载"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `PermissionRequest` hooks: an agent-type hook no longer runs there, since its answer could never allow or deny the request; it now shows an error pointing to command or http hooks",
+   "zh": "更改了`PermissionRequest`挂钩：代理类型挂钩不再在那里运行，因为它的答案永远不会允许或拒绝该请求；现在显示指向命令或 http 挂钩的错误"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Improved pasted-text handling in the chat box: a paste over 800 characters or over 2 line breaks is now marked so Claude can tell it from what you typed",
+   "zh": "[VSCode] 改进聊天框的粘贴文本处理：超过 800 个字符或超过 2 个换行的粘贴内容会被标记，以便 Claude 与你的输入区分开"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Improved prompt handling in the chat box: invisible Unicode formatting and tag characters are removed from pasted text with a notice, and from anything else before it is sent",
+   "zh": "[VSCode] 改进聊天框的提示词处理：粘贴内容中不可见的 Unicode 格式字符和标签字符会被移除并给出提示；发送前的其他内容也会做同样处理"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Changed \"Open in New Tab\" to open Claude beside the editor group you are working in rather than after the last group",
+   "zh": "[VSCode] 「Open in New Tab」改为在你正在编辑的编辑器分组旁打开 Claude，而不是放在最后一个分组之后"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Code on the web] Changed the admin Routines on/off setting to live under Admin settings → Capabilities → Remote sessions; the Claude Code admin page now links to it",
+   "zh": "[Claude Code on the web] 管理员的 Routines 开关移到「Admin settings → Capabilities → Remote sessions」下；Claude Code 管理页面现在会链接到那里"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Code on the web] Improved cloud sessions viewed in the Claude app: Claude now saves files meant for you where the app can open them",
+   "zh": "[Claude Code on the web] 改进在 Claude 应用中查看云端会话的体验：Claude 现在会把需要交给你的文件保存到应用可以打开的位置"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Improved the GitHub banner in Claude Tag admin settings to say why GitHub isn't connected: not signed in, app not linked or not installed, sign-in expired, or SSO not authorized",
+   "zh": "[Claude Tag] 改进 Claude Tag 管理设置中的 GitHub 横幅，说明 GitHub 未连接的原因：未登录、应用未关联或未安装、登录已过期，或未授权 SSO"
+  },
+  {
+   "type": "improved",
+   "en": "[Code Review] Improved the Code Review check run to say when REVIEW.md instructions were cut or left out of a review for exceeding a size limit, naming the file and the limit",
+   "zh": "[Code Review] 改进 Code Review 检查运行：当 REVIEW.md 指令因超过大小限制而被截断或未用于审查时，会指出文件名和限制值"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed writes through a symlinked path being judged by their in-tree spelling: the prompt names where the write lands, and `acceptEdits`, allow rules and auto mode no longer approve one landing outside",
+   "zh": "修复通过符号链接路径写入时，按树内写法判断的问题：提示现在会说明写入的实际落点，`acceptEdits`、允许规则和自动模式不再批准落在外部的写入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode retrying an action over and over when a safety check declined to review it; the action is now denied once, noting that retrying won't help",
+   "zh": "修复了当安全检查拒绝审查某个操作时，自动模式会一遍又一遍地重试某个操作的问题；该操作现在被拒绝一次，并指出重试无济于事"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode denying actions over and over without pause when a safety check gave no answer; retries now back off, and the turn stops with a message after ten in a row",
+   "zh": "修复了当安全检查没有给出答案时，自动模式会一遍又一遍地拒绝操作而不会暂停的问题；重试现在停止，连续十次后轮流停止并显示一条消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Write calls failing validation when a model sends `path`, `file_text`, `file_content` or a stray `description` instead of `file_path` and `content`",
+   "zh": "修复了当模型发送“路径”、“文件文本”、“文件内容”或杂散“描述”而不是“文件路径”和“内容”时，写入调用验证失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+C or Ctrl+D pressed twice in most dialogs (`/model`, `/effort`, `/config`, `/status`, `/usage`, `/plugin`, `/sandbox`, `/permissions`, `/artifacts`, `/mobile`, `/login`, `/upgrade`, `/usage-credits`, `/install-github-app`, `/setup-bedrock`, `/setup-vertex`) quitting Claude Code instead of closing the dialog",
+   "zh": "修复了在大多数对话框中按两次 Ctrl+C 或 Ctrl+D 的问题（`/model`、`/effort`、`/config`、`/status`、`/usage`、`/plugin`、`/sandbox`、`/permissions`、`/artifacts`、`/mobile`、`/login`、`/upgrade`、`/usage-credits`、`/install-github-app`、`/setup-bedrock`、 `/setup-vertex`) 退出 Claude Code 而不是关闭对话框"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a click that only brought the terminal window to the front also triggering the item under the pointer — in search pickers, tab bars, agent/workflow rows, slash-command links and suggestion dropdowns",
+   "zh": "修复了一次单击，该单击仅将终端窗口带到前面，同时还会触发指针下的项目 - 在搜索选择器、选项卡栏、代理/工作流程行、斜杠命令链接和建议下拉菜单中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a stray `n` closing dialogs and a stray `y` confirming them; Enter and Esc accept and cancel (bind `y`/`n` to `confirm:yes`/`confirm:no` in `keybindings.json` to restore)",
+   "zh": "修复了一个杂散的“n”关闭对话框和一个杂散的“y”确认对话框； Enter 并 Esc 接受并取消（将 `y`/`n` 绑定到 `keybindings.json` 中的 `confirm:yes`/`confirm:no` 即可恢复）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed text fields in dialogs losing a typed letter, digit or Space to a keybinding on that key",
+   "zh": "修复对话框中的文本输入框，输入的字母、数字或空格被某个快捷键吞掉的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the prompt line staying scrambled on Windows terminals after invisible characters were removed on Enter; the screen is now repainted so you review the exact text that will be sent",
+   "zh": "修复 Windows 终端中，回车时移除不可见字符后提示行保持错乱的问题；现在会重绘屏幕，让你审阅将要发送的确切文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the invisible-character cleanup removing the zero-width non-joiner that Persian and Arabic text uses to attach a suffix to a Latin word or number, such as the plural of \"PDF\"",
+   "zh": "修复不可见字符清理会删除波斯语和阿拉伯语中用于给拉丁文字或数字附加后缀（如 \"PDF\" 的复数）的零宽不连字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice dictation not stopping on Ctrl+C (the prompt cleared but the microphone kept recording), Esc not cancelling while a transcript was processing, and held Space starting dictation from the transcript view and vim NORMAL mode",
+   "zh": "修复语音听写在按 Ctrl+C 后不停止（提示框已清空但麦克风仍在录音）、转录处理中按 Esc 无法取消，以及在转录视图和 vim NORMAL 模式下长按空格会启动听写的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a model switch made from a host app (Claude Desktop, VS Code, SDK) while Claude is working causing a prompt-cache miss on the next prompt",
+   "zh": "修复了 Claude 工作时从主机应用程序（Claude Desktop、VS Code、SDK）进行的模型切换，导致下一个提示出现提示缓存缺失"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resumed fork subagents rebuilding their tool list instead of re-sending the one they first used, which broke prompt caching for that agent",
+   "zh": "修复了恢复的分叉子代理重建其工具列表，而不是重新发送他们第一次使用的工具列表，这会破坏该代理的提示缓存"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagent hand-back messages showing an internal provenance preamble when expanded outside verbose mode",
+   "zh": "修复了在详细模式之外扩展时显示内部来源前导码的子代理返还消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `installed_plugins.json` keeping the install-time commit after updating a plugin from a GitHub repository or git URL that tracks a branch or tag",
+   "zh": "修复了`installed_plugins.json`在从跟踪分支或标签的 GitHub 存储库或 git URL 更新插件后保持安装时提交的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills in `~/.claude/skills/` being moved to `~/.claude/skills/.trash/` when a `manifest.json` in that folder listed their names",
+   "zh": "修复了当该文件夹中的`manifest.json`列出其名称时，`~/.claude/skills/`中的技能被移动到`~/.claude/skills/.trash/`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the session feedback survey showing no hover highlight on light and ANSI themes",
+   "zh": "修复浅色和 ANSI 主题下，会话反馈调查没有悬停高亮的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/workflows` briefly showing a one-row list before opening the only run",
+   "zh": "修复了`/workflows`在打开唯一运行之前短暂显示单行列表的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the mouse wheel not scrolling selection lists with hidden options (such as `/model` and `/permissions`) in fullscreen mode",
+   "zh": "修复全屏模式下鼠标滚轮无法滚动带隐藏选项的选择列表（如 `/model` 和 `/permissions`）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a skill you switched off showing the same red ✘ as a plugin that failed to load in `/plugin` and `/skills`; off now shows a dim ◯",
+   "zh": "修复了您关闭的技能显示与无法在`/plugin`和`/skills`中加载的插件相同的红色✘的问题；关闭现在显示暗淡 ◯"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-select option descriptions being indented under the option number instead of under the label",
+   "zh": "修复了多选选项描述在选项编号下方而不是在标签下方缩进的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the search box in `/plugin`, `/skills` and `/mcp` losing its right border in fullscreen mode",
+   "zh": "修复全屏模式下，`/plugin`、`/skills` 和 `/mcp` 中的搜索框丢失右边框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/mcp` showing △ in the server list but ⚠ in the detail view for the same server; the list, detail views and `/plugin` now all show ⚠",
+   "zh": "修复了`/mcp`在服务器列表中显示 △ 但在同一服务器的详细视图中显示 ⚠ 的问题；列表、详细视图和 `/plugin` 现在全部显示 ⚠"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Home and End doing nothing in the `/config` settings list and in selection lists such as `/model`, `/memory` and permission prompts",
+   "zh": "修复了 Home 和 End 在 `/config` 设置列表和选择列表（例如 `/model`、`/memory` 和权限提示）中不执行任何操作的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PgUp/PgDn in the `/skills` menu wrapping past the first or last skill instead of stopping there",
+   "zh": "修复了`/skills`菜单中的 PgUp/PgDn 绕过第一个或最后一个技能而不是停在那里的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Tab silently changing the selected setting's value in the `/config` list; it now does nothing there",
+   "zh": "修复了 Tab 默默地更改`/config`列表中所选设置的值的问题；现在它什么也不做"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed conversations failing on every turn with a \"role 'system' must precede an 'assistant' message\" API error",
+   "zh": "修复了对话每次失败并出现“角色‘系统’必须在‘助理’消息之前”API 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed conversations with the advisor on failing every turn with API Error 400 \"Input tag 'advisor_20260301'\" behind a proxy or gateway that doesn't support it; the request now retries without it",
+   "zh": "修复了在不支持的代理或网关后面出现 API 错误 400“输入标签‘advisor_20260301’”时与顾问的对话每轮失败的问题；现在，请求将在没有它的情况下重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a session failing on every turn and `/compact` when its saved history held a malformed notice about MCP tools that could not be loaded",
+   "zh": "修复了当保存的历史记录包含有关无法加载 MCP 工具的格式错误的通知时，会话每次都会失败以及`/compact`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when resuming a session whose saved transcript holds a malformed system message or a memory-saved notice without its file list",
+   "zh": "修复了恢复保存的记录包含格式错误的系统消息或没有文件列表的内存保存通知的会话时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed one cause of long-running fullscreen sessions exiting with \"Claude Code exited after an unrecoverable interface error\": a damaged cached message list is now rebuilt",
+   "zh": "修复了长时间运行的全屏会话退出时出现“无法恢复的界面错误后克劳德代码退出”的一个原因：现在重建了损坏的缓存消息列表"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code hanging when a settings file, or a file it re-reads after an edit, is replaced by a named pipe mid-read",
+   "zh": "修复了当设置文件或编辑后重新读取的文件被读取中的命名管道替换时克劳德代码挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/config` crashing and some on/off preferences being misread when a preference that has moved to `settings.json` still holds a value like `null` or `\"false\"` in `~/.claude.json`",
+   "zh": "修复了当已移至`settings.json`的首选项在`~/.claude.json`中仍保留`null`或“false”等值时，`/config`崩溃以及一些开/关首选项被误读的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a session with unfinished background agents, shells or workflows starting a model turn on its own before you typed anything",
+   "zh": "修复了在您输入任何内容之前恢复未完成的后台代理、shell 或工作流程的会话，启动模型自行打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed messages sent to a background subagent being silently lost in headless and SDK sessions when the subagent was finishing its turn",
+   "zh": "修复了当子代理完成轮流时发送到后台子代理的消息在无头和 SDK 会话中默默丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a finished subagent's report being lost when the conversation that launched it was compacted before the report was read",
+   "zh": "修复了在读取报告之前压缩启动子代理的对话时已完成的子代理报告丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background subagents being unable to use the LSP tool when an LSP plugin is active",
+   "zh": "修复了当 LSP 插件处于活动状态时后台子代理无法使用 LSP 工具的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background shell tasks reporting benign non-zero exits (e.g. grep with no matches) as failures",
+   "zh": "修复了后台 shell 任务将良性非零退出（例如 grep 没有匹配项）报告为失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions (`claude --bg`) being unable to run git, hooks, plugins and other helper programs when an environment variable handed to the session contained a NUL character",
+   "zh": "修复了当传递给会话的环境变量包含 NUL 字符时后台会话 (`claude --bg`) 无法运行 git、hooks、插件和其他帮助程序的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+C needing three or four presses to exit while background subagents are running; two presses now exit",
+   "zh": "修复了后台子代理运行时 Ctrl+C 需要按三到四次才能退出的问题；现在按两下退出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed IDE selection being dropped when a sent prompt comes back into the input, such as pressing Esc to edit it, rewinding to it, or pressing Esc while startup hooks run",
+   "zh": "修复了当发送的提示返回输入时，IDE 选择被删除的问题，例如按 Esc 对其进行编辑、倒回至它，或在启动挂钩运行时按 Esc"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a `!` shell-mode prompt stashed with Ctrl+S coming back as a plain prompt when restored, and `/` listing file paths right after stashing one",
+   "zh": "修复了`!` shell 模式提示符，在恢复时使用 Ctrl+S 作为普通提示符返回，并且`/`在隐藏后立即列出文件路径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` showing a blank, unresponsive screen instead of an error when the temp directory is full, not writable or owned by another user",
+   "zh": "修复了当临时目录已满、不可写或由其他用户拥有时“claude Agents”显示空白、无响应的屏幕而不是错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an MCP server re-added under the same name after `claude mcp remove` still showing as needing authentication instead of reconnecting",
+   "zh": "修复了`claude mcp remove`后以相同名称重新添加的 MCP 服务器仍显示为需要身份验证而不是重新连接"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background plugin marketplace auto-update ignoring git credential helpers, so private-repo marketplaces were re-cloned every run or never updated",
+   "zh": "修复了后台插件市场自动更新忽略 git 凭证助手的问题，因此私人回购市场每次运行都会重新克隆或从未更新"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin update` clearing a plugin's recorded commit and moving it to version \"unknown\" when the official marketplace's snapshot file is a link or too large",
+   "zh": "修复了当官方市场的快照文件是链接或太大时“claude插件更新”清除插件记录的提交并将其移动到“未知”版本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Artifact tool silently disappearing when your organization's policy can't be loaded (for example behind a web proxy); Claude now says what's blocking it",
+   "zh": "修复了当您的组织的策略无法加载时（例如在 Web 代理后面），Artifact 工具会默默消失的问题；克劳德现在说出了阻碍它的因素"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed artifact republishes silently resetting stored database access rules or dropping the viewer profile scope when that capability was re-sent without them; they are now refused",
+   "zh": "修复了工件重新发布时静默重置存储的数据库访问规则或在没有这些功能的情况下重新发送该功能时删除查看器配置文件范围的问题；他们现在被拒绝了"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview` reporting a stopped cloud review as completed or as an error to retry, and waiting out the full timeout when its session was deleted or the signed-in account changed",
+   "zh": "修复了`/ultrareview`将已停止的云审核报告为已完成或重试错误，并在其会话被删除或登录帐户更改时等待完全超时的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Claude app showing a missing or stale context usage figure for Remote Control and cloud sessions right after /compact or /clear",
+   "zh": "修复了克劳德应用程序在 /compact 或 /clear 之后显示远程控制和云会话的上下文使用情况缺失或过时的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Claude app's diff view for Remote Control and cloud sessions dropping a branch's committed files whenever there are also uncommitted changes",
+   "zh": "修复了克劳德应用程序的远程控制和云会话的差异视图，只要还有未提交的更改，就会删除分支的已提交文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud and self-hosted runner sessions failing with \"Authentication failed\" after waiting out a long overload during which the session's access token was rotated",
+   "zh": "修复了云和自托管运行器会话在等待长时间过载（在此期间轮换会话的访问令牌）后失败并显示“身份验证失败”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory write conflicts in Cowork sessions showing Claude only the start and end of a memory file over about 10,800 characters, so the retried write dropped the middle",
+   "zh": "修复了 Cowork 会话中的内存写入冲突，显示 Claude 仅包含约 10,800 个字符的内存文件的开头和结尾，因此重试的写入会落在中间"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed lifecycle-hook commits failing to sign under `--configure-git`",
+   "zh": "修复了 `--configure-git` 下生命周期钩子的提交签名失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed background cleanup deleting a directory symlink or junction used to relocate `~/.claude/session-env`, `image-cache` or another cleaned-up folder",
+   "zh": "Windows：修复了后台清理会删除用于迁移 `~/.claude/session-env`、`image-cache` 或其他被清理文件夹的目录符号链接或联接点的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed a turn that ended right at a `--retire-at` release losing its finished signal; the runner now briefly waits for the turn to be reported before stopping the session",
+   "zh": "修复了在 `--retire-at` 释放时刚好结束的一轮对话丢失完成信号的问题；运行器现在会先短暂等待该轮对话上报，再停止会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Reverted `ctrl+l` / `cmd+k` in fullscreen mode clearing the transcript view (added in 2.1.260); they redraw the screen again",
+   "zh": "撤销了 2.1.260 中加入的变更：全屏模式下 `ctrl+l` / `cmd+k` 不再清空对话视图，它们恢复为重新绘制屏幕"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the effort chip showing a stale saved effort level instead of the level the session runs at",
+   "zh": "[VSCode] 修复 effort 标签显示过时的已保存 effort 级别、而不是会话实际运行级别的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Claude Code never starting when the Python extension hangs while activating; it now starts after 60 seconds without the Python environment",
+   "zh": "[VSCode] 修复 Python 扩展在激活时卡死导致 Claude Code 永远无法启动的问题；现在若 60 秒内仍未获取到 Python 环境，会继续启动"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the plan approval card never offering auto mode: when auto mode is available, its first option is now \"Yes, and use auto mode\", as in the terminal",
+   "zh": "[VSCode] 修复计划审批卡片从不提供 auto 模式的问题：在可用时，第一个选项现在为 \"Yes, and use auto mode\"，与终端一致"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed arrow-key navigation in the session list stopping after archiving or unarchiving a session from the keyboard",
+   "zh": "[VSCode] 修复用键盘归档或取消归档会话后，会话列表中的方向键导航失效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed paste marker lines showing in your own messages after reopening a session",
+   "zh": "[VSCode] 修复重新打开会话后，粘贴标记行出现在你自己的消息中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed `gh` and GitHub API calls inside a cloud session on a GitHub Enterprise Server repository failing after about eight hours; the token now renews automatically",
+   "zh": "[Claude Code on the web] 修复云端会话中对 GitHub Enterprise Server 仓库执行 `gh` 和 GitHub API 调用时，约八小时后失败的问题；令牌现在会自动续期"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed a routine that resumes an existing session running with its old prompt and name when it was edited moments before the scheduled run started",
+   "zh": "[Claude Code on the web] 修复例程恢复已有会话时，若在定时运行开始前刚编辑过，仍使用旧提示和旧名称运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed file links in a cloud session transcript that point outside the session's working directory opening a file card that never loads; they're now disabled and say why",
+   "zh": "[Claude Code on the web] 云端会话记录中指向会话工作目录之外的文件链接，原来打开的文件卡片永远加载不出来；现在这些链接会被禁用，并说明原因"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed auto mode refusing to retry a tool call because an approval prompt that expired unanswered, or was superseded by a newer message, had been recorded as your rejection",
+   "zh": "[Claude Code on the web] 修复自动模式拒绝重试工具调用的问题：过期未回应的批准提示，或被新消息取代的批准提示，曾被记录为你的拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed scheduled routines silently failing to run in Slack workspaces that were connected to Claude before the workspace joined its Enterprise Grid",
+   "zh": "[Claude Tag] 修复在加入 Enterprise Grid 之前就已连接 Claude 的 Slack 工作区中，定时例程悄悄无法运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude asking you to re-upload a Slack file when a brief file-scanning outage, not the file, was the problem; it now retries the scan and is told when the scanner is down",
+   "zh": "[Claude Tag] 修复 Slack 文件扫描服务短暂故障（而非文件本身有问题）时，Claude 要求你重新上传文件的问题；现在它会重试扫描，并在扫描器故障时告知你"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed a bullet in Claude's Slack reply whose text starts with +, - or * rendering as an empty bullet with a stray nested item; it now shows as one bullet with the character kept",
+   "zh": "[Claude Tag] 修复 Claude 的 Slack 回复中，以 +、- 或 * 开头的项目符号显示为空条目并带有多余嵌套项的问题；现在会显示为一个项目符号并保留该字符"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed the Slack notice for a failed cloud environment setup script sometimes being a generic \"mention me to retry\"; it now names the setup script and says to fix it first",
+   "zh": "[Claude Tag] 修复云端环境设置脚本失败时，Slack 通知有时只是笼统的「mention me to retry」的问题；现在会指明设置脚本，并提示先修复"
+  },
+  {
+   "type": "removed",
+   "en": "[Claude Code on the web] Removed the empty repository picker shown when starting a session on a self-hosted environment in an organization where an admin has turned GitHub off",
+   "zh": "[Claude Code on the web] 移除了在管理员关闭 GitHub 的组织中，使用自托管环境启动会话时显示的空仓库选择器"
+  }
+ ]
+}

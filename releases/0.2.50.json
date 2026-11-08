@@ -1,0 +1,16 @@
+{
+ "version": "0.2.50",
+ "date": "2025-03-19",
+ "published": "2025-03-19T21:06:46.787Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.50",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "New MCP \"project\" scope now allows you to add MCP servers to .mcp.json files and commit them to your repository",
+   "zh": "新增 MCP「project」范围，可将 MCP 服务器添加到 .mcp.json 文件并提交到代码仓库"
+  }
+ ]
+}

@@ -1,0 +1,268 @@
+{
+ "version": "2.1.119",
+ "date": "2026-04-23",
+ "published": "2026-04-23T21:36:46.450Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.119",
+ "counts": {
+  "new": 7,
+  "improved": 10,
+  "fixed": 34
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `prUrlTemplate` setting to point the footer PR badge at a custom code-review URL instead of github.com",
+   "zh": "添加了`prUrlTemplate`设置，将页脚 PR 徽章指向自定义代码审查 URL，而不是 github.com"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_HIDE_CWD` environment variable to hide the working directory in the startup logo",
+   "zh": "添加了`CLAUDE_CODE_HIDE_CWD`环境变量以隐藏启动徽标中的工作目录"
+  },
+  {
+   "type": "new",
+   "en": "`--from-pr` now accepts GitLab merge-request, Bitbucket pull-request, and GitHub Enterprise PR URLs",
+   "zh": "`--from-pr` 现在支持 GitLab merge request、Bitbucket pull request 和 GitHub Enterprise 的 PR 链接"
+  },
+  {
+   "type": "new",
+   "en": "PowerShell tool commands can now be auto-approved in permission mode, matching Bash behavior",
+   "zh": "PowerShell 工具的命令现在可以像 Bash 一样，在权限模式下被自动批准"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: `PostToolUse` and `PostToolUseFailure` hook inputs now include `duration_ms` (tool execution time, excluding permission prompts and PreToolUse hooks)",
+   "zh": "`PostToolUse` 和 `PostToolUseFailure` 的 hook 输入现在包含 `duration_ms`（工具执行耗时，不含权限弹窗和 PreToolUse 钩子的时间）"
+  },
+  {
+   "type": "new",
+   "en": "OpenTelemetry: `tool_result` and `tool_decision` events now include `tool_use_id`; `tool_result` also includes `tool_input_size_bytes`",
+   "zh": "OpenTelemetry：`tool_result` 和 `tool_decision` 事件现在包含 `tool_use_id`；`tool_result` 还包含 `tool_input_size_bytes`"
+  },
+  {
+   "type": "new",
+   "en": "Status line: stdin JSON now includes `effort.level` and `thinking.enabled`",
+   "zh": "状态栏的标准输入 JSON 现在包含 `effort.level` 和 `thinking.enabled`"
+  },
+  {
+   "type": "improved",
+   "en": "`/config` settings (theme, editor mode, verbose, etc.) now persist to `~/.claude/settings.json` and participate in project/local/policy override precedence",
+   "zh": "`/config` 的设置（主题、编辑器模式、verbose 等）现在会保存到 `~/.claude/settings.json`，并参与项目/本地/策略的覆盖优先级"
+  },
+  {
+   "type": "improved",
+   "en": "`--print` mode now honors the agent's `tools:` and `disallowedTools:` frontmatter, matching interactive-mode behavior",
+   "zh": "`--print` 模式现在会遵循 agent 前置配置中的 `tools:` 和 `disallowedTools:`，与交互模式保持一致"
+  },
+  {
+   "type": "improved",
+   "en": "`--agent <name>` now honors the agent definition's `permissionMode` for built-in agents",
+   "zh": "`--agent <name>` 现在对内置 agent 也会遵循 agent 定义中的 `permissionMode`"
+  },
+  {
+   "type": "improved",
+   "en": "Subagent and SDK MCP server reconfiguration now connects servers in parallel instead of serially",
+   "zh": "子代理和 SDK MCP 服务器重新配置时改为并行连接，而不是串行连接"
+  },
+  {
+   "type": "improved",
+   "en": "Plugins pinned by another plugin's version constraint now auto-update to the highest satisfying git tag",
+   "zh": "被另一个插件的版本约束固定的插件，现在会自动更新到满足约束的最高 git 标签"
+  },
+  {
+   "type": "improved",
+   "en": "Vim mode: Esc in INSERT no longer pulls a queued message back into the input; press Esc again to interrupt",
+   "zh": "Vim 模式：在 INSERT 模式下按 Esc 不再把排队中的消息拉回输入框；再按一次 Esc 即可打断"
+  },
+  {
+   "type": "improved",
+   "en": "Slash command suggestions now highlight the characters that matched your query",
+   "zh": "斜杠命令建议现在会高亮显示与你输入内容匹配的字符"
+  },
+  {
+   "type": "improved",
+   "en": "Slash command picker now wraps long descriptions onto a second line instead of truncating",
+   "zh": "斜杠命令选择器中的长描述现在会换行到第二行显示，而不是截断"
+  },
+  {
+   "type": "improved",
+   "en": "`owner/repo#N` shorthand links in output now use your git remote's host instead of always pointing at github.com",
+   "zh": "输出中的 `owner/repo#N` 简写链接现在会使用你 git 远端的主机，而不再总是指向 github.com"
+  },
+  {
+   "type": "improved",
+   "en": "Tool search is now disabled by default on Vertex AI to avoid an unsupported beta header error (opt in with `ENABLE_TOOL_SEARCH`)",
+   "zh": "Vertex AI 上默认禁用工具搜索，以避免不支持的 beta 请求头错误（如需开启，请设置 `ENABLE_TOOL_SEARCH`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Security: `blockedMarketplaces` now correctly enforces `hostPattern` and `pathPattern` entries",
+   "zh": "安全：`blockedMarketplaces` 现在正确执行 `hostPattern` 和 `pathPattern` 条目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasting CRLF content (Windows clipboards, Xcode console) inserting an extra blank line between every line",
+   "zh": "修复了粘贴 CRLF 内容（Windows 剪贴板、Xcode 控制台）时在每行之间插入额外的空行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-line paste losing newlines in terminals using kitty keyboard protocol sequences inside bracketed paste",
+   "zh": "修复了使用括号粘贴内的 kitty 键盘协议序列在终端中丢失换行符的多行粘贴问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Glob and Grep tools disappearing on native macOS/Linux builds when the Bash tool is denied via permissions",
+   "zh": "修复了当 Bash 工具被权限拒绝时，Glob 和 Grep 工具在本机 macOS/Linux 构建上消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrolling up in fullscreen mode snapping back to the bottom every time a tool finishes",
+   "zh": "修复了每次工具完成时在全屏模式下向上滚动到底部的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP HTTP connections failing with \"Invalid OAuth error response\" when servers returned non-JSON bodies for OAuth discovery requests",
+   "zh": "修复了当服务器为 OAuth 发现请求返回非 JSON 正文时，MCP HTTP 连接因“无效的 OAuth 错误响应”而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Rewind overlay showing \"(no prompt)\" for messages with image attachments",
+   "zh": "修复了带有图像附件的消息的倒回叠加层显示“（无提示）”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode overriding plan mode with conflicting \"Execute immediately\" instructions",
+   "zh": "修复了自动模式覆盖计划模式与“立即执行”指令冲突的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed async `PostToolUse` hooks that emit no response payload writing empty entries to the session transcript",
+   "zh": "修复了异步`PostToolUse`挂钩，该挂钩不发出响应负载，将空条目写入会话记录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spinner staying on when a subagent task notification is orphaned in the queue",
+   "zh": "修复了当子代理任务通知在队列中孤立时旋转器保持打开状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `@`-file Tab completion replacing the entire prompt when used inside a slash command with an absolute path",
+   "zh": "修复了在带有绝对路径的斜杠命令中使用时`@`文件制表符补全替换整个提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a stray `p` character appearing at the prompt on startup in macOS Terminal.app via Docker or SSH",
+   "zh": "修复了通过 Docker 或 SSH 在 macOS Terminal.app 中启动时提示符处出现的杂散`p`字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `${ENV_VAR}` placeholders in `headers` for HTTP/SSE/WebSocket MCP servers not being substituted before requests",
+   "zh": "修复了 HTTP/SSE/WebSocket MCP 服务器`headers`中的`${ENV_VAR}`占位符在请求之前未被替换的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth client secret stored via `--client-secret` not being sent during token exchange for servers requiring `client_secret_post`",
+   "zh": "修复了通过`--client-secret`存储的 MCP OAuth 客户端密钥在需要`client_secret_post`的服务器的令牌交换期间不会发送的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/skills` Enter key closing the dialog instead of pre-filling `/<skill-name>` in the prompt",
+   "zh": "修复了`/skills`输入键关闭对话框而不是在提示中预先填写`/<skill-name>`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/agents` detail view mislabeling built-in tools unavailable to subagents as \"Unrecognized\"",
+   "zh": "修复了`/agents`详细视图将子代理无法使用的内置工具错误标记为“无法识别”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers from plugins not spawning on Windows when the plugin cache was incomplete",
+   "zh": "修复了当插件缓存不完整时插件中的 MCP 服务器不会在 Windows 上生成的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/export` showing the current default model instead of the model the conversation actually used",
+   "zh": "修复了显示当前默认模型而不是对话实际使用的模型的`/export`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed verbose output setting not persisting after restart",
+   "zh": "修复详细输出设置重启后不保留的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` progress bars overlapping with their \"Resets …\" labels",
+   "zh": "修复了`/usage`进度条与其“重置...”标签重叠的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin MCP servers failing when `${user_config.*}` references an optional field left blank",
+   "zh": "修复了当`${user_config.*}`引用留空的可选字段时插件 MCP 服务器失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed list items containing a sentence-final number wrapping the number onto its own line",
+   "zh": "修复了包含句子最终数字的列表项，该数字将数字包装在自己的行上"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plan` and `/plan open` not acting on the existing plan when entering plan mode",
+   "zh": "修复了进入计划模式时`/plan`和`/plan open`不作用于现有计划的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills invoked before auto-compaction being re-executed against the next user message",
+   "zh": "修复了在针对下一条用户消息重新执行自动压缩之前调用的技能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/reload-plugins` and `/doctor` reporting load errors for disabled plugins",
+   "zh": "修复了`/reload-plugins`和`/doctor`报告禁用插件的加载错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Agent tool with `isolation: \"worktree\"` reusing stale worktrees from prior sessions",
+   "zh": "修复了具有“隔离：“工作树””的代理工具，重用了先前会话中的陈旧工作树"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed disabled MCP servers appearing as \"failed\" in `/status`",
+   "zh": "修复了已禁用的 MCP 服务器在`/status`中显示为“失败”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `TaskList` returning tasks in arbitrary filesystem order instead of sorted by ID",
+   "zh": "修复了`TaskList`以任意文件系统顺序返回任务而不是按 ID 排序的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spurious \"GitHub API rate limit exceeded\" hints when `gh` output contained PR titles mentioning \"rate limit\"",
+   "zh": "修复了当 `gh` 输出包含提及“速率限制”的 PR 标题时虚假的“超出 GitHub API 速率限制”提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK/bridge `read_file` not correctly enforcing size cap on growing files",
+   "zh": "修复了 SDK/bridge`read_file`未正确对不断增长的文件强制执行大小上限的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PR not linked to session when working in a git worktree",
+   "zh": "修复了在 git 工作树中工作时 PR 未链接到会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/doctor` warning about MCP server entries overridden by a higher-precedence scope",
+   "zh": "修复了有关 MCP 服务器条目被更高优先级范围覆盖的`/doctor`警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: removed false-positive \"Windows requires 'cmd /c' wrapper\" MCP config warning",
+   "zh": "Windows：移除了误报的 \"Windows requires 'cmd /c' wrapper\" MCP 配置警告"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed voice dictation's first recording producing nothing on macOS while the microphone permission prompt is showing",
+   "zh": "[VSCode] 修复 macOS 上麦克风权限提示显示期间，语音听写的第一次录音没有任何结果的问题"
+  }
+ ]
+}

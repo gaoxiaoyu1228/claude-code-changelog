@@ -1,0 +1,21 @@
+{
+ "version": "1.0.43",
+ "date": "2025-07-03",
+ "published": "2025-07-03T17:49:05.564Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.43",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where the theme selector was saving excessively",
+   "zh": "修复了主题选择器过度保存的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Hooks: Added EPIPE system error handling",
+   "zh": "Hooks：新增 EPIPE 系统错误处理"
+  }
+ ]
+}

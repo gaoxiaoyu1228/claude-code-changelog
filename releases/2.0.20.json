@@ -1,0 +1,16 @@
+{
+ "version": "2.0.20",
+ "date": "2025-10-16",
+ "published": "2025-10-16T16:01:05.689Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.20",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for Claude Skills",
+   "zh": "添加了对克劳德技能的支持"
+  }
+ ]
+}

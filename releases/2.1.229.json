@@ -1,0 +1,174 @@
+{
+ "version": "2.1.229",
+ "date": "2026-08-12",
+ "published": "2026-08-12T19:28:48.616Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.229",
+ "counts": {
+  "new": 4,
+  "improved": 9,
+  "fixed": 18,
+  "other": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added server-supplied Claude Code hook support for self-hosted runner sessions, matching managed-environment behavior",
+   "zh": "为自托管运行器会话添加了服务器提供的 Claude Code 挂钩支持，以匹配托管环境行为"
+  },
+  {
+   "type": "new",
+   "en": "Added SSE keepalive pings to gateway streaming responses during long thinking pauses, preventing idle-timeout disconnects on Vertex and Bedrock upstreams",
+   "zh": "在长时间思考暂停期间向网关流响应添加了 SSE keepalive ping，防止 Vertex 和 Bedrock 上游的空闲超时断开连接"
+  },
+  {
+   "type": "new",
+   "en": "Added plugin marketplace `command` sources: a local command (e.g. an IDE) prints the plugin directory, which is re-resolved each session and applied without a restart; `mode: \"link\"` uses it in place",
+   "zh": "添加了插件市场“命令”源：本地命令（例如 IDE）打印插件目录，该目录会重新解析每个会话并在无需重新启动的情况下应用； `mode: \"link\"` 就地使用它"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added session groups in the sidebar — right-click to create, rename, or delete; Cmd/Ctrl- or Shift-click to move several sessions at once",
+   "zh": "[VSCode] 侧边栏新增会话分组：右键可创建、重命名或删除；按住 Cmd/Ctrl 或 Shift 点击可同时移动多个会话"
+  },
+  {
+   "type": "improved",
+   "en": "`ListAgents` now marks disconnected Remote Control sessions as `offline` and labels your cloud sessions as `cloud`",
+   "zh": "`ListAgents` 现在会把已断开的 Remote Control 会话标记为 `offline`，并把你的云端会话标记为 `cloud`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved workflow fan-outs to stagger same-prefix sibling agents so subsequent agents read the cached prompt prefix instead of re-paying it (`CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS=0` disables)",
+   "zh": "改进工作流扇出：同前缀的兄弟智能体会错开启动，使后续智能体读取缓存的提示前缀，而不必重复付费（设置 `CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS=0` 可关闭）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved \"prompt is too long\" errors to explain why automatic compaction could not recover instead of only suggesting `/compact`",
+   "zh": "改进“prompt is too long”错误提示，说明自动压缩为什么没能恢复，而不只是建议 `/compact`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved sandbox: IPv6 literals in network domain lists are now bracketed (`[::1]:443`), and ambiguous spellings are enforced fail-closed and flagged by `/doctor`",
+   "zh": "改进沙盒：网络域名列表中的 IPv6 地址现在要加方括号（`[::1]:443`），含糊的写法会按失败即拒绝执行，并由 `/doctor` 标记"
+  },
+  {
+   "type": "improved",
+   "en": "Updated `/login` to repeat the `CLAUDE_CODE_OAUTH_TOKEN` override warning after a successful login",
+   "zh": "成功登录后，`/login` 会再次提示 `CLAUDE_CODE_OAUTH_TOKEN` 覆盖设置的警告"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/commit-push-pr` so git/gh commands with dangerous flags (`--force`, `--amend`, `--no-verify`, etc.) are no longer auto-approved",
+   "zh": "更改了 `/commit-push-pr`，因此带有危险标志（`--force`、`--amend`、`--no-verify` 等）的 git/gh 命令不再自动批准"
+  },
+  {
+   "type": "improved",
+   "en": "Changed self-hosted runner Windows startup to require an explicit `--base-dir`; there is no default checkout directory on Windows",
+   "zh": "更改了自托管运行程序 Windows 启动以需要显式的`--base-dir`； Windows 上没有默认的结账目录"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] \"Report a problem\" and `/bug` now open the built-in feedback dialog instead of a retired survey link",
+   "zh": "[VSCode] 「Report a problem」和 `/bug` 现在会打开内置反馈对话框，不再跳转到已停用的问卷链接"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Made the `/btw` side-question panel resizable by dragging its boundary, in both side-docked and stacked layouts",
+   "zh": "[VSCode] 让 `/btw` 旁问面板可以通过拖动边界调整大小，支持侧边停靠和堆叠两种布局"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed long responses partly disappearing while streaming and being printed twice in the terminal",
+   "zh": "修复了长响应在流式传输并在终端中打印两次时部分消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash to the error screen (including on `--resume` of the affected session) when a tool call had a non-string `glob`, `file_path`, or `command` value",
+   "zh": "修复了当工具调用具有非字符串`glob`、`file_path`或`command`值时错误屏幕崩溃（包括受影响会话的`--resume`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a RangeError crash when a progress bar or markdown table rendered in a very narrow terminal window (could also crash `claude --continue`/`--resume` at startup)",
+   "zh": "修复了在非常狭窄的终端窗口中呈现进度条或降价表时出现的 RangeError 崩溃问题（启动时也可能导致 `claude --continue`/`--resume` 崩溃）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash on Windows when a tool call or message referenced a file by an extended-length (`\\\\?\\`) or UNC path",
+   "zh": "修复了 Windows 上工具调用或消息通过扩展长度 (`\\\\?\\`) 或 UNC 路径引用文件时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode failing on every tool call for users who disable the attribution header via `CLAUDE_CODE_ATTRIBUTION_HEADER` (direct Anthropic API connections)",
+   "zh": "修复了通过`CLAUDE_CODE_ATTRIBUTION_HEADER`（直接 Anthropic API 连接）禁用归因标头的用户每次工具调用时自动模式失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` rejecting Sonnet/Opus 1M for claude.ai subscribers using a custom `ANTHROPIC_BASE_URL` gateway",
+   "zh": "修复了使用自定义`ANTHROPIC_BASE_URL`网关的`/model`拒绝 claude.ai 订阅者的 Sonnet/Opus 1M 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth with strict authorization servers by using `127.0.0.1` instead of `localhost` in the redirect URI",
+   "zh": "通过在重定向 URI 中使用`127.0.0.1`而不是`localhost`，修复了具有严格授权服务器的 MCP OAuth"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control clients showing a stuck working spinner after a slash command typed in the laptop terminal",
+   "zh": "修复了在笔记本电脑终端中输入斜杠命令后远程控制客户端显示卡住的工作微调器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Claude Code Review workflow generated by `/install-github-app` completing without posting its review on the pull request",
+   "zh": "修复了由 `/install-github-app` 生成的 Claude Code Review 工作流程完成后未在拉取请求上发布其审核"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-second UI stalls after editing a file with thousands of IDE diagnostics while the IDE extension is connected",
+   "zh": "修复了在连接 IDE 扩展时编辑包含数千个 IDE 诊断的文件后出现多秒 UI 停顿的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed one-shot `claude plugin` commands leaving a stray liveness file that could prevent cleanup of outdated plugin versions",
+   "zh": "修复了一次性`claude plugin`命令留下的杂散活动文件，该文件可能会阻止清理过时的插件版本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed dynamic workflows inside CPU-limited containers using the host machine's core count instead of the container's CPU limit",
+   "zh": "使用主机的核心计数而不是容器的 CPU 限制修复了 CPU 限制的容器内的动态工作流程"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a file-watcher handle leak after atomic file replacements, and an uncaught error on Windows when the scheduled-tasks watcher failed on a network or virtual filesystem",
+   "zh": "修复了原子文件替换后的文件观察器句柄泄漏，以及计划任务观察器在网络或虚拟文件系统上失败时在 Windows 上出现的未捕获错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK and `--input-format stream-json` sessions getting a 400 API error when a whitespace-only message was submitted",
+   "zh": "修复了 SDK 和`--input-format stream-json`会话在提交纯空白消息时出现 400 API 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed conversations whose messages alone exceed the API's 32 MB request limit retrying compaction when no images or documents can be stripped; they now fail once with a clear message",
+   "zh": "修复了仅消息超过 API 的 32 MB 请求限制的对话，当没有图像或文档可以被剥离时重试压缩；他们现在失败一次并发出明确的信息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OpenTelemetry export from Claude Desktop sessions being rejected by the Desktop-managed gateway when that gateway is also the telemetry endpoint",
+   "zh": "修复了当桌面管理网关同时也是遥测端点时，从 Claude Desktop 会话导出的 OpenTelemetry 被桌面管理网关拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed self-hosted runner and other remote sessions exiting at startup when `managed-mcp.json` is deployed and the server delivers MCP servers; those servers are now skipped with a warning",
+   "zh": "修复了部署“management-mcp.json”且服务器提供 MCP 服务器时启动时退出的自托管运行器和其他远程会话；现在会跳过这些服务器并发出警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed self-hosted runner repository preparation hanging on a Git Credential Manager prompt; git now fails fast when credentials are missing",
+   "zh": "修复了 Git 凭证管理器提示中挂起的自托管运行程序存储库准备问题；现在，当凭据丢失时，git 会快速失败"
+  },
+  {
+   "type": "other",
+   "en": "Documented `claude remote-control --continue` for resuming the most recent Remote Control session",
+   "zh": "记录了`claude remote-control --continue`，用于恢复最近的远程控制会话"
+  }
+ ]
+}

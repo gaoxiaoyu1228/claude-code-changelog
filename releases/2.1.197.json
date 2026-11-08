@@ -1,0 +1,16 @@
+{
+ "version": "2.1.197",
+ "date": "2026-06-30",
+ "published": "2026-06-30T13:31:18.806Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.197",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Introducing Claude Sonnet 5: now the default model in Claude Code, with a native 1M-token context window and promotional pricing of $2/$10 per Mtok through August 31. Update to version 2.1.197 for access. https://www.anthropic.com/news/claude-sonnet-5",
+   "zh": "推出 Claude Sonnet 5：现已成为 Claude Code 的默认模型，原生支持 100 万 token 的上下文窗口，促销价为每百万 token 2 美元（输入）/ 10 美元（输出），截至 8 月 31 日。需更新到 2.1.197 版本才能使用。https://www.anthropic.com/news/claude-sonnet-5"
+  }
+ ]
+}

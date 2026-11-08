@@ -1,0 +1,154 @@
+{
+ "version": "2.1.71",
+ "date": "2026-03-06",
+ "published": "2026-03-06T22:47:03.532Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.71",
+ "counts": {
+  "new": 4,
+  "improved": 5,
+  "fixed": 18,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `/loop` command to run a prompt or slash command on a recurring interval (e.g. `/loop 5m check the deploy`)",
+   "zh": "添加了`/loop`命令以定期运行提示或斜杠命令（例如“/loop 5m 检查部署”）"
+  },
+  {
+   "type": "new",
+   "en": "Added cron scheduling tools for recurring prompts within a session",
+   "zh": "添加了 cron 调度工具，用于在会话中重复提示"
+  },
+  {
+   "type": "new",
+   "en": "Added `voice:pushToTalk` keybinding to make the voice activation key rebindable in `keybindings.json` (default: space) — modifier+letter combos like `meta+k` have zero typing interference",
+   "zh": "添加了`voice:pushToTalk`键绑定，使语音激活键可在`keybindings.json`中重新绑定（默认：空格）——像`meta+k`这样的修饰符+字母组合具有零打字干扰"
+  },
+  {
+   "type": "new",
+   "en": "Added `fmt`, `comm`, `cmp`, `numfmt`, `expr`, `test`, `printf`, `getconf`, `seq`, `tsort`, and `pr` to the bash auto-approval allowlist",
+   "zh": "将`fmt`、`comm`、`cmp`、`numfmt`、`expr`、`test`、`printf`、`getconf`、`seq`、`tsort`和`pr`添加到 bash 自动批准白名单中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup time by deferring native image processor loading to first use",
+   "zh": "改进启动时间：原生图片处理器改为第一次使用时才加载"
+  },
+  {
+   "type": "improved",
+   "en": "Improved bridge session reconnection to complete within seconds after laptop wake from sleep, instead of waiting up to 10 minutes",
+   "zh": "改进笔记本从睡眠唤醒后 bridge 会话的重连：几秒内即可完成，不再等待长达 10 分钟"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/plugin uninstall` to disable project-scoped plugins in `.claude/settings.local.json` instead of modifying `.claude/settings.json`, so changes don't affect teammates",
+   "zh": "改进 `/plugin uninstall`：卸载项目级插件时，改为在 `.claude/settings.local.json` 中禁用，不再修改 `.claude/settings.json`，避免影响团队成员"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plugin-provided MCP server deduplication — servers that duplicate a manually-configured server (same command/URL) are now skipped, preventing duplicate connections and tool sets. Suppressions are shown in the `/plugin` menu.",
+   "zh": "改进插件提供的 MCP 服务器去重：与手动配置的服务器重复（相同命令或 URL）的会被跳过，避免重复连接和重复工具集。被跳过的项会显示在 `/plugin` 菜单中"
+  },
+  {
+   "type": "improved",
+   "en": "Updated `/debug` to toggle debug logging on mid-session, since debug logs are no longer written by default",
+   "zh": "由于调试日志默认不再写入，`/debug` 现在可在会话中途开启或关闭调试日志"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stdin freeze in long-running sessions where keystrokes stop being processed but the process stays alive",
+   "zh": "修复了长时间运行会话中的标准输入冻结问题，其中击键停止处理，但进程保持活动状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a 5–8 second startup freeze for users with voice mode enabled, caused by CoreAudio initialization blocking the main thread after system wake",
+   "zh": "修复了启用语音模式的用户因 CoreAudio 初始化在系统唤醒后阻塞主线程而导致 5-8 秒启动冻结的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed startup UI freeze when many claude.ai proxy connectors refresh an expired OAuth token simultaneously",
+   "zh": "修复了当许多 claude.ai 代理连接器同时刷新过期的 OAuth 令牌时启动 UI 冻结的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed forked conversations (`/fork`) sharing the same plan file, which caused plan edits in one fork to overwrite the other",
+   "zh": "修复了共享相同计划文件的分叉对话 (`/fork`)，这会导致一个分叉中的计划编辑覆盖另一个分叉"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Read tool putting oversized images into context when image processing failed, breaking subsequent turns in long image-heavy sessions",
+   "zh": "修复图片处理失败时，Read 工具仍把超大图片放入上下文，导致图片较多的长会话后续回合全部出错的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false-positive permission prompts for compound bash commands containing heredoc commit messages",
+   "zh": "修复了包含定界符提交消息的复合 bash 命令的误报权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin installations being lost when running multiple Claude Code instances",
+   "zh": "修复了运行多个 Claude Code 实例时插件安装丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed claude.ai connectors failing to reconnect after OAuth token refresh",
+   "zh": "修复了 claude.ai 连接器在 OAuth 令牌刷新后无法重新连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed claude.ai MCP connector startup notifications appearing for every org-configured connector instead of only previously connected ones",
+   "zh": "修复了为每个组织配置的连接器显示的 claude.ai MCP 连接器启动通知，而不是仅先前连接的连接器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent completion notifications missing the output file path, which made it difficult for parent agents to recover agent results after context compaction",
+   "zh": "修复了后台代理完成通知缺少输出文件路径，这使得父代理在上下文压缩后很难恢复代理结果"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate output in Bash tool error messages when commands exit with non-zero status",
+   "zh": "修复了命令以非零状态退出时 Bash 工具错误消息中的重复输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Chrome extension auto-detection getting permanently stuck on \"not installed\" after running on a machine without local Chrome",
+   "zh": "修复了在没有本地 Chrome 的计算机上运行后 Chrome 扩展自动检测永久卡在“未安装”状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin marketplace update` failing with merge conflicts when the marketplace is pinned to a branch/tag ref",
+   "zh": "修复了当市场固定到分支/标签引用时“/插件市场更新”因合并冲突而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin marketplace add owner/repo@ref` incorrectly parsing `@` — previously only `#` worked as a ref separator, causing undiagnosable errors with `strictKnownMarketplaces`",
+   "zh": "修复了“/pluginmarketplaceaddowner/repo@ref”错误地解析`@`的问题——之前只有`#`作为引用分隔符，导致`strictKnownMarketplaces`出现不可诊断的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate entries in `/permissions` Workspace tab when the same directory is added with and without a trailing slash",
+   "zh": "修复了添加带有或不带有尾部斜杠的同一目录时`/permissions`工作空间选项卡中的重复条目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--print` hanging forever when team agents are configured — the exit loop no longer waits on long-lived `in_process_teammate` tasks",
+   "zh": "修复了配置团队代理时`--print`永远挂起的问题 - 退出循环不再等待长期存在的`in_process_teammate`任务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"❯ Tool loaded.\" appearing in the REPL after every `ToolSearch` call",
+   "zh": "修复了“❯工具已加载”的问题。每次`ToolSearch`调用后出现在 REPL 中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompting for `cd <cwd> && git ...` on Windows when the model uses a mingw-style path",
+   "zh": "修复了模型使用 mingw 样式路径时在 Windows 上输入`cd <cwd> && git ...`的提示"
+  },
+  {
+   "type": "removed",
+   "en": "Removed startup notification noise for unauthenticated org-registered claude.ai connectors",
+   "zh": "未登录的组织注册 claude.ai 连接器，不再显示启动通知干扰"
+  }
+ ]
+}

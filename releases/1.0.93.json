@@ -1,0 +1,21 @@
+{
+ "version": "1.0.93",
+ "date": "2025-08-26",
+ "published": "2025-08-26T22:22:24.524Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.93",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Windows: Add alt + v shortcut for pasting images from clipboard",
+   "zh": "Windows：新增 alt + v 快捷键，用于从剪贴板粘贴图片"
+  },
+  {
+   "type": "new",
+   "en": "Support NO_PROXY environment variable to bypass proxy for specified hostnames and IPs",
+   "zh": "支持 `NO_PROXY` 环境变量，可让指定的主机名和 IP 绕过代理"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "2.1.22",
+ "date": "2026-01-28",
+ "published": "2026-01-28T06:34:26.808Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.22",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed structured outputs for non-interactive (-p) mode",
+   "zh": "非交互式 (-p) 模式的固定结构化输出"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.2.100",
+ "date": "2025-05-02",
+ "published": "2025-05-02T17:15:38.454Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.100",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Made db storage optional; missing db support disables --continue and --resume",
+   "zh": "数据库存储改为可选；缺少数据库支持时，`--continue` 和 `--resume` 会被禁用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash caused by a stack overflow error",
+   "zh": "修复了由于堆栈溢出错误导致的崩溃"
+  }
+ ]
+}

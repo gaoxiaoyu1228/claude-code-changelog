@@ -5,16 +5,18 @@
 #    - Secret   WEBHOOK_URL     your incoming-webhook URL (it never leaves your repo)
 #    - Variable FORMAT          slack | discord | feishu | wecom | dingtalk | generic (default: generic = raw JSON)
 #    - Variable CHANGELOG_LANG  en | zh (default: en)
+#    - Secret   WEBHOOK_SECRET  only for a Feishu bot with "signature" security turned on
 # 3. Actions tab → "Claude Code Changelog Calendar → webhook" → Run workflow, to test once.
 #
 # The first run sends only the newest version; after that, every version you haven't received yet.
-# Feishu / DingTalk bots with "signature" security turned on will reject this; use keyword or IP allowlist instead.
+# Feishu gets a card (version, time, counts, entries grouped by type); other chats get plain text with up to 15 entries.
+# DingTalk bots with "signature" security turned on will reject this; use keyword or IP allowlist instead.
 # GitHub pauses scheduled workflows in repos with no activity for 60 days; re-enable it in the Actions tab.
 
 name: Claude Code Changelog Calendar → webhook
 on:
   schedule:
-    - cron: "17 3 * * *"   # daily 03:17 UTC, after the site syncs (off the hour: on-the-hour runs are often delayed)
+    - cron: "47 7 * * *"   # daily 07:47 UTC, 30 min after the site syncs at 07:17 UTC (off the hour: on-the-hour runs are often delayed)
   workflow_dispatch:
 
 jobs:
@@ -29,30 +31,55 @@ jobs:
       - name: Send new releases
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          WEBHOOK_SECRET: ${{ secrets.WEBHOOK_SECRET }}
           FORMAT: ${{ vars.FORMAT || 'generic' }}
           CHANGELOG_LANG: ${{ vars.CHANGELOG_LANG || 'en' }}
         run: |
           python3 - <<'EOF'
-          import json, os, pathlib, urllib.request
+          import base64, hashlib, hmac, json, os, pathlib, time, urllib.request
           d = json.load(urllib.request.urlopen("https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.json", timeout=30))
           last = pathlib.Path(".last"); seen = last.read_text().strip() if last.exists() else ""
           rel = d["releases"]; vs = [r["version"] for r in rel]   # newest first
           new = rel[:vs.index(seen)] if seen in vs else rel[:1]
           lang, fmt = os.environ["CHANGELOG_LANG"], os.environ["FORMAT"]
           zh = {"new": "新增", "improved": "改进", "fixed": "修复", "removed": "移除", "other": "其他"}
-          label = lambda k: zh[k] if lang == "zh" else k
+          label = lambda k: zh[k] if lang == "zh" else k.capitalize()
+          ESC = {c: f"&#{ord(c)};" for c in "<>*~_[]#`"}
+          def md(t):  # Feishu markdown: keep `code`, escape the rest
+              p = t.split("`")
+              return "".join(f"`{x}`" if i % 2 else x.translate(str.maketrans(ESC)) for i, x in enumerate(p)) if len(p) % 2 else t.translate(str.maketrans(ESC))
+          def feishu(r):  # https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot  (≤ 20 KB per message)
+              head = {"title": {"tag": "plain_text", "content": f"Claude Code v{r['version']}"},
+                      "subtitle": {"tag": "plain_text", "content": f"{(r.get('published') or r['date'])[:16].replace('T', ' ')} UTC · " + " · ".join(f"{label(k)} {n}" for k, n in r["counts"].items())}}
+              msg = lambda els: {"msg_type": "interactive", "card": {"schema": "2.0", "header": head, "body": {"elements": els}}}
+              els, shown = [], 0
+              for k in r["counts"]:
+                  el = {"tag": "markdown", "content": f"**{label(k)} ({r['counts'][k]})**"}
+                  for e in (e for e in r["entries"] if e["type"] == k):
+                      line = "\n- " + md(e[lang] or e["en"])
+                      if len(json.dumps(msg(els + [dict(el, content=el["content"] + line)]), ensure_ascii=False).encode()) > 18500: break
+                      el["content"] += line; shown += 1
+                  else: els.append(el); continue
+                  els.append(el); break
+              more = len(r["entries"]) - shown
+              tail = (f"… +{more} · " if more else "") + f"[{'在网站查看' if lang == 'zh' else 'View on the site'}]({r['url']})"
+              return msg(els + [{"tag": "hr"}, {"tag": "markdown", "content": tail}])
           for r in reversed(new):
               es = r["entries"]
               text = (f"Claude Code v{r['version']} ({r['date']}) · " + " · ".join(f"{label(k)} {n}" for k, n in r["counts"].items()) + "\n"
                       + "\n".join(f"- [{label(e['type'])}] {e[lang] or e['en']}" for e in es[:15])
                       + (f"\n… +{len(es) - 15}" if len(es) > 15 else "") + f"\n{r['url']}")
               body = {"slack": {"text": text}, "discord": {"content": text[:1900]},
-                      "feishu": {"msg_type": "text", "content": {"text": text}},
+                      "feishu": feishu(r),
                       "wecom": {"msgtype": "text", "text": {"content": text}},
                       "dingtalk": {"msgtype": "text", "text": {"content": text}}}.get(fmt, r)
+              if fmt == "feishu" and os.environ.get("WEBHOOK_SECRET"):
+                  ts = str(int(time.time()))
+                  body = {"timestamp": ts, "sign": base64.b64encode(hmac.new(f"{ts}\n{os.environ['WEBHOOK_SECRET']}".encode(), digestmod=hashlib.sha256).digest()).decode(), **body}
               req = urllib.request.Request(os.environ["WEBHOOK_URL"], json.dumps(body, ensure_ascii=False).encode(), {"Content-Type": "application/json"})
-              urllib.request.urlopen(req, timeout=30)
-              print("sent", r["version"])
+              res = urllib.request.urlopen(req, timeout=30).read().decode()
+              if fmt == "feishu" and json.loads(res).get("code", 0) != 0: raise SystemExit(f"Feishu rejected the message: {res}")
+              print("sent", r["version"]); time.sleep(0.5)
           last.write_text(vs[0])
           EOF
       - uses: actions/cache/save@v4

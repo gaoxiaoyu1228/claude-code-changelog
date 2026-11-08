@@ -1,0 +1,198 @@
+{
+ "version": "2.1.259",
+ "date": "2026-09-02",
+ "published": "2026-09-02T21:21:42.115Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.259",
+ "counts": {
+  "new": 5,
+  "improved": 6,
+  "fixed": 26
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `managedMcpServers` managed setting: organizations can provide HTTP/SSE MCP servers to every user (same entry shape as `.mcp.json`); entries that name a command to run are skipped",
+   "zh": "添加了`managedMcpServers`托管设置：组织可以向每个用户提供 HTTP/SSE MCP 服务器（与`.mcp.json`相同的条目形状）；指定要运行的命令的条目将被跳过"
+  },
+  {
+   "type": "new",
+   "en": "Added `--permission-prompts none` for unattended headless hosts: anything that would prompt is denied automatically while the active permission mode (including auto mode) keeps deciding",
+   "zh": "为无人值守的无头主机添加了`--permission-prompts none`：当活动权限模式（包括自动模式）不断决定时，任何提示都会被自动拒绝"
+  },
+  {
+   "type": "new",
+   "en": "Added recognition of `glab mr create/merge/close/reopen/note/update` so GitLab merge requests show as `MR !N` in the collapsed tool summary and refresh the footer MR badge",
+   "zh": "添加了对 `glab mr create/merge/close/reopen/note/update` 的识别，因此 GitLab 合并请求在折叠的工具摘要中显示为 `MR !N` 并刷新页脚 MR 徽章"
+  },
+  {
+   "type": "new",
+   "en": "Added `--json` to `claude plugin validate` for a machine-readable validation report",
+   "zh": "在`claude plugin validate`中添加了`--json`以获得机器可读的验证报告"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added an Active quick filter and a status filter menu (Needs input, Working, Completed) to the session list sidebar",
+   "zh": "[VSCode] 会话列表侧边栏新增 Active 快速筛选，以及状态筛选菜单（Needs input、Working、Completed）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved terminal resize and first-render performance for long responses by reusing text measurements",
+   "zh": "改进长回复时终端调整大小和首次渲染的性能：复用文本测量结果"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/workflows` agent detail: JSON outcomes are pretty-printed with syntax colors and real line breaks, and long outcomes fold behind an expand toggle",
+   "zh": "改进 `/workflows` 代理详情：JSON 结果带语法颜色并正确换行，过长的结果可折叠展开"
+  },
+  {
+   "type": "improved",
+   "en": "Improved headless/SDK session start: the first turn begins up to 50 ms sooner when MCP servers finish connecting",
+   "zh": "改进无界面和 SDK 会话启动：MCP 服务器连接完成时，首轮最多提前 50 毫秒开始"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/install-github-app` to explain it is GitHub-only and point to the GitLab CI/CD docs when run inside a GitLab repository",
+   "zh": "改进 `/install-github-app`：说明它仅支持 GitHub；在 GitLab 仓库中运行时，指向 GitLab CI/CD 文档"
+  },
+  {
+   "type": "improved",
+   "en": "Improved nested background subagent results to be saved in the parent subagent's transcript, so resumed subagents keep them and shared transcripts show the delivery",
+   "zh": "改进嵌套的后台子代理结果：保存到父子代理的记录中，恢复子代理时仍保留这些结果，共享记录中也能看到交付情况"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `allowedMcpServers` to govern only servers users add: a literal `managed-mcp.json` server your allowlist used to filter out now loads on upgrade; use `deniedMcpServers` to keep it off",
+   "zh": "更改了`allowedMcpServers`以仅管理用户添加的服务器：用于过滤掉白名单的字面“management-mcp.json”服务器现在在升级时加载；使用 `deniedMcpServers` 来阻止它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed concurrent sessions silently reverting each other's `~/.claude.json` changes — workspace trust no longer resets and MCP/project state is no longer lost when running many sessions at once",
+   "zh": "修复了并发会话默默地恢复彼此的 `~/.claude.json` 更改 — 工作区信任不再重置，并且一次运行多个会话时 MCP/项目状态不再丢失"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a conversation whose thinking was rejected once being rejected again on every later turn",
+   "zh": "修复了一个对话，该对话的想法一旦被拒绝，之后的每个回合都会再次被拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash `Read()` deny rules not covering files given as option values (`--ignore-revs-file=.env`, `-f.env`, `@file`), `git diff`/`git grep` file operands, or `cd DIR && cat FILE` compounds; `grep -r`/`cp -r` over a directory holding a denied file now asks",
+   "zh": "修复了 Bash `Read()` 拒绝规则不涵盖作为选项值给出的文件（`--ignore-revs-file=.env`、`-f.env`、`@file`）、`git diff`/`git grep` 文件操作数或 `cd DIR && cat FILE` 化合物；现在会询问保存被拒绝文件的目录的 `grep -r`/`cp -r`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the prompt cache being invalidated when the OAuth token refreshed in sessions with telemetry disabled",
+   "zh": "修复禁用遥测的会话中，OAuth 令牌刷新后提示词缓存被失效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fullscreen mode showing a blank conversation after a long turn with hundreds of tool calls",
+   "zh": "修复了全屏模式在数百次工具调用长时间转动后显示空白对话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode running a turn on a model it doesn't support when a command or skill's frontmatter `model:` named one; the turn now keeps the session model",
+   "zh": "修复了当命令或技能的 frontmatter `model:` 命名为 one 时，在不支持的模型上运行回合的自动模式；现在回合保持会话模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_MAX_CONTEXT_TOKENS` being ignored for Vertex-style model IDs (`@YYYYMMDD` suffix) of model versions Claude Code doesn't recognize",
+   "zh": "修复了模型版本 Claude Code 无法识别的 Vertex 样式模型 ID（`@YYYYMMDD`后缀）会忽略`CLAUDE_CODE_MAX_CONTEXT_TOKENS`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the live output preview of a running shell command hiding its newest lines when an earlier line wrapped",
+   "zh": "修复运行中的 shell 命令的实时输出预览，在较早的一行换行后隐藏了最新行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a background GitHub connection check that ran on every launch for claude.ai users; the result is now remembered across launches",
+   "zh": "修复了 claude.ai 用户每次启动时运行的后台 GitHub 连接检查；现在，每次启动都会记住结果"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` failing (and `--continue` opening an empty conversation) when a saved session contains an attachment entry with no payload",
+   "zh": "修复了当保存的会话包含没有有效负载的附件条目时`--resume`失败（以及`--continue`打开空对话）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed frontmatter `model:` on custom commands and skills being ignored in interactive sessions",
+   "zh": "修复了交互式会话中忽略的自定义命令和技能的 frontmatter`model:`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Artifact publishing failing once with an \"unexpected parameter `note`\" error in conversations continued from an older version",
+   "zh": "修复了 Artifact 发布失败一次，并在从旧版本继续的对话中出现“意外参数`note`”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed `forceRemoteSettingsRefresh` being ignored at startup when a policy helper configured by MDM or the managed settings file had already run",
+   "zh": "修复了当 MDM 配置的策略帮助程序或托管设置文件已运行时，托管`forceRemoteSettingsRefresh`在启动时被忽略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree isolation refusing hook-created worktrees on machines where `git rev-parse` fails with a message other than \"not a git repository\"",
+   "zh": "修复在 `git rev-parse` 报错信息不是 \"not a git repository\" 的机器上，工作树隔离会拒绝钩子创建的工作树的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OpenTelemetry metrics and events from cloud sessions missing the `user.email`, `organization.id`, and `user.account_uuid` attributes",
+   "zh": "修复了云会话中缺少`user.email`、`organization.id`和`user.account_uuid`属性的 OpenTelemetry 指标和事件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers that disconnect while their tools are being listed at startup showing as connected with no tools instead of reporting the error",
+   "zh": "修复了在启动时列出其工具时断开连接的 MCP 服务器显示为没有工具连接而不是报告错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the file edit permission dialog sometimes showing a changed line cut short with no indication",
+   "zh": "修复文件编辑权限对话框有时显示被截断的修改行、且没有任何提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed repository detection dropping a known repo identity after a transient git probe failure",
+   "zh": "修复了存储库检测在暂时 git 探针失败后删除已知存储库标识的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed settings silently going unenforced when the managed-settings file, a drop-in, the MDM plist, or the HKLM value cannot be parsed: Claude Code now refuses to start and names the source",
+   "zh": "修复了当无法解析托管设置文件、插入项、MDM plist 或 HKLM 值时，托管设置会自动不强制执行的问题：Claude Code 现在拒绝启动并命名源"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Stop not actually stopping background agents and workflows in remote-control sessions: killed tasks now stay visible and re-stoppable until their processes exit",
+   "zh": "修复了“停止”实际上并未停止远程控制会话中的后台代理和工作流程：被终止的任务现在保持可见并可重新停止，直到其进程退出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a workflow run while its previous stopped run was still exiting, which could run duplicate copies of its agents",
+   "zh": "修复了在先前停止的运行仍在退出时恢复工作流程运行的问题，这可能会运行其代理的重复副本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed marketplace repo URLs on github.com with a trailing slash or dangling `?`/`#` producing an unusable `.git` clone URL",
+   "zh": "修复了 github.com 上的市场仓库 URL，带有尾部斜杠或悬空的`?`/`#`，生成不可用的`.git`克隆 URL"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed blocking Stop hooks causing the turn after a block to lose the model's reasoning from that turn and, on some models, miss the prompt cache",
+   "zh": "修复了阻塞停止钩子，导致阻塞后的转弯丢失该转弯的模型推理，并且在某些模型上错过提示缓存"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote (claude.ai) sessions taking 60 seconds to start a turn after a browser-hosted MCP server's page had gone away",
+   "zh": "修复了浏览器托管的 MCP 服务器页面消失后，远程 (claude.ai) 会话需要 60 秒才能开始一轮的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree-isolated sessions refusing common Bash loops, xargs pipelines and launcher-wrapped commands that cannot reach the main checkout",
+   "zh": "修复工作树隔离的会话拒绝常见 Bash 循环、xargs 管道以及包装启动器命令的问题；这些命令本来无法触及主检出目录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote and scheduled sessions doing nothing after a connector-tool permission prompt was approved while the session was paused",
+   "zh": "修复了在会话暂停期间批准连接器工具权限提示后远程和计划会话不执行任何操作的问题"
+  }
+ ]
+}

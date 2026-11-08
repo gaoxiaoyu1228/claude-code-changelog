@@ -1,0 +1,16 @@
+{
+ "version": "2.1.201",
+ "date": "2026-07-03",
+ "published": "2026-07-03T20:52:33.551Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.201",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Claude Sonnet 5 sessions no longer use the mid-conversation system role for harness reminders",
+   "zh": "Claude Sonnet 5 会话不再使用对话中系统角色来进行安全带提醒"
+  }
+ ]
+}

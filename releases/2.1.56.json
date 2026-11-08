@@ -1,0 +1,16 @@
+{
+ "version": "2.1.56",
+ "date": "2026-02-25",
+ "published": "2026-02-25T05:55:32.621Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.56",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "VS Code: Fixed another cause of \"command 'claude-vscode.editor.openLast' not found\" crashes",
+   "zh": "VS Code：修复了另一个导致 \"command 'claude-vscode.editor.openLast' not found\" 崩溃的原因"
+  }
+ ]
+}

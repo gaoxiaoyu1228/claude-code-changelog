@@ -1,0 +1,169 @@
+{
+ "version": "2.1.224",
+ "date": "2026-08-07",
+ "published": "2026-08-07T01:36:32.682Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.224",
+ "counts": {
+  "new": 7,
+  "improved": 8,
+  "fixed": 15,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added self-hosted environments: `claude self-hosted-runner` turns your own machines or containers into a place Claude Code web, mobile, and desktop sessions can run, on Team and Enterprise plans",
+   "zh": "添加了自托管环境：`claude self-hosted-runner`将您自己的计算机或容器变成可以在团队和企业计划上运行 Claude Code Web、移动和桌面会话的地方"
+  },
+  {
+   "type": "new",
+   "en": "Added `archive` plugin source: install plugins from a zip over HTTPS without git or npm, with optional SHA-256 pinning",
+   "zh": "添加了`archive`插件源：通过 HTTPS 从 zip 安装插件，无需 git 或 npm，并具有可选的 SHA-256 固定"
+  },
+  {
+   "type": "new",
+   "en": "Added a cancel-and-confirm step when removing an unavailable paste changes a command's text",
+   "zh": "添加了删除不可用的粘贴更改命令文本时的取消和确认步骤"
+  },
+  {
+   "type": "new",
+   "en": "Added `ANTHROPIC_BEDROCK_REGION_PREFIX` env var for Bedrock to prefer a specific cross-region inference profile over the `AWS_REGION`-derived one",
+   "zh": "为 Bedrock 添加了`ANTHROPIC_BEDROCK_REGION_PREFIX`环境变量，以优先选择特定的跨区域推理配置文件而不是`AWS_REGION`派生的配置文件"
+  },
+  {
+   "type": "new",
+   "en": "Added `crossSessionInbound` and `dialogExpiry` settings: cross-session messages sent to a session running with bypassed permissions are held for your approval, and messages to other sessions auto-deliver",
+   "zh": "添加了`crossSessionInbound`和`dialogExpiry`设置：发送到以绕过权限运行的会话的跨会话消息将保留供您批准，并且发送到其他会话的消息将自动传送"
+  },
+  {
+   "type": "new",
+   "en": "Added sandbox credential-masking options: `extract` and `onExtractNoMatch` for structured env values, `decode: \"jwt\"` with `maskClaims` for JWT-aware masking, and `awsPairs`/`sigv4` for AWS SigV4 re-signing; these need `network.tlsTerminate` and are honored only from user, managed, or `--settings` settings",
+   "zh": "添加了沙盒凭证屏蔽选项：用于结构化环境值的`extract`和`onExtractNoMatch`，用于 JWT 感知屏蔽的`decode: \"jwt\"`和`maskClaims`，以及用于 AWS SigV4 重新签名的`awsPairs`/`sigv4`；这些需要`network.tlsTerminate`，并且只能从用户、托管或`--settings`设置中获得"
+  },
+  {
+   "type": "new",
+   "en": "Added cross-session `SendMessage`: Claude Code sessions can now message each other, on any of your machines, with `ListAgents` to discover them (macOS and Linux)",
+   "zh": "添加了跨会话`SendMessage`：Claude Code 会话现在可以在任何计算机上使用`ListAgents`互相发送消息来发现它们（macOS 和 Linux）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved fullscreen mode to keep the full pre-compaction history in scrollback across repeated compactions, instead of only the most recent interval",
+   "zh": "改进全屏模式：多次压缩后，完整的压缩前历史仍保留在滚动回看中，而不是只保留最近一段"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control: attached web and mobile clients now see compaction progress and the post-compaction boundary instead of a silent pause; `/clear` resets now propagate to attached clients",
+   "zh": "改进远程控制：已连接的网页和移动端客户端现在能看到压缩进度和压缩后的分界点，不再是一段沉默；`/clear` 的重置也会同步给已连接的客户端"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control: connection failures now show a persistent failure indicator with details and a reconnect shortcut, instead of only an 8-second toast",
+   "zh": "改进远程控制：连接失败时显示持续的失败指示器，附带详情和重连快捷键，而不是只弹出 8 秒的提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed managed settings: the approval prompt no longer re-appears after re-login or org switching when the organization's settings are unchanged",
+   "zh": "更改托管设置：在组织设置未更改的情况下，重新登录或组织切换后不再出现审批提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the feedback-survey transcript share: with your consent it now also uploads the last request's model settings — the system prompt (which includes your `CLAUDE.md` instructions), tool definitions, and model parameters. Secrets are redacted as before, and these fields are dropped first if the share is too large",
+   "zh": "更改了反馈调查记录共享：在您同意的情况下，它现在还会上传最后一个请求的模型设置 - 系统提示（包括您的`CLAUDE.md`指令）、工具定义和模型参数。像以前一样对秘密进行编辑，如果份额太大，这些字段将首先被删除"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the Bash tool description to always note that command output is displayed to the model, not reliably to the user",
+   "zh": "更改了 Bash 工具描述，以始终注意命令输出显示给模型，而不是可靠地显示给用户"
+  },
+  {
+   "type": "improved",
+   "en": "Changed recalled paste placeholder numbers to renumber when accepted into the input",
+   "zh": "更改了召回的粘贴占位符编号，以便在接受输入时重新编号"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Remote Control to archive the stale server session instead of leaving a dead one listed when a fresh session is minted after compaction or `/resume`",
+   "zh": "更改了远程控制以存档过时的服务器会话，而不是在压缩或`/resume`后创建新会话时列出已失效的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed long (>200 char) project paths resolving to another project's session directory under a shared sanitized prefix; session list, rename, fork, delete and `/resume` no longer cross projects",
+   "zh": "修复了长（>200 个字符）项目路径解析为共享清理前缀下的另一个项目的会话目录；会话列表、重命名、分叉、删除和`/resume`不再跨项目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SendMessage` reporting \"Message sent\" when the write to a teammate's inbox had actually failed; failed deliveries are now reported as errors",
+   "zh": "修复了当写入队友收件箱实际上失败时`SendMessage`报告“消息已发送”的问题；失败的交付现在被报告为错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandbox filesystem deny entries written with a trailing slash (e.g. `denyRead: \"~/.aws/\"`) being silently bypassable on Linux and macOS",
+   "zh": "修复了沙盒文件系统拒绝使用尾部斜杠写入的条目（例如 `denyRead: \"~/.aws/\"`）在 Linux 和 macOS 上可静默绕过的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandbox violation details never appearing in Bash tool results; Claude now sees which file or network access was denied and why",
+   "zh": "修复了 Bash 工具结果中从未出现的沙箱违规详细信息；克劳德现在可以看到哪个文件或网络访问被拒绝以及原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tools that connect mid-turn being deferred for tool search without their names announced to the model",
+   "zh": "修复了在中途连接的 MCP 工具被推迟进行工具搜索而未向模型公布其名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin install records being silently corrupted when the same plugin is installed in multiple projects",
+   "zh": "修复了在多个项目中安装相同插件时插件安装记录被无提示损坏的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed recalled or restored paste content occasionally attaching wrong data or silently losing text when the paste had aged out or placeholder numbers collided",
+   "zh": "修复了当粘贴过期或占位符数字冲突时，召回或恢复的粘贴内容偶尔会附加错误数据或默默丢失文本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed copy-on-select on Wayland sometimes not reaching the clipboard; the two selection writes no longer race",
+   "zh": "修复了 Wayland 上的选择复制有时无法到达剪贴板的问题；两个选择写入不再竞争"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the feedback survey's transcript share silently failing on long sessions; a failed share now shows an error instead of a success message",
+   "zh": "修复长会话中反馈调查的对话记录分享静默失败的问题；现在分享失败会显示错误，而不是显示成功提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control auto-start intermittently failing with \"Remote credentials fetch failed\" on a cold start with a stale login token",
+   "zh": "修复了使用过时的登录令牌冷启动时远程控制自动启动间歇性失败并显示“远程凭据获取失败”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control and SDK clients showing a blank \"(no content)\" message after `/clear` and other output-less commands",
+   "zh": "修复了远程控制和 SDK 客户端在`/clear`和其他无输出命令之后显示空白“（无内容）”消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Remote Control session recreated after its server session expired uploading prior local conversation history into the new session",
+   "zh": "修复了服务器会话过期后重新创建的远程控制会话，将之前的本地对话历史记录上传到新会话中"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the extension showing Remote Control as connected after the connection failed",
+   "zh": "[VSCode] 修复连接失败后，扩展仍显示 Remote Control 已连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a session resume silently reconnecting Remote Control after the user turned it off (`--resume`, SDK hosts, and the VS Code extension)",
+   "zh": "修复了用户关闭远程控制后以静默方式重新连接远程控制的会话恢复（`--resume`、SDK 主机和 VS Code 扩展）"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed sessions not honoring `remoteControlAtStartup` when explicitly enabled",
+   "zh": "[VSCode] 修复明确开启 `remoteControlAtStartup` 后，会话未遵循该设置的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the 200-subagent-per-session spawn cap; long-running sessions no longer refuse new agents (concurrency and depth limits still apply)",
+   "zh": "移除每个会话 200 个子代理的生成上限；长时间运行的会话不再拒绝新代理（并发和深度限制仍然生效）"
+  }
+ ]
+}

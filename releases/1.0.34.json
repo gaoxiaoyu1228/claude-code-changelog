@@ -1,0 +1,16 @@
+{
+ "version": "1.0.34",
+ "date": "2025-06-24",
+ "published": "2025-06-24T19:33:51.376Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.34",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak causing a MaxListenersExceededWarning message to appear",
+   "zh": "修复了导致出现 MaxListenersExceededWarning 消息的内存泄漏"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "1.0.69",
+ "date": "2025-08-05",
+ "published": "2025-08-05T16:27:31.792Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.69",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Upgraded Opus to version 4.1",
+   "zh": "Opus 升级到 4.1 版本"
+  }
+ ]
+}

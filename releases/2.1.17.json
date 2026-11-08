@@ -1,0 +1,16 @@
+{
+ "version": "2.1.17",
+ "date": "2026-01-22",
+ "published": "2026-01-22T21:01:58.555Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.17",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed crashes on processors without AVX instruction support",
+   "zh": "修复了不支持 AVX 指令的处理器上的崩溃问题"
+  }
+ ]
+}

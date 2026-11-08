@@ -1,0 +1,234 @@
+{
+ "version": "2.1.154",
+ "date": "2026-05-28",
+ "published": "2026-05-28T15:40:50.400Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.154",
+ "counts": {
+  "new": 7,
+  "improved": 13,
+  "fixed": 22,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Opus 4.8 is here! Now defaults to high effort · /effort xhigh for your hardest tasks",
+   "zh": "Opus 4.8 发布！现在默认使用高 effort。遇到最难的任务，可用 `/effort xhigh`"
+  },
+  {
+   "type": "new",
+   "en": "Introducing dynamic workflows: ask Claude to create a workflow and it orchestrates work across tens to hundreds of agents in the background, so you can take on larger, more complex tasks. Run `/workflows` to view your runs",
+   "zh": "推出动态工作流：让 Claude 创建工作流后，它会在后台协调数十到数百个智能体的工作，让你可以承担更大、更复杂的任务。运行 `/workflows` 查看你的运行记录"
+  },
+  {
+   "type": "new",
+   "en": "`claude agents`: type `! <command>` to run a shell command as a background session you can attach to and detach from. Also available as `claude --bg --exec '<command>'`",
+   "zh": "`claude agents`：输入 `! <command>` 可将 shell 命令作为后台会话运行，你可以随时附加或分离。也可以用 `claude --bg --exec '<command>'`"
+  },
+  {
+   "type": "new",
+   "en": "Claude in Chrome: pick which connected browser to use via `/chrome` → \"Select browser…\", or in-chat when a browser action runs with multiple connected",
+   "zh": "Chrome 中的 Claude：通过 `/chrome` 选择要使用的已连接浏览器→“选择浏览器...”，或者当浏览器操作在多个已连接的情况下运行时在聊天中"
+  },
+  {
+   "type": "new",
+   "en": "Plugins can now declare `defaultEnabled: false` in `plugin.json` or a marketplace entry; enable them with `/plugin` or `claude plugin enable`. Dependencies of enabled plugins are still enabled automatically",
+   "zh": "插件现在可以在 `plugin.json` 或市场条目中声明 `defaultEnabled: false`；可通过 `/plugin` 或 `claude plugin enable` 启用。已启用插件的依赖仍会自动启用"
+  },
+  {
+   "type": "new",
+   "en": "Stdio MCP server subprocesses now receive `CLAUDE_CODE_SESSION_ID` and `CLAUDECODE=1` in their environment",
+   "zh": "标准输入输出的 MCP 服务器子进程，环境中现在会包含 `CLAUDE_CODE_SESSION_ID` 和 `CLAUDECODE=1`"
+  },
+  {
+   "type": "new",
+   "en": "Added Claude Opus 4.8 support and 4.7 → 4.8 migration guidance to the `/claude-api` skill",
+   "zh": "添加了 Claude Opus 4.8 支持和 4.7 → 4.8 迁移指南到 `/claude-api` 技能"
+  },
+  {
+   "type": "improved",
+   "en": "Fast mode on Opus 4.8 is now available at a fraction of its previous cost: 2x the standard rate for 2.5x the speed",
+   "zh": "Opus 4.8 上的快速模式现在只需以前成本的一小部分：2 倍标准费率，2.5 倍速度"
+  },
+  {
+   "type": "improved",
+   "en": "The lean system prompt is now the default for all models except Haiku, Sonnet, and Opus 4.7 and earlier",
+   "zh": "除 Haiku、Sonnet 和 Opus 4.7 及更早版本外，所有模型现在默认使用精简版系统提示词"
+  },
+  {
+   "type": "improved",
+   "en": "Claude now reserves the multiple-choice question prompt for decisions it genuinely cannot make itself, instead of asking when it already has enough context to proceed",
+   "zh": "克劳德现在将多项选择题提示保留给它真正无法自行做出的决定，而不是在它已经有足够的上下文来继续时询问"
+  },
+  {
+   "type": "improved",
+   "en": "`/simplify` now runs a cleanup-only review (reuse, simplification, efficiency, altitude) and applies the fixes, instead of running the full `/code-review --fix` bug-hunting review",
+   "zh": "`/simplify` 现在只运行仅清理类的审查（复用、简化、效率、高度），并应用修复，而不再运行完整的 `/code-review --fix` 漏洞排查审查"
+  },
+  {
+   "type": "improved",
+   "en": "Renamed the `/effort` slider labels from \"Speed\"/\"Intelligence\" to \"Faster\"/\"Smarter\" for clarity",
+   "zh": "`/effort` 滑块的标签从 \"Speed\"/\"Intelligence\" 改为 \"Faster\"/\"Smarter\"，更清楚"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: `/logout` now signs you out instead of being sent to a background session",
+   "zh": "`claude agents`：`/logout` 现在会直接登出，而不再被发送到后台会话"
+  },
+  {
+   "type": "improved",
+   "en": "`←←` to open the agents view now works on Bedrock, Vertex, Foundry, and with telemetry disabled",
+   "zh": "在 Bedrock、Vertex、Foundry 上，以及在禁用遥测时，`←←` 现在都可以打开 agent 视图"
+  },
+  {
+   "type": "improved",
+   "en": "The `/plugin` Discover tab now pins plugins whose relevance signals match the current directory with a \"suggested for this directory\" annotation",
+   "zh": "`/plugin` 的 Discover 标签页现在会把与当前目录相关的插件置顶，并标注 \"suggested for this directory\""
+  },
+  {
+   "type": "improved",
+   "en": "Streaming tool execution is now always enabled, including when telemetry is disabled or on Bedrock/Vertex/Foundry (previously behind a feature flag)",
+   "zh": "流式工具执行现已始终启用，包括禁用遥测时以及在 Bedrock/Vertex/Foundry 上（此前由功能开关控制）"
+  },
+  {
+   "type": "improved",
+   "en": "`claude mcp list`/`get` now show unapproved `.mcp.json` servers as `⏸ Pending approval` instead of auto-approving and connecting when output is piped",
+   "zh": "管道输出时，`claude mcp list`/`get` 现在会把未批准的 `.mcp.json` 服务器显示为 `⏸ Pending approval`，而不是自动批准并连接"
+  },
+  {
+   "type": "improved",
+   "en": "`/remote-control` autocomplete now shows \"Disconnect Remote Control\" when Remote Control is already active",
+   "zh": "当 Remote Control 已激活时，`/remote-control` 的自动补全现在会显示 \"Disconnect Remote Control\""
+  },
+  {
+   "type": "improved",
+   "en": "Improved the auto-mode classifier's detection of data exfiltration, particularly bulk transfers of repository contents",
+   "zh": "改进自动模式分类器对数据外泄的识别，尤其是大批量转移仓库内容的情况"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Auto mode no longer requires the bypass-permissions setting to appear in the mode picker, and a dismissable notice on the new-session screen explains auto mode the first time it's active",
+   "zh": "[VSCode] 自动模式不再要求开启绕过权限设置才能在模式选择器中显示；首次使用时，新会话界面会出现可关闭的提示，说明自动模式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `rm -rf $HOME` not being blocked as a dangerous path when `HOME` has a trailing slash",
+   "zh": "修复了当`HOME`尾部有斜杠时`rm -rf $HOME`不会被阻止为危险路径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `$TMPDIR` resolving to different directories in sandboxed vs unsandboxed Bash commands within the same session",
+   "zh": "修复了同一会话中沙盒与非沙盒 Bash 命令中`$TMPDIR`解析为不同目录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unreadable highlighted-row text in `claude agents` when the Claude Code theme doesn't match the terminal background",
+   "zh": "修复 Claude Code 主题与终端背景不匹配时，`claude agents` 中高亮行的文字难以辨认的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-agent completion notifications triggering premature \"out of context\" behavior on some 1M-context models",
+   "zh": "修复了后台代理完成通知在某些 1M 上下文模型上触发过早的“脱离上下文”行为的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-session classifier losing the user's goal when a scheduled `/command` fires",
+   "zh": "修复了当计划的`/command`触发时后台会话分类器丢失用户目标的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pinned background sessions respawning every minute after a Claude Code update, causing repeated agent-start notifications and process churn at idle",
+   "zh": "修复了克劳德代码更新后每分钟重新生成的固定后台会话，导致重复的代理启动通知和空闲时的进程搅动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions stuck at \"blocked\", \"running\", or \"working\" not retiring after the idle grace period",
+   "zh": "修复了后台会话卡在“已阻止”、“正在运行”或“正在工作”状态，在空闲宽限期后不会退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents in background sessions bypassing the worktree-isolation guard and writing to the shared checkout",
+   "zh": "修复了后台会话中的子代理绕过工作树隔离防护并写入共享结帐的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed orphaned `claude --bg-pty-host` processes spinning at 100% CPU after the daemon exits on macOS",
+   "zh": "修复了守护进程在 macOS 上退出后，孤立的`claude --bg-pty-host`进程以 100% CPU 运行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed number key shortcuts not working for options shown below the divider in option dialogs",
+   "zh": "修复了数字键快捷键不适用于选项对话框中分隔线下方显示的选项的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `worktree.baseRef: \"head\"` resolving to the main checkout's HEAD instead of the current worktree's HEAD when spawning subagents or calling `EnterWorktree` from inside a linked worktree",
+   "zh": "修复了当生成子代理或从链接的工作树内部调用`EnterWorktree`时，“worktree.baseRef：“head””解析为主结帐的 HEAD 而不是当前工作树的 HEAD"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a stray leading space on wrapped lines when the previous line ended exactly at the terminal width",
+   "zh": "修复了当前一行恰好以终端宽度结束时换行上的杂散前导空格"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed intermittent terminal rendering corruption in VS Code by capping the number of distinct colors the thinking spinner produces",
+   "zh": "通过限制思考旋转器产生的不同颜色的数量，修复了 VS Code 中的间歇性终端渲染损坏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan file names including `[Image #N]` / `[Pasted text #N]` placeholders when a plan-mode prompt starts with pasted images or text",
+   "zh": "当计划模式提示以粘贴的图像或文本开始时，修复了计划文件名，包括“[图像#N]”/“[粘贴的文本#N]”占位符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a phantom expand/click affordance on colored tool output: short ANSI-colored lines that fit on screen no longer show a \"ctrl+o to expand\" hint",
+   "zh": "修复了彩色工具输出上的幻像展开/单击可供性：适合屏幕的 ANSI 彩色短线不再显示“ctrl+o 展开”提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a single invalid `allowedMcpServers`/`deniedMcpServers` entry in managed settings discarding all managed-settings policy; the bad entry is now dropped with a `claude doctor` warning",
+   "zh": "修复了托管设置中单个无效的`allowedMcpServers`/`deniedMcpServers`条目，丢弃所有托管设置策略；现在，错误的条目已被删除，并带有`claude doctor`警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API 400 errors on models that don't support the effort parameter when `CLAUDE_CODE_ALWAYS_ENABLE_EFFORT` is set",
+   "zh": "修复了设置`CLAUDE_CODE_ALWAYS_ENABLE_EFFORT`时不支持工作量参数的模型上的 API 400 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed update failures caused by `claude.exe` being in use showing a generic error instead of telling you to close other sessions and retry",
+   "zh": "Windows：修复了 `claude.exe` 正被占用导致更新失败时，只显示笼统错误的问题；现在会提示关闭其他会话后重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the task panel below the prompt showing a stray unselectable \"main\" row when only a workflow is running",
+   "zh": "修复只有工作流在运行时，提示框下方的任务面板显示一个无法选中的多余\"main\"行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed /mcp tools list and tool detail rendering when MCP servers have long or multi-line tool names or long descriptions",
+   "zh": "修复了当 MCP 服务器具有长或多行工具名称或长描述时 /mcp 工具列表和工具详细信息呈现"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the /model picker not showing fast mode pricing on the Default option for API (pay-as-you-go) users when fast mode is on",
+   "zh": "修复了当快速模式开启时 /model 选择器未在 API（按需付费）用户的默认选项上显示快速模式定价的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode incorrectly blocking actions with \"could not evaluate this action\" when the safety classifier ran out of output tokens while reasoning",
+   "zh": "修复了当安全分类器在推理时用完输出令牌时，自动模式错误地阻止操作并显示“无法评估此操作”的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Deprecated `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` (will be removed on 06/01). To use fast mode on Opus 4.6, switch with `/model claude-opus-4-6[1m]` and then `/fast on`",
+   "zh": "已弃用`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`（将于 06/01 删除）。要在 Opus 4.6 上使用快速模式，请使用 `/model claude-opus-4-6[1m]` 进行切换，然后使用 `/fast on`"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the stale \"& for background\" hint from the shortcuts help panel",
+   "zh": "从快捷键帮助面板中移除过时的 \"& for background\" 提示"
+  }
+ ]
+}

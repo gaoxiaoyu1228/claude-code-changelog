@@ -1,0 +1,163 @@
+{
+ "version": "2.1.85",
+ "date": "2026-03-26",
+ "published": "2026-03-26T20:55:47.623Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.85",
+ "counts": {
+  "new": 5,
+  "improved": 8,
+  "fixed": 17
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_MCP_SERVER_NAME` and `CLAUDE_CODE_MCP_SERVER_URL` environment variables to MCP `headersHelper` scripts, allowing one helper to serve multiple servers",
+   "zh": "向 MCP `headersHelper` 脚本添加了 `CLAUDE_CODE_MCP_SERVER_NAME` 和 `CLAUDE_CODE_MCP_SERVER_URL` 环境变量，允许一个助手为多个服务器提供服务"
+  },
+  {
+   "type": "new",
+   "en": "Added conditional `if` field for hooks using permission rule syntax (e.g., `Bash(git *)`) to filter when they run, reducing process spawning overhead",
+   "zh": "使用权限规则语法（例如`Bash(git *)`）为钩子添加了条件`if`字段，以在运行时进行过滤，从而减少进程生成开销"
+  },
+  {
+   "type": "new",
+   "en": "Added timestamp markers in transcripts when scheduled tasks (`/loop`, `CronCreate`) fire",
+   "zh": "当计划任务（`/loop`、`CronCreate`）触发时，在记录中添加了时间戳标记"
+  },
+  {
+   "type": "new",
+   "en": "Added trailing space after `[Image #N]` placeholder when pasting images",
+   "zh": "粘贴图像时在`[Image #N]`占位符后添加尾随空格"
+  },
+  {
+   "type": "new",
+   "en": "PreToolUse hooks can now satisfy `AskUserQuestion` by returning `updatedInput` alongside `permissionDecision: \"allow\"`, enabling headless integrations that collect answers via their own UI",
+   "zh": "PreToolUse hook 现在可以通过返回 `updatedInput` 并配合 `permissionDecision: \"allow\"` 来完成 `AskUserQuestion`，使通过自有界面收集答案的无头集成得以实现"
+  },
+  {
+   "type": "improved",
+   "en": "Deep link queries (`claude-cli://open?q=…`) now support up to 5,000 characters, with a \"scroll to review\" warning for long pre-filled prompts",
+   "zh": "深层链接查询 (`claude-cli://open?q=…`) 现在支持最多 5,000 个字符，并针对长的预填充提示显示“滚动查看”警告"
+  },
+  {
+   "type": "improved",
+   "en": "MCP OAuth now follows RFC 9728 Protected Resource Metadata discovery to find the authorization server",
+   "zh": "MCP OAuth 现在通过 RFC 9728 Protected Resource Metadata 发现机制查找授权服务器"
+  },
+  {
+   "type": "improved",
+   "en": "Plugins blocked by organization policy (`managed-settings.json`) can no longer be installed or enabled, and are hidden from marketplace views",
+   "zh": "被组织策略（`managed-settings.json`）屏蔽的插件不能再安装或启用，并会从市场视图中隐藏"
+  },
+  {
+   "type": "improved",
+   "en": "`tool_parameters` in OpenTelemetry tool_result events are now gated behind `OTEL_LOG_TOOL_DETAILS=1`",
+   "zh": "OpenTelemetry 工具结果事件中的 `tool_parameters` 现在需要设置 `OTEL_LOG_TOOL_DETAILS=1` 才会输出"
+  },
+  {
+   "type": "improved",
+   "en": "Improved @-mention file autocomplete performance on large repositories",
+   "zh": "改进大型仓库中 @ 文件自动补全的性能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved PowerShell dangerous command detection",
+   "zh": "改进 PowerShell 危险命令检测"
+  },
+  {
+   "type": "improved",
+   "en": "Improved scroll performance with large transcripts by replacing WASM yoga-layout with a pure TypeScript implementation",
+   "zh": "改进长转录的滚动性能：用纯 TypeScript 实现替换了 WASM 版 yoga 布局"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced UI stutter when compaction triggers on large sessions",
+   "zh": "会话较大时，压缩上下文时的界面卡顿减少"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/compact` failing with \"context exceeded\" when the conversation has grown too large for the compact request itself to fit",
+   "zh": "修复了当对话变得太大而紧凑请求本身无法容纳时`/compact`失败并出现“上下文超出”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin enable` and `/plugin disable` failing when a plugin's install location differs from where it's declared in settings",
+   "zh": "修复了当插件的安装位置与其在设置中声明的位置不同时“/plugin启用”和“/plugin禁用”失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--worktree` exiting with an error in non-git repositories before the `WorktreeCreate` hook could run",
+   "zh": "修复了在`WorktreeCreate`挂钩运行之前`--worktree`在非 git 存储库中退出并出现错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `deniedMcpServers` setting not blocking claude.ai MCP servers",
+   "zh": "修复了`deniedMcpServers`设置不阻止 claude.ai MCP 服务器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `switch_display` in the computer-use tool returning \"not available in this session\" on multi-monitor setups",
+   "zh": "修复了计算机使用工具中的`switch_display`在多显示器设置上返回“在此会话中不可用”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crash when `OTEL_LOGS_EXPORTER`, `OTEL_METRICS_EXPORTER`, or `OTEL_TRACES_EXPORTER` is set to `none`",
+   "zh": "修复了`OTEL_LOGS_EXPORTER`、`OTEL_METRICS_EXPORTER`或`OTEL_TRACES_EXPORTER`设置为`none`时的崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed diff syntax highlighting not working in non-native builds",
+   "zh": "修复了 diff 语法突出显示在非本机构建中不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP step-up authorization failing when a refresh token exists — servers requesting elevated scopes via `403 insufficient_scope` now correctly trigger the re-authorization flow",
+   "zh": "修复了存在刷新令牌时 MCP 升级授权失败的问题 - 通过“403 unavailable_scope”请求提升范围的服务器现在可以正确触发重新授权流程"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in remote sessions when a streaming response is interrupted",
+   "zh": "修复了流响应中断时远程会话中的内存泄漏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed persistent ECONNRESET errors during edge connection churn by using a fresh TCP connection on retry",
+   "zh": "通过在重试时使用新的 TCP 连接，修复了边缘连接流失期间持续存在的 ECONNRESET 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompts getting stuck in the queue after running certain slash commands, with up-arrow unable to retrieve them",
+   "zh": "修复了运行某些斜线命令后提示卡在队列中且向上箭头无法检索它们的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Python Agent SDK: `type:'sdk'` MCP servers passed via `--mcp-config` are no longer dropped during startup",
+   "zh": "修复了 Python Agent SDK：通过 `--mcp-config` 传递的 `type:'sdk'` MCP 服务器在启动期间不再被删除"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed raw key sequences appearing in the prompt when running over SSH or in the VS Code integrated terminal",
+   "zh": "修复了通过 SSH 或 VS Code 集成终端运行时提示中出现的原始按键序列"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control session status staying stuck on \"Requires Action\" after a permission is resolved",
+   "zh": "修复了权限解决后远程控制会话状态停留在“需要操作”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shift+enter and meta+enter being intercepted by typeahead suggestions instead of inserting newlines",
+   "zh": "修复了 shift+enter 和 meta+enter 被预输入建议拦截而不是插入换行符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stale content bleeding through when scrolling up during streaming",
+   "zh": "修复了在流式传输期间向上滚动时陈旧内容渗漏的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal left in enhanced keyboard mode after exit in Ghostty, Kitty, WezTerm, and other terminals supporting the Kitty keyboard protocol — Ctrl+C and Ctrl+D now work correctly after quitting",
+   "zh": "修复在 Ghostty、Kitty、WezTerm 以及其他支持 Kitty 键盘协议的终端中，退出后终端仍停留在增强键盘模式的问题；现在退出后 Ctrl+C 和 Ctrl+D 可正常使用"
+  }
+ ]
+}

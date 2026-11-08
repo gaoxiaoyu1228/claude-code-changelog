@@ -1,0 +1,78 @@
+{
+ "version": "2.0.74",
+ "date": "2025-12-19",
+ "published": "2025-12-19T21:08:38.116Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.74",
+ "counts": {
+  "new": 6,
+  "improved": 1,
+  "fixed": 6
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added LSP (Language Server Protocol) tool for code intelligence features like go-to-definition, find references, and hover documentation",
+   "zh": "添加了 LSP（语言服务器协议）工具，用于代码智能功能，例如转到定义、查找引用和悬停文档"
+  },
+  {
+   "type": "new",
+   "en": "Added `/terminal-setup` support for Kitty, Alacritty, Zed, and Warp terminals",
+   "zh": "添加了对 Kitty、Alacritty、Zed 和 Warp 终端的`/terminal-setup`支持"
+  },
+  {
+   "type": "new",
+   "en": "Added ctrl+t shortcut in `/theme` to toggle syntax highlighting on/off",
+   "zh": "在`/theme`中添加了 ctrl+t 快捷方式以打开/关闭语法突出显示"
+  },
+  {
+   "type": "new",
+   "en": "Added syntax highlighting info to theme picker",
+   "zh": "向主题选择器添加了语法突出显示信息"
+  },
+  {
+   "type": "new",
+   "en": "Added guidance for macOS users when Alt shortcuts fail due to terminal configuration",
+   "zh": "为 macOS 用户添加了当 Alt 快捷键因终端配置而失败时的指导"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added gift tag pictogram for year-end promotion message",
+   "zh": "[VSCode] 新增年末促销消息用的礼物标签图标"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/context` command visualization with grouped skills and agents by source, slash commands, and sorted token count",
+   "zh": "改进 `/context` 的可视化：按来源对技能和代理分组，斜杠命令单独列出，token 数量排序"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skill `allowed-tools` not being applied to tools invoked by the skill",
+   "zh": "修复了技能“允许的工具”未应用于该技能调用的工具的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Opus 4.5 tip incorrectly showing when user was already using Opus",
+   "zh": "修复了 Opus 4.5 提示在用户已经使用 Opus 时错误显示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a potential crash when syntax highlighting isn't initialized correctly",
+   "zh": "修复了语法突出显示未正确初始化时潜在的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed visual bug in `/plugins discover` where list selection indicator showed while search box was focused",
+   "zh": "修复 `/plugins discover` 中，搜索框获得焦点时列表选中指示器仍然显示的视觉错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed macOS keyboard shortcuts to display 'opt' instead of 'alt'",
+   "zh": "修复了 macOS 键盘快捷键以显示“opt”而不是“alt”"
+  },
+  {
+   "type": "fixed",
+   "en": "[Windows] Fixed issue with improper rendering",
+   "zh": "[Windows] 修复了渲染不正确的问题"
+  }
+ ]
+}

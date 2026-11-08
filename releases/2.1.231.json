@@ -1,0 +1,16 @@
+{
+ "version": "2.1.231",
+ "date": "2026-08-13",
+ "published": "2026-08-13T08:27:21.757Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.231",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth sign-in failing with a redirect URI mismatch for servers that use a pre-registered OAuth client, such as Slack",
+   "zh": "修复了使用预注册 OAuth 客户端（例如 Slack）的服务器因重定向 URI 不匹配而导致 MCP OAuth 登录失败的问题"
+  }
+ ]
+}

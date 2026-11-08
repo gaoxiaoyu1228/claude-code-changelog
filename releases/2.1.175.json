@@ -1,0 +1,16 @@
+{
+ "version": "2.1.175",
+ "date": "2026-06-12",
+ "published": "2026-06-12T02:10:22.132Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.175",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `enforceAvailableModels` managed setting — when enabled, the `availableModels` allowlist also constrains the Default model (a Default that would resolve to a disallowed model now falls back to the first allowed model), and user or project settings can no longer widen a managed `availableModels` list",
+   "zh": "添加了`enforceAvailableModels`托管设置 - 启用后，`availableModels`允许列表还会限制默认模型（将解析为不允许的模型的默认模型现在回退到第一个允许的模型），并且用户或项目设置无法再扩大托管`availableModels`列表"
+  }
+ ]
+}

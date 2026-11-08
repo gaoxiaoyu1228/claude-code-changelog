@@ -1,0 +1,163 @@
+{
+ "version": "2.1.172",
+ "date": "2026-06-10",
+ "published": "2026-06-10T17:55:48.479Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.172",
+ "counts": {
+  "new": 3,
+  "improved": 9,
+  "fixed": 18
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Sub-agents can now spawn their own sub-agents (up to 5 levels deep)",
+   "zh": "子代理现在可以再生成自己的子代理，最多 5 层"
+  },
+  {
+   "type": "new",
+   "en": "Added a search bar when browsing a marketplace's plugins in `/plugin`",
+   "zh": "在`/plugin`中浏览市场插件时添加了搜索栏"
+  },
+  {
+   "type": "new",
+   "en": "Added `model` attribute to the `claude_code.lines_of_code.count` OTEL metric",
+   "zh": "向`claude_code.lines_of_code.count` OTEL 指标添加了`model`属性"
+  },
+  {
+   "type": "improved",
+   "en": "Amazon Bedrock now reads the AWS region from `~/.aws` config files when `AWS_REGION` isn't set, matching AWS SDK precedence; `/status` shows where the region came from",
+   "zh": "现在，当未设置`AWS_REGION`时，Amazon Bedrock 会从`~/.aws`配置文件中读取 AWS 区域，以匹配 AWS SDK 优先级； `/status` 显示该区域的来源"
+  },
+  {
+   "type": "improved",
+   "en": "Disable mouse tracking on Windows consoles that don't fully support it",
+   "zh": "在不完全支持鼠标跟踪的 Windows 控制台上禁用鼠标跟踪"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance in long conversations by removing redundant message normalization and avoiding full message-history transforms when streaming tool-use state is unchanged",
+   "zh": "改进长对话性能：去掉多余的消息标准化，在流式工具调用状态不变时避免整段消息历史的转换"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced idle CPU usage: `/goal` status chip no longer re-renders the terminal at 5 Hz while idle, and fewer UI re-renders while subagents run in parallel",
+   "zh": "降低空闲 CPU 占用：`/goal` 状态标记空闲时不再以每秒 5 次的频率重绘终端；子代理并行运行时界面重绘也更少"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Claude in Chrome tool loading: browser tools now load in a single batched call instead of one per tool",
+   "zh": "改进 Claude in Chrome 的工具加载：浏览器工具改为一次批量加载，而不是每个工具单独加载一次"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the non-interactive Usage Policy refusal message to suggest starting a new session or changing your model",
+   "zh": "改进非交互模式下使用政策拒绝的提示：建议开启新会话或更换模型"
+  },
+  {
+   "type": "improved",
+   "en": "`/code-review` now keeps the `ultra` option visible when you're not signed in to claude.ai, with an explanation that the cloud review requires a claude.ai account",
+   "zh": "未登录 claude.ai 时，`/code-review` 现在会保留 `ultra` 选项，并说明云端审查需要 claude.ai 账号"
+  },
+  {
+   "type": "improved",
+   "en": "Shortened the Remote Control footer indicator to \"/rc active\" and hid it on narrow terminals",
+   "zh": "将 Remote Control 底部指示器缩短为 \"/rc active\"，并在窄终端中隐藏"
+  },
+  {
+   "type": "improved",
+   "en": "Stopped promoting `/loop` in remote sessions, where pending loops don't keep the container alive",
+   "zh": "不再在远程会话中推广 `/loop`，因为待执行的循环不会让容器保持运行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions using 1M context without usage credits getting permanently stuck — the session now automatically compacts back under the standard context limit",
+   "zh": "修复了使用 1M 上下文而没有使用积分永久卡住的会话 - 会话现在自动压缩回标准上下文限制以下"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a repeating \"an image in the conversation could not be processed and was removed\" error when the conversation contained multiple images",
+   "zh": "修复了当对话包含多个图像时重复出现的“对话中的图像无法处理并被删除”的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the agents view keeping a session under Working with a busy spinner for up to 30 seconds after the worker replied",
+   "zh": "修复智能体视图在工作进程回复后，仍将会话保持在\"工作中\"状态并显示忙碌旋转指示器长达 30 秒的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents potentially reading another directory's project settings (`.mcp.json` approvals, trust) when dispatched onto a pre-warmed worker",
+   "zh": "修复了后台代理在分派到预热工作人员时可能会读取另一个目录的项目设置（`.mcp.json`批准、信任）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-session attach failing with EAUTH for sessions started on an older version after the daemon auto-updated",
+   "zh": "修复了后台会话附加在守护程序自动更新后在旧版本上启动的会话时 EAUTH 失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a background sub-agent staying stuck as \"active\" in the agent panel after a nested agent it spawned was stopped",
+   "zh": "修复了后台子代理在其生成的嵌套代理停止后在代理面板中保持“活动”状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` suggestions in the `claude agents` dispatch input rendering with a misleading slash prefix and showing models disabled for your org",
+   "zh": "修复了“claude Agents”调度输入渲染中的`/model`建议，带有误导性的斜杠前缀，并显示为您的组织禁用的模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `availableModels` restrictions not being applied to subagent model overrides, the agent dispatch model picker, and the advisor model",
+   "zh": "修复了`availableModels`限制不适用于子代理模型覆盖、代理调度模型选择器和顾问模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `availableModels` allowlists hiding the `/model` picker's Opus and Sonnet 1M rows when entries use version-specific IDs like `claude-opus-4-8`",
+   "zh": "修复了当条目使用版本特定 ID（如`claude-opus-4-8`）时，`availableModels`允许列表隐藏`/model`选择器的 Opus 和 Sonnet 1M 行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/model` picker on Bedrock offering models the provider doesn't serve — selecting one silently switched the session model and lit the selection marker on multiple rows",
+   "zh": "修复 Bedrock 上 `/model` 选择器提供了服务商并不支持的模型的问题：选中后会静默切换会话模型，并导致多行同时显示选中标记"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model IDs getting a doubled 1M-context suffix (e.g. `[1M][1m]`) when `ANTHROPIC_DEFAULT_OPUS_MODEL` already includes one",
+   "zh": "修复了当`ANTHROPIC_DEFAULT_OPUS_MODEL`已包含一个时模型 ID 获得双倍 1M 上下文后缀（例如`[1M][1m]`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `opusplan` model setting not shipping with 1M context in plan mode for entitled users; the `opusplan[1m]` workaround now also correctly switches to Opus in plan mode",
+   "zh": "修复了`opusplan`模型设置未在计划模式下为授权用户提供 1M 上下文的问题； `opusplan[1m]` 解决方法现在也可以在计划模式下正确切换到 Opus"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `WebFetch(domain:*.example.com)` wildcard domain rules never matching subdomains in allow, deny, and ask position, and file permission rules with mid-pattern wildcards (e.g. `Read(secrets-*/config.json)`) being rejected at startup",
+   "zh": "修复了`WebFetch(domain:*.example.com)`通配符域规则永远不会匹配允许、拒绝和询问位置中的子域，以及带有中间模式通配符的文件权限规则（例如`Read(secrets-*/config.json)`）在启动时被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed up-arrow prompt history showing the main agent's prompts while a subagent's chat tab is open",
+   "zh": "修复打开子智能体的聊天标签页时，上箭头提示历史显示的是主智能体的提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory recall not finding mounted team memory stores (`CLAUDE_MEMORY_STORES`) in remote sessions",
+   "zh": "修复了内存调用在远程会话中找不到已安装的团队内存存储（`CLAUDE_MEMORY_STORES`）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed workflow validation rejecting scripts whose prompt strings or comments merely mention `Date.now()`/`Math.random()`",
+   "zh": "修复工作流校验误拒绝提示字符串或注释中仅提到 `Date.now()`/`Math.random()` 的脚本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/plugin` marketplace list losing its cursor after backing out of a long plugin list, and Esc from the plugin browser returning to the wrong tab",
+   "zh": "修复 `/plugin` 市场列表在退出长插件列表后丢失光标位置，以及在插件浏览器中按 Esc 返回了错误标签页的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed PowerShell tool calls rendering as raw JSON instead of a proper command display and permission dialog, and stripped ANSI escape codes from displayed shell output",
+   "zh": "[VSCode] 修复 PowerShell 工具调用以原始 JSON 显示、而不是正常的命令显示和权限对话框的问题；并去除了 shell 输出中的 ANSI 转义码"
+  }
+ ]
+}

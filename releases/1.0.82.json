@@ -1,0 +1,38 @@
+{
+ "version": "1.0.82",
+ "date": "2025-08-15",
+ "published": "2025-08-15T21:08:19.137Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.82",
+ "counts": {
+  "new": 2,
+  "improved": 2,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "SDK: Add request cancellation support",
+   "zh": "SDK：新增请求取消支持"
+  },
+  {
+   "type": "new",
+   "en": "SDK: New additionalDirectories option to search custom paths, improved slash command processing",
+   "zh": "SDK：新增 `additionalDirectories` 选项，可搜索自定义路径，并改进斜杠命令处理"
+  },
+  {
+   "type": "improved",
+   "en": "Settings: Validation prevents invalid fields in .claude/settings.json files",
+   "zh": "设置：校验会阻止 `.claude/settings.json` 中出现无效字段"
+  },
+  {
+   "type": "improved",
+   "en": "MCP: Improve tool name consistency",
+   "zh": "MCP：改进工具名称的一致性"
+  },
+  {
+   "type": "fixed",
+   "en": "Bash: Fix crash when Claude tries to automatically read large files",
+   "zh": "Bash：修复克劳德尝试自动读取大文件时的崩溃问题"
+  }
+ ]
+}

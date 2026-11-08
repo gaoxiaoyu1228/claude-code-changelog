@@ -1,0 +1,47 @@
+{
+ "version": "2.1.38",
+ "date": "2026-02-10",
+ "published": "2026-02-10T00:06:12.496Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.38",
+ "counts": {
+  "improved": 2,
+  "fixed": 5
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved heredoc delimiter parsing to prevent command smuggling",
+   "zh": "改进 heredoc 分隔符的解析，防止命令夹带"
+  },
+  {
+   "type": "improved",
+   "en": "Blocked writes to `.claude/skills` directory in sandbox mode",
+   "zh": "在沙箱模式下阻止写入`.claude/skills`目录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed VS Code terminal scroll-to-top regression introduced in 2.1.37",
+   "zh": "修复了 2.1.37 中引入的 VS Code 终端滚动到顶部回归问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Tab key queueing slash commands instead of autocompleting",
+   "zh": "修复了 Tab 键排队斜杠命令而不是自动完成的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bash permission matching for commands using environment variable wrappers",
+   "zh": "修复了使用环境变量包装器的命令的 bash 权限匹配"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed text between tool uses disappearing when not using streaming",
+   "zh": "修复非流式输出时，工具调用之间的文字消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate sessions when resuming in VS Code extension",
+   "zh": "修复了在 VS Code 扩展中恢复时的重复会话"
+  }
+ ]
+}

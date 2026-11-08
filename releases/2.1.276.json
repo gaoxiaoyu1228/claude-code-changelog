@@ -1,0 +1,16 @@
+{
+ "version": "2.1.276",
+ "date": "2026-09-18",
+ "published": "2026-09-18T01:39:31.986Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.276",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed every request failing with `400 … Input tag 'advisor_20260301'` when `ANTHROPIC_BASE_URL` points at a proxy or gateway (2.1.275 regression)",
+   "zh": "修复了当`ANTHROPIC_BASE_URL`指向代理或网关时，每个请求都会因“400 …输入标记“advisor_20260301”而失败（2.1.275 回归）"
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "version": "1.0.61",
+ "date": "2025-07-25",
+ "published": "2025-07-25T20:52:31.027Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.61",
+ "counts": {
+  "new": 4,
+  "improved": 1,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Settings: Added `--settings` flag to load settings from a JSON file",
+   "zh": "设置：新增 `--settings` 参数，可从 JSON 文件加载设置"
+  },
+  {
+   "type": "new",
+   "en": "IDE: Added support for pasting images in VSCode MacOS using ⌘+V",
+   "zh": "IDE：VS Code（macOS）中支持用 ⌘+V 粘贴图片"
+  },
+  {
+   "type": "new",
+   "en": "IDE: Added `CLAUDE_CODE_AUTO_CONNECT_IDE=false` for disabling IDE auto-connection",
+   "zh": "IDE：新增 `CLAUDE_CODE_AUTO_CONNECT_IDE=false`，用于关闭 IDE 自动连接"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_SHELL_PREFIX` for wrapping Claude and user-provided shell commands run by Claude Code",
+   "zh": "添加了`CLAUDE_CODE_SHELL_PREFIX`，用于包装 Claude 和由 Claude Code 运行的用户提供的 shell 命令"
+  },
+  {
+   "type": "improved",
+   "en": "Transcript mode (Ctrl+R): Changed Esc to exit transcript mode rather than interrupt",
+   "zh": "转录模式（Ctrl+R）：Esc 改为退出转录模式，而不再是打断"
+  },
+  {
+   "type": "fixed",
+   "en": "Settings: Fixed resolution of settings files paths that are symlinks",
+   "zh": "设置：修复了符号链接形式的设置文件路径的解析问题"
+  },
+  {
+   "type": "fixed",
+   "en": "OTEL: Fixed reporting of wrong organization after authentication changes",
+   "zh": "OTEL：修复了认证信息变更后上报错误组织的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Slash commands: Fixed permissions checking for allowed-tools with Bash",
+   "zh": "修复了 Bash 的 allowed-tools 在斜杠命令中的权限检查"
+  }
+ ]
+}

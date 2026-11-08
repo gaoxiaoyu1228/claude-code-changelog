@@ -1,0 +1,143 @@
+{
+ "version": "2.1.86",
+ "date": "2026-03-27",
+ "published": "2026-03-27T20:30:19.481Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.86",
+ "counts": {
+  "new": 2,
+  "improved": 8,
+  "fixed": 16
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `X-Claude-Code-Session-Id` header to API requests so proxies can aggregate requests by session without parsing the body",
+   "zh": "向 API 请求添加了`X-Claude-Code-Session-Id`标头，以便代理可以按会话聚合请求，而无需解析正文"
+  },
+  {
+   "type": "new",
+   "en": "Added `.jj` and `.sl` to VCS directory exclusion lists so Grep and file autocomplete don't descend into Jujutsu or Sapling metadata",
+   "zh": "将 `.jj` 和 `.sl` 添加到 VCS 目录排除列表，以便 Grep 和文件自动完成不会下降到 Jujutsu 或 Sapling 元数据中"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced startup event-loop stalls when many claude.ai MCP connectors are configured (macOS keychain cache extended from 5s to 30s)",
+   "zh": "配置了很多 claude.ai MCP 连接器时，启动时的事件循环卡顿减少（macOS 钥匙串缓存从 5 秒延长到 30 秒）"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced token overhead when mentioning files with `@` — raw string content no longer JSON-escaped",
+   "zh": "用 `@` 提及文件时的 token 开销减少：原始字符串内容不再做 JSON 转义"
+  },
+  {
+   "type": "improved",
+   "en": "Improved prompt cache hit rate for Bedrock, Vertex, and Foundry users by removing dynamic content from tool descriptions",
+   "zh": "改进 Bedrock、Vertex 和 Foundry 用户的提示缓存命中率：去掉了工具描述中的动态内容"
+  },
+  {
+   "type": "improved",
+   "en": "Memory filenames in the \"Saved N memories\" notice now highlight on hover and open on click",
+   "zh": "「已保存 N 条记忆」提示中的记忆文件名现在悬停时高亮，点击即可打开"
+  },
+  {
+   "type": "improved",
+   "en": "Skill descriptions in the `/skills` listing are now capped at 250 characters to reduce context usage",
+   "zh": "`/skills` 列表中的技能描述上限为 250 个字符，以减少上下文占用"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/skills` menu to sort alphabetically for easier scanning",
+   "zh": "更改了`/skills`菜单以按字母顺序排序以便于扫描"
+  },
+  {
+   "type": "improved",
+   "en": "Auto mode now shows \"unavailable for your plan\" when disabled by plan restrictions (was \"temporarily unavailable\")",
+   "zh": "当因计划限制而禁用时，自动模式现在显示“不可用于您的计划”（“暂时不可用”）"
+  },
+  {
+   "type": "improved",
+   "en": "Read tool now uses compact line-number format and deduplicates unchanged re-reads, reducing token usage",
+   "zh": "Read 工具改用紧凑的行号格式，并对未变化的重复读取去重，减少 token 用量"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` failing with \"tool_use ids were found without tool_result blocks\" on sessions created before v2.1.85",
+   "zh": "修复了在 v2.1.85 之前创建的会话上`--resume`失败并显示“在没有 tool_result 块的情况下找到 tool_use id”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Write/Edit/Read failing on files outside the project root (e.g., `~/.claude/CLAUDE.md`) when conditional skills or rules are configured",
+   "zh": "修复了配置条件技能或规则时项目根目录外部文件（例如`~/.claude/CLAUDE.md`）的写入/编辑/读取失败问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unnecessary config disk writes on every skill invocation that could cause performance issues and config corruption on Windows",
+   "zh": "修复每次调用技能都会不必要地写入配置文件磁盘，可能导致 Windows 上性能问题和配置损坏的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed potential out-of-memory crash when using `/feedback` on very long sessions with large transcript files",
+   "zh": "修复了在具有大型转录文件的非常长的会话中使用`/feedback`时潜在的内存不足崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--bare` mode dropping MCP tools in interactive sessions and silently discarding messages enqueued mid-turn",
+   "zh": "修复了`--bare`模式在交互式会话中丢弃 MCP 工具并默默丢弃中途排队的消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `c` shortcut copying only ~20 characters of the OAuth login URL instead of the full URL",
+   "zh": "修复 `c` 快捷键只复制 OAuth 登录链接前约 20 个字符，而非完整链接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed masked input (e.g., OAuth code paste) leaking the start of the token when wrapping across multiple lines on narrow terminals",
+   "zh": "修复了在窄终端上跨多行换行时泄漏令牌开头的屏蔽输入（例如，OAuth 代码粘贴）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed official marketplace plugin scripts failing with \"Permission denied\" on macOS/Linux since v2.1.83",
+   "zh": "修复了自 v2.1.83 起在 macOS/Linux 上官方市场插件脚本因“权限被拒绝”而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed statusline showing another session's model when running multiple Claude Code instances and using `/model` in one of them",
+   "zh": "修复了运行多个 Claude Code 实例并在其中一个实例中使用`/model`时显示另一个会话模型的状态行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scroll not following new messages after wheel scroll or click-to-select at the bottom of a long conversation",
+   "zh": "修复了滚轮滚动或在长对话底部单击选择后滚动不跟随新消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` uninstall dialog: pressing `n` now correctly uninstalls the plugin while preserving its data directory",
+   "zh": "修复了`/plugin`卸载对话框：按`n`现在可以正确卸载插件，同时保留其数据目录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a regression where pressing Enter after clicking could leave the transcript blank until the response arrived",
+   "zh": "修复了单击后按 Enter 可能会使转录文本留空直至响应到达的回归问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ultrathink` hint lingering after deleting the keyword",
+   "zh": "修复了删除关键字后`ultrathink`提示挥之不去的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory growth in long sessions from markdown/highlight render caches retaining full content strings",
+   "zh": "修复了来自降价/突出显示渲染缓存的长会话中的内存增长，保留了完整的内容字符串"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed extension incorrectly showing \"Not responding\" during long-running operations",
+   "zh": "[VSCode] 修复扩展在长时间运行的操作中错误显示 \"Not responding\" 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed extension defaulting Max plan users to Sonnet after the OAuth token refreshes (8 hours after login)",
+   "zh": "[VSCode] 修复 OAuth 令牌刷新后（登录后 8 小时），扩展把 Max 套餐用户默认切换为 Sonnet 的问题"
+  }
+ ]
+}

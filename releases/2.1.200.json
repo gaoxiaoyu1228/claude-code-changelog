@@ -1,0 +1,97 @@
+{
+ "version": "2.1.200",
+ "date": "2026-07-03",
+ "published": "2026-07-03T04:33:49.616Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.200",
+ "counts": {
+  "improved": 4,
+  "fixed": 13
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Changed `AskUserQuestion` dialogs to no longer auto-continue by default; opt into an idle timeout via `/config`",
+   "zh": "更改了`AskUserQuestion`对话框，默认情况下不再自动继续；通过`/config`选择空闲超时"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the \"default\" permission mode to \"Manual\" across the CLI, `--help`, VS Code, and JetBrains; `--permission-mode manual` and `\"defaultMode\": \"manual\"` are accepted alongside `default`",
+   "zh": "将 CLI、`--help`、VS Code 和 JetBrains 中的“默认”权限模式更改为“手动”； `--permission-mode manual` 和 `\"defaultMode\": \"manual\"` 与 `default` 一起接受"
+  },
+  {
+   "type": "improved",
+   "en": "Improved screen-reader output: decorative glyphs are now hidden, transcript symbols read as short labels, and nested tables read as `Header: value.` lines",
+   "zh": "改进屏幕阅读器输出：装饰性符号被隐藏，转录中的符号读作简短标签，嵌套表格读作 `Header: value.` 形式的行"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the install script to explain when installation is killed by the system running out of memory",
+   "zh": "改进安装脚本：说明安装过程因系统内存不足被终止的情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash at startup when `disabledMcpServers` or `enabledMcpServers` in `.claude.json` is set to a non-array value",
+   "zh": "修复了当`.claude.json`中的`disabledMcpServers`或`enabledMcpServers`设置为非数组值时启动时崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions silently stopping mid-turn after sleep/wake or when reopening a stalled session",
+   "zh": "修复了后台会话在睡眠/唤醒后或重新打开停止的会话时默默停止的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions re-running a turn cancelled with Esc after a stall respawn",
+   "zh": "修复了失速重生后使用 Esc 取消的后台会话重新运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents never starting again after a crash left a stale `daemon.lock` whose PID the OS reused",
+   "zh": "修复了后台代理在崩溃留下陈旧的`daemon.lock`后永远不会再次启动的问题，其 PID 被操作系统重用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-agent daemon handover so a reinstalled older build can no longer take over the daemon; build recency is now judged by the version's embedded build timestamp",
+   "zh": "修复了后台代理守护进程切换，以便重新安装的旧版本无法再接管守护进程；现在根据版本的嵌入构建时间戳来判断构建新近度"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-agent roster issues: transient corruption permanently disabling orphan cleanup, older binaries not preserving fields written by newer versions, and socket auth tokens being stripped during daemon restarts",
+   "zh": "修复了后台代理名册问题：暂时损坏永久禁用孤立清理、较旧的二进制文件不保留较新版本写入的字段以及在守护程序重新启动期间剥离套接字身份验证令牌"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents cut off by a rate limit before producing any text output returning an empty result instead of failing cleanly",
+   "zh": "修复了子代理在生成任何文本输出之前被速率限制切断，返回空结果而不是彻底失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed control bytes from background-agent output reaching the terminal in the agent view",
+   "zh": "修复了后台代理输出的控制字节到达代理视图中的终端的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents --plugin-dir <dir>` not showing the plugin's agents and skills in the agent view when the flag is placed after `agents`",
+   "zh": "修复了当标志放置在`agents`之后时，“claudeagents --plugin-dir <dir>”不会在代理视图中显示插件的代理和技能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed project-scoped plugins not loading correctly from git worktrees of the same repository",
+   "zh": "修复了项目范围的插件无法从同一存储库的 git 工作树正确加载的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/mcp` server list not tracking focus for screen readers and magnifiers",
+   "zh": "修复了`/mcp`服务器列表不跟踪屏幕阅读器和放大镜焦点的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice dictation showing a misleading \"Voice connection failed\" message when a recording captures no audio",
+   "zh": "修复录音未采集到任何音频时，语音听写显示误导性的\"Voice connection failed\"信息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rendering flicker under tmux 3.4+ by enabling synchronized terminal output",
+   "zh": "通过启用同步终端输出修复了 tmux 3.4+ 下的渲染闪烁"
+  }
+ ]
+}

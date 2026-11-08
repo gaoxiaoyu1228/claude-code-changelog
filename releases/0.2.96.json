@@ -1,0 +1,16 @@
+{
+ "version": "0.2.96",
+ "date": "2025-05-01",
+ "published": "2025-05-01T16:23:49.548Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.96",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Claude Code can now also be used with a Claude Max subscription (https://claude.ai/upgrade)",
+   "zh": "Claude Code 现在也可以与 Claude Max 订阅一起使用 (https://claude.ai/upgrade)"
+  }
+ ]
+}

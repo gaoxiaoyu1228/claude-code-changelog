@@ -1,0 +1,32 @@
+{
+ "version": "1.0.84",
+ "date": "2025-08-18",
+ "published": "2025-08-18T22:36:19.901Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.84",
+ "counts": {
+  "improved": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "@-mention: Add ~/.claude/\\* files to suggestions for easier agent, output style, and slash command editing",
+   "zh": "@-mention：将 ~/.claude/\\* 文件添加到建议中，以便更轻松地进行代理、输出样式和斜杠命令编辑"
+  },
+  {
+   "type": "improved",
+   "en": "Use built-in ripgrep by default; to opt out of this behavior, set USE_BUILTIN_RIPGREP=0",
+   "zh": "默认使用内置的 ripgrep；如需关闭，请设置 `USE_BUILTIN_RIPGREP=0`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix tool_use/tool_result id mismatch error when network is unstable",
+   "zh": "修复网络不稳定时 tool_use/tool_result id 不匹配的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix Claude sometimes ignoring real-time steering when wrapping up a task",
+   "zh": "修复克劳德在完成任务时有时会忽略实时转向的问题"
+  }
+ ]
+}

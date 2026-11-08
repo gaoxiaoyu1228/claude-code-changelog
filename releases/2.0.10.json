@@ -1,0 +1,43 @@
+{
+ "version": "2.0.10",
+ "date": "2025-10-07",
+ "published": "2025-10-07T19:53:56.866Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.10",
+ "counts": {
+  "new": 4,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Enable/disable MCP servers by @mentioning, or in /mcp",
+   "zh": "通过@提及或在 /mcp 中启用/禁用 MCP 服务器"
+  },
+  {
+   "type": "new",
+   "en": "Added tab completion for shell commands in bash mode",
+   "zh": "为 bash 模式下的 shell 命令添加了制表符补全功能"
+  },
+  {
+   "type": "new",
+   "en": "PreToolUse hooks can now modify tool inputs",
+   "zh": "PreToolUse hook 现在可以修改工具输入"
+  },
+  {
+   "type": "new",
+   "en": "Press Ctrl-G to edit your prompt in your system's configured text editor",
+   "zh": "按 Ctrl-G 可在系统配置的文本编辑器中编辑提示"
+  },
+  {
+   "type": "improved",
+   "en": "Rewrote terminal renderer for buttery smooth UI",
+   "zh": "重写终端渲染器，界面更加流畅"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixes for bash permission checks with environment variables in the command",
+   "zh": "修复了命令中带环境变量时 bash 权限检查的问题"
+  }
+ ]
+}

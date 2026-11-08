@@ -1,0 +1,43 @@
+{
+ "version": "1.0.115",
+ "date": "2025-09-16",
+ "published": "2025-09-16T00:07:57.334Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.115",
+ "counts": {
+  "new": 1,
+  "improved": 4,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Type /t to temporarily disable thinking mode in your prompt",
+   "zh": "在提示中输入 `/t` 可临时关闭思考模式"
+  },
+  {
+   "type": "improved",
+   "en": "Improve thinking mode display with enhanced visual effects",
+   "zh": "增强 thinking 模式的显示效果，视觉更丰富"
+  },
+  {
+   "type": "improved",
+   "en": "Improve path validation for glob and grep tools",
+   "zh": "改进 glob 和 grep 工具的路径校验"
+  },
+  {
+   "type": "improved",
+   "en": "Show condensed output for post-tool hooks to reduce visual clutter",
+   "zh": "工具后钩子的输出改为精简显示，减少视觉杂乱"
+  },
+  {
+   "type": "improved",
+   "en": "Improve UI consistency for permission request dialogs",
+   "zh": "改进权限请求对话框的界面一致性"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix visual feedback when loading state completes",
+   "zh": "修复加载状态完成时的视觉反馈"
+  }
+ ]
+}

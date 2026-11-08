@@ -1,0 +1,143 @@
+{
+ "version": "2.1.149",
+ "date": "2026-05-22",
+ "published": "2026-05-22T18:27:11.623Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.149",
+ "counts": {
+  "new": 3,
+  "improved": 2,
+  "fixed": 21
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "`/usage` now shows a per-category breakdown of what's driving your limits usage — skills, subagents, plugins, and per-MCP-server cost",
+   "zh": "`/usage` 现在会按类别分解说明哪些内容消耗了你的限额，包括 skill、子 agent、插件和每个 MCP 服务器的成本"
+  },
+  {
+   "type": "new",
+   "en": "Markdown output now renders GFM task list checkboxes (`- [ ] todo` / `- [x] done`) instead of plain bullets",
+   "zh": "Markdown 输出现在会渲染 GFM 任务列表复选框（`- [ ] 待办` / `- [x] 完成`），而不再显示为普通项目符号"
+  },
+  {
+   "type": "new",
+   "en": "Enterprise: added the `allowAllClaudeAiMcps` managed setting to load claude.ai cloud MCP connectors alongside `managed-mcp.json`",
+   "zh": "企业：添加了`allowAllClaudeAiMcps`托管设置，以加载 claude.ai 云 MCP 连接器以及“driven-mcp.json”"
+  },
+  {
+   "type": "improved",
+   "en": "`/diff` detail view can now be scrolled with the keyboard (arrows, `j`/`k`, `PgUp`/`PgDn`, `Space`, `Home`/`End`)",
+   "zh": "`/diff` 详情视图现在可以用键盘滚动（方向键、`j`/`k`、`PgUp`/`PgDn`、空格、`Home`/`End`）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/feedback` reports to include the conversation that happened before context compaction, making issues from earlier in long sessions easier to triage",
+   "zh": "改进 `/feedback` 报告：包含上下文压缩之前的对话，便于排查长会话早期的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a PowerShell permission bypass: built-in `cd` functions (`cd..`, `cd\\`, `cd~`, `X:`) changed the working directory undetected, letting a later command read outside the workspace",
+   "zh": "修复了 PowerShell 权限绕过：内置 `cd` 函数（`cd..`、`cd\\`、`cd~`、`X:`）更改了未检测到的工作目录，让稍后的命令在工作区之外读取"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the sandbox write allowlist in git worktrees covering the entire main repository root instead of only the shared `.git` directory (with `hooks/` and `config` denied)",
+   "zh": "修复 git 工作树中的沙盒写入允许列表覆盖了整个主仓库根目录，而不仅是共享的 `.git` 目录（其中 `hooks/` 和 `config` 被拒绝）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PowerShell prefix/wildcard allow rules (e.g. `PowerShell(dotnet.exe build *)`) not pre-approving native executables and scripts",
+   "zh": "修复了 PowerShell 前缀/通配符允许规则（例如`PowerShell(dotnet.exe build *)`）不预先批准本机可执行文件和脚本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a permission-analysis gap where the parser trusted stale variable-tracking values for `PWD`/`OLDPWD`/`DIRSTACK` across `cd`/`pushd`/`popd`",
+   "zh": "修复了权限分析差距，其中解析器信任`cd`/`pushd`/`popd`中`PWD`/`OLDPWD`/`DIRSTACK`的过时变量跟踪值"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `find` in the Bash tool exhausting the macOS system file/vnode table and crashing the host on large directory trees",
+   "zh": "修复了 Bash 工具中的`find`耗尽 macOS 系统文件/vnode 表并导致大型目录树上的主机崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the managed-settings approval dialog leaving the terminal frozen after accepting at startup",
+   "zh": "修复托管设置审批对话框在启动时接受后，终端仍然冻结的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultraplan` and remote session creation failing with \"Could not capture uncommitted changes\" when the working tree has no real changes",
+   "zh": "修复了当工作树没有实际更改时`/ultraplan`和远程会话创建失败并显示“无法捕获未提交的更改”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `otelHeadersHelper` failing silently when the script path contains spaces; helper failures are now reported in `/doctor` and the debug log",
+   "zh": "修复了当脚本路径包含空格时`otelHeadersHelper`无提示失败的问题；助手失败现在在`/doctor`和调试日志中报告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the thinking spinner staying amber across tool calls and onto fresh thinking bursts",
+   "zh": "修复思考旋转指示器在工具调用之间以及新的思考片段中仍保持琥珀色的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed collapsed Bash output reporting the wrong hidden-line count for outputs with many short lines",
+   "zh": "修复了折叠的 Bash 输出报告具有许多短行的输出的错误隐藏行计数"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash-command argument-hint clipping trailing typed characters when the hint overflows the input box",
+   "zh": "修复了斜杠命令参数提示在提示溢出输入框时剪切尾随键入字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed argument-hint and progressive arg suggestions not appearing after Tab-completing a skill whose frontmatter `name:` differs from its directory basename",
+   "zh": "固定参数提示和渐进式参数建议在按 Tab 键补全其前面内容“名称：”与其目录基本名称不同的技能后不会出现"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the status bar showing the user's baseline `/effort` setting instead of the effort level applied by skill/agent `effort:` frontmatter",
+   "zh": "修复状态栏显示用户的基础 `/effort` 设置，而不是技能或智能体 `effort:` 前置配置所应用的努力级别的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+O transcript view freezing at the moment it was opened instead of tailing new messages",
+   "zh": "修复了 Ctrl+O 转录视图在打开时冻结而不是拖尾新消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed editing a recalled prompt-history entry losing the edit when navigating further up/down with arrow keys",
+   "zh": "修复了使用箭头键进一步向上/向下导航时编辑召回的提示历史记录条目会丢失编辑的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/config` exit summary reporting phantom changes to auto-compact and theme when toggling unrelated settings",
+   "zh": "修复了切换不相关设置时`/config`退出摘要报告对自动压缩和主题的虚拟更改"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/insights` crashing when cached session-meta files are missing optional fields",
+   "zh": "修复了当缓存的会话元文件缺少可选字段时`/insights`崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed malformed PowerShell and History tool calls with missing input being misclassified as reads in transcript collapsing",
+   "zh": "修复了格式错误的 PowerShell 和历史记录工具调用，缺少输入被错误分类为转录本折叠中的读取"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed renaming a Remote Control session from claude.ai or the Claude mobile app not updating the local session name for `claude --resume`",
+   "zh": "修复了从 claude.ai 重命名远程控制会话或 Claude 移动应用程序未更新`claude --resume`的本地会话名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race where a just-submitted prompt could appear twice in the up-arrow history",
+   "zh": "修复了刚刚提交的提示可能会在向上箭头历史记录中出现两次的竞赛"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tapping the \"Jump to bottom\" pill in fullscreen mode not dismissing it immediately",
+   "zh": "修复全屏模式下点击\"跳到底部\"提示条时，它不会立即消失的问题"
+  }
+ ]
+}

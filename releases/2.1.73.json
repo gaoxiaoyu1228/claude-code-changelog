@@ -1,0 +1,144 @@
+{
+ "version": "2.1.73",
+ "date": "2026-03-11",
+ "published": "2026-03-11T17:39:34.332Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.73",
+ "counts": {
+  "new": 2,
+  "improved": 7,
+  "fixed": 16,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `modelOverrides` setting to map model picker entries to custom provider model IDs (e.g. Bedrock inference profile ARNs)",
+   "zh": "添加了`modelOverrides`设置，以将模型选择器条目映射到自定义提供程序模型 ID（例如 Bedrock 推理配置文件 ARN）"
+  },
+  {
+   "type": "new",
+   "en": "Added actionable guidance when OAuth login or connectivity checks fail due to SSL certificate errors (corporate proxies, `NODE_EXTRA_CA_CERTS`)",
+   "zh": "添加了当 OAuth 登录或连接检查由于 SSL 证书错误而失败时的可操作指南（公司代理，`NODE_EXTRA_CA_CERTS`）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Up arrow after interrupting Claude — now restores the interrupted prompt and rewinds the conversation in one step",
+   "zh": "改进：中断 Claude 后按上方向键，现在会一步完成：恢复被中断的提示词，并回退对话"
+  },
+  {
+   "type": "improved",
+   "en": "Improved IDE detection speed at startup",
+   "zh": "改进启动时的 IDE 检测速度"
+  },
+  {
+   "type": "improved",
+   "en": "Improved clipboard image pasting performance on macOS",
+   "zh": "改进 macOS 上粘贴剪贴板图片的性能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/effort` to work while Claude is responding, matching `/model` behavior",
+   "zh": "改进 `/effort`：Claude 回复时也能使用，与 `/model` 的行为一致"
+  },
+  {
+   "type": "improved",
+   "en": "Improved voice mode to automatically retry transient connection failures during rapid push-to-talk re-press",
+   "zh": "改进语音模式：快速重复按下按键说话时，遇到短暂的连接失败会自动重试"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Remote Control spawn mode selection prompt with better context",
+   "zh": "改进 Remote Control 启动方式选择提示，增加了更多上下文说明"
+  },
+  {
+   "type": "improved",
+   "en": "Changed default Opus model on Bedrock, Vertex, and Microsoft Foundry to Opus 4.6 (was Opus 4.1)",
+   "zh": "将 Bedrock、Vertex 和 Microsoft Foundry 上的默认 Opus 模型更改为 Opus 4.6（原为 Opus 4.1）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed freezes and 100% CPU loops triggered by permission prompts for complex bash commands",
+   "zh": "修复了复杂 bash 命令的权限提示触发的冻结和 100% CPU 循环"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a deadlock that could freeze Claude Code when many skill files changed at once (e.g. during `git pull` in a repo with a large `.claude/skills/` directory)",
+   "zh": "修复了当许多技能文件同时更改时可能冻结克劳德代码的死锁（例如，在具有大型`.claude/skills/`目录的存储库中的`git pull`期间）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool output being lost when running multiple Claude Code sessions in the same project directory",
+   "zh": "修复了在同一项目目录中运行多个 Claude Code 会话时 Bash 工具输出丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents with `model: opus`/`sonnet`/`haiku` being silently downgraded to older model versions on Bedrock, Vertex, and Microsoft Foundry",
+   "zh": "修复了`model: opus`/`sonnet`/`haiku`的子代理在 Bedrock、Vertex 和 Microsoft Foundry 上默默降级为旧模型版本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background bash processes spawned by subagents not being cleaned up when the agent exits",
+   "zh": "修复了代理退出时子代理生成的后台 bash 进程未被清理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume` showing the current session in the picker",
+   "zh": "修复了在选择器中显示当前会话的`/resume`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ide` crashing with `onInstall is not defined` when auto-installing the extension",
+   "zh": "修复了自动安装扩展时`/ide`因“onInstall is not Defined”而崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/loop` not being available on Bedrock/Vertex/Foundry and when telemetry was disabled",
+   "zh": "修复了`/loop`在基岩/顶点/铸造厂上以及禁用遥测时不可用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SessionStart hooks firing twice when resuming a session via `--resume` or `--continue`",
+   "zh": "修复了通过`--resume`或`--continue`恢复会话时 SessionStart 挂钩触发两次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed JSON-output hooks injecting no-op system-reminder messages into the model's context on every turn",
+   "zh": "修复了 JSON 输出挂钩，每次都会将无操作系统提醒消息注入到模型的上下文中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode session corruption when a slow connection overlaps a new recording",
+   "zh": "修复慢速连接与新录音重叠时，语音模式会话损坏的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Linux sandbox failing to start with \"ripgrep (rg) not found\" on native builds",
+   "zh": "修复了 Linux 沙箱在本机构建上无法启动并出现“ripgrep (rg) not found”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Linux native modules not loading on Amazon Linux 2 and other glibc 2.26 systems",
+   "zh": "修复了在 Amazon Linux 2 和其他 glibc 2.26 系统上无法加载的 Linux 本机模块"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"media_type: Field required\" API error when receiving images via Remote Control",
+   "zh": "修复了通过远程控制接收图像时“media_type: Field required”API 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/heapdump` failing on Windows with `EEXIST` error when the Desktop folder already exists",
+   "zh": "修复了当桌面文件夹已存在时`/heapdump`在 Windows 上失败并出现`EEXIST`错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed HTTP 400 errors for users behind proxies or on Bedrock/Vertex with Claude 4.5 models",
+   "zh": "VS Code：修复了用户位于代理后，或在 Bedrock/Vertex 上使用 Claude 4.5 模型时出现的 HTTP 400 错误"
+  },
+  {
+   "type": "removed",
+   "en": "Deprecated `/output-style` command — use `/config` instead. Output style is now fixed at session start for better prompt caching",
+   "zh": "已弃用的`/output-style`命令 - 使用`/config`代替。现在在会话开始时固定输出样式，以实现更好的提示缓存"
+  }
+ ]
+}

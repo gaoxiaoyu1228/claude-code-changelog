@@ -1,0 +1,16 @@
+{
+ "version": "1.0.63",
+ "date": "2025-07-29",
+ "published": "2025-07-29T21:27:31.493Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.63",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed file search, @agent mentions, and custom slash commands functionality",
+   "zh": "Windows：修复了文件搜索、@agent 提及和自定义斜杠命令的功能问题"
+  }
+ ]
+}

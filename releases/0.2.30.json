@@ -1,0 +1,28 @@
+{
+ "version": "0.2.30",
+ "date": "2025-03-04",
+ "published": "2025-03-04T18:47:05.839Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.30",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added ANSI color theme for better terminal compatibility",
+   "zh": "添加 ANSI 颜色主题以获得更好的终端兼容性"
+  },
+  {
+   "type": "improved",
+   "en": "(Mac-only) API keys are now stored in macOS Keychain",
+   "zh": "（仅限 Mac）API 密钥现在存储在 macOS 钥匙串中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed issue where slash command arguments weren't being sent properly",
+   "zh": "修复了斜杠命令参数未正确发送的问题"
+  }
+ ]
+}

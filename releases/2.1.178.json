@@ -1,0 +1,134 @@
+{
+ "version": "2.1.178",
+ "date": "2026-06-15",
+ "published": "2026-06-15T19:03:37.553Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.178",
+ "counts": {
+  "new": 2,
+  "improved": 7,
+  "fixed": 14,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `Tool(param:value)` syntax for permission rules to match a tool's input parameters (with `*` wildcard), e.g. `Agent(model:opus)` to block Opus subagents",
+   "zh": "为权限规则添加了`Tool(param:value)`语法，以匹配工具的输入参数（带有`*`通配符），例如`Agent(model:opus)` 用于阻止 Opus 子代理"
+  },
+  {
+   "type": "new",
+   "en": "Skills in nested `.claude/skills` directories now load when working on files there; on a name clash, the nested skill appears as `<dir>:<name>` so both stay available",
+   "zh": "在处理嵌套 `.claude/skills` 目录中的文件时，会加载其中的技能；若名称冲突，嵌套的技能显示为 `<目录>:<名称>`，两者都可用"
+  },
+  {
+   "type": "improved",
+   "en": "Nested `.claude/` directories: the agent, workflow, and output-style closest to the working directory now wins when names collide; project-scope workflow saves now target the closest existing `.claude/workflows/`",
+   "zh": "嵌套 `.claude/` 目录：名称冲突时，离工作目录最近的智能体、工作流和输出样式优先；项目范围的工作流保存会写入最近的已有 `.claude/workflows/`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode: subagent spawns are now evaluated by the classifier before launch, closing a gap where a subagent could request a blocked action without review",
+   "zh": "改进自动模式：子代理启动前会先由分类器审查，堵上了子代理可以请求被拦截操作而不经审查的漏洞"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/doctor` with consistent flat tree layout across all sections, clearer section status icons, and highlighted command names",
+   "zh": "改进 `/doctor`：各部分统一为扁平的树形布局，状态图标更清楚，命令名高亮显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the skill listing truncation warning to show how many skill descriptions are affected",
+   "zh": "改进技能列表截断警告：会显示受影响的技能描述数量"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the workflow prompt keyword to use a purple shimmer highlight and trigger only on explicit phrases like \"run a workflow\" or \"workflow:\", not on any mention of the word",
+   "zh": "更改了工作流程提示关键字，以使用紫色闪光突出显示，并且仅在明确的短语（例如“运行工作流程”或“工作流程：”）上触发，而不是在任何提及该词的情况下触发"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control error messages: connection failures now show a persistent red \"/rc failed\" indicator in the footer, and the \"not yet enabled\" error now explains whether it's a gate, a check failure, stale entitlement, or org policy",
+   "zh": "改进远程控制错误提示：连接失败时，底部显示持续的红色“/rc failed”指示器；“未启用”错误会说明原因是功能开关、检查失败、授权过期还是组织策略"
+  },
+  {
+   "type": "improved",
+   "en": "`/bug` now requires a description before submitting, and no longer uses model-refusal text as the GitHub issue title",
+   "zh": "`/bug` 提交前现在必须填写描述，且不再把模型的拒绝文本用作 GitHub issue 标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash (out-of-memory) when the CLI inherits a stale websocket/OAuth file-descriptor environment variable from a parent process",
+   "zh": "修复了 CLI 从父进程继承过时的 websocket/OAuth 文件描述符环境变量时发生的崩溃（内存不足）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude in Chrome silently failing to connect when the OAuth token belongs to a different account than the Claude Code login",
+   "zh": "修复了当 OAuth 令牌属于与 Claude 代码登录不同的帐户时，Chrome 中的 Claude 无提示连接失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed nested `.claude/skills` skills with directory-qualified names being blocked by permission prompts in non-interactive runs",
+   "zh": "修复了嵌套的`.claude/skills`技能，其中目录限定名称在非交互式运行中被权限提示阻止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several subagent issues: viewing a subagent's transcript now shows tool results and live progress, messages sent while it finishes its turn are no longer dropped, and backgrounding a running subagent (ctrl+b) no longer restarts it from scratch",
+   "zh": "修复了几个子代理问题：查看子代理的记录现在会显示工具结果和实时进度，完成轮次时发送的消息不再被丢弃，并且后台运行的子代理 (ctrl+b) 不再从头开始重新启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` workers failing with `401 Invalid bearer token` when the daemon was started from a shell with a custom API gateway via `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN`",
+   "zh": "修复了当守护进程通过`ANTHROPIC_BASE_URL`和`ANTHROPIC_AUTH_TOKEN`从具有自定义 API 网关的 shell 启动时，“claude Agents”工作人员因“401 无效承载令牌”而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed compaction not honoring `--fallback-model`: compaction now falls back to the configured fallback model chain on overload or model-availability errors",
+   "zh": "修复了压缩不遵循`--fallback-model`的问题：压缩现在在过载或模型可用性错误时回退到配置的后备模型链"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model requests continuing to fail with auth errors after credentials were refreshed outside the session, due to a stale cached request configuration",
+   "zh": "修复了在会话外刷新凭据后，由于缓存的请求配置过时，模型请求继续失败并出现身份验证错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions created with `/bg` or `←←` after a turn finished showing \"Working\" forever in the agents list",
+   "zh": "修复了回合结束后使用`/bg`或`←←`创建的后台会话，在代理列表中永远显示“正在工作”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Linux sandbox failing to start when `.claude/skills` or `.claude/hooks` is a symlink",
+   "zh": "修复了当 `.claude/skills` 或 `.claude/hooks` 是符号链接时 Linux 沙箱无法启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=1` preventing fresh marketplace installs from cloning",
+   "zh": "修复了`CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=1`，防止克隆新的市场安装"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP server-level specs (`mcp__server`, `mcp__server__*`, `mcp__*`) in subagent `disallowedTools` being silently ignored",
+   "zh": "修复了子代理`disallowedTools`中被默默忽略的 MCP 服务器级规范（`mcp__server`、`mcp__server__*`、`mcp__*`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode undo: `u` now steps through NORMAL/VISUAL-mode commands one at a time instead of merging commands in quick succession into a single undo step",
+   "zh": "修复 vim 模式撤销：`u` 现在会逐条撤销 NORMAL/VISUAL 模式的命令，而不会把快速连续的命令合并为一次撤销"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed statusline links with custom URI schemes (e.g. `vscode://`) not opening when clicked in `claude agents`",
+   "zh": "修复了在“claude Agents”中单击时带有自定义 URI 方案（例如`vscode://`）的状态栏链接无法打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed pressing Esc to dismiss a CJK IME candidate window canceling the running Claude task",
+   "zh": "[VSCode] 修复按 Esc 关闭中文等输入法（CJK IME）的候选窗口时，误取消了正在运行的 Claude 任务的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Agent teams: removed the `TeamCreate` and `TeamDelete` tools. With `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` set, every session now has one implicit team — spawn teammates directly with the Agent tool's `name` parameter, no setup step needed. The `team_name` parameter on the Agent tool is still accepted but ignored.",
+   "zh": "代理团队：删除了`TeamCreate`和`TeamDelete`工具。设置`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`后，每个会话现在都有一个隐式团队 - 直接使用代理工具的`name`参数生成队友，无需任何设置步骤。代理工具上的`team_name`参数仍然被接受但被忽略。"
+  }
+ ]
+}

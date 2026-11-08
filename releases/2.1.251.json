@@ -1,0 +1,369 @@
+{
+ "version": "2.1.251",
+ "date": "2026-08-28",
+ "published": "2026-08-28T15:34:26.421Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.251",
+ "counts": {
+  "new": 5,
+  "improved": 24,
+  "fixed": 41,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `PreModelSwitch` and `PostModelSwitch` hook events (block, confirm, or annotate a model switch); `SessionStart` resume hooks now receive session staleness and the estimated re-cache cost",
+   "zh": "添加了 `PreModelSwitch` 和 `PostModelSwitch` 钩子事件（阻止、确认或注释模型切换）； `SessionStart`恢复挂钩现在接收会话陈旧性和估计的重新缓存成本"
+  },
+  {
+   "type": "new",
+   "en": "Added live streaming of a foreground subagent's tool calls and results to Remote Control clients (background subagents, the default, still show status only)",
+   "zh": "添加了将前台子代理的工具调用和结果实时流传输到远程控制客户端的功能（默认情况下，后台子代理仍然仅显示状态）"
+  },
+  {
+   "type": "new",
+   "en": "Added a Spend limit bar to `/usage` and a `rate_limits.spend_limit` status line field for developers behind a Claude apps gateway with spend limits",
+   "zh": "为`/usage`添加了支出限制栏，并为具有支出限制的 Claude 应用程序网关背后的开发人员添加了`rate_limits.spend_limit`状态行字段"
+  },
+  {
+   "type": "new",
+   "en": "Added a per-session prompt-cache line to `/cost` (hit ratio, misses, tokens re-cached, warm/cold) and a matching `prompt_cache` object for status line scripts",
+   "zh": "向`/cost`添加了每会话提示缓存行（命中率、未命中、重新缓存的令牌、热/冷）以及状态行脚本的匹配`prompt_cache`对象"
+  },
+  {
+   "type": "new",
+   "en": "Added `attach`, `logs`, `stop`, `respawn`, and `rm` to `claude --help`; the `--resume` message for a running background session now names the exact `claude attach <id>` command",
+   "zh": "在`claude --help`中添加了`attach`、`logs`、`stop`、`respawn`和`rm`；正在运行的后台会话的`--resume`消息现在命名为确切的“claude Attach <id>”命令"
+  },
+  {
+   "type": "improved",
+   "en": "Improved CPU usage during turns in interactive sessions by cutting redundant UI re-renders",
+   "zh": "改进交互会话中一轮对话期间的 CPU 占用，减少多余的界面重绘"
+  },
+  {
+   "type": "improved",
+   "en": "Improved install size: the native binary is about 5 MB smaller",
+   "zh": "改进安装体积：原生二进制文件减小约 5 MB"
+  },
+  {
+   "type": "improved",
+   "en": "Improved cloud sessions: when the session's network proxy drops a connection during a Bash command, the tool result now names the host and reason instead of only \"connection reset\"",
+   "zh": "改进云会话：会话的网络代理在 Bash 命令执行期间断开连接时，工具结果会说明主机和原因，而不只是“connection reset”"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/schedule` to explain that MCP servers configured in Claude Code can't be attached to cloud routines, instead of a bare \"No MCP connectors\" message",
+   "zh": "改进 `/schedule`：说明在 Claude Code 中配置的 MCP 服务器无法挂到云端例程上，不再只显示笼统的“No MCP connectors”"
+  },
+  {
+   "type": "improved",
+   "en": "Improved framing of messages from your own subagents: Claude is told the sender is a worker inside this session, not an unrelated Claude session",
+   "zh": "改进你自己的子代理消息的表述：Claude 会被告知发送者是本会话内的工作代理，而不是无关的 Claude 会话"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the prompt placeholder to read \"Message @name…\" while viewing a background subagent or fork transcript opened from the subagent panel or `/tasks`",
+   "zh": "改进提示占位文字：查看从子智能体面板或 `/tasks` 打开的后台子智能体或分叉转录时，显示「Message @name…」"
+  },
+  {
+   "type": "improved",
+   "en": "Improved sanitization of MCP server names in error messages, menus, and command results",
+   "zh": "改进 MCP 服务器名称在报错信息、菜单和命令结果中的显示安全处理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Amazon Bedrock session start under `CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST` (e.g. Claude Desktop): a session given a Bedrock model ID or ARN no longer waits for inference-profile discovery",
+   "zh": "改进 `CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST` 下（如 Claude Desktop）的 Bedrock 会话启动：传入 Bedrock 模型 ID 或 ARN 的会话不再等待推理配置文件发现"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the managed settings approval dialog to list only the settings that changed since you last approved them",
+   "zh": "改进托管设置批准对话框：只列出自上次批准以来发生变化的设置"
+  },
+  {
+   "type": "improved",
+   "en": "Improved retry when the model's tool call is malformed: the broken output is now dropped from the retry context, including on Bedrock, Vertex, and Foundry",
+   "zh": "改进模型工具调用格式错误时的重试：错误输出会从重试上下文中去掉，Bedrock、Vertex 和 Foundry 上同样如此"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/radio` to be available on Bedrock, Vertex AI, Foundry, and Claude Platform on AWS, and when telemetry is disabled",
+   "zh": "将`/radio`更改为在 AWS 上的 Bedrock、Vertex AI、Foundry 和 Claude Platform 上以及禁用遥测时可用"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Claude in Chrome so browser actions always go through Claude Code's permission checks, including in sessions with telemetry disabled, which previously used the Chrome extension's own prompts",
+   "zh": "更改了 Chrome 中的 Claude，以便浏览器操作始终经过 Claude Code 的权限检查，包括在禁用遥测的会话中，该会话之前使用 Chrome 扩展程序自己的提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `CLAUDE_CODE_SUBAGENT_MODEL` to set the default subagent model rather than override everything: an agent definition's `model:` and an explicit per-spawn model now take precedence over it",
+   "zh": "更改了`CLAUDE_CODE_SUBAGENT_MODEL`以设置默认子代理模型，而不是覆盖所有内容：代理定义的`model:`和显式的每生成模型现在优先于它"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the default commit trailer to `Co-Authored-By: Claude Code` when the active model isn't a recognized Claude model (e.g. third-party models behind a custom `ANTHROPIC_BASE_URL`)",
+   "zh": "当活动模型不是公认的 Claude 模型时（例如自定义`ANTHROPIC_BASE_URL`背后的第三方模型），将默认提交预告片更改为“共同作者：Claude Code”"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the default model for seat-based Enterprise subscriptions to Opus 5, matching other premium plans",
+   "zh": "将基于席位的企业订阅的默认模型更改为 Opus 5，以匹配其他高级计划"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/effort` to save your default effort level per model, so each model keeps its own setting when you switch",
+   "zh": "更改了`/effort`以保存每个模型的默认工作量级别，因此当您切换时每个模型都会保留自己的设置"
+  },
+  {
+   "type": "improved",
+   "en": "Changed analytics to no longer turn off before sign-in solely because managed settings force gateway login (or cannot be read); they stay off once signed in to the gateway or via `DISABLE_TELEMETRY`",
+   "zh": "将分析更改为不再仅因为托管设置强制网关登录（或无法读取）而在登录前关闭；一旦登录到网关或通过`DISABLE_TELEMETRY`，它们就会保持关闭状态"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the footer PR badge on Bedrock, Vertex, and Foundry, and when telemetry is off, to call the GitHub API directly (via `gh auth token`, `GH_TOKEN`, or `GITHUB_TOKEN`) instead of `gh pr view`",
+   "zh": "更改了 Bedrock、Vertex 和 Foundry 上的页脚 PR 徽章，并且当遥测关闭时，直接调用 GitHub API（通过`gh auth token`、`GH_TOKEN`或`GITHUB_TOKEN`）而不是`gh pr view`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed how Bash command output files are created and read back when commands run in the sandbox, so a sandboxed command cannot redirect or replace them",
+   "zh": "更改了命令在沙箱中运行时创建和读回 Bash 命令输出文件的方式，因此沙箱命令无法重定向或替换它们"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plugin/LSP install suggestions and the auto-mode default offer to wait until you've sent or cleared what you're typing, so the Enter that sends your prompt can't answer them",
+   "zh": "更改了插件/LSP 安装建议和自动模式默认提议，等待您发送或清除您正在输入的内容，因此发送提示的 Enter 无法回答它们"
+  },
+  {
+   "type": "improved",
+   "en": "Changed server-managed settings that terminate sandbox TLS, route sandbox traffic through your own proxy, inject credentials, or weaken sandbox isolation to require approval before they apply",
+   "zh": "更改了服务器管理的设置，这些设置终止沙箱 TLS、通过您自己的代理路由沙箱流量、注入凭据或削弱沙箱隔离，以便在应用之前需要批准"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `ANTHROPIC_CUSTOM_HEADERS` from managed or project settings to require approval when it sets a credential, org/tenant, routing, or API-behavior header (e.g. `Authorization`, `Host`)",
+   "zh": "将`ANTHROPIC_CUSTOM_HEADERS`从托管或项目设置更改为在设置凭据、组织/租户、路由或 API 行为标头（例如“授权”、“主机”）时需要批准"
+  },
+  {
+   "type": "improved",
+   "en": "Changed project-level `.claude/settings.json` `env` to no longer set `CLAUDE_CONFIG_DIR`, `CLAUDE_CODE_TMPDIR`, or `TMPDIR`/`TMP`/`TEMP`; set them in your shell, user, or managed settings instead",
+   "zh": "更改了项目级 `.claude/settings.json` `env` ，不再设置 `CLAUDE_CONFIG_DIR`、`CLAUDE_CODE_TMPDIR` 或 `TMPDIR`/`TMP`/`TEMP`；在您的 shell、用户或托管设置中设置它们"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Changed the Remote Control banner to a footer pill (shown while Remote Control is on or has failed) that opens the session on claude.ai/code; turn it on or off with `/remote-control`",
+   "zh": "[VSCode] Remote Control 横幅改为底部标签（在 Remote Control 开启或失败时显示），点击可在 claude.ai/code 中打开该会话；可用 `/remote-control` 开启或关闭"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file tools (Read, Write, Edit) following a symlink swapped inside the working directory after the permission check, which could read or write outside the approved location",
+   "zh": "修复了权限检查后在工作目录内交换符号链接后的文件工具（读取、写入、编辑），该工具可以在批准的位置之外读取或写入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin commands declared in a marketplace entry being able to point outside the plugin directory; such paths are now rejected with a path-traversal error",
+   "zh": "修复了在市场条目中声明的插件命令能够指向插件目录之外的问题；现在，此类路径会因路径遍历错误而被拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed project settings being able to enable detailed beta tracing or raw API body logging, and a lower-scope beta tracing endpoint bypassing an OTLP collector pinned by managed settings or a host app",
+   "zh": "修复了项目设置，能够启用详细的 beta 跟踪或原始 API 正文日志记录，以及绕过由托管设置或主机应用程序固定的 OTLP 收集器的较低范围 beta 跟踪端点"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Workflow tool reading (and quoting in errors) a `scriptPath` outside what the session may read before the permission check ran",
+   "zh": "修复 Workflow 工具在权限检查之前就读取（并在错误信息中引用）会话无权读取的 `scriptPath` 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Grep and Glob not applying `Read(...)` deny rules to files reached through a symlinked search path",
+   "zh": "修复了 Grep 和 Glob 未对通过符号链接搜索路径到达的文件应用`Read(...)`拒绝规则的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed conversations getting stuck on \"text content blocks must be non-empty\" errors after a turn where the model produced only thinking",
+   "zh": "修复了模型仅产生思考的回合后对话陷入“文本内容块必须非空”错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the first launch on a fresh install starting in default mode instead of auto mode for accounts whose startup default is auto mode",
+   "zh": "修复全新安装后首次启动时，对于启动默认为自动模式的账户，却以默认模式而非自动模式启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Opus 5 requests failing with \"effort … is not supported when thinking is disabled\" when effort was xhigh/max and thinking was turned off; effort is now sent as `high` in that case",
+   "zh": "修复了当努力为 xhigh/max 且思考被关闭时，Opus 5 请求失败并出现“思考被禁用时不支持努力”的问题；在这种情况下，努力现在被发送为“高”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed replying to a message Claude Desktop delivered from another session: `SendMessage` to that session id now delivers through Claude Desktop instead of failing with \"not reachable\"",
+   "zh": "修复了回复 Claude Desktop 从另一个会话发送的消息：`SendMessage`到该会话 ID 现在通过 Claude Desktop 发送，而不是因“无法访问”而失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed TUI lag with many parallel subagents: per-second progress ticks now replace their predecessor instead of piling up in the transcript",
+   "zh": "修复了许多并行子代理的 TUI 滞后问题：每秒进度滴答现在取代了它们的前身，而不是堆积在记录中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent teams: a teammate's final answer not reaching the team lead — it now arrives in the idle notification instead of a content-free \"available\" notice",
+   "zh": "修复了代理团队：队友的最终答案未到达团队负责人 - 它现在到达空闲通知而不是无内容的“可用”通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background subagents being unable to reply to a message from an unnamed sibling or parent agent (`from` was the agent type, which is not an address)",
+   "zh": "修复了后台子代理无法回复来自未命名兄弟或父代理的消息（`from`是代理类型，不是地址）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed-settings `disableAutoMode` arriving mid-session not moving an already-running auto-mode session back to default mode",
+   "zh": "修复了在会话中到达的托管设置`disableAutoMode`不会将已运行的自动模式会话移回默认模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a \"switch to Opus 1M for 5x more context\" tip that appeared even when the current Opus model already has a 1M context window",
+   "zh": "修复了即使当前 Opus 模型已经具有 1M 上下文窗口也会出现的“切换到 Opus 1M 以获得 5 倍多上下文”提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude apps gateway sessions treating a stored Anthropic profile (e.g. a Console sign-in) as active: listing it in `/status` and retrying gateway 401s with it, though requests never use it",
+   "zh": "修复了 Claude 应用程序网关会话将存储的 Anthropic 配置文件（例如控制台登录）视为活动状态：将其列在`/status`中并用它重试网关 401，尽管请求从不使用它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions telling Claude the model had changed when the host was only setting the session's initial model",
+   "zh": "修复了当主机仅设置会话的初始模型时云会话告诉 Claude 模型已更改的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control reporting a failure when an organization's policy disables it; it now shows a single quiet notice instead",
+   "zh": "修复了当组织的策略禁用远程控制时报告失败的问题；它现在显示一个安静的通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/mcp reconnect` on Remote Control showing a generic withheld-detail error instead of the real remedy when a server was disabled in another session",
+   "zh": "修复了远程控制上的`/mcp reconnect`，在另一个会话中禁用服务器时显示一般保留详细信息错误，而不是真正的补救措施"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--input-format stream-json`: client-injected assistant tool calls sent without a message id were merged into the first one and their results lost, including when resuming older sessions",
+   "zh": "修复了`--input-format stream-json`：在没有消息 ID 的情况下发送的客户端注入辅助工具调用被合并到第一个调用中，并且其结果丢失，包括在恢复旧会话时"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session transcripts being silently overwritten when a directory change relocated a session onto an existing same-ID transcript",
+   "zh": "修复了当目录更改将会话重新定位到现有相同 ID 转录本时，会话转录本会被静默覆盖的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions and their subagents being unable to edit files inside a git worktree they created with `git worktree add`",
+   "zh": "修复了后台会话及其子代理无法编辑使用`git worktree add`创建的 git worktree 内的文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions occasionally starting without any plugin skills (and staying that way) when another Claude Code process was refreshing the plugin marketplace at the same moment",
+   "zh": "修复了当另一个克劳德代码进程同时刷新插件市场时，后台会话偶尔会在没有任何插件技能的情况下启动（并保持这种状态）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed selecting text in an opened background session inside tmux over SSH: it now copies to the tmux buffer like a foreground session instead of falling back to OSC 52",
+   "zh": "修复了通过 SSH 在 tmux 内打开的后台会话中选择文本的问题：它现在像前台会话一样复制到 tmux 缓冲区，而不是回退到 OSC 52"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK and cloud sessions hanging indefinitely when an SDK MCP server's handshake acknowledgment was lost; the wait now times out after 70 seconds and marks only that server failed",
+   "zh": "修复了当 SDK MCP 服务器的握手确认丢失时 SDK 和云会话无限期挂起的问题；现在等待会在 70 秒后超时并仅标记服务器失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed self-hosted runner leaving a stuck session's Bash tool processes running after the session was force-stopped",
+   "zh": "修复了自托管运行程序在会话强制停止后使卡住的会话的 Bash 工具进程仍在运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage-credits` for Team and Enterprise members whose admin set the org's usage-credit limit to $0: it now offers to ask the admin instead of saying a cap was reached",
+   "zh": "修复了管理员将组织的使用信用限额设置为 0 美元的团队和企业成员的`/usage-credits`：现在它会询问管理员，而不是说已达到上限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--worktree --tmux` with a merge-request number on a gitlab.com origin trying a doomed GitHub-style fetch first instead of fetching the GitLab ref directly",
+   "zh": "修复了 gitlab.com 源上带有合并请求编号的`--worktree --tmux`，首先尝试使用注定失败的 GitHub 样式获取，而不是直接获取 GitLab 引用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+G failing with \"Emacs quit unexpectedly\" in background sessions for editors that open `/dev/tty`, such as `emacs -nw` and `micro`",
+   "zh": "修复了打开 `/dev/tty` 的编辑器（例如 `emacs -nw` 和 `micro`）在后台会话中 Ctrl+G 失败并出现“Emacs 意外退出”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an `additionalDirectories` entry containing a null byte crashing startup, or breaking `/add-dir` and later settings updates when it came from an SDK host, IDE, or hook; it is now skipped",
+   "zh": "修复了包含空字节的`additionalDirectories`条目，导致启动崩溃，或在来自 SDK 主机、IDE 或挂钩时破坏`/add-dir`和后续设置更新；现在已被跳过"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the MCP server menu's copy shortcut: it now says how the sign-in URL was copied instead of always claiming success",
+   "zh": "修复 MCP 服务器菜单的复制快捷键：现在会说明登录链接是如何复制的，而不是总是显示成功"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed italic text (such as the session recap line) rendering as highlighted blocks in GNU screen and in tmux sessions using a `screen` terminal type",
+   "zh": "修复了使用`screen`终端类型在 GNU 屏幕和 tmux 会话中将斜体文本（例如会话回顾行）呈现为突出显示块的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude mcp add --header` and `claude mcp add-json` help text naming the wrong transports",
+   "zh": "修复了`claude mcp add --header`和`claude mcp add-json`帮助文本命名错误的传输"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude ultrareview` and `/ultrareview` waiting the full 30 minutes when the cloud session fails to start; they now stop early and report the reason",
+   "zh": "修复了`claude ultrareview`和`/ultrareview`在云会话启动失败时等待整整 30 分钟的问题；他们现在提前停止并报告原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash permission checks auto-approving commands that assign an arithmetic expression to an integer shell variable (e.g. `OPTIND=1/0`, `RANDOM=2+2`); these now prompt for approval",
+   "zh": "修复了 Bash 权限检查自动批准将算术表达式分配给整数 shell 变量的命令（例如`OPTIND=1/0`、`RANDOM=2+2`）；这些现在提示批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed backgrounded sessions (`←`, `/background`, `--bg`) losing a Vertex/Bedrock gateway (`ANTHROPIC_*_BASE_URL` + `CLAUDE_CODE_SKIP_*_AUTH`) exported in the shell, so every request failed",
+   "zh": "修复了后台会话（`←`、`/background`、`--bg`）丢失在 shell 中导出的 Vertex/Bedrock 网关（`ANTHROPIC_*_BASE_URL` + `CLAUDE_CODE_SKIP_*_AUTH`），因此每个请求都失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --bg --model fable` on Max plans stopping to ask for usage credits while the interactive session on the same account still had Fable allowance",
+   "zh": "修复了 Max 计划停止请求使用积分时的`claude --bg --model fable`，而同一帐户上的交互式会话仍然有《寓言》津贴"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the one-time \"make auto mode your default\" offer appearing in unattended sessions (e.g. agent-team teammate panes), where a stray keypress could accept it unread",
+   "zh": "修复无人值守会话（如智能体团队的队友窗格）中，一次性的\"把自动模式设为默认\"提示仍会出现，且误按的按键可能将其接受的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the managed-settings approval prompt re-appearing after signing in again to the same Claude apps gateway when the settings are unchanged",
+   "zh": "修复在同一 Claude 应用网关上重新登录后，即使设置未变，托管设置审批提示仍再次出现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed disabled `/bug` and `/share` reporting that `/feedback` was disabled; tips, `/help`, and refusal messages no longer suggest `/feedback` when an org policy or env var turns it off",
+   "zh": "修复了禁用的`/bug`和`/share`报告`/feedback`被禁用的问题；当组织策略或环境变量将其关闭时，提示、`/help`和拒绝消息不再建议`/feedback`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud session creation advising GitHub setup after a transient GitHub connection failure — the message now says to retry instead",
+   "zh": "修复了在暂时的 GitHub 连接失败后建议 GitHub 设置的云会话创建问题 — 该消息现在改为重试"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the sign-in screen's \"Bedrock, Foundry, or Vertex\" button opening the docs at the top of the page instead of the third-party provider setup section",
+   "zh": "[VSCode] 修复登录界面的 \"Bedrock, Foundry, or Vertex\" 按钮打开的是文档顶部、而不是第三方提供商设置章节的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed syntax highlighting for six rarely used languages (1c, gml, isbl, mathematica, maxima, sqf); the binary is 2.5 MB smaller",
+   "zh": "移除六种少用语言的语法高亮（1c、gml、isbl、mathematica、maxima、sqf），二进制体积减小 2.5 MB"
+  }
+ ]
+}

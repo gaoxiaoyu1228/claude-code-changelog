@@ -1,0 +1,31 @@
+{
+ "version": "1.0.25",
+ "date": "2025-06-16",
+ "published": "2025-06-16T22:11:09.938Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.25",
+ "counts": {
+  "improved": 4
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Slash commands: moved \"project\" and \"user\" prefixes to descriptions",
+   "zh": "\"project\" 和 \"user\" 前缀移到了描述中"
+  },
+  {
+   "type": "improved",
+   "en": "Slash commands: improved reliability for command discovery",
+   "zh": "提高了斜杠命令发现的可靠性"
+  },
+  {
+   "type": "improved",
+   "en": "Improved support for Ghostty",
+   "zh": "改进对 Ghostty 终端的支持"
+  },
+  {
+   "type": "improved",
+   "en": "Improved web search reliability",
+   "zh": "改进网页搜索的可靠性"
+  }
+ ]
+}

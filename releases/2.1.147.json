@@ -1,0 +1,177 @@
+{
+ "version": "2.1.147",
+ "date": "2026-05-21",
+ "published": "2026-05-21T17:16:38.999Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.147",
+ "counts": {
+  "improved": 5,
+  "fixed": 28
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Pinned background sessions (`Ctrl+T` in `claude agents`) now stay alive when idle, are restarted in place to apply Claude Code updates, and are shed under memory pressure only after non-pinned sessions",
+   "zh": "固定的后台会话（在 `claude agents` 中按 `Ctrl+T`）现在空闲时保持运行，更新 Claude Code 时会原地重启以应用更新，内存紧张时只有在非固定会话被清理后才会被清理"
+  },
+  {
+   "type": "improved",
+   "en": "Renamed `/simplify` to `/code-review`. It now reports correctness bugs at a chosen effort level (e.g., `/code-review high`); pass `--comment` to post findings as inline GitHub PR comments. The old cleanup-and-fix behavior has been removed",
+   "zh": "`/simplify` 改名为 `/code-review`。它现在会按所选的强度级别报告正确性问题（例如 `/code-review high`）；传入 `--comment` 可把发现的问题以行内 GitHub PR 评论的形式发布。旧的清理与修复功能已移除"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto-updater: retries transient network failures, reports specific error categories and OS error codes on failure, and shows the current version when an update fails",
+   "zh": "改进自动更新器：会重试临时网络故障，失败时报告具体的错误类别和操作系统错误码，并显示当前版本"
+  },
+  {
+   "type": "improved",
+   "en": "Improved diff rendering performance for large file edits",
+   "zh": "改进大文件编辑时的差异渲染性能"
+  },
+  {
+   "type": "improved",
+   "en": "Prompt history no longer records consecutive duplicate entries — recalling a prompt with arrow-up and submitting it again won't add another copy",
+   "zh": "提示词历史不再记录连续重复的条目：用上箭头调出提示词并再次提交，不会多出一条"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed enterprise login restrictions (`forceLoginOrgUUID` and `forceLoginMethod` managed-settings) not being enforced against third-party-provider and API-key sessions",
+   "zh": "修复了未针对第三方提供商和 API 密钥会话强制执行的企业登录限制（`forceLoginOrgUUID`和`forceLoginMethod`托管设置）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `&` in `!` command output displaying as `&amp;`, which broke copy-pasting URLs from commands like `gcloud auth login` on headless machines",
+   "zh": "修复了`!`命令输出中的`&`显示为`&`的问题，这会破坏无头计算机上`gcloud auth login`等命令的复制粘贴 URL"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unknown slash commands silently doing nothing in headless/SDK mode — they now show an error message",
+   "zh": "修复无界面或 SDK 模式下，未知斜杠命令静默不执行的问题；现在会显示错误信息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/help` rendering a broken tab header and showing only one command per page on small terminals when not in fullscreen mode",
+   "zh": "修复了`/help`在不处于全屏模式时呈现损坏的选项卡标题并在小型终端上每页仅显示一个命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell snapshot dropping user functions whose names start with a single underscore, which broke aliases referencing them",
+   "zh": "修复了 shell 快照删除名称以单个下划线开头的用户函数的问题，这会破坏引用它们的别名"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin agents that declare multiple `Agent(...)` types in `tools:` frontmatter dropping all but the last entry",
+   "zh": "修复了在 `tools:` frontmatter 中声明多个 `Agent(...)` 类型的插件代理，删除除最后一个条目之外的所有条目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook `if` conditions like `PowerShell(git push*)` never matching — only `PowerShell(*)` worked",
+   "zh": "修复了钩子`if`条件，如`PowerShell(git push*)`永远不匹配——只有`PowerShell(*)`有效"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PowerShell tool dropping output for commands that rely on the default formatter",
+   "zh": "修复了 PowerShell 工具丢弃依赖默认格式化程序的命令的输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: on Windows, \"Yes, and don't ask again\" for a PowerShell script invocation now writes a rule that actually matches on subsequent runs",
+   "zh": "修复：在 Windows 上，对 PowerShell 脚本调用选择\"Yes, and don't ask again\"后，现在写入的规则在之后运行时能真正匹配"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PowerShell tool failing on Windows with exit code 1 when `pwsh` is installed via winget or the Microsoft Store",
+   "zh": "修复了通过 winget 或 Microsoft Store 安装`pwsh`时 PowerShell 工具在 Windows 上失败并退出代码 1 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/effort` opening with the slider on the wrong level — it now starts at your current effort",
+   "zh": "修复了`/effort`打开时滑块位于错误级别的问题 - 现在从您当前的努力开始"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed paginating MCP servers dropping resources, templates, and prompts past page 1",
+   "zh": "修复了分页 MCP 服务器丢弃资源、模板和提示超过第 1 页的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed full-screen strobing in attached background sessions on Windows Terminal while Claude is streaming",
+   "zh": "修复了 Claude 进行流式传输时 Windows 终端上附加后台会话中的全屏选通"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: on Windows, removing a background-job worktree no longer follows NTFS junctions into the main repo",
+   "zh": "修复：在 Windows 上，删除后台任务工作树时不再跟随 NTFS 连接点（junction）进入主仓库的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/background` refusing sessions whose only typed input was a skill or custom slash command",
+   "zh": "修复了`/background`拒绝仅输入技能或自定义斜线命令的会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode suppressing `AskUserQuestion` when the user or a skill explicitly relies on it; the auto-mode classifier now sees the user's answers as intent signal",
+   "zh": "修复了当用户或技能明确依赖`AskUserQuestion`时自动模式会抑制`AskUserQuestion`的问题；自动模式分类器现在将用户的答案视为意图信号"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/theme` \"New custom theme\" and color editor dialogs not responding to Esc",
+   "zh": "修复了`/theme`“新自定义主题”和颜色编辑器对话框不响应 Esc 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an uncaught exception at the end of streaming sessions when running via the Agent SDK",
+   "zh": "修复了通过 Agent SDK 运行时流会话结束时未捕获的异常"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare hang when waiting for scroll to settle on Windows",
+   "zh": "修复了在 Windows 上等待滚动稳定时罕见的挂起问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stale and doubled rows in the agent view list on Windows when background session results contain wide (CJK) characters",
+   "zh": "修复了当后台会话结果包含宽 (CJK) 字符时 Windows 上代理视图列表中的陈旧行和双行问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasted text being delivered to agents as an unreadable `[Pasted text #N]` placeholder instead of the actual content",
+   "zh": "修复了粘贴文本作为不可读的“[粘贴文本#N]”占位符而不是实际内容传递给代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin component counts in `claude plugin details` and `/plugin` being doubled when a plugin's manifest listed paths overlapping its default directories",
+   "zh": "修复了当插件的清单列出的路径与其默认目录重叠时，“claude 插件详细信息”和`/plugin`中的插件组件计数加倍的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed backgrounded sessions re-prompting for tool permissions you already granted with \"don't ask again\"",
+   "zh": "修复了后台会话重新提示您已通过“不再询问”授予的工具权限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed GNOME Terminal right-click and middle-click paste not inserting text",
+   "zh": "修复了 GNOME 终端右键单击和中键单击粘贴不插入文本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_SUBAGENT_MODEL` not applying to teammate processes spawned by agent teams",
+   "zh": "修复了`CLAUDE_CODE_SUBAGENT_MODEL`不适用于代理团队生成的队友进程的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash commands followed by a tab or newline being treated as an unknown command",
+   "zh": "修复了斜杠命令后跟制表符或换行符被视为未知命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several spacing and layout glitches in the `/plugin`, `/status`, `/mobile`, `/sandbox`, and `/permissions` menus",
+   "zh": "修复了`/plugin`、`/status`、`/mobile`、`/sandbox`和`/permissions`菜单中的多个间距和布局问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stripped images prompting the model to repeatedly re-read media that was no longer present",
+   "zh": "修复了提示模型重复重新读取不再存在的媒体的剥离图像"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "version": "0.2.36",
+ "date": "2025-03-10",
+ "published": "2025-03-10T23:28:47.867Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.36",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Import MCP servers from Claude Desktop with `claude mcp add-from-claude-desktop`",
+   "zh": "支持用 `claude mcp add-from-claude-desktop` 从 Claude Desktop 导入 MCP 服务器"
+  },
+  {
+   "type": "new",
+   "en": "Add MCP servers as JSON strings with `claude mcp add-json <n> <json>`",
+   "zh": "使用`claude mcp add-json <n> <json>`将 MCP 服务器添加为 JSON 字符串"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "0.2.72",
+ "date": "2025-04-17",
+ "published": "2025-04-17T14:21:16.372Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.72",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Updated spinner to indicate tokens loaded and tool usage",
+   "zh": "加载动画现在会显示已加载的 token 数和工具使用情况"
+  }
+ ]
+}

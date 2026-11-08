@@ -1,0 +1,28 @@
+{
+ "version": "1.0.57",
+ "date": "2025-07-21",
+ "published": "2025-07-21T21:16:32.998Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.57",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for specifying a model in slash commands",
+   "zh": "添加了对在斜杠命令中指定模型的支持"
+  },
+  {
+   "type": "improved",
+   "en": "Improved permission messages to help Claude understand allowed tools",
+   "zh": "改进权限提示信息，帮助 Claude 理解哪些工具被允许使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix: Remove trailing newlines from bash output in terminal wrapping",
+   "zh": "修复：从终端包装中的 bash 输出中删除尾随换行符"
+  }
+ ]
+}

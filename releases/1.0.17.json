@@ -1,0 +1,33 @@
+{
+ "version": "1.0.17",
+ "date": "2025-06-06",
+ "published": "2025-06-06T18:44:07.505Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.17",
+ "counts": {
+  "new": 1,
+  "improved": 2,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "We now emit messages from sub-tasks in -p mode (look for the parent_tool_use_id property)",
+   "zh": "`-p` 模式现在会输出子任务中的消息（查看 parent_tool_use_id 属性）"
+  },
+  {
+   "type": "improved",
+   "en": "MCP server list UI improvements",
+   "zh": "改进 MCP 服务器列表界面"
+  },
+  {
+   "type": "improved",
+   "en": "Update Claude Code process title to display \"claude\" instead of \"node\"",
+   "zh": "Claude Code 的进程标题现在显示为 \"claude\"，而不是 \"node\""
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crashes when the VS Code diff tool is invoked multiple times quickly",
+   "zh": "修复了快速多次调用 VS Code diff 工具时的崩溃问题"
+  }
+ ]
+}

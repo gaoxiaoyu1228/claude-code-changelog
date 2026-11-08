@@ -1,0 +1,21 @@
+{
+ "version": "1.0.23",
+ "date": "2025-06-13",
+ "published": "2025-06-13T18:50:20.083Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.23",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Released TypeScript SDK: import @anthropic-ai/claude-code to get started",
+   "zh": "正式发布 TypeScript SDK：`import @anthropic-ai/claude-code` 即可开始使用"
+  },
+  {
+   "type": "new",
+   "en": "Released Python SDK: pip install claude-code-sdk to get started",
+   "zh": "正式发布 Python SDK：运行 `pip install claude-code-sdk` 即可开始使用"
+  }
+ ]
+}

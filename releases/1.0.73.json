@@ -1,0 +1,37 @@
+{
+ "version": "1.0.73",
+ "date": "2025-08-11",
+ "published": "2025-08-11T21:30:29.164Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.73",
+ "counts": {
+  "new": 3,
+  "improved": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "MCP: Support multiple config files with `--mcp-config file1.json file2.json`",
+   "zh": "MCP：支持通过 `--mcp-config file1.json file2.json` 指定多个配置文件"
+  },
+  {
+   "type": "new",
+   "en": "MCP: Press Esc to cancel OAuth authentication flows",
+   "zh": "MCP：按 Esc 可以取消 OAuth 认证流程"
+  },
+  {
+   "type": "new",
+   "en": "Linux: Added support for Alpine and musl-based distributions (requires separate ripgrep installation)",
+   "zh": "Linux：新增对 Alpine 和基于 musl 的发行版的支持（需单独安装 ripgrep）"
+  },
+  {
+   "type": "improved",
+   "en": "Bash: Improved command validation and reduced false security warnings",
+   "zh": "Bash：改进命令验证并减少错误安全警告"
+  },
+  {
+   "type": "improved",
+   "en": "UI: Enhanced spinner animations and status line visual hierarchy",
+   "zh": "界面：增强了加载动画效果和状态栏的视觉层级"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "version": "2.1.83",
+ "date": "2026-03-24",
+ "published": "2026-03-24T22:16:47.275Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.83",
+ "counts": {
+  "new": 12,
+  "improved": 21,
+  "fixed": 42,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `managed-settings.d/` drop-in directory alongside `managed-settings.json`, letting separate teams deploy independent policy fragments that merge alphabetically",
+   "zh": "添加了`managed-settings.d/`插入目录以及“management-settings.json”，让单独的团队部署按字母顺序合并的独立策略片段"
+  },
+  {
+   "type": "new",
+   "en": "Added `CwdChanged` and `FileChanged` hook events for reactive environment management (e.g., direnv)",
+   "zh": "添加了用于反应式环境管理的`CwdChanged`和`FileChanged`挂钩事件（例如，direnv）"
+  },
+  {
+   "type": "new",
+   "en": "Added `sandbox.failIfUnavailable` setting to exit with an error when sandbox is enabled but cannot start, instead of running unsandboxed",
+   "zh": "添加了`sandbox.failIfUnavailable`设置，以便在启用沙箱但无法启动时退出并显示错误，而不是运行未沙箱的"
+  },
+  {
+   "type": "new",
+   "en": "Added `disableDeepLinkRegistration` setting to prevent `claude-cli://` protocol handler registration",
+   "zh": "添加了`disableDeepLinkRegistration`设置以防止`claude-cli://`协议处理程序注册"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1` to strip Anthropic and cloud provider credentials from subprocess environments (Bash tool, hooks, MCP stdio servers)",
+   "zh": "添加了`CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1`以从子进程环境（Bash 工具、挂钩、MCP stdio 服务器）中剥离 Anthropic 和云提供商凭据"
+  },
+  {
+   "type": "new",
+   "en": "Added transcript search — press `/` in transcript mode (`Ctrl+O`) to search, `n`/`N` to step through matches",
+   "zh": "添加了转录搜索 - 在转录模式下按`/`（`Ctrl+O`）进行搜索，按`n`/`N`逐步执行匹配"
+  },
+  {
+   "type": "new",
+   "en": "Added `Ctrl+X Ctrl+E` as an alias for opening the external editor (readline-native binding; `Ctrl+G` still works)",
+   "zh": "添加了`Ctrl+X Ctrl+E`作为打开外部编辑器的别名（readline-native 绑定；`Ctrl+G`仍然有效）"
+  },
+  {
+   "type": "new",
+   "en": "Agents can now declare `initialPrompt` in frontmatter to auto-submit a first turn",
+   "zh": "代理现在可以在 frontmatter 中声明`initialPrompt`以自动提交第一轮"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` env var to disable the non-streaming fallback when streaming fails",
+   "zh": "添加了`CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK`环境变量以在流式传输失败时禁用非流式回退"
+  },
+  {
+   "type": "new",
+   "en": "Plugin options (`manifest.userConfig`) now available externally — plugins can prompt for configuration at enable time, with `sensitive: true` values stored in keychain (macOS) or protected credentials file (other platforms)",
+   "zh": "插件选项（`manifest.userConfig`）现已对外开放：插件可在启用时提示用户进行配置，标记为 `sensitive: true` 的值会存入钥匙串（macOS）或受保护的凭证文件（其他平台）"
+  },
+  {
+   "type": "new",
+   "en": "Claude can now reference the on-disk path of clipboard-pasted images for file operations",
+   "zh": "Claude 现在可以引用剪贴板粘贴图像的磁盘路径进行文件操作"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added Esc-twice (or `/rewind`) to open a keyboard-navigable rewind picker",
+   "zh": "[VSCode] 新增按两次 Esc（或输入 `/rewind`）打开可用键盘导航的回退选择器"
+  },
+  {
+   "type": "improved",
+   "en": "Pasted images now insert an `[Image #N]` chip at the cursor so you can reference them positionally in your prompt",
+   "zh": "粘贴图片时，光标处会插入一个 `[Image #N]` 标签，便于你在提示中按编号引用"
+  },
+  {
+   "type": "improved",
+   "en": "`chat:killAgents` and `chat:fastMode` are now rebindable via `~/.claude/keybindings.json`",
+   "zh": "`chat:killAgents` 和 `chat:fastMode` 现在可以通过 `~/.claude/keybindings.json` 重新绑定"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Bedrock SDK cold-start latency by overlapping profile fetch with other boot work",
+   "zh": "改进 Bedrock SDK 冷启动延迟：配置文件获取与其他启动工作并行进行"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `--resume` memory usage and startup latency on large sessions",
+   "zh": "改进 `--resume` 在大型会话中的内存占用和启动延迟"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plugin startup — commands, skills, and agents now load from disk cache without re-fetching",
+   "zh": "改进插件启动：命令、技能和智能体现在直接从磁盘缓存加载，无需重新获取"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control session titles: AI-generated titles now appear within seconds of the first message",
+   "zh": "改进远程控制会话标题：AI 生成的标题在第一条消息后几秒内就会出现"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `WebFetch` to identify as `Claude-User` so site operators can recognize and allowlist Claude Code traffic via `robots.txt`",
+   "zh": "改进 `WebFetch`：以 `Claude-User` 身份发出请求，网站运营者可以通过 `robots.txt` 识别 Claude Code 的流量并加入白名单"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced `WebFetch` peak memory usage for large pages",
+   "zh": "大页面下 `WebFetch` 的峰值内存占用降低"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced scrollback resets in long sessions from once per turn to once per ~50 messages",
+   "zh": "长会话中回滚缓冲区的重置频率，从每轮一次降为约每 50 条消息一次"
+  },
+  {
+   "type": "improved",
+   "en": "Faster `claude -p` startup with unauthenticated HTTP/SSE MCP servers (~600ms saved)",
+   "zh": "使用未经身份验证的 HTTP/SSE MCP 服务器更快地启动`claude -p`（节省约 600 毫秒）"
+  },
+  {
+   "type": "improved",
+   "en": "Bash ghost-text suggestions now include just-submitted commands immediately",
+   "zh": "Bash 幽灵文本建议现在立即包括刚刚提交的命令"
+  },
+  {
+   "type": "improved",
+   "en": "Increased non-streaming fallback token cap (21k → 64k) and timeout (120s → 300s local) so fallback requests are less likely to be truncated",
+   "zh": "提高非流式回退的 token 上限（21k 提高到 64k）和超时时间（本地从 120 秒提高到 300 秒），降低回退请求被截断的可能"
+  },
+  {
+   "type": "improved",
+   "en": "Interrupting a prompt before any response now automatically restores your input so you can edit and resubmit",
+   "zh": "在收到任何回复之前打断提示，会自动恢复你的输入内容，方便你修改后重新提交"
+  },
+  {
+   "type": "improved",
+   "en": "`/status` now works while Claude is responding, instead of being queued until the turn finishes",
+   "zh": "Claude 回复时也能运行 `/status`，不再排队等待轮次结束"
+  },
+  {
+   "type": "improved",
+   "en": "Plugin MCP servers that duplicate an org-managed connector are now suppressed instead of running a second connection",
+   "zh": "与组织托管连接器重复的插件 MCP 服务器现在会被屏蔽，不再额外建立第二个连接"
+  },
+  {
+   "type": "improved",
+   "en": "Changed \"stop all background agents\" keybinding from `Ctrl+F` to `Ctrl+X Ctrl+K` to stop shadowing readline forward-char",
+   "zh": "将“停止所有后台代理”键绑定从`Ctrl+F`更改为`Ctrl+X Ctrl+K`以停止隐藏 readline 前向字符"
+  },
+  {
+   "type": "improved",
+   "en": "`Ctrl+L` now clears the screen and forces a full redraw — use this to recover when Cmd+K leaves the UI partially blank. Use `Ctrl+U` or double-Esc to clear prompt input.",
+   "zh": "`Ctrl+L` 现在会清屏并强制完整重绘——如果 Cmd+K 导致界面部分空白，可用它恢复。清空提示输入请用 `Ctrl+U` 或连按两次 Esc。"
+  },
+  {
+   "type": "improved",
+   "en": "`--bare -p` (SDK pattern) is ~14% faster to the API request",
+   "zh": "`--bare -p`（SDK 用法）发出 API 请求的速度快约 14%"
+  },
+  {
+   "type": "improved",
+   "en": "Memory: `MEMORY.md` index now truncates at 25KB as well as 200 lines",
+   "zh": "记忆：`MEMORY.md` 索引现在除了 200 行上限外，还会在 25KB 处截断"
+  },
+  {
+   "type": "improved",
+   "en": "Disabled `AskUserQuestion` and plan-mode tools when `--channels` is active",
+   "zh": "当`--channels`处于活动状态时禁用`AskUserQuestion`和计划模式工具"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Spinner now turns red with \"Not responding\" when the backend hasn't responded for 60 seconds",
+   "zh": "[VSCode] 当后端 60 秒没有响应时，加载动画会变红并显示 \"Not responding\""
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mouse tracking escape sequences leaking to shell prompt after exit",
+   "zh": "修复了退出后鼠标跟踪转义序列泄漏到 shell 提示符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code hanging on exit on macOS",
+   "zh": "修复了 macOS 上退出时挂起的克劳德代码"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed screen flashing blank after being idle for a few seconds",
+   "zh": "修复闲置几秒后屏幕闪烁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hang when diffing very large files with few common lines — diffs now time out after 5 seconds and fall back gracefully",
+   "zh": "修复了比较非常大的文件与很少公共行时的挂起 - 差异现在在 5 秒后超时并优雅地回退"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a 1–8 second UI freeze on startup when voice input was enabled, caused by eagerly loading the native audio module",
+   "zh": "修复了启用语音输入时由于急切加载本机音频模块而导致启动时 1-8 秒 UI 冻结的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a startup regression where Claude Code would wait ~3s for claude.ai MCP config fetch before proceeding",
+   "zh": "修复了启动回归问题，其中 Claude Code 在继续之前会等待 claude.ai MCP 配置获取约 3 秒"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--mcp-config` CLI flag bypassing `allowedMcpServers`/`deniedMcpServers` managed policy enforcement",
+   "zh": "修复了绕过`allowedMcpServers`/`deniedMcpServers`托管策略实施的`--mcp-config` CLI 标志"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed claude.ai MCP connectors (Slack, Gmail, etc.) not being available in single-turn `--print` mode",
+   "zh": "修复了 claude.ai MCP 连接器（Slack、Gmail 等）在单轮`--print`模式下不可用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `caffeinate` process not properly terminating when Claude Code exits, preventing Mac from sleeping",
+   "zh": "修复了当 Claude Code 退出时`caffeinate`进程无法正确终止，从而阻止 Mac 休眠的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bash mode not activating when tab-accepting `!`-prefixed command suggestions",
+   "zh": "修复了在接受带有`!`前缀的命令建议时未激活 bash 模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stale slash command selection showing wrong highlighted command after navigating suggestions",
+   "zh": "修复了过时的斜杠命令选择在导航建议后显示错误的突出显示命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/config` menu showing both the search cursor and list selection at the same time",
+   "zh": "修复了同时显示搜索光标和列表选择的`/config`菜单"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background subagents becoming invisible after context compaction, which could cause duplicate agents to be spawned",
+   "zh": "修复了背景子代理在上下文压缩后变得不可见的问题，这可能会导致生成重复的代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent tasks staying stuck in \"running\" state when git or API calls hang during cleanup",
+   "zh": "修复了清理期间 git 或 API 调用挂起时后台代理任务停留在“运行”状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--channels` showing \"Channels are not currently available\" on first launch after upgrade",
+   "zh": "修复了`--channels`在升级后首次启动时显示“频道当前不可用”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed uninstalled plugin hooks continuing to fire until the next session",
+   "zh": "修复已卸载插件的钩子在下次会话前仍继续触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed queued commands flickering during streaming responses",
+   "zh": "修复了流响应期间排队命令闪烁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash commands being sent to the model as text when submitted while a message is processing",
+   "zh": "修复了在处理消息时提交的斜杠命令作为文本发送到模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrollback jumping when collapsed read/search groups finish after scrolling offscreen",
+   "zh": "修复了滚动到屏幕外后折叠的读取/搜索组完成时的回滚跳跃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrollback jumping to top when the model starts or stops thinking",
+   "zh": "修复了当模型开始或停止思考时回滚跳到顶部的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK session history loss on resume caused by hook progress/attachment messages forking the parentUuid chain",
+   "zh": "修复了因分叉 ParentUuid 链的钩子进度/附件消息而导致恢复时 SDK 会话历史记录丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed copy-on-select not firing when you release the mouse outside the terminal window",
+   "zh": "修复了在终端窗口外释放鼠标时选择复制不会触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ghost characters appearing in height-constrained lists when items overflow",
+   "zh": "修复了项目溢出时高度受限列表中出现的幽灵字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Ctrl+B` interfering with readline backward-char at an idle prompt — it now only fires when a foreground task can be backgrounded",
+   "zh": "修复了`Ctrl+B`在空闲提示下干扰 readline back-char — 现在仅当前台任务可以后台运行时才会触发"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tool result files never being cleaned up, ignoring the `cleanupPeriodDays` setting",
+   "zh": "修复工具结果文件从未被清理、忽略 `cleanupPeriodDays` 设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed space key being swallowed for up to 3 seconds after releasing voice hold-to-talk",
+   "zh": "修复了释放语音保持通话后空格键被吞咽长达 3 秒的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ALSA library errors corrupting the terminal UI when using voice mode on Linux without audio hardware (Docker, headless, WSL1)",
+   "zh": "修复了在没有音频硬件（Docker、headless、WSL1）的 Linux 上使用语音模式时损坏终端 UI 的 ALSA 库错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode SoX detection on Termux/Android where spawning `which` is kernel-restricted",
+   "zh": "修复 Termux/Android 上语音模式 SoX 检测失败的问题，因为其内核限制了 `which` 的启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions showing as Idle in the web session list while actively running",
+   "zh": "修复了远程控制会话在主动运行时在 Web 会话列表中显示为空闲的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed footer navigation selecting an invisible Remote Control pill in config-driven mode",
+   "zh": "修复了页脚导航在配置驱动模式下选择不可见的远程控制药丸的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in remote sessions where tool use IDs accumulate indefinitely",
+   "zh": "修复了远程会话中工具使用 ID 无限期累积的内存泄漏问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Linux: respect `XDG_DATA_HOME` when registering the `claude-cli://` protocol handler",
+   "zh": "Linux：注册 `claude-cli://` 协议处理器时遵循 `XDG_DATA_HOME`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API 400 error when a pasted image was queued during a failing tool call",
+   "zh": "修复了工具调用失败期间粘贴的图像排队时出现的 API 400 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool calls hanging indefinitely when an SSE connection drops mid-call and exhausts its reconnection attempts",
+   "zh": "修复了当 SSE 连接在呼叫中断开并耗尽其重新连接尝试时 MCP 工具呼叫无限期挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control session titles showing raw XML when a background agent completed before the first user message",
+   "zh": "修复了当后台代理在第一条用户消息之前完成时显示原始 XML 的远程控制会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote sessions forgetting conversation history after a container restart due to progress-message gaps in the resumed transcript chain",
+   "zh": "修复了由于恢复的转录链中的进度消息间隙导致容器重新启动后远程会话忘记对话历史记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote sessions requiring re-login on transient auth errors instead of retrying automatically",
+   "zh": "修复了远程会话在出现短暂身份验证错误时需要重新登录而不是自动重试的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `rg ... | wc -l` and similar piped commands hanging and returning `0` in sandbox mode on Linux",
+   "zh": "修复了`rg ... | wc -l` 和类似的管道命令在 Linux 上的沙箱模式下挂起并返回`0`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice input hold-to-talk not activating when a CJK IME inserts a full-width space",
+   "zh": "修复中日韩输入法插入全角空格时，语音输入的长按说话不能激活的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--worktree` hanging silently when the worktree name contained a forward slash",
+   "zh": "修复了当工作树名称包含正斜杠时`--worktree`静默挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed session history not loading correctly when reopening a session via URL or after restart",
+   "zh": "[VSCode] 修复通过 URL 或重启后重新打开会话时，会话历史无法正确加载的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed \"Fork conversation from here\" and rewind actions failing silently after the session cache goes stale",
+   "zh": "[VSCode] 修复会话缓存过期后，\"Fork conversation from here\" 和回退操作静默失败的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Deprecated `TaskOutput` tool in favor of using `Read` on the background task's output file path",
+   "zh": "已弃用`TaskOutput`工具，转而在后台任务的输出文件路径上使用`Read`"
+  }
+ ]
+}

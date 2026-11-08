@@ -1,0 +1,84 @@
+{
+ "version": "2.0.64",
+ "date": "2025-12-10",
+ "published": "2025-12-10T01:15:46.128Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.64",
+ "counts": {
+  "new": 7,
+  "improved": 3,
+  "fixed": 3,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Agents and bash commands can run asynchronously and send messages to wake up the main agent",
+   "zh": "代理和bash命令可以异步运行并发送消息来唤醒主代理"
+  },
+  {
+   "type": "new",
+   "en": "/stats now provides users with interesting CC stats, such as favorite model, usage graph, usage streak",
+   "zh": "/stats 现在为用户提供有趣的 CC 统计数据，例如最喜欢的型号、使用情况图表、使用情况记录"
+  },
+  {
+   "type": "new",
+   "en": "Added named session support: use `/rename` to name sessions, `/resume <name>` in REPL or `claude --resume <name>` from the terminal to resume them",
+   "zh": "添加了命名会话支持：使用`/rename`来命名会话，在 REPL 中使用`/resume <name>`或从终端使用`claude --resume <name>`来恢复会话"
+  },
+  {
+   "type": "new",
+   "en": "Added support for .claude/rules/`.  See https://code.claude.com/docs/en/memory for details.",
+   "zh": "添加了对 .claude/rules/` 的支持。  有关详细信息，请参阅 https://code.claude.com/docs/en/memory。"
+  },
+  {
+   "type": "new",
+   "en": "Added image dimension metadata when images are resized, enabling accurate coordinate mappings for large images",
+   "zh": "调整图像大小时添加图像尺寸元数据，实现大图像的精确坐标映射"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added copy-to-clipboard button on code blocks and bash tool inputs",
+   "zh": "VS Code：代码块和 Bash 工具输入上新增复制到剪贴板的按钮"
+  },
+  {
+   "type": "new",
+   "en": "Bedrock: Add support for `aws login` AWS Management Console credentials",
+   "zh": "Bedrock：添加对`aws login`AWS 管理控制台凭证的支持"
+  },
+  {
+   "type": "improved",
+   "en": "Made auto-compacting instant",
+   "zh": "自动压缩改为即时完成"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/resume` screen with grouped forked sessions and keyboard shortcuts for preview (P) and rename (R)",
+   "zh": "改进 `/resume` 界面：分叉会话分组显示，并新增预览（P）和重命名（R）快捷键"
+  },
+  {
+   "type": "improved",
+   "en": "Bedrock: Improve efficiency of token counting",
+   "zh": "基岩：提高代币计数效率"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto-loading .env when using native installer",
+   "zh": "修复了使用本机安装程序时自动加载 .env"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--system-prompt` being ignored when using `--continue` or `--resume` flags",
+   "zh": "修复了使用`--continue`或`--resume`标志时忽略`--system-prompt`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed extension not working on Windows ARM64 by falling back to x64 binary via emulation",
+   "zh": "VS Code：通过 x64 版本的二进制文件模拟运行，修复了扩展在 Windows ARM64 上无法工作的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Unshipped AgentOutputTool and BashOutputTool, in favor of a new unified TaskOutputTool",
+   "zh": "取消发布 AgentOutputTool 和 BashOutputTool，改用新的统一 TaskOutputTool"
+  }
+ ]
+}

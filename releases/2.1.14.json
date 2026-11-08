@@ -1,0 +1,93 @@
+{
+ "version": "2.1.14",
+ "date": "2026-01-20",
+ "published": "2026-01-20T22:37:25.754Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.14",
+ "counts": {
+  "new": 4,
+  "improved": 1,
+  "fixed": 11
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added history-based autocomplete in bash mode (`!`) - type a partial command and press Tab to complete from your bash command history",
+   "zh": "在 bash 模式下添加了基于历史记录的自动完成功能 (`!`) - 输入部分命令并按 Tab 键从 bash 命令历史记录中完成"
+  },
+  {
+   "type": "new",
+   "en": "Added search to installed plugins list - type to filter by name or description",
+   "zh": "添加了对已安装插件列表的搜索 - 类型可按名称或描述进行过滤"
+  },
+  {
+   "type": "new",
+   "en": "Added support for pinning plugins to specific git commit SHAs, allowing marketplace entries to install exact versions",
+   "zh": "添加了对将插件固定到特定 git commit SHA 的支持，允许市场条目安装确切的版本"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added `/usage` command to display current plan usage",
+   "zh": "[VSCode] 新增 `/usage` 命令，用于显示当前套餐用量"
+  },
+  {
+   "type": "improved",
+   "en": "Improved backspace to delete pasted text as a single token instead of one character at a time",
+   "zh": "改进退格键：一次删除整段粘贴的文本，而不是一个字符一个字符地删"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a regression where the context window blocking limit was calculated too aggressively, blocking users at ~65% context usage instead of the intended ~98%",
+   "zh": "修复了上下文窗口阻止限制计算过于激进的回归，阻止用户使用约 65% 的上下文使用，而不是预期的约 98%"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory issues that could cause crashes when running parallel subagents",
+   "zh": "修复了运行并行子代理时可能导致崩溃的内存问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory leak in long-running sessions where stream resources were not cleaned up after shell commands completed",
+   "zh": "修复了长时间运行会话中的内存泄漏问题，其中 shell 命令完成后流资源未清理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `@` symbol incorrectly triggering file autocomplete suggestions in bash mode",
+   "zh": "修复了`@`符号在 bash 模式下错误地触发文件自动完成建议的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `@`-mention menu folder click behavior to navigate into directories instead of selecting them",
+   "zh": "修复了`@`提及菜单文件夹单击行为以导航到目录而不是选择它们"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/feedback` command generating invalid GitHub issue URLs when description is very long",
+   "zh": "修复了当描述很长时`/feedback`命令生成无效的 GitHub 问题 URL"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/context` command to show the same token count and percentage as the status line in verbose mode",
+   "zh": "修复了`/context`命令，以在详细模式下显示与状态行相同的令牌计数和百分比"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where `/config`, `/context`, `/model`, and `/todos` command overlays could close unexpectedly",
+   "zh": "修复了`/config`、`/context`、`/model`和`/todos`命令叠加层可能意外关闭的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash command autocomplete selecting wrong command when typing similar commands (e.g., `/context` vs `/compact`)",
+   "zh": "修复了输入类似命令时斜杠命令自动完成选择错误命令的问题（例如，`/context`与`/compact`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed inconsistent back navigation in plugin marketplace when only one marketplace is configured",
+   "zh": "修复了仅配置一个市场时插件市场中返回导航不一致的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed iTerm2 progress bar not clearing properly on exit, preventing lingering indicators and bell sounds",
+   "zh": "修复了 iTerm2 进度条在退出时无法正确清除的问题，从而防止指示器和铃声出现挥之不去的情况"
+  }
+ ]
+}

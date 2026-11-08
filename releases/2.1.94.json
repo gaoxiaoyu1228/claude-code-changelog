@@ -1,0 +1,138 @@
+{
+ "version": "2.1.94",
+ "date": "2026-04-07",
+ "published": "2026-04-07T21:04:05.380Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.94",
+ "counts": {
+  "new": 5,
+  "improved": 4,
+  "fixed": 16
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for Amazon Bedrock powered by Mantle, set `CLAUDE_CODE_USE_MANTLE=1`",
+   "zh": "添加了对由 Mantle 提供支持的 Amazon Bedrock 的支持，设置 `CLAUDE_CODE_USE_MANTLE=1`"
+  },
+  {
+   "type": "new",
+   "en": "Added compact `Slacked #channel` header with a clickable channel link for Slack MCP send-message tool calls",
+   "zh": "添加了紧凑的`Slacked #channel`标头，其中包含用于 Slack MCP 发送消息工具调用的可点击通道链接"
+  },
+  {
+   "type": "new",
+   "en": "Added `keep-coding-instructions` frontmatter field support for plugin output styles",
+   "zh": "添加了对插件输出样式的`keep-coding-instructions` frontmatter 字段支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `hookSpecificOutput.sessionTitle` to `UserPromptSubmit` hooks for setting the session title",
+   "zh": "将 `hookSpecificOutput.sessionTitle` 添加到 `UserPromptSubmit` 挂钩以设置会话标题"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a warning banner when `settings.json` files fail to parse, so users know their permission rules are not being applied",
+   "zh": "[VSCode] 当 `settings.json` 文件解析失败时，新增警告横幅，提示用户其权限规则未生效"
+  },
+  {
+   "type": "improved",
+   "en": "Changed default effort level from medium to high for API-key, Bedrock/Vertex/Foundry, Team, and Enterprise users (control this with `/effort`)",
+   "zh": "将 API 密钥、Bedrock/Vertex/Foundry、团队和企业用户的默认工作级别从中更改为高（使用`/effort`控制此）"
+  },
+  {
+   "type": "improved",
+   "en": "Plugin skills declared via `\"skills\": [\"./\"]` now use the skill's frontmatter `name` for the invocation name instead of the directory basename, giving a stable name across install methods",
+   "zh": "通过 `\"skills\": [\"./\"]` 声明的插件技能，现在使用技能 frontmatter 中的 `name` 作为调用名，而不是目录名，从而在不同安装方式下名称保持一致"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `--resume` to resume sessions from other worktrees of the same repo directly instead of printing a `cd` command",
+   "zh": "改进 `--resume`：同一仓库其他 worktree 中的会话可直接恢复，不再只打印一条 `cd` 命令"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Reduced cold-open subprocess work on starting a session",
+   "zh": "[VSCode] 减少冷启动打开会话时的子进程工作量"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agents appearing stuck after a 429 rate-limit response with a long Retry-After header — the error now surfaces immediately instead of silently waiting",
+   "zh": "修复了代理在使用长 Retry-After 标头的 429 速率限制响应后出现卡住的问题 — 错误现在立即浮出水面，而不是默默等待"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Console login on macOS silently failing with \"Not logged in\" when the login keychain is locked or its password is out of sync — the error is now surfaced and `claude doctor` diagnoses the fix",
+   "zh": "修复了当登录钥匙串被锁定或其密码不同步时，macOS 上的控制台登录无提示地失败并显示“未登录”的问题 — 该错误现已浮出水面，并且`claude doctor`诊断修复"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin skill hooks defined in YAML frontmatter being silently ignored",
+   "zh": "修复了 YAML frontmatter 中定义的插件技能挂钩被默默忽略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin hooks failing with \"No such file or directory\" when `CLAUDE_PLUGIN_ROOT` was not set",
+   "zh": "修复了未设置`CLAUDE_PLUGIN_ROOT`时插件挂钩失败并显示“没有此类文件或目录”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `${CLAUDE_PLUGIN_ROOT}` resolving to the marketplace source directory instead of the installed cache for local-marketplace plugins on startup",
+   "zh": "修复了`${CLAUDE_PLUGIN_ROOT}`在启动时解析为市场源目录而不是本地市场插件已安装的缓存"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrollback showing the same diff repeated and blank pages in long-running sessions",
+   "zh": "修复了在长时间运行的会话中显示相同差异重复页面和空白页面的回滚问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multiline user prompts in the transcript indenting wrapped lines under the `❯` caret instead of under the text",
+   "zh": "修复了记录中的多行用户提示，在`❯`插入符号下（而不是在文本下）缩进换行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Shift+Space inserting the literal word \"space\" instead of a space character in search inputs",
+   "zh": "修复了 Shift+Space 在搜索输入中插入文字“空格”而不是空格字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hyperlinks opening two browser tabs when clicked inside tmux running in an xterm.js-based terminal (VS Code, Hyper, Tabby)",
+   "zh": "修复了在基于 xterm.js 的终端（VS Code、Hyper、Tabby）中运行的 tmux 中单击超链接时打开两个浏览器选项卡的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an alt-screen rendering bug where content height changes mid-scroll could leave compounding ghost lines",
+   "zh": "修复了替代屏幕渲染错误，其中内容高度在滚动中发生变化可能会留下复合的鬼线"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `FORCE_HYPERLINK` environment variable being ignored when set via `settings.json` `env`",
+   "zh": "修复了通过`settings.json``env`设置时忽略`FORCE_HYPERLINK`环境变量的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed native terminal cursor not tracking the selected tab in dialogs, so screen readers and magnifiers can follow tab navigation",
+   "zh": "修复了本机终端光标不跟踪对话框中选定的选项卡的问题，因此屏幕阅读器和放大器可以遵循选项卡导航"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock invocation of Sonnet 3.5 v2 by using the `us.` inference profile ID",
+   "zh": "修复了使用`us.`推理配置文件 ID 对 Sonnet 3.5 v2 的 Bedrock 调用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK/print mode not preserving the partial assistant response in conversation history when interrupted mid-stream",
+   "zh": "修复了 SDK/打印模式在中途中断时不会在对话历史记录中保留部分助手响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed CJK and other multibyte text being corrupted with U+FFFD in stream-json input/output when chunk boundaries split a UTF-8 sequence",
+   "zh": "修复了当块边界分割 UTF-8 序列时，CJK 和其他多字节文本在流 json 输入/输出中被 U+FFFD 损坏的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed dropdown menus selecting the wrong item when the mouse was over the list while typing or using arrow keys",
+   "zh": "[VSCode] 修复输入或使用方向键时，鼠标停在列表上会导致下拉菜单选中错误项目的问题"
+  }
+ ]
+}

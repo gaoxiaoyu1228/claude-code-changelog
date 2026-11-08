@@ -1,0 +1,16 @@
+{
+ "version": "2.0.76",
+ "date": "2025-12-22",
+ "published": "2025-12-22T23:56:39.366Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.76",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed issue with macOS code-sign warning when using Claude in Chrome integration",
+   "zh": "修复了在 Chrome 集成中使用 Claude 时 macOS 代码签名警告的问题"
+  }
+ ]
+}

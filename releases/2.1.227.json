@@ -1,0 +1,37 @@
+{
+ "version": "2.1.227",
+ "date": "2026-08-10",
+ "published": "2026-08-10T20:56:57.591Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.227",
+ "counts": {
+  "improved": 2,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved slash-command menu: blue now marks only the selected row, matched characters are bolded instead of recolored, and emoji or accented names keep their glyphs",
+   "zh": "改进斜杠命令菜单：蓝色只标记选中行，匹配的字符改为加粗而不是变色，表情符号和带重音的名称保持原样显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance: fewer event-loop stalls on file-not-found suggestions and at-mention size checks",
+   "zh": "改进性能：减少文件不存在时的建议和 @ 提及大小检查造成的事件循环卡顿"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feature flags being evaluated without the user's subscription tier when a session started with an expired login token, which could wrongly prompt Max plan users to enable usage credits for Fable",
+   "zh": "修复了当会话使用过期的登录令牌启动时，在没有用户订阅级别的情况下评估功能标志的问题，这可能会错误地提示 Max 计划用户启用 Fable 的使用积分"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed every Bash command failing under `claude-code-action` with `allowed_non_write_users` on GitHub-hosted runners",
+   "zh": "修复了在 GitHub 托管的运行器上使用`allowed_non_write_users`在`claude-code-action`下失败的每个 Bash 命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/tui` bringing back a conversation that had been rewound to before its first message",
+   "zh": "修复了`/tui`返回已回退到第一条消息之前的对话的问题"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "version": "2.1.174",
+ "date": "2026-06-11",
+ "published": "2026-06-11T22:27:52.061Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.174",
+ "counts": {
+  "new": 2,
+  "fixed": 11
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `wheelScrollAccelerationEnabled` setting to disable mouse-wheel scroll acceleration in fullscreen mode",
+   "zh": "添加了`wheelScrollAccelerationEnabled`设置以在全屏模式下禁用鼠标滚轮滚动加速"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added usage attribution to the Account & usage dialog (`/usage`) showing cache misses, long context, subagents, and per-skill/agent/plugin/MCP breakdowns over the last 24h or 7d",
+   "zh": "[VSCode] Account & usage 对话框（`/usage`）新增用量归因，显示最近 24 小时或 7 天内的缓存未命中、长上下文、子智能体，以及按技能、智能体、插件和 MCP 的细分"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/model` picker hiding the model family that Default resolves to — Opus now appears as its own row on Max/Team Premium/Enterprise plans, Sonnet on Pro/Team plans, and Opus on pay-as-you-go API accounts",
+   "zh": "修复 `/model` 选择器隐藏了\"默认\"所指向的模型系列的问题：现在 Max、Team Premium、Enterprise 套餐会单独显示 Opus 一行，Pro、Team 套餐显示 Sonnet，按量付费 API 账户显示 Opus"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` picker showing a hardcoded Sonnet version label when `ANTHROPIC_DEFAULT_SONNET_MODEL` pins a different Sonnet",
+   "zh": "修复了当`ANTHROPIC_DEFAULT_SONNET_MODEL`固定不同的十四行诗时，`/model`选择器显示硬编码的十四行诗版本标签"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the \"Fable 5 is now consuming usage credits\" banner incorrectly showing for enterprise accounts with usage-based billing",
+   "zh": "修复了基于使用量计费的企业帐户错误显示的“神鬼寓言 5 正在消耗使用积分”横幅"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock GovCloud regions (`us-gov-*`) deriving the wrong inference profile prefix (`global` instead of `us-gov`), causing 400 errors on derived model IDs",
+   "zh": "修复了基岩 GovCloud 区域 (`us-gov-*`) 派生错误的推理配置文件前缀（`global` 而不是 `us-gov`），导致派生模型 ID 出现 400 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions inheriting another session's `ANTHROPIC_*` provider env (gateway URL, custom headers, `/model` aliases) from the shell that started the background daemon",
+   "zh": "修复了后台会话从启动后台守护进程的 shell 继承另一个会话的`ANTHROPIC_*`提供程序环境（网关 URL、自定义标头、`/model`别名）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a 1-2 second pause when exiting Claude Code shortly after a shell command was interrupted or killed on macOS and Linux",
+   "zh": "修复了 macOS 和 Linux 上 shell 命令被中断或终止后不久退出 Claude Code 时出现 1-2 秒暂停的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed git commit co-author attribution showing an incorrect model name for some models",
+   "zh": "修复了 git commit 共同作者属性显示某些模型的模型名称不正确的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/advisor` dialog pre-selecting a saved advisor model that is blocked by the `availableModels` allowlist",
+   "zh": "修复 `/advisor` 对话框预先选中了已保存、但被 `availableModels` 允许列表屏蔽的顾问模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skill hot-reload re-sending the entire skill listing when a single skill changed; only changed skills are now re-announced",
+   "zh": "修复了单个技能更改时技能热重载重新发送整个技能列表的问题；现在仅重新公布更改的技能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Workflow tool `agent()` subagents missing per-agent attribution headers",
+   "zh": "修复了工作流程工具`agent()`子代理缺少每个代理归因标头的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pre-warmed background workers failing with \"Could not resolve authentication method\" when claimed after sitting idle",
+   "zh": "修复了预热后台工作人员在闲置后声明时失败并显示“无法解析身份验证方法”的问题"
+  }
+ ]
+}

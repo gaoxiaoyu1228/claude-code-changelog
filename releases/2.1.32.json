@@ -1,0 +1,73 @@
+{
+ "version": "2.1.32",
+ "date": "2026-02-05",
+ "published": "2026-02-05T17:03:20.616Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.32",
+ "counts": {
+  "new": 5,
+  "improved": 3,
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Claude Opus 4.6 is now available!",
+   "zh": "克劳德 Opus 4.6 现已推出！"
+  },
+  {
+   "type": "new",
+   "en": "Added research preview agent teams feature for multi-agent collaboration (token-intensive feature, requires setting CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1)",
+   "zh": "添加了用于多代理协作的研究预览代理团队功能（令牌密集型功能，需要设置 CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1）"
+  },
+  {
+   "type": "new",
+   "en": "Claude now automatically records and recalls memories as it works",
+   "zh": "克劳德现在可以在工作时自动记录和回忆记忆"
+  },
+  {
+   "type": "new",
+   "en": "Added \"Summarize from here\" to the message selector, allowing partial conversation summarization.",
+   "zh": "在消息选择器中添加了“从此处摘要”，允许部分对话摘要。"
+  },
+  {
+   "type": "new",
+   "en": "Skills defined in `.claude/skills/` within additional directories (`--add-dir`) are now loaded automatically.",
+   "zh": "`--add-dir` 额外目录中 `.claude/skills/` 里定义的技能，现在会自动加载"
+  },
+  {
+   "type": "improved",
+   "en": "Updated --resume to re-use --agent value specified in previous conversation by default.",
+   "zh": "`--resume` 默认会沿用上一次对话中指定的 `--agent` 值"
+  },
+  {
+   "type": "improved",
+   "en": "Skill character budget now scales with context window (2% of context), so users with larger context windows can see more skill descriptions without truncation",
+   "zh": "技能字符预算按上下文窗口的 2% 缩放，窗口越大，能显示的技能描述越多且不被截断"
+  },
+  {
+   "type": "improved",
+   "en": "VSCode: Added spinner when loading past conversations list",
+   "zh": "VS Code：加载过往对话列表时新增加载动画"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `@` file completion showing incorrect relative paths when running from a subdirectory",
+   "zh": "修复了从子目录运行时显示不正确的相对路径的`@`文件完成"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: Bash tool no longer throws \"Bad substitution\" errors when heredocs contain JavaScript template literals like `${index + 1}`, which previously interrupted tool execution",
+   "zh": "修复：Bash 工具在 heredoc 中包含 `${index + 1}` 等 JavaScript 模板字面量时，不再抛出\"Bad substitution\"错误（此前会中断工具执行）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Thai/Lao spacing vowels (สระ า, ำ) not rendering correctly in the input field",
+   "zh": "修复了泰语/老挝语间隔元音 (สระ า, ำ) 在输入字段中无法正确呈现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed slash commands incorrectly being executed when pressing Enter with preceding text in the input field",
+   "zh": "VS Code：修复了输入框中前面有文字时按 Enter，斜杠命令被错误执行的问题"
+  }
+ ]
+}

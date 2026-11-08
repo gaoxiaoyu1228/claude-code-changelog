@@ -1,0 +1,22 @@
+{
+ "version": "2.1.170",
+ "date": "2026-06-09",
+ "published": "2026-06-09T16:15:44.470Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.170",
+ "counts": {
+  "new": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use. Fable’s capabilities exceed those of any model we’ve ever made generally available. Update to version 2.1.170 for access. https://www.anthropic.com/news/claude-fable-5-mythos-5",
+   "zh": "推出 Claude Fable 5：属于 Mythos 级别的模型，我们已使其可供一般用户安全使用。Fable 的能力超过我们以往任何一款正式开放的模型。需更新到 2.1.170 版本才能使用。https://www.anthropic.com/news/claude-fable-5-mythos-5"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions not saving transcripts (and not appearing in --resume) when launched from the VS Code integrated terminal or any shell that inherited Claude Code environment variables.",
+   "zh": "修复了从 VS Code 集成终端或继承 Claude Code 环境变量的任何 shell 启动时不保存记录的会话（并且不出现在 --resume 中）的问题。"
+  }
+ ]
+}

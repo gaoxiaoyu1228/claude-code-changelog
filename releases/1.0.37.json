@@ -1,0 +1,16 @@
+{
+ "version": "1.0.37",
+ "date": "2025-06-27",
+ "published": "2025-06-27T23:04:05.745Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.37",
+ "counts": {
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "removed",
+   "en": "Remove ability to set `Proxy-Authorization` header via ANTHROPIC_AUTH_TOKEN or apiKeyHelper",
+   "zh": "移除通过 `ANTHROPIC_AUTH_TOKEN` 或 `apiKeyHelper` 设置 `Proxy-Authorization` 请求头的能力"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "version": "2.1.44",
+ "date": "2026-02-16",
+ "published": "2026-02-16T20:51:18.785Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.44",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed ENAMETOOLONG errors for deeply-nested directory paths",
+   "zh": "修复了深层嵌套目录路径的 ENAMETOOLONG 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auth refresh errors",
+   "zh": "修复了身份验证刷新错误"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "version": "1.0.45",
+ "date": "2025-07-08",
+ "published": "2025-07-08T20:38:34.344Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.45",
+ "counts": {
+  "improved": 2,
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Redesigned Search (Grep) tool with new tool input parameters and features",
+   "zh": "重新设计了搜索（Grep）工具，带有新的输入参数和功能"
+  },
+  {
+   "type": "improved",
+   "en": "Updated prompt input undo to Ctrl+\\_ to avoid breaking existing Ctrl+U behavior, matching zsh's undo shortcut",
+   "zh": "提示输入框的撤销改为 Ctrl+\\_，以免破坏现有的 Ctrl+U 行为，与 zsh 的撤销快捷键保持一致"
+  },
+  {
+   "type": "fixed",
+   "en": "Disabled IDE diffs for notebook files, fixing \"Timeout waiting after 1000ms\" error",
+   "zh": "禁用笔记本文件的 IDE 差异，修复“1000 毫秒后超时等待”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed config file corruption issue by enforcing atomic writes",
+   "zh": "通过强制执行原子写入修复了配置文件损坏问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Stop Hooks: Fixed transcript path after /clear and fixed triggering when loop ends with tool call",
+   "zh": "Stop 钩子：修复了 `/clear` 后的转录路径问题，以及循环以工具调用结束时的触发问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Custom slash commands: Restored namespacing in command names based on subdirectories. For example, .claude/commands/frontend/component.md is now /frontend:component, not /component.",
+   "zh": "自定义斜杠命令：根据子目录恢复命令名称中的命名空间。例如，.claude/commands/frontend/component.md 现在是 /frontend:component，而不是 /component。"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "2.0.13",
+ "date": "2025-10-09",
+ "published": "2025-10-09T17:20:50.066Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.13",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` not working on native build",
+   "zh": "修复了`/plugin`在本机构建上不起作用的问题"
+  }
+ ]
+}

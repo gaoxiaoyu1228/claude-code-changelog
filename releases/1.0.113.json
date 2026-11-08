@@ -1,0 +1,22 @@
+{
+ "version": "1.0.113",
+ "date": "2025-09-13",
+ "published": "2025-09-13T02:24:02.502Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.113",
+ "counts": {
+  "improved": 1,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Move Ctrl+R keybinding for toggling transcript to Ctrl+O",
+   "zh": "将切换转录的快捷键从 Ctrl+R 改为 Ctrl+O"
+  },
+  {
+   "type": "removed",
+   "en": "Deprecated piped input in interactive mode",
+   "zh": "已弃用交互模式下的管道输入"
+  }
+ ]
+}

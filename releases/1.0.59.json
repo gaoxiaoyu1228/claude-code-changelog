@@ -1,0 +1,37 @@
+{
+ "version": "1.0.59",
+ "date": "2025-07-23",
+ "published": "2025-07-23T21:14:22.456Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.59",
+ "counts": {
+  "new": 4,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "SDK: Added tool confirmation support with canUseTool callback",
+   "zh": "SDK：支持通过 `canUseTool` 回调进行工具确认"
+  },
+  {
+   "type": "new",
+   "en": "SDK: Allow specifying env for spawned process",
+   "zh": "SDK：允许为衍生的进程指定 env"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Exposed PermissionDecision to hooks (including \"ask\")",
+   "zh": "Hooks：向 hook 暴露 PermissionDecision（包括 \"ask\"）"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: UserPromptSubmit now supports additionalContext in advanced JSON output",
+   "zh": "UserPromptSubmit 的高级 JSON 输出现在支持 additionalContext"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed issue where some Max users that specified Opus would still see fallback to Sonnet",
+   "zh": "修复了某些指定 Opus 的 Max 用户仍会看到回退到 Sonnet 的问题"
+  }
+ ]
+}

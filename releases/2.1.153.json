@@ -1,0 +1,194 @@
+{
+ "version": "2.1.153",
+ "date": "2026-05-27",
+ "published": "2026-05-27T21:46:58.252Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.153",
+ "counts": {
+  "new": 3,
+  "improved": 8,
+  "fixed": 24,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `skipLfs` option to `github`/`git` plugin marketplace sources to skip Git LFS downloads during clone and update",
+   "zh": "在 `github`/`git` 插件市场源中添加了 `skipLfs` 选项，以在克隆和更新期间跳过 Git LFS 下载"
+  },
+  {
+   "type": "new",
+   "en": "Claude Code now shows a one-time notice when your npm global install can't auto-update; `/doctor` lists the fixes",
+   "zh": "现在，当您的 npm 全局安装无法自动更新时，Claude Code 会显示一次性通知； `/doctor` 列出了修复程序"
+  },
+  {
+   "type": "new",
+   "en": "Status line commands now receive `COLUMNS` and `LINES` environment variables so scripts can size output to the terminal width",
+   "zh": "状态栏命令现在会收到 `COLUMNS` 和 `LINES` 环境变量，脚本可据此调整输出宽度"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: autocomplete in the dispatch input now suggests native slash commands and bundled skills, not just project skills",
+   "zh": "`claude agents`：派发输入框中的自动补全现在会推荐原生斜杠命令和内置 skill，而不只是项目 skill"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: PR column now shows `PR #N` for a single PR or `N PRs` for multiple",
+   "zh": "`claude agents`：PR 列对单个 PR 显示 `PR #N`，对多个 PR 显示 `N PRs`"
+  },
+  {
+   "type": "improved",
+   "en": "`claude doctor` now shows the result of your last update attempt",
+   "zh": "`claude doctor` 现在会显示你上次更新尝试的结果"
+  },
+  {
+   "type": "improved",
+   "en": "Combined the separate \"needs authentication\" startup notifications for MCP servers and connectors into a single message",
+   "zh": "将 MCP 服务器和连接器的单独“需要身份验证”启动通知合并为一条消息"
+  },
+  {
+   "type": "improved",
+   "en": "macOS: background agents now appear as \"Claude Code\" in Privacy & Security and keep their permission grants across upgrades",
+   "zh": "macOS：后台 agent 现在会在\"隐私与安全性\"中显示为 \"Claude Code\"，并在升级后保留其权限授权"
+  },
+  {
+   "type": "improved",
+   "en": "`--strict-mcp-config` no longer strips inline `mcpServers` from explicitly-passed agent definitions (`--agents` / SDK `agents`), and blocked subagent MCP servers now surface a visible warning",
+   "zh": "`--strict-mcp-config` 不再移除通过 `--agents`（或 SDK 的 `agents`）显式传入的 agent 定义中的内联 `mcpServers`；被拦截的子 agent MCP 服务器现在会显示可见警告"
+  },
+  {
+   "type": "improved",
+   "en": "`/bg` while Claude is responding now continues the response in the background session instead of dropping it",
+   "zh": "Claude 正在回复时执行 `/bg`，现在会在后台会话中继续回复，而不是丢弃"
+  },
+  {
+   "type": "improved",
+   "en": "`/model` now saves your selection as the default for new sessions (matching the IDE). Press `s` in the picker to switch models for the current session only.",
+   "zh": "`/model` 现在会把你的选择保存为新会话的默认值（与 IDE 一致）。在选择器中按 `s` 可仅为当前会话切换模型。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stateful MCP servers without the optional GET SSE stream reconnect-looping on `tools/list` (regression in v2.1.147)",
+   "zh": "修复了在`tools/list`上没有可选 GET SSE 流重新连接循环的有状态 MCP 服务器（v2.1.147 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a regression where a custom API gateway could receive the user's Anthropic OAuth credential instead of the gateway's own token",
+   "zh": "修复了自定义 API 网关可以接收用户的 Anthropic OAuth 凭证而不是网关自己的令牌的回归问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagent (Agent tool) frontmatter MCP servers ignoring `--strict-mcp-config`, `--bare`, remote mode, enterprise managed MCP config, and managed-settings MCP server allow/deny policies",
+   "zh": "修复了子代理（代理工具）frontmatter MCP 服务器忽略 `--strict-mcp-config`、`--bare`、远程模式、企业管理的 MCP 配置和托管设置 MCP 服务器允许/拒绝策略"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Windows PowerShell installer reporting \"Installation complete!\" when installation actually failed",
+   "zh": "修复 Windows PowerShell 安装程序在安装实际失败时仍显示\"Installation complete!\"的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude update` installing the latest version instead of the configured release channel's version for npm installations",
+   "zh": "修复了`claude update`安装最新版本而不是为 npm 安装配置的发布通道版本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed excessive memory usage (multiple GB) when resuming a session by transcript file path on machines with many stored sessions",
+   "zh": "修复了在具有许多存储会话的计算机上通过脚本文件路径恢复会话时内存使用过多（多个 GB）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` and `claude --bg` running on a stale daemon started before binary-takeover support, even after upgrading",
+   "zh": "修复了在二进制接管支持之前启动的陈旧守护进程上运行的“claude Agents”和`claude --bg`，即使在升级之后也是如此"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hang where the CLI could fail to exit when stdin was closed without EOF in stream-json mode, leaving a stale session marker behind",
+   "zh": "修复了在流 json 模式下在没有 EOF 的情况下关闭 stdin 时 CLI 可能无法退出的挂起，留下过时的会话标记"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed malformed `file://` links in Claude's responses not being clickable in the terminal",
+   "zh": "修复了克劳德响应中格式错误的`file://`链接在终端中不可点击的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --help` rendering unwrapped output on terminals narrower than 92 columns",
+   "zh": "修复了`claude --help`在窄于 92 列的终端上呈现未包装输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool progress notifications not rendering in the collapsed tool view",
+   "zh": "修复了 MCP 工具进度通知未在折叠工具视图中呈现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Agent` tool with `subagent_type: 'claude'` running in an undocumented temporary worktree, which could silently discard outputs written to gitignored paths",
+   "zh": "修复了在未记录的临时工作树中运行的带有`subagent_type: 'claude'`的`Agent`工具，该工具可能会默默地丢弃写入 gitignored 路径的输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/btw` keyboard shortcuts becoming unresponsive in background sessions while a task is running",
+   "zh": "修复了任务运行时`/btw`键盘快捷键在后台会话中变得无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions writing temp files to `$CLAUDE_JOB_DIR` triggering a \"sensitive file\" permission prompt",
+   "zh": "修复了后台会话将临时文件写入`$CLAUDE_JOB_DIR`触发“敏感文件”权限提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed recovering a background agent whose working directory was deleted showing a truncated stack trace instead of a clear error message",
+   "zh": "修复了恢复工作目录已删除的后台代理，显示截断的堆栈跟踪而不是清晰的错误消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `EnterWorktree` not being available immediately in background sessions (previously required `ToolSearch` first)",
+   "zh": "修复了`EnterWorktree`在后台会话中无法立即使用的问题（之前需要先使用`ToolSearch`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `cmd+k` in iTerm2/Terminal.app not repainting attached background sessions",
+   "zh": "修复了 iTerm2/Terminal.app 中的`cmd+k`不重新绘制附加后台会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the IME candidate window appearing at the bottom of the screen instead of next to the input caret in attached background sessions on Windows",
+   "zh": "修复 Windows 上后台会话附加时，输入法候选窗口出现在屏幕底部而非输入光标旁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-color bleed when attaching to a background agent from 256-color-only terminals after the agent had rendered file diffs",
+   "zh": "修复了代理渲染文件差异后从仅 256 色终端连接到后台代理时的背景颜色渗色问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/copy` and copy-on-select silently failing to update the system clipboard when attached to a background session inside tmux",
+   "zh": "修复了`/copy`和“选择时复制”在附加到 tmux 内的后台会话时无法更新系统剪贴板的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed opening `claude agents` with Remote Control enabled leaving zombie session entries on the Code tab after exiting",
+   "zh": "修复了在启用远程控制的情况下打开“克劳德代理”，退出后在“代码”选项卡上留下僵尸会话条目的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/rename` in background sessions not updating the session banner immediately",
+   "zh": "修复了后台会话中的`/rename`未立即更新会话横幅的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows update rollback: if a Windows update fails, Claude Code now restores the original executable by copy and tells you how to recover",
+   "zh": "修复了 Windows 更新回滚：如果 Windows 更新失败，Claude Code 现在会通过副本恢复原始可执行文件并告诉您如何恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Claude Code processes not shutting down cleanly when VS Code closed on Windows, causing false \"unclean exit\" reports and orphaned MCP servers",
+   "zh": "[VSCode] 修复 Windows 上关闭 VS Code 时 Claude Code 进程无法正常退出，导致误报 \"unclean exit\" 并留下孤立 MCP 服务器的问题"
+  },
+  {
+   "type": "removed",
+   "en": "If you customized the `modelPicker:setAsDefault` keybinding, rename it to `modelPicker:thisSessionOnly` in keybindings.json (the `d` action was replaced by `s`)",
+   "zh": "如果你自定义过 `modelPicker:setAsDefault` 快捷键，请在 keybindings.json 中改名为 `modelPicker:thisSessionOnly`（`d` 操作已被 `s` 取代）"
+  }
+ ]
+}

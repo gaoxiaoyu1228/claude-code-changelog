@@ -1,0 +1,73 @@
+{
+ "version": "2.1.195",
+ "date": "2026-06-26",
+ "published": "2026-06-26T18:16:23.150Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.195",
+ "counts": {
+  "new": 1,
+  "improved": 3,
+  "fixed": 8
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` to disable mouse click/drag/hover in fullscreen mode while keeping wheel scroll",
+   "zh": "添加了`CLAUDE_CODE_DISABLE_MOUSE_CLICKS`以在全屏模式下禁用鼠标单击/拖动/悬停，同时保持滚轮滚动"
+  },
+  {
+   "type": "improved",
+   "en": "Improved voice mode on Linux: now distinguishes \"no microphone\" from \"SoX not installed\" when SoX is present but no audio capture device exists",
+   "zh": "改进 Linux 上的语音模式：当安装了 SoX 但没有音频采集设备时，能区分「没有麦克风」和「未安装 SoX」"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `claude agents` completed list to fill available vertical space; on short terminals the header compacts so live sessions stay visible",
+   "zh": "改进 `claude agents` 的已完成列表：填满可用的垂直空间；在较矮的终端中，标题会压缩，以确保实时会话仍然可见"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote session startup with a provisioning checklist while the container starts",
+   "zh": "改进远程会话启动：容器启动期间显示准备清单"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook matchers with hyphenated identifiers (e.g. `code-reviewer`, `mcp__brave-search`) accidentally substring-matching — they now exact-match. Use `mcp__brave-search__.*` to match all tools from a hyphenated MCP server.",
+   "zh": "修复了带有连字符标识符的钩子匹配器（例如`code-reviewer`、`mcp__brave-search`）意外的子字符串匹配 - 它们现在完全匹配。使用`mcp__brave-search__.*`匹配来自连字符 MCP 服务器的所有工具。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice dictation on macOS capturing silence in long-running sessions after the default input device changes",
+   "zh": "修复 macOS 上长时间运行的会话中，默认输入设备切换后，语音听写录入静音的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice dictation auto-submit never firing for languages written without spaces (Japanese, Chinese, Thai)",
+   "zh": "修复语音听写在无空格书写的语言（日语、中文、泰语）中，自动提交从不触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed external plugins enabled only by project `.claude/settings.json` not requiring explicit install consent on every loader path",
+   "zh": "修复了仅由项目`.claude/settings.json`启用的外部插件，不需要在每个加载器路径上明确安装同意"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` Enable/Disable not working when a plugin's `plugin.json` `name` differs from its marketplace entry name",
+   "zh": "修复了当插件的`plugin.json`“名称”与其市场条目名称不同时`/plugin`启用/禁用不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background jobs disappearing from `claude agents` or losing data when written by a newer Claude Code version",
+   "zh": "修复了后台作业从“克劳德代理”消失或由较新的克劳德代码版本编写时丢失数据的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed reopening a crashed background task showing a blank screen for up to 5 seconds instead of its restart",
+   "zh": "修复了重新打开崩溃的后台任务时显示黑屏长达 5 秒而不是重新启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent daemons running unreachable when the control socket fails to start, blocking restarts",
+   "zh": "修复了控制套接字无法启动时无法访问的后台代理守护进程，阻止重新启动"
+  }
+ ]
+}

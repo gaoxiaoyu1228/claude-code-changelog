@@ -1,0 +1,113 @@
+{
+ "version": "2.1.217",
+ "date": "2026-07-21",
+ "published": "2026-07-21T19:55:38.926Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.217",
+ "counts": {
+  "new": 3,
+  "improved": 4,
+  "fixed": 13
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added emoji shortcode autocomplete in the prompt input: type `:heart:` to insert ❤️, or `:hea` for suggestions — disable with the `emojiCompletionEnabled` setting",
+   "zh": "在提示输入中添加了表情符号短代码自动完成：输入 `:heart:` 插入 ❤️，或输入 `:hea` 获取建议 - 使用 `emojiCompletionEnabled` 设置禁用"
+  },
+  {
+   "type": "new",
+   "en": "Added warnings when transcript writes are failing (e.g. disk full) or when session saving is off due to an inherited environment variable, instead of losing transcripts silently",
+   "zh": "添加了当脚本写入失败（例如磁盘已满）或会话保存由于继承的环境变量而关闭时发出的警告，而不是默默地丢失脚本"
+  },
+  {
+   "type": "new",
+   "en": "Added a cap on concurrently-running subagents (default 20, override with `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`) so one message can't fan out unbounded background agents",
+   "zh": "添加了并发运行子代理的上限（默认为 20，用`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS`覆盖），因此一条消息无法扇出无限制的后台代理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved footer PR badge links to be clickable hyperlinks even when terminal support can't be detected (e.g. over ssh/tmux); set `FORCE_HYPERLINK=0` to opt out",
+   "zh": "改进页脚的 PR 徽标：即使终端无法识别，也能做成可点击的超链接（如通过 ssh/tmux）；设置 `FORCE_HYPERLINK=0` 可关闭"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the login-expiry warning to appear 3 days before expiry instead of 5",
+   "zh": "将登录到期警告更改为在到期前 3 天而不是 5 天出现"
+  },
+  {
+   "type": "improved",
+   "en": "Capped the frontend-design plugin suggestion tip at 3 lifetime impressions instead of repeating indefinitely",
+   "zh": "将前端设计插件建议提示限制为 3 次终生印象，而不是无限期地重复"
+  },
+  {
+   "type": "improved",
+   "en": "Changed subagents to no longer spawn nested subagents by default; set `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` to allow deeper nesting",
+   "zh": "将子代理更改为默认情况下不再生成嵌套子代理；设置`CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH`以允许更深层次的嵌套"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak where truncated MCP tool outputs kept the full untruncated result in memory for the rest of the session",
+   "zh": "修复了内存泄漏，截断的 MCP 工具输出将完整的未截断结果保留在内存中以供会话的其余部分使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows auto-update failures that could leave `claude.exe` missing; failed updates now restore the preserved executable automatically",
+   "zh": "修复了 Windows 自动更新失败可能导致`claude.exe`丢失的问题；失败的更新现在自动恢复保留的可执行文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background session isolation not canonicalizing symlinked working directories, which could let sessions escape their workspace folder",
+   "zh": "修复了后台会话隔离未规范化符号链接工作目录的问题，这可能会让会话逃脱其工作区文件夹"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto-compact never triggering for Claude Opus 4.8 on Bedrock and `/compact` failing once over the limit",
+   "zh": "修复了基岩上的 Claude Opus 4.8 永远不会触发自动压缩以及`/compact`一旦超过限制就会失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed corporate mTLS, TLS-verify, OAuth scope, and proxy settings being ignored in Claude Desktop sessions",
+   "zh": "修复了在 Claude Desktop 会话中忽略的公司 mTLS、TLS 验证、OAuth 范围和代理设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed screen reader mode's startup announcement being cut off by the first prompt render, and the thinking status row re-rendering every few seconds to update elapsed time and token counts",
+   "zh": "修复了屏幕阅读器模式的启动公告被第一次提示渲染中断的问题，并且思考状态行每隔几秒重新渲染一次以更新经过的时间和令牌计数"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed settings that set `OTEL_EXPORTER_OTLP_ENDPOINT` not governing all signals — lower-scope signal-specific overrides no longer redirect telemetry away from the managed endpoint",
+   "zh": "修复了将`OTEL_EXPORTER_OTLP_ENDPOINT`设置为不管理所有信号的托管设置 - 较低范围的信号特定覆盖不再将遥测重定向到托管端点"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume`/`--continue` and `/resume` failing with a TypeError when a transcript has a malformed attachment entry",
+   "zh": "修复了当转录本具有格式错误的附件条目时，`--resume`/`--continue`和`/resume`因类型错误而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions not showing a pending permission prompt or dialog to viewers that connected after it appeared",
+   "zh": "修复了远程控制会话不向出现后连接的查看者显示挂起的权限提示或对话框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background shells sometimes becoming impossible to stop after a session is sent to the background (`/background` or `←`) or when the session exits on a heavily loaded machine, most visible on Windows",
+   "zh": "修复了后台 shell 有时在会话发送到后台（`/background` 或 `←`）后或会话在负载较重的计算机上退出时变得无法停止的问题，这在 Windows 上最为明显"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a `CLAUDE.md` or `SKILL.md` paths frontmatter value with many brace groups OOM-killing or stalling the CLI at startup — brace expansion is now budget-bounded",
+   "zh": "修复了`CLAUDE.md`或`SKILL.md`路径 frontmatter 值，其中许多大括号组导致 OOM 终止或在启动时停止 CLI — 大括号扩展现在受到预算限制"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the transcript preview sitting flush against the input area when attaching to a starting background session; it now leaves the same one-line gap as the live layout, so the transcript no longer shifts when the session takes over",
+   "zh": "修复附加到正在启动的后台会话时，转录预览紧贴输入区的问题；现在它与实时布局保持相同的一行间距，会话接管时转录不再移位"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--max-budget-usd` not stopping background subagents: once the cap is reached, new spawns are denied and running background agents are halted",
+   "zh": "修复了`--max-budget-usd`不停止后台子代理的问题：一旦达到上限，新的生成将被拒绝，并且正在运行的后台代理将停止"
+  }
+ ]
+}

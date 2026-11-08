@@ -1,0 +1,16 @@
+{
+ "version": "1.0.109",
+ "date": "2025-09-08",
+ "published": "2025-09-08T23:01:00.279Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.109",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "SDK: Added partial message streaming support via `--include-partial-messages` CLI flag",
+   "zh": "SDK：通过 `--include-partial-messages` 命令行参数支持部分消息流式输出"
+  }
+ ]
+}

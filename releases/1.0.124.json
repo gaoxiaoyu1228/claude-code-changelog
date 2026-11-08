@@ -1,0 +1,38 @@
+{
+ "version": "1.0.124",
+ "date": "2025-09-25",
+ "published": "2025-09-25T01:37:53.959Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.124",
+ "counts": {
+  "new": 1,
+  "improved": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Set `CLAUDE_BASH_NO_LOGIN` environment variable to 1 or true to to skip login shell for BashTool",
+   "zh": "将 `CLAUDE_BASH_NO_LOGIN` 环境变量设为 1 或 true，可让 BashTool 跳过登录 shell"
+  },
+  {
+   "type": "improved",
+   "en": "No longer inform Claude of the list of allowed tools when permission is denied",
+   "zh": "权限被拒绝时，不再把允许的工具列表告知 Claude"
+  },
+  {
+   "type": "improved",
+   "en": "Improved VSCode extension performance for large files",
+   "zh": "改进 VS Code 扩展处理大文件时的性能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix Bedrock and Vertex environment variables evaluating all strings as truthy",
+   "zh": "修复 Bedrock 和 Vertex 环境变量，将所有字符串评估为 true"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed security vulnerability in Bash tool permission checks",
+   "zh": "修复了 Bash 工具权限检查中的安全漏洞"
+  }
+ ]
+}

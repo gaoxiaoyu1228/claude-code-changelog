@@ -1,0 +1,134 @@
+{
+ "version": "2.1.219",
+ "date": "2026-07-24",
+ "published": "2026-07-24T16:11:49.832Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.219",
+ "counts": {
+  "new": 8,
+  "improved": 7,
+  "fixed": 8,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added Claude Opus 5 (`claude-opus-5`), now the default Opus model — 1M context, fast mode at $10/$50 per Mtok",
+   "zh": "添加了 Claude Opus 5 (`claude-opus-5`)，现在是默认 Opus 模型 — 1M 上下文，快速模式，每个 Mtok 10/50 美元"
+  },
+  {
+   "type": "new",
+   "en": "Added `sandbox.network.strictAllowlist` setting to deny non-allowlisted hosts for sandboxed commands without prompting",
+   "zh": "添加了`sandbox.network.strictAllowlist`设置，以拒绝非白名单主机执行沙盒命令而不提示"
+  },
+  {
+   "type": "new",
+   "en": "Added `DirectoryAdded` hook that fires after `/add-dir` or the SDK `register_repo_root` control request registers a new working directory mid-session",
+   "zh": "添加了`DirectoryAdded`挂钩，该挂钩在`/add-dir`或 SDK`register_repo_root`控制请求在会话中注册新工作目录后触发"
+  },
+  {
+   "type": "new",
+   "en": "Added `mcp_server_errors` to the headless stream-json init event, listing `--mcp-config` entries skipped by config validation; terminal runs print a startup warning",
+   "zh": "将 `mcp_server_errors` 添加到 headless stream-json init 事件中，列出配置验证跳过的 `--mcp-config` 条目；终端运行打印启动警告"
+  },
+  {
+   "type": "new",
+   "en": "Added the `workflowSizeGuideline` settings key so the advisory Dynamic workflow size guideline can be set from any settings file; the `/config` row is hidden while one does",
+   "zh": "添加了`workflowSizeGuideline`设置键，以便可以从任何设置文件设置咨询动态工作流程大小指南； `/config` 行被隐藏，而另一行则被隐藏"
+  },
+  {
+   "type": "new",
+   "en": "Added nested subagent forwarding in stream-json: subagents spawned at depth-2+ now appear when `--forward-subagent-text` is set, keyed by their spawning Agent `tool_use` id",
+   "zh": "在stream-json中添加了嵌套子代理转发：当设置`--forward-subagent-text`时，现在会出现在深度2+处生成的子代理，并通过其生成代理`tool_use`id进行键入"
+  },
+  {
+   "type": "new",
+   "en": "Added HTTP status and error text to `claude mcp list` and `/mcp` when a server fails to connect, and a warning for MCP config values with hidden leading or trailing whitespace",
+   "zh": "当服务器无法连接时，将 HTTP 状态和错误文本添加到`claude mcp list`和`/mcp`，并对带有隐藏前导或尾随空格的 MCP 配置值发出警告"
+  },
+  {
+   "type": "new",
+   "en": "Added the current default workflow size to the running-workflow status line, with a pointer to `/config` for changing it",
+   "zh": "将当前默认工作流程大小添加到正在运行的工作流程状态行，并使用指向`/config`的指针来更改它"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the \"Remote Control is only available via api.anthropic.com\" error to name the specific setting that caused it",
+   "zh": "改进「Remote Control 只能通过 api.anthropic.com 使用」报错：会指出导致该问题的具体设置"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `claude --teleport` to show which repo your current checkout points at when it doesn't match the session's repo",
+   "zh": "改进 `claude --teleport`：当前检出目录指向的仓库与会话所在仓库不一致时，会显示该仓库的信息"
+  },
+  {
+   "type": "improved",
+   "en": "Changed dynamic workflows to default to a medium size guideline (aim for fewer than 15 agents); pick another size or unrestricted with Dynamic workflow size in `/config`",
+   "zh": "将动态工作流程更改为默认中等规模准则（目标是少于 15 个代理）；选择其他大小或不受`/config`中动态工作流程大小的限制"
+  },
+  {
+   "type": "improved",
+   "en": "Changed managed MCP allowlist/denylist `${VAR}` entries to resolve from the startup environment and managed-settings env instead of settings-file env",
+   "zh": "更改了托管 MCP 允许列表/拒绝列表`${VAR}`条目，以从启动环境和托管设置环境（而不是设置文件环境）解析"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the `/model` picker to highlight only the newest model's name, so the highlight marks the new release rather than an arbitrary subset of the list",
+   "zh": "更改了`/model`选择器以仅突出显示最新型号的名称，因此突出显示标记新版本而不是列表的任意子集"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the claude-api skill to default to Claude Opus 5, with a migration path from Opus 4.8",
+   "zh": "`claude-api` 技能默认改为 Claude Opus 5，并提供从 Opus 4.8 迁移的路径"
+  },
+  {
+   "type": "improved",
+   "en": "Subagents can now spawn nested subagents up to depth 3 by default (was 1); set CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1 to disable nesting",
+   "zh": "子代理现在默认可以嵌套生成子代理，深度最多为 3（原为 1）；设置 `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1` 可关闭嵌套"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p` text output dropping the answer already produced when a turn dies on a mid-stream API error",
+   "zh": "修复了`claude -p`文本输出，当回合因中流 API 错误而终止时，会丢弃已生成的答案"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Fable model row showing \"Requires usage credits\" for plans that include it, when a stale cache had baked the label in",
+   "zh": "修复当套餐包含 Fable 模型，但陈旧缓存留有旧标签时，Fable 模型行仍显示\"需要使用额度\"的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/model` picker showing the merged Opus row as plain \"Opus\" instead of \"Opus (1M context)\"",
+   "zh": "修复 `/model` 选择器中合并后的 Opus 行显示为\"Opus\"而非\"Opus (1M context)\"的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed copy-on-select inside GNU screen printing base64 into the terminal instead of copying the selection",
+   "zh": "修复了 GNU 丝网打印 base64 内的选择复制到终端而不是复制选择的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control clients keeping a stale fast-mode status after a model switch, reconnect, or failed org check",
+   "zh": "修复了远程控制客户端在模型切换、重新连接或组织检查失败后保持过时的快速模式状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_GIT_BASH_PATH` on Windows exiting or being used as bash when the path isn't a bash/sh binary; it's now ignored with a warning",
+   "zh": "修复了 Windows 上的`CLAUDE_CODE_GIT_BASH_PATH`，当路径不是 bash/sh 二进制文件时退出或用作 bash；现在它被忽略并带有警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Vim mode: pressing ← on an empty prompt now returns to the agent view from NORMAL mode, not just INSERT",
+   "zh": "修复了 Vim 模式：在空提示符下按 ← 现在可以从 NORMAL 模式返回到代理视图，而不仅仅是 INSERT"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed screen-reader mode rewriting the entire input line on every keystroke instead of echoing only the typed character",
+   "zh": "修复了屏幕阅读器模式在每次击键时重写整个输入行，而不是仅回显键入的字符"
+  },
+  {
+   "type": "removed",
+   "en": "Removed Opus 4.7 from fast mode; `/fast` now applies to Opus 5 and Opus 4.8",
+   "zh": "Opus 4.7 已从快速模式中移除；`/fast` 现在适用于 Opus 5 和 Opus 4.8"
+  }
+ ]
+}

@@ -1,0 +1,504 @@
+{
+ "version": "2.1.269",
+ "date": "2026-09-11",
+ "published": "2026-09-11T18:12:49.253Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.269",
+ "counts": {
+  "new": 14,
+  "improved": 17,
+  "fixed": 66,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `claude plugin eval`: run a plugin's eval suite against Claude Code and get scored, reproducible results (JSON + HTML report); see `claude plugin eval --help`",
+   "zh": "添加了“claude 插件评估”：针对 Claude 代码运行插件的评估套件并获得评分、可重现的结果（JSON + HTML 报告）；请参阅“claude 插件 eval --help”"
+  },
+  {
+   "type": "new",
+   "en": "Added `/output-style [name]` to list and switch output styles, including over Remote Control and in cloud and other headless sessions",
+   "zh": "添加了`/output-style [name]`来列出和切换输出样式，包括通过远程控制、云和其他无头会话"
+  },
+  {
+   "type": "new",
+   "en": "Added a diff of the files a Bash command changed to the Bash tool result when the Bash tool handles file edits (setting `bashEditDiffEnabled`)",
+   "zh": "当 Bash 工具处理文件编辑时，添加了 Bash 命令更改为 Bash 工具结果的文件差异（设置 `bashEditDiffEnabled`）"
+  },
+  {
+   "type": "new",
+   "en": "Added `OTEL_METRICS_INCLUDE_REPOSITORY` to tag OpenTelemetry metrics and events with `vcs.*` repository attributes; commit events get `vcs.ref.head.*` with `OTEL_LOG_TOOL_DETAILS`",
+   "zh": "添加了`OTEL_METRICS_INCLUDE_REPOSITORY`以使用`vcs.*`存储库属性标记 OpenTelemetry 指标和事件；提交事件通过`OTEL_LOG_TOOL_DETAILS`获取`vcs.ref.head.*`"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS` to extend the LLM gateway `/v1/models` discovery timeout (default 3s)",
+   "zh": "添加了`CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS`以延长 LLM 网关`/v1/models`发现超时（默认 3 秒）"
+  },
+  {
+   "type": "new",
+   "en": "Added a spinner tip suggesting `/focus` for a view with just your prompt, a one-line work summary, and the response",
+   "zh": "添加了一个旋转提示，建议仅包含提示的视图`/focus`、一行工作摘要和响应"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS` (1–256) to raise the Workflow tool's per-run concurrent agent limit for inference-bound fan-outs",
+   "zh": "添加了`CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`(1–256)，以提高工作流工具针对推理绑定扇出的每次运行并发代理限制"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added an agent map: an \"N agents\" footer pill opens a map of the session's sub-agents with per-agent cards, Stop agent, and read-only transcripts",
+   "zh": "[VSCode] 新增智能体地图：点击底部的「N agents」标签，即可打开会话子智能体的地图，包括每个智能体的卡片、Stop agent 按钮和只读记录"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a Hooks dialog to the command menu for viewing hooks and adding, editing, or removing them in user, project, and local settings; managed, plugin, and session hooks stay read-only",
+   "zh": "[VSCode] 命令菜单新增 Hooks 对话框，可查看钩子，并在用户、项目和本地设置中添加、编辑或删除；托管、插件和会话钩子保持只读"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added live progress rows for running subagents under the tool-call groups in Focus view",
+   "zh": "[VSCode] Focus 视图中，工具调用分组下方新增正在运行的子智能体的实时进度行"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a Permission rules dialog that lists permission rules and adds or removes them in user, project, and local settings; startup-option, session-only, and managed rules stay read-only",
+   "zh": "[VSCode] 新增权限规则对话框，可列出权限规则，并在用户、项目和本地设置中添加或删除；启动选项、仅会话和托管规则保持只读"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a Cancel button to the Switch account screen that returns to your session as the current account",
+   "zh": "[VSCode] 切换账户页面新增 Cancel 按钮，点击后返回当前账户的会话"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Code on the web] Added taking back a queued message in a cloud session before Claude reads it: remove it from the queue, or press Esc or Up, and the text returns to the message box",
+   "zh": "[Claude Code on the web] 云端会话中，排队的消息在 Claude 读取前可以收回：从队列中移除，或按 Esc 或上箭头，文字会回到输入框"
+  },
+  {
+   "type": "new",
+   "en": "[Claude Tag] Added a confirmation dialog before Connect all or Disconnect on a GitHub installation in admin settings, to guard against accidental organization-wide changes",
+   "zh": "[Claude Tag] 在管理设置中对 GitHub 安装执行「Connect all」或「Disconnect」前，新增确认对话框，防止误操作影响整个组织"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/diff` panel to open fully rendered in one step instead of showing a loading state first",
+   "zh": "改进 `/diff` 面板：一步打开即为完整渲染的内容，不再先显示加载状态"
+  },
+  {
+   "type": "improved",
+   "en": "Improved prompt suggestion filtering for Japanese, Chinese and Korean text: mixed-script and single-word suggestions are kept, and meta or evaluative text is dropped as it is for English",
+   "zh": "改进日语、中文和韩文提示建议的过滤：保留混合文字和单个词的建议，并像英文一样过滤掉元信息或评价性文字"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Skill tool's \"Unknown skill\" error to name the plugin skill's full name when a bare name matches exactly one plugin skill",
+   "zh": "改进 Skill 工具的「Unknown skill」报错：当裸名称恰好只对应一个插件技能时，会写出该插件技能的完整名称"
+  },
+  {
+   "type": "improved",
+   "en": "Improved keyboard support over SSH and in unrecognized terminals: terminals that answer the kitty keyboard query (such as foot and Alacritty 0.16+) now get Shift+Enter and Ctrl+Shift shortcuts",
+   "zh": "改进 SSH 下及无法识别的终端中的键盘支持：能响应 kitty 键盘查询的终端（如 foot 和 Alacritty 0.16+）现在可以使用 Shift+Enter 和 Ctrl+Shift 快捷键"
+  },
+  {
+   "type": "improved",
+   "en": "Improved responsiveness in long sessions: transcript updates no longer re-process the whole conversation to build the collapsed tool-use summaries",
+   "zh": "改进长会话响应速度：转录更新时，不再为生成折叠的工具调用摘要而重新处理整段对话"
+  },
+  {
+   "type": "improved",
+   "en": "Improved first-party sessions with telemetry disabled: an `alwaysLoad` MCP server that finishes connecting mid-conversation is usable on the next turn without a tool-search round trip",
+   "zh": "改进首方会话（禁用遥测时）：会话中途连接完成的 `alwaysLoad` MCP 服务器，下一轮即可使用，无需一次工具搜索往返"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/ultrareview --post` to post the PR comment directly when the findings arrive and print the comment link, instead of starting a second cloud session to post it",
+   "zh": "更改了`/ultrareview --post`，以便在调查结果到达时直接发布 PR 评论并打印评论链接，而不是启动第二个云会话来发布它"
+  },
+  {
+   "type": "improved",
+   "en": "Changed artifact database reads that save into the session scratchpad so they no longer stop for working-folder approval",
+   "zh": "更改了保存到会话暂存器中的工件数据库读取，以便它们不再停止工作文件夹批准"
+  },
+  {
+   "type": "improved",
+   "en": "Changed skills synced from claude.ai in cloud sessions to be named `anthropic-skills:<name>`, matching Claude Desktop; the bare name still works when nothing else uses it",
+   "zh": "将云会话中从 claude.ai 同步的技能更改为`anthropic-skills:<name>`，与 Claude Desktop 相匹配；当没有其他人使用它时，裸名称仍然有效"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Improved documents and messages written for someone other than the user: Claude now writes them for that audience and names it at the top of its reply",
+   "zh": "[VSCode] 改进为他人（而非用户本人）撰写的文档和消息：Claude 会面向该读者撰写，并在回复顶部注明读者对象"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Improved screen reader and keyboard accessibility in the slash-command menu, @-mention menu, output-style picker, Send/Stop button, permission and question cards, and onboarding checklist",
+   "zh": "[VSCode] 改进斜杠命令菜单、@ 提及菜单、输出样式选择器、发送/停止按钮、权限和问题卡片以及入门清单的屏幕阅读器和键盘无障碍支持"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Changed the current-file chip in the message box: an X now removes it, replacing the Hide toggle",
+   "zh": "[VSCode] 消息框中的当前文件标签改为：点击 X 即可移除，取代原来的 Hide 开关"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Code on the web] Changed the Cloud environments admin page to list every environment instead of capping each table at five rows behind a Show more control that could be unreachable",
+   "zh": "[Claude Code on the web] 云端环境管理页面现在列出所有环境，不再把每个表格限制为 5 行并藏在可能点不到的「Show more」后面"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Code on the web] Changed claude.ai/code for Free-plan users to open the plans page with a path to upgrade, instead of a \"Disabled by org admin\" page with no way forward",
+   "zh": "[Claude Code on the web] claude.ai/code 对免费套餐用户改为打开套餐页面并提供升级路径，不再显示没有出路的「Disabled by org admin」页面"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Improved load time of the admin settings page and its Slack channel picker, most noticeably for organizations with many channels or several connected workspaces",
+   "zh": "[Claude Tag] 改进管理设置页面及其 Slack 频道选择器的加载速度，对频道很多或连接了多个工作区的组织尤为明显"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Improved scheduled routines in Slack channels: a routine run can now reply in an existing thread instead of always posting a new top-level channel message",
+   "zh": "[Claude Tag] 改进 Slack 频道中的定时例程：例程运行现在可以在已有话题中回复，而不是总是发布新的顶层频道消息"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Improved the timestamp on Claude's live progress checklists to show each reader's local time and how long ago it was updated, instead of a fixed UTC time",
+   "zh": "[Claude Tag] 改进 Claude 实时进度清单上的时间戳：现在显示每位查看者的本地时间，以及距上次更新过去了多久，而不是固定的 UTC 时间"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the prompt cache being partially invalidated on the turn after a response was cut off at the output-token limit and automatically resumed",
+   "zh": "修复响应因输出 token 上限被截断并自动续写后，下一回合的提示词缓存被部分失效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a case where resuming a session after interrupting Claude mid-thought could change how earlier context was re-sent, hurting prompt-cache reuse",
+   "zh": "修复了中断克劳德思考后恢复会话可能会改变先前上下文重新发送方式的情况，从而损害提示缓存重用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed F1/F2/F4 not working in kitty-protocol terminals and Delete in st, Alt+arrows acting as Escape in rxvt-unicode, and Shift+punctuation typing the unshifted key in WezTerm (regression in 2.1.247)",
+   "zh": "修复了 F1/F2/F4 在 kitty 协议终端中不起作用以及 st 中的删除、Alt+箭头在 rxvt-unicode 中充当转义符以及 Shift+标点符号在 WezTerm 中键入未移动的键（2.1.247 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote and headless sessions reporting \"waiting for your input\" while background agents were still running (set `CLAUDE_CODE_BG_TASKS_REPORT_RUNNING=0` to restore the old behavior)",
+   "zh": "修复了后台代理仍在运行时报告“正在等待您的输入”的远程和无头会话（设置`CLAUDE_CODE_BG_TASKS_REPORT_RUNNING=0`以恢复旧行为）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal's replies to capability queries (`^[[?1;2c`) appearing as stray text at startup in some terminals",
+   "zh": "修复某些终端在启动时，把能力查询的回复（`^[[?1;2c`）显示为乱码文字的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rows at the top or bottom of the transcript going blank in fullscreen after resizing the terminal",
+   "zh": "修复了调整终端大小后，记录顶部或底部的行在全屏显示为空白的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a deny or ask permission rule starting with `!` applying beyond the settings source that wrote it; such a rule now applies only within its own source, and a bare `!` negation is ignored",
+   "zh": "修复了以“！”开头的拒绝或询问权限规则，适用于编写它的设置源之外；这样的规则现在仅适用于其自己的源代码，并且忽略简单的“！”否定"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the git status Claude is told after a compaction: it is now the current status, not the one from the start of the session",
+   "zh": "修复压缩之后告诉 Claude 的 git 状态不正确的问题：现在提供的是当前状态，而不是会话开始时的状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed synced plugin MCP servers not connecting when a remote session resumes",
+   "zh": "修复了远程会话恢复时同步插件 MCP 服务器无法连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resumed headless sessions losing a turn's replies when the model was switched or a request was retried mid-turn",
+   "zh": "修复了当模型切换或在回合中重试请求时恢复的无头会话丢失回合回复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal escape codes, line breaks and oversized text from a background task's on-disk record reaching the task list and task notifications when work is resumed",
+   "zh": "修复后台任务的磁盘记录中的终端转义码、换行和超长文本，在恢复工作时出现在任务列表和任务通知中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed CMYK JPEG images failing to attach with \"cannot decode\"; they are now converted and resized like other JPEGs",
+   "zh": "修复了 CMYK JPEG 图像无法附加并显示“无法解码”的问题；它们现在可以像其他 JPEG 一样进行转换和调整大小"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the managed settings approval dialog not naming the collector for a gRPC telemetry endpoint set without a scheme",
+   "zh": "修复在启动时设置了不带协议前缀的 gRPC 遥测端点时，托管设置审批对话框未指明收集器名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin `headersHelper` consent prompts showing a URL path that could be misread as a different host",
+   "zh": "修复了插件`headersHelper`同意提示，显示可能被误读为不同主机的 URL 路径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin errors showing `[redacted URL]` in place of a relative Windows path with a folder name that starts with `@`",
+   "zh": "修复了显示`[redacted URL]`代替文件夹名称以`@`开头的相对 Windows 路径的插件错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed missing cursor in the permission-rule, auto-mode-rule, add-directory, session-rename and feedback-review text fields when the terminal's native cursor is enabled",
+   "zh": "修复了启用终端本机光标时权限规则、自动模式规则、添加目录、会话重命名和反馈审核文本字段中光标缺失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed repeated clicks on a `/fork` receipt, each under a second apart, never backgrounding the session right away while it waited for the current tool to finish",
+   "zh": "修复了重复点击`/fork`收据（每次点击间隔不到一秒）的问题，在等待当前工具完成时不会立即将会话置于后台"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin LSP servers that reject `shutdown` params (e.g. rust-analyzer) being left running at session end; `exit` is now sent even if `shutdown` fails",
+   "zh": "修复了拒绝`shutdown`参数（例如 rust-analyzer）在会话结束时继续运行的插件 LSP 服务器；即使`shutdown`失败，现在也会发送`exit`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the attribution reminder overriding a CLAUDE.md or memory rule against commit and pull request attribution; lines set by managed settings still apply",
+   "zh": "修复归因提醒覆盖了 CLAUDE.md 或记忆中关于提交和拉取请求署名的规则的问题；由托管设置指定的行仍然生效"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt suggestions being dropped for text in Japanese, Chinese, Thai and other languages written without spaces between words",
+   "zh": "修复了日语、中文、泰语和其他语言中单词之间没有空格的文本的提示建议被删除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed synchronized output being assumed from the terminal's name in GNOME Terminal and Konsole versions that do not support it",
+   "zh": "修复了不支持 GNOME 终端和 Konsole 版本中从终端名称假定同步输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `permission_denials` in `--output-format stream-json` results omitting Read, Edit and Write calls blocked by a path-scoped deny rule",
+   "zh": "修复了`--output-format stream-json`结果中的`permission_denials`，忽略了被路径范围拒绝规则阻止的读取、编辑和写入调用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions run through the SDK or the desktop app showing an unknown status in other sessions' agent list",
+   "zh": "修复了通过 SDK 或桌面应用程序运行的会话在其他会话的代理列表中显示未知状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/insights` failing on Bedrock, Vertex, Foundry, and gateway deployments whose account can't reach the default Opus model by using the session model there instead",
+   "zh": "修复了`/insights`在 Bedrock、Vertex、Foundry 和网关部署上失败的问题，这些部署的帐户无法通过使用会话模型来访问默认 Opus 模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed organization policy limits not loading for the session when another Claude Code process refreshed the login at the same moment",
+   "zh": "修复了当另一个克劳德代码进程同时刷新登录时不会加载会话的组织策略限制"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Desktop sessions using Bedrock, Vertex, or a gateway not getting the contextual \"what Claude needs\" turn-end notification text",
+   "zh": "修复了使用 Bedrock、Vertex 或网关的 Claude 桌面会话无法获取上下文“Claude 需要什么”的回合结束通知文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers reconnecting when an updated config only changed the order of the server URL's query parameters",
+   "zh": "修复了当更新的配置仅更改服务器 URL 查询参数的顺序时 MCP 服务器重新连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the prompt box's top border splitting into extra lines when viewing a background agent whose name or description has line breaks or is wider than the terminal",
+   "zh": "修复查看名称或描述包含换行或比终端更宽的后台智能体时，提示框顶部边框被拆成多行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions getting permanently stuck on \"Prompt is too long\" when auto-compaction had no complete earlier exchange to summarize (mostly Agent SDK sessions with very large prompts)",
+   "zh": "修复了当自动压缩没有完整的早期交换进行总结时会话永久卡在“提示太长”的问题（主要是具有非常大提示的 Agent SDK 会话）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/goal` runs silently stalling after API errors, network drops, or token limits: the goal now retries with backoff, or pauses and says why, including until a usage limit resets",
+   "zh": "修复了`/goal`在 API 错误、网络中断或令牌限制后无提示运行的问题：目标现在通过退避重试，或暂停并说明原因，包括直到使用限制重置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt cache misses in cloud sessions by waiting briefly for server configuration before the first request",
+   "zh": "通过在第一个请求之前短暂等待服务器配置来修复云会话中的提示缓存丢失"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/btw` answers that contained made-up tool calls and output: the side question is now told not to write them, and any that appear are flagged as not executed",
+   "zh": "修复了包含虚构工具调用和输出的`/btw`答案：现在告诉附带问题不要写它们，并且任何出现的问题都被标记为未执行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_RESUME_INTERRUPTED_TURN` re-running a turn that had failed with an API error over 6 hours earlier, or longer ago than `CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS` when set",
+   "zh": "修复了`CLAUDE_CODE_RESUME_INTERRUPTED_TURN`重新运行因 API 错误而失败的回合，该回合早于 6 小时或比设置时的`CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS`更早"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed organization plugins enabled through managed settings not loading in headless sessions and on Claude Desktop (once Desktop bundles this CLI version); they load from the next session",
+   "zh": "修复了通过托管设置启用的组织插件无法在无头会话和 Claude Desktop 上加载（一旦 Desktop 捆绑此 CLI 版本）；他们从下一个会话加载"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin archives extracted for a session being readable by other local users, extracted files keeping world-writable bits from the archive, and stale files surviving re-extraction",
+   "zh": "修复了为其他本地用户可读的会话提取的插件存档、提取的文件保留存档中的世界可写位以及陈旧文件在重新提取中幸存的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Edit()` deny rules and the write-path check not applying to the file a Bash `tee` command writes; a `Bash(tee:*)` allow rule no longer covers destinations outside the working directories",
+   "zh": "修复了`Edit()`拒绝规则和写入路径检查不适用于 Bash`tee`命令写入的文件的问题； `Bash(tee:*)` 允许规则不再涵盖工作目录之外的目的地"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stray characters like `22c`, or a terminal's color or version reply, being typed into the prompt at startup over slow connections (ssh, browser terminals)",
+   "zh": "修复了在启动时通过慢速连接（ssh、浏览器终端）在提示符中键入`22c`等杂散字符或终端的颜色或版本回复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal's block cursor showing under the interface in rxvt-unicode after leaving or re-entering fullscreen",
+   "zh": "修复 rxvt-unicode 中离开或重新进入全屏后，终端的方块光标显示在界面下方的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the cursor block staying visible after returning from an external editor in fullscreen mode on rxvt-unicode",
+   "zh": "修复 rxvt-unicode 上全屏模式从外部编辑器返回后，光标块仍保持可见的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the interface being drawn twice after returning from an external editor (Ctrl+G) outside fullscreen mode",
+   "zh": "修复非全屏模式下从外部编辑器（Ctrl+G）返回后，界面被绘制两次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the interface being drawn twice in Konsole after returning from an external editor",
+   "zh": "修复 Konsole 中从外部编辑器返回后，界面被绘制两次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed PowerShell tool commands sent to the background stopping when Claude Code exits",
+   "zh": "Windows：修复了转入后台的 PowerShell 工具命令在 Claude Code 退出时被停止的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Focus view showing a turn started by a delivered plain-text prompt, such as a scheduled task's, as part of the previous turn",
+   "zh": "[VSCode] 修复 Focus 视图把通过纯文本提示送达的新轮次（如定时任务的提示）显示为上一轮次一部分的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the footer's prompt cache clock hiding its minutes when the panel is narrow",
+   "zh": "[VSCode] 修复面板较窄时，页脚的提示缓存计时器隐藏了分钟数的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the session list keeping sessions from the default folder when `CLAUDE_CONFIG_DIR` is set in a settings file or the `environmentVariables` setting",
+   "zh": "[VSCode] 修复在设置文件或 `environmentVariables` 设置中指定了 `CLAUDE_CONFIG_DIR` 时，会话列表仍保留默认文件夹中会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a plan preview that finished loading late sometimes hiding its comment box or showing an older plan",
+   "zh": "[VSCode] 修复计划预览加载较晚时，有时会隐藏评论框或显示旧计划的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a plan preview accepting comments that went nowhere after its Claude tab closed",
+   "zh": "[VSCode] 修复 Claude 标签页关闭后，计划预览接受的评论无处可去的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the prompt cache clock and reopen notice for a session compacted after its last reply and then closed, which now reads as cold when reopened",
+   "zh": "[VSCode] 修复会话在最后一次回复后被压缩并关闭的情况下，提示缓存计时器和重新打开提示的状态不正确的问题；现在重新打开时会显示为冷缓存"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a session renamed in the extension while Remote Control is on keeping its old name on claude.ai/code",
+   "zh": "[VSCode] 修复在扩展中重命名会话、同时 Remote Control 已开启时，claude.ai/code 上仍显示旧名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the \"Enable Remote Control for all sessions\" toggle keeping its last position after the setting was reset to default from a terminal",
+   "zh": "[VSCode] 修复在终端中把设置重置为默认值后，\"Enable Remote Control for all sessions\" 开关仍保持上次位置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed restored Claude tabs not counting as open in the session list after a window reload until clicked, and their row opening a second tab",
+   "zh": "[VSCode] 修复窗口重新加载后，恢复的 Claude 标签页在点击前不被会话列表视为已打开，且其列表项会再打开一个标签页的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Switch account making a tab forget its dismissed usage-limit warnings when you sign back in as the same account",
+   "zh": "[VSCode] 修复切换账号时，若以同一账号重新登录，标签页会忘记已关闭的用量限制提醒的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a session rename being replaced by the generated name after a window reload when the session was renamed during a long turn",
+   "zh": "[VSCode] 修复会话在长时间轮次中被重命名，窗口重新加载后名称被自动生成的名称覆盖的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the sidebar usage meter keeping a stale per-model weekly limit row after the account loses that limit",
+   "zh": "[VSCode] 修复账号失去某个按模型计算的每周限额后，侧边栏用量仪表仍保留过期的限额行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a rare case where an @-mention sent with the keyboard shortcut while a new chat view was still starting could be inserted into the input long after the keystroke",
+   "zh": "[VSCode] 修复极少数情况下：新聊天视图仍在启动时，用快捷键发送的 @ 提及会在按键很久之后才插入到输入框中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the session list jumping down when the Account & usage header appeared a moment after opening the Claude side bar",
+   "zh": "[VSCode] 修复打开 Claude 侧边栏后，Account & usage 标题稍晚出现时，会话列表向下跳动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed `/model default` in a cloud session leaving every later message failing in organizations that restrict which models Claude Code can use",
+   "zh": "[Claude Code on the web] 修复云端会话中执行 `/model default` 后，在限制 Claude Code 可用模型的组织中，之后每条消息都失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed one-off scheduled routines occasionally running a second time after a transient server error",
+   "zh": "[Claude Code on the web] 修复一次性定时例程在遇到临时服务器错误后，偶尔会再运行一次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed routine runs that use subagents sometimes being treated as finished too early, which could skip the retry after a real failure or start a duplicate run",
+   "zh": "[Claude Code on the web] 修复使用子智能体的例程运行有时被过早判定为结束的问题，这可能导致跳过真实失败后的重试，或启动重复运行"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Code on the web] Fixed file links in cloud session transcripts opening a GitHub 404 when Claude was working from a subfolder of the repository",
+   "zh": "[Claude Code on the web] 修复 Claude 在仓库子文件夹中工作时，云端会话记录里的文件链接打开 GitHub 404 页面的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed threads occasionally going silent after a failed turn because the failure notice was dropped when Slack briefly rate-limited it; the notice is now retried",
+   "zh": "[Claude Tag] 修复失败的一轮对话后，话题有时会变得沉默，因为 Slack 短暂限流时丢弃了失败通知；现在会重试发送该通知"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude accepting a switch to a model your organization hasn't enabled and then quietly answering with a fallback model; it now declines and says an admin can enable it",
+   "zh": "[Claude Tag] 修复 Claude 接受切换到组织未启用的模型，然后悄悄用备用模型回答的问题；现在会拒绝切换，并说明管理员可以启用该模型"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed a table posting as raw pipe text when Claude attached files to the same message; the table now posts as a normal reply and the files follow with a plain caption",
+   "zh": "[Claude Tag] 修复 Claude 同时附加文件时，表格以原始竖线文本发出的问题；现在表格会作为普通回复发出，文件随后以简单说明发送"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed `@Claude !restart` at the top level of a channel where Claude isn't active starting an unrelated conversation; it now privately says there is nothing to restart",
+   "zh": "[Claude Tag] 修复在 Claude 未启用的频道顶层输入 `@Claude !restart` 时，会开启一段无关对话的问题；现在它会私下提示没有可重启的内容"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed plugin rows in Slack access settings showing an unlabeled raw ID with no way to turn the plugin off; they now show its name and link to the bundle that manages it",
+   "zh": "[Claude Tag] 修复 Slack 访问设置中的插件行显示无标签的原始 ID、且无法关闭插件的问题；现在会显示插件名称，并链接到管理它的访问包"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed the shared-session banner and Share dialog on sessions started from Slack claiming the whole organization could open the link; they now name the Slack channel's audience",
+   "zh": "[Claude Tag] 修复从 Slack 发起的会话中，共享会话横幅和 Share 对话框声称整个组织都能打开链接的问题；现在会注明 Slack 频道的受众范围"
+  },
+  {
+   "type": "removed",
+   "en": "[VSCode] Removed the Claude Code items from a session tab's right-click menu and the editor title bar's \"...\" menu; they could not act on the tab the menu was opened on",
+   "zh": "[VSCode] 移除会话标签页右键菜单和编辑器标题栏 \"...\" 菜单中的 Claude Code 项目，因为它们无法作用于打开菜单的那个标签页"
+  }
+ ]
+}

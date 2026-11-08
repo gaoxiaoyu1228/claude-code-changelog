@@ -1,0 +1,148 @@
+{
+ "version": "2.1.289",
+ "date": "2026-10-03",
+ "published": "2026-10-03T20:12:02.717Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.289",
+ "counts": {
+  "new": 1,
+  "improved": 2,
+  "fixed": 24
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `agent.spawn` for teammates, one agent id across plugin hook events, and idle and waiting states in `$.agent.list()`",
+   "zh": "为队友添加了`agent.spawn`，跨插件挂钩事件的一个代理 ID，以及`$.agent.list()`中的空闲和等待状态"
+  },
+  {
+   "type": "improved",
+   "en": "Improved how quickly large files open in a plugin code pane by laying the highlighted view out once at its final width",
+   "zh": "改进插件代码面板中大文件的打开速度：高亮视图只按最终宽度排版一次"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the line a mod's author sees when its band or pane fails to draw: it names the mod and says nothing was drawn",
+   "zh": "改进 mod 作者看到的信息：当 mod 的条带或窗格绘制失败时，会点明是哪个 mod，并说明什么都没画出来"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a deny or ask rule on a nested part of a compound shell command not holding over a user-installed mod's approval on managed machines",
+   "zh": "修复了复合 shell 命令嵌套部分的拒绝或询问规则，该规则不支持受管计算机上用户安装的 mod 的批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal freezing on short code blocks with many unclosed `<script>` tags or deeply nested `${` substitutions",
+   "zh": "修复短代码块中含大量未闭合 `<script>` 标签或深层嵌套 `${` 替换时，终端冻结的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Read` deny rules not applying to files @-mentioned, changed, or selected in the IDE through a symlink",
+   "zh": "修复了“读取”拒绝规则不适用于通过符号链接在 IDE 中提及、更改或选择的文件"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Reverted a 2.1.288 change to `claude auth status` that may have made sign-outs more frequent",
+   "zh": "[VSCode] 撤销 2.1.288 中对 `claude auth status` 的一项改动，该改动可能导致登出更加频繁"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `plugin list`, `plugin eval` and `plugin update` showing a stale copy of a plugin installed from a local folder marketplace, and hot reload for a symlinked `--plugin-dir`",
+   "zh": "修复了“插件列表”、“插件评估”和“插件更新”显示从本地文件夹市场安装的插件的过时副本，以及符号链接`--plugin-dir`的热重载"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed installed mods not loading in the first session after an upgrade",
+   "zh": "修复了升级后第一个会话中未加载已安装模组的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a plugin's rows above the prompt showing a stale row while the Background tasks dialog was open in fullscreen",
+   "zh": "修复了当后台任务对话框全屏打开时，提示上方的插件行显示过时的行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin panes drawing nothing when a link used a localhost address, an `@` in its path, an uppercase host or a `file:` path",
+   "zh": "修复了当链接使用本地主机地址、路径中的`@`、大写主机或`file:`路径时插件窗格不显示任何内容的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a user-installed plugin being able to rewrite the descriptions of an organization-managed MCP server's sign-in tools",
+   "zh": "修复了用户安装的插件能够重写组织管理的 MCP 服务器登录工具的描述"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a freeze or forced quit at launch when a plugin drew a Box with a border style the terminal does not know",
+   "zh": "修复了当插件绘制具有终端不知道的边框样式的框时启动时冻结或强制退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed supervised and background sessions ending when a plugin's on-screen handler threw asynchronously",
+   "zh": "修复了当插件的屏幕处理程序异步抛出时结束的受监督和后台会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions ending with an interface error when a plugin region with no height kept growing",
+   "zh": "修复了当没有高度的插件区域持续增长时以界面错误结束的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash deny and ask rules missing a command behind an environment variable prefix with an expanded value (e.g. `TZ=\"$HOME\" rm -rf build`) when the sandbox auto-allows commands",
+   "zh": "修复了当沙箱自动允许命令时，Bash 拒绝和询问规则缺少带有扩展值的环境变量前缀后面的命令（例如 `TZ=\"$HOME\" rm -rf build`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Bash deny or ask rule being skipped under sandbox auto-allow when a bare variable assignment came before the command",
+   "zh": "修复了当命令之前出现裸变量赋值时在沙箱自动允许下跳过 Bash 拒绝或询问规则的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin validate` skipping the plugin when the folder also holds a marketplace manifest",
+   "zh": "修复了当文件夹还包含市场清单时`claude plugin validate`跳过插件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions ending with \"unrecoverable interface error\" when a value a mod's `ui.render` hook wrote made a row throw while drawn; the engine now draws its own row instead",
+   "zh": "修复了当 mod 的 `ui.render` 钩子写入的值在绘制时引发行抛出时以“不可恢复的接口错误”结束的会话；引擎现在绘制自己的行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed text with a tab, a stray escape and a C1 control, or a short text with a tab and CRLF line endings, drawing over the rows below it",
+   "zh": "修复包含 Tab、杂散转义符和 C1 控制字符的文本，或带 Tab 与 CRLF 换行的短文本，覆盖在下方行上的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed right-aligned content in a mod's pane or band drawing under the close mark or `[-]`, which now also keep one column in from the terminal's edge",
+   "zh": "修复了 mod 窗格中的右对齐内容或关闭标记或`[-]`下的带状图，现在还从终端边缘保留一列"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a mod's `Client` that fails while drawn taking down everything the mod drew around it; it now fails alone and raises `ui.fault`",
+   "zh": "修复了 mod 的“客户端”在绘制时失败，并删除了 mod 在其周围绘制的所有内容；现在它单独失败并引发`ui.fault`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin validate` failing an Anthropic marketplace's own plugin and listing a clean `plugin.json` in `--json`",
+   "zh": "修复了“claude 插件验证”使 Anthropic 市场自己的插件失败并在`--json`中列出干净的`plugin.json`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a mod's band that fails to draw briefly telling the cards under it to step aside",
+   "zh": "修复了模组的乐队无法短暂绘制并告诉其下方的卡牌靠边的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a failed plugin component showing `Error` or nothing as its reason when the failure carried no message",
+   "zh": "修复了失败的插件组件，当失败不携带任何消息时，显示“错误”或没有任何内容作为其原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed published artifact pages freezing or crashing the reader's browser tab on short code blocks with many unclosed `<script>` tags",
+   "zh": "修复了已发布的工件页面在带有许多未封闭的`<script>`标签的短代码块上冻结或崩溃读者浏览器选项卡的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a mod's Client region staying failed for the whole session after the terminal threw while drawing it",
+   "zh": "修复了绘制时终端抛出异常后 mod 的客户端区域在整个会话中保持失败的问题"
+  }
+ ]
+}

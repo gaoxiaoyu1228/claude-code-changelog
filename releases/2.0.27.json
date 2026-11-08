@@ -1,0 +1,38 @@
+{
+ "version": "2.0.27",
+ "date": "2025-10-24",
+ "published": "2025-10-24T19:50:51.616Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.27",
+ "counts": {
+  "new": 2,
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added current branch filtering and search to session resume screen for easier navigation",
+   "zh": "添加了当前分支过滤和搜索到会话恢复屏幕，以便于导航"
+  },
+  {
+   "type": "new",
+   "en": "VSCode Extension: Add config setting to include .gitignored files in file searches",
+   "zh": "VS Code 扩展：新增设置，可在文件搜索中包含被 .gitignore 忽略的文件"
+  },
+  {
+   "type": "improved",
+   "en": "New UI for permission prompts",
+   "zh": "权限提示采用全新界面"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed directory @-mention causing \"No assistant message found\" error",
+   "zh": "修复了目录@-提及导致“未找到助手消息”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode Extension: Bug fixes for unrelated 'Warmup' conversations, and configuration/settings occasionally being reset to defaults",
+   "zh": "VS Code 扩展：修复了无关的 \"Warmup\" 对话的问题，以及配置和设置偶尔被重置为默认值的问题"
+  }
+ ]
+}

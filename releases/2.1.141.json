@@ -1,0 +1,318 @@
+{
+ "version": "2.1.141",
+ "date": "2026-05-13",
+ "published": "2026-05-13T22:42:55.615Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.141",
+ "counts": {
+  "new": 6,
+  "improved": 8,
+  "fixed": 47
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `terminalSequence` field to hook JSON output so hooks can emit desktop notifications, window titles, and bells without a controlling terminal",
+   "zh": "添加了`terminalSequence`字段来挂钩 JSON 输出，以便挂钩可以在没有控制终端的情况下发出桌面通知、窗口标题和铃声"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` to clone GitHub plugin sources over HTTPS instead of SSH, for environments without a GitHub SSH key",
+   "zh": "添加了`CLAUDE_CODE_PLUGIN_PREFER_HTTPS`，以通过 HTTPS 而不是 SSH 克隆 GitHub 插件源，适用于没有 GitHub SSH 密钥的环境"
+  },
+  {
+   "type": "new",
+   "en": "Added `ANTHROPIC_WORKSPACE_ID` environment variable for workload identity federation — scopes the minted token to a specific workspace when the federation rule covers more than one",
+   "zh": "为工作负载身份联合添加了`ANTHROPIC_WORKSPACE_ID`环境变量 - 当联合规则涵盖多个工作区时，将铸造令牌的范围限定为特定工作区"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude agents --cwd <path>` to scope the session list to a directory",
+   "zh": "添加了“claude Agents --cwd <path>”以将会话列表范围限定到目录"
+  },
+  {
+   "type": "new",
+   "en": "`/feedback` can now include recent sessions (last 24 hours or 7 days) for issues spanning more than the current session",
+   "zh": "`/feedback` 现在可以包含最近的会话（最近 24 小时或 7 天），用于涵盖超出当前会话的问题"
+  },
+  {
+   "type": "new",
+   "en": "Rewind menu: added \"Summarize up to here\" to compress earlier context while keeping recent turns intact",
+   "zh": "回滚菜单新增 \"Summarize up to here\"，可压缩较早的上下文，同时保留最近几轮对话"
+  },
+  {
+   "type": "improved",
+   "en": "Auto mode permission dialog now explains when a `permissions.ask` rule caused the prompt",
+   "zh": "自动模式权限对话框现在会解释`permissions.ask`规则何时导致提示"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: agents that finish work but leave a background shell running now move to Completed instead of staying under Working",
+   "zh": "`claude agents`：完成工作但留下后台 shell 仍在运行的 agent，现在会移到 Completed，而不是留在 Working 中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved spinner feedback during long thinking periods — the spinner now warms to amber after 10 seconds to signal Claude is still working",
+   "zh": "改进长时间思考时的加载提示：10 秒后加载动画会变为琥珀色，提示 Claude 仍在工作"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plugin menu navigation: `→`/Tab switch tabs, `↑` moves to the tab strip, and tab headers and search box are clickable in fullscreen mode",
+   "zh": "改进插件菜单导航：`→`/Tab 切换标签页，`↑` 移到标签栏；全屏模式下，标签页标题和搜索框可以点击"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Voice mode: the WSL error now suggests installing `sox libsox-fmt-pulse` for WSLg users",
+   "zh": "[VSCode] 语音模式：WSL 报错时，现在会建议 WSLg 用户安装 `sox libsox-fmt-pulse`"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: launching a session no longer fails when the pre-warmed background worker is unhealthy — now falls back to a fresh launch",
+   "zh": "`claude agents`：预热的后台工作进程不健康时，启动会话不再失败，现在会回退为全新启动"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents` no longer shows empty placeholder sessions left over from backgrounding a fresh REPL, and shows onboarding text when entered via ← with no other agents",
+   "zh": "`claude agents` 不再显示从新建 REPL 转入后台后遗留的空白占位会话；通过 ← 进入且没有其他 agent 时，会显示引导文字"
+  },
+  {
+   "type": "improved",
+   "en": "Empty idle background sessions left over from `←` are now automatically retired by the daemon after 5 minutes",
+   "zh": "现在，守护进程会在 5 分钟后自动退出`←`留下的空空闲后台会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Restored the \"view diff in your IDE\" option on file-edit permission prompts when an IDE is connected",
+   "zh": "连接了 IDE 时，文件编辑权限提示上的 \"在 IDE 中查看差异\" 选项已恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "Background agents launched via `/bg` or `←←` now preserve the current permission mode instead of reverting to default",
+   "zh": "通过`/bg`或`←←`启动的后台代理现在保留当前权限模式，而不是恢复为默认模式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background side-queries sending an unavailable Haiku model ID on Bedrock/Vertex/Foundry/gateway when no `ANTHROPIC_SMALL_FAST_MODEL` override is set — now falls back to the main-loop model",
+   "zh": "修复了当未设置`ANTHROPIC_SMALL_FAST_MODEL`覆盖时在 Bedrock/Vertex/Foundry/gateway 上发送不可用 Haiku 模型 ID 的后台侧查询 - 现在回退到主循环模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude daemon status` and `/doctor` on Windows throwing when the daemon pipe key file is locked or unreadable — now shows the underlying error instead of an opaque failure",
+   "zh": "修复了当守护进程管道密钥文件被锁定或不可读时 Windows 上的`claude daemon status`和`/doctor`抛出的问题 - 现在显示潜在错误而不是不透明的故障"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` showing the agent-type list instead of the dashboard when launched through a wrapper that adds flags",
+   "zh": "修复了通过添加标志的包装器启动时显示代理类型列表而不是仪表板的“克劳德代理”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` opening a crashed session firing redundant dispatches when the working directory was deleted",
+   "zh": "修复了删除工作目录时打开崩溃会话并触发冗余调度的“克劳德代理”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background jobs on a custom `ANTHROPIC_BASE_URL` gateway not getting auto-named — the namer now uses the main model when no Haiku model is configured",
+   "zh": "修复了自定义`ANTHROPIC_BASE_URL`网关上的后台作业未自动命名的问题 - 当未配置俳句模型时，命名器现在使用主模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` in one session silently changing the autocompact threshold in other concurrent sessions",
+   "zh": "修复了一个会话中的`/model`默默地更改其他并发会话中的自动压缩阈值的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed switching permission mode while a tool-permission prompt is open not auto-dismissing the prompt when the new setting permits the tool",
+   "zh": "修复了在打开工具权限提示时切换权限模式，当新设置允许该工具时不会自动关闭提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing Enter while a permission/dialog prompt is open also submitting text in the input box",
+   "zh": "修复了在权限/对话框提示打开时按 Enter 键并在输入框中提交文本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hooks receiving a non-existent `transcript_path` after `EnterWorktree` switches the working directory",
+   "zh": "修复了在`EnterWorktree`切换工作目录后接收不存在的`transcript_path`的钩子"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown tables with cell wrapping falling back to the vertical key-value layout instead of rendering as a bordered grid (regression in 2.1.136)",
+   "zh": "修复了单元格换行回落到垂直键值布局的降价表，而不是呈现为有边框的网格（2.1.136 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cancelled prompts being removed from Up-arrow history when auto-restored into the input box, avoiding duplicate entries",
+   "zh": "修复了自动恢复到输入框中时从向上箭头历史记录中删除已取消的提示，避免重复输入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompts cancelled with Ctrl+C/Esc before any response being dropped from Up-arrow history",
+   "zh": "修复了在从向上箭头历史记录中删除任何响应之前使用 Ctrl+C/Esc 取消的提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+C not interrupting a running turn while in vim INSERT/VISUAL mode",
+   "zh": "修复了在 vim INSERT/VISUAL 模式下 Ctrl+C 不会中断正在运行的转弯"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed alternative `chat:submit` keybindings (e.g. `meta+enter`, `ctrl+enter`) not working when `enter` is rebound to `chat:newline`",
+   "zh": "修复了当`enter`反弹到`chat:newline`时替代`chat:submit`键绑定（例如`meta+enter`、`ctrl+enter`）不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt suggestions being silently disabled when an output style was configured",
+   "zh": "修复了配置输出样式时提示建议被默默禁用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `spinnerVerbs` setting not being honored in turn-completion messages",
+   "zh": "修复了回合完成消息中未遵循`spinnerVerbs`设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed AskUserQuestion popup hiding the last line of preceding chat content",
+   "zh": "修复了 AskUserQuestion 弹出窗口隐藏前面聊天内容的最后一行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Web Search status showing \"Did 0 searches\" when searches returned errors",
+   "zh": "修复了搜索返回错误时显示“进行 0 次搜索”的 Web 搜索状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-line statusline output dropping or corrupting rows when any line exceeds terminal width",
+   "zh": "修复了当任何行超过终端宽度时多行状态行输出会丢弃或损坏行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed light-ansi theme using invisible white for diff context lines on light backgrounds — now uses black",
+   "zh": "修复了 light-ansi 主题，在浅色背景上使用不可见的白色来区分上下文线 - 现在使用黑色"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed error overlay dumping minified bundle source that hid the original error message",
+   "zh": "修复了错误覆盖转储隐藏原始错误消息的缩小包源的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing Enter after typing a feedback survey rating digit submitting it as a chat message instead of the rating",
+   "zh": "修复了输入反馈调查评级数字后按 Enter 键将其作为聊天消息而不是评级提交的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing `x` on a selected subagent in the agent panel typing into the prompt instead of stopping the agent",
+   "zh": "修复了在代理面板中的选定子代理上按`x`输入提示而不是停止代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session title being derived from plugin monitor notifications before the user's first prompt",
+   "zh": "修复了在用户第一次提示之前从插件监视器通知派生的会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Allowed by PermissionRequest hook\" repeating once per tool call under a collapsed read/search group",
+   "zh": "修复了折叠读取/搜索组下每个工具调用重复一次的“PermissionRequest 挂钩允许”问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/tui` silently dropping running background shells and subagents — now refuses and asks to wait for them to finish",
+   "zh": "修复了`/tui`默默地丢弃正在运行的后台 shell 和子代理 - 现在拒绝并要求等待它们完成"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed welcome banner showing \"API Usage Billing\" on Bedrock, Vertex, Foundry, and other third-party providers — now shows the provider name",
+   "zh": "修复在 Bedrock、Vertex、Foundry 等第三方服务商上，欢迎横幅显示\"API Usage Billing\"的问题；现在会显示服务商名称"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/mcp` server list not keeping the focused server visible in short terminals in fullscreen mode",
+   "zh": "修复了`/mcp`服务器列表不使焦点服务器在全屏模式下的短终端中可见的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed redaction in `/feedback` bundles producing invalid JSON for quoted values like session IDs",
+   "zh": "修复了`/feedback`包中的编辑，为会话 ID 等引用值生成无效 JSON"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed desktop and third-party provider sessions incorrectly inheriting `apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN` from host managed-settings",
+   "zh": "修复了桌面和第三方提供商会话错误地从主机托管设置继承`apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed early analytics events being silently dropped when fired before logger initialization",
+   "zh": "修复了在记录器初始化之前触发时早期分析事件被静默丢弃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin install` failing for plugins whose marketplace `ref` no longer exists upstream when a `sha` is also pinned",
+   "zh": "修复了当`sha`也被固定时，其市场`ref`不再存在于上游的插件的“claude插件安装”失败问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin details pane showing 0 MCP servers for plugins that declare them via `.mcp.json`",
+   "zh": "修复了插件详细信息窗格，显示通过`.mcp.json`声明的插件的 0 个 MCP 服务器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin MCP servers with unset config variables showing a generic connection failure instead of a \"config issue\" message with a fix-it hint; malformed `.mcp.json` entries no longer drop other MCP servers",
+   "zh": "修复了未设置配置变量的插件 MCP 服务器显示一般连接失败，而不是带有修复提示的“配置问题”消息；格式错误的`.mcp.json`条目不再删除其他 MCP 服务器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP server configs using POSIX shell parameter expansions (e.g. `${var%pattern}`) being incorrectly flagged as missing environment variables",
+   "zh": "修复了使用 POSIX shell 参数扩展（例如 `${var%pattern}`）的 MCP 服务器配置被错误地标记为缺少环境变量的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP HTTP/SSE servers returning 403 on connect showing as \"failed\" instead of \"needs auth\"",
+   "zh": "修复了 MCP HTTP/SSE 服务器在连接时返回 403 显示为“失败”而不是“需要身份验证”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote MCP servers disconnecting unnecessarily when the optional server-events stream failed to reconnect — tool calls continue over POST",
+   "zh": "修复了当可选服务器事件流无法重新连接时远程 MCP 服务器不必要地断开连接 — 工具调用通过 POST 继续进行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control MCP connectors all failing with 401 when the worker session token rotated mid-session",
+   "zh": "修复了当工作会话令牌在会话中轮换时，远程控制 MCP 连接器全部失败并显示 401"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control automatically re-enrolling a trusted device when the server rejects a stale token, instead of looping through `/login`",
+   "zh": "修复了当服务器拒绝过时令牌时远程控制自动重新注册受信任的设备，而不是通过`/login`循环"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race where early OTel spans could be silently dropped in SDK/headless mode with beta tracing enabled",
+   "zh": "修复了在启用 Beta 跟踪的情况下，早期 OTel 跨度可能会在 SDK/无头模式下默默丢弃的竞赛"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom `voice:pushToTalk` keybindings and `\"space\": null` unbinds being silently ignored",
+   "zh": "修复了自定义 `voice:pushToTalk` 键绑定和 `\"space\": null` 解除绑定被默默忽略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows Alt+V image paste reporting \"no image found\" when the clipboard contains a screenshot",
+   "zh": "修复了当剪贴板包含屏幕截图时 Windows Alt+V 图像粘贴报告“未找到图像”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK \"Claude Code native binary not found\" on Linux when both glibc and musl platform packages are installed",
+   "zh": "修复了 Linux 上同时安装 glibc 和 musl 平台软件包时 SDK“未找到 Claude Code 本机二进制文件”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Bedrock: `awsCredentialExport` now always runs when configured instead of being skipped when ambient AWS credentials resolve, fixing auth for cross-account access",
+   "zh": "基岩：`awsCredentialExport`现在在配置时始终运行，而不是在环境 AWS 凭证解析时被跳过，修复了跨账户访问的身份验证"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed in-chat mic showing no feedback when the microphone produced only silence — now shows \"No audio detected\"",
+   "zh": "[VSCode] 修复聊天中的麦克风在只收到静音时没有任何反馈的问题；现在会显示 \"No audio detected\""
+  }
+ ]
+}

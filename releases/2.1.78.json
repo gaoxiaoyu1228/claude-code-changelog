@@ -1,0 +1,143 @@
+{
+ "version": "2.1.78",
+ "date": "2026-03-17",
+ "published": "2026-03-17T21:04:05.836Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.78",
+ "counts": {
+  "new": 4,
+  "improved": 2,
+  "fixed": 20
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `StopFailure` hook event that fires when the turn ends due to an API error (rate limit, auth failure, etc.)",
+   "zh": "添加了`StopFailure`挂钩事件，该事件在回合由于 API 错误（速率限制、身份验证失败等）而结束时触发"
+  },
+  {
+   "type": "new",
+   "en": "Added `${CLAUDE_PLUGIN_DATA}` variable for plugin persistent state that survives plugin updates; `/plugin uninstall` prompts before deleting it",
+   "zh": "添加了`${CLAUDE_PLUGIN_DATA}`变量，用于在插件更新后仍然存在的插件持久状态；删除前提示`/plugin uninstall`"
+  },
+  {
+   "type": "new",
+   "en": "Added `effort`, `maxTurns`, and `disallowedTools` frontmatter support for plugin-shipped agents",
+   "zh": "为插件提供的代理添加了 `effort`、`maxTurns` 和 `disallowedTools` frontmatter 支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `ANTHROPIC_CUSTOM_MODEL_OPTION` env var to add a custom entry to the `/model` picker, with optional `_NAME` and `_DESCRIPTION` suffixed vars for display",
+   "zh": "添加了`ANTHROPIC_CUSTOM_MODEL_OPTION`环境变量以将自定义条目添加到`/model`选择器，并带有可选的`_NAME`和`_DESCRIPTION`后缀变量用于显示"
+  },
+  {
+   "type": "improved",
+   "en": "Response text now streams line-by-line as it's generated",
+   "zh": "回复文本现在会在生成时逐行流式显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage and startup time when resuming large sessions",
+   "zh": "改进恢复大型会话时的内存占用和启动时间"
+  },
+  {
+   "type": "fixed",
+   "en": "Terminal notifications (iTerm2/Kitty/Ghostty popups, progress bar) now reach the outer terminal when running inside tmux with `set -g allow-passthrough on`",
+   "zh": "在 tmux 中运行时，只要设置 `set -g allow-passthrough on`，终端通知（iTerm2/Kitty/Ghostty 弹窗、进度条）就能送达外层终端"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `git log HEAD` failing with \"ambiguous argument\" inside sandboxed Bash on Linux, and stub files polluting `git status` in the working directory",
+   "zh": "修复了 Linux 上沙盒 Bash 中`git log HEAD`因“模糊参数”而失败，以及存根文件污染工作目录中的`git status`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `cc log` and `--resume` silently truncating conversation history on large sessions (>5 MB) that used subagents",
+   "zh": "修复了使用子代理的大型会话 (>5 MB) 上的`cc log`和`--resume`静默截断对话历史记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed infinite loop when API errors triggered stop hooks that re-fed blocking errors to the model",
+   "zh": "修复了当 API 错误触发停止钩子时的无限循环，该停止钩子将阻塞错误重新馈送到模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `deny: [\"mcp__servername\"]` permission rules not removing MCP server tools before sending to the model, allowing it to see and attempt blocked tools",
+   "zh": "修复了 `deny: [\"mcp__servername\"]` 权限规则，在发送到模型之前不会删除 MCP 服务器工具，从而允许其查看并尝试阻止的工具"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `sandbox.filesystem.allowWrite` not working with absolute paths (previously required `//` prefix)",
+   "zh": "修复了`sandbox.filesystem.allowWrite`不适用于绝对路径（之前需要`//`前缀）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/sandbox` Dependencies tab showing Linux prerequisites on macOS instead of macOS-specific info",
+   "zh": "修复了`/sandbox`“依赖项”选项卡，显示 macOS 上的 Linux 先决条件，而不是 macOS 特定的信息"
+  },
+  {
+   "type": "fixed",
+   "en": "**Security:** Fixed silent sandbox disable when `sandbox.enabled: true` is set but dependencies are missing — now shows a visible startup warning",
+   "zh": "**安全性：** 修复了设置`sandbox.enabled: true`但缺少依赖项时静默沙箱禁用的问题 - 现在显示可见的启动警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `.git`, `.claude`, and other protected directories being writable without a prompt in `bypassPermissions` mode",
+   "zh": "修复了`.git`、`.claude`和其他受保护目录在`bypassPermissions`模式下可写且无提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ctrl+u in normal mode scrolling instead of readline kill-line (ctrl+u/ctrl+d half-page scroll moved to transcript mode only)",
+   "zh": "修复了正常模式滚动中的 ctrl+u 而不是 readlinekill-line（ctrl+u/ctrl+d 半页滚动仅移至转录模式）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode modifier-combo push-to-talk keybindings (e.g. ctrl+k) requiring a hold instead of activating immediately",
+   "zh": "修复一键通话的组合修饰键绑定（如 ctrl+k）需要长按才能激活、无法立即生效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode not working on WSL2 with WSLg (Windows 11); WSL1/Win10 users now get a clear error",
+   "zh": "修复 Windows 11 上 WSL2 与 WSLg 中语音模式无法工作的问题；WSL1 和 Win10 用户现在会收到明确错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--worktree` flag not loading skills and hooks from the worktree directory",
+   "zh": "修复了`--worktree`标志未从工作树目录加载技能和挂钩的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` and `includeGitInstructions` setting not suppressing the git status section in the system prompt",
+   "zh": "修复了 `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` 和 `includeGitInstructions` 设置不抑制系统提示中的 git status 部分"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool not finding Homebrew and other PATH-dependent binaries when VS Code is launched from Dock/Spotlight",
+   "zh": "修复了从 Dock/Spotlight 启动 VS Code 时 Bash 工具找不到 Homebrew 和其他依赖于 PATH 的二进制文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed washed-out Claude orange color in VS Code/Cursor/code-server terminals that don't advertise truecolor support",
+   "zh": "修复在不声明支持 truecolor 的 VS Code/Cursor/code-server 终端中，Claude 橙色显示褪色的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ANTHROPIC_BETAS` environment variable being silently ignored when using Haiku models",
+   "zh": "修复了使用俳句模型时`ANTHROPIC_BETAS`环境变量被默默忽略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed queued prompts being concatenated without a newline separator",
+   "zh": "修复了在没有换行符的情况下连接排队提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a brief flash of the login screen when opening the sidebar while already authenticated",
+   "zh": "[VSCode] 修复已登录状态下打开侧边栏时，登录界面短暂闪现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed \"API Error: Rate limit reached\" when selecting Opus — model dropdown no longer offers 1M context variant to subscribers whose plan tier is unknown",
+   "zh": "[VSCode] 修复选择 Opus 时出现 \"API Error: Rate limit reached\" 的问题：当套餐等级未知时，模型下拉菜单不再向订阅用户提供 1M 上下文版本"
+  }
+ ]
+}

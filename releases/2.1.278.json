@@ -1,0 +1,22 @@
+{
+ "version": "2.1.278",
+ "date": "2026-09-19",
+ "published": "2026-09-19T01:48:59.758Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.278",
+ "counts": {
+  "new": 1,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added an `Auto mode server` row to `/status` showing whether this session's auto mode classifier runs on the server",
+   "zh": "在`/status`中添加了“自动模式服务器”行，显示此会话的自动模式分类器是否在服务器上运行"
+  },
+  {
+   "type": "improved",
+   "en": "Changed auto mode for Claude API and Enterprise users, and on Bedrock, Vertex, Foundry and gateways, to default to the server-side classifier, which does not charge for classifier overhead (`CLAUDE_CODE_AUTO_MODE_SERVER=0` opts out on Bedrock, Vertex, Foundry and gateways); warns on billed fallback. See https://code.claude.com/docs/en/auto-mode-classifier-billing",
+   "zh": "更改了 Claude API 和 Enterprise 用户以及 Bedrock、Vertex、Foundry 和网关上的自动模式，默认为服务器端分类器，该分类器不收取分类器开销（`CLAUDE_CODE_AUTO_MODE_SERVER=0`在 Bedrock、Vertex、Foundry 和网关上选择退出）；警告计费回退。请参阅 https://code.claude.com/docs/en/auto-mode-classifier-billing"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "version": "2.0.14",
+ "date": "2025-10-10",
+ "published": "2025-10-10T20:46:20.011Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.14",
+ "counts": {
+  "improved": 4,
+  "fixed": 2,
+  "other": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improve permission checks for bash with inline env vars",
+   "zh": "改进带内联环境变量的 bash 命令的权限检查"
+  },
+  {
+   "type": "improved",
+   "en": "Reduce unnecessary logins",
+   "zh": "减少不必要的重复登录"
+  },
+  {
+   "type": "improved",
+   "en": "Several improvements to rendering",
+   "zh": "渲染方面的若干改进"
+  },
+  {
+   "type": "improved",
+   "en": "Plugins UI polish",
+   "zh": "插件界面细节打磨"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix @-mentioning MCP servers to toggle them on/off",
+   "zh": "修复@提及 MCP 服务器以打开/关闭它们"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix ultrathink + thinking toggle",
+   "zh": "修复 ultrathink + 思维切换"
+  },
+  {
+   "type": "other",
+   "en": "Document --system-prompt",
+   "zh": "文件--系统提示符"
+  }
+ ]
+}

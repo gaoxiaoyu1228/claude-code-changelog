@@ -1,0 +1,123 @@
+{
+ "version": "2.1.161",
+ "date": "2026-06-02",
+ "published": "2026-06-02T17:38:46.406Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.161",
+ "counts": {
+  "new": 1,
+  "improved": 7,
+  "fixed": 14
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "[VSCode] Added a tip suggesting disabling terminal GPU acceleration (or running `/terminal-setup`) to fix garbled glyphs",
+   "zh": "[VSCode] 新增提示：建议关闭终端 GPU 加速（或运行 `/terminal-setup`），以修复字符乱码"
+  },
+  {
+   "type": "improved",
+   "en": "`OTEL_RESOURCE_ATTRIBUTES` values are now included as labels on metric datapoints, so you can slice usage metrics by custom dimensions like team or repo",
+   "zh": "`OTEL_RESOURCE_ATTRIBUTES` 的值现在会作为标签包含在指标数据点中，便于按团队或仓库等自定义维度拆分用量指标"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents` rows now show `done/total` before the detail when work is fanned out; peek shows the longest-running item",
+   "zh": "当工作被分派给多个项目时，`claude agents` 的行现在会在详情前显示 `done/total`；peek 会显示运行时间最长的项目"
+  },
+  {
+   "type": "improved",
+   "en": "`/mcp` now collapses claude.ai connectors you've never signed in to behind a \"Show unused connectors\" row",
+   "zh": "`/mcp` 现在会把你从未登录过的 claude.ai 连接器折叠到 \"Show unused connectors\" 行下面"
+  },
+  {
+   "type": "improved",
+   "en": "Parallel tool calls: a failed Bash command no longer cancels other calls in the same batch — each tool returns its own result independently",
+   "zh": "并行工具调用：一个 Bash 命令失败不再取消同一批次中的其他调用，每个工具都独立返回自己的结果"
+  },
+  {
+   "type": "improved",
+   "en": "Fullscreen mode: clipboard now uses `wl-copy`/`xclip`/`xsel` on Linux when available, copies to both the clipboard and PRIMARY selection for middle-click paste, and the \"hold {key} for native selection\" hint now shows the correct key per terminal",
+   "zh": "全屏模式：Linux 上剪贴板优先使用 `wl-copy`/`xclip`/`xsel`，同时写入剪贴板和 PRIMARY 选区（支持中键粘贴）；“hold {key} for native selection” 提示现在会显示各终端对应的正确按键"
+  },
+  {
+   "type": "improved",
+   "en": "Improved terminal rendering performance by stabilizing the layout engine's JIT compilation profile",
+   "zh": "改进终端渲染性能：稳定了布局引擎的 JIT 编译配置"
+  },
+  {
+   "type": "improved",
+   "en": "Improved rendering performance for large file writes",
+   "zh": "改进大文件写入的渲染性能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/effort` dialog, workflow animations, and prompt keyword shimmer not honoring the \"Reduce motion\" setting",
+   "zh": "修复 `/effort` 对话框、工作流动画和提示关键词闪光效果未遵守\"减少动态效果\"设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `forceLoginOrgUUID`/`forceLoginMethod` managed-settings policies blocking third-party provider sessions (Bedrock, Vertex, Foundry, Mantle) alongside the org pin (regression in 2.1.146)",
+   "zh": "修复了`forceLoginOrgUUID`/`forceLoginMethod`托管设置策略，阻止第三方提供商会话（Bedrock、Vertex、Foundry、Mantle）以及组织 pin（2.1.146 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background subagent output corrupting `claude -p` stdout when using `--output-format text` or `json`",
+   "zh": "修复了使用`--output-format text`或`json`时后台子代理输出损坏`claude -p`标准输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage-credits` starting a re-login for Team and Enterprise admins instead of pointing to the organization's usage settings page",
+   "zh": "修复了`/usage-credits`启动团队和企业管理员重新登录而不是指向组织的使用设置页面"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/autofix-pr` reporting \"cannot run on the default branch\" when the session is inside a git worktree or another repository",
+   "zh": "修复了当会话位于 git 工作树或其他存储库内时`/autofix-pr`报告“无法在默认分支上运行”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` picker not showing sessions from the current directory when it isn't a git worktree (e.g., jj workspaces)",
+   "zh": "修复了`--resume`选择器在当前目录不是 git 工作树（例如 jj 工作区）时不显示当前目录中的会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows hooks that invoke bash explicitly (e.g., `/usr/bin/bash script.sh`) failing with \"command not found\" or \"cannot execute binary file\"",
+   "zh": "修复了显式调用 bash 的 Windows 挂钩（例如`/usr/bin/bash script.sh`）失败并显示“找不到命令”或“无法执行二进制文件”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OpenTelemetry log events (`user_prompt`, `api_request`, `tool_result`, `tool_decision`) being silently dropped when emitted before telemetry initialization completed",
+   "zh": "修复了在遥测初始化完成之前发出的 OpenTelemetry 日志事件（`user_prompt`、`api_request`、`tool_result`、`tool_decision`）被静默丢弃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude mcp` list/get/add printing secrets to the terminal: `${VAR}` references are no longer expanded, and credential headers and URL secrets are redacted",
+   "zh": "修复了`claude mcp`列表/获取/添加打印机密到终端的问题：不再扩展`${VAR}`引用，并且对凭证标头和 URL 机密进行了编辑"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Workflow agents spawned with `isolation: \"worktree\"` in background sessions being blocked from editing files inside their own worktree",
+   "zh": "修复了在后台会话中使用“隔离：“工作树””生成的工作流代理被阻止在其自己的工作树内编辑文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions dispatched from `claude agents` booting on a stale model from the daemon's environment instead of the model in `settings.json`",
+   "zh": "修复了从守护进程环境中的陈旧模型（而不是`settings.json`中的模型）启动的“claude Agents”调度的后台会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a potential crash when rendering Write tool results after resuming a session",
+   "zh": "修复了恢复会话后渲染写入工具结果时可能发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed completed subagents getting stuck showing as running when an error occurs while finalizing their result",
+   "zh": "修复了在最终确定结果时发生错误时已完成的子代理卡住显示为正在运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `EADDRINUSE` errors from tools that bind Unix sockets under `$TMPDIR` when `CLAUDE_CODE_TMPDIR` is set to a deep path",
+   "zh": "修复了当`CLAUDE_CODE_TMPDIR`设置为深层路径时在`$TMPDIR`下绑定 Unix 套接字的工具中的`EADDRINUSE`错误"
+  }
+ ]
+}

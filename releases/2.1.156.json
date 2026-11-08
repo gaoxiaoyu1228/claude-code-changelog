@@ -1,0 +1,16 @@
+{
+ "version": "2.1.156",
+ "date": "2026-05-28",
+ "published": "2026-05-28T20:12:52.621Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.156",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed an issue when using Opus 4.8 where thinking blocks were modified, leading to API errors.",
+   "zh": "修复了使用 Opus 4.8 时思维块被修改导致 API 错误的问题。"
+  }
+ ]
+}

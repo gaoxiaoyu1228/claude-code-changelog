@@ -1,0 +1,32 @@
+{
+ "version": "2.0.55",
+ "date": "2025-11-26",
+ "published": "2025-11-26T22:54:58.963Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.55",
+ "counts": {
+  "improved": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved AskUserQuestion tool to auto-submit single-select questions on the last question, eliminating the extra review screen for simple question flows",
+   "zh": "改进 AskUserQuestion 工具：单选题作为最后一题时自动提交，去掉简单问答流程中多余的确认页"
+  },
+  {
+   "type": "improved",
+   "en": "Improved fuzzy matching for `@` file suggestions with faster, more accurate results",
+   "zh": "改进 `@` 文件建议的模糊匹配：更快、更准确"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed proxy DNS resolution being forced on by default. Now opt-in via `CLAUDE_CODE_PROXY_RESOLVES_HOSTS=true` environment variable",
+   "zh": "修复了默认强制启用代理 DNS 解析的问题。现在通过`CLAUDE_CODE_PROXY_RESOLVES_HOSTS=true`环境变量选择加入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed keyboard navigation becoming unresponsive when holding down arrow keys in memory location selector",
+   "zh": "修复了在内存位置选择器中按住箭头键时键盘导航变得无响应的问题"
+  }
+ ]
+}

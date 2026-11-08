@@ -1,0 +1,153 @@
+{
+ "version": "2.1.20",
+ "date": "2026-01-27",
+ "published": "2026-01-27T00:39:43.153Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.20",
+ "counts": {
+  "new": 5,
+  "improved": 11,
+  "fixed": 12
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added arrow key history navigation in vim normal mode when cursor cannot move further",
+   "zh": "添加了 vim 正常模式下光标无法进一步移动时的箭头键历史导航"
+  },
+  {
+   "type": "new",
+   "en": "Added external editor shortcut (Ctrl+G) to the help menu for better discoverability",
+   "zh": "在帮助菜单中添加了外部编辑器快捷方式 (Ctrl+G)，以提高可发现性"
+  },
+  {
+   "type": "new",
+   "en": "Added PR review status indicator to the prompt footer, showing the current branch's PR state (approved, changes requested, pending, or draft) as a colored dot with a clickable link",
+   "zh": "在提示页脚中添加了 PR 审核状态指示器，以带有可点击链接的彩色点显示当前分支的 PR 状态（已批准、请求更改、待处理或草稿）"
+  },
+  {
+   "type": "new",
+   "en": "Added support for loading `CLAUDE.md` files from additional directories specified via `--add-dir` flag (requires setting `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1`)",
+   "zh": "添加了对从通过`--add-dir`标志指定的其他目录加载`CLAUDE.md`文件的支持（需要设置`CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1`）"
+  },
+  {
+   "type": "new",
+   "en": "Added ability to delete tasks via the `TaskUpdate` tool",
+   "zh": "添加了通过`TaskUpdate`工具删除任务的功能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/sandbox` command UI to show dependency status with installation instructions when dependencies are missing",
+   "zh": "改进 `/sandbox` 界面：缺少依赖时，显示依赖状态和安装说明"
+  },
+  {
+   "type": "improved",
+   "en": "Improved thinking status text with a subtle shimmer animation",
+   "zh": "改进思考状态文字：加入了细微的闪烁动画"
+  },
+  {
+   "type": "improved",
+   "en": "Improved task list to dynamically adjust visible items based on terminal height",
+   "zh": "改进任务列表：可见条目数量根据终端高度动态调整"
+  },
+  {
+   "type": "improved",
+   "en": "Improved fork conversation hint to show how to resume the original session",
+   "zh": "改进分叉对话的提示：显示如何恢复原始会话"
+  },
+  {
+   "type": "improved",
+   "en": "Changed collapsed read/search groups to show present tense (\"Reading\", \"Searching for\") while in progress, and past tense (\"Read\", \"Searched for\") when complete",
+   "zh": "更改了折叠的阅读/搜索组，以在进行时显示现在时（“阅读”、“搜索”），并在完成时显示过去时（“阅读”、“搜索”）"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `ToolSearch` results to appear as a brief notification instead of inline in the conversation",
+   "zh": "更改了`ToolSearch`结果，使其显示为简短通知，而不是内嵌在对话中"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the `/commit-push-pr` skill to automatically post PR URLs to Slack channels when configured via MCP tools",
+   "zh": "更改了`/commit-push-pr`技能，以便在通过 MCP 工具配置时自动将 PR URL 发布到 Slack 频道"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the `/copy` command to be available to all users",
+   "zh": "更改了`/copy`命令以供所有用户使用"
+  },
+  {
+   "type": "improved",
+   "en": "Changed background agents to prompt for tool permissions before launching",
+   "zh": "更改了后台代理以在启动前提示工具权限"
+  },
+  {
+   "type": "improved",
+   "en": "Changed permission rules like `Bash(*)` to be accepted and treated as equivalent to `Bash`",
+   "zh": "更改了`Bash(*)`等权限规则，使其被接受并视为等同于`Bash`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed config backups to be timestamped and rotated (keeping 5 most recent) to prevent data loss",
+   "zh": "将配置备份更改为带有时间戳和轮换（保留 5 个最新的）以防止数据丢失"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session compaction issues that could cause resume to load full history instead of the compact summary",
+   "zh": "修复了会话压缩问题，该问题可能导致恢复加载完整历史记录而不是压缩摘要"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agents sometimes ignoring user messages sent while actively working on a task",
+   "zh": "修复了代理有时会忽略在积极执行任务时发送的用户消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed wide character (emoji, CJK) rendering artifacts where trailing columns were not cleared when replaced by narrower characters",
+   "zh": "修复宽字符（emoji、中日韩字符）被较窄字符替换时，末尾列未被清除而留下渲染残影的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed JSON parsing errors when MCP tool responses contain special Unicode characters",
+   "zh": "修复了 MCP 工具响应包含特殊 Unicode 字符时的 JSON 解析错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed up/down arrow keys in multi-line and wrapped text input to prioritize cursor movement over history navigation",
+   "zh": "修复多行和换行的文本输入中，上/下方向键优先移动光标而非浏览历史的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed draft prompt being lost when pressing UP arrow to navigate command history",
+   "zh": "修复了按向上箭头导航命令历史记录时草稿提示丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ghost text flickering when typing slash commands mid-input",
+   "zh": "修复了在输入中输入斜杠命令时幻影文本闪烁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed marketplace source removal not properly deleting settings",
+   "zh": "修复了市场源删除未正确删除设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate output in some commands like `/context`",
+   "zh": "修复了某些命令（如`/context`）中的重复输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed task list sometimes showing outside the main conversation view",
+   "zh": "修复任务列表有时会显示在主对话视图之外的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed syntax highlighting for diffs occurring within multiline constructs like Python docstrings",
+   "zh": "修复了 Python 文档字符串等多行结构中发生的差异的语法突出显示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crashes when cancelling tool use",
+   "zh": "修复了取消工具使用时的崩溃问题"
+  }
+ ]
+}

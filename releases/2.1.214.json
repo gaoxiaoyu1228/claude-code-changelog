@@ -1,0 +1,248 @@
+{
+ "version": "2.1.214",
+ "date": "2026-07-18",
+ "published": "2026-07-18T00:13:41.661Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.214",
+ "counts": {
+  "new": 7,
+  "improved": 5,
+  "fixed": 35
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added the EndConversation tool: Claude can end sessions with highly abusive users or jailbreak attempts, as on claude.ai since 2025 — see https://www.anthropic.com/research/end-subset-conversations",
+   "zh": "添加了 EndConversation 工具：Claude 可以结束与高度滥用用户或越狱尝试的会话，就像自 2025 年以来在 claude.ai 上一样 - 请参阅 https://www.anthropic.com/research/end-subset-conversations"
+  },
+  {
+   "type": "new",
+   "en": "Added a periodic progress heartbeat for long-running tool calls that previously went silent",
+   "zh": "为之前处于静默状态的长时间运行的工具调用添加了定期进度心跳"
+  },
+  {
+   "type": "new",
+   "en": "Added an ISO `modified` timestamp to memory file frontmatter",
+   "zh": "向内存文件 frontmatter 添加了 ISO“修改”时间戳"
+  },
+  {
+   "type": "new",
+   "en": "Added `message.uuid`, `client_request_id`, and `tool_source` attributes to OpenTelemetry log events for message-level correlation and tool provenance",
+   "zh": "向 OpenTelemetry 日志事件添加了`message.uuid`、`client_request_id`和`tool_source`属性，以实现消息级关联和工具来源"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` to configure the 60 KB truncation limit on OpenTelemetry content attributes",
+   "zh": "添加了`CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH`以配置 OpenTelemetry 内容属性的 60 KB 截断限制"
+  },
+  {
+   "type": "new",
+   "en": "Added reasoning effort to the `subagentStatusLine` payload, so custom agent rows can render model and effort",
+   "zh": "在`subagentStatusLine`有效负载中添加了推理工作，因此自定义代理行可以呈现模型和工作"
+  },
+  {
+   "type": "new",
+   "en": "Added permission prompts for `docker` commands (including the Podman `docker` shim) carrying daemon-redirect flags (`--url`, `--connection`, `--identity`, and Podman's remote mode) that previously ran without one",
+   "zh": "添加了对带有守护进程重定向标志（`--url`、`--connection`、`--identity` 和 Podman 的远程模式）的 `docker` 命令（包括 Podman `docker` shim）的权限提示，这些标志之前没有运行"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `claude rc` workspace-trust error in the home directory to say trust there is never saved and to suggest running from a project directory",
+   "zh": "改进主目录中 `claude rc` 的工作区信任报错：说明在那里的信任永远不会被保存，并建议在项目目录中运行"
+  },
+  {
+   "type": "improved",
+   "en": "Changed single-segment `dir/**` hook `if:` conditions to match only `<cwd>/dir`; write `**/dir/**` for any-depth matching. `deny`/`ask` permission rules keep their any-depth match.",
+   "zh": "更改了单段 `dir/**` 挂钩 `if:` 条件以仅匹配 `<cwd>/dir`；为任意深度匹配编写`**/dir/**`。 `deny`/`ask`权限规则保持其任意深度匹配。"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `file` commands using `-m`/`--magic-file` or `-f`/`--files-from` to require permission instead of being auto-allowed as read-only",
+   "zh": "使用`-m`/`--magic-file`或`-f`/`--files-from`更改了`file`命令以需要权限，而不是自动允许为只读"
+  },
+  {
+   "type": "improved",
+   "en": "Changed keep-alive connection pooling to disable after a stale-connection error, so retries open a fresh socket",
+   "zh": "将保持活动连接池更改为在失效连接错误后禁用，因此重试打开新套接字"
+  },
+  {
+   "type": "improved",
+   "en": "Changed SessionStart hooks to report source `\"fork\"` when a session begins as a fork instead of `\"resume\"`",
+   "zh": "更改了 SessionStart 挂钩，以在会话作为分叉而不是“恢复”开始时报告源“分叉”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed single-segment `dir/**` allow rules like `Edit(src/**)` auto-approving writes to nested `dir/` directories anywhere in the tree instead of only `<cwd>/dir`",
+   "zh": "修复了单段`dir/**`允许`Edit(src/**)`等规则自动批准写入树中任意位置的嵌套`dir/`目录，而不仅仅是`<cwd>/dir`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a permission-check bypass affecting commands run in Windows PowerShell 5.1 sessions",
+   "zh": "修复了影响 Windows PowerShell 5.1 会话中运行的命令的权限检查绕过"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash permission checks to fail closed on file-descriptor redirect forms that bash parses differently than the permission analyzer",
+   "zh": "修复了 Bash 权限检查在 bash 解析方式与权限分析器不同的文件描述符重定向表单上失败关闭的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash permission checks misjudging very long commands — commands over 10,000 characters now always prompt instead of running automatically",
+   "zh": "修复了 Bash 权限检查错误判断很长命令的问题 — 超过 10,000 个字符的命令现在总是提示而不是自动运行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash permission checks treating zsh variable subscripts and modifiers in `[[ ]]` comparisons as inert text — these commands now prompt for approval",
+   "zh": "修复了 Bash 权限检查，将 `[[ ]]` 比较中的 zsh 变量下标和修饰符视为惰性文本 - 这些命令现在提示批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash permission checks to no longer auto-approve certain `help` and `man` commands that could run unsafe options, command substitutions, or backslash paths",
+   "zh": "修复了 Bash 权限检查，不再自动批准某些可能运行不安全选项、命令替换或反斜杠路径的`help`和`man`命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission prompts on remote sessions that could proceed before the local confirmation dialog",
+   "zh": "修复了远程会话上可能在本地确认对话框之前进行的权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when a GrowthBook feature evaluates to null, and a bug where a malformed flag payload could wipe the cached feature flags",
+   "zh": "修复了 GrowthBook 功能评估为 null 时发生的崩溃，以及格式错误的标志负载可能会擦除缓存的功能标志的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool killing the Claude session when a `pkill -f` pattern accidentally matched the CLI's own process (Linux)",
+   "zh": "修复了当`pkill -f`模式意外匹配 CLI 自己的进程时 Bash 工具终止 Claude 会话的问题 (Linux)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded memory growth when `--settings` points at a device file or multi-GB file; oversized (>2 MiB) settings files now fail at startup with a clear error",
+   "zh": "修复 `--settings` 指向设备文件或数 GB 大文件时内存无限增长的问题；超过 2 MiB 的设置文件现在会在启动时报出清晰错误并失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed streaming turns failing with \"Socket is closed\" behind corporate proxies on Windows",
+   "zh": "修复了 Windows 上的企业代理后面的流转失败并出现“套接字已关闭”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stream-json output truncation at exit for slow-reading SDK/pipeline consumers; the exit drain now scales with queued bytes instead of a flat 2s cap",
+   "zh": "修复了读取缓慢的 SDK/管道消费者在退出时的 Stream-json 输出截断；出口消耗现在随排队字节而不是固定的 2 秒上限进行缩放"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scheduled tasks refusing their own configured prompt as untrusted input — the fired prompt is now delivered as the session's assigned task",
+   "zh": "修复了计划任务拒绝将其自己配置的提示作为不受信任的输入的问题 - 触发的提示现在作为会话分配的任务进行传递"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PowerShell tool commands hanging until timeout when a child process waited on standard input (Windows)",
+   "zh": "修复了子进程等待标准输入时 PowerShell 工具命令挂起直至超时的问题 (Windows)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Python scripts under the PowerShell tool crashing with UnicodeDecodeError when reading non-UTF-8 data from standard input (Windows)",
+   "zh": "修复了从标准输入 (Windows) 读取非 UTF-8 数据时 PowerShell 工具下的 Python 脚本因 UnicodeDecodeError 崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Python scripts run via the PowerShell tool crashing with UnicodeEncodeError on non-ASCII output, and PowerShell 7 error messages containing raw ANSI escape sequences (Windows)",
+   "zh": "修复了通过 PowerShell 工具运行的 Python 脚本在非 ASCII 输出上崩溃并出现 UnicodeEncodeError 的问题，以及包含原始 ANSI 转义序列的 PowerShell 7 错误消息 (Windows)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the PowerShell tool reporting `where.exe`, `fc.exe`, and `diff.exe` as errors when they return a valid negative answer (Windows)",
+   "zh": "修复 PowerShell 工具把 `where.exe`、`fc.exe` 和 `diff.exe` 的有效否定结果报告为错误的问题（Windows）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `>` and `>>` under the PowerShell tool on Windows PowerShell 5.1 writing UTF-16LE files that other tools couldn't read as UTF-8",
+   "zh": "修复了 Windows PowerShell 5.1 上 PowerShell 工具下的`>`和`>>`写入其他工具无法读取为 UTF-8 的 UTF-16LE 文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a displaced background daemon deleting its successor's control socket on shutdown, which made the next client kill the healthy replacement daemon",
+   "zh": "修复了一个移位的后台守护进程在关闭时删除其后继的控制套接字，这使得下一个客户端杀死健康的替换守护进程"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions parked with `←` or `/background` and left idle keeping the background daemon and a worker process alive indefinitely",
+   "zh": "修复了后台会话以`←`或`/background`停放并保持空闲状态，使后台守护进程和工作进程无限期地保持活动状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed completed background sessions being impossible to remove via `claude rm` or the agent view once the background service had gone idle",
+   "zh": "修复了后台服务闲置后无法通过`claude rm`或代理视图删除已完成的后台会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions dispatched from a non-git folder being impossible to delete from the agents view",
+   "zh": "修复了从非 git 文件夹调度的后台会话无法从代理视图中删除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed reopening a stopped background session failing to restore its saved conversation when an unreadable folder exists in the session store",
+   "zh": "修复了当会话存储中存在不可读的文件夹时重新打开已停止的后台会话无法恢复其保存的对话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Remote Control \"session ready\" push notification firing for sessions where Remote Control was not explicitly enabled",
+   "zh": "修复未明确启用远程控制的会话也触发远程控制\"会话就绪\"推送通知的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/install-github-app` and the `/mcp` settings menu being blocked in agent-view sessions — they're now refused only in background sessions with no terminal attached",
+   "zh": "修复了`/install-github-app`和`/mcp`设置菜单在代理视图会话中被阻止的问题 - 它们现在仅在没有附加终端的后台会话中被拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugins enabled via the `--settings` CLI flag not loading (regression since v2.1.181)",
+   "zh": "修复了通过 `--settings` CLI 标志启用的插件未加载（自 v2.1.181 以来的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feature flags going stale in long-running sessions after the OAuth token rotates",
+   "zh": "修复了 OAuth 令牌轮换后长时间运行的会话中功能标志变得过时的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview` refusing to run in repos with no merge base — it now offers to review all tracked files",
+   "zh": "修复了`/ultrareview`拒绝在没有合并基础的存储库中运行的问题——它现在提供审查所有跟踪文件的功能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude update` and `claude doctor` hanging silently, and the `/status` System diagnostics section going blank, when a shell-config path is a directory",
+   "zh": "修复了当 shell 配置路径是目录时`claude update`和`claude doctor`静默挂起以及`/status`系统诊断部分变为空白的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory frontmatter values being silently truncated at an inline `#` when memory files are saved",
+   "zh": "修复了保存内存文件时内存 frontmatter 值在内联`#`处被静默截断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session cost and token telemetry double-counting on streams that emit multiple cumulative `message_delta` frames",
+   "zh": "修复了发出多个累积`message_delta`帧的流上的会话成本和令牌遥测重复计算问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a spurious \"check your network\" warning that appeared while the advisor was thinking",
+   "zh": "修复了顾问思考时出现的虚假“检查网络”警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hooks with exit code 2 not blocking as documented when the hook's stdout JSON fails schema validation",
+   "zh": "修复了退出代码 2 的钩子在钩子的 stdout JSON 架构验证失败时不会按照记录阻塞的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OTel log events emitted outside the turn's async context missing the interaction span's trace context",
+   "zh": "修复了在回合的异步上下文之外发出的 OTel 日志事件缺少交互范围的跟踪上下文的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP transient errors during prompts/resources refresh clearing the server's slash commands and resources",
+   "zh": "修复了提示/资源刷新期间清除服务器的斜线命令和资源期间的 MCP 瞬时错误"
+  }
+ ]
+}

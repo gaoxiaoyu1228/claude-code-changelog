@@ -1,0 +1,27 @@
+{
+ "version": "0.2.102",
+ "date": "2025-05-05",
+ "published": "2025-05-05T22:58:51.202Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.102",
+ "counts": {
+  "new": 1,
+  "improved": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "You can now paste multiple large chunks into one prompt",
+   "zh": "你现在可以一次粘贴多个大段内容到同一个提示中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved thinking triggering reliability",
+   "zh": "改进触发思考的可靠性"
+  },
+  {
+   "type": "improved",
+   "en": "Improved @mention reliability for images and folders",
+   "zh": "改进 @ 提及图片和文件夹时的可靠性"
+  }
+ ]
+}

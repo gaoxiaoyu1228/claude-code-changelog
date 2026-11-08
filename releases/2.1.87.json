@@ -1,0 +1,16 @@
+{
+ "version": "2.1.87",
+ "date": "2026-03-29",
+ "published": "2026-03-29T01:40:52.719Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.87",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed messages in Cowork Dispatch not getting delivered",
+   "zh": "修复了 Cowork Dispatch 中的消息未送达的问题"
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "version": "2.1.205",
+ "date": "2026-07-08",
+ "published": "2026-07-08T19:34:57.777Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.205",
+ "counts": {
+  "new": 1,
+  "improved": 7,
+  "fixed": 15
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added an auto mode rule that blocks tampering with session transcript files",
+   "zh": "添加了自动模式规则，可阻止篡改会话转录文件"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode to ask before running `rm -rf` on a variable it can't resolve from context",
+   "zh": "改进自动模式：遇到无法从上下文确定的变量时执行 `rm -rf`，会先询问你"
+  },
+  {
+   "type": "improved",
+   "en": "Auto-update binary downloads now stream to disk instead of buffering in memory, cutting the updater's peak memory usage by roughly 400 MB",
+   "zh": "自动更新二进制下载现在流式传输到磁盘而不是在内存中缓冲，从而将更新程序的峰值内存使用量减少了大约 400 MB"
+  },
+  {
+   "type": "improved",
+   "en": "Background task notifications now explicitly state that no human input has occurred, preventing fabricated in-transcript approvals from being acted on",
+   "zh": "后台任务通知现在明确指出没有发生人工输入，从而防止对伪造的转录本批准采取行动"
+  },
+  {
+   "type": "improved",
+   "en": "Improved agent view: sessions that edit, merge, comment on, or push to an existing PR now link it in `claude agents`",
+   "zh": "改进 agent 视图：编辑、合并、评论或推送已有 PR 的会话，现在会在 `claude agents` 中链接到该 PR"
+  },
+  {
+   "type": "improved",
+   "en": "Improved agent view: rows now show a colored state word and a classifier-written headline instead of raw tool call text, and the peek opens with full status including the exact ask for blocked sessions",
+   "zh": "改进 agent 视图：每行显示带颜色的状态词和分类器生成的标题，不再显示原始工具调用文本；预览会显示完整状态，阻塞中的会话还会显示具体的询问内容"
+  },
+  {
+   "type": "improved",
+   "en": "`/doctor` is now a full setup checkup that can diagnose and fix issues; `/checkup` is its alias",
+   "zh": "`/doctor` 现在是完整的设置体检，可以诊断并修复问题；`/checkup` 是它的别名"
+  },
+  {
+   "type": "improved",
+   "en": "Reserved the \"Claude Browser\" MCP server name (alongside \"Claude Preview\") ahead of the Claude Desktop pane rename; user-configured MCP servers can no longer register under either name",
+   "zh": "在 Claude Desktop 面板改名之前，预留了 \"Claude Browser\" MCP 服务器名称（与 \"Claude Preview\" 并列）；用户配置的 MCP 服务器无法再以这两个名称注册"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--json-schema` silently producing unstructured output when the schema was invalid, and schemas using the `format` keyword being rejected",
+   "zh": "修复了当模式无效时`--json-schema`静默生成非结构化输出，并且使用`format`关键字的模式被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a message sent while Claude was working being silently lost when the turn ended at the `--max-turns` limit",
+   "zh": "修复了克劳德工作时发送的消息在回合结束于`--max-turns`限制时默默丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows worktree removal deleting files outside the worktree when an NTFS junction or directory symlink existed inside it",
+   "zh": "修复了当 NTFS 连接或目录符号链接存在于工作树内部时，Windows 工作树删除会删除工作树外部的文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents staying shown as \"failed\" or \"completed\" in the agent list after being resumed with `SendMessage`",
+   "zh": "修复了使用`SendMessage`恢复后后台代理在代理列表中显示为“失败”或“已完成”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background jobs flipping from \"needs input\" back to \"working\" in the agent list when the agent's turn contained no readable text",
+   "zh": "修复了当代理轮到不包含可读文本时，后台作业在代理列表中从“需要输入”翻转回“工作”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude attach` erroring when a background agent was mid-upgrade restart instead of waiting for it to come back",
+   "zh": "修复了后台代理在升级过程中重新启动而不是等待其返回时出现的“claude Attach”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session-to-PR linking missing a PR created in a Bash call whose output exceeded the 30K inline limit",
+   "zh": "修复了会话到 PR 链接缺少在 Bash 调用中创建的 PR（其输出超出 30K 内联限制）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude mcp add-from-claude-desktop` getting stuck when a server name contains unsupported characters; invalid names are now reported and remaining servers still import",
+   "zh": "修复了当服务器名称包含不支持的字符时`claude mcp add-from-claude-desktop`卡住的问题；现在会报告无效名称，其余服务器仍会导入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a plugin LSP server that fails to initialize preventing a valid LSP server from another plugin handling the same file extension",
+   "zh": "修复了无法初始化的插件 LSP 服务器，阻止处理相同文件扩展名的另一个插件提供有效的 LSP 服务器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Windows crash when the directory Claude was launched from is deleted, locked, or unmounted while a command is running",
+   "zh": "修复了在命令运行时删除、锁定或卸载 Claude 启动目录时 Windows 崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when a file watcher was closed while a directory scan was still in flight",
+   "zh": "修复了目录扫描仍在进行时关闭文件观察器时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed project verify skills being rewritten on every session instead of only when a documented command changed",
+   "zh": "修复了项目验证技能在每个会话中重写的问题，而不是仅在记录的命令发生更改时重写"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the agent view rendering one line too high and clipping its header when the job list slightly overflowed the screen",
+   "zh": "修复任务列表略微超出屏幕时，智能体视图整体上移一行并裁切标题的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background tasks in the web and mobile Remote Control panels showing stale \"Running\" status by forwarding full task state on every membership change",
+   "zh": "通过在每次成员资格更改时转发完整任务状态，修复了网络和移动远程控制面板中的后台任务显示陈旧的“正在运行”状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Cowork VM-mode local-agent sessions failing to start with \"Not logged in · Please run /login\" on CLI 2.1.203+",
+   "zh": "修复了 Cowork VM 模式本地代理会话在 CLI 2.1.203+ 上无法启动并显示“未登录·请运行 /login”的问题"
+  }
+ ]
+}

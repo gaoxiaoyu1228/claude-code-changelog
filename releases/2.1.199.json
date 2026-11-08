@@ -1,0 +1,132 @@
+{
+ "version": "2.1.199",
+ "date": "2026-07-02",
+ "published": "2026-07-02T17:33:48.451Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.199",
+ "counts": {
+  "improved": 4,
+  "fixed": 20
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Stacked slash-skill invocations like `/skill-a /skill-b do XYZ` now load all leading skills (up to 5), not just the first",
+   "zh": "连续调用斜杠技能（如 `/skill-a /skill-b 做某事`）时，现在会加载前面所有的技能（最多 5 个），而不只是第一个"
+  },
+  {
+   "type": "improved",
+   "en": "Transient server rate-limit errors (429s unrelated to your usage limit) are now retried automatically with backoff for subscribers instead of failing the turn",
+   "zh": "对订阅用户，与用量上限无关的服务器限流错误（429）现在会自动带退避重试，而不是直接导致该轮失败"
+  },
+  {
+   "type": "improved",
+   "en": "`CLAUDE_CODE_RETRY_WATCHDOG` now raises the default retry count for non-capacity transient errors to 300 and lifts the cap of 15 on `CLAUDE_CODE_MAX_RETRIES`",
+   "zh": "`CLAUDE_CODE_RETRY_WATCHDOG` 现在会把非容量类临时错误的默认重试次数提高到 300，并取消 `CLAUDE_CODE_MAX_RETRIES` 上限 15 的限制"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents` session rows now show pull-request links as bare `#N` without the redundant \"PR\" label",
+   "zh": "`claude agents` 会话行中的拉取请求链接现在只显示为 `#N`，去掉了多余的 \"PR\" 字样"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SSL certificate errors (TLS-inspecting proxies, missing `NODE_EXTRA_CA_CERTS`, expired certs) burning retries before showing actionable guidance — they now fail immediately with the fix hint",
+   "zh": "修复了 SSL 证书错误（TLS 检查代理、缺少`NODE_EXTRA_CA_CERTS`、过期证书）在显示可操作指导之前进行重试 — 现在，它们会立即失败并显示修复提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed streaming responses being discarded when the API emits a mid-stream overloaded/server error after partial output — the partial is now kept with an incomplete-response notice",
+   "zh": "修复了当 API 在部分输出后发出中流过载/服务器错误时被丢弃的流响应 - 部分内容现在保留有不完整响应通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents cut off by a rate limit or server error silently failing instead of returning their partial work to the parent",
+   "zh": "修复了因速率限制或服务器错误而导致子代理无提示失败而不是将部分工作返回给父代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents reporting API errors (e.g. usage limit reached) as successful results — the error is now reported to the parent agent",
+   "zh": "修复了子代理将 API 错误（例如达到使用限制）报告为成功结果的问题 - 现在将错误报告给父代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the background-agent daemon on Linux killing itself and every running agent every ~50 seconds after an unclean shutdown left a corrupted worker record",
+   "zh": "修复 Linux 上后台智能体守护进程在一次异常关闭留下损坏的工作进程记录后，每约 50 秒自杀并终止所有运行中的智能体的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents failing to cold-start over SSH on macOS with \"Could not switch to audit session\" (regression in 2.1.196)",
+   "zh": "修复了后台代理无法在 macOS 上通过 SSH 冷启动并显示“无法切换到审核会话”的问题（2.1.196 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude stop` being silently undone when it raced a background-agent respawn — the respawn now honors the stop",
+   "zh": "修复了“克劳德停止”在与后台代理重生竞争时被默默撤消的问题 - 重生现在尊重停止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background job progress indicators stalling for minutes while the job ran long commands",
+   "zh": "修复了后台作业进度指示器在作业运行长命令时停滞几分钟的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions on memory-starved machines showing a generic error — they now indicate low memory and suggest freeing resources",
+   "zh": "修复了内存不足的机器上显示一般错误的后台会话 - 它们现在指示内存不足并建议释放资源"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote sessions briefly flapping between Working and Idle in the agent view when a background agent completes",
+   "zh": "修复了后台代理完成时远程会话在代理视图中的“工作”和“空闲”之间短暂切换的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed idle subagents vanishing from the agent panel while other subagents were still working; surplus idle agents now collapse into an expandable summary row",
+   "zh": "修复了空闲子代理在其他子代理仍在工作时从代理面板中消失的问题；多余的空闲代理现在折叠成可扩展的摘要行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed typing `/model` or `/fast` while viewing a subagent silently opening the lead's model picker — a notice now explains the command applies to the lead",
+   "zh": "修复查看子智能体时输入 `/model` 或 `/fast`，会静默打开负责人的模型选择器的问题；现在会提示该命令适用于负责人"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SessionStart`, `Setup`, and `SubagentStart` hooks silently hiding stderr when exiting with code 2 — the error is now shown in the transcript",
+   "zh": "修复了`SessionStart`、`Setup`和`SubagentStart`挂钩在使用代码 2 退出时默默隐藏 stderr — 错误现在显示在记录中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --dangerously-skip-permissions daemon <subcommand>` being treated as a chat prompt instead of running the subcommand",
+   "zh": "修复了`claude --dangerously-skip-permissions daemon <subcommand>`被视为聊天提示而不是运行子命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SendMessage` silently misrouting when a re-spawned agent reuses a previous agent's name — the tool now detects the mismatch and asks the caller to retarget",
+   "zh": "修复了当重新生成的代理重复使用先前代理的名称时`SendMessage`静默错误路由的问题 - 该工具现在可以检测到不匹配并要求调用者重新定位"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed opening or resuming a session with no new messages needlessly growing the transcript file",
+   "zh": "修复了在没有新消息的情况下打开或恢复会话而不必要地增加脚本文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed backgrounding a session with `←` or `/background` dropping its `/color` from the agent view row",
+   "zh": "修复了使用`←`或`/background`从代理视图行删除其`/color`的会话背景"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resetting a corrupted config file from the startup recovery dialog destroying it unrecoverably — it now backs up the file first",
+   "zh": "修复了从启动恢复对话框重置损坏的配置文件导致其无法恢复的问题 - 现在它首先备份该文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude in Chrome repeatedly opening the reconnect page when sessions run from different builds or config directories",
+   "zh": "修复了当会话从不同的构建或配置目录运行时，Chrome 中的 Claude 重复打开重新连接页面的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan mode not prompting for state-changing browser tool calls; read-only `browser_batch` calls are now correctly auto-allowed",
+   "zh": "修复了计划模式不提示状态更改浏览器工具调用的问题；现在可以正确自动允许只读`browser_batch`调用"
+  }
+ ]
+}

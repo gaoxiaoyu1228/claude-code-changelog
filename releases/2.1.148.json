@@ -1,0 +1,16 @@
+{
+ "version": "2.1.148",
+ "date": "2026-05-22",
+ "published": "2026-05-22T00:10:02.193Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.148",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed the Bash tool returning exit code 127 on every command for some users (a regression introduced in 2.1.147)",
+   "zh": "修复了 Bash 工具在某些用户的每个命令上返回退出代码 127（2.1.147 中引入的回归）"
+  }
+ ]
+}

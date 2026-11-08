@@ -1,0 +1,64 @@
+{
+ "version": "2.0.0",
+ "date": "2025-09-29",
+ "published": "2025-09-29T14:41:14.895Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.0",
+ "counts": {
+  "new": 6,
+  "improved": 2,
+  "fixed": 1,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "New native VS Code extension",
+   "zh": "全新原生 VS Code 扩展"
+  },
+  {
+   "type": "new",
+   "en": "/rewind a conversation to undo code changes",
+   "zh": "/倒回对话以撤消代码更改"
+  },
+  {
+   "type": "new",
+   "en": "/usage command to see plan limits",
+   "zh": "/usage 命令查看计划限制"
+  },
+  {
+   "type": "new",
+   "en": "Tab to toggle thinking (sticky across sessions)",
+   "zh": "按 Tab 切换思考模式（设置会在不同会话间保留）"
+  },
+  {
+   "type": "new",
+   "en": "Ctrl-R to search history",
+   "zh": "Ctrl-R 搜索历史记录"
+  },
+  {
+   "type": "new",
+   "en": "Add subagents dynamically with `--agents` flag",
+   "zh": "使用`--agents`标志动态添加子代理"
+  },
+  {
+   "type": "improved",
+   "en": "Fresh coat of paint throughout the whole app",
+   "zh": "整个应用焕然一新，全面刷新视觉外观"
+  },
+  {
+   "type": "improved",
+   "en": "SDK: The Claude Code SDK is now the Claude Agent SDK",
+   "zh": "SDK：Claude Code SDK 现在改名为 Claude Agent SDK"
+  },
+  {
+   "type": "fixed",
+   "en": "Hooks: Reduced PostToolUse 'tool_use' ids were found without 'tool_result' blocks errors",
+   "zh": "Hooks：减少了 PostToolUse 报出的“tool_use ids were found without tool_result blocks”错误"
+  },
+  {
+   "type": "removed",
+   "en": "Unshipped claude config command",
+   "zh": "取消发布 `claude config` 命令"
+  }
+ ]
+}

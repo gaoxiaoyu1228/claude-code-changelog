@@ -1,0 +1,37 @@
+{
+ "version": "1.0.120",
+ "date": "2025-09-19",
+ "published": "2025-09-19T21:08:21.676Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.120",
+ "counts": {
+  "improved": 2,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved VSCode extension command registry and sessions dialog user experience",
+   "zh": "改进 VS Code 扩展的命令注册表和会话对话框的使用体验"
+  },
+  {
+   "type": "improved",
+   "en": "Enhanced sessions dialog responsiveness and visual feedback",
+   "zh": "增强的会话对话响应能力和视觉反馈"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix input lag during typing, especially noticeable with large prompts",
+   "zh": "修复打字期间的输入延迟，尤其是在出现较大提示时尤其明显"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed IDE compatibility issue by removing worktree support check",
+   "zh": "通过删除工作树支持检查修复了 IDE 兼容性问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed security vulnerability where Bash tool permission checks could be bypassed using prefix matching",
+   "zh": "修复了使用前缀匹配可以绕过 Bash 工具权限检查的安全漏洞"
+  }
+ ]
+}

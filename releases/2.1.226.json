@@ -1,0 +1,16 @@
+{
+ "version": "2.1.226",
+ "date": "2026-08-08",
+ "published": "2026-08-08T01:53:22.182Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.226",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Bug fixes and reliability improvements",
+   "zh": "错误修复和可靠性改进"
+  }
+ ]
+}

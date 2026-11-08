@@ -1,0 +1,28 @@
+{
+ "version": "2.0.58",
+ "date": "2025-12-03",
+ "published": "2025-12-03T18:34:25.537Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.58",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Pro users now have access to Opus 4.5 as part of their subscription!",
+   "zh": "Pro 用户现在可以把 Opus 4.5 作为订阅的一部分使用！"
+  },
+  {
+   "type": "improved",
+   "en": "Windows: Managed settings now prefer `C:\\Program Files\\ClaudeCode` if it exists. Support for `C:\\ProgramData\\ClaudeCode` will be removed in a future version.",
+   "zh": "Windows：如果 `C:\\Program Files\\ClaudeCode` 存在，托管设置现在优先使用它。`C:\\ProgramData\\ClaudeCode` 的支持将在未来版本中移除。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed timer duration showing \"11m 60s\" instead of \"12m 0s\"",
+   "zh": "修复计时器时长显示为\"11m 60s\"而非\"12m 0s\"的问题"
+  }
+ ]
+}

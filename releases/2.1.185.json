@@ -1,0 +1,16 @@
+{
+ "version": "2.1.185",
+ "date": "2026-06-20",
+ "published": "2026-06-20T16:54:36.327Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.185",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "The stream-stall hint now reads \"Waiting for API response · will retry in …\" instead of \"No response from API · Retrying in …\", and triggers after 20s of silence instead of 10s",
+   "zh": "流停滞提示现在显示 \"Waiting for API response · will retry in …\"，而不再是 \"No response from API · Retrying in …\"；静默时间从 10 秒改为 20 秒后触发"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "version": "0.2.31",
+ "date": "2025-03-05",
+ "published": "2025-03-05T17:48:20.869Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.31",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Custom slash commands: Markdown files in .claude/commands/ directories now appear as custom slash commands to insert prompts into your conversation",
+   "zh": "自定义斜杠命令：.claude/commands/ 目录中的 Markdown 文件现在显示为自定义斜杠命令，以将提示插入对话中"
+  },
+  {
+   "type": "new",
+   "en": "MCP debug mode: Run with --mcp-debug flag to get more information about MCP server errors",
+   "zh": "MCP 调试模式：使用 --mcp-debug 参数运行，可获得关于 MCP 服务器错误的更多信息"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "version": "2.0.30",
+ "date": "2025-10-30",
+ "published": "2025-10-30T22:23:48.671Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.30",
+ "counts": {
+  "new": 6,
+  "fixed": 8,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added helpful hint to run `security unlock-keychain` when encountering API key errors on macOS with locked keychain",
+   "zh": "添加了有用的提示，以在 macOS 上遇到具有锁定钥匙串的 API 密钥错误时运行“安全解锁钥匙串”"
+  },
+  {
+   "type": "new",
+   "en": "Added `allowUnsandboxedCommands` sandbox setting to disable the dangerouslyDisableSandbox escape hatch at policy level",
+   "zh": "添加了`allowUnsandboxedCommands`沙箱设置，以在策略级别禁用危险的DisableSandbox逃生舱口"
+  },
+  {
+   "type": "new",
+   "en": "Added `disallowedTools` field to custom agent definitions for explicit tool blocking",
+   "zh": "在自定义代理定义中添加了`disallowedTools`字段，以实现显式工具阻止"
+  },
+  {
+   "type": "new",
+   "en": "Added prompt-based stop hooks",
+   "zh": "添加了基于提示的停止挂钩"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added respectGitIgnore configuration to include .gitignored files in file searches (defaults to true)",
+   "zh": "VS Code：新增 respectGitIgnore 配置，可在文件搜索中包含被 .gitignore 忽略的文件（默认为 true）"
+  },
+  {
+   "type": "new",
+   "en": "Enabled SSE MCP servers on native build",
+   "zh": "在本机构建上启用 SSE MCP 服务器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Explore agent creating unwanted .md investigation files during codebase exploration",
+   "zh": "修复了探索代理在代码库探索期间创建不需要的 .md 调查文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where `/context` would sometimes fail with \"max_tokens must be greater than thinking.budget_tokens\" error message",
+   "zh": "修复了 `/context` 有时会失败并显示“max_tokens 必须大于 Thinking.budget_tokens”错误消息的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--mcp-config` flag to correctly override file-based MCP configurations",
+   "zh": "修复了`--mcp-config`标志以正确覆盖基于文件的 MCP 配置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bug that saved session permissions to local settings",
+   "zh": "修复了将会话权限保存到本地设置的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tools not being available to sub-agents",
+   "zh": "修复了子代理无法使用 MCP 工具的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hooks and plugins not executing when using --dangerously-skip-permissions flag",
+   "zh": "修复了使用 --dangerously-skip-permissions 标志时不执行的挂钩和插件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed delay when navigating through typeahead suggestions with arrow keys",
+   "zh": "修复了使用箭头键浏览输入建议时的延迟"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Restored selection indicator in input footer showing current file or code selection status",
+   "zh": "VS Code：恢复了输入框底部显示当前文件或代码选择状态的选择指示器"
+  },
+  {
+   "type": "removed",
+   "en": "Deprecated output styles. Review options in `/output-style` and use --system-prompt-file, --system-prompt, --append-system-prompt, CLAUDE.md, or plugins instead",
+   "zh": "已弃用的输出样式。查看 `/output-style` 中的选项并使用 --system-prompt-file、--system-prompt、--append-system-prompt、CLAUDE.md 或插件代替"
+  },
+  {
+   "type": "removed",
+   "en": "Removed support for custom ripgrep configuration, resolving an issue where Search returns no results and config discovery fails",
+   "zh": "移除对自定义 ripgrep 配置的支持，解决搜索返回空结果、配置查找失败的问题"
+  }
+ ]
+}

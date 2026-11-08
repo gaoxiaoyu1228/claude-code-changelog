@@ -1,0 +1,149 @@
+{
+ "version": "2.1.160",
+ "date": "2026-06-01",
+ "published": "2026-06-01T20:03:23.202Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.160",
+ "counts": {
+  "new": 1,
+  "improved": 6,
+  "fixed": 18,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added a prompt before writing to shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) and `~/.config/git/`, which could otherwise lead to unintended command execution",
+   "zh": "在写入 shell 启动文件（`.zshenv`、`.zlogin`、`.bash_login`）和 `~/.config/git/` 之前添加了提示，否则可能会导致意外的命令执行"
+  },
+  {
+   "type": "improved",
+   "en": "`acceptEdits` mode now prompts before writing build-tool config files that grant code execution (`.npmrc`, `.yarnrc*`, `bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`, etc.)",
+   "zh": "`acceptEdits` 模式现在会在写入可授予代码执行权限的构建工具配置文件前进行提示（如 `.npmrc`、`.yarnrc*`、`bunfig.toml`、`.bazelrc`、`.pre-commit-config.yaml`、`.devcontainer/` 等）"
+  },
+  {
+   "type": "improved",
+   "en": "Edit no longer requires a separate Read after viewing a file with `grep`: single-file `grep`/`egrep`/`fgrep` commands now satisfy the read-before-edit check",
+   "zh": "使用`grep`查看文件后，编辑不再需要单独的读取：单文件`grep`/`egrep`/`fgrep`命令现在满足编辑前读取检查"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance of opening recently-inactive background agent sessions in `claude agents`",
+   "zh": "改进 `claude agents` 中打开最近不活跃后台智能体会话的性能"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode classifier latency by reducing reasoning on routine actions, lowering the chance of \"could not evaluate this action\" blocks",
+   "zh": "改进自动模式分类器的延迟：对常规操作减少推理，降低出现“could not evaluate this action”拦截的概率"
+  },
+  {
+   "type": "improved",
+   "en": "Improved background-session teardown (`claude rm`/`stop`, idle reap) to send SIGTERM to running shell subprocesses before SIGKILL, so cleanup handlers run",
+   "zh": "改进后台会话的清理（`claude rm`/`stop`、空闲回收）：先向运行中的 shell 子进程发送 SIGTERM，再发送 SIGKILL，让清理处理程序得以运行"
+  },
+  {
+   "type": "improved",
+   "en": "Renamed the dynamic-workflow trigger keyword from `workflow` to `ultracode`. The word \"workflow\" no longer triggers a run; asking for one in your own words still works. The trigger keyword is highlighted in violet in the prompt input",
+   "zh": "动态工作流的触发关键词从 `workflow` 改为 `ultracode`。单独的 \"workflow\" 一词不再触发运行；用自己的话提出需求仍然有效。触发关键词会在提示输入框中以紫色高亮"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed copy-on-select not writing to the Windows clipboard on WSL — now uses PowerShell interop instead of OSC 52, which terminals like MobaXterm don't support",
+   "zh": "修复了 WSL 上的选择时复制不写入 Windows 剪贴板的问题 - 现在使用 PowerShell 互操作而不是 OSC 52，MobaXterm 等终端不支持 OSC 52"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed restoring a completed session from `claude agents` dropping chat history and re-running the original prompt",
+   "zh": "修复了从“克劳德代理”恢复已完成的会话，删除聊天历史记录并重新运行原始提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions re-attached after overnight retire losing their conversation and re-running the original prompt",
+   "zh": "修复了隔夜退出后重新连接的后台会话丢失对话并重新运行原始提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --bg` occasionally failing with \"socket missing\" when the background daemon was cold-starting on a loaded machine",
+   "zh": "修复了当后台守护进程在已加载的计算机上冷启动时，`claude --bg`偶尔会失败并出现“套接字丢失”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue on Windows where the directory a background session was started in could not be deleted after `claude rm` until the background daemon exited",
+   "zh": "修复了 Windows 上的一个问题：在`claude rm`之后，直到后台守护进程退出后，才能删除启动后台会话的目录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents that resumed work being shown under Completed in the agents list",
+   "zh": "修复了恢复工作的后台代理显示在代理列表中的“已完成”下的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` freezing for several seconds when returning to the session list due to the auto-updater re-checking on every exit",
+   "zh": "修复了由于自动更新程序在每次退出时重新检查而返回会话列表时“克劳德代理”冻结几秒钟的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc, arrow keys, and typing becoming unresponsive on Windows when attached to a background session or in the agent view while the host is under heavy CPU load",
+   "zh": "修复了当主机处于高 CPU 负载时附加到后台会话或在代理视图中时 Esc、箭头键和键入在 Windows 上变得无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents emitting terminal sync-output markers to terminals that don't support them (Apple Terminal, tmux), causing render artifacts when entering a running agent",
+   "zh": "修复了后台代理向不支持它们的终端（Apple 终端、tmux）发出终端同步输出标记，从而在进入正在运行的代理时导致渲染工件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mouse wheel scrolling prompt history instead of the transcript right after opening a session from the agents list",
+   "zh": "修复了从代理列表打开会话后鼠标滚轮滚动提示历史记录而不是记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed CJK IME composition appearing at the bottom-left of the screen instead of at the input caret in the `claude agents` view",
+   "zh": "修复了 CJK IME 组合出现在屏幕左下角而不是“claude Agents”视图中的输入插入符号处"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed valid `file:///C:/...` links being rewritten to a broken path on Windows terminals with hyperlink support",
+   "zh": "修复在支持超链接的 Windows 终端中，有效的 `file:///C:/...` 链接被改写为无效路径的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode failing to connect when the project directory or branch name contains non-ASCII or special characters",
+   "zh": "修复项目目录或分支名包含非 ASCII 或特殊字符时，语音模式无法连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the auto mode unavailability message on third-party providers (Bedrock/Vertex/Foundry) to point to the `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in instead of incorrectly blaming the model",
+   "zh": "修复第三方服务商（Bedrock/Vertex/Foundry）上自动模式不可用的提示信息错误地归咎于模型的问题；现在会指向 `CLAUDE_CODE_ENABLE_AUTO_MODE` 选择加入设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/effort ultracode` incorrectly blaming the dynamic workflows setting when the model cannot run xhigh; ultracode is no longer offered on models that do not support it",
+   "zh": "修复了模型无法运行 xhigh 时`/effort ultracode`错误地归咎于动态工作流程设置的问题；不支持的型号不再提供 ultracode"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed model-not-found errors suggesting `--model` when running via the SDK or other hosts where the CLI flag doesn't apply",
+   "zh": "修复了通过 SDK 或 CLI 标志不适用的其他主机运行时提示`--model`的模型未找到错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude's past replies disappearing from scrollback when resuming a brief mode session with brief mode turned off",
+   "zh": "修复了在关闭简短模式的情况下恢复简短模式会话时克劳德过去的回复从回滚中消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode `p` pasting on the line below instead of at the cursor when the register was yanked with `v$`",
+   "zh": "修复 vim 模式下，使用 `v$` 复制的寄存器内容，`p` 粘贴到光标所在行下方而非光标处的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`; the environment variable is now a no-op",
+   "zh": "移除 `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`；该环境变量现在不起作用"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the JetBrains plugin install suggestion from startup",
+   "zh": "移除启动时的 JetBrains 插件安装建议"
+  }
+ ]
+}

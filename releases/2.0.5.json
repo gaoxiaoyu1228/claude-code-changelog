@@ -1,0 +1,32 @@
+{
+ "version": "2.0.5",
+ "date": "2025-10-02",
+ "published": "2025-10-02T16:20:59.106Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.5",
+ "counts": {
+  "new": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "IDE: Add \"Open in Terminal\" link in login screen",
+   "zh": "IDE：登录页新增“在终端中打开”链接"
+  },
+  {
+   "type": "new",
+   "en": "SDK: Added SDKUserMessageReplay.isReplay to prevent duplicate messages",
+   "zh": "SDK：新增 `SDKUserMessageReplay.isReplay`，防止消息重复"
+  },
+  {
+   "type": "fixed",
+   "en": "IDE: Fix IME unintended message submission with Enter and Tab",
+   "zh": "IDE：修复输入法（IME）状态下，按 Enter 和 Tab 误提交消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix unhandled OAuth expiration 401 API errors",
+   "zh": "修复未处理的 OAuth 过期 401 API 错误"
+  }
+ ]
+}

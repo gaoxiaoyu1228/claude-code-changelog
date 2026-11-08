@@ -1,0 +1,48 @@
+{
+ "version": "2.0.71",
+ "date": "2025-12-16",
+ "published": "2025-12-16T21:30:39.801Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.71",
+ "counts": {
+  "new": 2,
+  "improved": 1,
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added /config toggle to enable/disable prompt suggestions",
+   "zh": "添加了 /config 开关以启用/禁用提示建议"
+  },
+  {
+   "type": "new",
+   "en": "Added `/settings` as an alias for the `/config` command",
+   "zh": "添加了`/settings`作为`/config`命令的别名"
+  },
+  {
+   "type": "improved",
+   "en": "New syntax highlighting engine for native build",
+   "zh": "原生构建版采用全新的语法高亮引擎"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed @ file reference suggestions incorrectly triggering when cursor is in the middle of a path",
+   "zh": "修复了当光标位于路径中间时错误触发的@文件引用建议"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers from `.mcp.json` not loading when using `--dangerously-skip-permissions`",
+   "zh": "修复了使用`--dangerously-skip-permissions`时未加载`.mcp.json`中的 MCP 服务器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission rules incorrectly rejecting valid bash commands containing shell glob patterns (e.g., `ls *.txt`, `for f in *.png`)",
+   "zh": "修复了权限规则错误地拒绝包含 shell glob 模式的有效 bash 命令（例如，`ls *.txt`、`for f in *.png`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Bedrock: Environment variable `ANTHROPIC_BEDROCK_BASE_URL` is now respected for token counting and inference profile listing",
+   "zh": "Bedrock：环境变量`ANTHROPIC_BEDROCK_BASE_URL`现在受到令牌计数和推理配置文件列表的尊重"
+  }
+ ]
+}

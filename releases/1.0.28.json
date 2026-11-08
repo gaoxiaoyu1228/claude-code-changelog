@@ -1,0 +1,38 @@
+{
+ "version": "1.0.28",
+ "date": "2025-06-18",
+ "published": "2025-06-18T17:37:33.722Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.28",
+ "counts": {
+  "new": 2,
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added XDG_CONFIG_HOME support to configuration directory",
+   "zh": "向配置目录添加了 XDG_CONFIG_HOME 支持"
+  },
+  {
+   "type": "new",
+   "en": "New attributes (terminal.type, language) in OpenTelemetry logging",
+   "zh": "OpenTelemetry 日志新增属性（terminal.type、language）"
+  },
+  {
+   "type": "improved",
+   "en": "Performance optimizations for memory usage",
+   "zh": "优化内存占用的性能"
+  },
+  {
+   "type": "fixed",
+   "en": "Slash commands: Fix selector display during history navigation",
+   "zh": "修复了浏览历史时斜杠命令选择器的显示问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Resizes images before upload to prevent API size limit errors",
+   "zh": "上传前调整图片大小，避免 API 大小限制错误"
+  }
+ ]
+}

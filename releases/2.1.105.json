@@ -1,0 +1,198 @@
+{
+ "version": "2.1.105",
+ "date": "2026-04-13",
+ "published": "2026-04-13T19:51:19.552Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.105",
+ "counts": {
+  "new": 3,
+  "improved": 10,
+  "fixed": 24
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `path` parameter to the `EnterWorktree` tool to switch into an existing worktree of the current repository",
+   "zh": "在`EnterWorktree`工具中添加了`path`参数，以切换到当前存储库的现有工作树"
+  },
+  {
+   "type": "new",
+   "en": "Added PreCompact hook support: hooks can now block compaction by exiting with code 2 or returning `{\"decision\":\"block\"}`",
+   "zh": "添加了 PreCompact 挂钩支持：挂钩现在可以通过使用代码 2 退出或返回 `{\"decision\":\"block\"}` 来阻止压缩"
+  },
+  {
+   "type": "new",
+   "en": "Added background monitor support for plugins via a top-level `monitors` manifest key that auto-arms at session start or on skill invoke",
+   "zh": "通过顶级“监视器”清单键添加了对插件的后台监视器支持，该键在会话启动或技能调用时自动装备"
+  },
+  {
+   "type": "improved",
+   "en": "`/proactive` is now an alias for `/loop`",
+   "zh": "`/proactive` 现在是 `/loop` 的别名"
+  },
+  {
+   "type": "improved",
+   "en": "Improved stalled API stream handling: streams now abort after 5 minutes of no data and retry non-streaming instead of hanging indefinitely",
+   "zh": "改进 API 流卡住的处理：超过 5 分钟没有数据就中止，并改用非流式请求重试，而不是无限挂起"
+  },
+  {
+   "type": "improved",
+   "en": "Improved network error messages: connection errors now show a retry message immediately instead of a silent spinner",
+   "zh": "改进网络错误提示：连接错误立即显示重试提示，而不是静默的加载动画"
+  },
+  {
+   "type": "improved",
+   "en": "Improved file write display: long single-line writes (e.g. minified JSON) are now truncated in the UI instead of paginating across many screens",
+   "zh": "改进文件写入的显示：超长的单行写入（如压缩后的 JSON）在界面中截断，而不是翻页显示到许多屏"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/doctor` layout with status icons; press `f` to have Claude fix reported issues",
+   "zh": "改进 `/doctor` 布局：增加状态图标；按 `f` 可让 Claude 修复报告的问题"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/config` labels and descriptions for clarity",
+   "zh": "改进 `/config` 的标签和说明，更清楚"
+  },
+  {
+   "type": "improved",
+   "en": "Improved skill description handling: raised the listing cap from 250 to 1,536 characters and added a startup warning when descriptions are truncated",
+   "zh": "改进技能描述处理：技能列表的字数上限从 250 提高到 1,536 个字符，描述被截断时启动会给出警告"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `WebFetch` to strip `<style>` and `<script>` contents from fetched pages so CSS-heavy pages no longer exhaust the content budget before reaching actual text",
+   "zh": "改进 `WebFetch`：去掉抓取页面中 `<style>` 和 `<script>` 的内容，避免大量 CSS 的页面在读到正文前就耗尽内容配额"
+  },
+  {
+   "type": "improved",
+   "en": "Improved stale agent worktree cleanup to remove worktrees whose PR was squash-merged instead of keeping them indefinitely",
+   "zh": "改进陈旧智能体工作树的清理：PR 以 squash 方式合并后，对应的工作树会被删除，而不是无限期保留"
+  },
+  {
+   "type": "improved",
+   "en": "Improved MCP large-output truncation prompt to give format-specific recipes (e.g. `jq` for JSON, computed Read chunk sizes for text)",
+   "zh": "改进 MCP 大输出截断提示：按格式给出具体做法（如 JSON 用 `jq`，文本则按计算好的 Read 分块大小读取）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed images attached to queued messages (sent while Claude is working) being dropped",
+   "zh": "修复了附加到排队消息（克劳德工作时发送）的图像被丢弃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed screen going blank when the prompt input wraps to a second line in long conversations",
+   "zh": "修复了在长对话中提示输入换行至第二行时屏幕变为空白的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed leading whitespace getting copied when selecting multi-line assistant responses in fullscreen mode",
+   "zh": "修复了在全屏模式下选择多行助手响应时复制前导空格的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed leading whitespace being trimmed from assistant messages, breaking ASCII art and indented diagrams",
+   "zh": "修复了辅助消息中前导空白被修剪、破坏 ASCII 艺术和缩进图表的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed garbled bash output when commands print clickable file links (e.g. Python `rich`/`loguru` logging)",
+   "zh": "修复了命令打印可点击文件链接时出现的乱码 bash 输出（例如 Python `rich`/`loguru` 日志记录）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed alt+enter not inserting a newline in terminals using ESC-prefix alt encoding, and Ctrl+J not inserting a newline (regression in 2.1.100)",
+   "zh": "修复了 alt+enter 不会在使用 ESC 前缀 alt 编码的终端中插入换行符，以及 Ctrl+J 不会插入换行符的问题（2.1.100 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate \"Creating worktree\" text in EnterWorktree/ExitWorktree tool display",
+   "zh": "修复了 EnterWorktree/ExitWorktree 工具显示中重复的“创建工作树”文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed queued user prompts disappearing from focus mode",
+   "zh": "修复了排队的用户提示从焦点模式中消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed one-shot scheduled tasks re-firing repeatedly when the file watcher missed the post-fire cleanup",
+   "zh": "修复了当文件观察器错过触发后清理时一次性计划任务重复重新触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed inbound channel notifications being silently dropped after the first message for Team/Enterprise users",
+   "zh": "修复了团队/企业用户收到第一条消息后入站通道通知被静默丢弃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed marketplace plugins with `package.json` and lockfile not having dependencies installed automatically after install/update",
+   "zh": "修复了带有 `package.json` 和 lockfile 的市场插件在安装/更新后没有自动安装依赖项的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed marketplace auto-update leaving the official marketplace in a broken state when a plugin process holds files open during the update",
+   "zh": "修复了当插件进程在更新期间保持文件打开时，市场自动更新导致官方市场处于损坏状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Resume this session with...\" hint not printing on exit after `/resume`, `--worktree`, or `/branch`",
+   "zh": "修复了“通过...恢复此会话”提示在`/resume`、`--worktree`或`/branch`之后退出时不打印的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feedback survey shortcut keys firing when typed at the end of a longer prompt",
+   "zh": "修复了在较长提示结束时键入反馈调查快捷键时触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stdio MCP server emitting malformed (non-JSON) output hanging the session instead of failing fast with \"Connection closed\"",
+   "zh": "修复了 stdio MCP 服务器发出格式错误（非 JSON）的输出，导致会话挂起，而不是因“连接关闭”而快速失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tools missing on the first turn of headless/remote-trigger sessions when MCP servers connect asynchronously",
+   "zh": "修复了当 MCP 服务器异步连接时，第一轮无头/远程触发会话中 MCP 工具丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` picker on AWS Bedrock in non-US regions persisting invalid `us.*` model IDs to `settings.json` when inference profile discovery is still in-flight",
+   "zh": "修复了非美国区域中 AWS Bedrock 上的`/model`选择器，当推理配置文件发现仍在进行时，将无效的`us.*`模型 ID 保留为`settings.json`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed 429 rate-limit errors showing a raw JSON dump instead of a clean message for API-key, Bedrock, and Vertex users",
+   "zh": "修复了 429 个速率限制错误，为 API 密钥、Bedrock 和 Vertex 用户显示原始 JSON 转储而不是干净消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crash on resume when session contains malformed text blocks",
+   "zh": "修复了会话包含格式错误的文本块时恢复时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/help` dropping the tab bar, Shortcuts heading, and footer at short terminal heights",
+   "zh": "修复了`/help`将选项卡栏、快捷方式标题和页脚放置在短终端高度的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed malformed keybinding entry values in `keybindings.json` being silently loaded instead of rejected with a clear error",
+   "zh": "修复了`keybindings.json`中格式错误的键绑定条目值被静默加载而不是因明显错误而被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` in one project's settings permanently disabling usage metrics for all projects on the machine",
+   "zh": "修复了一个项目设置中的`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`，永久禁用计算机上所有项目的使用指标"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed washed-out 16-color palette when using Ghostty, Kitty, Alacritty, WezTerm, foot, rio, or Contour over SSH/mosh",
+   "zh": "修复在 SSH/mosh 中使用 Ghostty、Kitty、Alacritty、WezTerm、foot、rio 或 Contour 时，16 色调色板显示褪色的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool suggesting `acceptEdits` permission mode when exiting plan mode would downgrade from a higher permission level",
+   "zh": "修复了 Bash 工具在退出计划模式时建议`acceptEdits`权限模式将从较高权限级别降级的问题"
+  }
+ ]
+}

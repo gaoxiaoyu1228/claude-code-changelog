@@ -1,0 +1,38 @@
+{
+ "version": "1.0.112",
+ "date": "2025-09-12",
+ "published": "2025-09-12T00:07:45.734Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.112",
+ "counts": {
+  "new": 3,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Addressed issue where some Claude Max users were incorrectly recognized as Claude Pro users",
+   "zh": "解决了部分 Claude Max 用户被错误识别为 Claude Pro 用户的问题"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Added systemMessage support for SessionEnd hooks",
+   "zh": "Hooks：SessionEnd 钩子支持 systemMessage"
+  },
+  {
+   "type": "new",
+   "en": "Added `spinnerTipsEnabled` setting to disable spinner tips",
+   "zh": "添加了`spinnerTipsEnabled`设置以禁用微调器提示"
+  },
+  {
+   "type": "improved",
+   "en": "Transcript mode (Ctrl+R): Added the model used to generate each assistant message",
+   "zh": "转录模式（Ctrl+R）：每条助手消息现在会显示生成它所用的模型"
+  },
+  {
+   "type": "fixed",
+   "en": "IDE: Various improvements and bug fixes",
+   "zh": "IDE：多项体验改进和问题修复"
+  }
+ ]
+}

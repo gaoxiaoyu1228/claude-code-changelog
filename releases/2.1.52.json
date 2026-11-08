@@ -1,0 +1,16 @@
+{
+ "version": "2.1.52",
+ "date": "2026-02-24",
+ "published": "2026-02-24T06:00:40.801Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.52",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "VS Code: Fixed extension crash on Windows (\"command 'claude-vscode.editor.openLast' not found\")",
+   "zh": "VS Code：修复了 Windows 上扩展因 \"command 'claude-vscode.editor.openLast' not found\" 崩溃的问题"
+  }
+ ]
+}

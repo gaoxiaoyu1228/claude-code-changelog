@@ -1,0 +1,47 @@
+{
+ "version": "2.0.62",
+ "date": "2025-12-09",
+ "published": "2025-12-09T00:21:11.631Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.62",
+ "counts": {
+  "new": 2,
+  "fixed": 5
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added \"(Recommended)\" indicator for multiple-choice questions, with the recommended option moved to the top of the list",
+   "zh": "多项选择题添加“（推荐）”指示器，推荐选项移至列表顶部"
+  },
+  {
+   "type": "new",
+   "en": "Added `attribution` setting to customize commit and PR bylines (deprecates `includeCoAuthoredBy`)",
+   "zh": "添加了`attribution`设置以自定义提交和 PR 署名（不推荐使用`includeCoAuthoredBy`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate slash commands appearing when ~/.claude is symlinked to a project directory",
+   "zh": "修复了 ~/.claude 符号链接到项目目录时出现的重复斜杠命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash command selection not working when multiple commands share the same name",
+   "zh": "修复了当多个命令共享相同名称时斜杠命令选择不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where skill files inside symlinked skill directories could become circular symlinks",
+   "zh": "修复了符号链接技能目录内的技能文件可能变成循环符号链接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed running versions getting removed because lock file incorrectly going stale",
+   "zh": "修复了由于锁定文件错误地过时而导致运行版本被删除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed IDE diff tab not closing when rejecting file changes",
+   "zh": "修复了拒绝文件更改时 IDE diff 选项卡未关闭的问题"
+  }
+ ]
+}

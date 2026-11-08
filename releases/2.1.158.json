@@ -1,0 +1,16 @@
+{
+ "version": "2.1.158",
+ "date": "2026-05-30",
+ "published": "2026-05-30T01:12:23.617Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.158",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Auto mode is now available on Bedrock, Vertex, and Foundry for Opus 4.7 and Opus 4.8. Opt in by setting `CLAUDE_CODE_ENABLE_AUTO_MODE=1`",
+   "zh": "自动模式现已在 Opus 4.7 和 Opus 4.8 的 Bedrock、Vertex 和 Foundry 上可用。通过设置`CLAUDE_CODE_ENABLE_AUTO_MODE=1`选择加入"
+  }
+ ]
+}

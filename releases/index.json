@@ -1,0 +1,366 @@
+{
+ "generated": "2026-11-08T10:07:36Z",
+ "note": "Source: Anthropic's official CHANGELOG.md (https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm publish times, synced daily. Original text © Anthropic. Dates and times are UTC. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog-calendar",
+ "latest": "2.1.319",
+ "releases": [
+  {
+   "version": "2.1.319",
+   "date": "2026-11-06",
+   "published": "2026-11-06T00:58:56.366Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.319",
+   "counts": {
+    "new": 18,
+    "improved": 36,
+    "fixed": 90,
+    "removed": 2
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.319.json"
+  },
+  {
+   "version": "2.1.318",
+   "date": "2026-11-03",
+   "published": "2026-11-03T21:55:17.247Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.318",
+   "counts": {
+    "new": 11,
+    "improved": 25,
+    "fixed": 47,
+    "removed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.318.json"
+  },
+  {
+   "version": "2.1.317",
+   "date": "2026-11-02",
+   "published": "2026-11-02T23:57:53.069Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.317",
+   "counts": {
+    "new": 10,
+    "improved": 14,
+    "fixed": 62,
+    "removed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.317.json"
+  },
+  {
+   "version": "2.1.316",
+   "date": "2026-10-31",
+   "published": "2026-10-31T00:42:05.743Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.316",
+   "counts": {
+    "new": 10,
+    "improved": 10,
+    "fixed": 34,
+    "removed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.316.json"
+  },
+  {
+   "version": "2.1.314",
+   "date": "2026-10-30",
+   "published": "2026-10-30T00:12:56.911Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.314",
+   "counts": {
+    "new": 6,
+    "improved": 32,
+    "fixed": 81
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.314.json"
+  },
+  {
+   "version": "2.1.312",
+   "date": "2026-10-27",
+   "published": "2026-10-27T18:36:10.160Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.312",
+   "counts": {
+    "new": 4,
+    "improved": 13,
+    "fixed": 22
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.312.json"
+  },
+  {
+   "version": "2.1.311",
+   "date": "2026-10-26",
+   "published": "2026-10-26T19:47:57.395Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.311",
+   "counts": {
+    "new": 5,
+    "improved": 31,
+    "fixed": 56
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.311.json"
+  },
+  {
+   "version": "2.1.310",
+   "date": "2026-10-23",
+   "published": "2026-10-23T21:20:46.540Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.310",
+   "counts": {
+    "new": 3,
+    "improved": 9,
+    "fixed": 14
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.310.json"
+  },
+  {
+   "version": "2.1.309",
+   "date": "2026-10-22",
+   "published": "2026-10-22T20:34:13.713Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.309",
+   "counts": {
+    "new": 1,
+    "improved": 16,
+    "fixed": 62
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.309.json"
+  },
+  {
+   "version": "2.1.308",
+   "date": "2026-10-22",
+   "published": "2026-10-22T04:19:48.902Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.308",
+   "counts": {
+    "fixed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.308.json"
+  },
+  {
+   "version": "2.1.307",
+   "date": "2026-10-21",
+   "published": "2026-10-21T20:47:18.383Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.307",
+   "counts": {
+    "new": 4,
+    "improved": 13,
+    "fixed": 26
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.307.json"
+  },
+  {
+   "version": "2.1.306",
+   "date": "2026-10-21",
+   "published": "2026-10-21T02:28:47.495Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.306",
+   "counts": {
+    "fixed": 2
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.306.json"
+  },
+  {
+   "version": "2.1.305",
+   "date": "2026-10-20",
+   "published": "2026-10-20T19:29:36.816Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.305",
+   "counts": {
+    "new": 4,
+    "improved": 12,
+    "fixed": 22
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.305.json"
+  },
+  {
+   "version": "2.1.304",
+   "date": "2026-10-19",
+   "published": "2026-10-19T19:47:15.337Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.304",
+   "counts": {
+    "new": 10,
+    "improved": 21,
+    "fixed": 43,
+    "removed": 2
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.304.json"
+  },
+  {
+   "version": "2.1.303",
+   "date": "2026-10-18",
+   "published": "2026-10-18T21:15:23.178Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.303",
+   "counts": {
+    "fixed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.303.json"
+  },
+  {
+   "version": "2.1.302",
+   "date": "2026-10-16",
+   "published": "2026-10-16T16:48:28.057Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.302",
+   "counts": {
+    "new": 4,
+    "improved": 16,
+    "fixed": 43
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.302.json"
+  },
+  {
+   "version": "2.1.301",
+   "date": "2026-10-15",
+   "published": "2026-10-15T14:34:23.330Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.301",
+   "counts": {
+    "new": 8,
+    "improved": 6,
+    "fixed": 37
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.301.json"
+  },
+  {
+   "version": "2.1.300",
+   "date": "2026-10-14",
+   "published": "2026-10-14T14:27:26.554Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.300",
+   "counts": {
+    "new": 12,
+    "improved": 16,
+    "fixed": 59,
+    "removed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.300.json"
+  },
+  {
+   "version": "2.1.299",
+   "date": "2026-10-14",
+   "published": "2026-10-14T00:23:19.588Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.299",
+   "counts": {
+    "new": 18,
+    "improved": 41,
+    "fixed": 131
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.299.json"
+  },
+  {
+   "version": "2.1.296",
+   "date": "2026-10-09",
+   "published": "2026-10-09T16:58:10.924Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.296",
+   "counts": {
+    "new": 8,
+    "improved": 15,
+    "fixed": 56
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.296.json"
+  },
+  {
+   "version": "2.1.295",
+   "date": "2026-10-08",
+   "published": "2026-10-08T18:22:58.621Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.295",
+   "counts": {
+    "new": 17,
+    "improved": 29,
+    "fixed": 97
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.295.json"
+  },
+  {
+   "version": "2.1.294",
+   "date": "2026-10-08",
+   "published": "2026-10-08T03:42:57.084Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.294",
+   "counts": {
+    "improved": 1,
+    "fixed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.294.json"
+  },
+  {
+   "version": "2.1.293",
+   "date": "2026-10-07",
+   "published": "2026-10-07T17:18:04.464Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.293",
+   "counts": {
+    "new": 3,
+    "improved": 13,
+    "fixed": 40
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.293.json"
+  },
+  {
+   "version": "2.1.292",
+   "date": "2026-10-06",
+   "published": "2026-10-06T17:10:31.715Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.292",
+   "counts": {
+    "new": 8,
+    "improved": 20,
+    "fixed": 64
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.292.json"
+  },
+  {
+   "version": "2.1.291",
+   "date": "2026-10-06",
+   "published": "2026-10-06T03:32:36.856Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.291",
+   "counts": {
+    "fixed": 2
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.291.json"
+  },
+  {
+   "version": "2.1.290",
+   "date": "2026-10-05",
+   "published": "2026-10-05T18:12:44.907Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.290",
+   "counts": {
+    "new": 15,
+    "improved": 44,
+    "fixed": 131
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.290.json"
+  },
+  {
+   "version": "2.1.289",
+   "date": "2026-10-03",
+   "published": "2026-10-03T20:12:02.717Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.289",
+   "counts": {
+    "new": 1,
+    "improved": 2,
+    "fixed": 24
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.289.json"
+  },
+  {
+   "version": "2.1.288",
+   "date": "2026-10-02",
+   "published": "2026-10-02T18:30:40.093Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.288",
+   "counts": {
+    "new": 7,
+    "improved": 18,
+    "fixed": 64
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.288.json"
+  },
+  {
+   "version": "2.1.287",
+   "date": "2026-10-01",
+   "published": "2026-10-01T16:59:25.986Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.287",
+   "counts": {
+    "new": 8,
+    "improved": 31,
+    "fixed": 67
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.287.json"
+  },
+  {
+   "version": "2.1.286",
+   "date": "2026-09-30",
+   "published": "2026-09-30T17:14:38.859Z",
+   "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.286",
+   "counts": {
+    "new": 7,
+    "improved": 31,
+    "fixed": 49,
+    "removed": 1
+   },
+   "json": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.286.json"
+  }
+ ],
+ "full_history": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/data/all.json"
+}

@@ -1,0 +1,263 @@
+{
+ "version": "2.1.265",
+ "date": "2026-09-08",
+ "published": "2026-09-08T19:05:16.492Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.265",
+ "counts": {
+  "new": 4,
+  "improved": 12,
+  "fixed": 34
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `user.email` and `user.groups` to the telemetry Claude Desktop and Cowork send through a Claude apps gateway, matching terminal sessions",
+   "zh": "添加了`user.email`和`user.groups`到通过 Claude 应用程序网关发送的遥测 Claude Desktop 和 Cowork，匹配终端会话"
+  },
+  {
+   "type": "new",
+   "en": "Added support for pointing `--plugin-dir` at a folder of plugins: each child folder with a manifest loads, and children added or removed while running are picked up",
+   "zh": "添加了对将`--plugin-dir`指向插件文件夹的支持：每个带有清单的子文件夹都会加载，并且会拾取运行时添加或删除的子文件夹"
+  },
+  {
+   "type": "new",
+   "en": "Added a 1 GB cap on tool results saved to disk; the in-conversation preview says when a saved file was truncated",
+   "zh": "添加了保存到磁盘的工具结果 1 GB 的上限；对话中预览显示保存的文件何时被截断"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added automatic archiving of sessions inactive for a set period (new \"Archive inactive sessions\" setting, default 14 days)",
+   "zh": "[VSCode] 新增自动归档：超过设定时间未活动的会话会被归档（新增「Archive inactive sessions」设置，默认 14 天）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `--worktree` startup on large repositories: the new worktree is now checked out in parallel (git 2.32+)",
+   "zh": "改进大型仓库上的 `--worktree` 启动：新 worktree 改为并行检出（需要 git 2.32+）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/workflows` agent detail: tool calls are marked running, failed or done, the subagent's task list is shown when it has one, and Enter unfolds the listed calls with their inputs and results",
+   "zh": "改进 `/workflows` 代理详情：工具调用标注为运行中、失败或已完成；子代理有任务列表时会显示；按 Enter 可展开所列调用及其输入和结果"
+  },
+  {
+   "type": "improved",
+   "en": "Improved slash commands typed mid-prompt: matches now show in a list (Tab opens it outside fullscreen) instead of a single suggestion, and a plugin skill is now found by its bare name",
+   "zh": "改进在提示中间输入斜杠命令的体验：匹配结果以列表显示（非全屏时按 Tab 展开），而不是只给一个建议；插件技能现在可以用不带前缀的名字找到"
+  },
+  {
+   "type": "improved",
+   "en": "Improved remote MCP servers that need sign-in: Claude Code no longer registers an OAuth client with them until you actually authenticate",
+   "zh": "改进需要登录的远程 MCP 服务器：在你真正认证之前，Claude Code 不再向其注册 OAuth 客户端"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the time to resume long sessions that read many files",
+   "zh": "改进恢复读取了大量文件的长会话时的速度"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the error shown when an image over the size limits cannot be decoded: it now names the cause and how to fix it instead of only citing the limit",
+   "zh": "改进图片超出大小限制无法解码时的报错：会说明原因以及如何修复，而不只是引用限制值"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the Artifact tool's read of an artifact someone else wrote: the summary now treats the page as untrusted content and flags embedded instructions rather than relaying them",
+   "zh": "改进 Artifact 工具读取他人创建的 Artifact：摘要会把页面视为不可信内容，并标出其中嵌入的指令，而不是照搬转述"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the `.claude` folder permission option to say what it actually allows: editing files in the project's `.claude` folder (or `~/.claude`) for the session",
+   "zh": "`.claude` 文件夹的权限选项现在明确说明其允许的范围：在本次会话中编辑项目 `.claude` 文件夹（或 `~/.claude`）中的文件"
+  },
+  {
+   "type": "improved",
+   "en": "Changed machines with `forceLoginGatewayUrl` in managed settings to be Claude apps gateway sessions from startup, like `forceLoginMethod: \"gateway\"`; a leftover claude.ai login or API key is not used",
+   "zh": "将托管设置中具有`forceLoginGatewayUrl`的计算机从启动时更改为 Claude 应用程序网关会话，例如“forceLoginMethod：“gateway””；未使用剩余的 claude.ai 登录名或 API 密钥"
+  },
+  {
+   "type": "improved",
+   "en": "Changed image processing to use the runtime's built-in image support; the CLI no longer extracts a native image module to the temp directory",
+   "zh": "更改了图像处理以使用运行时的内置图像支持； CLI 不再将本机映像模块提取到临时目录"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plugin display metadata to prefer the marketplace entry over `plugin.json` on the Installed tab and `claude plugin details`, filling gaps from `plugin.json`",
+   "zh": "更改了插件显示元数据，以更喜欢“已安装”选项卡上的`plugin.json`和“claude 插件详细信息”上的市场条目，填补了`plugin.json`中的空白"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Claude apps gateway sessions to export OpenTelemetry directly to a collector the gateway's managed settings name in `OTEL_EXPORTER_OTLP_ENDPOINT`, instead of through the gateway's relay; sessions without a named collector still use the relay",
+   "zh": "更改了 Claude 应用程序网关会话，将 OpenTelemetry 直接导出到`OTEL_EXPORTER_OTLP_ENDPOINT`中网关托管设置名称的收集器，而不是通过网关的中继；没有指定收集器的会话仍然使用中继"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a foreground-spawned subagent changing its tool list and system prompt prefix, which broke prompt-cache reuse for that agent",
+   "zh": "修复了恢复前台生成的子代理更改其工具列表和系统提示符前缀的问题，这会破坏该代理的提示缓存重用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent teammates and resumed subagents moving SubagentStart hook context and preloaded skills out of the prompt prefix on later turns, which broke prompt-cache reuse",
+   "zh": "修复了代理队友和恢复的子代理在稍后的回合中将 SubagentStart 挂钩上下文和预加载技能移出提示前缀的问题，这会破坏提示缓存重用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resume after the previous process died while a tool was running: the last prompt is no longer rewritten, and the interrupted tool call is kept and marked interrupted",
+   "zh": "修复了工具运行时前一个进程死亡后的恢复：最后的提示不再重写，中断的工具调用被保留并标记为已中断"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model opusplan[1m]` being rejected with \"Model not found\"",
+   "zh": "修复了 `/model opusplan[1m]` 被拒绝并显示“未找到模型”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed syntax-highlighted code in permission prompts and messages sometimes omitting a character after a Ruby `?`, Erlang `$`, or Perl `$` sigil",
+   "zh": "修复了权限提示和消息中的语法突出显示代码有时会在 Ruby `?`、Erlang `$` 或 Perl `$` 符号后省略字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the fullscreen transcript jumping by one row whenever the slash-command or @-file suggestion list opened or closed",
+   "zh": "修复斜杠命令或 @文件建议列表打开或关闭时，全屏转录视图跳动一行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a plugin path containing a backslash bypassing the symlink containment check on macOS and Linux",
+   "zh": "修复了包含反斜杠的插件路径，绕过了 macOS 和 Linux 上的符号链接包含检查"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin directories whose names begin with two dots being wrongly refused as outside the plugin root",
+   "zh": "修复了名称以两个点开头的插件目录被错误地拒绝为插件根目录之外的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed VS Code and SDK sessions occasionally requiring re-login when a session was closed while refreshing its token",
+   "zh": "修复了 VS Code 和 SDK 会话在会话关闭并刷新其令牌时偶尔需要重新登录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions sending the end-of-turn signal before the reply's last message, which could show a reply as finished in the Claude app before its last part arrived",
+   "zh": "修复了远程控制会话在回复的最后一条消息之前发送回合结束信号的问题，这可能会在最后一部分到达之前在 Claude 应用程序中显示回复已完成"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background (`--bg`) sessions occasionally being retired mid-turn when a message arrived just before the idle timeout",
+   "zh": "修复了当消息在空闲超时之前到达时，后台 (`--bg`) 会话偶尔会在轮流中退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code's own git status and diff probes running clean filters configured by a nested repository inside the working tree",
+   "zh": "修复了 Claude Code 自己的 git status 和 diff 探针，运行由工作树内的嵌套存储库配置的干净过滤器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the advisor tool and its instructions being re-decided per request from the request's model; the decision is now made once and announced in the conversation when it changes",
+   "zh": "修复顾问工具及其说明，每次请求都根据请求的模型重新决定的问题；现在只决定一次，并在变化时在对话中提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed artifact publish accepting connector tool names the connector doesn't expose; the publish is now refused when none of the declared tools exist, and warned when only some don't",
+   "zh": "修复了工件发布接受连接器工具名称而连接器未公开的问题；现在，当声明的工具都不存在时，发布会被拒绝，而只有某些工具不存在时，则会发出警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/add-dir <subdirectory>` refusing to load a subdirectory's agents when managed settings lock only skills to plugins, and promising agents when only agents are locked",
+   "zh": "修复了当托管设置仅锁定插件技能时`/add-dir <subdirectory>`拒绝加载子目录的代理，以及当仅锁定代理时承诺代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed two-key keyboard shortcuts cancelling silently when the second key arrived more than a second later, as happens inside tmux; they now wait 3 seconds and show a notice when they time out",
+   "zh": "修复双键快捷键在第二个键于一秒后才到达（如在 tmux 中）时静默取消的问题；现在会等待 3 秒，超时时显示提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed forked skills (`context: fork`) not streaming their kickoff prompt and, with `--forward-subagent-text`, their text turns as progress events in stream-json",
+   "zh": "修复了分叉技能 (`context: fork`) 不流式传输其启动提示的问题，并且使用 `--forward-subagent-text`，它们的文本会变成 Stream-json 中的进度事件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a plugin's default component folder that the OS cannot check, such as a symlink loop, being silently skipped; it is now reported in `/plugin` with the error code",
+   "zh": "修复了操作系统无法检查的插件的默认组件文件夹，例如符号链接循环，被静默跳过；现在在`/plugin`中报告错误代码"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Claude apps gateway's OTLP telemetry relay pausing all forwarding to a collector for 30 seconds after it rejected a few payloads as malformed or too large",
+   "zh": "修复 Claude 应用网关的 OTLP 遥测转发器在收集器拒绝少量格式错误或过大的数据包后，暂停向收集器转发 30 秒的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` Discover/Browse and `claude plugin list --json --available` showing no description or display name for marketplace plugins whose metadata lives only in their `plugin.json`",
+   "zh": "修复了`/plugin`发现/浏览和`claude plugin list --json --available`，未显示其元数据仅存在于`plugin.json`中的市场插件的描述或显示名称"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/login` showing \"no gateway URL is configured\" when re-run in a session that signed in to a Claude apps gateway set by managed settings",
+   "zh": "修复了`/login`在登录到由托管设置设置的 Claude 应用程序网关的会话中重新运行时显示“未配置网关 URL”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` claiming a model was \"saved as your default\" when the settings file couldn't be written; it now says the save failed and why",
+   "zh": "修复了`/model`在无法写入设置文件时声称模型“另存为默认值”的问题；现在显示保存失败以及原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/clear` from Remote Control waiting on SessionStart hooks and on open terminal dialogs before completing",
+   "zh": "修复了远程控制中的`/clear`在完成之前等待 SessionStart 挂钩和打开的终端对话框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/config` dialog changing height when switching between its tabs",
+   "zh": "修复 `/config` 对话框在切换标签页时高度会变化的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a workflow run after its container restarted; a resume whose run journal is missing now fails with a clear error instead of rerunning every agent",
+   "zh": "修复了容器重新启动后恢复工作流运行的问题；缺少运行日志的简历现在失败并出现明显错误，而不是重新运行每个代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `claude-api` skill's error-code reference: model access failures return 404 and unavailable beta headers return 400, not 403",
+   "zh": "修复 `claude-api` 技能的错误码参考：模型访问失败应返回 404，不可用的 beta 请求头应返回 400，而非 403"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed non-interactive sessions (`-p` with stream-json input, Agent SDK, cloud sessions) resetting the shell working directory at each new user message; a `cd` now persists across turns",
+   "zh": "修复了非交互式会话（带有流 json 输入的`-p`、Agent SDK、云会话），在每个新用户消息处重置 shell 工作目录； `cd`现在在回合中持续存在"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers configured as `http` that only speak the legacy HTTP+SSE transport never connecting; Claude Code now falls back to SSE as the MCP spec describes",
+   "zh": "修复了配置为`http`的 MCP 服务器，仅使用旧版 HTTP+SSE 传输从不连接；正如 MCP 规范所述，Claude Code 现在回退到 SSE"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed some claude.ai connectors in cloud sessions showing as needing authentication even though they are connected in claude.ai (servers that answer an unsupported request with HTTP 401)",
+   "zh": "修复了云会话中的一些 claude.ai 连接器显示为需要身份验证，即使它们已在 claude.ai 中连接（使用 HTTP 401 应答不受支持的请求的服务器）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote sessions keeping their sandbox container alive while a connector approval or sign-in link waits for you",
+   "zh": "修复了远程会话在连接器批准或登录链接等待您时保持其沙箱容器处于活动状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resumed sessions showing long model-facing recovery instructions in \"background task didn't finish\" notices instead of a short status line",
+   "zh": "修复了恢复会话在“后台任务未完成”通知中显示较长的面向模型的恢复指令，而不是较短的状态行"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed Read, Write and Edit refusing every file (\"symlink resolution changed after permission was checked\") when running inside an AppContainer or restricted-token sandbox",
+   "zh": "Windows：修复了在 AppContainer 或受限令牌沙箱中运行时，Read、Write、Edit 拒绝所有文件（\"symlink resolution changed after permission was checked\"）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the sidebar chat coming back blank after Reload Window or a restart when the conversation had been open for more than 10 minutes",
+   "zh": "[VSCode] 修复对话打开超过 10 分钟后，执行 Reload Window 或重启，侧边栏聊天恢复为空白的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the timeline dot sitting below the text on the \"Remote Control is active\" message",
+   "zh": "[VSCode] 修复 \"Remote Control is active\" 消息中的时间线圆点位置低于文字的问题"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "2.1.294",
+ "date": "2026-10-08",
+ "published": "2026-10-08T03:42:57.084Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.294",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved how `prompt` hooks on Stop and SubagentStop written as instructions (such as \"Carry on if the build is broken\") are judged, so Claude is less likely to stop early",
+   "zh": "改进对 Stop 和 SubagentStop 上以指令形式写的 `prompt` hook（如“如果构建失败就继续”）的判断方式，减少 Claude 提前停下来的可能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `prompt` and `agent` hooks written as instructions (such as \"Block commands that...\") allowing what they should block",
+   "zh": "修复了以指令形式编写的“提示”和“代理”挂钩（例如“阻止...的命令”），允许它们应该阻止的内容"
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "version": "2.1.108",
+ "date": "2026-04-14",
+ "published": "2026-04-14T18:35:26.902Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.108",
+ "counts": {
+  "new": 5,
+  "improved": 5,
+  "fixed": 14
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `ENABLE_PROMPT_CACHING_1H` env var to opt into 1-hour prompt cache TTL on API key, Bedrock, Vertex, and Foundry (`ENABLE_PROMPT_CACHING_1H_BEDROCK` is deprecated but still honored), and `FORCE_PROMPT_CACHING_5M` to force 5-minute TTL",
+   "zh": "添加了`ENABLE_PROMPT_CACHING_1H`环境变量以选择在 API 密钥、Bedrock、Vertex 和 Foundry 上选择 1 小时提示缓存 TTL（`ENABLE_PROMPT_CACHING_1H_BEDROCK`已弃用，但仍受尊重），以及`FORCE_PROMPT_CACHING_5M`以强制使用 5 分钟 TTL"
+  },
+  {
+   "type": "new",
+   "en": "Added recap feature to provide context when returning to a session, configurable in `/config` and manually invocable with `/recap`; force with `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` if telemetry disabled.",
+   "zh": "添加了回顾功能，以在返回会话时提供上下文，可在`/config`中配置并使用`/recap`手动调用；如果遥测禁用，则强制使用`CLAUDE_CODE_ENABLE_AWAY_SUMMARY`。"
+  },
+  {
+   "type": "new",
+   "en": "The model can now discover and invoke built-in slash commands like `/init`, `/review`, and `/security-review` via the Skill tool",
+   "zh": "模型现在可以通过 Skill 工具发现并调用内置斜杠命令，如 `/init`、`/review` 和 `/security-review`"
+  },
+  {
+   "type": "new",
+   "en": "Added \"verbose\" indicator when viewing the detailed transcript (`Ctrl+O`)",
+   "zh": "查看详细记录时添加了“详细”指示符（`Ctrl+O`）"
+  },
+  {
+   "type": "new",
+   "en": "Added a warning at startup when prompt caching is disabled via `DISABLE_PROMPT_CACHING*` environment variables",
+   "zh": "当通过`DISABLE_PROMPT_CACHING*`环境变量禁用提示缓存时，在启动时添加了警告"
+  },
+  {
+   "type": "improved",
+   "en": "`/undo` is now an alias for `/rewind`",
+   "zh": "`/undo` 现在是 `/rewind` 的别名"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/model` to warn before switching models mid-conversation, since the next response re-reads the full history uncached",
+   "zh": "改进 `/model`：对话中途切换模型前会提醒你，因为下一条回复会完整重新读取历史且无法使用缓存"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/resume` picker to default to sessions from the current directory; press `Ctrl+A` to show all projects",
+   "zh": "改进 `/resume` 选择器：默认显示当前目录的会话，按 `Ctrl+A` 可显示所有项目"
+  },
+  {
+   "type": "improved",
+   "en": "Improved error messages: server rate limits are now distinguished from plan usage limits; 5xx/529 errors show a link to status.claude.com; unknown slash commands suggest the closest match",
+   "zh": "改进错误提示：服务器限流与套餐用量上限分开显示；5xx/529 错误附上 status.claude.com 状态页链接；未知斜杠命令会建议最接近的命令"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced memory footprint for file reads, edits, and syntax highlighting by loading language grammars on demand",
+   "zh": "通过按需加载语言语法，文件读取、编辑和语法高亮的内存占用降低"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed paste not working in the `/login` code prompt (regression in 2.1.105)",
+   "zh": "修复了粘贴在`/login`代码提示中不起作用的问题（2.1.105 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subscribers who set `DISABLE_TELEMETRY` falling back to 5-minute prompt cache TTL instead of 1 hour",
+   "zh": "修复了设置`DISABLE_TELEMETRY`的订阅者回退到 5 分钟提示缓存 TTL（而不是 1 小时）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Agent tool prompting for permission in auto mode when the safety classifier's transcript exceeded its context window",
+   "zh": "修复了当安全分类器的记录超出其上下文窗口时，代理工具在自动模式下提示许可的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool producing no output when `CLAUDE_ENV_FILE` (e.g. `~/.zprofile`) ends with a `#` comment line",
+   "zh": "修复了当`CLAUDE_ENV_FILE`（例如`~/.zprofile`）以`#`注释行结尾时 Bash 工具不产生输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --resume <session-id>` losing the session's custom name and color set via `/rename`",
+   "zh": "修复了`claude --resume <session-id>`通过`/rename`丢失会话的自定义名称和颜色设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session titles showing placeholder example text when the first message is a short greeting",
+   "zh": "修复了当第一条消息是简短问候语时显示占位符示例文本的会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal escape codes appearing as garbage text in the prompt input after `--teleport`",
+   "zh": "修复 `--teleport` 之后，终端转义码在提示输入框中显示为乱码文字的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/feedback` retry: pressing Enter to resubmit after a failure now works without first editing the description",
+   "zh": "修复了`/feedback`重试：失败后按 Enter 重新提交现在无需先编辑描述即可工作"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--teleport` and `--resume <id>` precondition errors (e.g. dirty git tree, session not found) exiting silently instead of showing the error message",
+   "zh": "修复了 `--teleport` 和 `--resume <id>` 前提条件错误（例如脏 git 树、未找到会话）静默退出而不是显示错误消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control session titles set in the web UI being overwritten by auto-generated titles after the third message",
+   "zh": "修复了 Web UI 中设置的远程控制会话标题在第三条消息后被自动生成的标题覆盖的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` truncating sessions when the transcript contained a self-referencing message",
+   "zh": "修复了当记录包含自引用消息时`--resume`截断会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed transcript write failures (e.g., disk full) being silently dropped instead of being logged",
+   "zh": "修复转录写入失败（例如磁盘已满）被静默丢弃而不记录日志的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed diacritical marks (accents, umlauts, cedillas) being dropped from responses when the `language` setting is configured",
+   "zh": "修复了配置“语言”设置时从响应中删除变音符号（重音、变音符号、变音符号）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed policy-managed plugins never auto-updating when running from a different project than where they were first installed",
+   "zh": "修复了策略管理插件在从与首次安装位置不同的项目运行时永远不会自动更新的问题"
+  }
+ ]
+}

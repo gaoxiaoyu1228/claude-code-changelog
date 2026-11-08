@@ -1,0 +1,114 @@
+{
+ "version": "2.1.233",
+ "date": "2026-08-14",
+ "published": "2026-08-14T18:50:44.102Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.233",
+ "counts": {
+  "new": 4,
+  "improved": 6,
+  "fixed": 9,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added GitLab merge request URL support to the `--worktree` flag and the `claude agents` view (where MRs display as `!N`)",
+   "zh": "添加了对`--worktree`标志和“claude Agents”视图的 GitLab 合并请求 URL 支持（其中 MR 显示为`!N`）"
+  },
+  {
+   "type": "new",
+   "en": "Added an opt-in `forward_user_identity` apps gateway setting on Anthropic upstreams that sends the signed-in user's identity as headers, so a proxy behind the gateway can attribute spend per user",
+   "zh": "在 Anthropic 上游添加了一个可选的`forward_user_identity`应用程序网关设置，该设置将登录用户的身份作为标头发送，因此网关后面的代理可以归因于每个用户的支出"
+  },
+  {
+   "type": "new",
+   "en": "Added opt-in memory cgroup support for Bash tool commands on Linux (`CLAUDE_CODE_TOOL_MEMORY_LIMIT`) so a runaway build can't stall the session",
+   "zh": "添加了对 Linux 上的 Bash 工具命令的选择加入内存 cgroup 支持（`CLAUDE_CODE_TOOL_MEMORY_LIMIT`），因此失控的构建无法停止会话"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` environment variable to configure the WebFetch session URL cache TTL (default unchanged: 15 minutes)",
+   "zh": "添加了`CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS`环境变量来配置WebFetch会话URL缓存TTL（默认不变：15分钟）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `claude self-hosted-runner` session start time: the session branch is now created without rewriting the working tree, and two server round trips no longer block the agent's launch",
+   "zh": "改进 `claude self-hosted-runner` 的会话启动时间：不再改写工作树即可创建会话分支，两次服务器往返也不再阻塞代理启动"
+  },
+  {
+   "type": "improved",
+   "en": "Improved apps gateway error forwarding: 400/413 errors from Vertex, Foundry, and Claude Platform on AWS upstreams now carry the upstream's own message; fixes a bug with auto-compact on apps gateway",
+   "zh": "改进 apps 网关的错误转发：Vertex、Foundry 和 Claude Platform on AWS 上游返回的 400/413 错误会带上上游自己的消息；同时修复了 apps 网关上自动压缩的一个问题"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `claude plugin validate` to check a bare `.claude/skills` directory, reporting SKILL.md files whose frontmatter fails to parse",
+   "zh": "改进 `claude plugin validate`：检查单独的 `.claude/skills` 目录，并报告 frontmatter 解析失败的 SKILL.md 文件"
+  },
+  {
+   "type": "improved",
+   "en": "Improved screen reader mode: the `/effort` selector renders as a numbered list with a typed-number prompt, and hint and dialog text is no longer clipped",
+   "zh": "改进屏幕阅读器模式：`/effort` 选择器改为带编号的列表，并支持输入数字；提示和对话框文字不再被截断"
+  },
+  {
+   "type": "improved",
+   "en": "Improved print mode diagnostics: a `[claude-code:unrecognized_model]` line is written to stderr when a request goes out for a model ID Claude Code doesn't recognize; map it with `modelOverrides` to silence",
+   "zh": "改进打印模式诊断：请求发往 Claude Code 无法识别的模型 ID 时，会在 stderr 输出一行 `[claude-code:unrecognized_model]`；用 `modelOverrides` 映射即可消除该提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the GitHub app setup tip to no longer appear in repositories whose origin remote is on gitlab.com or bitbucket.org; the enterprise marketplace tip now covers non-GitHub internal git hosts",
+   "zh": "更改了 GitHub 应用程序设置提示，使其不再出现在源远程位于 gitlab.com 或 bitbucket.org 上的存储库中；企业市场提示现在涵盖非 GitHub 内部 git 主机"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions occasionally being marked as lost when the environment shut down while Claude was waiting on a permission prompt",
+   "zh": "修复了当 Claude 等待权限提示时环境关闭时，云会话偶尔会被标记为丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP v2 connections endlessly reopening the subscriptions/listen stream against servers that terminate long-held streams on a fixed timeout (e.g. serverless hosts)",
+   "zh": "修复了 MCP v2 连接不断重新打开订阅/监听流的问题，这些服务器在固定超时时终止长期持有的流（例如无服务器主机）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Notification hooks not firing for permission prompts when running under Claude Desktop or VS Code",
+   "zh": "修复了在 Claude Desktop 或 VS Code 下运行时通知挂钩不会触发权限提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed idle sessions on Linux sometimes keeping one CPU core at 100% when sandboxing is enabled",
+   "zh": "修复了启用沙箱时 Linux 上的空闲会话有时会将一个 CPU 核心保持在 100% 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bundled skill aliases like `/checkup` and `/review` reporting \"Unknown command\" in `-p` mode or with plugins/MCP loaded when a user or project skill shadows the bundled skill",
+   "zh": "修复了捆绑技能别名，如`/checkup`和`/review`，在`-p`模式下或在用户或项目技能隐藏捆绑技能时加载插件/MCP时报告“未知命令”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skill/command argument substitution to prevent argument values from being re-expanded as template markers",
+   "zh": "修复了技能/命令参数替换，以防止参数值重新扩展为模板标记"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows paths spelled with the NT `\\??\\` device prefix bypassing UNC path validation, closing an NTLM credential-leak vector",
+   "zh": "修复了拼写为 NT `\\??\\` 设备前缀的 Windows 路径绕过 UNC 路径验证，从而关闭 NTLM 凭据泄漏向量"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: fixed auto mode repeatedly stopping for manual approval on ordinary `cd <dir> && <command> > file` Bash commands (a 2.1.232 regression)",
+   "zh": "Windows：修复自动模式在普通的 `cd <dir> && <command> > file` Bash 命令上反复停下来等待手动批准的问题（2.1.232 版本的回归问题）"
+  },
+  {
+   "type": "fixed",
+   "en": "Reverted the 2.1.232 Bash permission changes for Cygwin-style symlinks on Windows and for input redirections (`< file`); a narrower version will return in a later release",
+   "zh": "撤销了 2.1.232 中关于 Windows 上 Cygwin 风格符号链接和输入重定向（`< file`）的 Bash 权限变更；更窄的版本会在后续版本中回归"
+  },
+  {
+   "type": "removed",
+   "en": "Todo/task-tracking tools (TaskCreate/Get/Update/List, TodoWrite) are no longer available on Opus 4.8, Sonnet 5, Fable 5, Mythos 5, and newer models; set `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` to bring them back",
+   "zh": "待办/任务跟踪工具（TaskCreate/Get/Update/List、TodoWrite）在 Opus 4.8、Sonnet 5、Fable 5、Mythos 5 及更新的模型上不再可用；设置 `CLAUDE_CODE_ENABLE_TODO_TOOLS=1` 可重新开启"
+  }
+ ]
+}

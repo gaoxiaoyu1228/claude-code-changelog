@@ -1,0 +1,148 @@
+{
+ "version": "2.1.81",
+ "date": "2026-03-20",
+ "published": "2026-03-20T21:27:19.603Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.81",
+ "counts": {
+  "new": 2,
+  "improved": 7,
+  "fixed": 18
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `--bare` flag for scripted `-p` calls — skips hooks, LSP, plugin sync, and skill directory walks; requires `ANTHROPIC_API_KEY` or an `apiKeyHelper` via `--settings` (OAuth and keychain auth disabled); auto-memory fully disabled",
+   "zh": "为脚本化的`-p`调用添加了`--bare`标志——跳过钩子、LSP、插件同步和技能目录遍历；需要通过`--settings`设置`ANTHROPIC_API_KEY`或`apiKeyHelper`（禁用 OAuth 和钥匙串身份验证）；自动记忆功能完全禁用"
+  },
+  {
+   "type": "new",
+   "en": "Added `--channels` permission relay — channel servers that declare the permission capability can forward tool approval prompts to your phone",
+   "zh": "添加了`--channels`权限中继 - 声明权限功能的通道服务器可以将工具批准提示转发到您的手机"
+  },
+  {
+   "type": "improved",
+   "en": "Improved MCP read/search tool calls to collapse into a single \"Queried {server}\" line (expand with Ctrl+O)",
+   "zh": "改进 MCP 读取和搜索工具调用：合并为一行“Queried {server}”（按 Ctrl+O 展开）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `!` bash mode discoverability — Claude now suggests it when you need to run an interactive command",
+   "zh": "改进 `!` bash 模式的可发现性：需要运行交互式命令时，Claude 会主动建议使用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plugin freshness — ref-tracked plugins now re-clone on every load to pick up upstream changes",
+   "zh": "改进插件新鲜度：按引用跟踪的插件每次加载时都会重新克隆，以获取上游更新"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control session titles to refresh after your third message",
+   "zh": "改进远程控制会话标题：你发出第三条消息后刷新"
+  },
+  {
+   "type": "improved",
+   "en": "Updated MCP OAuth to support Client ID Metadata Document (CIMD / SEP-991) for servers without Dynamic Client Registration",
+   "zh": "MCP OAuth 现在支持 Client ID Metadata Document（CIMD / SEP-991），适用于不支持动态客户端注册的服务器"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plan mode to hide the \"clear context\" option by default (restore with `\"showClearContextOnPlanAccept\": true`)",
+   "zh": "更改计划模式以默认隐藏“清除上下文”选项（使用“showClearContextOnPlanAccept”恢复：true）"
+  },
+  {
+   "type": "improved",
+   "en": "Disabled line-by-line response streaming on Windows (including WSL in Windows Terminal) due to rendering issues",
+   "zh": "由于渲染问题，在 Windows 上禁用逐行响应流（包括 Windows 终端中的 WSL）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multiple concurrent Claude Code sessions requiring repeated re-authentication when one session refreshes its OAuth token",
+   "zh": "修复了多个并发 Claude Code 会话在一个会话刷新其 OAuth 令牌时需要重复重新身份验证的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode silently swallowing retry failures and showing a misleading \"check your network\" message instead of the actual error",
+   "zh": "修复语音模式静默吞掉重试失败，并显示误导性的\"检查网络\"信息而非实际错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode audio not recovering when the server silently drops the WebSocket connection",
+   "zh": "修复服务器静默断开 WebSocket 连接后，语音模式音频无法恢复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` not suppressing the structured-outputs beta header, causing 400 errors on proxy gateways forwarding to Vertex/Bedrock",
+   "zh": "修复了`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS`不抑制结构化输出 beta 标头，导致转发到 Vertex/Bedrock 的代理网关上出现 400 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--channels` bypass for Team/Enterprise orgs with no other managed settings configured",
+   "zh": "修复了未配置其他托管设置的团队/企业组织的`--channels`绕过问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash on Node.js 18",
+   "zh": "修复了 Node.js 18 上的崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unnecessary permission prompts for Bash commands containing dashes in strings",
+   "zh": "修复 Bash 命令的字符串中含有连字符时，出现不必要的权限提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin hooks blocking prompt submission when the plugin directory is deleted mid-session",
+   "zh": "修复了在会话中删除插件目录时插件挂钩阻止提示提交的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race condition where background agent task output could hang indefinitely when the task completed between polling intervals",
+   "zh": "修复了当任务在轮询间隔之间完成时后台代理任务输出可能无限期挂起的竞争条件"
+  },
+  {
+   "type": "fixed",
+   "en": "Resuming a session that was in a worktree now switches back to that worktree",
+   "zh": "恢复一个在 worktree 中的会话时，现在会切换回该 worktree"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/btw` not including pasted text when used during an active response",
+   "zh": "修复了在主动响应期间使用时不包括粘贴文本的`/btw`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race where fast Cmd+Tab followed by paste could beat the clipboard copy under tmux",
+   "zh": "修复了快速 Cmd+Tab 后粘贴可以击败 tmux 下的剪贴板副本的竞赛"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal tab title not updating with an auto-generated session description",
+   "zh": "修复终端标签页标题不会随自动生成的会话描述更新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed invisible hook attachments inflating the message count in transcript mode",
+   "zh": "修复了隐形钩子附件在转录模式下夸大消息计数的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions showing a generic title instead of deriving from the first prompt",
+   "zh": "修复了远程控制会话显示通用标题而不是源自第一个提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/rename` not syncing the title for Remote Control sessions",
+   "zh": "修复了`/rename`不同步远程控制会话的标题的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control `/exit` not reliably archiving the session",
+   "zh": "修复了远程控制`/exit`无法可靠地存档会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Windows PATH inheritance for Bash tool when using Git Bash (regression in v2.1.78)",
+   "zh": "[VSCode] 修复使用 Git Bash 时 Bash 工具的 Windows PATH 继承问题（v2.1.78 中的回归问题）"
+  }
+ ]
+}

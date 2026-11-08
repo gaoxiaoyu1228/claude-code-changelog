@@ -1,0 +1,32 @@
+{
+ "version": "2.0.52",
+ "date": "2025-11-24",
+ "published": "2025-11-24T23:01:06.778Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.52",
+ "counts": {
+  "improved": 1,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Permit some uses of `$!` in bash commands",
+   "zh": "允许 bash 命令中使用部分 `$!` 写法"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicate message display when starting Claude with a command line argument",
+   "zh": "修复了使用命令行参数启动 Claude 时的重复消息显示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` command progress bars to fill up as usage increases (instead of showing remaining percentage)",
+   "zh": "修复了`/usage`命令进度条，随着使用量的增加而填充（而不是显示剩余百分比）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed image pasting not working on Linux systems running Wayland (now falls back to wl-paste when xclip is unavailable)",
+   "zh": "修复了图像粘贴在运行 Wayland 的 Linux 系统上不起作用的问题（现在当 xclip 不可用时回退到 wl-paste）"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "2.1.209",
+ "date": "2026-07-14",
+ "published": "2026-07-14T04:45:37.792Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.209",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed /model and other dialogs being blocked in `claude agents` background sessions (reverts an overly broad guard)",
+   "zh": "修复了“克劳德代理”后台会话中阻止的 /model 和其他对话框（恢复过于广泛的防护）"
+  }
+ ]
+}

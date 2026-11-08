@@ -1,0 +1,153 @@
+{
+ "version": "2.1.132",
+ "date": "2026-05-06",
+ "published": "2026-05-06T19:10:04.541Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.132",
+ "counts": {
+  "new": 3,
+  "improved": 2,
+  "fixed": 23
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_SESSION_ID` environment variable to the Bash tool subprocess environment, matching the `session_id` passed to hooks",
+   "zh": "将`CLAUDE_CODE_SESSION_ID`环境变量添加到 Bash 工具子进程环境中，与传递给钩子的`session_id`相匹配"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1` env var to opt out of the fullscreen alternate-screen renderer and keep the conversation in the terminal's native scrollback",
+   "zh": "添加了`CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1`环境变量以选择退出全屏备用屏幕渲染器并将对话保留在终端的本机回滚中"
+  },
+  {
+   "type": "new",
+   "en": "Added a \"Pasting…\" footer hint while a Ctrl+V image paste is being read from the clipboard",
+   "zh": "从剪贴板读取 Ctrl+V 图像粘贴时添加了“正在粘贴...”页脚提示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved visual consistency in slash command dialogs and `/login`, `/upgrade`, `/extra-usage` dialog spacing",
+   "zh": "改进斜杠命令对话框，以及 `/login`、`/upgrade`、`/extra-usage` 对话框的间距，使视觉更统一"
+  },
+  {
+   "type": "improved",
+   "en": "Updated the `/tui fullscreen` startup banner to describe additional renderer benefits (lower memory usage, mouse support, auto-copy on select)",
+   "zh": "设置中 `/tui fullscreen` 启动横幅现在说明了更多渲染器的优点（更低内存占用、支持鼠标、选中即自动复制）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed external SIGINT (e.g. IDE stop button, `kill -INT`) not running graceful shutdown — terminal modes are now restored and the `--resume` hint is printed instead of an abrupt exit",
+   "zh": "修复了外部 SIGINT（例如 IDE 停止按钮、`kill -INT`）未运行正常关闭的问题 — 终端模式现已恢复，并打印`--resume`提示，而不是突然退出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an uncaught exception when the terminal is closed or SSH disconnects mid-session under the native build",
+   "zh": "修复了在本机构建下关闭终端或 SSH 在会话中途断开连接时未捕获的异常"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` failing with `no low surrogate in string` when a tool error truncation split an emoji; pre-corrupted sessions are sanitized on load",
+   "zh": "修复了当工具错误截断分割表情符号时`--resume`因“字符串中没有低代理项”而失败的问题；预损坏的会话在加载时被清理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--permission-mode` flag being ignored when resuming a plan-mode session with `-p --continue`/`--resume`, and plan mode not being re-applied after `ExitPlanMode` within the same session",
+   "zh": "修复了使用“-p --Continue”/`--resume`恢复计划模式会话时忽略`--permission-mode`标志，以及在同一会话中的`ExitPlanMode`之后不重新应用计划模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fullscreen mode showing a blank screen after laptop sleep/wake or Ctrl+Z/`fg` until the next keystroke or stream output",
+   "zh": "修复了笔记本电脑睡眠/唤醒或 Ctrl+Z/`fg` 后显示空白屏幕的全屏模式，直到下一次击键或流输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cursor landing mid-grapheme on Ctrl+E/A/K/U/arrow keys when an Indic conjunct or ZWJ emoji wraps across lines",
+   "zh": "修复了当印度语连词或 ZWJ 表情符号跨行换行时，光标在 Ctrl+E/A/K/U/箭头键上停留在中间字素的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim operators corrupting text containing decomposed (NFD) accented characters",
+   "zh": "修复 vim 操作符会破坏包含分解形式（NFD）重音字符的文本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasting text starting with `/` silently swallowing the input or triggering an unknown-command reply",
+   "zh": "修复了以`/`开头的粘贴文本默默吞下输入或触发未知命令回复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasting dumping stray escape sequences into the prompt when focus events or mouse-tracking reports interleave with the bracketed paste",
+   "zh": "修复了当焦点事件或鼠标跟踪报告与括号内的粘贴交错时，将杂散转义序列粘贴到提示中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mouse wheel scrolling being too fast in Cursor and VS Code 1.92–1.104 due to an upstream xterm.js bug",
+   "zh": "修复了由于上游 xterm.js 错误而导致 Cursor 和 VS Code 1.92–1.104 中鼠标滚轮滚动过快的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scroll-wheel handling in JetBrains IDE 2025.2 terminals (spurious arrow keys, wrong-direction events, runaway acceleration)",
+   "zh": "修复了 JetBrains IDE 2025.2 终端中的滚轮处理（虚假箭头键、错误方向事件、失控加速）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` Ctrl+S hanging when copying the stats screenshot to the clipboard on Linux/X11",
+   "zh": "修复了在 Linux/X11 上将统计屏幕截图复制到剪贴板时`/usage` Ctrl+S 挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/terminal-setup` showing a contradictory error in Windows Terminal — Shift+Enter is natively supported there",
+   "zh": "修复了`/terminal-setup`在 Windows 终端中显示矛盾错误的问题 — Shift+Enter 是本地支持的"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/effort` picker not reflecting the `CLAUDE_CODE_EFFORT_LEVEL` env var override",
+   "zh": "修复了`/effort`选择器不反映`CLAUDE_CODE_EFFORT_LEVEL`环境变量覆盖的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/status` showing the wrong default model for some users",
+   "zh": "修复了`/status`为某些用户显示错误的默认模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash command autocomplete popup being capped at ~3–5 visible commands instead of scaling with terminal height",
+   "zh": "修复了斜杠命令自动完成弹出窗口被限制为 ~3-5 个可见命令，而不是随终端高度缩放"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed statusline `context_window` token counts reflecting cumulative session totals instead of current context usage",
+   "zh": "修复了状态行`context_window`令牌计数，反映累积会话总数而不是当前上下文使用情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Alt+T (thinking toggle) not working on macOS terminals without \"Option as Meta\" enabled (iTerm2, Terminal.app defaults)",
+   "zh": "修复了 Alt+T（思维切换）在未启用“Option as Meta”的 macOS 终端上不起作用的问题（iTerm2、Terminal.app 默认值）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed dead keyboard input on Windows after re-opening a background session from `claude agents`",
+   "zh": "修复了从“克劳德代理”重新打开后台会话后 Windows 上无效的键盘输入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded memory growth (10GB+ RSS) when a stdio MCP server writes non-protocol data to stdout",
+   "zh": "修复 stdio MCP 服务器向 stdout 写入非协议数据时，内存无限增长（RSS 超过 10GB）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers that connect but fail `tools/list` silently showing 0 tools — they now retry once and show \"connected · tools fetch failed\" in `/mcp`",
+   "zh": "修复了连接但失败的`tools/list`服务器默默地显示 0 个工具 — 它们现在重试一次并在`/mcp`中显示“已连接·工具获取失败”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unauthorized claude.ai MCP connectors showing as \"failed\" instead of \"needs auth\", and headless `-p` mode retrying non-transient 4xx connection failures",
+   "zh": "修复未授权的 claude.ai MCP 连接器显示为\"failed\"而非\"needs auth\"的问题，以及无界面的 `-p` 模式会重试非临时性的 4xx 连接失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock and Vertex 400 errors when `ENABLE_PROMPT_CACHING_1H` is set",
+   "zh": "修复了设置`ENABLE_PROMPT_CACHING_1H`时的基岩和顶点 400 错误"
+  }
+ ]
+}

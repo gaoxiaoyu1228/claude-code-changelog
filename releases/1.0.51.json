@@ -1,0 +1,58 @@
+{
+ "version": "1.0.51",
+ "date": "2025-07-11",
+ "published": "2025-07-11T22:51:14.555Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.51",
+ "counts": {
+  "new": 5,
+  "improved": 1,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for native Windows (requires Git for Windows)",
+   "zh": "添加了对本机 Windows 的支持（Windows 需要 Git）"
+  },
+  {
+   "type": "new",
+   "en": "Added support for Bedrock API keys through environment variable AWS_BEARER_TOKEN_BEDROCK",
+   "zh": "通过环境变量 AWS_BEARER_TOKEN_BEDROCK 添加了对 Bedrock API 密钥的支持"
+  },
+  {
+   "type": "new",
+   "en": "Settings: /doctor can now help you identify and fix invalid setting files",
+   "zh": "设置：`/doctor` 现在可以帮你找出并修复无效的设置文件"
+  },
+  {
+   "type": "new",
+   "en": "`--append-system-prompt` can now be used in interactive mode, not just --print/-p.",
+   "zh": "`--append-system-prompt` 现在可用于交互模式，不再仅限于 --print/-p"
+  },
+  {
+   "type": "new",
+   "en": "OTEL resource now includes os.type, os.version, host.arch, and wsl.version (if running on Windows Subsystem for Linux)",
+   "zh": "OTEL 资源现在包含 os.type、os.version、host.arch，以及（在 Windows 子系统 Linux 中运行时的）wsl.version"
+  },
+  {
+   "type": "improved",
+   "en": "Increased auto-compact warning threshold from 60% to 80%",
+   "zh": "将自动压缩警告阈值从 60% 提高到 80%"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue with handling user directories with spaces for shell snapshots",
+   "zh": "修复了处理带有 shell 快照空间的用户目录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Custom slash commands: Fixed user-level commands in subdirectories",
+   "zh": "自定义斜杠命令：修复了子目录中的用户级命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Plan mode: Fixed issue where rejected plan from sub-task would get discarded",
+   "zh": "计划模式：修复了子任务中被拒绝的计划会被丢弃的问题"
+  }
+ ]
+}

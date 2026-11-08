@@ -1,0 +1,21 @@
+{
+ "version": "1.0.126",
+ "date": "2025-09-26",
+ "published": "2025-09-26T00:59:58.155Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.126",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Enable /context command for Bedrock and Vertex",
+   "zh": "为基岩和顶点启用 /context 命令"
+  },
+  {
+   "type": "new",
+   "en": "Add mTLS support for HTTP-based OpenTelemetry exporters",
+   "zh": "为基于 HTTP 的 OpenTelemetry 导出器添加 mTLS 支持"
+  }
+ ]
+}

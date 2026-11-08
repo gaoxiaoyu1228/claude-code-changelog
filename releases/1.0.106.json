@@ -1,0 +1,16 @@
+{
+ "version": "1.0.106",
+ "date": "2025-09-04",
+ "published": "2025-09-04T23:22:21.845Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.106",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed path permission matching to consistently use POSIX format (e.g., `Read(//c/Users/...)`)",
+   "zh": "Windows：路径权限匹配统一使用 POSIX 格式（如 `Read(//c/Users/...)`）"
+  }
+ ]
+}

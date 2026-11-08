@@ -1,0 +1,48 @@
+{
+ "version": "2.1.10",
+ "date": "2026-01-17",
+ "published": "2026-01-17T00:11:29.352Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.10",
+ "counts": {
+  "new": 4,
+  "improved": 2,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added new `Setup` hook event that can be triggered via `--init`, `--init-only`, or `--maintenance` CLI flags for repository setup and maintenance operations",
+   "zh": "添加了新的`Setup`挂钩事件，可以通过`--init`、`--init-only`或`--maintenance` CLI 标志触发，以进行存储库设置和维护操作"
+  },
+  {
+   "type": "new",
+   "en": "Added keyboard shortcut 'c' to copy OAuth URL when browser doesn't open automatically during login",
+   "zh": "添加了键盘快捷键“c”，用于在登录期间浏览器未自动打开时复制 OAuth URL"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added install count display to plugin listings",
+   "zh": "[VSCode] 插件列表中显示安装次数"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added trust warning when installing plugins",
+   "zh": "[VSCode] 安装插件时新增信任警告"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup to capture keystrokes typed before the REPL is fully ready",
+   "zh": "改进启动：REPL 完全就绪前输入的按键也能被捕获"
+  },
+  {
+   "type": "improved",
+   "en": "Improved file suggestions to show as removable attachments instead of inserting text when accepted",
+   "zh": "改进文件建议：接受后以可移除的附件形式出现，而不是直接插入文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when running bash commands containing heredocs with JavaScript template literals like `${index + 1}`",
+   "zh": "修复了运行包含带有 JavaScript 模板文字（如`${index + 1}`）的 heredocs 的 bash 命令时发生的崩溃"
+  }
+ ]
+}

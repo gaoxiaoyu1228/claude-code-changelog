@@ -1,0 +1,16 @@
+{
+ "version": "2.1.96",
+ "date": "2026-04-08",
+ "published": "2026-04-08T04:32:44.614Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.96",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock requests failing with `403 \"Authorization header is missing\"` when using `AWS_BEARER_TOKEN_BEDROCK` or `CLAUDE_CODE_SKIP_BEDROCK_AUTH` (regression in 2.1.94)",
+   "zh": "修复了使用`AWS_BEARER_TOKEN_BEDROCK`或`CLAUDE_CODE_SKIP_BEDROCK_AUTH`时基岩请求失败并显示“403“授权标头丢失””的问题（2.1.94 中的回归）"
+  }
+ ]
+}

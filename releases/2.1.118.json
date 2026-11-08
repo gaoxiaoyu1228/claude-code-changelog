@@ -1,0 +1,183 @@
+{
+ "version": "2.1.118",
+ "date": "2026-04-22",
+ "published": "2026-04-22T23:48:56.690Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.118",
+ "counts": {
+  "new": 8,
+  "improved": 5,
+  "fixed": 21
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added vim visual mode (`v`) and visual-line mode (`V`) with selection, operators, and visual feedback",
+   "zh": "添加了带有选择、操作符和视觉反馈的 vim 视觉模式 (`v`) 和视觉线模式 (`V`)"
+  },
+  {
+   "type": "new",
+   "en": "Create and switch between named custom themes from `/theme`, or hand-edit JSON files in `~/.claude/themes/`; plugins can also ship themes via a `themes/` directory",
+   "zh": "从 `/theme` 创建并切换命名的自定义主题，或在 `~/.claude/themes/` 中手动编辑 JSON 文件；插件还可以通过`themes/`目录发送主题"
+  },
+  {
+   "type": "new",
+   "en": "Hooks can now invoke MCP tools directly via `type: \"mcp_tool\"`",
+   "zh": "Hooks 现在可以通过 `type: \"mcp_tool\"` 直接调用 MCP 工具"
+  },
+  {
+   "type": "new",
+   "en": "Added `DISABLE_UPDATES` env var to completely block all update paths including manual `claude update` — stricter than `DISABLE_AUTOUPDATER`",
+   "zh": "添加了`DISABLE_UPDATES`环境变量以完全阻止所有更新路径，包括手动`claude update`——比`DISABLE_AUTOUPDATER`更严格"
+  },
+  {
+   "type": "new",
+   "en": "WSL on Windows can now inherit Windows-side managed settings via the `wslInheritsWindowsSettings` policy key",
+   "zh": "WSL 上可通过 `wslInheritsWindowsSettings` 策略键，继承 Windows 端的托管设置"
+  },
+  {
+   "type": "new",
+   "en": "Auto mode: include `\"$defaults\"` in `autoMode.allow`, `autoMode.soft_deny`, or `autoMode.environment` to add custom rules alongside the built-in list instead of replacing it",
+   "zh": "自动模式：在 `autoMode.allow`、`autoMode.soft_deny` 或 `autoMode.environment` 中包含 `\"$defaults\"` 以在内置列表旁边添加自定义规则，而不是替换它"
+  },
+  {
+   "type": "new",
+   "en": "Added a \"Don't ask again\" option to the auto mode opt-in prompt",
+   "zh": "在自动模式选择提示中添加了“不再询问”选项"
+  },
+  {
+   "type": "new",
+   "en": "Added `claude plugin tag` to create release git tags for plugins with version validation",
+   "zh": "添加了“claude 插件标签”，为具有版本验证的插件创建发布 git 标签"
+  },
+  {
+   "type": "improved",
+   "en": "Merged `/cost` and `/stats` into `/usage` — both remain as typing shortcuts that open the relevant tab",
+   "zh": "将 `/cost` 和 `/stats` 合并进 `/usage`，两者仍保留为输入快捷方式，会打开对应的标签页"
+  },
+  {
+   "type": "improved",
+   "en": "`--continue`/`--resume` now find sessions that added the current directory via `/add-dir`",
+   "zh": "`--continue`/`--resume` 现在能找到通过 `/add-dir` 把当前目录加入过的会话"
+  },
+  {
+   "type": "improved",
+   "en": "`/color` now syncs the session accent color to claude.ai/code when Remote Control is connected",
+   "zh": "Remote Control 连接时，`/color` 现在会把会话的强调色同步到 claude.ai/code"
+  },
+  {
+   "type": "improved",
+   "en": "The `/model` picker now honors `ANTHROPIC_DEFAULT_*_MODEL_NAME`/`_DESCRIPTION` overrides when using a custom `ANTHROPIC_BASE_URL` gateway",
+   "zh": "使用自定义 `ANTHROPIC_BASE_URL` 网关时，`/model` 选择器现在会遵守 `ANTHROPIC_DEFAULT_*_MODEL_NAME`/`_DESCRIPTION` 覆盖设置"
+  },
+  {
+   "type": "improved",
+   "en": "When auto-update skips a plugin due to another plugin's version constraint, the skip now appears in `/doctor` and the `/plugin` Errors tab",
+   "zh": "自动更新因另一插件的版本约束跳过某插件时，该跳过情况现在会显示在 `/doctor` 和 `/plugin` 的错误标签页中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/mcp` menu hiding OAuth Authenticate/Re-authenticate actions for servers configured with `headersHelper`, and HTTP/SSE MCP servers with custom headers being stuck in \"needs authentication\" after a transient 401",
+   "zh": "修复了`/mcp`菜单隐藏配置了`headersHelper`的服务器的 OAuth 身份验证/重新身份验证操作，以及具有自定义标头的 HTTP/SSE MCP 服务器在瞬时 401 后陷入“需要身份验证”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers whose OAuth token response omits `expires_in` requiring re-authentication every hour",
+   "zh": "修复了 OAuth 令牌响应忽略`expires_in`的 MCP 服务器，需要每小时重新进行身份验证"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP step-up authorization silently refreshing instead of prompting for re-consent when the server's `insufficient_scope` 403 names a scope the current token already has",
+   "zh": "修复了当服务器的`insufficient_scope` 403 命名当前令牌已具有的范围时，MCP 逐步授权以静默方式刷新而不是提示重新同意的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an unhandled promise rejection when an MCP server's OAuth flow times out or is cancelled",
+   "zh": "修复了 MCP 服务器的 OAuth 流超时或取消时未处理的承诺拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth refresh proceeding without its cross-process lock under contention",
+   "zh": "修复了 MCP OAuth 刷新过程，且没有争用的跨进程锁定"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed macOS keychain race where a concurrent MCP token refresh could overwrite a freshly-refreshed OAuth token, causing unexpected \"Please run /login\" prompts",
+   "zh": "修复了 macOS 钥匙串竞争，其中并发 MCP 令牌刷新可能会覆盖新刷新的 OAuth 令牌，导致意外的“请运行/登录”提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OAuth token refresh failing when the server revokes a token before its local expiry time",
+   "zh": "修复了当服务器在本地到期时间之前撤销令牌时 OAuth 令牌刷新失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed credential save crash on Linux/Windows corrupting `~/.claude/.credentials.json`",
+   "zh": "修复了 Linux/Windows 上的凭证保存崩溃损坏 `~/.claude/.credentials.json` 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/login` having no effect in a session launched with `CLAUDE_CODE_OAUTH_TOKEN` — the env token is now cleared so disk credentials take effect",
+   "zh": "修复了`/login`在使用`CLAUDE_CODE_OAUTH_TOKEN`启动的会话中无效的问题 — env 令牌现已被清除，以便磁盘凭据生效"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unreadable text in the \"new messages\" scroll pill and `/plugin` badges",
+   "zh": "修复\"新消息\"滚动提示和 `/plugin` 徽章中的文字难以辨认的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan acceptance dialog offering \"auto mode\" instead of \"bypass permissions\" when running with `--dangerously-skip-permissions`",
+   "zh": "修复了使用`--dangerously-skip-permissions`运行时提供“自动模式”而不是“绕过权限”的计划接受对话框"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent-type hooks failing with \"Messages are required for agent hooks\" when configured for events other than `Stop` or `SubagentStop`",
+   "zh": "修复了为`Stop`或`SubagentStop`以外的事件配置时，代理类型挂钩失败并显示“代理挂钩需要消息”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `prompt` hooks re-firing on tool calls made by an agent-hook verifier subagent",
+   "zh": "修复了代理挂钩验证程序子代理发出的工具调用时重新触发“提示”挂钩的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/fork` writing the full parent conversation to disk per fork — now writes a pointer and hydrates on read",
+   "zh": "修复了`/fork`将完整的父级对话写入每个 fork 的磁盘的问题 - 现在写入一个指针并在读取时进行水合"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Alt+K / Alt+X / Alt+^ / Alt+_ freezing keyboard input",
+   "zh": "修复了 Alt+K / Alt+X / Alt+^ / Alt+_ 冻结键盘输入的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed connecting to a remote session overwriting your local `model` setting in `~/.claude/settings.json`",
+   "zh": "修复了连接到远程会话覆盖`~/.claude/settings.json`中的本地`model`设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed typeahead showing \"No commands match\" error when pasting file paths that start with `/`",
+   "zh": "修复粘贴以 `/` 开头的文件路径时，类型预览显示\"No commands match\"错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `plugin install` on an already-installed plugin not re-resolving a dependency installed at the wrong version",
+   "zh": "修复了已安装插件上的“插件安装”未重新解析以错误版本安装的依赖项"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unhandled errors from file watcher on invalid paths or fd exhaustion",
+   "zh": "修复文件监视器在无效路径或文件描述符耗尽时出现未处理错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions getting archived on transient CCR initialization blips during JWT refresh",
+   "zh": "修复了 JWT 刷新期间在瞬态 CCR 初始化点上存档远程控制会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents resumed via `SendMessage` not restoring the explicit `cwd` they were spawned with",
+   "zh": "修复了通过`SendMessage`恢复的子代理不恢复它们生成的显式`cwd`的问题"
+  }
+ ]
+}

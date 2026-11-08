@@ -1,0 +1,22 @@
+{
+ "version": "0.2.37",
+ "date": "2025-03-11",
+ "published": "2025-03-11T20:49:25.325Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.37",
+ "counts": {
+  "new": 1,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "New /release-notes command lets you view release notes at any time",
+   "zh": "新增 /release-notes 命令，随时查看更新日志"
+  },
+  {
+   "type": "improved",
+   "en": "`claude config add/remove` commands now accept multiple values separated by commas or spaces",
+   "zh": "`claude config add/remove` 命令现在可接受用逗号或空格分隔的多个值"
+  }
+ ]
+}

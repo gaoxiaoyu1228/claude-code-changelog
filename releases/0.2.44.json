@@ -1,0 +1,16 @@
+{
+ "version": "0.2.44",
+ "date": "2025-03-15",
+ "published": "2025-03-15T01:04:24.513Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.44",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Ask Claude to make a plan with thinking mode: just say 'think' or 'think harder' or even 'ultrathink'",
+   "zh": "让克劳德用思维模式制定计划：只需说“思考”或“更努力地思考”甚至“超思考”"
+  }
+ ]
+}

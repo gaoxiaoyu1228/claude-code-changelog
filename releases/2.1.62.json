@@ -1,0 +1,16 @@
+{
+ "version": "2.1.62",
+ "date": "2026-02-27",
+ "published": "2026-02-27T01:24:31.775Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.62",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed prompt suggestion cache regression that reduced cache hit rates",
+   "zh": "修复了提示建议缓存回归，降低了缓存命中率"
+  }
+ ]
+}

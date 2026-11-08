@@ -1,0 +1,178 @@
+{
+ "version": "2.1.110",
+ "date": "2026-04-15",
+ "published": "2026-04-15T20:40:53.190Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.110",
+ "counts": {
+  "new": 5,
+  "improved": 8,
+  "fixed": 20
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `/tui` command and `tui` setting — run `/tui fullscreen` to switch to flicker-free rendering in the same conversation",
+   "zh": "添加了`/tui`命令和`tui`设置 - 运行`/tui fullscreen`以在同一对话中切换到无闪烁渲染"
+  },
+  {
+   "type": "new",
+   "en": "Added push notification tool — Claude can send mobile push notifications when Remote Control and \"Push when Claude decides\" config are enabled",
+   "zh": "添加了推送通知工具 - 当启用远程控制和“克劳德决定时推送”配置时，克劳德可以发送移动推送通知"
+  },
+  {
+   "type": "new",
+   "en": "Added `autoScrollEnabled` config to disable conversation auto-scroll in fullscreen mode",
+   "zh": "添加了`autoScrollEnabled`配置以禁用全屏模式下的对话自动滚动"
+  },
+  {
+   "type": "new",
+   "en": "Added option to show Claude's last response as commented context in the `Ctrl+G` external editor (enable via `/config`)",
+   "zh": "添加了在`Ctrl+G`外部编辑器中将克劳德的最后响应显示为注释上下文的选项（通过`/config`启用）"
+  },
+  {
+   "type": "new",
+   "en": "SDK/headless sessions now read `TRACEPARENT`/`TRACESTATE` from the environment for distributed trace linking",
+   "zh": "SDK 和无界面会话现在会从环境变量中读取 `TRACEPARENT`/`TRACESTATE`，用于分布式追踪关联"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `Ctrl+O` to toggle between normal and verbose transcript only; focus view is now toggled separately with the new `/focus` command",
+   "zh": "更改了`Ctrl+O`以仅在正常和详细记录之间切换；现在可以使用新的`/focus`命令单独切换焦点视图"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/plugin` Installed tab — items needing attention and favorites appear at the top, disabled items are hidden behind a fold, and `f` favorites the selected item",
+   "zh": "改进 `/plugin` 的“Installed”标签页：需要注意的项和收藏项置顶，已禁用的项收进折叠区；按 `f` 可收藏所选项"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/doctor` to warn when an MCP server is defined in multiple config scopes with different endpoints",
+   "zh": "改进 `/doctor`：同一个 MCP 服务器在多个配置范围中定义且端点不同时，会给出警告"
+  },
+  {
+   "type": "improved",
+   "en": "`--resume`/`--continue` now resurrects unexpired scheduled tasks",
+   "zh": "`--resume`/`--continue` 现在会恢复尚未过期的定时任务"
+  },
+  {
+   "type": "improved",
+   "en": "`/context`, `/exit`, and `/reload-plugins` now work from Remote Control (mobile/web) clients",
+   "zh": "`/context`、`/exit` 和 `/reload-plugins` 现在可在 Remote Control（手机/网页）客户端中使用"
+  },
+  {
+   "type": "improved",
+   "en": "Write tool now informs the model when you edit the proposed content in the IDE diff before accepting",
+   "zh": "Write 工具现在会在你接受前、于 IDE 差异视图中修改了提议内容时，告知模型"
+  },
+  {
+   "type": "improved",
+   "en": "Bash tool now enforces the documented maximum timeout instead of accepting arbitrarily large values",
+   "zh": "Bash 工具现在强制执行记录的最大超时，而不是接受任意大的值"
+  },
+  {
+   "type": "improved",
+   "en": "Session recap is now enabled for users with telemetry disabled (Bedrock, Vertex, Foundry, `DISABLE_TELEMETRY`). Opt out via `/config` or `CLAUDE_CODE_ENABLE_AWAY_SUMMARY=0`.",
+   "zh": "现在为禁用了遥测的用户（Bedrock、Vertex、Foundry，或设置了 `DISABLE_TELEMETRY`）启用会话回顾。可在 `/config` 或通过 `CLAUDE_CODE_ENABLE_AWAY_SUMMARY=0` 关闭"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool calls hanging indefinitely when the server connection drops mid-response on SSE/HTTP transports",
+   "zh": "修复了当服务器连接在 SSE/HTTP 传输上响应中途中断时 MCP 工具调用无限期挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed non-streaming fallback retries causing multi-minute hangs when the API is unreachable",
+   "zh": "修复了当 API 无法访问时非流回退重试导致多分钟挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session recap, local slash-command output, and other system status lines not appearing in focus mode",
+   "zh": "修复了会话回顾、本地斜杠命令输出和其他系统状态行在焦点模式下不出现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed high CPU usage in fullscreen when text is selected while a tool is running",
+   "zh": "修复了在工具运行时选择文本时全屏 CPU 使用率较高的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin install not honoring dependencies declared in `plugin.json` when the marketplace entry omits them; `/plugin` install now lists auto-installed dependencies",
+   "zh": "修复了当市场条目忽略`plugin.json`中声明的依赖项时插件安装不遵守的问题； `/plugin` install 现在列出自动安装的依赖项"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills with `disable-model-invocation: true` failing when invoked via `/<skill>` mid-message",
+   "zh": "修复了通过`/<skill>`消息中调用时“disable-model-inspiration: true”的技能失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` sometimes showing the first prompt instead of the `/rename` name for sessions still running or exited uncleanly",
+   "zh": "修复了`--resume`有时会显示第一个提示，而不是仍在运行或不正常退出的会话的`/rename`名称"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed queued messages briefly appearing twice during multi-tool-call turns",
+   "zh": "修复了多工具调用期间排队消息短暂出现两次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session cleanup not removing the full session directory including subagent transcripts",
+   "zh": "修复了会话清理不会删除完整会话目录（包括子代理记录）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed dropped keystrokes after the CLI relaunches (e.g. `/tui`, provider setup wizards)",
+   "zh": "修复了 CLI 重新启动后按键丢失的问题（例如 `/tui`、提供程序设置向导）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed garbled startup rendering in macOS Terminal.app and other terminals that don't support synchronized output",
+   "zh": "修复了 macOS Terminal.app 和其他不支持同步输出的终端中的乱码启动渲染"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened \"Open in editor\" actions against command injection from untrusted filenames",
+   "zh": "加固“在编辑器中打开”功能，防止不可信文件名引发命令注入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `PermissionRequest` hooks returning `updatedInput` not being re-checked against `permissions.deny` rules; `setMode:'bypassPermissions'` updates now respect `disableBypassPermissionsMode`",
+   "zh": "修复了返回`updatedInput`的`PermissionRequest`挂钩未根据`permissions.deny`规则重新检查的问题； `setMode:'bypassPermissions'` 更新现在遵循 `disableBypassPermissionsMode`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `PreToolUse` hook `additionalContext` being dropped when the tool call fails",
+   "zh": "修复了工具调用失败时删除`PreToolUse`挂钩`additionalContext`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stdio MCP servers that print stray non-JSON lines to stdout being disconnected on the first stray line (regression in 2.1.105)",
+   "zh": "修复了将杂散非 JSON 行打印到 stdout 的 stdio MCP 服务器在第一个杂散行上断开连接的问题（2.1.105 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed headless/SDK session auto-title firing an extra Haiku request when `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` or `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` is set",
+   "zh": "修复了当设置`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`或`CLAUDE_CODE_DISABLE_TERMINAL_TITLE`时无头/SDK 会话自动标题触发额外俳句请求的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed potential excessive memory allocation when piped (non-TTY) Ink output contains a single very wide line",
+   "zh": "修复了管道（非 TTY）墨水输出包含单个非常宽的行时潜在的过多内存分配"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/skills` menu not scrolling when the list overflows the modal in fullscreen mode",
+   "zh": "修复了全屏模式下列表溢出模式时`/skills`菜单不滚动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions showing a generic error instead of prompting for re-login when the session is too old",
+   "zh": "修复了远程控制会话在会话太旧时显示一般错误而不是提示重新登录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control session renames from claude.ai not persisting the title to the local CLI session",
+   "zh": "修复了 claude.ai 的远程控制会话重命名未将标题保留到本地 CLI 会话的问题"
+  }
+ ]
+}

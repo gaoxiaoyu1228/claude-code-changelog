@@ -1,0 +1,234 @@
+{
+ "version": "2.1.77",
+ "date": "2026-03-16",
+ "published": "2026-03-16T22:16:52.510Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.77",
+ "counts": {
+  "new": 3,
+  "improved": 12,
+  "fixed": 28,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `allowRead` sandbox filesystem setting to re-allow read access within `denyRead` regions",
+   "zh": "添加了`allowRead`沙箱文件系统设置以重新允许`denyRead`区域内的读取访问"
+  },
+  {
+   "type": "new",
+   "en": "`/copy` now accepts an optional index: `/copy N` copies the Nth-latest assistant response",
+   "zh": "`/copy` 现在可接受可选序号：`/copy N` 会复制倒数第 N 条 assistant 回复"
+  },
+  {
+   "type": "new",
+   "en": "Show a notice when `apiKeyHelper` takes longer than 10s, preventing it from blocking the main loop",
+   "zh": "`apiKeyHelper` 耗时超过 10 秒时显示提示，避免阻塞主循环"
+  },
+  {
+   "type": "improved",
+   "en": "Increased default maximum output token limits for Claude Opus 4.6 to 64k tokens, and the upper bound for Opus 4.6 and Sonnet 4.6 models to 128k tokens",
+   "zh": "将 Claude Opus 4.6 的默认最大输出 token 上限提高到 64k，Opus 4.6 和 Sonnet 4.6 模型的上限提高到 128k"
+  },
+  {
+   "type": "improved",
+   "en": "Faster startup on macOS (~60ms) by reading keychain credentials in parallel with module loading",
+   "zh": "通过在模块加载的同时读取钥匙串凭证，在 macOS 上启动速度更快（约 60 毫秒）"
+  },
+  {
+   "type": "improved",
+   "en": "Faster `--resume` on fork-heavy and very large sessions — up to 45% faster loading and ~100-150MB less peak memory",
+   "zh": "在 fork 繁重和非常大的会话上更快的`--resume`——加载速度提高了 45%，峰值内存减少了约 100-150MB"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Esc to abort in-flight non-streaming API requests",
+   "zh": "改进 Esc 中断：可以中止正在进行中的非流式 API 请求"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `claude plugin validate` to check skill, agent, and command frontmatter plus `hooks/hooks.json`, catching YAML parse errors and schema violations",
+   "zh": "改进 `claude plugin validate`：检查技能、代理和命令的 frontmatter，以及 `hooks/hooks.json`，能发现 YAML 解析错误和结构违规"
+  },
+  {
+   "type": "improved",
+   "en": "Background bash tasks are now killed if output exceeds 5GB, preventing runaway processes from filling disk",
+   "zh": "现在，如果输出超过 5GB，后台 bash 任务将被终止，从而防止失控进程填满磁盘"
+  },
+  {
+   "type": "improved",
+   "en": "Sessions are now auto-named from plan content when you accept a plan",
+   "zh": "接受计划时，会话会根据计划内容自动命名"
+  },
+  {
+   "type": "improved",
+   "en": "Improved headless mode plugin installation to compose correctly with `CLAUDE_CODE_PLUGIN_SEED_DIR`",
+   "zh": "改进无界面模式下的插件安装，使其能与 `CLAUDE_CODE_PLUGIN_SEED_DIR` 正确配合"
+  },
+  {
+   "type": "improved",
+   "en": "`SendMessage` now auto-resumes stopped agents in the background instead of returning an error",
+   "zh": "`SendMessage` 现在会在后台自动恢复已停止的 agent，而不是返回错误"
+  },
+  {
+   "type": "improved",
+   "en": "Renamed `/fork` to `/branch` (`/fork` still works as an alias)",
+   "zh": "`/fork` 改名为 `/branch`（`/fork` 仍可作为别名使用）"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Improved plan preview tab titles to use the plan's heading instead of \"Claude's Plan\"",
+   "zh": "[VSCode] 改进计划预览标签页的标题：使用计划的标题，而不是 \"Claude's Plan\""
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] When option+click doesn't trigger native selection on macOS, the footer now points to the `macOptionClickForcesSelection` setting",
+   "zh": "[VSCode] 当 macOS 上按住 option 点击未触发原生选择时，页脚现在会指向 `macOptionClickForcesSelection` 设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Always Allow\" on compound bash commands (e.g. `cd src && npm test`) saving a single rule for the full string instead of per-subcommand, leading to dead rules and repeated permission prompts",
+   "zh": "修复了复合 bash 命令（例如 `cd src && npm test`）上的“始终允许”，为完整字符串而不是每个子命令保存单个规则，导致死规则和重复的权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto-updater starting overlapping binary downloads when the slash-command overlay repeatedly opened and closed, accumulating tens of gigabytes of memory",
+   "zh": "修复了当斜杠命令覆盖重复打开和关闭时自动更新程序开始重叠二进制下载，累积数十 GB 内存的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` silently truncating recent conversation history due to a race between memory-extraction writes and the main transcript",
+   "zh": "修复了由于内存提取写入和主记录之间的竞争而导致`--resume`默默截断最近的对话历史记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PreToolUse hooks returning `\"allow\"` bypassing `deny` permission rules, including enterprise managed settings",
+   "zh": "修复了 PreToolUse 挂钩绕过“拒绝”权限规则返回“允许”的问题，包括企业托管设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Write tool silently converting line endings when overwriting CRLF files or creating files in CRLF directories",
+   "zh": "修复了写入工具在覆盖 CRLF 文件或在 CRLF 目录中创建文件时以静默方式转换行结尾的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory growth in long-running sessions from progress messages surviving compaction",
+   "zh": "修复了长期运行会话中因压缩中幸存的进度消息而导致的内存增长问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cost and token usage not being tracked when the API falls back to non-streaming mode",
+   "zh": "修复了当 API 回退到非流模式时无法跟踪成本和令牌使用情况的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` not stripping beta tool-schema fields, causing proxy gateways to reject requests",
+   "zh": "修复了`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS`不剥离测试工具架构字段，导致代理网关拒绝请求的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash tool reporting errors for successful commands when the system temp directory path contains spaces",
+   "zh": "修复了当系统临时目录路径包含空格时 Bash 工具报告成功命令的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed paste being lost when typing immediately after pasting",
+   "zh": "修复了粘贴后立即输入时粘贴丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+D in `/feedback` text input deleting forward instead of the second press exiting the session",
+   "zh": "修复了`/feedback`文本输入中的 Ctrl+D 向前删除而不是按第二次退出会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API error when dragging a 0-byte image file into the prompt",
+   "zh": "修复了将 0 字节图像文件拖入提示时出现的 API 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Desktop sessions incorrectly using the terminal CLI's configured API key instead of OAuth",
+   "zh": "修复了 Claude Desktop 会话错误地使用终端 CLI 配置的 API 密钥而不是 OAuth 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `git-subdir` plugins at different subdirectories of the same monorepo commit colliding in the plugin cache",
+   "zh": "修复了同一 monorepo 提交的不同子目录中的`git-subdir`插件在插件缓存中发生冲突的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ordered list numbers not rendering in terminal UI",
+   "zh": "修复了终端 UI 中未呈现的有序列表编号"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race condition where stale-worktree cleanup could delete an agent worktree just resumed from a previous crash",
+   "zh": "修复了一个竞争条件，其中陈旧工作树清理可能会删除刚刚从上次崩溃中恢复的代理工作树"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed input deadlock when opening `/mcp` or similar dialogs while the agent is running",
+   "zh": "修复了代理运行时打开`/mcp`或类似对话框时的输入死锁"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Backspace and Delete keys not working in vim NORMAL mode",
+   "zh": "修复了退格键和删除键在 vim NORMAL 模式下不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed status line not updating when vim mode is toggled on or off",
+   "zh": "修复了打开或关闭 vim 模式时状态行不更新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hyperlinks opening twice on Cmd+click in VS Code, Cursor, and other xterm.js-based terminals",
+   "zh": "修复了在 VS Code、Cursor 和其他基于 xterm.js 的终端中，在 Cmd+click 上打开两次超链接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background colors rendering as terminal-default inside tmux with default configuration",
+   "zh": "修复了使用默认配置在 tmux 内将背景颜色渲染为终端默认的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed iTerm2 session crash when selecting text inside tmux over SSH",
+   "zh": "修复了通过 SSH 在 tmux 内选择文本时 iTerm2 会话崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clipboard copy silently failing in tmux sessions; copy toast now indicates whether to paste with `⌘V` or tmux `prefix+]`",
+   "zh": "修复了 tmux 会话中剪贴板复制静默失败的问题；复制 toast 现在指示是否使用 `⌘V` 或 tmux `prefix+]` 进行粘贴"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `←`/`→` accidentally switching tabs in settings, permissions, and sandbox dialogs while navigating lists",
+   "zh": "修复了导航列表时`←`/`→`意外切换设置、权限和沙箱对话框中的选项卡的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed IDE integration not auto-connecting when Claude Code is launched inside tmux or screen",
+   "zh": "修复了当 Claude Code 在 tmux 或屏幕内启动时 IDE 集成不会自动连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed CJK characters visually bleeding into adjacent UI elements when clipped at the right edge",
+   "zh": "修复了 CJK 字符在右边缘被剪切时视觉上渗入相邻 UI 元素的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed teammate panes not closing when the leader exits",
+   "zh": "修复负责人退出时，队友窗格没有关闭的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed iTerm2 auto mode not detecting iTerm2 for native split-pane teammates",
+   "zh": "修复了 iTerm2 自动模式未检测到本机拆分窗格队友的 iTerm2"
+  },
+  {
+   "type": "removed",
+   "en": "The Agent tool no longer accepts a `resume` parameter — use `SendMessage({to: agentId})` to continue a previously spawned agent",
+   "zh": "Agent 工具不再接受 `resume` 参数；如需继续之前启动的代理，请使用 `SendMessage({to: agentId})`"
+  }
+ ]
+}

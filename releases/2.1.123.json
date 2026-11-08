@@ -1,0 +1,16 @@
+{
+ "version": "2.1.123",
+ "date": "2026-04-29",
+ "published": "2026-04-29T01:52:47.690Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.123",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed OAuth authentication failing with a 401 retry loop when `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` is set",
+   "zh": "修复了设置`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1`时 OAuth 身份验证失败并出现 401 重试循环的问题"
+  }
+ ]
+}

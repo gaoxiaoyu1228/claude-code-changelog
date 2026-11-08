@@ -1,0 +1,48 @@
+{
+ "version": "1.0.68",
+ "date": "2025-08-04",
+ "published": "2025-08-04T21:14:18.850Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.68",
+ "counts": {
+  "new": 2,
+  "improved": 3,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "SDK: Added canUseTool callback support for tool confirmation",
+   "zh": "SDK：新增用于工具确认的 `canUseTool` 回调支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `disableAllHooks` setting",
+   "zh": "添加了 `disableAllHooks` 设置"
+  },
+  {
+   "type": "improved",
+   "en": "Windows: improve permissions checks for allow / deny tools and project trust. This may create a new project entry in `.claude.json` - manually merge the history field if desired.",
+   "zh": "Windows：改进允许/拒绝工具和项目信任的权限检查。这可能会在 `.claude.json` 中新建一个项目条目，如需保留，请手动合并 history 字段"
+  },
+  {
+   "type": "improved",
+   "en": "Enhanced /doctor command with CLAUDE.md and MCP tool context for self-serve debugging",
+   "zh": "带有 CLAUDE.md 和 MCP 工具上下文的增强 /doctor 命令，用于自助调试"
+  },
+  {
+   "type": "improved",
+   "en": "Improved file suggestions performance in large repos",
+   "zh": "改进大型仓库中的文件建议性能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix incorrect model names being used for certain commands like `/pr-comments`",
+   "zh": "修复某些命令使用的不正确的模型名称，例如`/pr-comments`"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: improve sub-process spawning to eliminate \"No such file or directory\" when running commands like pnpm",
+   "zh": "Windows：改进子进程启动方式，消除运行 pnpm 等命令时出现的 \"No such file or directory\" 报错"
+  }
+ ]
+}

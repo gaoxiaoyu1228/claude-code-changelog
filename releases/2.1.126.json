@@ -1,0 +1,174 @@
+{
+ "version": "2.1.126",
+ "date": "2026-04-30",
+ "published": "2026-04-30T20:30:34.530Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.126",
+ "counts": {
+  "new": 3,
+  "improved": 6,
+  "fixed": 22,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "The `/model` picker now lists models from your gateway's `/v1/models` endpoint when `ANTHROPIC_BASE_URL` points at an Anthropic-compatible gateway",
+   "zh": "当 `ANTHROPIC_BASE_URL` 指向兼容 Anthropic 的网关时，`/model` 选择器会列出网关 `/v1/models` 接口返回的模型"
+  },
+  {
+   "type": "new",
+   "en": "- Added `claude project purge [path]` to delete all Claude Code state for a project (transcripts, tasks, file history, config entry) — supports `--dry-run`, `-y/--yes`, `-i/--interactive`, and `--all`",
+   "zh": "- 添加了`claude project purge [path]`以删除项目的所有 Claude 代码状态（脚本、任务、文件历史记录、配置条目）——支持`--dry-run`、`-y/--yes`、`-i/--interactive`和`--all`"
+  },
+  {
+   "type": "new",
+   "en": "`claude auth login` now accepts the OAuth code pasted into the terminal when the browser callback can't reach localhost (WSL2, SSH, containers)",
+   "zh": "当浏览器回调无法连接 localhost 时（WSL2、SSH、容器），`claude auth login` 现在可以接受粘贴到终端中的 OAuth 代码"
+  },
+  {
+   "type": "improved",
+   "en": "`--dangerously-skip-permissions` now bypasses prompts for writes to `.claude/`, `.git/`, `.vscode/`, shell config files, and other previously-protected paths (catastrophic removal commands still prompt as a safety net)",
+   "zh": "`--dangerously-skip-permissions` 现在会跳过对 `.claude/`、`.git/`、`.vscode/`、shell 配置文件及其他原先受保护路径的写入提示（灾难性的删除命令仍会提示，作为安全兜底）"
+  },
+  {
+   "type": "improved",
+   "en": "`claude_code.skill_activated` OpenTelemetry event now fires for user-typed slash commands and carries a new `invocation_trigger` attribute (`\"user-slash\"`, `\"claude-proactive\"`, or `\"nested-skill\"`)",
+   "zh": "用户手动输入的斜杠命令现在会触发 `claude_code.skill_activated` OpenTelemetry 事件，并带有新属性 `invocation_trigger`（`\"user-slash\"`、`\"claude-proactive\"` 或 `\"nested-skill\"`）"
+  },
+  {
+   "type": "improved",
+   "en": "Auto mode: the spinner now turns red when a permission check stalls, instead of looking like the tool is running",
+   "zh": "自动模式：当权限检查停止时，微调器现在会变成红色，而不是看起来工具正在运行"
+  },
+  {
+   "type": "improved",
+   "en": "Host-managed deployments (`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`) no longer auto-disable analytics on Bedrock/Vertex/Foundry",
+   "zh": "托管宿主部署（`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`）不再在 Bedrock、Vertex、Foundry 上自动关闭统计分析"
+  },
+  {
+   "type": "improved",
+   "en": "Windows: when the PowerShell tool is enabled, Claude now treats PowerShell as the primary shell instead of defaulting to Bash",
+   "zh": "Windows：启用 PowerShell 工具后，Claude 会把 PowerShell 作为主要 shell，不再默认使用 Bash"
+  },
+  {
+   "type": "improved",
+   "en": "Bounded total size of file-modified reminders when a linter touches many files at once",
+   "zh": "当 linter 一次触及多个文件时，文件修改提醒的总大小有限"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: PowerShell 7 installed via the Microsoft Store, MSI without PATH, or `.NET global tool` is now detected",
+   "zh": "Windows：现在可以识别通过 Microsoft Store 安装的 PowerShell 7、未加入 PATH 的 MSI 安装版，以及 `.NET global tool` 安装版"
+  },
+  {
+   "type": "fixed",
+   "en": "**Security:** Fixed `allowManagedDomainsOnly` / `allowManagedReadPathsOnly` being ignored when a higher-priority managed-settings source lacked a `sandbox` block",
+   "zh": "**安全性：**修复了当优先级较高的托管设置源缺少“沙箱”块时忽略`allowManagedDomainsOnly`/`allowManagedReadPathsOnly`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasting an image larger than 2000px breaking the session — images are now downscaled on paste, and oversized images in history are automatically removed and the request retried",
+   "zh": "修复了粘贴大于 2000 像素的图像会破坏会话的问题 — 图像现在在粘贴时会缩小，并且历史记录中的超大图像会自动删除并重试请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed showing the login screen for \"OAuth not allowed for organization\" errors — now shows guidance to contact your admin",
+   "zh": "修复了显示“组织不允许 OAuth”错误的登录屏幕 — 现在显示联系管理员的指南"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OAuth login failing with timeout on slow or proxied connections, in IPv6-only devcontainers, and when the browser callback can't reach localhost",
+   "zh": "修复了 OAuth 登录在慢速或代理连接、仅 IPv6 开发容器中以及浏览器回调无法到达 localhost 时失败并超时的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare race where a concurrent credential write could clear a valid OAuth refresh token",
+   "zh": "修复了并发凭证写入可能会清除有效 OAuth 刷新令牌的罕见情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API retry countdown sticking at \"0s\" instead of counting down between attempts",
+   "zh": "修复了 API 重试倒计时停留在“0s”而不是尝试之间倒计时的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Stream idle timeout\" error after waking Mac from sleep mid-request",
+   "zh": "修复了在请求中将 Mac 从睡眠状态唤醒后出现的“流空闲超时”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background and remote sessions falsely aborting with \"Stream idle timeout\" during long model thinking pauses",
+   "zh": "修复了长时间模型思考暂停期间后台和远程会话因“流空闲超时”错误中止的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hang where the assistant could finish thinking but show no output after a run of empty turns",
+   "zh": "修复了助手可以完成思考但在空转后没有显示输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed overly fast trackpad scrolling in Cursor and VS Code 1.92–1.104 integrated terminals",
+   "zh": "修复了光标和 VS Code 1.92–1.104 集成终端中触控板滚动过快的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed claude.ai MCP connectors being suppressed by manual servers stuck in needs-auth state",
+   "zh": "修复了 claude.ai MCP 连接器被陷入需求验证状态的手动服务器抑制的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Japanese/Korean/Chinese text rendering as garbled characters on Windows in no-flicker mode",
+   "zh": "修复了 Windows 上无闪烁模式下日文/韩文/中文文本呈现为乱码的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Ctrl+L` clearing the prompt input — it now only forces a screen redraw, matching readline behavior",
+   "zh": "修复了`Ctrl+L`清除提示输入的问题 - 现在它只强制屏幕重绘，匹配 readline 行为"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed deferred tools (WebSearch, WebFetch, etc.) not being available to skills with `context: fork` and other subagents on their first turn",
+   "zh": "修复了具有“context:fork”和其他子代理的技能在第一轮无法使用延迟工具（WebSearch、WebFetch 等）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan-mode tools being unavailable in interactive sessions launched with `--channels`",
+   "zh": "修复了计划模式工具在使用`--channels`启动的交互式会话中不可用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` Uninstall reporting \"Enabled\" instead of \"Uninstalled\"",
+   "zh": "修复了`/plugin`卸载报告“已启用”而不是“已卸载”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/remote-control` retries appearing stuck on \"connecting…\" — each retry now shows its result",
+   "zh": "修复了`/remote-control`重试卡在“正在连接…”上的问题——现在每次重试都会显示其结果"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control failure notification not showing the error reason for initial connection failures",
+   "zh": "修复了远程控制失败通知不显示初始连接失败的错误原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: clipboard writes no longer expose copied content in process command-line arguments visible to EDR/SIEM telemetry; also fixes >22KB selections not reaching the clipboard",
+   "zh": "Windows：写入剪贴板时，复制的内容不再出现在进程命令行参数中，避免被 EDR/SIEM 遥测看到；同时修复了超过 22KB 的选中内容无法进入剪贴板的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "PowerShell tool: bare `--` (e.g. `git diff -- file`) is no longer mis-flagged as the `--%` stop-parsing token",
+   "zh": "PowerShell 工具：单独的 `--`（如 `git diff -- file`）不再被误判为 `--%` 停止解析标记"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Agent SDK hang when the model emits a malformed tool name in a parallel tool call batch",
+   "zh": "修复了模型在并行工具调用批处理中发出格式错误的工具名称时代理 SDK 挂起的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Read tool: removed the per-file malware-assessment reminder that could cause spurious refusals and \"this is not malware\" commentary on legacy models",
+   "zh": "Read 工具：移除了每个文件的恶意软件评估提醒，该提醒可能在旧模型上导致误拒绝，以及“这不是恶意软件”之类多余的评论"
+  }
+ ]
+}

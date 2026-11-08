@@ -1,0 +1,68 @@
+{
+ "version": "2.1.23",
+ "date": "2026-01-29",
+ "published": "2026-01-29T00:19:09.656Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.23",
+ "counts": {
+  "new": 1,
+  "improved": 3,
+  "fixed": 7
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added customizable spinner verbs setting (`spinnerVerbs`)",
+   "zh": "添加了可自定义的微调动词设置（`spinnerVerbs`）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved terminal rendering performance with optimized screen data layout",
+   "zh": "改进终端渲染性能：优化了屏幕数据布局"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Bash commands to show timeout duration alongside elapsed time",
+   "zh": "更改了 Bash 命令以显示超时持续时间以及经过的时间"
+  },
+  {
+   "type": "improved",
+   "en": "Changed merged pull requests to show a purple status indicator in the prompt footer",
+   "zh": "更改了合并的拉取请求以在提示页脚中显示紫色状态指示器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mTLS and proxy connectivity for users behind corporate proxies or using client certificates",
+   "zh": "修复了企业代理背后或使用客户端证书的用户的 mTLS 和代理连接"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed per-user temp directory isolation to prevent permission conflicts on shared systems",
+   "zh": "修复了每用户临时目录隔离，以防止共享系统上的权限冲突"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race condition that could cause 400 errors when prompt caching scope was enabled",
+   "zh": "修复了启用提示缓存范围时可能导致 400 错误的竞争条件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pending async hooks not being cancelled when headless streaming sessions ended",
+   "zh": "修复了无头流会话结束时挂起的异步挂钩不会被取消的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tab completion not updating the input field when accepting a suggestion",
+   "zh": "修复了接受建议时选项卡补全不更新输入字段的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ripgrep search timeouts silently returning empty results instead of reporting errors",
+   "zh": "修复了 ripgrep 搜索超时默默返回空结果而不是报告错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[IDE] Fixed model options displaying incorrect region strings for Bedrock users in headless mode",
+   "zh": "[IDE] 修复无头模式下，Bedrock 用户的模型选项显示错误地区字符串的问题"
+  }
+ ]
+}

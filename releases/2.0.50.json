@@ -1,0 +1,32 @@
+{
+ "version": "2.0.50",
+ "date": "2025-11-21",
+ "published": "2025-11-21T17:13:30.845Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.50",
+ "counts": {
+  "improved": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved ultrathink text display",
+   "zh": "改进 ultrathink 文字的显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved clarity of 5-hour session limit warning message",
+   "zh": "改进 5 小时会话限额警告的表述，更清楚"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bug preventing calling MCP tools that have nested references in their input schemas",
+   "zh": "修复了阻止调用在其输入模式中具有嵌套引用的 MCP 工具的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Silenced a noisy but harmless error during upgrades",
+   "zh": "减少升级时一个吵闹但无害的错误"
+  }
+ ]
+}

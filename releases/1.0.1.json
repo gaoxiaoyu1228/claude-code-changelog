@@ -1,0 +1,27 @@
+{
+ "version": "1.0.1",
+ "date": "2025-05-22",
+ "published": "2025-05-22T19:23:37.662Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.1",
+ "counts": {
+  "new": 1,
+  "improved": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `DISABLE_INTERLEAVED_THINKING` to give users the option to opt out of interleaved thinking.",
+   "zh": "添加了`DISABLE_INTERLEAVED_THINKING`，让用户可以选择退出交错思维。"
+  },
+  {
+   "type": "improved",
+   "en": "Improved model references to show provider-specific names (Sonnet 3.7 for Bedrock, Sonnet 4 for Console)",
+   "zh": "改进模型引用：显示各提供商的专用名称（Bedrock 上显示 Sonnet 3.7，Console 上显示 Sonnet 4）"
+  },
+  {
+   "type": "improved",
+   "en": "Updated documentation links and OAuth process descriptions",
+   "zh": "更新了文档链接和 OAuth 流程说明"
+  }
+ ]
+}

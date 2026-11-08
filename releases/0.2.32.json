@@ -1,0 +1,22 @@
+{
+ "version": "0.2.32",
+ "date": "2025-03-05",
+ "published": "2025-03-05T21:28:22.509Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.32",
+ "counts": {
+  "new": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Interactive MCP setup wizard: Run \"claude mcp add\" to add MCP servers with a step-by-step interface",
+   "zh": "交互式 MCP 设置向导：运行 `claude mcp add` 即可通过分步界面添加 MCP 服务器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix for some PersistentShell issues",
+   "zh": "修复一些 PersistentShell 问题"
+  }
+ ]
+}

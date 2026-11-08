@@ -1,0 +1,37 @@
+{
+ "version": "2.1.39",
+ "date": "2026-02-10",
+ "published": "2026-02-10T21:12:16.378Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.39",
+ "counts": {
+  "improved": 1,
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved terminal rendering performance",
+   "zh": "改进终端渲染性能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fatal errors being swallowed instead of displayed",
+   "zh": "修复了被吞没而不是显示的致命错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed process hanging after session close",
+   "zh": "修复了会话关闭后进程挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed character loss at terminal screen boundary",
+   "zh": "修复了终端屏幕边界处的字符丢失问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed blank lines in verbose transcript view",
+   "zh": "修复了详细记录视图中的空白行"
+  }
+ ]
+}

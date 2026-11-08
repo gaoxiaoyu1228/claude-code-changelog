@@ -1,0 +1,43 @@
+{
+ "version": "2.0.17",
+ "date": "2025-10-15",
+ "published": "2025-10-15T15:46:20.184Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.17",
+ "counts": {
+  "new": 3,
+  "improved": 2,
+  "other": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added Haiku 4.5 to model selector!",
+   "zh": "在模型选择器中添加了俳句 4.5！"
+  },
+  {
+   "type": "new",
+   "en": "Introducing the Explore subagent. Powered by Haiku it'll search through your codebase efficiently to save context!",
+   "zh": "推出 Explore 子智能体：由 Haiku 驱动，能高效搜索你的代码库，节省上下文！"
+  },
+  {
+   "type": "new",
+   "en": "OTEL: support HTTP_PROXY and HTTPS_PROXY",
+   "zh": "OTEL：支持 HTTP_PROXY 和 HTTPS_PROXY"
+  },
+  {
+   "type": "improved",
+   "en": "Haiku 4.5 automatically uses Sonnet in plan mode, and Haiku for execution (i.e. SonnetPlan by default)",
+   "zh": "Haiku 4.5 在计划模式下自动使用 Sonnet，执行时使用 Haiku（即默认的 SonnetPlan）"
+  },
+  {
+   "type": "improved",
+   "en": "`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` now disables release notes fetching",
+   "zh": "`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` 现在会禁止获取发行说明（release notes）"
+  },
+  {
+   "type": "other",
+   "en": "3P (Bedrock and Vertex) are not automatically upgraded yet. Manual upgrading can be done through setting `ANTHROPIC_DEFAULT_HAIKU_MODEL`",
+   "zh": "3P（基岩和顶点）尚未自动升级。可以通过设置`ANTHROPIC_DEFAULT_HAIKU_MODEL`来手动升级"
+  }
+ ]
+}

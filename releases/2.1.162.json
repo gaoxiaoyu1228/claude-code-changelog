@@ -1,0 +1,154 @@
+{
+ "version": "2.1.162",
+ "date": "2026-06-03",
+ "published": "2026-06-03T18:09:44.344Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.162",
+ "counts": {
+  "new": 1,
+  "improved": 10,
+  "fixed": 16,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "`claude agents --json` now includes `waitingFor` showing what a waiting session is blocked on (e.g. permission prompt)",
+   "zh": "`claude agents --json` 现在包含 `waitingFor` 字段，显示等待中的会话被什么阻塞（如权限提示）"
+  },
+  {
+   "type": "improved",
+   "en": "`/effort` now confirms when your chosen level will persist as the default for new sessions",
+   "zh": "`/effort` 现在会在你选择的级别将作为新会话默认值保存时进行确认"
+  },
+  {
+   "type": "improved",
+   "en": "Clicking a slash command in the autocomplete menu now fills it into your prompt instead of running it immediately; press Enter to run",
+   "zh": "现在，单击自动完成菜单中的斜杠命令会将其填充到提示中，而不是立即运行它；按 Enter 运行"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control now shows as a persistent footer pill (with a link to the session) instead of a startup message",
+   "zh": "Remote Control 现在以底部常驻小标签的形式显示（附会话链接），不再是启动时的一条消息"
+  },
+  {
+   "type": "improved",
+   "en": "Renamed Windsurf to Devin Desktop in the `/ide` menu, `/terminal-setup`, and `/scroll-speed`, following the editor's rebrand",
+   "zh": "`/ide` 菜单、`/terminal-setup` 和 `/scroll-speed` 中的 Windsurf 改称 Devin Desktop，跟随该编辑器的更名"
+  },
+  {
+   "type": "improved",
+   "en": "Quieter startup: notices group by severity, and session info and announcements share a single line per launch",
+   "zh": "启动更安静：通知按严重程度分组，会话信息和公告每次启动合并为一行"
+  },
+  {
+   "type": "improved",
+   "en": "Startup warnings rewritten to be shorter and clearer, each with a concrete fix",
+   "zh": "启动警告改写得更简短清楚，并且每条都附有具体的修复方法"
+  },
+  {
+   "type": "improved",
+   "en": "Launch-prompt warnings (deep link/pre-filled prompt) now stay pinned below the input until you act instead of scrolling away",
+   "zh": "启动提示警告（深层链接或预填提示）现在会固定在输入框下方，直到你处理为止，不再滚动消失"
+  },
+  {
+   "type": "improved",
+   "en": "Failed turns now show a compact warning line instead of a multi-line red error block",
+   "zh": "失败的转弯现在显示紧凑的警告线，而不是多行红色错误块"
+  },
+  {
+   "type": "improved",
+   "en": "Improved background service startup and `claude update` verification to wait out endpoint-security scanning of new binaries instead of failing after 5 seconds",
+   "zh": "改进后台服务启动和 `claude update` 的校验：等待终端安全软件扫描新二进制文件，而不是 5 秒后就失败"
+  },
+  {
+   "type": "improved",
+   "en": "Background dispatch spawn failures now report the error class name when no errno is available",
+   "zh": "当没有可用的 errno 时，后台调度生成失败现在会报告错误类名称"
+  },
+  {
+   "type": "fixed",
+   "en": "`--tools`: explicitly listing Grep/Glob now provides the dedicated search tools on native builds with embedded search (previously these names were silently ignored)",
+   "zh": "`--tools`：显式列出 Grep/Glob 后，在内置嵌入式搜索的原生版本中会提供专用搜索工具（此前这些名称被静默忽略）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a silent startup hang when the config directory is read-only or unwritable — Claude Code now starts with in-memory config and surfaces startup errors instead of showing a blank screen",
+   "zh": "修复了配置目录为只读或不可写时静默启动挂起的问题 — Claude Code 现在以内存中配置启动，并显示启动错误，而不是显示空白屏幕"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed WebFetch permission rules not being applied to built-in preapproved domains; explicit `WebFetch(domain:...)` deny/ask/allow rules now take precedence over the preapproved-host auto-allow",
+   "zh": "修复了 WebFetch 权限规则不适用于内置预先批准的域的问题；显式`WebFetch(domain:...)`拒绝/询问/允许规则现在优先于预先批准的主机自动允许"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows permission rules never matching when spelled with backslashes (`~\\`, `\\\\server\\share`) or case-variant paths, and Read deny rules not hiding files from Glob/Grep results",
+   "zh": "修复了 Windows 权限规则在使用反斜杠（`~\\`、`\\\\server\\share`）或大小写变体路径拼写时永远不会匹配的问题，以及读取拒绝规则不会从 Glob/Grep 结果中隐藏文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an interrupt (Esc) sent at the very start of a turn being silently dropped in stream-json/SDK sessions, leaving the turn running with no \"Interrupted\" feedback",
+   "zh": "修复了在回合开始时发送的中断 (Esc) 在 Stream-json/SDK 会话中默默丢弃，导致回合运行时没有“中断”反馈"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API 400 `no low surrogate in string` errors for classifier side-queries and MCP server descriptions containing emoji near a truncation boundary",
+   "zh": "修复了分类器侧查询和在截断边界附近包含表情符号的 MCP 服务器描述的 API 400“字符串中没有低代理项”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP per-server `timeout` config values below 1000 ms being floored to a 1-second watchdog that aborted every tool call; sub-1000 ms values are now ignored (falling back to `MCP_TOOL_TIMEOUT` or default), and `claude mcp get` annotates them accordingly",
+   "zh": "修复了低于 1000 毫秒的 MCP 每服务器“超时”配置值被限制为 1 秒的看门狗，该看门狗会中止每个工具调用；现在忽略低于 1000 毫秒的值（回退到`MCP_TOOL_TIMEOUT`或默认值），并且`claude mcp get`相应地注释它们"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the LSP tool's `workspaceSymbol` operation returning no results; it now accepts a `query` parameter and passes it to the language server",
+   "zh": "修复 LSP 工具的 `workspaceSymbol` 操作无返回结果的问题；现在它接受 `query` 参数并将其传给语言服务器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` cutting live status text (tool args, replies, prompts, exec output) at 60–120 columns on wide terminals; the status detail now uses the full terminal width",
+   "zh": "修复了“claude Agents”在宽终端上将实时状态文本（工具参数、回复、提示、执行输出）剪切为 60-120 列的问题；状态详细信息现在使用完整的终端宽度"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` truncating long session names at 40 columns; the name column now grows with terminal width",
+   "zh": "修复了“claude Agents”将长会话名称截断为 40 列的问题；名称列现在随着终端宽度而增长"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` attach occasionally bouncing straight back to the session list on the first try after a background-service restart",
+   "zh": "修复了后台服务重启后第一次尝试时偶尔会直接弹回会话列表的“claude Agents”附加问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` Ctrl+V image paste doing nothing in the dispatch input and the session reply box; pasting with no image now shows a hint",
+   "zh": "修复了“克劳德代理”Ctrl+V 图像粘贴在调度输入和会话回复框中不执行任何操作的问题；粘贴无图像现在会显示提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed backgrounding a session with ← silently losing the conversation when the background service cannot start; the session stays in the list as a failed row you can wake with Enter",
+   "zh": "修复了后台服务无法启动时使用 ← 静默丢失对话的会话；该会话作为失败行保留在列表中，您可以使用 Enter 唤醒"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed replies from the agents view that fail to send being lost; they are now queued for delivery on the next session start",
+   "zh": "修复了坐席视图中发送失败的回复丢失的问题；他们现在正在排队等待下一次会话开始时的交付"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cross-session messaging (`SendMessage`) silently breaking when `CLAUDE_CODE_TMPDIR` or `$TMPDIR` points at a deep directory",
+   "zh": "修复了当`CLAUDE_CODE_TMPDIR`或`$TMPDIR`指向深层目录时跨会话消息传递（`SendMessage`）无提示地中断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed opening a running background session from `claude agents` stalling for 5 seconds before attaching",
+   "zh": "修复了从“claude Agents”打开正在运行的后台会话在附加之前停滞 5 秒的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the \"Claude in Chrome enabled\" and \"marketplace installed\" startup messages; model auto-updates and the team-onboarding tip now show as quiet notices under the logo",
+   "zh": "移除启动时的 \"Claude in Chrome enabled\" 和 \"marketplace installed\" 消息；模型自动更新和团队入门提示改为 logo 下方的安静通知"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "2.0.42",
+ "date": "2025-11-14",
+ "published": "2025-11-14T23:00:23.267Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.42",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `agent_id` and `agent_transcript_path` fields to `SubagentStop` hooks.",
+   "zh": "将`agent_id`和`agent_transcript_path`字段添加到`SubagentStop`挂钩中。"
+  }
+ ]
+}

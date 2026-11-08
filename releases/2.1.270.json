@@ -1,0 +1,16 @@
+{
+ "version": "2.1.270",
+ "date": "2026-09-12",
+ "published": "2026-09-12T18:52:44.937Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.270",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed read-only git commands in Bash unexpectedly asking for permission after a session had been running for a while (regression in 2.1.269)",
+   "zh": "修复了 Bash 中的只读 git 命令在会话运行一段时间后意外请求权限的问题（2.1.269 中的回归）"
+  }
+ ]
+}

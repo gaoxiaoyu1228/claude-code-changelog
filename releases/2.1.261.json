@@ -1,0 +1,348 @@
+{
+ "version": "2.1.261",
+ "date": "2026-09-04",
+ "published": "2026-09-04T17:49:34.927Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.261",
+ "counts": {
+  "new": 9,
+  "improved": 11,
+  "fixed": 47
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added an \"Organization policy\" line to `/status` and `claude doctor` that says why your organization's policy could not be loaded, such as a proxy not passing the endpoint through",
+   "zh": "在`/status`和`claude doctor`中添加了“组织策略”行，说明无法加载组织策略的原因，例如代理未通过端点传递"
+  },
+  {
+   "type": "new",
+   "en": "Added `bashOutputMaxChars` and `taskOutputMaxChars` settings to raise how much command and background-task output Claude receives inline before it is saved to a file, up to 128K characters",
+   "zh": "添加了`bashOutputMaxChars`和`taskOutputMaxChars`设置，以提高 Claude 在保存到文件之前内联接收的命令和后台任务输出的数量，最多 128K 个字符"
+  },
+  {
+   "type": "new",
+   "en": "Added `--append-subagent-system-prompt-file` to read the subagent system prompt from a file, for prompts too large to pass on the command line",
+   "zh": "添加了 `--append-subagent-system-prompt-file` 以从文件中读取子代理系统提示符，以应对提示太大而无法在命令行上传递的情况"
+  },
+  {
+   "type": "new",
+   "en": "Added `/skill-doctor` to show which loaded skills go unused and what they cost in context, so you can prune them",
+   "zh": "添加了`/skill-doctor`以显示哪些已加载的技能未使用以及它们在上下文中的成本，以便您可以修剪它们"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a \"Build a custom style\" walkthrough to the Output styles menu that writes a custom output style file and lists it right away",
+   "zh": "[VSCode] 输出样式菜单新增「Build a custom style」向导，可生成自定义输出样式文件并立即列出"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added an Add server form and a Remove action to the MCP servers dialog, so MCP servers can be added and removed without leaving the IDE",
+   "zh": "[VSCode] MCP 服务器对话框新增 Add server 表单和 Remove 操作，无需离开 IDE 即可添加和移除 MCP 服务器"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a hollow ring in the session list for sessions open in a terminal, another VS Code window, or Claude Desktop, so they no longer look closed",
+   "zh": "[VSCode] 会话列表中，在终端、其他 VS Code 窗口或 Claude 桌面版中打开的会话新增空心圆环标记，不会再显示为已关闭"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a fold button to permission and question prompts so the conversation behind them can be read without dismissing them; the space beside the prompt now scrolls the conversation",
+   "zh": "[VSCode] 权限和问题提示新增折叠按钮，无需关闭提示即可阅读其后的对话；提示旁的空白区域现在可滚动对话"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added \"Archive session\" to the session list's right-click menu and gave Unarchive its own icon",
+   "zh": "[VSCode] 会话列表的右键菜单新增「Archive session」，并为 Unarchive 设置了独立图标"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/model` picker and the VS Code model pill to show a model's name instead of its raw Bedrock, Vertex AI, or LLM gateway ID when Claude Code recognizes it",
+   "zh": "改进 `/model` 选择器和 VS Code 模型标签：Claude Code 能识别的模型，会显示模型名称，而不是原始的 Bedrock、Vertex AI 或 LLM 网关 ID"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup on Google Vertex AI when `GOOGLE_APPLICATION_CREDENTIALS` is set: API client creation no longer re-runs Google Cloud project discovery or spawns extra `gcloud` processes",
+   "zh": "改进 Google Vertex AI 的启动（设置了 `GOOGLE_APPLICATION_CREDENTIALS` 时）：创建 API 客户端不再重新运行 Google Cloud 项目发现，也不再多开 `gcloud` 进程"
+  },
+  {
+   "type": "improved",
+   "en": "Improved streaming performance: already-rendered blocks are no longer re-checked by layout on each update",
+   "zh": "改进流式输出性能：已渲染的块不再在每次更新时由布局重新检查"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the dangerous-`rm` safety prompt to also catch `rm -rf` on positional parameters and inside double-quoted `sh -c` scripts",
+   "zh": "改进危险 `rm` 安全提示：现在也能识别位置参数上的 `rm -rf`，以及双引号 `sh -c` 脚本中的 `rm -rf`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved handling when the API sends no response headers: the retry now waits up to `API_TIMEOUT_MS` (10 minutes by default) instead of another 3 minutes, and the messages say what to change",
+   "zh": "改进 API 未返回任何响应头时的处理：重试会等待最多 `API_TIMEOUT_MS`（默认 10 分钟），而不是再等 3 分钟；提示会说明该改哪个设置"
+  },
+  {
+   "type": "improved",
+   "en": "Changed a Claude apps gateway 403 on the managed settings load (at startup or after `/login`) to say Claude Code may not be enabled for the organization, instead of advising a new sign-in",
+   "zh": "更改了托管设置负载上的克劳德应用程序网关 403（在启动时或“/登录”之后），表示可能无法为组织启用克劳德代码，而不是建议重新登录"
+  },
+  {
+   "type": "improved",
+   "en": "Changed machines whose managed settings pin `forceLoginMethod: \"gateway\"` to ignore a leftover API key or claude.ai login and ask for `/login`; Bedrock, Vertex AI, and Foundry sessions are unaffected",
+   "zh": "更改了托管设置固定 `forceLoginMethod: \"gateway\"` 的计算机，以忽略剩余的 API 密钥或 claude.ai 登录并请求 `/login`； Bedrock、Vertex AI 和 Foundry 会话不受影响"
+  },
+  {
+   "type": "improved",
+   "en": "Changed auto mode to treat a link that packs content into a public diagram renderer's URL as an upload to that site: no longer auto-approved unless you asked for it",
+   "zh": "更改了自动模式，将将内容打包到公共图表渲染器的 URL 中的链接视为上传到该站点：不再自动批准，除非您要求"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the prompt's word-editing keys to match Bash: Ctrl+W deletes back to whitespace, Alt+F and Alt+D stop at word end, punctuation separates words; `keybindingFlavor` no longer has any effect",
+   "zh": "更改了提示符的单词编辑键以匹配 Bash：Ctrl+W 删除回空格，Alt+F 和 Alt+D 在单词末尾停止，标点符号分隔单词； `keybindingFlavor` 不再有任何效果"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/context` token counting to use a local estimate when the token-counting API is unavailable, instead of extra small-model requests",
+   "zh": "更改了`/context`令牌计数，以在令牌计数 API 不可用时使用本地估计，而不是额外的小模型请求"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Changed the model picker to one flat list of every model, with rows kept for older model spellings listed last",
+   "zh": "[VSCode] 模型选择器改为一个扁平列表展示所有模型，旧版模型写法的条目放在最后"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed typed or pasted characters occasionally landing out of order or being dropped during fast input or key repeat",
+   "zh": "修复快速输入或按键重复时，输入或粘贴的字符偶尔顺序错乱或丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/add-dir <subdirectory>` printing a false \"couldn't be resolved\" error when the working directory is on a `/net` automount",
+   "zh": "修复了当工作目录位于`/net`自动挂载时`/add-dir <subdirectory>`打印错误的“无法解析”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Bedrock setup wizard hanging when AWS or an AWS credential helper never responds (it now times out with a clear error), and its model checks failing behind a TLS-inspecting proxy",
+   "zh": "修复了当 AWS 或 AWS 凭证助手从未响应时 Bedrock 设置向导挂起的问题（现在超时并出现明显错误），并且其模型检查在 TLS 检查代理后面失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions discarding a plugin synced from claude.ai when managed settings force-enable it in `enabledPlugins`, then falling back to a marketplace clone that could fail",
+   "zh": "修复了当托管设置在`enabledPlugins`中强制启用从 claude.ai 同步的插件时，云会话会丢弃该插件，然后回退到可能失败的市场克隆的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed being unable to delete the character immediately before an inline `[Image #N]` chip in the prompt input",
+   "zh": "修复了无法删除提示输入中内联`[Image #N]`芯片之前的字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resuming a session losing hook output and other context around parallel tool calls, which changed the resumed request",
+   "zh": "修复了恢复会话丢失挂钩输出和并行工具调用周围的其他上下文，这改变了恢复的请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control showing a stale permission mode when a phone, browser, or claude.ai app attaches to a terminal session or after the mode changes in the terminal",
+   "zh": "修复了当手机、浏览器或 claude.ai 应用程序连接到终端会话时或终端中的模式更改后，远程控制显示陈旧的权限模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions showing as still working (stuck spinner and Stop button) after stopping a turn from a connected phone or browser, or after a local slash command like `/clear`",
+   "zh": "修复了在连接的手机或浏览器停止转动后，或在使用`/clear`等本地斜杠命令后，远程控制会话显示为仍在工作的问题（卡住的旋转器和停止按钮）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed SDK and cloud sessions ignoring a Stop or interrupt sent just after the first prompt, before the turn had started; the turn now stops instead of running to completion",
+   "zh": "修复了 SDK 和云会话忽略第一个提示之后、回合开始之前发送的停止或中断的问题；转弯现在停止而不是跑完"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control uploading a session pulled with `/teleport` into the connected session, which appeared appended to the original on phone and web",
+   "zh": "修复了远程控制将使用`/teleport`拉出的会话上传到连接的会话中的问题，该会话在电话和网络上显示为附加到原始会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control's inbound event stream failing behind TLS-inspecting corporate proxies on native Windows",
+   "zh": "修复了远程控制的入站事件流在本机 Windows 上的 TLS 检查企业代理后面失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions showing the default effort level on claude.ai when the effort comes from settings",
+   "zh": "修复了当工作量来自设置时，远程控制会话在 claude.ai 上显示默认工作量级别的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `gcpAuthRefresh` opening a browser at startup when the Google credential check was slow, even though the credential was still valid",
+   "zh": "修复了当 Google 凭据检查速度缓慢时，即使凭据仍然有效，`gcpAuthRefresh`也会在启动时打开浏览器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed claude.ai connectors staying absent for the whole session when the startup connector fetch timed out — the CLI now retries in the background",
+   "zh": "修复了当启动连接器获取超时时 claude.ai 连接器在整个会话中保持缺席的问题 — CLI 现在在后台重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sustained high CPU usage when a background agent could not be resumed and its wake-up was retried in a tight loop",
+   "zh": "修复了后台代理无法恢复且在紧密循环中重试唤醒时 CPU 使用率持续较高的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feature flags gated to a newer version occasionally applying to an older Claude Code version running on the same machine",
+   "zh": "固定功能标志门控到新版本偶尔适用于同一台机器上运行的旧克劳德代码版本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` and the VS Code usage panel dropping a model-specific weekly limit row when the usage endpoint is rate limited or when opened right after startup",
+   "zh": "修复了当使用端点受到速率限制或启动后立即打开时，`/usage`和 VS Code 使用面板会删除特定于模型的每周限制行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p --resume <file>` adopting a malformed session ID recorded in the transcript; it now resumes under a fresh session ID instead",
+   "zh": "修复了`claude -p --resume <file>`采用记录在记录中的格式错误的会话 ID 的问题；现在它会在新的会话 ID 下恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal progress indicator (iTerm2, Ghostty, ConEmu) showing the session as finished while a background workflow or agent was still running",
+   "zh": "修复后台工作流或智能体仍在运行时，终端进度指示器（iTerm2、Ghostty、ConEmu）却显示会话已完成的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare layout glitch where a box could render with the wrong height after its container switched between row and column direction",
+   "zh": "修复了一个罕见的布局故障，即容器在行和列方向之间切换后，框可能会以错误的高度渲染"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude apps gateway client IP when a trusted proxy appends a port to `X-Forwarded-For`; with an access list set, an unreadable entry now gets 403",
+   "zh": "修复了受信任代理将端口附加到`X-Forwarded-For`时克劳德应用程序网关客户端 IP 的问题；设置访问列表后，不可读的条目现在会收到 403"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude apps gateway telling Claude Desktop to export OpenTelemetry as JSON even when the terminal CLI uses protobuf, so protobuf-only collectors rejected Desktop's data",
+   "zh": "修复了 Claude 应用网关告诉 Claude Desktop 将 OpenTelemetry 导出为 JSON，即使终端 CLI 使用 protobuf，因此仅使用 protobuf 的收集器会拒绝 Desktop 的数据"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Desktop and web showing a session as busy while it only watches an artifact for updates",
+   "zh": "修复了桌面和网络显示会话繁忙而仅监视工件更新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude in Chrome `file_upload` failing with \"paths: expected array, received undefined\" in local Cowork sessions run from the Claude Desktop app",
+   "zh": "修复了 Chrome`file_upload` 中的 Claude 在从 Claude 桌面应用程序运行的本地 Cowork 会话中失败并出现“路径：预期数组，收到未定义”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SendMessage` to an offline Remote Control session on another machine reading as delivered; the result now says delivery is queued until that machine reconnects",
+   "zh": "修复了另一台机器上离线远程控制会话的`SendMessage`读取交付内容；结果现在显示交付已排队，直到该机器重新连接"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin install hints from CLIs run in background Bash commands: they are now detected, and the raw `<claude-code-hint>` tag no longer leaks into the conversation",
+   "zh": "修复了在后台 Bash 命令中运行的 CLI 的插件安装提示：现在可以检测到它们，并且原始的`<claude-code-hint>`标签不再泄漏到对话中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed in-process agent-team teammates re-sending their first-turn tool and skill announcements on the second turn, which changed the request prefix and missed the prompt cache",
+   "zh": "修复了进程中的代理团队队友在第二回合重新发送第一回合工具和技能公告，这会更改请求前缀并错过提示缓存"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a session teleported from Claude Code on the web treating a question that was cut off when the cloud session shut down as declined",
+   "zh": "[VSCode] 修复从 Claude Code on the web 传送过来的会话，把云端会话关闭时被截断的问题误判为已拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the session tab's Rename box opening empty for a tab restored with the window; it now starts with the current name",
+   "zh": "[VSCode] 修复随窗口恢复的标签页，其 Rename 输入框打开时为空的问题；现在会显示当前名称"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed collapsed sections in the session list panel briefly showing expanded each time the panel loaded",
+   "zh": "[VSCode] 修复会话列表面板加载时，折叠的区块会短暂显示为展开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Focus view showing a tool call as still running after Claude had moved on, such as while a question waited for your answer",
+   "zh": "[VSCode] 修复 Claude 已经继续往下执行（如正在等你回答问题）时，Focus 视图仍显示某个工具调用在运行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the session list's active-row highlight going stale when an unfocused Claude tab's session ID is corrected",
+   "zh": "[VSCode] 修复未聚焦的 Claude 标签页的会话 ID 被修正后，会话列表的当前行高亮过期的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed Cmd/Ctrl+Shift+T reopen and deep-link opens placing the Claude tab outside the Claude editor group when a Claude tab has focus",
+   "zh": "[VSCode] 修复当 Claude 标签页获得焦点时，Cmd/Ctrl+Shift+T 重新打开和深链接打开会把 Claude 标签页放到 Claude 编辑器分组之外的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the session tab's \"Add to group\" putting a session opened from Claude Code on the Web in two groups; it now moves the entry the session list shows",
+   "zh": "[VSCode] 修复会话标签页的 \"Add to group\" 会把从 Claude Code on the Web 打开的会话放进两个分组的问题；现在会移动会话列表中显示的那一项"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the model picker showing models an organization has since disabled until the window was reloaded twice",
+   "zh": "[VSCode] 修复模型选择器在组织停用某些模型后，仍要重新加载窗口两次才会更新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a tab opened from the session list jumping back to that session, and a tab opened from a Web session restarting its teleport or staying empty, after VS Code reloads the tab's view",
+   "zh": "[VSCode] 修复 VS Code 重新加载标签页视图后，从会话列表打开的标签页会跳回原会话，以及从 Web 会话打开的标签页会重新开始传送或保持空白的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed `/btw` side-question history from earlier sessions being overwritten when a question is asked right after a window reload or while a settings file has errors",
+   "zh": "[VSCode] 修复窗口重新加载后，或设置文件有错误时立即提问，导致之前会话的 `/btw` 旁问历史被覆盖的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the pending question card not reappearing after the Claude panel reloads when signed in with a Claude.ai or Console account",
+   "zh": "[VSCode] 修复使用 Claude.ai 或 Console 账号登录时，Claude 面板重新加载后，待回答的问题卡片不再出现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed claude.ai-only features staying visible in a window's other Claude panels after one panel picked up a third-party provider from a settings file",
+   "zh": "[VSCode] 修复当某个面板从设置文件中获取了第三方提供商后，同一窗口其他 Claude 面板仍显示仅限 claude.ai 的功能的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the sign-in screen appearing despite the Disable Login Prompt setting when Claude Code reports no login or a request fails for lack of one",
+   "zh": "[VSCode] 修复 Claude Code 报告未登录，或请求因缺少登录而失败时，即使设置了 Disable Login Prompt 仍显示登录界面的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the next queued permission prompt keeping text typed on the previous prompt and accepting an immediate second click",
+   "zh": "[VSCode] 修复下一个排队的权限提示会保留上一个提示中输入的文字，并接受紧接着的第二次点击的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed install-plugin links opening the Claude sidebar without the install dialog in a window where only the session list had been shown",
+   "zh": "[VSCode] 修复在只显示过会话列表的窗口中，安装插件链接打开了 Claude 侧边栏却没有弹出安装对话框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the sidebar usage meter staying empty on a new window until the Account & usage dialog was opened, and a 0% usage limit being left out of the meter",
+   "zh": "[VSCode] 修复新窗口中侧边栏用量仪表一直为空、直到打开 Account & usage 对话框才显示的问题，以及 0% 的用量限额未出现在仪表中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed \"Start new session in this group\" losing the group after New conversation, and a missing unread dot for a session that finished before the sidebar's unread list loaded",
+   "zh": "[VSCode] 修复 \"Start new session in this group\" 在 New conversation 后丢失分组的问题，以及会话在侧边栏未读列表加载前已结束时缺少未读小红点的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the editor tab badge showing unread during a running turn or missing on a tab opened from the session list, and \"Add Session Tab to Group\" doing nothing for an archived session",
+   "zh": "[VSCode] 修复编辑器标签页角标在轮次运行时显示未读、或从会话列表打开的标签页上缺失的问题；以及 \"Add Session Tab to Group\" 对已归档会话无效的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed \"Enable Remote Control for all sessions\" so flipping it also applies right away to sessions open in other VS Code windows",
+   "zh": "[VSCode] 修复 \"Enable Remote Control for all sessions\" 开关后，对其他 VS Code 窗口中已打开的会话也立即生效"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the session list's Open filter for sessions continued from claude.ai whose tab was still recorded under the web session, and labeled the filter menu's sections for screen readers",
+   "zh": "[VSCode] 修复从 claude.ai 继续的会话，其标签页仍被记录在 Web 会话下时，会话列表的 Open 筛选无法识别的问题；并为屏幕阅读器标注了筛选菜单的分区"
+  }
+ ]
+}

@@ -1,0 +1,208 @@
+{
+ "version": "2.1.312",
+ "date": "2026-10-27",
+ "published": "2026-10-27T18:36:10.160Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.312",
+ "counts": {
+  "new": 4,
+  "improved": 13,
+  "fixed": 22
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `oidc.user_id_claim` to the Claude apps gateway, to identify people by an id_token claim other than `sub`, such as Microsoft Entra ID's `oid`",
+   "zh": "将`oidc.user_id_claim`添加到 Claude 应用程序网关，以通过`sub`以外的 id_token 声明来识别人员，例如 Microsoft Entra ID 的`oid`"
+  },
+  {
+   "type": "new",
+   "en": "Added click to send: in fullscreen, clicking the \"to send now\" hint under a queued message sends it right away, as its key does",
+   "zh": "添加了单击发送：在全屏中，单击排队消息下方的“立即发送”提示会立即发送消息，就像其按键一样"
+  },
+  {
+   "type": "new",
+   "en": "[Cloud sessions] Added an effort level to the model picker when you create or edit a routine that runs in the cloud",
+   "zh": "[云会话] 当您创建或编辑在云中运行的例程时，向模型选择器添加了工作量级别"
+  },
+  {
+   "type": "new",
+   "en": "[Cloud sessions] Added a Bash editor with colors, line numbers and a Copy button to the setup script box in cloud environment settings",
+   "zh": "[云会话] 在云环境设置中的设置脚本框中添加了带有颜色、行号和复制按钮的 Bash 编辑器"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the prompt's effort indicator: a change made mid-task now says it may wait for your next message, and the note clears when it no longer applies",
+   "zh": "改进了提示的工作量指示器：任务中进行的更改现在表示它可能会等待您的下一条消息，并且当它不再适用时，注释会被清除"
+  },
+  {
+   "type": "improved",
+   "en": "Improved WebFetch errors in cloud sessions: a host that does not resolve is now explained as possibly outside the allowed network domains, so Claude names the host to allow",
+   "zh": "改进了云会话中的 WebFetch 错误：无法解析的主机现在被解释为可能位于允许的网络域之外，因此 Claude 指定允许的主机"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Bedrock, Vertex, Foundry and Mantle to use the shorter system prompt for model names Claude Code doesn't recognize, such as custom deployment names and inference profile ARNs, even when they front Sonnet or Haiku; set `CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0` to keep the full prompt",
+   "zh": "更改了 Bedrock、Vertex、Foundry 和 Mantle，以对 Claude Code 无法识别的模型名称使用较短的系统提示，例如自定义部署名称和推理配置文件 ARN，即使它们位于 Sonnet 或 Haiku 前面；设置`CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT=0`以保留完整提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed automatic model switches after a flagged message to also cover model names Claude Code doesn't recognize, such as custom deployment names; set `CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK=1` to turn them off",
+   "zh": "更改了标记消息后的自动模型切换，以涵盖 Claude Code 无法识别的模型名称，例如自定义部署名称；设置`CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK=1`将其关闭"
+  },
+  {
+   "type": "improved",
+   "en": "Changed usage limit messages to call the 5-hour window the \"5-hour limit\" instead of the \"session limit\"",
+   "zh": "更改了使用限制消息，将 5 小时窗口称为“5 小时限制”而不是“会话限制”"
+  },
+  {
+   "type": "improved",
+   "en": "Changed cloud sessions started from the CLI to get their names and branch names from the server",
+   "zh": "更改了从 CLI 启动的云会话，以从服务器获取其名称和分支名称"
+  },
+  {
+   "type": "improved",
+   "en": "Changed prompt and agent hooks to run at most 24 at a time per session, sub-agents included, plus at most 12 that have waited longer than their event's timeout; a `timeout` under 1 second now counts as 1 second",
+   "zh": "将提示和代理挂钩更改为每个会话一次最多运行 24 个（包括子代理），加上最多 12 个等待时间超过其事件超时时间的挂钩； 1 秒以下的“超时”现在计为 1 秒"
+  },
+  {
+   "type": "improved",
+   "en": "Changed a subagent's `autoCompactWindow` to lower the window set by `CLAUDE_CODE_AUTO_COMPACT_WINDOW`, where it had no effect before; it still never raises that window",
+   "zh": "更改了子代理的`autoCompactWindow`以降低由`CLAUDE_CODE_AUTO_COMPACT_WINDOW`设置的窗口，之前没有效果；它仍然没有升起那个窗口"
+  },
+  {
+   "type": "improved",
+   "en": "Changed OpenTelemetry `mcp_server.name` to report the real name of fixed-URL remote MCP servers declared by plugins from the official Anthropic marketplace, instead of `custom`",
+   "zh": "更改了 OpenTelemetry `mcp_server.name` 以报告由官方 Anthropic 市场插件声明的固定 URL 远程 MCP 服务器的真实名称，而不是 `custom`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Claude Code to stop sending the `claude_code.safety_event` OpenTelemetry event",
+   "zh": "更改了 Claude Code 以停止发送 `claude_code.safety_event` OpenTelemetry 事件"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] Changed usage limit resets to show a clock time (\"Resets at 3:10 PM\") and to say \"5-hour limit\"",
+   "zh": "[VSCode] 更改了使用限制重置，以显示时钟时间（“下午 3:10 重置”）并显示“5 小时限制”"
+  },
+  {
+   "type": "improved",
+   "en": "[Cloud sessions] Improved the step shown when Claude adds a repository to a cloud session: opening it now shows a short table of what happened instead of raw JSON",
+   "zh": "[云会话] 改进了 Claude 将存储库添加到云会话时显示的步骤：现在打开它会显示发生的情况的简短表格，而不是原始 JSON"
+  },
+  {
+   "type": "improved",
+   "en": "[Claude Tag] Improved Claude Tag's retry notice in Slack to name the model in use, or say rate limits were hit, instead of a generic API error",
+   "zh": "[Claude Tag] 改进了 Slack 中 Claude Tag 的重试通知，以命名正在使用的模型，或者说达到了速率限制，而不是通用 API 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed settings and organization policy not being fetched for the rest of the session after signing in from the VS Code extension",
+   "zh": "修复了从 VS Code 扩展登录后不会在会话的其余部分获取托管设置和组织策略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude overwriting a very large CLAUDE.md, rules file or @-included file in a subdirectory after seeing only its start; Write now asks Claude to read it all or edit in place",
+   "zh": "修复了 Claude 在仅看到其开头后覆盖子目录中非常大的 CLAUDE.md、规则文件或 @-included 文件的问题；现在写要求克劳德阅读全部内容或就地编辑"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed per-directory and `paths:` skills not being found after a Bash `cd` deeper into a git repository",
+   "zh": "修复了将 Bash `cd` 深入到 git 存储库后找不到每个目录和 `paths:` 技能的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare case where the first reply after resuming a session in the terminal could be missing the next time the session was resumed",
+   "zh": "修复了一种罕见的情况，即下次恢复会话时，终端中恢复会话后的第一个回复可能会丢失"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a command with an invalid name stopping all commands from loading, which could leave `claude -p` with no output",
+   "zh": "修复了名称无效的命令，阻止所有命令加载，这可能导致`claude -p`没有输出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Read tool sometimes failing on PDF pages with \"pdftoppm failed: Could not write image\" when the clean-up of old session files ran at the same time",
+   "zh": "修复了当同时运行旧会话文件的清理时，读取工具有时会在 PDF 页面上失败，并显示“pdftoppm 失败：无法写入图像”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the spinner, OpenTelemetry `effort` values and transcripts naming a newly picked effort level during a task before the model applied it; they now show the level in force",
+   "zh": "修复了微调器、OpenTelemetry“工作量”值和成绩单，在模型应用任务期间命名新选择的工作量级别；他们现在显示有效的水平"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/model` and `/effort` cache warning saying the re-read waits for your next message; a change made while Claude is working can trigger it sooner",
+   "zh": "修复了`/model`和`/effort`缓存警告，表示重新读取等待您的下一条消息；克劳德工作时所做的改变可以更快地触发它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed some sessions showing as waiting on you when the last message only mentioned items waiting on you mid-sentence",
+   "zh": "修复了当最后一条消息仅提到在句子中等待您的项目时，某些会话显示为正在等待您"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent view restoring input text on the next launch after it was cleared with Ctrl+C just before exiting",
+   "zh": "修复了代理视图在退出前使用 Ctrl+C 清除输入文本后在下次启动时恢复输入文本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent view reopening in shell mode after exiting with Ctrl+D from an empty `!` input",
+   "zh": "修复了从空`!`输入中使用 Ctrl+D 退出后以 shell 模式重新打开代理视图的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode `d`, `c` and `y` with a `gj` or `gk` count larger than the lines left deleting or copying text; like Vim, they now only move the cursor",
+   "zh": "修复了 vim 模式`d`、`c`和`y`，其中`gj`或`gk`计数大于删除或复制文本时留下的行数；像 Vim 一样，他们现在只移动光标"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/verify` showing a long description meant for Claude in `/help` and the `/` command menu instead of a short one",
+   "zh": "修复了`/verify`在`/help`和`/`命令菜单中显示针对克劳德的长描述，而不是短描述"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed sessions ending on a bare exit code when your organization's settings couldn't be loaded or were refused at startup; the tab now says why and offers Retry or Sign in again",
+   "zh": "[VSCode] 修复了当组织的设置无法加载或在启动时被拒绝时会话以裸退出代码结束的问题；该选项卡现在会说明原因并提供“重试”或“再次登录”选项"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed resending an unchanged message after a failed send in a cloud session sometimes running it twice",
+   "zh": "[云会话]修复了在云会话中发送失败后重新发送未更改的消息（有时会运行两次）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed a failed cloud environment creation showing its error only as a toast outside the open dialog; it now appears inside the dialog",
+   "zh": "[云会话] 修复了云环境创建失败的问题，仅在打开的对话框之外显示其错误；它现在出现在对话框内"
+  },
+  {
+   "type": "fixed",
+   "en": "[Cloud sessions] Fixed Edit in a routine's menu on the Routines page going to the routine's page without opening its edit dialog",
+   "zh": "[云会话] 修复了在“例程”页面上的例程菜单中编辑会转到例程页面而不打开其编辑对话框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Remote Control] Fixed an unarchived Remote Control session showing as working until a computer reconnected; it now shows as idle",
+   "zh": "[远程控制] 修复了未存档的远程控制会话在计算机重新连接之前显示为工作状态的问题；现在显示为空闲"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed a Claude Tag channel's on/off switch and agent settings falling back to workspace defaults when an older private Slack channel goes public and gets a new ID",
+   "zh": "[Claude Tag] 修复了当旧的私有 Slack 频道公开并获取新 ID 时，Claude Tag 频道的开/关开关和代理设置回退到工作区默认值的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude in Slack not replying in channels whose environment has network access set to None",
+   "zh": "[Claude Tag] 修复了 Slack 中的 Claude 在环境网络访问设置为“无”的频道中不回复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Claude Tag] Fixed Claude in Slack sometimes posting a file in the wrong thread when it was answering in another thread of the same channel",
+   "zh": "[Claude Tag] 修复了 Slack 中的 Claude 有时在同一频道的另一个线程中回答时在错误的线程中发布文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[Code Review] Fixed Code Review reviewing an outdated commit, or none at all, when GitHub delivered a push event late; it now reviews the pull request's current commit",
+   "zh": "[代码审查] 修复了当 GitHub 延迟交付推送事件时代码审查会审查过时的提交，或根本不审查的问题；现在它会审查拉取请求的当前提交"
+  }
+ ]
+}

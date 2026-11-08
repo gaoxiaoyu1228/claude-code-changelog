@@ -1,0 +1,27 @@
+{
+ "version": "2.0.37",
+ "date": "2025-11-10",
+ "published": "2025-11-10T22:05:27.713Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.37",
+ "counts": {
+  "new": 2,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Hooks: Added matcher values for Notification hook events",
+   "zh": "Hooks：为 Notification 钩子事件新增 matcher 值"
+  },
+  {
+   "type": "new",
+   "en": "Output Styles: Added `keep-coding-instructions` option to frontmatter",
+   "zh": "输出样式：frontmatter 新增 `keep-coding-instructions` 选项"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed how idleness is computed for notifications",
+   "zh": "修复了通知空闲度的计算方式"
+  }
+ ]
+}

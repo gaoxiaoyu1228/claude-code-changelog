@@ -1,0 +1,43 @@
+{
+ "version": "1.0.8",
+ "date": "2025-06-02",
+ "published": "2025-06-02T16:16:32.619Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.8",
+ "counts": {
+  "new": 1,
+  "improved": 2,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for triggering thinking non-English languages",
+   "zh": "添加了对触发非英语语言思维的支持"
+  },
+  {
+   "type": "improved",
+   "en": "Increased default otel interval from 1s -> 5s",
+   "zh": "将默认 otel 采样间隔从 1 秒提高到 5 秒"
+  },
+  {
+   "type": "improved",
+   "en": "Improved compacting UI",
+   "zh": "改进压缩时的界面"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Vertex AI region fallback when using CLOUD_ML_REGION",
+   "zh": "修复了使用 CLOUD_ML_REGION 时 Vertex AI 区域回退的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed edge cases where MCP_TIMEOUT and MCP_TOOL_TIMEOUT weren't being respected",
+   "zh": "修复了未遵守 MCP_TIMEOUT 和 MCP_TOOL_TIMEOUT 的边缘情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a regression where search tools unnecessarily asked for permissions",
+   "zh": "修复了搜索工具不必要地请求权限的回归"
+  }
+ ]
+}

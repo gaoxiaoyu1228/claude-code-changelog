@@ -1,0 +1,48 @@
+{
+ "version": "1.0.123",
+ "date": "2025-09-23",
+ "published": "2025-09-23T20:49:33.199Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.123",
+ "counts": {
+  "new": 1,
+  "improved": 3,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added SlashCommand tool, which enables Claude to invoke your slash commands. https://code.claude.com/docs/en/slash-commands#SlashCommand-tool",
+   "zh": "添加了 SlashCommand 工具，使 Claude 能够调用斜杠命令。 https://code.claude.com/docs/en/slash-commands#SlashCommand-tool"
+  },
+  {
+   "type": "improved",
+   "en": "Bash permission rules now support output redirections when matching (e.g., `Bash(python:*)` matches `python script.py > output.txt`)",
+   "zh": "Bash 权限规则现在支持匹配时的输出重定向（例如，`Bash(python:*)`匹配`python script.py > output.txt`）"
+  },
+  {
+   "type": "improved",
+   "en": "Enhanced BashTool environment snapshot logging",
+   "zh": "增强的 BashTool 环境快照日志记录"
+  },
+  {
+   "type": "improved",
+   "en": "Migrated --debug logging to a file, to enable easy tailing & filtering",
+   "zh": "--debug 日志改为写入文件，便于用 tail 实时查看和过滤"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed thinking mode triggering on negation phrases like \"don't think\"",
+   "zh": "修复思考模式会被\"don't think\"这类否定短语误触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rendering performance degradation during token streaming",
+   "zh": "修复了令牌流期间渲染性能下降的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where resuming a conversation in headless mode would sometimes enable thinking unnecessarily",
+   "zh": "修复了在无头模式下恢复对话有时会导致不必要的思考的错误"
+  }
+ ]
+}

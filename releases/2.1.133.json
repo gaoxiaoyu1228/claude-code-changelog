@@ -1,0 +1,98 @@
+{
+ "version": "2.1.133",
+ "date": "2026-05-07",
+ "published": "2026-05-07T20:19:32.227Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.133",
+ "counts": {
+  "new": 4,
+  "improved": 3,
+  "fixed": 10
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `worktree.baseRef` setting (`fresh` | `head`) to choose whether `--worktree`, `EnterWorktree`, and agent-isolation worktrees branch from `origin/<default>` or local `HEAD`. **Note:** the default `fresh` changes `EnterWorktree`'s base back to `origin/<default>` (it has been local `HEAD` since 2.1.128) — set `worktree.baseRef: \"head\"` to keep unpushed commits in new worktrees",
+   "zh": "添加了`worktree.baseRef`设置（“fresh”|`head`）以选择`--worktree`、“EnterWorktree”和代理隔离工作树是否从“origin/<default>”或本地“HEAD”分支。 **注意：** 默认 `fresh` 将 `EnterWorktree` 的基础更改回 `origin/<default>` （自 2.1.128 起它一直是本地 `HEAD`） — 设置 `worktree.baseRef: `head`` 以在新工作树中保留未推送的提交"
+  },
+  {
+   "type": "new",
+   "en": "Added `sandbox.bwrapPath` and `sandbox.socatPath` managed settings (Linux/WSL) to specify custom bubblewrap and socat binary locations",
+   "zh": "添加了 `sandbox.bwrapPath` 和 `sandbox.socatPath` 托管设置 (Linux/WSL) 以指定自定义 bubblewrap 和 socat 二进制位置"
+  },
+  {
+   "type": "new",
+   "en": "Added `parentSettingsBehavior` admin-tier key (`'first-wins' | 'merge'`) to let admins opt SDK `managedSettings` (parent tier) into the policy merge",
+   "zh": "添加了`parentSettingsBehavior`管理层密钥（“first-wins”|“merge”），以让管理员选择 SDK“managementSettings”（父层）进入策略合并"
+  },
+  {
+   "type": "new",
+   "en": "Hooks now receive the active effort level via the `effort.level` JSON input field and the `$CLAUDE_EFFORT` environment variable, and Bash tool commands can read `$CLAUDE_EFFORT`",
+   "zh": "Hooks 现在通过 `effort.level` JSON 输入字段和 `$CLAUDE_EFFORT` 环境变量接收当前的 effort 级别，Bash 工具命令也能读取 `$CLAUDE_EFFORT`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved focus mode behavior",
+   "zh": "改进专注模式的行为"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage by releasing warm-spare background workers under memory pressure",
+   "zh": "改进内存压力下的处理：释放待命的备用后台 worker"
+  },
+  {
+   "type": "improved",
+   "en": "`claude --help` now lists `--remote-control` alongside `--remote-control-session-name-prefix`",
+   "zh": "`claude --help` 现在会在 `--remote-control-session-name-prefix` 旁边列出 `--remote-control`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed parallel sessions all dead-ending at 401 after a refresh-token race wiped shared credentials",
+   "zh": "修复了刷新令牌竞赛擦除共享凭据后所有并行会话都在 401 处陷入死胡同的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Edit`/`Write` allow rules scoped to a drive root (`C:\\`) or POSIX `/` matching incorrectly and always prompting",
+   "zh": "修复了“编辑”/“写入”允许范围为驱动器根目录（`C:\\`）或 POSIX`/` 匹配不正确且始终提示的规则"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an unhandled rejection (`ECOMPROMISED`) when a history or session-log file lock is compromised by clock skew or slow disk",
+   "zh": "修复了当历史记录或会话日志文件锁因时钟偏差或磁盘缓慢而受到损害时未处理的拒绝（`ECOMPROMISED`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing Esc during conversation compaction showing a spurious \"Error compacting conversation\" notification",
+   "zh": "修复了在对话压缩期间按 Esc 键显示虚假的“压缩对话时出错”通知的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `HTTP(S)_PROXY` / `NO_PROXY` / mTLS not being respected for the full MCP OAuth flow including discovery, dynamic client registration, token exchange, and token refresh",
+   "zh": "修复了完整 MCP OAuth 流程（包括发现、动态客户端注册、令牌交换和令牌刷新）不遵守`HTTP(S)_PROXY`/`NO_PROXY`/mTLS 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Read/Write/Edit being denied on mapped network drives passed via `--add-dir` / SDK `additionalDirectories`",
+   "zh": "修复了通过`--add-dir`/SDK`additionalDirectories`传递的映射网络驱动器上的读/写/编辑被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control stop/interrupt from claude.ai not fully canceling the CLI session the same way local Esc does, causing queued messages to never advance after interrupting a stuck tool or prompt",
+   "zh": "修复了 claude.ai 的远程控制停止/中断未像本地 Esc 那样完全取消 CLI 会话，导致排队的消息在中断卡住的工具或提示后永远不会前进的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/effort` in one session unexpectedly changing the effort level of other concurrent sessions, and a related issue where an IDE effort change could be silently dropped",
+   "zh": "修复了一个会话中的`/effort`意外更改其他并发会话的工作量级别，以及 IDE 工作量更改可能会被静默删除的相关问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents not discovering project, user, or plugin skills via the Skill tool",
+   "zh": "修复了子代理无法通过技能工具发现项目、用户或插件技能的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed `claudeCode.claudeProcessWrapper` failing with \"Unsupported platform\" when the extension build doesn't bundle a Claude binary",
+   "zh": "[VSCode] 修复扩展构建中未内置 Claude 二进制文件时，`claudeCode.claudeProcessWrapper` 报 \"Unsupported platform\" 的问题"
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "version": "2.1.6",
+ "date": "2026-01-13",
+ "published": "2026-01-13T01:42:47.331Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.6",
+ "counts": {
+  "new": 6,
+  "improved": 6,
+  "fixed": 12,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added search functionality to `/config` command for quickly filtering settings",
+   "zh": "为`/config`命令添加了搜索功能，以快速过滤设置"
+  },
+  {
+   "type": "new",
+   "en": "Added Updates section to `/doctor` showing auto-update channel and available npm versions (stable/latest)",
+   "zh": "在`/doctor`中添加了更新部分，显示自动更新通道和可用的 npm 版本（稳定/最新）"
+  },
+  {
+   "type": "new",
+   "en": "Added date range filtering to `/stats` command - press `r` to cycle between Last 7 days, Last 30 days, and All time",
+   "zh": "在`/stats`命令中添加了日期范围过滤 - 按`r`在过去 7 天、过去 30 天和所有时间之间循环"
+  },
+  {
+   "type": "new",
+   "en": "Added automatic discovery of skills from nested `.claude/skills` directories when working with files in subdirectories",
+   "zh": "添加了在处理子目录中的文件时自动发现嵌套`.claude/skills`目录中的技能"
+  },
+  {
+   "type": "new",
+   "en": "Added `context_window.used_percentage` and `context_window.remaining_percentage` fields to status line input for easier context window display",
+   "zh": "在状态行输入中添加了 `context_window.used_percentage` 和 `context_window.remaining_percentage` 字段，以便于上下文窗口显示"
+  },
+  {
+   "type": "new",
+   "en": "Added an error display when the editor fails during Ctrl+G",
+   "zh": "添加了在 Ctrl+G 期间编辑器失败时的错误显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the external CLAUDE.md imports approval dialog to show which files are being imported and from where",
+   "zh": "改进外部 CLAUDE.md 导入的批准对话框：会显示正在导入哪些文件，以及它们来自哪里"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the `/tasks` dialog to go directly to task details when there's only one background task running",
+   "zh": "改进 `/tasks` 对话框：只有一个后台任务运行时，直接进入任务详情"
+  },
+  {
+   "type": "improved",
+   "en": "Improved @ autocomplete with icons for different suggestion types and single-line formatting",
+   "zh": "改进 @ 自动补全：不同建议类型带上图标，并改为单行显示"
+  },
+  {
+   "type": "improved",
+   "en": "Updated \"Help improve Claude\" setting fetch to refresh OAuth and retry when it fails due to a stale OAuth token",
+   "zh": "\"Help improve Claude\" 设置在 OAuth 令牌过期导致获取失败时，现在会刷新 OAuth 并重试"
+  },
+  {
+   "type": "improved",
+   "en": "Changed task notification display to cap at 3 lines with overflow summary when multiple background tasks complete simultaneously",
+   "zh": "当多个后台任务同时完成时，将任务通知显示更改为最多 3 行并带有溢出摘要"
+  },
+  {
+   "type": "improved",
+   "en": "Changed terminal title to \"Claude Code\" on startup for better window identification",
+   "zh": "在启动时将终端标题更改为“Claude Code”，以便更好地识别窗口"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed permission bypass via shell line continuation that could allow blocked commands to execute",
+   "zh": "通过 shell 行延续修复了权限绕过，可能允许执行被阻止的命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false \"File has been unexpectedly modified\" errors when file watchers touch files without changing content",
+   "zh": "修复了当文件观察者触摸文件而不更改内容时出现的错误“文件已被意外修改”的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed text styling (bold, colors) getting progressively misaligned in multi-line responses",
+   "zh": "修复多行回复中文字样式（粗体、颜色）逐渐错位的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the feedback panel closing unexpectedly when typing 'n' in the description field",
+   "zh": "修复在描述输入框中输入字母 \"n\" 时，反馈面板意外关闭的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rate limit warning appearing at low usage after weekly reset (now requires 70% usage)",
+   "zh": "修复了每周重置后低使用率时出现的速率限制警告（现在需要 70% 使用率）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rate limit options menu incorrectly auto-opening when resuming a previous session",
+   "zh": "修复了恢复上一个会话时速率限制选项菜单错误地自动打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed numpad keys outputting escape sequences instead of characters in Kitty keyboard protocol terminals",
+   "zh": "修复了小键盘按键输出转义序列而不是 Kitty 键盘协议终端中的字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Option+Return not inserting newlines in Kitty keyboard protocol terminals",
+   "zh": "修复了 Option+Return 不在 Kitty 键盘协议终端中插入换行符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed corrupted config backup files accumulating in the home directory (now only one backup is created per config file)",
+   "zh": "修复了主目录中累积的损坏的配置备份文件（现在每个配置文件仅创建一个备份）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `mcp list` and `mcp get` commands leaving orphaned MCP server processes",
+   "zh": "修复了`mcp list`和`mcp get`命令留下孤立的 MCP 服务器进程的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed visual artifacts in ink2 mode when nodes become hidden via `display:none`",
+   "zh": "修复 ink2 模式下，节点通过 `display:none` 隐藏时出现的视觉残留问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed usage indicator not updating after manual compact",
+   "zh": "[VSCode] 修复手动压缩后用量指示器不更新的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed ability to @-mention MCP servers to enable/disable - use `/mcp enable <name>` instead",
+   "zh": "移除通过 @ 提及 MCP 服务器来启用或禁用的功能，请改用 `/mcp enable <名称>`"
+  }
+ ]
+}

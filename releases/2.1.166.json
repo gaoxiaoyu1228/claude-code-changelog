@@ -1,0 +1,118 @@
+{
+ "version": "2.1.166",
+ "date": "2026-06-05",
+ "published": "2026-06-05T19:01:59.944Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.166",
+ "counts": {
+  "new": 3,
+  "improved": 3,
+  "fixed": 15
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `fallbackModel` setting to configure up to three fallback models tried in order when the primary model is overloaded or unavailable; `--fallback-model` now also applies to interactive sessions",
+   "zh": "添加了`fallbackModel`设置，以在主模型过载或不可用时按顺序配置最多三个尝试的后备模型； `--fallback-model` 现在也适用于交互式会话"
+  },
+  {
+   "type": "new",
+   "en": "Added glob pattern support in deny rule tool-name position (`\"*\"` denies all tools); allow rules reject non-MCP globs, and unknown tool names in deny rules warn at startup",
+   "zh": "在拒绝规则工具名称位置添加了 glob 模式支持（“*”拒绝所有工具）；允许规则拒绝非 MCP 全局对象，并且拒绝规则中的未知工具名称在启动时发出警告"
+  },
+  {
+   "type": "new",
+   "en": "Claude Code now retries a turn once on the fallback model when the API rejects an unexpected non-retryable error; auth, rate-limit, request-size, and transport errors still surface immediately",
+   "zh": "现在，当 API 拒绝意外的不可重试错误时，Claude Code 会在后备模型上重试一次；身份验证、速率限制、请求大小和传输错误仍然会立即出现"
+  },
+  {
+   "type": "improved",
+   "en": "`MAX_THINKING_TOKENS=0`, `--thinking disabled`, and the per-model thinking toggle now disable thinking on models that think by default via the Claude API (3P providers unchanged)",
+   "zh": "`MAX_THINKING_TOKENS=0`、`--thinking disabled` 以及按模型的思考开关，现在会通过 Claude API 禁用默认会思考的模型的思考功能（第三方提供商不变）"
+  },
+  {
+   "type": "improved",
+   "en": "`claude update` now announces the target version before downloading instead of going silent",
+   "zh": "`claude update` 现在会在下载前先说明目标版本，而不再毫无提示"
+  },
+  {
+   "type": "improved",
+   "en": "`claude agents`: typing a URL into the list now filters to the session whose first prompt contained it",
+   "zh": "`claude agents`：在列表中输入 URL 会筛选出首条提示词包含该 URL 的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened cross-session messaging: messages relayed via `SendMessage` from other Claude sessions no longer carry user authority — receivers refuse relayed permission requests, and auto mode blocks them",
+   "zh": "加固跨会话消息：通过 `SendMessage` 从其他 Claude 会话转发的消息不再拥有用户权限，接收方会拒绝转发来的权限请求，自动模式也会拦截"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a recurring \"image could not be processed\" error and extra token usage when an unprocessable image was sent in a session",
+   "zh": "修复了在会话中发送无法处理的图像时反复出现的“无法处理图像”错误和额外令牌使用问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote sessions becoming permanently stuck when a brief backend disruption occurred during worker registration at startup",
+   "zh": "修复了启动时工作人员注册期间发生短暂后端中断时远程会话永久卡住的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed flickering in JetBrains IDE terminals (IntelliJ, PyCharm, WebStorm, etc.) on 2026.1+ by enabling synchronized output",
+   "zh": "通过启用同步输出，修复了 2026.1+ 上 JetBrains IDE 终端（IntelliJ、PyCharm、WebStorm 等）的闪烁问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Shift+non-ASCII characters (e.g. Shift+ä → Ä) being dropped in terminals using the Kitty keyboard protocol (WezTerm, Ghostty, kitty)",
+   "zh": "修复了使用 Kitty 键盘协议（WezTerm、Ghostty、kitty）在终端中删除 Shift+非 ASCII 字符（例如 Shift+ä → ä）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PowerShell command validation occasionally hanging far past its time budget on Windows when a killed process's children held its output pipes",
+   "zh": "修复了当被杀死的进程的子进程持有其输出管道时，PowerShell 命令验证偶尔会在 Windows 上远远超出其时间预算"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed orphaned `claude --bg-pty-host` processes spinning at 100% CPU after the daemon dies while connected on macOS",
+   "zh": "修复了守护进程在 macOS 连接时死亡后以 100% CPU 旋转的孤立`claude --bg-pty-host`进程"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode requiring `/login` to clear a stale auth check after toggling `/voice`",
+   "zh": "修复切换 `/voice` 后，需要运行 `/login` 才能清除过期认证检查的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed settings with an invalid entry silently disabling enforcement of their remaining valid policies",
+   "zh": "修复了具有无效条目的托管设置，该设置会默默地禁用其余有效策略的执行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed managed-settings `allowedMcpServers`/`deniedMcpServers` predicates not matching when they use `${VAR}` references",
+   "zh": "修复了托管设置`allowedMcpServers`/`deniedMcpServers`谓词在使用`${VAR}`引用时不匹配的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent sessions that entered a git worktree crash-looping with \"No conversation found\" when reopened from `claude agents`",
+   "zh": "修复了从“claude Agents”重新打开时进入 git worktree 崩溃循环并显示“未找到对话”的后台代理会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed duplicated thinking text in the Ctrl+O transcript view while streaming",
+   "zh": "修复了流式传输时 Ctrl+O 转录视图中重复的思考文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/doctor` showing a contradictory failed \"Not inside a remote session\" check when run inside a remote session",
+   "zh": "修复了`/doctor`在远程会话内运行时显示矛盾的失败“不在远程会话内”检查的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the cursor sticking at the end of the first line when typing a multiline prompt in the `claude agents` dispatch and reply inputs",
+   "zh": "修复在 `claude agents` 的派发和回复输入框中输入多行提示词时，光标卡在第一行末尾的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed blank lines appearing between background agent rows in the task list on terminals without Unicode support",
+   "zh": "修复了不支持 Unicode 的终端上任务列表中后台代理行之间出现的空白行"
+  }
+ ]
+}

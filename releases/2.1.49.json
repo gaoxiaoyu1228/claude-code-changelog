@@ -1,0 +1,149 @@
+{
+ "version": "2.1.49",
+ "date": "2026-02-19",
+ "published": "2026-02-19T22:39:45.313Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.49",
+ "counts": {
+  "new": 8,
+  "improved": 8,
+  "fixed": 10,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `--worktree` (`-w`) flag to start Claude in an isolated git worktree",
+   "zh": "添加了 `--worktree` (`-w`) 标志以在隔离的 git 工作树中启动 Claude"
+  },
+  {
+   "type": "new",
+   "en": "Subagents support `isolation: \"worktree\"` for working in a temporary git worktree",
+   "zh": "子代理支持 `isolation: \"worktree\"`，可在临时的 git worktree 中工作"
+  },
+  {
+   "type": "new",
+   "en": "Added Ctrl+F keybinding to kill background agents (two-press confirmation)",
+   "zh": "添加了 Ctrl+F 键绑定来杀死后台代理（按两次确认）"
+  },
+  {
+   "type": "new",
+   "en": "Agent definitions support `background: true` to always run as a background task",
+   "zh": "代理定义支持`background: true`始终作为后台任务运行"
+  },
+  {
+   "type": "new",
+   "en": "Plugins can ship `settings.json` for default configuration",
+   "zh": "插件可附带 `settings.json` 作为默认配置"
+  },
+  {
+   "type": "new",
+   "en": "Simple mode (`CLAUDE_CODE_SIMPLE`) now includes the file edit tool in addition to the Bash tool, allowing direct file editing in simple mode.",
+   "zh": "简单模式（`CLAUDE_CODE_SIMPLE`）现在除 Bash 工具外还包含文件编辑工具，可在简单模式下直接编辑文件"
+  },
+  {
+   "type": "new",
+   "en": "SDK model info now includes `supportsEffort`, `supportedEffortLevels`, and `supportsAdaptiveThinking` fields so consumers can discover model capabilities.",
+   "zh": "SDK 的模型信息现在包含 `supportsEffort`、`supportedEffortLevels` 和 `supportsAdaptiveThinking` 字段，方便调用方了解模型能力"
+  },
+  {
+   "type": "new",
+   "en": "Added `ConfigChange` hook event that fires when configuration files change during a session, enabling enterprise security auditing and optional blocking of settings changes.",
+   "zh": "添加了`ConfigChange`挂钩事件，该事件在会话期间配置文件更改时触发，从而启用企业安全审核和可选的设置更改阻止。"
+  },
+  {
+   "type": "improved",
+   "en": "Improved MCP OAuth authentication with step-up auth support and discovery caching, reducing redundant network requests during server connections",
+   "zh": "改进 MCP OAuth 认证：支持 step-up 认证并缓存发现结果，减少连接服务器时多余的网络请求"
+  },
+  {
+   "type": "improved",
+   "en": "Permission suggestions are now populated when safety checks trigger an ask response, enabling SDK consumers to display permission options",
+   "zh": "安全检查触发 ask 响应时，现在会填充权限建议，使 SDK 使用方可以显示权限选项"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance in non-interactive mode (`-p`) by skipping unnecessary API calls during startup",
+   "zh": "改进非交互模式（`-p`）性能：启动时跳过不必要的 API 调用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance by caching authentication failures for HTTP and SSE MCP servers, avoiding repeated connection attempts to servers requiring auth",
+   "zh": "改进性能：缓存 HTTP 和 SSE 类 MCP 服务器的认证失败结果，避免反复连接需要认证的服务器"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance by caching MCP auth failures to avoid redundant connection attempts",
+   "zh": "改进启动性能：缓存 MCP 认证失败的结果，避免重复的连接尝试"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance by reducing HTTP calls for analytics token counting",
+   "zh": "改进启动性能：减少分析用 token 计数的 HTTP 调用次数"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance by batching MCP tool token counting into a single API call",
+   "zh": "改进启动性能：MCP 工具的 token 计数合并为一次 API 调用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved permission prompts for path safety and working directory blocks to show the reason for the restriction instead of a bare prompt with no context",
+   "zh": "改进路径安全和工作目录拦截时的权限提示：显示受限原因，而不是只给一个没有上下文的提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed file-not-found errors to suggest corrected paths when the model drops the repo folder",
+   "zh": "修复了文件未找到错误，以在模型删除存储库文件夹时建议更正的路径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+C and ESC being silently ignored when background agents are running and the main thread is idle. Pressing twice within 3 seconds now kills all background agents.",
+   "zh": "修复了后台代理运行且主线程空闲时 Ctrl+C 和 ESC 被静默忽略的问题。现在在 3 秒内按两次会杀死所有后台代理。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt suggestion cache regression that reduced cache hit rates.",
+   "zh": "修复了提示建议缓存回归，降低了缓存命中率。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `plugin enable` and `plugin disable` to auto-detect the correct scope when `--scope` is not specified, instead of always defaulting to user scope",
+   "zh": "修复了“插件启用”和“插件禁用”，以便在未指定`--scope`时自动检测正确的范围，而不是始终默认为用户范围"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed verbose mode not updating thinking block display when toggled via `/config` — memo comparators now correctly detect verbose changes",
+   "zh": "修复通过 `/config` 切换详细模式时，思考块显示不更新的问题；现在备忘录比较器能正确检测详细模式的变化"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded WASM memory growth during long sessions by periodically resetting the tree-sitter parser",
+   "zh": "修复长会话中 WASM 内存无限增长的问题：现在会定期重置 tree-sitter 解析器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed potential rendering issues caused by stale yoga layout references",
+   "zh": "修复了因过时的瑜伽布局参考引起的潜在渲染问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unbounded memory growth during long-running sessions caused by Yoga WASM linear memory never shrinking",
+   "zh": "修复长时间运行的会话中，Yoga WASM 线性内存从不收缩导致内存无限增长的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `disableAllHooks` setting to respect managed settings hierarchy — non-managed settings can no longer disable managed hooks set by policy (#26637)",
+   "zh": "修复了`disableAllHooks`设置以尊重托管设置层次结构 - 非托管设置无法再禁用由策略设置的托管挂钩 (#26637)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` session picker showing raw XML tags for sessions that start with commands like `/clear`. Now correctly falls through to the session ID fallback.",
+   "zh": "修复了`--resume`会话选择器，显示以`/clear`等命令开头的会话的原始 XML 标签。现在正确地转入会话 ID 后备。"
+  },
+  {
+   "type": "removed",
+   "en": "Sonnet 4.5 with 1M context is being removed from the Max plan in favor of our frontier Sonnet 4.6 model, which now has 1M context. Please switch in /model.",
+   "zh": "Sonnet 4.5（1M 上下文）将从 Max 套餐中移除，改用前沿的 Sonnet 4.6（现已支持 1M 上下文）。请在 `/model` 中切换"
+  }
+ ]
+}

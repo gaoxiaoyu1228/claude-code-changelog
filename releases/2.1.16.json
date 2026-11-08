@@ -1,0 +1,47 @@
+{
+ "version": "2.1.16",
+ "date": "2026-01-22",
+ "published": "2026-01-22T19:03:08.904Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.16",
+ "counts": {
+  "new": 3,
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added new task management system, including new capabilities like dependency tracking",
+   "zh": "添加了新的任务管理系统，包括依赖性跟踪等新功能"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added native plugin management support",
+   "zh": "[VSCode] 新增原生插件管理支持"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added ability for OAuth users to browse and resume remote Claude sessions from the Sessions dialog",
+   "zh": "[VSCode] OAuth 用户可在会话对话框中浏览并恢复远程 Claude 会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed out-of-memory crashes when resuming sessions with heavy subagent usage",
+   "zh": "修复了在大量使用子代理的情况下恢复会话时内存不足崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where the \"context remaining\" warning was not hidden after running `/compact`",
+   "zh": "修复了运行`/compact`后未隐藏“上下文剩余”警告的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session titles on the resume screen not respecting the user's language setting",
+   "zh": "修复了简历屏幕上的会话标题不尊重用户语言设置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[IDE] Fixed a race condition on Windows where the Claude Code sidebar view container would not appear on start",
+   "zh": "[IDE] 修复 Windows 上 Claude Code 侧边栏视图容器有时在启动时不出现的竞争条件问题"
+  }
+ ]
+}

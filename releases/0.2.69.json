@@ -1,0 +1,22 @@
+{
+ "version": "0.2.69",
+ "date": "2025-04-11",
+ "published": "2025-04-11T22:30:28.481Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.69",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Enhanced terminal output display with better text truncation logic",
+   "zh": "增强的终端输出显示，具有更好的文本截断逻辑"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed UI glitches with improved Select component behavior",
+   "zh": "修复了 UI 故障并改进了 Select 组件行为"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "version": "2.1.173",
+ "date": "2026-06-11",
+ "published": "2026-06-11T02:09:50.066Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.173",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed Fable 5 model names with a `[1m]` suffix not being normalized — Fable 5 includes 1M context by default, so the suffix is now stripped automatically",
+   "zh": "修复了带有`[1m]`后缀的《神鬼寓言 5》模型名称未标准化的问题 - 《神鬼寓言 5》默认包含 1M 上下文，因此现在会自动删除后缀"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a spurious \"sandbox dependencies missing\" startup warning on Windows when sandbox was enabled in settings",
+   "zh": "修复了在设置中启用沙箱时 Windows 上虚假的“沙箱依赖项缺失”启动警告"
+  }
+ ]
+}

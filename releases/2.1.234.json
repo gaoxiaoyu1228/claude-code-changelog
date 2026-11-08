@@ -1,0 +1,269 @@
+{
+ "version": "2.1.234",
+ "date": "2026-08-17",
+ "published": "2026-08-17T18:19:13.187Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.234",
+ "counts": {
+  "new": 4,
+  "improved": 19,
+  "fixed": 26,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added the optional `CLAUDE_CODE_PROJECT_DIR_NAME` environment variable: hosts that give each session its own config directory can choose a short name for the per-project transcript directory",
+   "zh": "添加了可选的`CLAUDE_CODE_PROJECT_DIR_NAME`环境变量：为每个会话提供自己的配置目录的主机可以为每个项目的脚本目录选择一个短名称"
+  },
+  {
+   "type": "new",
+   "en": "Added the `selection:clear` keybinding action, so a key can be bound to clear an in-app text selection; also works in the agents view",
+   "zh": "添加了 `selection:clear` 按键绑定操作，因此可以绑定一个按键来清除应用内的文本选择；也适用于代理视图"
+  },
+  {
+   "type": "new",
+   "en": "Added a GitLab merge request badge to the footer and statusline: repos with a GitLab remote and an authenticated glab CLI show MR !N with draft/pending/green states",
+   "zh": "在页脚和状态行中添加了 GitLab 合并请求徽章：带有 GitLab 远程仓库和经过身份验证的 glab CLI 显示 MR !N 以及草稿/待处理/绿色状态"
+  },
+  {
+   "type": "new",
+   "en": "Claude Code now continues your session automatically when a claude.ai usage limit resets; turn it off in `/config` (\"Continue automatically at usage limit\")",
+   "zh": "现在，当 claude.ai 使用限制重置时，Claude Code 会自动继续您的会话；在 `/config` 中将其关闭（“在使用限制时自动继续”）"
+  },
+  {
+   "type": "improved",
+   "en": "Claude is now told to use your account email only to identify you, and not to send it to unrelated services unless you ask",
+   "zh": "现在，克劳德被告知仅使用您的帐户电子邮件来识别您的身份，除非您要求，否则不要将其发送到不相关的服务"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control: signing this computer in to a different claude.ai account or organization now stops the running session within seconds and says why, instead of a misleading HTTP 404 hours later",
+   "zh": "把本机登录到另一个 claude.ai 账号或组织时，正在运行的会话会在几秒内停止并说明原因，而不是几小时后出现误导性的 HTTP 404"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control sessions started from Claude Code Desktop or VS Code now keep phones and claude.ai/code updated on the session's permission mode (and claude.ai/code on the model) as they change",
+   "zh": "从 Claude Code Desktop 或 VS Code 启动的 Remote Control 会话，现在会在权限模式变化时同步更新手机端和 claude.ai/code（模型变化时也同步）"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control: effort picks made on a phone or on claude.ai/code now apply to terminal- and Desktop/VS Code-hosted sessions, and the session publishes its effort level to connected clients",
+   "zh": "在手机或 claude.ai/code 上选择的强度，现在会应用到终端和 Desktop/VS Code 托管的会话，且会话会把当前强度级别告知已连接的客户端"
+  },
+  {
+   "type": "improved",
+   "en": "`SendMessage` and `ListAgents` now say when your account's session list was too long to check completely, instead of treating unseen sessions as absent",
+   "zh": "当账号的会话列表过长、无法完整检查时，`SendMessage` 和 `ListAgents` 现在会明确说明，而不是把未检查到的会话当作不存在"
+  },
+  {
+   "type": "improved",
+   "en": "Expired Anthropic profile credential now points you at `/login` when a claude.ai login would take precedence",
+   "zh": "当 claude.ai 登录优先时，过期的 Anthropic 配置文件凭据现在会将您指向`/login`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the transcript: your own prompts now render markdown (highlighted code blocks, inline code, lists) the same way replies do",
+   "zh": "改进转录：你自己的提示现在也会像回复一样渲染 Markdown（高亮代码块、行内代码、列表）"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the \"API returned an empty or malformed response\" error to say what came back (content type, body kind, size, request ID) and why the original streaming request failed",
+   "zh": "改进「API 返回了空的或格式错误的响应」报错：会说明返回的是什么（内容类型、正文类型、大小、请求 ID），以及原始流式请求为什么失败"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto-generated session titles to read as short, specific names (e.g. \"Login button bug\") rather than sentences restating your request (e.g. \"Fix the login button on mobile\")",
+   "zh": "改进自动生成的会话标题：读起来是简短具体的名称（如“Login button bug”），而不是把你的请求整句复述一遍（如“Fix the login button on mobile”）"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced the context cost of loading the built-in `claude-api` skill from ~200k+ tokens to ~25k by loading reference docs on demand",
+   "zh": "加载内置 `claude-api` 技能的上下文成本从 20 万以上 token 降到约 2.5 万，参考文档改为按需加载"
+  },
+  {
+   "type": "improved",
+   "en": "`/permissions` can now be opened while Claude is working — rule changes apply to the rest of the current turn",
+   "zh": "Claude 工作时也可以打开 `/permissions`，规则更改会应用于当前轮次的剩余部分"
+  },
+  {
+   "type": "improved",
+   "en": "`/add-dir <path>` can now be used while Claude is working; `/add-dir`, `/autocompact`, `/theme`, `/help`, `/config` and `/advisor` dialogs open mid-turn in the fullscreen TUI",
+   "zh": "`/add-dir <path>` 现在可在 Claude 工作时使用；全屏 TUI 中，`/add-dir`、`/autocompact`、`/theme`、`/help`、`/config` 和 `/advisor` 对话框现在可在轮次进行中打开"
+  },
+  {
+   "type": "improved",
+   "en": "`/goal` now clears itself with a notice when a turn dies on an unrecoverable error (e.g. revoked auth, an exhausted credit balance, or a context overflow) instead of staying armed",
+   "zh": "轮次因不可恢复的错误（如授权被撤销、额度耗尽或上下文溢出）而中断时，`/goal` 现在会清除自身并给出提示，而不是保持激活"
+  },
+  {
+   "type": "improved",
+   "en": "`/goal`: when background tasks keep a goal waiting for 30+ minutes, Claude now checks in on them instead of waiting indefinitely (set `CLAUDE_CODE_GOAL_CHECKIN_MINUTES=0` to opt out)",
+   "zh": "`/goal`：后台任务使目标等待 30 分钟以上时，Claude 现在会主动检查这些任务，而不是无限期等待（设置 `CLAUDE_CODE_GOAL_CHECKIN_MINUTES=0` 可关闭此功能）"
+  },
+  {
+   "type": "improved",
+   "en": "`claude setup-token` now rejects unexpected extra arguments instead of silently ignoring them",
+   "zh": "`claude setup-token` 现在会拒绝多余的意外参数，而不再静默忽略"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Esc in fullscreen mode to no longer clear a mouse text selection: it interrupts or dismisses as usual and the selection stays highlighted",
+   "zh": "更改了全屏模式下的 Esc，不再清除鼠标文本选择：它会照常中断或取消，并且选择保持突出显示"
+  },
+  {
+   "type": "improved",
+   "en": "Dimmed the elapsed-time counter on the running tool header so it no longer competes with the bold counts",
+   "zh": "使运行工具标题上的经过时间计数器变暗，使其不再与粗体计数竞争"
+  },
+  {
+   "type": "improved",
+   "en": "Background task notifications delivered between turns are now sent to the model inside `<system-reminder>` tags, matching mid-turn delivery",
+   "zh": "现在，轮次之间传递的后台任务通知将发送到`<system-reminder>`标签内的模型，与轮次中传递相匹配"
+  },
+  {
+   "type": "improved",
+   "en": "Mantle: skip the admin-pin availability probe at startup when a main-loop model is already picked",
+   "zh": "Mantle：当主循环模型已选定时，启动时跳过管理员固定可用性检测"
+  },
+  {
+   "type": "fixed",
+   "en": "Security: remote file reads, session restore, CLAUDE.md includes, workflow scripts and file uploads now reject Windows NT-namespace (`\\??\\`) paths, hardening the remaining pre-approval file accesses against the NTLM credential-leak vector",
+   "zh": "安全：远程文件读取、会话恢复、CLAUDE.md 包含、工作流脚本和文件上传，现在都会拒绝 Windows NT 命名空间（`\\??\\`）路径，堵住剩余的预先批准文件访问中的 NTLM 凭据泄露途径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode in very long sessions repeatedly re-checking and denying sandboxed commands' network access after the conversation had been compacted",
+   "zh": "修复了在很长的会话中自动模式在会话被压缩后反复重新检查和拒绝沙盒命令的网络访问"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session-scoped permission answers (including denies) being dropped when answering background subagent tool permission prompts",
+   "zh": "修复了在回答后台子代理工具权限提示时丢弃会话范围的权限答案（包括拒绝）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when an API response on the non-streaming fallback path (typically via third-party gateways) contained a thinking block missing its thinking field or a text block missing its text field",
+   "zh": "修复了当非流式回退路径（通常通过第三方网关）上的 API 响应包含缺少其思考字段的思维块或缺少其文本字段的文本块时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown rendering becoming extremely slow for some messages containing unusual Unicode sequences",
+   "zh": "修复了某些包含异常 Unicode 序列的消息的 Markdown 渲染变得极其缓慢的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SendMessage` rejecting a recipient copied from `ListAgents` when the session name is at the 200-character cap or emoji-heavy",
+   "zh": "修复了当会话名称达到 200 个字符上限或表情符号较多时，`SendMessage`拒绝从`ListAgents`复制的收件人的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed repository detection mis-reading the host of git remotes with unusual userinfo, producing links and repo-specific behavior for the wrong host",
+   "zh": "修复了存储库检测错误读取具有异常用户信息的 git 远程主机，为错误主机生成链接和特定于存储库的行为"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP diagnostics printing resolved secrets: scope-conflict warnings now show the configured `${VAR}` form, and connection-failure details show only the server origin",
+   "zh": "修复了打印已解析机密的 MCP 诊断：范围冲突警告现在显示配置的`${VAR}`表单，并且连接失败详细信息仅显示服务器源"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `strictKnownMarketplaces` allowlists accepting SCP-style git marketplace sources whose host differs from the one git would actually connect to",
+   "zh": "修复了`strictKnownMarketplaces`许可名单，接受 SCP 风格的 git 市场源，其主机与 git 实际连接的主机不同"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed modal text such as the `/login` OAuth URL losing characters when copied in fullscreen",
+   "zh": "修复了模式文本（例如`/login`OAuth URL）在全屏复制时丢失字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a `---` horizontal rule in rendered markdown running into the line after it",
+   "zh": "修复了渲染 Markdown 中的`---`水平规则运行到其后的行中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed consecutive shell commands splitting into multiple \"Ran 1 shell command\" rows when todo/task updates were interleaved between them",
+   "zh": "修复了当待办事项/任务更新在它们之间交错时，连续的 shell 命令分成多个“Ran 1 shell command”行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed dialogs like `/permissions` opened while a `!` shell command was running being dismissed when the command finished",
+   "zh": "修复了在`!` shell 命令运行时打开的`/permissions`等对话框在命令完成后被关闭的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a queued `!` shell command being sent to the model as plain text after pressing up-arrow to edit the queued input",
+   "zh": "修复了按向上箭头编辑排队输入后，排队的`!` shell 命令以纯文本形式发送到模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed queued messages reappearing in the prompt history while still queued, Esc while selecting a queued message no longer interrupts the turn, and `!` mode no longer sticks after a mid-turn submit",
+   "zh": "修复了排队消息在仍在排队时重新出现在提示历史记录中的问题，选择排队消息时按 Esc 键不再中断回合，并且`!`模式在中途提交后不再保留"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed accepting the \"Try the new fullscreen renderer?\" prompt restarting the session without its permission mode (e.g. `--dangerously-skip-permissions`), tool allow/deny rules, model or effort flags",
+   "zh": "修复了接受“尝试新的全屏渲染器？”的问题提示重新启动会话而不使用其权限模式（例如`--dangerously-skip-permissions`）、工具允许/拒绝规则、模型或工作量标志"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/tui` dropping launch `--allowed-tools`/`--disallowed-tools` rules when it restarts; it now declines to switch, with the reason, when the session has restrictions a restart can't carry over",
+   "zh": "修复了`/tui`在重新启动时删除启动`--allowed-tools`/`--disallowed-tools`规则；它现在拒绝切换，原因是，当会话有限制时，重新启动无法继续"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed trust prompts omitting the repository-wide scope warning when the directory was first seen before the repository existed there",
+   "zh": "修复目录首次被看到时仓库尚不存在，之后信任提示未显示仓库级范围警告的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a case where an IDE diff tab closing during a permission re-prompt could answer the new prompt with the previous input",
+   "zh": "修复了在权限重新提示期间关闭 IDE diff 选项卡可能会使用之前的输入回答新提示的情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: files sent to the user during Remote Control sessions hosted by Claude Code Desktop or VS Code now upload, so they open on phone and web instead of showing an empty card",
+   "zh": "修复：在 Claude Code 桌面版或 VS Code 托管的 Remote Control 会话中发给用户的文件，现在会上传，因此可在手机和网页上打开，而不是显示空白卡片"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: after `/login` while `CLAUDE_CODE_OAUTH_TOKEN` is set, the stale-token reminder no longer leaks into Claude's automatically resumed turn — it now appears only to you",
+   "zh": "修复：设置了 `CLAUDE_CODE_OAUTH_TOKEN` 时执行 `/login` 后，过期令牌提醒不再混入 Claude 自动恢复的回合中，现在只会显示给你"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: permission previews now relay only to channel servers admitted by the inbound trust gate, and a server's explicit permission-capability opt-out is honored",
+   "zh": "修复：权限预览现在只转发给通过入站信任关卡的频道服务器，并且会尊重服务器明确选择退出的权限能力设置"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: credential masking on relayed permission previews can no longer hide commands, paths, or destinations from the approver; oversized private-key blocks now redact under full-strength redaction",
+   "zh": "修复：转发的权限预览中的凭证打码，不再隐藏审批人需要看到的命令、路径或目标；超大的私钥块在完整强度打码下也会被脱敏"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: provider API tokens that mask on permission previews now mask even when directly followed by shell delimiters",
+   "zh": "修复：服务商 API 令牌在权限预览中被打码后，即使紧跟在 shell 分隔符之后，现在也会被打码"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Desktop inter-session messages being silently dropped by the recipient session when cross-session messaging read as disabled, which left the sender's query \"thinking\" for many minutes",
+   "zh": "修复了当跨会话消息读取为禁用时，Claude Desktop 会话间消息被收件人会话静默丢弃的问题，这使得发件人的查询“思考”了很多分钟"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: startup no longer stalls on repeated rename retries when `~/.claude.json` is read-only",
+   "zh": "Windows：当 `~/.claude.json` 只读时，启动不再因反复重试重命名而卡住"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the redundant \"Allowed by auto mode classifier\" line that auto mode showed under every Agent tool call",
+   "zh": "移除自动模式在每个 Agent 工具调用下显示的重复行 \"Allowed by auto mode classifier\""
+  },
+  {
+   "type": "removed",
+   "en": "Removed the \"Default teammate model\" setting from `/config`; agent-team teammates now use the leader's model unless the spawn names one",
+   "zh": "从 `/config` 中移除 \"Default teammate model\" 设置；除非生成时指定，否则代理团队的队友使用负责人的模型"
+  }
+ ]
+}

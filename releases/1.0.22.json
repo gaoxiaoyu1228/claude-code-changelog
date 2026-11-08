@@ -1,0 +1,16 @@
+{
+ "version": "1.0.22",
+ "date": "2025-06-12",
+ "published": "2025-06-12T15:53:29.220Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.22",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "SDK: Renamed `total_cost` to `total_cost_usd`",
+   "zh": "SDK：`total_cost` 改名为 `total_cost_usd`"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "version": "2.0.47",
+ "date": "2025-11-19",
+ "published": "2025-11-19T22:38:50.075Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.47",
+ "counts": {
+  "improved": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved error messages and validation for `claude --teleport`",
+   "zh": "改进 `claude --teleport` 的错误提示和校验"
+  },
+  {
+   "type": "improved",
+   "en": "Improved error handling in `/usage`",
+   "zh": "改进 `/usage` 的错误处理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed race condition with history entry not getting logged at exit",
+   "zh": "修复了退出时未记录历史条目的竞争条件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Vertex AI configuration not being applied from `settings.json`",
+   "zh": "修复了 Vertex AI 配置未从`settings.json`应用的问题"
+  }
+ ]
+}

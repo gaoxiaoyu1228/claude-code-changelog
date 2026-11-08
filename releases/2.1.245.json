@@ -1,0 +1,16 @@
+{
+ "version": "2.1.245",
+ "date": "2026-08-25",
+ "published": "2026-08-25T04:45:52.102Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.245",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a crash on startup on Linux distributions that ship glibc 2.44 (for example Arch Linux, CachyOS and Fedora Rawhide)",
+   "zh": "修复了搭载 glibc 2.44 的 Linux 发行版（例如 Arch Linux、CachyOS 和 Fedora Rawhide）上启动时崩溃的问题"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "version": "0.2.74",
+ "date": "2025-04-18",
+ "published": "2025-04-18T22:33:26.843Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.74",
+ "counts": {
+  "new": 1,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for refreshing dynamically generated API keys (via apiKeyHelper), with a 5 minute TTL",
+   "zh": "添加了对刷新动态生成的 API 密钥（通过 apiKeyHelper）的支持，TTL 为 5 分钟"
+  },
+  {
+   "type": "improved",
+   "en": "Task tool can now perform writes and run bash commands",
+   "zh": "Task 工具现在可以执行写入操作并运行 bash 命令"
+  }
+ ]
+}

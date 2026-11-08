@@ -1,0 +1,22 @@
+{
+ "version": "2.1.4",
+ "date": "2026-01-10",
+ "published": "2026-01-10T22:23:31.653Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.4",
+ "counts": {
+  "new": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS` environment variable to disable all background task functionality including auto-backgrounding and the Ctrl+B shortcut",
+   "zh": "添加了`CLAUDE_CODE_DISABLE_BACKGROUND_TASKS`环境变量以禁用所有后台任务功能，包括自动后台和 Ctrl+B 快捷键"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Help improve Claude\" setting fetch to refresh OAuth and retry when it fails due to a stale OAuth token",
+   "zh": "修复了“帮助改进 Claude”设置获取以刷新 OAuth 并在由于 OAuth 令牌过时而失败时重试的问题"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "2.1.112",
+ "date": "2026-04-16",
+ "published": "2026-04-16T19:23:46.419Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.112",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed \"claude-opus-4-7 is temporarily unavailable\" for auto mode",
+   "zh": "修复了自动模式的“claude-opus-4-7 暂时不可用”"
+  }
+ ]
+}

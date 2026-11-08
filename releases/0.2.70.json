@@ -1,0 +1,27 @@
+{
+ "version": "0.2.70",
+ "date": "2025-04-15",
+ "published": "2025-04-15T17:45:55.713Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.70",
+ "counts": {
+  "new": 1,
+  "improved": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Network commands like curl are now available for Claude to use",
+   "zh": "现在 Claude 可以使用 curl 等网络命令"
+  },
+  {
+   "type": "improved",
+   "en": "Claude can now run multiple web queries in parallel",
+   "zh": "Claude 现在可以并行运行多个 Web 查询"
+  },
+  {
+   "type": "improved",
+   "en": "Pressing ESC once immediately interrupts Claude in Auto-accept mode",
+   "zh": "在自动接受模式下，按一次 ESC 即可立即打断 Claude"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "version": "2.1.27",
+ "date": "2026-01-30",
+ "published": "2026-01-30T19:51:58.456Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.27",
+ "counts": {
+  "new": 3,
+  "fixed": 6
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added tool call failures and denials to debug logs",
+   "zh": "添加了工具调用失败和拒绝调试日志"
+  },
+  {
+   "type": "new",
+   "en": "Added `--from-pr` flag to resume sessions linked to a specific GitHub PR number or URL",
+   "zh": "添加了`--from-pr`标志以恢复链接到特定 GitHub PR 编号或 URL 的会话"
+  },
+  {
+   "type": "new",
+   "en": "Sessions are now automatically linked to PRs when created via `gh pr create`",
+   "zh": "通过 `gh pr create` 创建的会话，现在会自动关联到 PR"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed context management validation error for gateway users, ensuring `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` avoids the error",
+   "zh": "修复了网关用户的上下文管理验证错误，确保`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1`避免该错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed /context command not displaying colored output",
+   "zh": "修复了 /context 命令不显示彩色输出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed status bar duplicating background task indicator when PR status was shown",
+   "zh": "修复了显示 PR 状态时状态栏重复后台任务指示器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed bash command execution failing for users with `.bashrc` files",
+   "zh": "Windows：修复了拥有 `.bashrc` 文件的用户，bash 命令执行失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed console windows flashing when spawning child processes",
+   "zh": "Windows：修复了生成子进程时控制台窗口闪烁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed OAuth token expiration causing 401 errors after extended sessions",
+   "zh": "VS Code：修复了长时间会话后 OAuth 令牌过期导致的 401 错误"
+  }
+ ]
+}

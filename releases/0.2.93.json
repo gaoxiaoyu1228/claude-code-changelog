@@ -1,0 +1,21 @@
+{
+ "version": "0.2.93",
+ "date": "2025-04-30",
+ "published": "2025-04-30T18:14:42.819Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.93",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Resume conversations from where you left off from with \"claude --continue\" and \"claude --resume\"",
+   "zh": "使用 \"claude --continue\" 和 \"claude --resume\" 可从上次中断处继续对话"
+  },
+  {
+   "type": "new",
+   "en": "Claude now has access to a Todo list that helps it stay on track and be more organized",
+   "zh": "克劳德现在可以访问待办事项列表，这有助于保持正轨并更有条理"
+  }
+ ]
+}

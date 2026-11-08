@@ -1,0 +1,259 @@
+{
+ "version": "2.1.232",
+ "date": "2026-08-13",
+ "published": "2026-08-13T21:30:53.194Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.232",
+ "counts": {
+  "new": 5,
+  "improved": 18,
+  "fixed": 25,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Type `@` in the prompt to mention another Claude session by name; Claude then uses `SendMessage` to reach that session directly",
+   "zh": "在提示中输入 `@` 可按名称提及另一个 Claude 会话；Claude 随后会用 `SendMessage` 直接联系该会话"
+  },
+  {
+   "type": "new",
+   "en": "Added `/config` rows for \"Dialog expiry\" and \"Messages from your other sessions\" (cross-session inbound accept/hold/refuse)",
+   "zh": "添加了“对话到期”和“来自其他会话的消息”的`/config`行（跨会话入站接受/保留/拒绝）"
+  },
+  {
+   "type": "new",
+   "en": "Added secret redaction for GitLab token families (`glrt-`, `gloas-`, `glptt-`, `glagent-`, `glimt-`, `glsoat-`, `glcbt-`, `glft-`, `glffct-`) and full redaction of routable `glpat-`/`gldt-` tokens; the `glab` CLI config store gets the same sandbox and credential-path protection as `gh`",
+   "zh": "为 GitLab 令牌系列（`glrt-`、`gloas-`、`glptt-`、`glagent-`、`glimt-`、`glsoat-`、`glcbt-`、`glft-`、`glffct-`）添加了秘密编辑，并对可路由的 `glpat-`/`gldt-` 令牌进行了完整编辑； `glab` CLI 配置存储获得与 `gh` 相同的沙箱和凭证路径保护"
+  },
+  {
+   "type": "new",
+   "en": "Added GitLab support to plugin marketplaces: bare `gitlab.com` repo URLs (including nested subgroups) now clone like `github.com` URLs, and clone auth-failure hints name your actual git host",
+   "zh": "添加了对插件市场的 GitLab 支持：裸露的 `gitlab.com` 存储库 URL（包括嵌套子组）现在可以像 `github.com` URL 一样克隆，并且克隆身份验证失败提示会命名您的实际 git 主机"
+  },
+  {
+   "type": "new",
+   "en": "Settings: `additionalMarketplaces` and `allowedMarketplaces` are now accepted as friendlier aliases for `extraKnownMarketplaces` and `strictKnownMarketplaces`",
+   "zh": "设置：`additionalMarketplaces` 和 `allowedMarketplaces` 现在可作为 `extraKnownMarketplaces` 和 `strictKnownMarketplaces` 的更易记别名使用"
+  },
+  {
+   "type": "improved",
+   "en": "Subagent forking is now on by default: a `subagent_type: \"fork\"` subagent inherits the full conversation and prompt cache, and non-teammate agent spawns in interactive sessions now run in the background by default",
+   "zh": "子代理派生默认开启：`subagent_type: \"fork\"` 的子代理会继承完整对话和提示词缓存；交互式会话中，非队友的代理生成默认在后台运行"
+  },
+  {
+   "type": "improved",
+   "en": "`SendMessage` now delivers to a bare name that exactly matches one live session, instead of asking to confirm with a ref first",
+   "zh": "`SendMessage` 现在会把消息投递给与某个活动会话完全匹配的裸名称，而不再要求先用引用确认"
+  },
+  {
+   "type": "improved",
+   "en": "Interactive sessions on one machine now keep unique names: starting or renaming a session to a name another live session already uses gives it a `name-word-word` variant and tells you",
+   "zh": "同一台机器上的交互式会话现在保持名称唯一：如果启动或重命名会话时使用了另一个正在运行的会话已用的名称，会自动加上 `name-word-word` 后缀并提示你"
+  },
+  {
+   "type": "improved",
+   "en": "Gateway: the `desktop:` overlay now accepts every released Desktop setting (was 11 hand-listed keys), validated at boot against Desktop's own schema; unknown or invalid keys fail boot",
+   "zh": "网关：`desktop:` 覆盖配置现在接受所有已发布的 Desktop 设置（以前手动列出 11 个键），启动时按 Desktop 自身的 schema 校验；未知或无效的键会导致启动失败"
+  },
+  {
+   "type": "improved",
+   "en": "Gateway: empty `managed.policies[].match.groups`/`admin.admin_groups` entries and malformed `email_domain` values (empty, or containing `@`, whitespace, or commas) now fail at boot instead of silently matching no one or granting admin access",
+   "zh": "网关：`managed.policies[].match.groups`、`admin.admin_groups` 中的空条目，以及格式错误的 `email_domain`（为空，或含 `@`、空白、逗号），现在会在启动时直接报错，而不是悄悄匹配不到任何人或误授管理员权限"
+  },
+  {
+   "type": "improved",
+   "en": "Fable 5 is offered as an advisor in `/advisor` again for organizations with Fable access, with usage-credits consent set up through `/model fable`",
+   "zh": "Fable 5 再次作为`/advisor`中的顾问提供给具有 Fable 访问权限的组织，并通过`/model fable`设置使用积分同意"
+  },
+  {
+   "type": "improved",
+   "en": "Improved fullscreen streaming: long sessions stay responsive because the whole conversation is no longer re-normalized on every update",
+   "zh": "改进全屏流式输出：长会话保持流畅，因为每次更新不再重新规范化整个对话"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the managed settings approval dialog: shows endpoint URLs, uses clearer wording for telemetry-only changes, skips routine OpenTelemetry options, and requires approval for server-managed sandbox binary overrides (`sandbox.bwrapPath`, `sandbox.socatPath`, `sandbox.ripgrep`)",
+   "zh": "改进托管设置批准对话框：显示端点 URL，对仅涉及遥测的改动使用更清楚的措辞，跳过例行的 OpenTelemetry 选项，并要求批准服务器托管的沙盒二进制覆盖项（`sandbox.bwrapPath`、`sandbox.socatPath`、`sandbox.ripgrep`）"
+  },
+  {
+   "type": "improved",
+   "en": "`/feedback` and `/bug` now open immediately when invoked while Claude is responding, instead of waiting for the turn to finish",
+   "zh": "Claude 回复时调用 `/feedback` 和 `/bug`，现在会立即打开，不再等待当前轮次结束"
+  },
+  {
+   "type": "improved",
+   "en": "`/plugin install plugin@marketplace` now refreshes the marketplace first, so newly published plugins install without a manual marketplace update",
+   "zh": "`/plugin install plugin@marketplace` 现在会先刷新市场，因此新发布的插件无需手动更新市场即可安装"
+  },
+  {
+   "type": "improved",
+   "en": "`/code-review` at high, xhigh, and max effort now runs in a background agent like the other levels",
+   "zh": "高、xhigh 和 max 强度下的 `/code-review` 现在与其他强度一样，在后台 agent 中运行"
+  },
+  {
+   "type": "improved",
+   "en": "Pasted and clipboard images are read without blocking the event loop",
+   "zh": "粘贴和剪贴板中的图片现在读取时不再阻塞事件循环"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control now keeps reconnecting for about 30 minutes after a network blip and no longer drops after a few blips spread across an hour",
+   "zh": "网络短暂中断后，Remote Control 现在会持续重连约 30 分钟，不再因为一小时内零散出现的几次中断就断开"
+  },
+  {
+   "type": "improved",
+   "en": "Updated agent panel: completed subagents hide immediately with a `/tasks` footer hint, and the \"↓ N more\" overflow indicator moved left for visibility",
+   "zh": "更新了代理面板：已完成的子代理会立即隐藏，并显示 `/tasks` 底部提示；\"↓ N more\" 溢出指示器移到了左侧，更容易看到"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control: the terminal now says whether a session was taken over by another device, ended from another app, or deleted, and stops suggesting a reconnect that would undo it",
+   "zh": "终端现在会说明会话是被其他设备接管、被其他应用结束，还是被删除，并且不再建议那种会撤销该操作的重连"
+  },
+  {
+   "type": "improved",
+   "en": "Shortened the message shown when resuming a completed background agent",
+   "zh": "缩短了恢复已完成后台代理时显示的消息"
+  },
+  {
+   "type": "improved",
+   "en": "Cowork sessions no longer inline external @-imports from user-scope memory files",
+   "zh": "Cowork 会话不再从用户范围内存文件内联外部 @-导入"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `sandbox.ripgrep` to be honored only from user, managed, and `--settings` settings; project settings can no longer override the sandbox's ripgrep binary",
+   "zh": "将`sandbox.ripgrep`更改为仅从用户、托管和`--settings`设置中启用；项目设置无法再覆盖沙箱的 ripgrep 二进制文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Enterprise policy: a url-typed `blockedMarketplaces` entry for a bare repo URL keeps blocking that URL when the CLI classifies it as a git clone",
+   "zh": "企业策略：当 CLI 将其分类为 git 克隆时，裸存储库 URL 的 url 类型`blockedMarketplaces`条目会持续阻止该 URL"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a PowerShell permission bypass where variable-writing parameters could silently overwrite `$PSDefaultParameterValues` and redirect later commands' file access",
+   "zh": "修复了 PowerShell 权限绕过问题，其中变量写入参数可能会静默覆盖`$PSDefaultParameterValues`并重定向后续命令的文件访问"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Windows permission bypass where Git Bash followed Cygwin-style symlinks that path validation saw as regular files; writes through them now require permission approval",
+   "zh": "修复了 Windows 权限绕过问题，其中 Git Bash 遵循 Cygwin 风格的符号链接，路径验证将其视为常规文件；现在通过它们写入需要许可批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed nested git repositories inheriting trust from a parent directory; each repository now requires its own trust confirmation",
+   "zh": "修复了嵌套 git 存储库从父目录继承信任的问题；每个存储库现在都需要自己的信任确认"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP connections hanging for the full 30-second connect timeout when a server fails to answer or sends a malformed reply to the protocol-version probe",
+   "zh": "修复了当服务器无法应答或向协议版本探测发送格式错误的答复时，MCP 连接在整个 30 秒连接超时期间挂起的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions hosted by a bridge inside a cloud session inheriting that session's transcript or credentials",
+   "zh": "修复了由云会话内的网桥托管的远程控制会话继承该会话的记录或凭据"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions started from Claude Desktop or an IDE appearing as a new claude.ai session each time the local session was resumed; they now reattach to the existing one",
+   "zh": "修复了每次恢复本地会话时从 Claude Desktop 或 IDE 启动的远程控制会话显示为新的 claude.ai 会话的问题；他们现在重新连接到现有的"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions appearing unreachable to newly attached clients while idle",
+   "zh": "修复了空闲时新连接的客户端无法访问远程控制会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control bridge sessions not restoring conversation history when the session worker restarts",
+   "zh": "修复了会话工作进程重新启动时远程控制桥接会话不会恢复对话历史记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Remote Control: resuming a conversation whose session was deleted from claude.ai or the app now starts a replacement instead of failing with a message about your login (regressed in v2.1.227)",
+   "zh": "恢复一个会话已在 claude.ai 或 App 中被删除的对话时，现在会启动替代会话，而不是因登录相关的消息而失败（v2.1.227 中出现过此回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Cloud gateway `/login` exiting silently or leaving an unresponsive terminal after \"Press Enter to continue\" when managed settings failed to load; the reason is now shown",
+   "zh": "修复了托管设置加载失败时“按 Enter 继续”后云网关`/login`静默退出或留下无响应终端的问题；原因现已显示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode on native builds getting stuck on \"listening…\" when the voice service rejected the connection; the rejection is now shown immediately",
+   "zh": "修复语音服务拒绝连接时，原生构建版语音模式卡在\"listening…\"的问题；现在会立即显示拒绝信息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mTLS client certificate rotation requiring a restart; Claude Code now reloads the rotated cert and key automatically on connection errors",
+   "zh": "修复了 mTLS 客户端证书轮换需要重新启动的问题；克劳德代码现在会在连接错误时自动重新加载轮换的证书和密钥"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed malformed AWS or Vertex region values being used to build request URLs; they now fall back to the default region",
+   "zh": "修复了用于构建请求 URL 的格式错误的 AWS 或 Vertex 区域值；他们现在回退到默认区域"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stream idle timeout errors failing the request instead of recovering on Bedrock, Vertex, and gateway deployments",
+   "zh": "修复了导致请求失败而不是在 Bedrock、Vertex 和网关部署上恢复的流空闲超时错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed content-sized overlays containing truncated text rendering one column too wide, and start-truncated text collapsing to an ellipsis",
+   "zh": "修复了包含截断文本的内容大小覆盖，导致一列太宽，以及开始截断文本折叠为省略号"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a stray garbled character where a long shell-command or agent-description preview was cut off mid-emoji",
+   "zh": "修复了长 shell 命令或代理描述预览在表情符号中间被切断的杂乱字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a startup race that could silently unregister a plugin marketplace due to concurrent writes to `known_marketplaces.json`",
+   "zh": "修复了一个启动竞赛，由于并发写入`known_marketplaces.json`，该竞赛可能会默默地取消注册插件市场"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/update` and `/tui` refusing to restart while work that survives the relaunch was running",
+   "zh": "修复了`/update`和`/tui`在重新启动后仍然存在的工作正在运行时拒绝重新启动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed usage-limit guidance suggesting unavailable slash commands in SDK and remote sessions",
+   "zh": "修复 SDK 和远程会话中，用量上限指引建议了不可用斜杠命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the consent message for interactive `--advisor fable` launches, which told you to run `/model fable` in an interactive session that had just exited",
+   "zh": "修复交互式 `--advisor fable` 启动时的同意提示，错误地让你在刚退出的交互会话中运行 `/model fable` 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Remote Control: resuming a conversation no longer silently takes Remote Control away from another Claude Code on the same machine that still has it; run `/remote-control` there to move it",
+   "zh": "恢复会话时，不再悄悄把同一台电脑上仍在使用 Remote Control 的另一个 Claude Code 的 Remote Control 抢走；如需转移，请在那边运行 `/remote-control`"
+  },
+  {
+   "type": "fixed",
+   "en": "Bash input redirections (`< file`) are now permission-checked like their argument spellings on all platforms",
+   "zh": "Bash 输入重定向（`< file`）现在像所有平台上的参数拼写一样进行权限检查"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened the auto-generated cross-session messaging socket directory on shared `/tmp`: a pre-planted symlink or another user's directory is now refused instead of used",
+   "zh": "加固跨会话消息自动生成的套接字目录（位于共享的 `/tmp`）：如果该目录被预先放置了符号链接，或是其他用户的目录，现在会拒绝使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened the Linux filesystem sandbox against a protected-path bypass",
+   "zh": "加固 Linux 文件系统沙箱，修复受保护路径被绕过的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the startup tip suggesting you create custom subagents, and the matching nudge in the `/powerup` tour",
+   "zh": "移除建议你创建自定义子代理的启动提示，以及 `/powerup` 导览中的对应提示"
+  }
+ ]
+}

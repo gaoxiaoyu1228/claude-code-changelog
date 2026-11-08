@@ -1,0 +1,22 @@
+{
+ "version": "2.0.54",
+ "date": "2025-11-25",
+ "published": "2025-11-25T23:52:47.226Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.54",
+ "counts": {
+  "new": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Hooks: Enable PermissionRequest hooks to process 'always allow' suggestions and apply permission updates",
+   "zh": "Hooks：PermissionRequest 钩子现在可以处理“始终允许”建议，并应用权限更新"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix issue with excessive iTerm notifications",
+   "zh": "修复 iTerm 通知过多的问题"
+  }
+ ]
+}

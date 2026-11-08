@@ -1,0 +1,268 @@
+{
+ "version": "2.1.301",
+ "date": "2026-10-15",
+ "published": "2026-10-15T14:34:23.330Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.301",
+ "counts": {
+  "new": 8,
+  "improved": 6,
+  "fixed": 37
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS` so unattended retry mode (`CLAUDE_CODE_RETRY_WATCHDOG`) ends a request at a usage limit that resets too far away instead of waiting",
+   "zh": "添加了`CLAUDE_CODE_RETRY_WATCHDOG_MAX_USAGE_LIMIT_WAIT_MS`，因此无人值守重试模式（`CLAUDE_CODE_RETRY_WATCHDOG`）会在重置太远而不是等待的使用限制处结束请求"
+  },
+  {
+   "type": "new",
+   "en": "Added OpenTelemetry tracing guidance to the `claude-api` skill, including setting up trace destinations with the `ant` CLI",
+   "zh": "为`claude-api`技能添加了 OpenTelemetry 跟踪指南，包括使用`ant` CLI 设置跟踪目标"
+  },
+  {
+   "type": "new",
+   "en": "Added the `%` motion to vim mode: jump to the matching bracket, alone or with d/c/y",
+   "zh": "在 vim 模式中添加了`%`动作：单独或与 d/c/y 一起跳转到匹配的括号"
+  },
+  {
+   "type": "new",
+   "en": "Added `rows` to a mod's `Input`: a text field of several lines in the terminal, where Enter submits and Shift+Enter or a backslash before Enter starts a new line",
+   "zh": "将“行”添加到 mod 的“输入”：终端中多行的文本字段，其中 Enter 提交，Shift+Enter 或 Enter 之前的反斜杠开始新行"
+  },
+  {
+   "type": "new",
+   "en": "Added `classifier_verdict` and `permission_mode` to OpenTelemetry `tool_decision` events, so auto mode classifier decisions can be told apart from permission rules",
+   "zh": "将`classifier_verdict`和`permission_mode`添加到 OpenTelemetry`tool_decision`事件中，因此可以将自动模式分类器决策与权限规则分开"
+  },
+  {
+   "type": "new",
+   "en": "Added `classifier_category` to OpenTelemetry `tool_decision` events, naming the built-in rule a classifier block matched, when `OTEL_LOG_TOOL_DETAILS=1`",
+   "zh": "将`classifier_category`添加到 OpenTelemetry`tool_decision`事件中，当`OTEL_LOG_TOOL_DETAILS=1`时，命名分类器块匹配的内置规则"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added LaTeX math rendering in Claude's responses, including `$$` and multi-line `\\[ … \\]` blocks and inline `$…$` and `\\(…\\)` math",
+   "zh": "[VSCode] Claude 的回复支持 LaTeX 数学公式渲染，包括 `$$` 和多行的 `\\[ … \\]` 块，以及行内的 `$…$` 和 `\\(…\\)`"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a \"Get more usage\" link to the usage-limit banner for Pro and Max plans in the VS Code and JetBrains panels",
+   "zh": "[VSCode] 在 VS Code 和 JetBrains 面板中，Pro 和 Max 套餐的用量上限横幅新增「Get more usage」链接"
+  },
+  {
+   "type": "improved",
+   "en": "Improved switching to a model with a smaller context window: a conversation too long for the new model is now summarized by the previous model first",
+   "zh": "改进切换到上下文窗口更小的模型：对于新模型装不下的长对话，会先由之前的模型做摘要"
+  },
+  {
+   "type": "improved",
+   "en": "Improved rendering performance while a long-running subagent works: its progress trail now updates incrementally instead of being reprocessed in full on every render",
+   "zh": "改进子智能体运行时的渲染性能：其进度记录改为增量更新，不再每次渲染都全量重新处理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved artifacts: pages Claude writes now paint the band above a sticky header, so scrolled text no longer shows there in the mobile apps",
+   "zh": "改进 artifact：Claude 编写的页面现在会在粘性顶栏上方绘制颜色带，滚动的文字不会再在移动端应用中显示在那里"
+  },
+  {
+   "type": "improved",
+   "en": "Improved mods: in VS Code and the desktop and mobile apps, a tree drawn above the question dialog can now hold Markdown and up to 48 rows; the terminal keeps 12 plain rows",
+   "zh": "改进 mod：在 VS Code 以及桌面端和移动端应用中，问题对话框上方的树形界面可包含 Markdown，并可显示最多 48 行；终端仍保持 12 行纯文本"
+  },
+  {
+   "type": "improved",
+   "en": "Changed a mod hook's `.catch` handler to run only when the hook throws or times out; events raised beneath the hook's own calls now skip that hook without asking its `.catch`",
+   "zh": "更改了 mod 挂钩的`.catch`处理程序，使其仅在挂钩抛出或超时时运行；在钩子自己的调用下引发的事件现在会跳过该钩子，而不询问其`.catch`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed a mod's `$.env.set` to resolve with `{}` once the variable is set or unset, or with `{ deny }` saying why when the write is not made",
+   "zh": "更改了 mod 的 `$.env.set`，以便在设置或取消设置变量后使用 `{}` 进行解析，或者在未进行写入时使用 `{ deny }` 说明原因"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed quitting removing a worktree made by a `WorktreeCreate` hook without asking when it may hold unpushed commits",
+   "zh": "修复了退出删除由`WorktreeCreate`挂钩创建的工作树而不询问它何时可以保留未推送的提交的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `fable` (and `best`) model alias erroring on the Anthropic API when the newest Fable model is not available to your organization: Claude Code now retries once on the previous Fable model",
+   "zh": "修复当组织无法使用最新的 Fable 模型时，`fable`（及 `best`）模型别名在 Anthropic API 上报错的问题；现在 Claude Code 会自动改用上一个 Fable 模型重试一次"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a misleading \"Please run /login\" error when a full disk keeps the login from being refreshed; the error now names the disk and says to delete files",
+   "zh": "修复了磁盘已满导致登录无法刷新时出现的误导性“请运行/登录”错误；错误现在命名磁盘并表示删除文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Grep and Glob reporting no matches when the search program failed unexpectedly before returning any results; they now return an error saying the search failed",
+   "zh": "修复了当搜索程序在返回任何结果之前意外失败时 Grep 和 Glob 报告没有匹配项的问题；他们现在返回一个错误，表示搜索失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed workflow agents sometimes skipping their step, and the run still reporting success, after reading the harness note that their task text carries no user authority",
+   "zh": "修复工作流智能体在读取到\"任务文本不具备用户授权\"的系统说明后，有时会跳过步骤但仍报告运行成功的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed artifact updates being refused where a PreToolUse hook covers Edit or Write; Claude now edits the file and then republishes instead of changing it in the publish call",
+   "zh": "修复了 PreToolUse 挂钩覆盖编辑或写入时工件更新被拒绝的问题；克劳德现在编辑文件，然后重新发布，而不是在发布调用中更改它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills and commands with very many or very long argument names stalling for seconds when invoked; only the first 64 names, each up to 64 characters, are now filled in",
+   "zh": "修复了参数名称非常多或非常长的技能和命令在调用时会停滞数秒的问题；现在仅填写前 64 个名称，每个名称最多 64 个字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills, commands and hooks using very large amounts of memory when their arguments fill many placeholders",
+   "zh": "修复了当技能、命令和挂钩的参数填充许多占位符时使用大量内存的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stray characters such as `>0q` covering the folder trust prompt, and `>4m` before the shell prompt at exit, in terminals built on VTE older than 0.53 such as MATE Terminal on RHEL 8",
+   "zh": "修复了在 0.53 之前的 VTE 上构建的终端（例如 RHEL 8 上的 MATE 终端）中覆盖文件夹信任提示的`>0q`以及退出时 shell 提示之前的`>4m`等杂散字符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stray `GOK` text appearing in the prompt at startup in some versions of iTerm2",
+   "zh": "修复了某些版本的 iTerm2 启动时提示中出现的杂散`GOK`文本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed switching to a model whose name contains `application-inference-profile` running your `awsAuthRefresh` command and delaying model-switch hooks when the provider is not Bedrock",
+   "zh": "修复了切换到名称包含`application-inference-profile`的模型，运行`awsAuthRefresh`命令并在提供程序不是 Bedrock 时延迟模型切换挂钩"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sign-in refresh timeouts and unexpected sign-outs after a short command such as `claude auth status` or `claude plugin list` exited in the middle of a token refresh",
+   "zh": "修复了在令牌刷新过程中退出`claude auth status`或`claude plugin list`等短命令后登录刷新超时和意外注销的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a tool call cut off by a message sent mid-turn during its permission check being reported to the model as rejected by the user",
+   "zh": "修复了在权限检查期间发送的消息被报告给模型并被用户拒绝的工具调用被切断的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a case where switching to a model with a smaller context window could spend usage credits on a summary by the previous model without asking first",
+   "zh": "修复了切换到上下文窗口较小的模型可能会在不先询问的情况下将使用积分花费在先前模型的摘要上的情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed conversations being compacted over and over, on a model you didn't pick, behind an LLM gateway whose responses name a different model than the one requested",
+   "zh": "修复了 LLM 网关后面的对话在您未选择的模型上一遍又一遍地压缩的问题，该网关的响应命名的模型与请求的模型不同"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode sometimes staying in INSERT after Escape on a slow or busy machine",
+   "zh": "修复 vim 模式在较慢或繁忙的机器上，按 Esc 后有时仍停留在 INSERT 模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc discarding a typed AskUserQuestion answer in vim mode: the free-text field now supports vim NORMAL mode, and Esc cancels only from NORMAL",
+   "zh": "修复了 Esc 在 vim 模式下丢弃键入的 AskUserQuestion 答案的问题：自由文本字段现在支持 vim NORMAL 模式，并且 Esc 仅从 NORMAL 取消"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Read tool reading binary files such as .xlsm, .parquet, .epub and .heic as text",
+   "zh": "修复 Read 工具把 .xlsm、.parquet、.epub、.heic 等二进制文件当作文本读取的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Markdown table with only a header row drawing nothing when too wide for the terminal, including in plans on the plan approval card",
+   "zh": "修复了一个 Markdown 表格，只有一个标题行，当对于终端来说太宽时，不会绘制任何内容，包括在计划批准卡上的计划中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the /claude-api skill saying CMEK external-key endpoints aren't available on Claude Platform on AWS",
+   "zh": "修复了 /claude-api 技能显示 CMEK 外部密钥端点在 AWS 上的 Claude Platform 上不可用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills no longer being listed to the model after using `/rewind`",
+   "zh": "修复了使用`/rewind`后技能不再列出到模型中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the compaction row in a resumed session offering ctrl+o for history that is not loaded; it now says where the earlier messages are saved, and also shows in fullscreen",
+   "zh": "修复恢复的会话中压缩记录提供 ctrl+o 查看未加载历史的问题；现在会说明早期消息保存在何处，并且在全屏模式下也会显示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the \"new task? /clear to save tokens\" hint coming back right after you interrupt a response",
+   "zh": "修复了中断响应后立即返回的“新任务？/清除以保存令牌”提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the permission prompt for a plugin or skill hook's `ask` decision not showing which plugin or skill the hook comes from",
+   "zh": "修复插件或技能钩子的 `ask` 决定所弹出的权限提示，没有显示该钩子来自哪个插件或技能的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/diff` not noticing a conflicted cherry-pick or revert in reftable repositories when one of its git checks timed out or failed",
+   "zh": "修复了当 git 检查之一超时或失败时，`/diff`没有注意到可引用存储库中存在冲突的选择或恢复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed workflow scripts asking for permission or being refused when read, edited or re-run after a Bash `cd` in the same session",
+   "zh": "修复同一会话中 Bash 执行 `cd` 之后，读取、编辑或重新运行工作流脚本时仍会请求权限或被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed dim text on the dark ANSI theme and 16-color terminals: faint inside filled boxes, not faint under selection and search highlights, and list descriptions dimmed like other secondary text",
+   "zh": "修复了深色 ANSI 主题和 16 色终端上的暗淡文本：填充框内暗淡，在选择和搜索突出显示下不暗淡，并且列表描述像其他辅助文本一样变暗"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a mod's `$.model.fork` returning `nothing-to-fork` when called before the first response of a new Claude Code process had finished, as in `claude -p` runs and cloud sessions",
+   "zh": "修复了在新 Claude 代码进程的第一个响应完成之前调用时，mod 的`$.model.fork`返回`nothing-to-fork`的问题，如`claude -p`运行和云会话中那样"
+  },
+  {
+   "type": "fixed",
+   "en": "Fullscreen mode: Fixed `/compact` and auto-compact briefly freezing the UI while the visible transcript is rebuilt",
+   "zh": "全屏模式：修复了 `/compact` 和自动压缩时，重建可见对话记录会让界面短暂卡住的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed sessions started from Slack being unable to find or attach a repository when managed settings restrict MCP servers; use `deniedMcpServers` to keep those tools off",
+   "zh": "修复了在托管设置限制 MCP 服务器时，从 Slack 启动的会话找不到或无法关联仓库的问题；如需屏蔽这些工具，请使用 `deniedMcpServers`"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed sessions being reported as having a deleted source branch, and not retried, when an unrelated setup or session failure quoted git's missing-ref wording",
+   "zh": "修复了某些无关的设置或会话失败中出现 git 缺失引用的字样时，会话被误报为源分支已删除且不会重试的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Self-hosted runner: Fixed the log promising a retry of a failed or declined session release for a session that is ending; repeated failures now show a count",
+   "zh": "修复了日志中承诺会重试一个正在结束的会话的失败或被拒绝的释放；现在重复失败会显示次数"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed stopped background PowerShell commands missing the closing `[killed]` line in their output file",
+   "zh": "Windows：修复了被停止的后台 PowerShell 命令，其输出文件缺少结尾的 `[killed]` 行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed a conversation that crashes or freezes the panel being reopened on every reload",
+   "zh": "[VSCode] 修复导致面板崩溃或卡死的对话，每次重新加载后都会再次打开并引发同样问题的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the chat panel slowing down during long thinking: it no longer re-parses the whole thinking text on every update",
+   "zh": "[VSCode] 修复长时间思考时聊天面板变慢的问题：不再每次更新都重新解析整个思考文本"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed diagnostics showing \"[object Object]\" instead of the rule code (e.g. MD013) for some language servers",
+   "zh": "[VSCode] 修复部分语言服务器的诊断信息显示 \"[object Object]\" 而不是规则代码（如 MD013）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the native dictation audio module being loaded, to check microphone permission, where dictation is not offered (non-claude.ai sign-ins, remote windows)",
+   "zh": "[VSCode] 修复在不提供听写的场景（非 claude.ai 登录、远程窗口）下，仍会加载原生听写音频模块来检查麦克风权限的问题"
+  }
+ ]
+}

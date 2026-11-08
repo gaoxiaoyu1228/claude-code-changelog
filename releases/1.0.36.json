@@ -1,0 +1,22 @@
+{
+ "version": "1.0.36",
+ "date": "2025-06-27",
+ "published": "2025-06-27T17:07:11.007Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.36",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Web search now takes today's date into context",
+   "zh": "网页搜索现在会把今天的日期纳入上下文"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where stdio MCP servers were not terminating properly on exit",
+   "zh": "修复了 stdio MCP 服务器在退出时未正确终止的错误"
+  }
+ ]
+}

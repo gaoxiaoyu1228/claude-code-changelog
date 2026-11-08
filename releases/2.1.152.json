@@ -1,0 +1,178 @@
+{
+ "version": "2.1.152",
+ "date": "2026-05-26",
+ "published": "2026-05-26T21:38:29.002Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.152",
+ "counts": {
+  "new": 7,
+  "improved": 10,
+  "fixed": 16
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Skills and slash commands can now set `disallowed-tools` in frontmatter to remove tools from the model while the skill is active",
+   "zh": "技能和斜杠命令现在可以在前置字段中设置 `disallowed-tools`，在技能生效期间从模型中移除这些工具"
+  },
+  {
+   "type": "new",
+   "en": "Added `/reload-skills` command to re-scan skill directories without restarting the session",
+   "zh": "添加了`/reload-skills`命令来重新扫描技能目录，而无需重新启动会话"
+  },
+  {
+   "type": "new",
+   "en": "`SessionStart` hooks can now return `reloadSkills: true` to re-scan skill directories, making skills installed by the hook available in the same session",
+   "zh": "`SessionStart` hook 现在可以返回 `reloadSkills: true`，重新扫描 skill 目录，使该 hook 安装的 skill 在同一会话中可用"
+  },
+  {
+   "type": "new",
+   "en": "`SessionStart` hooks can now set the session title via `hookSpecificOutput.sessionTitle` on startup and resume",
+   "zh": "`SessionStart` hook 现在可以在启动和恢复时通过 `hookSpecificOutput.sessionTitle` 设置会话标题"
+  },
+  {
+   "type": "new",
+   "en": "Added a `MessageDisplay` hook event that lets hooks transform or hide assistant message text as it is displayed",
+   "zh": "添加了`MessageDisplay`挂钩事件，允许挂钩在显示时转换或隐藏助手消息文本"
+  },
+  {
+   "type": "new",
+   "en": "Added `pluginSuggestionMarketplaces` managed setting: admins can allowlist org marketplaces whose plugins may be suggested via context-aware tips",
+   "zh": "添加了`pluginSuggestionMarketplaces`托管设置：管理员可以将组织市场列入白名单，其插件可以通过上下文感知提示来建议"
+  },
+  {
+   "type": "new",
+   "en": "Added the session entrypoint as an OpenTelemetry metric attribute (`app.entrypoint`, opt-in via `OTEL_METRICS_INCLUDE_ENTRYPOINT=true`)",
+   "zh": "添加会话入口点作为 OpenTelemetry 指标属性（`app.entrypoint`，通过`OTEL_METRICS_INCLUDE_ENTRYPOINT=true`选择加入）"
+  },
+  {
+   "type": "improved",
+   "en": "`/code-review --fix` now applies review findings to your working tree after the review, surfacing reuse, simplification, and efficiency suggestions; `/simplify` now invokes `/code-review --fix`",
+   "zh": "`/code-review --fix` 现在会在审查后把审查结果应用到你的工作区，并给出复用、简化和效率方面的建议；`/simplify` 现在会调用 `/code-review --fix`"
+  },
+  {
+   "type": "improved",
+   "en": "`claude plugin marketplace remove` now accepts `--scope user|project|local` for symmetry with `marketplace add`, `install`, and `uninstall`",
+   "zh": "`claude plugin marketplace remove` 现在接受 `--scope user|project|local`，与 `marketplace add`、`install` 和 `uninstall` 保持一致"
+  },
+  {
+   "type": "improved",
+   "en": "Claude Code now switches to your configured `--fallback-model` for the rest of the session when the primary model is not found, instead of failing every request",
+   "zh": "现在，当找不到主模型时，克劳德代码会在会话的其余部分切换到您配置的`--fallback-model`，而不是使每个请求失败"
+  },
+  {
+   "type": "improved",
+   "en": "Auto mode no longer requires opt-in consent",
+   "zh": "自动模式不再需要选择加入同意"
+  },
+  {
+   "type": "improved",
+   "en": "Vim mode: `/` in NORMAL mode now opens reverse history search (like Ctrl+R), matching bash/zsh vi-mode",
+   "zh": "Vim 模式：NORMAL 模式下按 `/` 现在会打开反向历史搜索（与 Ctrl+R 相同），与 bash/zsh 的 vi 模式一致"
+  },
+  {
+   "type": "improved",
+   "en": "The `/usage` breakdown now includes large session files; files are scanned with a streaming read so memory usage stays flat",
+   "zh": "`/usage` 的统计现在包含大型会话文件；文件以流式方式读取，内存占用保持平稳"
+  },
+  {
+   "type": "improved",
+   "en": "Thinking summaries in the collapsed group now stay readable for at least 3 seconds, render as markdown, and cap at 10 lines (`Ctrl+O` shows the full thinking)",
+   "zh": "折叠组中的思考摘要现在至少保持可读 3 秒，以 Markdown 格式渲染，最多显示 10 行（`Ctrl+O` 可查看完整思考内容）"
+  },
+  {
+   "type": "improved",
+   "en": "In fullscreen mode, the \"Thinking for Ns\" indicator now counts up live while the model is thinking, and keeps its value if you interrupt mid-thought",
+   "zh": "全屏模式下，「Thinking for Ns」指示器在模型思考时实时计数，中途打断思考时保留已计的数值"
+  },
+  {
+   "type": "improved",
+   "en": "Simplified the Workflow tool's inline progress display — live agent counts now show only in the persistent workflow status row below the prompt",
+   "zh": "工作流工具的行内进度显示简化：实时代理数量只显示在提示下方的持久工作流状态行中"
+  },
+  {
+   "type": "improved",
+   "en": "The post-response timer now shows \"Waiting for N background agents/workflows to finish\" when backgrounded agents or workflows are still running, and reports the cumulative time once their results are processed",
+   "zh": "回复后的计时器现在会在有后台代理或工作流仍在运行时显示 \"Waiting for N background agents/workflows to finish\"，并在其结果处理完后报告累计耗时"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal styling degrading in very long sessions by recycling the renderer's style pool",
+   "zh": "修复超长会话中终端样式退化的问题，方法是回收渲染器的样式池"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the sandbox-enabled warning not appearing in condensed startup mode — it now shows in every layout",
+   "zh": "修复精简启动模式下不显示沙盒已启用警告的问题；现在在所有布局中都会显示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the loading spinner showing \"still thinking\"/\"almost done thinking\" while a tool is running, and reset the thinking status to \"thinking\" after each tool",
+   "zh": "修复工具运行时加载旋转指示器仍显示\"still thinking\"/\"almost done thinking\"的问题；现在每次工具调用后，思考状态会重置为\"thinking\""
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed focus mode showing a spurious \"N messages hidden\" count on turns with no hidden activity",
+   "zh": "固定焦点模式在没有隐藏活动的回合中显示虚假的“隐藏 N 条消息”计数"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clicking a link inside an expanded tool result collapsing the section instead of opening the link",
+   "zh": "修复了单击扩展工具内的链接会导致该部分折叠而不是打开链接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown table cell borders inheriting the color of inline code, wrapped continuation lines losing their style, and empty header cells showing a label in the narrow-terminal stacked layout",
+   "zh": "修复了继承内联代码颜色的 Markdown 表格单元格边框、丢失样式的连续行以及在窄终端堆叠布局中显示标签的空标题单元格"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin MCP servers with the same command but different environment variables being incorrectly deduplicated",
+   "zh": "修复了使用相同命令但不同环境变量的插件 MCP 服务器被错误地重复数据删除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/doctor` reporting \"marketplace not found\" or \"plugin not found\" for stale `enabledPlugins` entries referencing removed marketplaces or dropped plugins",
+   "zh": "修复了引用已删除市场或删除插件的过时`enabledPlugins`条目的`/doctor`报告“找不到市场”或“找不到插件”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugins that track a git branch silently no longer receiving updates after the plugin registry was rebuilt",
+   "zh": "修复了在插件注册表重建后静默跟踪 git 分支的插件不再接收更新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote MCP servers failing to connect in Claude Code Remote sessions when the egress proxy is enabled",
+   "zh": "修复了启用出口代理时远程 MCP 服务器无法在 Claude Code Remote 会话中连接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the effort-change confirmation dialog appearing when the conversation has no messages or when switching between effort levels that resolve to the same underlying value",
+   "zh": "修复对话没有消息时，或在解析为同一底层值的努力级别之间切换时，仍弹出努力级别变更确认对话框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Agent tool description referencing an agent list that is never delivered when running with `--bare` or with attachments disabled",
+   "zh": "修复了引用代理列表的代理工具描述，该列表在使用`--bare`或禁用附件运行时永远不会传递"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a background worker crash in `claude agents` when accepting a stale permission prompt after a subagent was cancelled",
+   "zh": "修复了取消子代理后接受陈旧权限提示时“克劳德代理”中后台工作人员崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `cache_creation_input_tokens` reporting as 0 in transcript and result usage when the API reports cache writes only via the nested `cache_creation` breakdown",
+   "zh": "修复了当 API 仅通过嵌套的`cache_creation`细分报告缓存写入时，`cache_creation_input_tokens`在记录和结果使用中报告为 0"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the PushNotification tool incorrectly reporting \"Mobile push not sent (Remote Control inactive)\" in SDK-hosted sessions when Remote Control is enabled",
+   "zh": "修复 PushNotification 工具在启用远程控制的 SDK 托管会话中，错误报告\"Mobile push not sent (Remote Control inactive)\"的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions getting stuck after a model or login switch left stale thinking-block signatures in history; now stripped proactively with a retry safety-net",
+   "zh": "修复了模型或登录切换在历史记录中留下过时的思维块签名后会话卡住的问题；现在通过重试安全网主动剥离"
+  }
+ ]
+}

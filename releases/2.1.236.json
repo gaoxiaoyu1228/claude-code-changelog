@@ -1,0 +1,178 @@
+{
+ "version": "2.1.236",
+ "date": "2026-08-19",
+ "published": "2026-08-19T18:45:14.539Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.236",
+ "counts": {
+  "new": 3,
+  "improved": 12,
+  "fixed": 18
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `ANTHROPIC_DEFAULT_MODEL` environment variable: sets the model new sessions start on, while a `/model` pick still overrides it and persists across restarts (unlike `ANTHROPIC_MODEL`)",
+   "zh": "添加了`ANTHROPIC_DEFAULT_MODEL`环境变量：设置新会话启动的模型，而`/model`选择仍然覆盖它并在重新启动后持续存在（与`ANTHROPIC_MODEL`不同）"
+  },
+  {
+   "type": "new",
+   "en": "Added `notify_when_idle` to cross-session `SendMessage`: ask another Claude Code session on this machine to send one notice when it next goes idle — opt-in, one-shot, no polling (macOS and Linux)",
+   "zh": "在跨会话`SendMessage`中添加了`notify_when_idle`：要求该计算机上的另一个 Claude Code 会话在下次空闲时发送一个通知 - 选择加入、一次性、无轮询（macOS 和 Linux）"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added screen reader support for the transcript: live announcements for replies, permission requests, errors, and status changes, plus per-turn heading navigation",
+   "zh": "[VSCode] 对话记录支持屏幕阅读器：对回复、权限请求、错误和状态变化进行实时播报，并支持按轮次进行标题导航"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance: the session counter is now written in the background",
+   "zh": "改进启动性能：会话计数器改为在后台写入"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode: `Monitor` allow rules are now set aside while auto mode is active, so Monitor commands are reviewed the same way Bash commands are",
+   "zh": "改进自动模式：自动模式生效期间，`Monitor` 的允许规则暂时搁置，使 Monitor 命令与 Bash 命令一样接受审查"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode on Bedrock, Vertex AI, and Foundry, and when telemetry is disabled: the classifier now uses the same defaults as on the Claude API, including severity-scored classification",
+   "zh": "改进 Bedrock、Vertex AI、Foundry 上及禁用遥测时的自动模式：分类器使用与 Claude API 相同的默认设置，包括带严重程度评分的分类"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode: the git status check can no longer be fooled by a repo's `status.showUntrackedFiles=no` setting into reporting a clean tree",
+   "zh": "改进自动模式：git 状态检查不会再因仓库设置 `status.showUntrackedFiles=no` 而误报工作区干净"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the `/model` picker to highlight only the newest model's name, so the highlight marks the new release rather than an arbitrary subset of the list",
+   "zh": "更改了`/model`选择器以仅突出显示最新型号的名称，因此突出显示标记新版本而不是列表的任意子集"
+  },
+  {
+   "type": "improved",
+   "en": "`/goal`: an idle session whose goal is parked behind long-running background work now checks in automatically after 30 minutes (then 1h, 2h) instead of waiting for you to return",
+   "zh": "`/goal`：目标因长时间运行的后台工作而暂停时，空闲会话现在会在 30 分钟后（之后为 1 小时、2 小时）自动检查，而不是一直等你回来"
+  },
+  {
+   "type": "improved",
+   "en": "`/usage` now shows the usage-credits spend row for Team and Enterprise members, and shows a capped row at 0% before anything is spent",
+   "zh": "`/usage` 现在会为 Team 和 Enterprise 成员显示用量额度的消费行，并在尚未消费时在 0% 处显示带上限的行"
+  },
+  {
+   "type": "improved",
+   "en": "SIGTERM in print/SDK mode no longer records an interrupted turn or synthetic tool denials before exiting; running commands are still terminated and the process still exits with code 143",
+   "zh": "print/SDK 模式下收到 SIGTERM 时，退出前不再记录被打断的一轮对话，也不再生成合成的工具拒绝；正在运行的命令仍会被终止，进程仍以退出码 143 退出"
+  },
+  {
+   "type": "improved",
+   "en": "Pressing Enter on a slash-command typo or a command unavailable in this session now reports it instead of running the closest fuzzy match; prefixes and aliases still run",
+   "zh": "在斜杠命令输错或本会话不可用的命令上按 Enter，现在会直接提示，不再运行最接近的模糊匹配；前缀和别名仍可运行"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control now marks a session offline within seconds when the CLI exits or its terminal closes",
+   "zh": "CLI 退出或终端关闭时，Remote Control 现在会在几秒内把会话标记为离线"
+  },
+  {
+   "type": "improved",
+   "en": "`SendMessage` now refuses further messages to a session up front once a rapid burst would exceed what that session's inbox accepts, instead of reporting them sent while they were dropped",
+   "zh": "当短时间内的突发消息会超过某会话的收件箱容量时，`SendMessage` 现在会预先拒绝后续消息，而不是报告已发送但实际被丢弃"
+  },
+  {
+   "type": "improved",
+   "en": "Right-aligned footer items (goal indicator, session state, background agent status) and truncated notices now share a consistent right margin with the rest of the prompt area",
+   "zh": "底部右侧的项目（目标指示、会话状态、后台代理状态）和被截断的通知，现在与提示区其他部分保持一致的右边距"
+  },
+  {
+   "type": "fixed",
+   "en": "Sandbox: on macOS, wildcard read-deny rules (e.g. `**/.env`) now take precedence inside allowed read regions, cover matched directories' contents, and can't be bypassed by renaming the denied file",
+   "zh": "沙箱（macOS）：通配符读取拒绝规则（如 `**/.env`）现在优先于允许读取的区域，覆盖匹配目录下的内容，且无法通过重命名被拒绝的文件来绕过"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clipboard copy, background housekeeping, background sessions, and local MCP logs breaking after the directory a session had switched into was removed (since 2.1.229)",
+   "zh": "修复了在删除会话切换到的目录后剪贴板复制、后台管理、后台会话和本地 MCP 日志中断的问题（自 2.1.229 起）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the fullscreen renderer failing permanently after a single failed start: it now falls back to the classic renderer instead of exiting on every subsequent launch",
+   "zh": "修复全屏渲染器在一次启动失败后永久失效的问题：现在会回退到经典渲染器，而不是每次启动都退出"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/model` picker rendering taller than the terminal: it now shows only as many models as fit the window, with the rest reachable by scrolling",
+   "zh": "修复 `/model` 选择器高度超出终端的问题：现在只显示窗口能容纳的模型数量，其余可通过滚动查看"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SendMessage` calls being rejected when a malformed closing tag left the message text inside the summary field",
+   "zh": "修复了当格式错误的结束标记将消息文本留在摘要字段内时`SendMessage`调用被拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed unhandled promise rejections when a subprocess fails to start, for example `powershell.exe` on WSL with Windows interop disabled (regression in 2.1.234)",
+   "zh": "修复子进程启动失败（例如在禁用 Windows 互操作的 WSL 上运行 `powershell.exe`）时出现未处理的 Promise 拒绝（2.1.234 版本的回归问题）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fullscreen mode sometimes not showing a newly sent message until the next update after the terminal was resized",
+   "zh": "修复了全屏模式有时不会显示新发送的消息，直到调整终端大小后的下一次更新"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a blank band that could remain above the prompt after clearing a multi-line prompt, and panes not repainting after resizing the terminal away and back, in fullscreen mode",
+   "zh": "修复了在全屏模式下清除多行提示后可能保留在提示上方的空白带，以及在全屏模式下调整终端大小后无法重新绘制窗格的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the managed-settings approval prompt sometimes not appearing at startup while still capturing the first keypress as approval",
+   "zh": "修复启动时托管设置审批提示有时不出现，却仍把第一次按键当作批准的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal tab titles jumping in tmux (iTerm tmux integration): the title is now written only when its text changes instead of animating every 960ms",
+   "zh": "修复在 tmux（iTerm tmux 集成）中终端标签标题跳动的问题：现在只在文字变化时才写入标题，而不是每 960 毫秒动画一次"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an unclear error when the cloud environments list came back empty or malformed",
+   "zh": "修复了云环境列表返回为空或格式错误时出现的不清楚错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Fable 5 first-time usage-credits prompt auto-selecting the fallback model after 60 seconds with no answer when using Remote Control",
+   "zh": "修复 Fable 5 首次使用额度提示在使用远程控制时，60 秒无回应后自动选中备用模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spinner tips never appearing, with a repeated background error, when the cached guest-pass reward in `~/.claude.json` was malformed",
+   "zh": "修复了当`~/.claude.json`中缓存的访客通行证奖励格式错误时，旋转器提示永远不会出现，并重复出现后台错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skills hot-reload in SDK/VS Code sessions raising an error on every skills change after the session's working directory was deleted (2.1.229+)",
+   "zh": "修复了 SDK/VS Code 会话中的技能热重载，在删除会话的工作目录后，每次技能更改都会引发错误 (2.1.229+)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed self-hosted runner sessions released on idle, retire, or startup timeout occasionally resuming on another runner before the post-session hook had finished",
+   "zh": "修复了在空闲、退出或启动超时时释放的自托管运行器会话偶尔会在会话后挂钩完成之前在另一个运行器上恢复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Clawd mascot's eyes and feet rendering unevenly in iTerm2 at some font sizes",
+   "zh": "修复 Clawd 吉祥物在 iTerm2 某些字号下眼睛和脚显示不均匀的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed occasional runaway session recaps: recap text (automatic and `/recap`) is now capped at 400 characters, cut at a word boundary",
+   "zh": "修复了偶尔失控的会话回顾：回顾文本（自动和`/recap`）现在上限为 400 个字符，在单词边界处剪切"
+  },
+  {
+   "type": "fixed",
+   "en": "Aligned the session title chip on the prompt border with the footer's right edge",
+   "zh": "将提示边框上的会话标题芯片与页脚的右边缘对齐"
+  }
+ ]
+}

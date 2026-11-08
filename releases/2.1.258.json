@@ -1,0 +1,21 @@
+{
+ "version": "2.1.258",
+ "date": "2026-09-01",
+ "published": "2026-09-01T22:25:07.449Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.258",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code failing to launch on macOS 12 (Monterey), a regression introduced in 2.1.255",
+   "zh": "修复了 Claude Code 无法在 macOS 12 (Monterey) 上启动的问题，这是 2.1.255 中引入的回归问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote and scheduled sessions failing with \"user messages must have non-empty content\" after a re-sent permission approval could not be applied",
+   "zh": "修复了无法应用重新发送权限批准后远程和计划会话失败并显示“用户消息必须包含非空内容”的问题"
+  }
+ ]
+}

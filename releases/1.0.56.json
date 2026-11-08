@@ -1,0 +1,27 @@
+{
+ "version": "1.0.56",
+ "date": "2025-07-18",
+ "published": "2025-07-18T22:59:31.850Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.56",
+ "counts": {
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Windows: Enabled shift+tab for mode switching on versions of Node.js that support terminal VT mode",
+   "zh": "Windows：在支持终端 VT 模式的 Node.js 版本上，启用 shift+tab 切换模式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixes for WSL IDE detection",
+   "zh": "修复 WSL 中 IDE 检测的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix an issue causing awsRefreshHelper changes to .aws directory not to be picked up",
+   "zh": "修复导致 awsRefreshHelper 对 .aws 目录的更改无法被拾取的问题"
+  }
+ ]
+}

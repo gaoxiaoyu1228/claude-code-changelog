@@ -1,0 +1,32 @@
+{
+ "version": "0.2.117",
+ "date": "2025-05-17",
+ "published": "2025-05-17T23:51:27.284Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.117",
+ "counts": {
+  "new": 3,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Introduced settings.cleanupPeriodDays",
+   "zh": "新增 settings.cleanupPeriodDays 设置"
+  },
+  {
+   "type": "new",
+   "en": "Introduced CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var",
+   "zh": "新增 CLAUDE_CODE_API_KEY_HELPER_TTL_MS 环境变量"
+  },
+  {
+   "type": "new",
+   "en": "Introduced --debug mode",
+   "zh": "新增 --debug 模式"
+  },
+  {
+   "type": "improved",
+   "en": "Breaking change: --print JSON output now returns nested message objects, for forwards-compatibility as we introduce new metadata fields",
+   "zh": "重大更改：--print JSON 输出现在返回嵌套消息对象，以在我们引入新的元数据字段时实现向前兼容性"
+  }
+ ]
+}

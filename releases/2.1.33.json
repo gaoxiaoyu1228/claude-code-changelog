@@ -1,0 +1,93 @@
+{
+ "version": "2.1.33",
+ "date": "2026-02-06",
+ "published": "2026-02-06T00:16:13.218Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.33",
+ "counts": {
+  "new": 6,
+  "improved": 2,
+  "fixed": 8
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `TeammateIdle` and `TaskCompleted` hook events for multi-agent workflows",
+   "zh": "为多代理工作流程添加了`TeammateIdle`和`TaskCompleted`挂钩事件"
+  },
+  {
+   "type": "new",
+   "en": "Added support for restricting which sub-agents can be spawned via `Task(agent_type)` syntax in agent \"tools\" frontmatter",
+   "zh": "添加了对通过代理“工具”frontmatter 中的`Task(agent_type)`语法限制可以生成哪些子代理的支持"
+  },
+  {
+   "type": "new",
+   "en": "Added `memory` frontmatter field support for agents, enabling persistent memory with `user`, `project`, or `local` scope",
+   "zh": "为代理添加了“内存”frontmatter 字段支持，启用具有“用户”、“项目”或“本地”范围的持久内存"
+  },
+  {
+   "type": "new",
+   "en": "Added plugin name to skill descriptions and `/skills` menu for better discoverability",
+   "zh": "在技能描述和`/skills`菜单中添加了插件名称，以提高可发现性"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added support for remote sessions, allowing OAuth users to browse and resume sessions from claude.ai",
+   "zh": "VS Code：支持远程会话，OAuth 用户可以浏览并恢复 claude.ai 上的会话"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added git branch and message count to the session picker, with support for searching by branch name",
+   "zh": "VS Code：会话选择器中新增 git 分支和消息数，并支持按分支名搜索"
+  },
+  {
+   "type": "improved",
+   "en": "Improved error messages for API connection failures — now shows specific cause (e.g., ECONNREFUSED, SSL errors) instead of generic \"Connection error\"",
+   "zh": "改进 API 连接失败的错误提示：显示具体原因（如 ECONNREFUSED、SSL 错误），而不是笼统的“Connection error”"
+  },
+  {
+   "type": "improved",
+   "en": "Errors from invalid managed settings are now surfaced",
+   "zh": "现在会出现来自无效托管设置的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent teammate sessions in tmux to send and receive messages",
+   "zh": "修复了 tmux 中的代理队友会话以发送和接收消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed warnings about agent teams not being available on your current plan",
+   "zh": "修复关于当前套餐不支持智能体团队的警告问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where submitting a new message while the model was in extended thinking would interrupt the thinking phase",
+   "zh": "修复了模型处于扩展思考时提交新消息会中断思考阶段的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an API error that could occur when aborting mid-stream, where whitespace text combined with a thinking block would bypass normalization and produce an invalid request",
+   "zh": "修复了中止中止时可能发生的 API 错误，其中空白文本与思考块相结合将绕过规范化并产生无效请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API proxy compatibility issue where 404 errors on streaming endpoints no longer triggered non-streaming fallback",
+   "zh": "修复了 API 代理兼容性问题，其中流端点上的 404 错误不再触发非流回退"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where proxy settings configured via `settings.json` environment variables were not applied to WebFetch and other HTTP requests on the Node.js build",
+   "zh": "修复了通过`settings.json`环境变量配置的代理设置未应用于 Node.js 构建上的 WebFetch 和其他 HTTP 请求的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume` session picker showing raw XML markup instead of clean titles for sessions started with slash commands",
+   "zh": "修复了`/resume`会话选择器，显示原始 XML 标记，而不是使用斜线命令启动的会话的干净标题"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed scroll-to-bottom under-scrolling on initial session load and session switch",
+   "zh": "VS Code：修复了首次加载会话和切换会话时，滚动到底部的距离不够的问题"
+  }
+ ]
+}

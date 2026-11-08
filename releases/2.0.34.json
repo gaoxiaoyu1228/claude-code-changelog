@@ -1,0 +1,33 @@
+{
+ "version": "2.0.34",
+ "date": "2025-11-05",
+ "published": "2025-11-05T20:44:58.296Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.34",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "VSCode Extension: Added setting to configure the initial permission mode for new conversations",
+   "zh": "VS Code 扩展：新增设置，可配置新对话的初始权限模式"
+  },
+  {
+   "type": "improved",
+   "en": "Improved file path suggestion performance with native Rust-based fuzzy finder",
+   "zh": "改进文件路径建议的性能：使用基于 Rust 的原生模糊查找器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed infinite token refresh loop that caused MCP servers with OAuth (e.g., Slack) to hang during connection",
+   "zh": "修复了导致具有 OAuth（例如 Slack）的 MCP 服务器在连接期间挂起的无限令牌刷新循环"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory crash when reading or writing large files (especially base64-encoded images)",
+   "zh": "修复了读取或写入大文件（尤其是 base64 编码的图像）时的内存崩溃问题"
+  }
+ ]
+}

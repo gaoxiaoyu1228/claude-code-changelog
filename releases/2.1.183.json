@@ -1,0 +1,99 @@
+{
+ "version": "2.1.183",
+ "date": "2026-06-19",
+ "published": "2026-06-19T00:02:37.935Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.183",
+ "counts": {
+  "new": 3,
+  "improved": 2,
+  "fixed": 11,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added a warning when the requested model is deprecated or automatically updated to a newer model, shown on stderr in print mode (`-p`) and now also covering models set in agent frontmatter",
+   "zh": "添加了当请求的模型被弃用或自动更新为较新模型时发出的警告，以打印模式（`-p`）显示在 stderr 上，现在还覆盖代理 frontmatter 中设置的模型"
+  },
+  {
+   "type": "new",
+   "en": "Added `attribution.sessionUrl` setting to omit the claude.ai session link from commits and PRs in web and Remote Control sessions",
+   "zh": "添加了`attribution.sessionUrl`设置，以忽略 Web 和远程控制会话中提交和 PR 中的 claude.ai 会话链接"
+  },
+  {
+   "type": "new",
+   "en": "Added `/config --help` to list all available shorthand keys for `/config key=value`",
+   "zh": "添加了`/config --help`以列出`/config key=value`的所有可用简写键"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode safety: destructive git commands (`git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop`) are now blocked when you didn't ask to discard local work, `git commit --amend` is blocked when the commit wasn't made by the agent this session, and `terraform destroy`/`pulumi destroy`/`cdk destroy` are blocked unless you asked for the specific stack",
+   "zh": "改进自动模式的安全性：你没要求丢弃本地工作时，屏蔽破坏性 git 命令（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop`）；本会话中非代理创建的提交，禁止 `git commit --amend`；除非你明确要求某个具体堆栈，否则屏蔽 `terraform destroy`、`pulumi destroy`、`cdk destroy`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/config` toggle behavior: Enter and Space both change the selected setting, and Esc now saves and closes instead of reverting",
+   "zh": "更改了`/config`切换行为：Enter 和 Space 都会更改所选设置，Esc 现在保存并关闭而不是恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `thinking.disabled.display: Extra inputs are not permitted` 400 errors on subagent spawns and session-title generation for affected configurations",
+   "zh": "修复了受影响配置的子代理生成和会话标题生成上的“thinking.disabled.display：不允许额外输入”400 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed WebSearch returning empty results in subagents",
+   "zh": "修复了 WebSearch 在子代理中返回空结果的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal cursor being stranded above the prompt after navigating history in vim mode with the native cursor enabled",
+   "zh": "修复原生光标启用时，在 vim 模式中浏览历史后，终端光标被留在提示框上方的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fullscreen TUI corruption (statusline mid-screen, duplicated spinner rows, merged text) in Windows Terminal under heavy nested-subagent load",
+   "zh": "修复了嵌套子代理负载过重时 Windows 终端中的全屏 TUI 损坏（屏幕中状态线、重复的微调器行、合并文本）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed turns silently completing with no visible output when the model returned only a thinking block; Claude now re-prompts once",
+   "zh": "修复模型只返回了思考块时，回合静默完成且没有任何可见输出的问题；现在 Claude 会自动重新提示一次"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed user-level skills appearing multiple times in slash-command autocomplete when multiple plugins are enabled",
+   "zh": "修复主目录或配置目录被移动后（例如在绑定挂载的 devcontainer 中），用户安装的插件和市场报\"cache-miss\"无法加载的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers requiring authentication exposing auth-stub tools to the model in headless/SDK mode",
+   "zh": "修复了需要身份验证的 MCP 服务器，在 headless/SDK 模式下将 auth-stub 工具暴露给模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tmux teammate panes failing to launch when the shell has slow rc-file initialization, and keystrokes typed during agent spawn leaking into the new tmux pane instead of the leader prompt",
+   "zh": "修复 shell 的 rc 文件初始化较慢时，tmux 队友窗格无法启动，以及智能体启动期间输入的按键泄漏到新的 tmux 窗格而非负责人提示框的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background tasks started by a teammate being killed when the teammate finishes a turn",
+   "zh": "修复了队友完成回合后被杀死而启动的后台任务"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scheduled task and webhook trigger deliveries being treated as keyboard input; they now classify as task notifications and can no longer approve a pending action or set the session title in auto mode",
+   "zh": "修复了计划任务和 webhook 触发器交付被视为键盘输入的问题；他们现在分类为任务通知，并且不能再批准待处理的操作或在自动模式下设置会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed focus mode showing \"Ran N PostToolUse hooks\" timing lines under each response",
+   "zh": "固定焦点模式在每个响应下显示“Ran N PostToolUse hooks”计时线"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the startup \"setup issues\" line under the logo — run `/doctor` to see configuration issues or use `--debug`",
+   "zh": "移除 logo 下方启动时的 \"setup issues\" 一行；如需查看配置问题，请运行 `/doctor` 或使用 `--debug`"
+  }
+ ]
+}

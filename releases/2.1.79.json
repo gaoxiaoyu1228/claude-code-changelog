@@ -1,0 +1,103 @@
+{
+ "version": "2.1.79",
+ "date": "2026-03-18",
+ "published": "2026-03-18T21:34:08.611Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.79",
+ "counts": {
+  "new": 4,
+  "improved": 3,
+  "fixed": 11
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `--console` flag to `claude auth login` for Anthropic Console (API billing) authentication",
+   "zh": "在`claude auth login`中添加了`--console`标志，以进行 Anthropic 控制台（API 计费）身份验证"
+  },
+  {
+   "type": "new",
+   "en": "Added \"Show turn duration\" toggle to the `/config` menu",
+   "zh": "在 `/config` 菜单中添加了“显示回合持续时间”开关"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added `/remote-control` — bridge your session to claude.ai/code to continue from a browser or phone",
+   "zh": "[VSCode] 新增 `/remote-control`，可将你的会话连接到 claude.ai/code，以便在浏览器或手机上继续"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Session tabs now get AI-generated titles based on your first message",
+   "zh": "[VSCode] 会话标签页现在会根据你的第一条消息由 AI 自动生成标题"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup memory usage by ~18MB across all scenarios",
+   "zh": "改进启动内存占用：所有场景下约减少 18MB"
+  },
+  {
+   "type": "improved",
+   "en": "Improved non-streaming API fallback with a 2-minute per-attempt timeout, preventing sessions from hanging indefinitely",
+   "zh": "改进非流式 API 回退：每次尝试设置 2 分钟超时，防止会话无限期挂起"
+  },
+  {
+   "type": "improved",
+   "en": "`CLAUDE_CODE_PLUGIN_SEED_DIR` now supports multiple seed directories separated by the platform path delimiter (`:` on Unix, `;` on Windows)",
+   "zh": "`CLAUDE_CODE_PLUGIN_SEED_DIR` 现在支持多个种子目录，用平台路径分隔符分开（Unix 上为 `:`，Windows 上为 `;`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p` hanging when spawned as a subprocess without explicit stdin (e.g. Python `subprocess.run`)",
+   "zh": "修复了在没有显式 stdin 的情况下作为子进程生成时`claude -p`挂起的问题（例如 Python`subprocess.run`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+C not working in `-p` (print) mode",
+   "zh": "修复了 Ctrl+C 在`-p`（打印）模式下不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/btw` returning the main agent's output instead of answering the side question when triggered during streaming",
+   "zh": "修复了在流媒体期间触发时返回主代理的输出而不是回答附带问题的`/btw`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode not activating correctly on startup when `voiceEnabled: true` is set",
+   "zh": "修复设置了 `voiceEnabled: true` 后，语音模式在启动时无法正确激活的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed left/right arrow tab navigation in `/permissions`",
+   "zh": "修复了`/permissions`中的左/右箭头选项卡导航"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` not preventing terminal title from being set on startup",
+   "zh": "修复了`CLAUDE_CODE_DISABLE_TERMINAL_TITLE`不阻止在启动时设置终端标题的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom status line showing nothing when workspace trust is blocking it",
+   "zh": "修复了当工作区信任阻止自定义状态行时不显示任何内容的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed enterprise users being unable to retry on rate limit (429) errors",
+   "zh": "修复了企业用户因速率限制 (429) 错误而无法重试的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `SessionEnd` hooks not firing when using interactive `/resume` to switch sessions",
+   "zh": "修复了使用交互式`/resume`切换会话时`SessionEnd`挂钩未触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the thinking pill showing \"Thinking\" instead of \"Thought for Ns\" after a response completes",
+   "zh": "[VSCode] 修复回复完成后，思考标签显示 \"Thinking\"、而不是 \"Thought for Ns\" 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed missing session diff button when opening sessions from the left sidebar",
+   "zh": "[VSCode] 修复从左侧边栏打开会话时，缺少会话差异按钮的问题"
+  }
+ ]
+}

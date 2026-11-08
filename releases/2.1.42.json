@@ -1,0 +1,38 @@
+{
+ "version": "2.1.42",
+ "date": "2026-02-13",
+ "published": "2026-02-13T18:56:56.084Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.42",
+ "counts": {
+  "new": 1,
+  "improved": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added one-time Opus 4.6 effort callout for eligible users",
+   "zh": "为符合条件的用户添加了一次性 Opus 4.6 工作量标注"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance by deferring Zod schema construction",
+   "zh": "改进启动性能：推迟构建 Zod schema"
+  },
+  {
+   "type": "improved",
+   "en": "Improved prompt cache hit rates by moving date out of system prompt",
+   "zh": "改进提示缓存命中率：把日期移出了系统提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed /resume showing interrupt messages as session titles",
+   "zh": "修复/恢复将中断消息显示为会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed image dimension limit errors to suggest /compact",
+   "zh": "修复了建议 /compact 的图像尺寸限制错误"
+  }
+ ]
+}

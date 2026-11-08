@@ -1,0 +1,16 @@
+{
+ "version": "2.0.9",
+ "date": "2025-10-06",
+ "published": "2025-10-06T21:15:21.832Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.9",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fix regression where bash backgrounding stopped working",
+   "zh": "修复 bash 后台停止工作的回归"
+  }
+ ]
+}

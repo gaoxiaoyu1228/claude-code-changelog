@@ -1,0 +1,16 @@
+{
+ "version": "2.1.11",
+ "date": "2026-01-17",
+ "published": "2026-01-17T01:19:37.165Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.11",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed excessive MCP connection requests for HTTP/SSE transports",
+   "zh": "修复了 HTTP/SSE 传输的过多 MCP 连接请求"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "version": "1.0.29",
+ "date": "2025-06-18",
+ "published": "2025-06-18T21:49:40.075Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.29",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved CJK character support in cursor navigation and rendering",
+   "zh": "改进光标移动和渲染中的中日韩（CJK）字符支持"
+  }
+ ]
+}

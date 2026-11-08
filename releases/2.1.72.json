@@ -1,0 +1,268 @@
+{
+ "version": "2.1.72",
+ "date": "2026-03-09",
+ "published": "2026-03-09T23:29:16.565Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.72",
+ "counts": {
+  "new": 8,
+  "improved": 9,
+  "fixed": 34
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `w` key in `/copy` to write the focused selection directly to a file, bypassing the clipboard (useful over SSH)",
+   "zh": "在`/copy`中添加了`w`键，以绕过剪贴板将焦点选择直接写入文件（通过 SSH 有用）"
+  },
+  {
+   "type": "new",
+   "en": "Added optional description argument to `/plan` (e.g., `/plan fix the auth bug`) that enters plan mode and immediately starts",
+   "zh": "向`/plan`添加了可选的描述参数（例如，“/plan 修复身份验证错误”），进入计划模式并立即启动"
+  },
+  {
+   "type": "new",
+   "en": "Added `ExitWorktree` tool to leave an `EnterWorktree` session",
+   "zh": "添加了`ExitWorktree`工具以离开`EnterWorktree`会话"
+  },
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_DISABLE_CRON` environment variable to immediately stop scheduled cron jobs mid-session",
+   "zh": "添加了`CLAUDE_CODE_DISABLE_CRON`环境变量以在会话中立即停止计划的 cron 作业"
+  },
+  {
+   "type": "new",
+   "en": "Added `lsof`, `pgrep`, `tput`, `ss`, `fd`, and `fdfind` to the bash auto-approval allowlist, reducing permission prompts for common read-only operations",
+   "zh": "将 `lsof`、`pgrep`、`tput`、`ss`、`fd` 和 `fdfind` 添加到 bash 自动批准白名单中，减少常见只读操作的权限提示"
+  },
+  {
+   "type": "new",
+   "en": "Added support for marketplace git URLs without `.git` suffix (Azure DevOps, AWS CodeCommit)",
+   "zh": "添加了对不带`.git`后缀的市场 git URL 的支持（Azure DevOps、AWS CodeCommit）"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added effort level indicator on the input border",
+   "zh": "VS Code：输入框边框上新增强度级别指示器"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added `vscode://anthropic.claude-code/open` URI handler to open a new Claude Code tab programmatically, with optional `prompt` and `session` query parameters",
+   "zh": "VS Code：新增 `vscode://anthropic.claude-code/open` URI 处理器，可通过程序打开新的 Claude Code 标签页，并可选择带上 `prompt` 和 `session` 查询参数"
+  },
+  {
+   "type": "improved",
+   "en": "Simplified effort levels to low/medium/high (removed max) with new symbols (○ ◐ ●) and a brief notification instead of a persistent icon. Use `/effort auto` to reset to default",
+   "zh": "思考强度简化为低/中/高（移除了“最高”），并改用新符号（○ ◐ ●），通过简短通知提示，不再显示常驻图标。使用 `/effort auto` 可恢复默认"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/config` — Escape now cancels changes, Enter saves and closes, Space toggles settings",
+   "zh": "改进 `/config`：Escape 取消更改，Enter 保存并关闭，Space 切换设置"
+  },
+  {
+   "type": "improved",
+   "en": "Improved up-arrow history to show current session's messages first when running multiple concurrent sessions",
+   "zh": "改进上箭头历史记录：同时运行多个会话时，优先显示当前会话的消息"
+  },
+  {
+   "type": "improved",
+   "en": "Improved voice input transcription accuracy for repo names and common dev terms (regex, OAuth, JSON)",
+   "zh": "改进语音输入对仓库名和常见开发术语（regex、OAuth、JSON）的转写准确度"
+  },
+  {
+   "type": "improved",
+   "en": "Improved bash command parsing by switching to a native module — faster initialization and no memory leak",
+   "zh": "改进 bash 命令解析：改用原生模块，初始化更快，且不再有内存泄漏"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced bundle size by ~510 KB",
+   "zh": "打包体积减少约 510 KB"
+  },
+  {
+   "type": "improved",
+   "en": "Changed CLAUDE.md HTML comments (`<!-- ... -->`) to be hidden from Claude when auto-injected. Comments remain visible when read with the Read tool",
+   "zh": "更改了 CLAUDE.md HTML 注释 (`<!-- ... -->`)，使其在自动注入时对 Claude 隐藏。使用阅读工具阅读时评论仍然可见"
+  },
+  {
+   "type": "improved",
+   "en": "Improved marketplace clone failure messages to show diagnostic info even when git produces no stderr",
+   "zh": "改进 marketplace 克隆失败的提示：即使 git 没有输出 stderr，也会显示诊断信息"
+  },
+  {
+   "type": "improved",
+   "en": "Improved CPU utilization in long sessions",
+   "zh": "改进长会话中的 CPU 使用率"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tool search to activate even with `ANTHROPIC_BASE_URL` as long as `ENABLE_TOOL_SEARCH` is set.",
+   "zh": "修复设置了 `ENABLE_TOOL_SEARCH` 后，即使有 `ANTHROPIC_BASE_URL` 工具搜索也会启用的问题。"
+  },
+  {
+   "type": "fixed",
+   "en": "Restored the `model` parameter on the Agent tool for per-invocation model overrides",
+   "zh": "恢复 Agent 工具上的 `model` 参数，可按每次调用覆盖模型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slow exits when background tasks or hooks were slow to respond",
+   "zh": "修复了后台任务或挂钩响应缓慢时退出缓慢的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent task progress stuck on \"Initializing…\"",
+   "zh": "修复了代理任务进度停留在“正在初始化...”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed skill hooks firing twice per event when a hooks-enabled skill is invoked by the model",
+   "zh": "当模型调用启用钩子的技能时，修复了每个事件的技能钩子触发两次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several voice mode issues: occasional input lag, false \"No speech detected\" errors after releasing push-to-talk, and stale transcripts re-filling the prompt after submission",
+   "zh": "修复了多个语音模式问题：偶尔的输入延迟、释放一键通后错误的“未检测到语音”错误以及提交后重新填写提示的陈旧记录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--continue` not resuming from the most recent point after `--compact`",
+   "zh": "修复了`--continue`不从`--compact`之后的最近点恢复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bash security parsing edge cases",
+   "zh": "修复了 bash 安全解析边缘情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several plugin issues: installation failing on Windows with `EEXIST` error in OneDrive folders, marketplace blocking user-scope installs when a project-scope install exists, `CLAUDE_CODE_PLUGIN_CACHE_DIR` creating literal `~` directories, and `plugin.json` with marketplace-only fields failing to load",
+   "zh": "修复了几个插件问题：在 Windows 上安装失败，OneDrive 文件夹中出现`EEXIST`错误，当项目范围安装存在时，市场阻止用户范围安装，`CLAUDE_CODE_PLUGIN_CACHE_DIR`创建文字`~`目录，以及`plugin.json`仅包含市场字段无法加载"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed feedback survey appearing too frequently in long sessions",
+   "zh": "修复了反馈调查在长时间会话中出现过于频繁的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--effort` CLI flag being reset by unrelated settings writes on startup",
+   "zh": "修复了`--effort`CLI 标志在启动时被不相关设置写入重置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed backgrounded Ctrl+B queries losing their transcript or corrupting the new conversation after `/clear`",
+   "zh": "修复了后台 Ctrl+B 查询在`/clear`之后丢失其记录或损坏新对话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/clear` killing background agent/bash tasks — only foreground tasks are now cleared",
+   "zh": "修复了`/clear`杀死后台代理/bash任务的问题——现在只有前台任务被清除"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree isolation issues: Task tool resume not restoring cwd, and background task notifications missing `worktreePath` and `worktreeBranch`",
+   "zh": "修复工作树隔离问题：Task 工具恢复时未还原工作目录，且后台任务通知缺少 `worktreePath` 和 `worktreeBranch`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` not displaying results when run while Claude is working",
+   "zh": "修复了克劳德工作时运行时`/model`不显示结果的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed digit keys selecting menu options instead of typing in plan mode permission prompt's text input",
+   "zh": "修复了选择菜单选项而不是在计划模式权限提示的文本输入中键入数字键的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandbox permission issues: certain file write operations incorrectly allowed without prompting, and output redirections to allowlisted directories (like `/tmp/claude/`) prompting unnecessarily",
+   "zh": "修复了沙箱权限问题：某些文件写入操作在没有提示的情况下被错误地允许，并且输出重定向到白名单目录（如`/tmp/claude/`），不必要地提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt cache invalidation in SDK `query()` calls, reducing input token costs up to 12x",
+   "zh": "修复了 SDK`query()`调用中的提示缓存失效问题，将输入令牌成本降低高达 12 倍"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Escape key becoming unresponsive after cancelling a query",
+   "zh": "修复了取消查询后 Escape 键变得无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed double Ctrl+C not exiting when background agents or tasks are running",
+   "zh": "修复后台代理或任务运行时双 Ctrl+C 不退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed team agents to inherit the leader's model",
+   "zh": "修复团队智能体未继承负责人（leader）模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Always Allow\" saving permission rules that never match again",
+   "zh": "修复了“始终允许”保存权限规则不再匹配的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several hooks issues: `transcript_path` pointing to the wrong directory for resumed/forked sessions, agent `prompt` being silently deleted from settings.json on every settings write, PostToolUse block reason displaying twice, async hooks not receiving stdin with bash `read -r`, and validation error message showing an example that fails validation",
+   "zh": "修复了几个钩子问题：`transcript_path`指向恢复/分叉会话的错误目录，每次设置写入时都会从 settings.json 中默默删除代理`prompt`，PostToolUse 阻止原因显示两次，异步钩子未使用 bash`read -r`接收标准输入，以及显示验证失败示例的验证错误消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session crashes in Desktop/SDK when Read returned files containing U+2028/U+2029 characters",
+   "zh": "修复了读取返回的包含 U+2028/U+2029 字符的文件时桌面/SDK 中的会话崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed terminal title being cleared on exit even when `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` was set",
+   "zh": "修复设置了 `CLAUDE_CODE_DISABLE_TERMINAL_TITLE` 后，退出时终端标题仍被清除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several permission rule matching issues: wildcard rules not matching commands with heredocs, embedded newlines, or no arguments; `sandbox.excludedCommands` failing with env var prefixes; \"always allow\" suggesting overly broad prefixes for nested CLI tools; and deny rules not applying to all command forms",
+   "zh": "修复了多个权限规则匹配问题：通配符规则不匹配带有heredocs、嵌入换行符或无参数的命令； `sandbox.excludedCommands` 因 env var 前缀而失败； “始终允许”建议嵌套 CLI 工具使用过于宽泛的前缀；并拒绝不适用于所有命令形式的规则"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed oversized and truncated images from Bash data-URL output",
+   "zh": "修复了 Bash 数据 URL 输出中过大和截断的图像"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when resuming sessions that contained Bedrock API errors",
+   "zh": "修复了恢复包含 Bedrock API 错误的会话时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed intermittent \"expected boolean, received string\" validation errors on Edit, Bash, and Grep tool inputs",
+   "zh": "修复了 Edit、Bash 和 Grep 工具输入上的间歇性“预期布尔值，收到字符串”验证错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed multi-line session titles when forking from a conversation whose first message contained newlines",
+   "zh": "修复了从第一条消息包含换行符的对话中分叉时的多行会话标题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed queued messages not showing attached images, and images being lost when pressing ↑ to edit a queued message",
+   "zh": "修复了排队消息不显示附加图像以及按 ↑ 编辑排队消息时图像丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed parallel tool calls where a failed Read/WebFetch/Glob would cancel its siblings — only Bash errors now cascade",
+   "zh": "修复了并行工具调用，其中失败的 Read/WebFetch/Glob 将取消其同级工具 - 现在只有 Bash 错误级联"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed scroll speed in integrated terminals not matching native terminals",
+   "zh": "VS Code：修复了集成终端中的滚动速度与原生终端不一致的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed Shift+Enter submitting input instead of inserting a newline for users with older keybindings",
+   "zh": "VS Code：修复了旧快捷键配置下 Shift+Enter 会提交输入而不是换行的问题"
+  }
+ ]
+}

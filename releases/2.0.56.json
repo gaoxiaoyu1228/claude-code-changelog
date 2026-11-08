@@ -1,0 +1,21 @@
+{
+ "version": "2.0.56",
+ "date": "2025-12-01",
+ "published": "2025-12-01T23:38:38.455Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.56",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added setting to enable/disable terminal progress bar (OSC 9;4)",
+   "zh": "添加了启用/禁用终端进度条的设置（OSC 9;4）"
+  },
+  {
+   "type": "new",
+   "en": "VSCode Extension: Added support for VS Code's secondary sidebar (VS Code 1.97+), allowing Claude Code to be displayed in the right sidebar while keeping the file explorer on the left. Requires setting sidebar as Preferred Location in the config.",
+   "zh": "VS Code 扩展：支持 VS Code 的次级侧边栏（VS Code 1.97+），可在右侧边栏显示 Claude Code，同时左侧保留文件浏览器。需要在配置中将侧边栏设为首选位置"
+  }
+ ]
+}

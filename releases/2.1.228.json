@@ -1,0 +1,103 @@
+{
+ "version": "2.1.228",
+ "date": "2026-08-11",
+ "published": "2026-08-11T17:45:45.882Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.228",
+ "counts": {
+  "improved": 5,
+  "fixed": 12,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved cross-session messages: the sender and body now display inline instead of a collapsed line, and messages to Remote Control sessions on other machines show your Remote Control session name as the sender",
+   "zh": "改进跨会话消息：发送者和正文直接内联显示，不再是折叠的一行；发给其他机器上远程控制会话的消息，发送者会显示为你的远程控制会话名称"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Vertex AI credential handling: expired or missing Google Cloud credentials now fail within seconds instead of retrying for minutes",
+   "zh": "改进 Vertex AI 凭证处理：Google Cloud 凭证过期或缺失时，几秒内即报错，不再重试好几分钟"
+  },
+  {
+   "type": "improved",
+   "en": "Improved compaction progress: the retry countdown and stall hint now appear during compaction instead of only a progress bar",
+   "zh": "改进压缩进度：压缩期间显示重试倒计时和停滞提示，而不只是进度条"
+  },
+  {
+   "type": "improved",
+   "en": "Updated terminal title busy-spinner glyphs to reduce tab-bar jitter on some terminals",
+   "zh": "终端标题的忙碌加载字符已调整，减少某些终端标签栏的抖动"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the Write tool so newer models can overwrite an existing file they haven't read this session, matching the Edit tool's rules; older models still require the read first",
+   "zh": "更改了写入工具，以便较新的模型可以覆盖他们在本次会话中未读取的现有文件，这符合编辑工具的规则；旧型号仍然需要先阅读"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed interactive sessions that could stop redrawing entirely, while the process kept running, after a rare internal layout error",
+   "zh": "修复了在出现罕见的内部布局错误后，交互式会话可能会完全停止重绘，而进程仍在运行的情况"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `git` / Git Bash not being found on Windows when Claude Code is launched from a parent folder of the git installation",
+   "zh": "修复了从 git 安装的父文件夹启动 Claude Code 时在 Windows 上找不到`git`/Git Bash 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/tui` reverting the session to an earlier model when `/model` had been changed since the last response",
+   "zh": "修复了自上次响应以来`/model`发生更改时`/tui`将会话恢复到早期模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cross-session messaging sometimes starting without an inbox in the first session after install or upgrade",
+   "zh": "修复了跨会话消息传递有时在安装或升级后的第一个会话中没有收件箱的情况下启动"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control `/resume` while connected leaking the resumed conversation's title or history into the connected session",
+   "zh": "修复了连接时远程控制`/resume`将恢复的对话的标题或历史记录泄漏到连接的会话中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude self-hosted-runner` sessions failing on every fresh runner when the `checkout` hook fails for a repository the session doesn't push to; that repository is now skipped with a warning",
+   "zh": "修复了当会话未推送到的存储库的`checkout`挂钩失败时，`claude self-hosted-runner`会话在每个新运行器上失败的问题；该存储库现在已被跳过并带有警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed self-hosted runners ending sessions in the gap between a background task finishing and the follow-up turn starting",
+   "zh": "修复了自托管跑步者在后台任务完成和后续回合开始之间的间隙结束会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session cleanup deleting contents inside a project's memory folder",
+   "zh": "修复了会话清理删除项目内存文件夹内的内容的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background plugin-cache cleanup deleting a plugin's cache when its only version is a symlinked development checkout",
+   "zh": "修复了当插件的唯一版本是符号链接开发签出时后台插件缓存清理会删除插件缓存的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a settings-merge issue where a marketplace entry redefined in a higher-precedence settings tier could inherit another tier's custom headers; marketplace entries now merge as whole entries",
+   "zh": "修复了设置合并问题，即在较高优先级设置层中重新定义的市场条目可能会继承另一层的自定义标头；市场条目现在合并为整个条目"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the deferred-tools reminder occasionally being sent to the model twice after a skill invocation",
+   "zh": "修复技能调用之后，延迟工具提醒偶尔被两次发送给模型的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Hardened skills synced from claude.ai: they no longer shadow local commands or MCP prompts, their descriptions are sanitized and labeled, and on your machine their bodies don't run `!` commands or expand `@` files",
+   "zh": "加固从 claude.ai 同步的技能：它们不再覆盖本地命令或 MCP 提示，描述会被清理并加上标注；在你的电脑上，其正文不会执行 `!` 命令，也不会展开 `@` 文件"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the outdated note about auto mode sessions costing slightly more from the first-use notice for Pro, Max, and Team plans",
+   "zh": "从 Pro、Max 和 Team 套餐的首次使用通知中，移除关于自动模式会话成本略高的过时说明"
+  }
+ ]
+}

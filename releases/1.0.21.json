@@ -1,0 +1,27 @@
+{
+ "version": "1.0.21",
+ "date": "2025-06-11",
+ "published": "2025-06-11T20:06:48.186Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.21",
+ "counts": {
+  "improved": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved editing of files with tab-based indentation",
+   "zh": "改进对基于制表符缩进的文件的编辑"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix for tool_use without matching tool_result errors",
+   "zh": "修复 tool_use 没有匹配 tool_result 错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where stdio MCP server processes would linger after quitting Claude Code",
+   "zh": "修复了退出 Claude Code 后 stdio MCP 服务器进程会持续存在的错误"
+  }
+ ]
+}

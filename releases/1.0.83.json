@@ -1,0 +1,22 @@
+{
+ "version": "1.0.83",
+ "date": "2025-08-15",
+ "published": "2025-08-15T23:06:09.923Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.83",
+ "counts": {
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "New shimmering spinner",
+   "zh": "全新的闪烁加载动画"
+  },
+  {
+   "type": "fixed",
+   "en": "@-mention: Support files with spaces in path",
+   "zh": "@-mention：支持路径中带有空格的文件"
+  }
+ ]
+}

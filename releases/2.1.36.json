@@ -1,0 +1,16 @@
+{
+ "version": "2.1.36",
+ "date": "2026-02-07",
+ "published": "2026-02-07T17:25:00.190Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.36",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Fast mode is now available for Opus 4.6. Learn more at https://code.claude.com/docs/en/fast-mode",
+   "zh": "Opus 4.6 现已提供快速模式。了解更多信息 https://code.claude.com/docs/en/fast-mode"
+  }
+ ]
+}

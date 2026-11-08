@@ -1,0 +1,137 @@
+{
+ "version": "2.1.116",
+ "date": "2026-04-20",
+ "published": "2026-04-20T19:24:52.313Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.116",
+ "counts": {
+  "improved": 10,
+  "fixed": 15
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "`/resume` on large sessions is significantly faster (up to 67% on 40MB+ sessions) and handles sessions with many dead-fork entries more efficiently",
+   "zh": "大型会话的 `/resume` 明显更快（40MB 以上的会话最多快 67%），并且能更高效地处理包含大量失效分叉记录的会话"
+  },
+  {
+   "type": "improved",
+   "en": "Faster MCP startup when multiple stdio servers are configured; `resources/templates/list` is now deferred to first `@`-mention",
+   "zh": "配置多个 stdio 服务器时 MCP 启动速度更快； `resources/templates/list` 现在推迟到第一个 `@` 提及"
+  },
+  {
+   "type": "improved",
+   "en": "Smoother fullscreen scrolling in VS Code, Cursor, and Windsurf terminals — `/terminal-setup` now configures the editor's scroll sensitivity",
+   "zh": "VS Code、Cursor 和 Windsurf 终端中全屏滚动更顺滑；`/terminal-setup` 现在会配置编辑器的滚动灵敏度"
+  },
+  {
+   "type": "improved",
+   "en": "Thinking spinner now shows progress inline (\"still thinking\", \"thinking more\", \"almost done thinking\"), replacing the separate hint row",
+   "zh": "思考时的加载动画现在在行内显示进度（\"still thinking\"、\"thinking more\"、\"almost done thinking\"），取代了单独的提示行"
+  },
+  {
+   "type": "improved",
+   "en": "`/config` search now matches option values (e.g. searching \"vim\" finds the Editor mode setting)",
+   "zh": "`/config` 搜索现在会匹配选项的值（例如搜索 \"vim\" 可找到 Editor mode 设置）"
+  },
+  {
+   "type": "improved",
+   "en": "`/doctor` can now be opened while Claude is responding, without waiting for the current turn to finish",
+   "zh": "Claude 回复时也可以打开 `/doctor`，无需等待当前轮次结束"
+  },
+  {
+   "type": "improved",
+   "en": "`/reload-plugins` and background plugin auto-update now auto-install missing plugin dependencies from marketplaces you've already added",
+   "zh": "`/reload-plugins` 和后台插件自动更新，现在会从你已添加的市场中自动安装缺失的插件依赖"
+  },
+  {
+   "type": "improved",
+   "en": "Bash tool now surfaces a hint when `gh` commands hit GitHub's API rate limit, so agents can back off instead of retrying",
+   "zh": "现在，当`gh`命令达到 GitHub 的 API 速率限制时，Bash 工具会显示提示，因此代理可以后退而不是重试"
+  },
+  {
+   "type": "improved",
+   "en": "Slash command menu now shows \"No commands match\" when your filter has zero results, instead of disappearing",
+   "zh": "筛选结果为零时，斜杠命令菜单显示 \"No commands match\"，而不再直接消失"
+  },
+  {
+   "type": "improved",
+   "en": "Claude Code and installer now use `https://downloads.claude.ai/claude-code-releases` instead of `https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases`",
+   "zh": "Claude Code 和安装程序现在使用`https://downloads.claude.ai/claude-code-releases`，而不是`https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases`"
+  },
+  {
+   "type": "fixed",
+   "en": "The Usage tab in Settings now shows your 5-hour and weekly usage immediately and no longer fails when the usage endpoint is rate-limited",
+   "zh": "设置中的 Usage 标签页现在会立即显示 5 小时和每周用量，且在用量接口被限流时不再报错"
+  },
+  {
+   "type": "fixed",
+   "en": "Agent frontmatter `hooks:` now fire when running as a main-thread agent via `--agent`",
+   "zh": "现在，通过`--agent`作为主线程代理运行时，代理 frontmatter`hooks:`会触发"
+  },
+  {
+   "type": "fixed",
+   "en": "Security: sandbox auto-allow no longer bypasses the dangerous-path safety check for `rm`/`rmdir` targeting `/`, `$HOME`, or other critical system directories",
+   "zh": "安全：沙箱自动允许不再绕过对 `rm`/`rmdir` 删除 `/`、`$HOME` 或其他关键系统目录的危险路径检查"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Devanagari and other Indic scripts rendering with broken column alignment in the terminal UI",
+   "zh": "修复了天城文和其他印度文脚本在终端 UI 中呈现的列对齐方式损坏的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+- not triggering undo in terminals using the Kitty keyboard protocol (iTerm2, Ghostty, kitty, WezTerm, Windows Terminal)",
+   "zh": "修复了 Ctrl+- 在使用 Kitty 键盘协议的终端（iTerm2、Ghostty、kitty、WezTerm、Windows 终端）中不触发撤消的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Cmd+Left/Right not jumping to line start/end in terminals that use the Kitty keyboard protocol (Warp fullscreen, kitty, Ghostty, WezTerm)",
+   "zh": "修复了使用 Kitty 键盘协议（Warp 全屏、kitty、Ghostty、WezTerm）的终端中 Cmd+Left/Right 不跳转到行开始/结束的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+Z hanging the terminal when Claude Code is launched via a wrapper process (e.g. `npx`, `bun run`)",
+   "zh": "修复了当通过包装进程启动 Claude Code 时 Ctrl+Z 挂起终端的问题（例如`npx`、`bun run`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrollback duplication in inline mode where resizing the terminal or large output bursts would repeat earlier conversation history",
+   "zh": "修复了内联模式下的回滚重复问题，其中调整终端大小或大输出突发会重复早期的对话历史记录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed modal search dialogs overflowing the screen at short terminal heights, hiding the search box and keyboard hints",
+   "zh": "修复了模式搜索对话框在终端高度较短时溢出屏幕、隐藏搜索框和键盘提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scattered blank cells and disappearing composer chrome in the VS Code integrated terminal during scrolling",
+   "zh": "修复了滚动期间 VS Code 集成终端中分散的空白单元格和消失的 Composer chrome"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an intermittent API 400 error related to cache control TTL ordering that could occur when a parallel request completed during request setup",
+   "zh": "修复了与缓存控制 TTL 排序相关的间歇性 API 400 错误，该错误可能在请求设置期间完成并行请求时发生"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/branch` rejecting conversations with transcripts larger than 50MB",
+   "zh": "修复了`/branch`拒绝对话文本大于 50MB 的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume` silently showing an empty conversation on large session files instead of reporting the load error",
+   "zh": "修复了`/resume`在大型会话文件上静默显示空对话而不是报告加载错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` Installed tab showing the same item twice when it appears under Needs attention or Favorites",
+   "zh": "修复了`/plugin`已安装选项卡在同一项目出现在“需要注意”或“收藏夹”下时显示两次的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/update` and `/tui` not working after entering a worktree mid-session",
+   "zh": "修复了`/update`和`/tui`在进入工作树中间会话后不起作用的问题"
+  }
+ ]
+}

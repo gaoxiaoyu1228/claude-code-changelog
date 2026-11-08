@@ -1,0 +1,22 @@
+{
+ "version": "1.0.53",
+ "date": "2025-07-15",
+ "published": "2025-07-15T22:12:02.203Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.53",
+ "counts": {
+  "new": 1,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Add helper script settings for AWS token refresh: awsAuthRefresh (for foreground operations like aws sso login) and awsCredentialExport (for background operation with STS-like response).",
+   "zh": "添加 AWS 令牌刷新的帮助程序脚本设置：awsAuthRefresh（适用于 aws sso 登录等前台操作）和 awsCredentialExport（适用于具有类似 STS 响应的后台操作）。"
+  },
+  {
+   "type": "improved",
+   "en": "Updated @-mention file truncation from 100 lines to 2000 lines",
+   "zh": "`@` 提及文件时的截断上限从 100 行提高到 2000 行"
+  }
+ ]
+}

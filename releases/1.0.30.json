@@ -1,0 +1,32 @@
+{
+ "version": "1.0.30",
+ "date": "2025-06-19",
+ "published": "2025-06-19T03:32:45.914Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.30",
+ "counts": {
+  "new": 2,
+  "improved": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Custom slash commands: Run bash output, @-mention files, enable thinking with thinking keywords",
+   "zh": "自定义斜杠命令：运行 bash 输出、@-提及文件、使用思考关键字进行思考"
+  },
+  {
+   "type": "new",
+   "en": "Added timestamps in Ctrl-r mode and fixed Ctrl-c handling",
+   "zh": "在 Ctrl-r 模式下添加了时间戳并修复了 Ctrl-c 处理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved file path autocomplete with filename matching",
+   "zh": "改进文件路径自动补全：支持按文件名匹配"
+  },
+  {
+   "type": "improved",
+   "en": "Enhanced jq regex support for complex filters with pipes and select",
+   "zh": "增强了对带有管道和选择的复杂过滤器的 jq 正则表达式支持"
+  }
+ ]
+}

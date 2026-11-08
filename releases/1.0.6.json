@@ -1,0 +1,38 @@
+{
+ "version": "1.0.6",
+ "date": "2025-05-29",
+ "published": "2025-05-29T16:33:59.854Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.6",
+ "counts": {
+  "new": 1,
+  "improved": 2,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for symlinks in @file typeahead",
+   "zh": "添加了对 @file typeahead 中符号链接的支持"
+  },
+  {
+   "type": "improved",
+   "en": "Improved edit reliability for tab-indented files",
+   "zh": "改进对制表符缩进文件的编辑可靠性"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced unnecessary tool permission prompts",
+   "zh": "减少不必要的工具权限提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Respect CLAUDE_CONFIG_DIR everywhere",
+   "zh": "所有地方都统一遵循 `CLAUDE_CONFIG_DIR`"
+  },
+  {
+   "type": "fixed",
+   "en": "Bugfixes, UI polish, and tool reliability improvements",
+   "zh": "错误修复、UI 优化和工具可靠性改进"
+  }
+ ]
+}

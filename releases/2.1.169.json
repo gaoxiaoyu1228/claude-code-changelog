@@ -1,0 +1,163 @@
+{
+ "version": "2.1.169",
+ "date": "2026-06-08",
+ "published": "2026-06-08T18:11:20.859Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.169",
+ "counts": {
+  "new": 4,
+  "improved": 8,
+  "fixed": 18
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `--safe-mode` flag (and `CLAUDE_CODE_SAFE_MODE`) to start Claude Code with all customizations (CLAUDE.md, plugins, skills, hooks, MCP servers) disabled for troubleshooting",
+   "zh": "添加了`--safe-mode`标志（和`CLAUDE_CODE_SAFE_MODE`）以启动 Claude Code，并禁用所有自定义项（CLAUDE.md、插件、技能、挂钩、MCP 服务器）以进行故障排除"
+  },
+  {
+   "type": "new",
+   "en": "Added `/cd` command to move a session to a new working directory without breaking the prompt cache mid-session",
+   "zh": "添加了`/cd`命令以将会话移动到新的工作目录，而不会破坏会话中的提示缓存"
+  },
+  {
+   "type": "new",
+   "en": "Added a `disableBundledSkills` setting and `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` environment variable to hide bundled skills, workflows, and built-in slash commands from the model",
+   "zh": "添加了`disableBundledSkills`设置和`CLAUDE_CODE_DISABLE_BUNDLED_SKILLS`环境变量，以隐藏模型中的捆绑技能、工作流程和内置斜杠命令"
+  },
+  {
+   "type": "new",
+   "en": "Added a tip suggesting `claude agents` when running multiple concurrent sessions",
+   "zh": "添加了在运行多个并发会话时建议“claudeagents”的提示"
+  },
+  {
+   "type": "improved",
+   "en": "`/workflows` now opens immediately even while a turn is in progress",
+   "zh": "`/workflows` 现在即使在轮次进行中也会立即打开"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `TaskCreate` reliability: malformed inputs are repaired automatically and validation errors for unloaded tools include the schema",
+   "zh": "改进 `TaskCreate` 的可靠性：格式错误的输入会自动修复；未加载工具的校验错误会附上 schema"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the error message shown when your organization has disabled API key authentication, with guidance based on where the active API key comes from",
+   "zh": "改进组织已禁用 API 密钥认证时的报错信息：会根据当前 API 密钥的来源给出指引"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced CPU usage while responses stream and during spinner animations",
+   "zh": "回复流式输出和加载动画期间的 CPU 占用降低"
+  },
+  {
+   "type": "improved",
+   "en": "Background sessions are now told that shared-checkout edits are blocked until they enter a worktree, avoiding a wasted rejected edit before `EnterWorktree`",
+   "zh": "现在，后台会话被告知，共享签出编辑在进入工作树之前会被阻止，从而避免在`EnterWorktree`之前浪费拒绝编辑"
+  },
+  {
+   "type": "improved",
+   "en": "The \"CLAUDE.md is too long\" warning threshold now scales with the model's context window",
+   "zh": "\"CLAUDE.md is too long\" 警告的阈值现在会随模型的上下文窗口缩放"
+  },
+  {
+   "type": "improved",
+   "en": "Improved color contrast for skill tags in the slash-command menu",
+   "zh": "改进斜杠命令菜单中技能标签的颜色对比度"
+  },
+  {
+   "type": "improved",
+   "en": "Promo credit claims for Apple/Google-billed subscribers without a payment method now explain where to add one",
+   "zh": "对于通过 Apple/Google 付费且没有支付方式的订阅用户，促销积分领取页面现在会说明在哪里添加支付方式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Up/Down arrows jumping to command history past the wrapped rows of a long input line — they now move through each visual row first, and history recall enters at the near edge",
+   "zh": "修复了向上/向下箭头跳转到超过长输入行的换行行的命令历史记录 - 它们现在首先移动穿过每个可视行，并且历史记录调用在近边缘输入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed enterprise managed MCP policies (`allowedMcpServers`/`deniedMcpServers`) not being enforced on reconnect, IDE-typed configs, `--mcp-config` servers during the first session after install, or before remote settings loaded; also fixed slow cold starts for orgs without remote settings",
+   "zh": "修复了在安装后的第一个会话期间或加载远程设置之前，在重新连接、IDE 类型的配置、`--mcp-config`服务器上不强制实施企业管理的 MCP 策略（`allowedMcpServers`/`deniedMcpServers`）；还修复了没有远程设置的组织的缓慢冷启动问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a ~30-50ms UI stall at the start of each turn for macOS users logged in with claude.ai credentials",
+   "zh": "修复了使用 claude.ai 凭据登录的 macOS 用户在每轮开始时约 30-50 毫秒的 UI 停顿问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -p` being slow or appearing to hang on Windows while waiting for the slash-command/skill scan (regression in 2.1.161)",
+   "zh": "修复了`claude -p`在等待斜杠命令/技能扫描时速度缓慢或在 Windows 上挂起的问题（2.1.161 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control getting stuck on \"reconnecting\" after resuming a session when an OAuth token refresh happened at the same time",
+   "zh": "修复了当 OAuth 令牌刷新同时发生时，远程控制在恢复会话后陷入“重新连接”状态的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Git Credential Manager's \"Connect to GitHub\" popup appearing on Windows at startup when background git commands ran without cached credentials",
+   "zh": "修复了当后台 git 命令在没有缓存凭据的情况下运行时，Git 凭据管理器在启动时出现在 Windows 上的“连接到 GitHub”弹出窗口"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed footer hints (e.g. \"esc to interrupt\") not showing for users with a custom statusline",
+   "zh": "修复了不向具有自定义状态行的用户显示的页脚提示（例如“esc 中断”）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stale permission and dialog prompts reappearing every time you reattached to a remote session whose worker had died while waiting on them",
+   "zh": "修复了每次重新连接到其工作人员在等待期间死亡的远程会话时，陈旧的权限和对话框提示都会重新出现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents --json` omitting blocked and just-dispatched background sessions; added `--all` to include completed sessions, plus new `id` and `state` fields",
+   "zh": "修复了 `claude Agents --json` 忽略被阻止和刚刚调度的后台会话；添加了`--all`以包含已完成的会话，以及新的`id`和`state`字段"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agents view leaving a stale/garbled frame after navigating back from an agent on WSL in Windows Terminal",
+   "zh": "修复了从 Windows 终端中的 WSL 上的代理导航回来后代理视图留下陈旧/乱码的帧"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents ignoring project-level settings `env` values (e.g. `ANTHROPIC_MODEL`) when dispatched onto a pre-warmed worker",
+   "zh": "修复了后台代理在分派到预热工作人员时忽略项目级设置`env`值（例如`ANTHROPIC_MODEL`）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCPB plugin cache being spuriously invalidated on Windows, causing unnecessary re-extraction",
+   "zh": "修复了 MCPB 插件缓存在 Windows 上被虚假失效，导致不必要的重新提取的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin `.in_use` PID lock files accumulating without bound; stale markers from crashed sessions are now swept once per day",
+   "zh": "修复插件 `.in_use` PID 锁定文件无限制累积的问题；崩溃会话中的陈旧标记现在每天清除一次"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed untrusted project settings being able to set OTEL client-certificate paths without trust confirmation",
+   "zh": "修复未受信任的项目设置可以在未经信任确认的情况下设置 OTEL 客户端证书路径的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Restored a default 5-minute idle timeout on Vertex/Foundry so a stalled stream aborts instead of hanging indefinitely; set `API_FORCE_IDLE_TIMEOUT=0` to opt out",
+   "zh": "Vertex/Foundry 上恢复默认的 5 分钟空闲超时，流卡住时会中止而不是无限挂起；设置 `API_FORCE_IDLE_TIMEOUT=0` 可关闭"
+  },
+  {
+   "type": "fixed",
+   "en": "Remote-managed settings with an invalid entry now apply their remaining valid policies and surface the validation error, instead of silently dropping the whole payload",
+   "zh": "远程托管设置中有无效条目时，现在会应用其余有效的策略并显示校验错误，而不是悄悄丢弃整个配置"
+  },
+  {
+   "type": "fixed",
+   "en": "Background sessions now preserve `--ide`, `--chrome`, `--bare`, `--remote-control`, and other flags across retire→wake, and respawn state validation was hardened",
+   "zh": "后台会话现在在退出→唤醒过程中保留`--ide`、`--chrome`、`--bare`、`--remote-control`和其他标志，并且强化了重生状态验证"
+  },
+  {
+   "type": "fixed",
+   "en": "Auto-updater on Windows now stops retrying within a session once `claude.exe` is held by another process",
+   "zh": "一旦`claude.exe`被另一个进程持有，Windows 上的自动更新程序现在会停止在会话中重试"
+  }
+ ]
+}

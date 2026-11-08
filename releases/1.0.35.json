@@ -1,0 +1,16 @@
+{
+ "version": "1.0.35",
+ "date": "2025-06-25",
+ "published": "2025-06-25T20:08:30.739Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.35",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added support for MCP OAuth Authorization Server discovery",
+   "zh": "添加了对 MCP OAuth 授权服务器发现的支持"
+  }
+ ]
+}

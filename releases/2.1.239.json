@@ -1,0 +1,308 @@
+{
+ "version": "2.1.239",
+ "date": "2026-08-21",
+ "published": "2026-08-21T17:18:54.506Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.239",
+ "counts": {
+  "new": 3,
+  "improved": 16,
+  "fixed": 40
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added the one-time fullscreen renderer offer on Bedrock, Vertex, Foundry and other previously excluded setups; new installs there now start in fullscreen",
+   "zh": "在 Bedrock、Vertex、Foundry 和其他先前排除的设置上添加了一次性全屏渲染器功能；新安装现在以全屏模式开始"
+  },
+  {
+   "type": "new",
+   "en": "Added `/claude-api upgrade` to migrate Python projects from `anthropic` 0.x to 1.x, and updated the skill's Python reference for 1.x (timeouts use `anthropic.Timeout`, not `httpx.Timeout`)",
+   "zh": "添加了“/claude-api升级”以将Python项目从`anthropic`0.x迁移到1.x，并更新了1.x的技能的Python参考（超时使用`anthropic.Timeout`，而不是`httpx.Timeout`）"
+  },
+  {
+   "type": "new",
+   "en": "Windows: cross-session messaging is now available, so Claude Code sessions across your machines can message each other with `SendMessage` and find each other with `ListAgents`, as on macOS and Linux",
+   "zh": "Windows：现在支持跨会话消息，你不同电脑上的 Claude Code 会话可以用 `SendMessage` 互相发消息，用 `ListAgents` 互相找到，与 macOS 和 Linux 一致"
+  },
+  {
+   "type": "improved",
+   "en": "Cost estimates (`/cost`, status line, `--max-budget-usd`) now include the 1.1× US-only-inference premium for data-residency workspaces",
+   "zh": "成本估算（`/cost`、状态行、`--max-budget-usd`）现在包括数据驻留工作空间的 1.1 倍仅限美国的推理溢价"
+  },
+  {
+   "type": "improved",
+   "en": "Cloud sessions: plugins synced from claude.ai now show as `name@synced`, work with `claude plugin enable/disable <name>@synced`, and never override a same-named plugin you installed",
+   "zh": "云会话：从 claude.ai 同步的插件现在显示为`name@synced`，与“claude 插件启用/禁用 <name>@synced”配合使用，并且永远不会覆盖您安装的同名插件"
+  },
+  {
+   "type": "improved",
+   "en": "The usage-limit message shown when your monthly spend limit is already used up now also says when your session or weekly limit resets",
+   "zh": "当月消费上限已用完时显示的用量限制消息，现在还会说明会话限制或每周限制的重置时间"
+  },
+  {
+   "type": "improved",
+   "en": "Improved the reminder shown after compaction so a skill's original arguments are not re-run as a new request",
+   "zh": "改进压缩后的提醒：技能的原始参数不会再被当作新请求重新执行"
+  },
+  {
+   "type": "improved",
+   "en": "Long file paths on tool-use rows now truncate in the middle to stay on one line",
+   "zh": "工具调用行中过长的文件路径现在从中间截断，保持在一行内显示"
+  },
+  {
+   "type": "improved",
+   "en": "`/goal`: repeat check-ins on long-running background work now back off (30 min, then 1 h, then every 2 h) instead of repeating every 30 minutes",
+   "zh": "`/goal`：对长时间运行的后台工作的重复检查现在会逐步拉长间隔（先 30 分钟，然后 1 小时，之后每 2 小时），而不是每 30 分钟重复一次"
+  },
+  {
+   "type": "improved",
+   "en": "`/goal`: resuming a session from the `claude --resume` picker now restores its active goal",
+   "zh": "`/goal`：从 `claude --resume` 选择器恢复会话时，现在会还原其正在进行的目标"
+  },
+  {
+   "type": "improved",
+   "en": "`ListAgents` now tells a session its own name (the one peers use to message it), and `SendMessage` to your own name says so instead of \"no agent named …\"",
+   "zh": "`ListAgents` 现在会告诉会话它自己的名字（其他会话用来给它发消息的名字）；对自己的名字执行 `SendMessage` 时，会明确说明，而不是报 \"no agent named …\""
+  },
+  {
+   "type": "improved",
+   "en": "`ListAgents` and `/list-agents` now list your live teammates (previously only subagents and other sessions appeared, so a reachable teammate looked absent)",
+   "zh": "`ListAgents` 和 `/list-agents` 现在会列出你正在运行的队友（此前只显示子 agent 和其他会话，可访问的队友会被误判为不存在）"
+  },
+  {
+   "type": "improved",
+   "en": "`keybindingFlavor: \"readline\"` now also matches Bash for word keys: Alt+F and Ctrl/Option+→ stop at the end of the word, Alt+D deletes to it (Ctrl+Y pastes it back), and punctuation separates words",
+   "zh": "`keybindingFlavor: \"readline\"` 现在对 Bash 的单词键也生效：Alt+F 和 Ctrl/Option+→ 在单词末尾停止，Alt+D 删除到单词末尾（Ctrl+Y 可粘贴回来），标点符号会分隔单词"
+  },
+  {
+   "type": "improved",
+   "en": "Persistent retry mode (`CLAUDE_CODE_RETRY_WATCHDOG`) now fails immediately on organization spend-limit and out-of-credits errors instead of waiting indefinitely for a reset",
+   "zh": "持续重试模式（`CLAUDE_CODE_RETRY_WATCHDOG`）现在遇到组织消费上限或额度用尽的错误时会立即失败，不再无限期等待重置"
+  },
+  {
+   "type": "improved",
+   "en": "Claude in Chrome: `/clear` now closes the session's Chrome tab group, and empty groups are closed on `/resume` and when Claude Code exits",
+   "zh": "Chrome 中的 Claude：`/clear` 现在会关闭会话的 Chrome 选项卡组，并且在`/resume` 上以及 Claude Code 退出时关闭空组"
+  },
+  {
+   "type": "improved",
+   "en": "Remote sessions: images uploaded from mobile now include their saved file path, so Claude can copy them into files it creates",
+   "zh": "远程会话：从手机上传的图片现在包含其保存的文件路径，Claude 可以把它们复制到自己创建的文件中"
+  },
+  {
+   "type": "improved",
+   "en": "Claude Code on the web: requests from Bash and other tools to non-API anthropic.com hosts (e.g. www, docs) now go through the session's network proxy, so your environment's allowed domains apply",
+   "zh": "网络上的 Claude Code：从 Bash 和其他工具到非 API anthropic.com 主机（例如 www、docs）的请求现在通过会话的网络代理，因此您的环境允许的域适用"
+  },
+  {
+   "type": "improved",
+   "en": "Remote Control: clearer message and `claude doctor` wording when Remote Control isn't enabled for your account",
+   "zh": "账号未开通 Remote Control 时，提示文字和 `claude doctor` 的说明更清楚"
+  },
+  {
+   "type": "improved",
+   "en": "[VSCode] \"View usage\" in the usage-limit banner now sits inline with the warning text instead of floating mid-banner",
+   "zh": "[VSCode] 用量上限横幅中的「View usage」现在与警告文字同行显示，不再悬浮在横幅中间"
+  },
+  {
+   "type": "fixed",
+   "en": "Alpine/musl builds: native image paste, clipboard, and audio-capture add-ons now load (musl-built binaries instead of glibc ones refused by the runtime)",
+   "zh": "Alpine/musl 构建：现在加载本机图像粘贴、剪贴板和音频捕获附加组件（musl 构建的二进制文件，而不是运行时拒绝的 glibc 二进制文件）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock streaming behind proxies that strip the response Content-Type header, which silently doubled billed API calls by re-running every turn non-streaming",
+   "zh": "修复了代理后面的基岩流，该代理会剥离响应 Content-Type 标头，通过重新运行每轮非流式传输，默默地使计费 API 调用增加一倍"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Claude Code hanging at startup behind an HTTPS proxy when using Bedrock with an SSO profile and `awsAuthRefresh` — the credential pre-check now honors `HTTPS_PROXY`",
+   "zh": "修复了当将 Bedrock 与 SSO 配置文件和`awsAuthRefresh`一起使用时，Claude 代码在启动时挂在 HTTPS 代理后面的问题 — 凭证预检查现在支持`HTTPS_PROXY`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a raw crash dump when starting Claude Code from a directory that no longer exists; it now prints a clear message",
+   "zh": "修复了从不再存在的目录启动 Claude Code 时的原始故障转储；它现在打印一条清晰的消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Edit and Write calls pausing for about 5 seconds in JetBrains IDE terminals when the Claude Code plugin is connected",
+   "zh": "修复了连接 Claude Code 插件时 JetBrains IDE 终端中的编辑和写入调用暂停约 5 秒的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a race where pressing Esc with a prompt queued could let the next turn finish early, leaving the session idle while Claude was still working and letting a later resubmit repeat actions",
+   "zh": "修复一个竞态：提示词排队时按 Esc，可能导致下一回合提前结束，会话在 Claude 仍在工作时就变为空闲，之后重新提交时会重复执行操作的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed WebFetch retaining expired page content in memory for the whole session instead of the intended 15 minutes",
+   "zh": "修复了 WebFetch 在整个会话期间（而不是预期的 15 分钟）在内存中保留过期页面内容的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed cloud sessions (Claude Code on the web, desktop and mobile apps) resuming out of plan mode after an idle worker restart",
+   "zh": "修复了闲置工作人员重新启动后云会话（Web、桌面和移动应用程序上的 Claude Code）恢复计划模式的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP elicitation forms taller than the terminal being clipped in fullscreen mode: the form now fits the window, with hidden fields reachable by scrolling and Accept/Decline always visible",
+   "zh": "修复了 MCP 引出表单比在全屏模式下剪切的终端更高的问题：表单现在适合窗口，通过滚动可访问隐藏字段，并且“接受/拒绝”始终可见"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote MCP servers staying failed after a transient 5xx on a mid-session reconnect in cloud sessions or via SDK `setMcpServers()`",
+   "zh": "修复了在云会话中或通过 SDK`setMcpServers()`进行会话中重新连接时发生短暂 5xx 后，远程 MCP 服务器保持失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom session titles disappearing from `/resume` after more than ~64 KB of conversation was written following the rename",
+   "zh": "修复了重命名后写入超过 ~64 KB 的对话后自定义会话标题从`/resume`中消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -c`/resume picking up sessions from a different directory whose path differed only by characters like `_`, `-`, or `.`",
+   "zh": "修复了`claude -c`/resume 从不同目录中拾取会话的问题，该目录的路径仅因`_`、`-`或`.`等字符不同而有所不同。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume` and the agents view showing a session as recently changed (and reordering it) when only its file was touched or it was merely reopened",
+   "zh": "修复了仅触及文件或仅重新打开会话时`/resume`和代理视图显示最近更改的会话（并重新排序）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume` in all-projects mode telling you to `cd` into a deleted directory (e.g. a removed worktree); such sessions now resume in the current directory",
+   "zh": "修复了所有项目模式中的`/resume`，告诉您`cd`到已删除的目录（例如已删除的工作树）；此类会话现在在当前目录中恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `dark-ansi` theme rendering expanded tool results in fullscreen mode with text the same color as the background",
+   "zh": "修复 `dark-ansi` 主题在全屏模式下展开的工具结果中，文字与背景同色的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the fullscreen renderer prompt reappearing on every launch when it could never be answered; it now stops after being shown on three launches",
+   "zh": "修复全屏渲染器的提示在无法回答的情况下，每次启动都重复出现的问题；现在在显示三次后停止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `.worktreeinclude` patterns starting with `**/` silently matching nothing when the target lived in a gitignored directory",
+   "zh": "修复了当目标位于 gitignored 目录中时以`**/`开头的`.worktreeinclude`模式静默匹配任何内容"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agents, skills, and commands whose `.md` file starts with a UTF-8 BOM being silently ignored",
+   "zh": "修复了`.md`文件以 UTF-8 BOM 开头的代理、技能和命令被默默忽略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/insights` echoing literal `<message>` tags in its response on some models",
+   "zh": "修复了`/insights`在某些型号的响应中回显文字`<message>`标签的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed marketplace `metadata.pluginRoot` having no effect: bare plugin source names now resolve under it as the docs describe",
+   "zh": "修复了市场`metadata.pluginRoot`无效的问题：裸插件源名称现在按照文档描述在其下解析"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mouse movement in browser-based terminals inserting text like `\"35;150;7M\"` into the prompt when a mouse report arrived split across writes",
+   "zh": "修复了基于浏览器的终端中的鼠标移动，当鼠标报告到达时，在写入时将“35;150;7M”等文本插入提示中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom theme overrides for the effort/ultracode status badge colors being ignored",
+   "zh": "修复了被忽略的工作/超代码状态徽章颜色的自定义主题覆盖"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OpenTelemetry trace fragmentation: tool executions deferred by a `PreToolUse` hook now resume in the original turn's trace instead of starting a new trace",
+   "zh": "修复了 OpenTelemetry 跟踪碎片：由`PreToolUse`挂钩推迟的工具执行现在在原始回合的跟踪中恢复，而不是开始新的跟踪"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed vim mode in the agent view: Escape now switches to NORMAL mode and keeps your text instead of clearing the prompt",
+   "zh": "修复智能体视图中的 vim 模式：按 Esc 现在会切换到 NORMAL 模式并保留你的文字，而不是清空提示框"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `selection:copy` keybinding silently dropping a text selection that had been extended with Shift+Arrow keys",
+   "zh": "修复 `selection:copy` 快捷键静默丢弃用 Shift+方向键扩展过的文本选区的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/voice` startup tip still appearing after voice dictation was enabled via the `voice.enabled` setting",
+   "zh": "修复通过 `voice.enabled` 设置启用语音听写后，`/voice` 启动提示仍然出现的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell-mode (`!`) Tab completion dropping the `./` from a `./script` path, which left a command the shell couldn't run",
+   "zh": "修复了 shell 模式 (`!`) Tab 补全从 `./script` 路径中删除 `./` 的问题，这导致 shell 无法运行命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fullscreen mode answering a permission prompt or pressing a button when you clicked the terminal window only to bring it back into focus",
+   "zh": "修复了全屏模式在单击终端窗口时回答权限提示或按下按钮仅使其重新成为焦点的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash-command panels (e.g. `/config`, `/model`) in fullscreen mode covering the latest messages; the conversation now stays pinned above the panel",
+   "zh": "修复了全屏模式下的斜杠命令面板（例如`/config`、`/model`），涵盖最新消息；对话现在固定在面板上方"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/workflows` detail dialog overflowing the terminal and losing its header off-screen when opened while Claude is still responding",
+   "zh": "修复 Claude 仍在回复时打开 `/workflows` 详情对话框，导致内容超出终端、标题移出屏幕的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Linux sandbox making a nonexistent `.git/config.worktree` unreadable, which broke every sandboxed git command in repos with `extensions.worktreeConfig` set",
+   "zh": "修复 Linux 沙盒使不存在的 `.git/config.worktree` 变为不可读，导致设置了 `extensions.worktreeConfig` 的仓库中所有沙盒 git 命令失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hooks failing with \"posix_spawn ENOENT\" after the session's working directory was deleted; they now run from the project root or home directory instead",
+   "zh": "修复了删除会话工作目录后挂钩因“posix_spawn ENOENT”而失败的问题；他们现在从项目根目录或主目录运行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claudeMdExcludes` not excluding a symlinked `.claude/rules` file when the pattern names the rules directory or the symlink rather than its target",
+   "zh": "修复了当模式命名规则目录或符号链接而不是其目标时，`claudeMdExcludes`不排除符号链接的`.claude/rules`文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed runaway session-title syncing to Remote Control when two Claude Code processes shared one background job's state (2.1.232 regression); title updates are now deduplicated and rate-limited",
+   "zh": "修复了当两个 Claude Code 进程共享一个后台作业状态时，会话标题同步到远程控制的失控问题（2.1.232 回归）；标题更新现在已进行重复数据删除且速率受到限制"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions whose title starts with `/` being unaddressable by `SendMessage` and shown as \"(untitled)\" in `ListAgents`",
+   "zh": "修复了标题以`/`开头的会话无法被`SendMessage`寻址并在`ListAgents`中显示为“（无标题）”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+W, Ctrl+U, Ctrl+K, Option+Backspace, Option+D and vim `df`/`dt` leaving a broken `[Pasted text #N]` placeholder when the cursor was inside it",
+   "zh": "修复了当光标位于其中时 Ctrl+W、Ctrl+U、Ctrl+K、Option+Backspace、Option+D 和 vim `df`/`dt` 留下损坏的 `[粘贴文本 #N]` 占位符"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed masked (password-style) inputs such as the login code field letting their text be pasted back with Ctrl+Y elsewhere or saved to prompt history when cleared with double Esc",
+   "zh": "修复了屏蔽（密码式）输入，例如登录代码字段，允许使用 Ctrl+Y 将其文本粘贴回其他位置，或者在使用双 Esc 清除时保存到提示历史记录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+Backspace deleting one character instead of a word in search boxes",
+   "zh": "修复了 Ctrl+Backspace 在搜索框中删除一个字符而不是一个单词的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a request rejected by an organization policy check being re-sent before the rejection was shown",
+   "zh": "修复了在显示拒绝之前重新发送的被组织策略检查拒绝的请求"
+  },
+  {
+   "type": "fixed",
+   "en": "Remote sessions keep sending keep-alives while a long `SessionStart` or `Setup` hook runs, so the container is not idle-reaped mid-hook",
+   "zh": "长时间运行的 `SessionStart` 或 `Setup` 钩子期间，远程会话持续发送保活信号，避免容器因闲置在钩子执行中途被回收"
+  }
+ ]
+}

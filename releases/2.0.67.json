@@ -1,0 +1,68 @@
+{
+ "version": "2.0.67",
+ "date": "2025-12-11",
+ "published": "2025-12-11T23:56:31.532Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.67",
+ "counts": {
+  "new": 2,
+  "improved": 2,
+  "fixed": 7
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added search functionality to `/permissions` command with `/` keyboard shortcut for filtering rules by tool name",
+   "zh": "使用`/`键盘快捷键向`/permissions`命令添加了搜索功能，用于按工具名称过滤规则"
+  },
+  {
+   "type": "new",
+   "en": "Show reason why autoupdater is disabled in `/doctor`",
+   "zh": "在 `/doctor` 中显示自动更新被禁用的原因"
+  },
+  {
+   "type": "improved",
+   "en": "Thinking mode is now enabled by default for Opus 4.5",
+   "zh": "Opus 4.5 现在默认启用思考模式"
+  },
+  {
+   "type": "improved",
+   "en": "Thinking mode configuration has moved to /config",
+   "zh": "思考模式的设置已移至 `/config`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false \"Another process is currently updating Claude\" error when running `claude update` while another instance is already on the latest version",
+   "zh": "修复了当另一个实例已经是最新版本时运行`claude update`时出现的错误“另一个进程当前正在更新 Claude”错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers from `.mcp.json` being stuck in pending state when running in non-interactive mode (`-p` flag or piped input)",
+   "zh": "修复了`.mcp.json`中的 MCP 服务器在非交互模式下运行时陷入挂起状态的问题（`-p`标志或管道输入）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scroll position resetting after deleting a permission rule in `/permissions`",
+   "zh": "修复了删除`/permissions`中的权限规则后滚动位置重置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed word deletion (opt+delete) and word navigation (opt+arrow) not working correctly with non-Latin text such as Cyrillic, Greek, Arabic, Hebrew, Thai, and Chinese",
+   "zh": "修复 opt+delete（删除单词）和 opt+方向键（单词移动）在西里尔文、希腊文、阿拉伯文、希伯来文、泰文、中文等非拉丁文字中工作不正确的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude install --force` not bypassing stale lock files",
+   "zh": "修复了`claude install --force`不绕过过时的锁定文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed consecutive @~/ file references in CLAUDE.md being incorrectly parsed due to markdown strikethrough interference",
+   "zh": "修复了 CLAUDE.md 中的连续 @~/ 文件引用由于 markdown 删除线干扰而被错误解析的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed plugin MCP servers failing due to colons in log directory paths",
+   "zh": "Windows：修复了日志目录路径中包含冒号导致插件 MCP 服务器失败的问题"
+  }
+ ]
+}

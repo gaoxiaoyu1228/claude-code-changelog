@@ -1,0 +1,48 @@
+{
+ "version": "1.0.48",
+ "date": "2025-07-10",
+ "published": "2025-07-10T01:03:27.253Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.48",
+ "counts": {
+  "new": 4,
+  "improved": 2,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added progress messages to Bash tool based on the last 5 lines of command output",
+   "zh": "根据最后 5 行命令输出向 Bash 工具添加了进度消息"
+  },
+  {
+   "type": "new",
+   "en": "Added expanding variables support for MCP server configuration",
+   "zh": "添加了对 MCP 服务器配置的扩展变量支持"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Added a PreCompact hook",
+   "zh": "Hooks：新增 PreCompact 钩子"
+  },
+  {
+   "type": "new",
+   "en": "Vim mode: Added c, f/F, t/T",
+   "zh": "Vim 模式：新增 `c`、`f/F`、`t/T`"
+  },
+  {
+   "type": "improved",
+   "en": "Moved shell snapshots from /tmp to ~/.claude for more reliable Bash tool calls",
+   "zh": "shell 快照从 /tmp 移到 ~/.claude，使 Bash 工具调用更可靠"
+  },
+  {
+   "type": "improved",
+   "en": "Improved IDE extension path handling when Claude Code runs in WSL",
+   "zh": "改进在 WSL 中运行 Claude Code 时，IDE 扩展的路径处理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug in v1.0.45 where the app would sometimes freeze on launch",
+   "zh": "修复了 v1.0.45 中应用程序有时会在启动时冻结的错误"
+  }
+ ]
+}

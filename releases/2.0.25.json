@@ -1,0 +1,16 @@
+{
+ "version": "2.0.25",
+ "date": "2025-10-21",
+ "published": "2025-10-21T21:03:51.747Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.25",
+ "counts": {
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "removed",
+   "en": "Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: https://platform.claude.com/docs/en/agent-sdk/migration-guide",
+   "zh": "移除旧版 SDK 入口。请迁移到 `@anthropic-ai/claude-agent-sdk` 以获取今后的 SDK 更新：https://platform.claude.com/docs/en/agent-sdk/migration-guide"
+  }
+ ]
+}

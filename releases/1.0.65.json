@@ -1,0 +1,21 @@
+{
+ "version": "1.0.65",
+ "date": "2025-07-31",
+ "published": "2025-07-31T21:44:51.996Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.65",
+ "counts": {
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "IDE: Fixed connection stability issues and error handling for diagnostics",
+   "zh": "IDE：修复诊断功能的连接稳定性和错误处理问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed shell environment setup for users without .bashrc files",
+   "zh": "Windows：修复了没有 .bashrc 文件的用户的 shell 环境设置问题"
+  }
+ ]
+}

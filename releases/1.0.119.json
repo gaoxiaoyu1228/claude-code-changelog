@@ -1,0 +1,32 @@
+{
+ "version": "1.0.119",
+ "date": "2025-09-18",
+ "published": "2025-09-18T21:03:38.113Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.119",
+ "counts": {
+  "new": 1,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Support dynamic headers for MCP servers via headersHelper configuration",
+   "zh": "支持通过 `headersHelper` 配置为 MCP 服务器提供动态请求头"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix Windows issue where process visually freezes on entering interactive mode",
+   "zh": "修复 Windows 进程在进入交互模式时视觉上冻结的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix thinking mode not working in headless sessions",
+   "zh": "修复思维模式在无头会话中不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix slash commands now properly update allowed tools instead of replacing them",
+   "zh": "修复斜杠命令现在可以正确更新允许的工具而不是替换它们"
+  }
+ ]
+}

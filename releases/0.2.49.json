@@ -1,0 +1,16 @@
+{
+ "version": "0.2.49",
+ "date": "2025-03-18",
+ "published": "2025-03-18T19:18:21.616Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.49",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Previous MCP server scopes have been renamed: previous \"project\" scope is now \"local\" and \"global\" scope is now \"user\"",
+   "zh": "MCP 服务器作用域已重命名：原来的 \"project\" 现在叫 \"local\"，\"global\" 现在叫 \"user\""
+  }
+ ]
+}

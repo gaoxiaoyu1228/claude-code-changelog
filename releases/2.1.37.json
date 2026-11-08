@@ -1,0 +1,16 @@
+{
+ "version": "2.1.37",
+ "date": "2026-02-07",
+ "published": "2026-02-07T18:39:35.597Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.37",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where /fast was not immediately available after enabling /extra-usage",
+   "zh": "修复了启用 /extra-usage 后 /fast 无法立即可用的问题"
+  }
+ ]
+}

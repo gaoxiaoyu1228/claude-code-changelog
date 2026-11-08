@@ -1,0 +1,16 @@
+{
+ "version": "2.1.107",
+ "date": "2026-04-14",
+ "published": "2026-04-14T05:18:14.905Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.107",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Show thinking hints sooner during long operations",
+   "zh": "长时间操作期间，更早显示思考提示"
+  }
+ ]
+}

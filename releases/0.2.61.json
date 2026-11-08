@@ -1,0 +1,27 @@
+{
+ "version": "0.2.61",
+ "date": "2025-04-03",
+ "published": "2025-04-03T01:04:19.442Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v0.2.61",
+ "counts": {
+  "new": 1,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Navigate menus with vim-style keys (j/k) or bash/emacs shortcuts (Ctrl+n/p) for faster interaction",
+   "zh": "菜单支持 vim 风格按键（j/k）或 bash/emacs 快捷键（Ctrl+n/p），操作更快"
+  },
+  {
+   "type": "fixed",
+   "en": "Enhanced image detection for more reliable clipboard paste functionality",
+   "zh": "增强图像检测以实现更可靠的剪贴板粘贴功能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where ESC key could crash the conversation history selector",
+   "zh": "修复了 ESC 键可能导致对话历史选择器崩溃的问题"
+  }
+ ]
+}

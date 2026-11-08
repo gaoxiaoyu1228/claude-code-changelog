@@ -1,0 +1,21 @@
+{
+ "version": "2.0.57",
+ "date": "2025-12-03",
+ "published": "2025-12-03T04:52:56.549Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.57",
+ "counts": {
+  "new": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added feedback input when rejecting plans, allowing users to tell Claude what to change",
+   "zh": "添加了拒绝计划时的反馈输入，允许用户告诉克劳德要更改什么"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added streaming message support for real-time response display",
+   "zh": "VS Code：新增流式消息支持，可实时显示回复"
+  }
+ ]
+}

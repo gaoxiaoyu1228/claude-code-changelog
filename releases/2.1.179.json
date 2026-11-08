@@ -1,0 +1,57 @@
+{
+ "version": "2.1.179",
+ "date": "2026-06-16",
+ "published": "2026-06-16T17:51:27.805Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.179",
+ "counts": {
+  "improved": 1,
+  "fixed": 8
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Improved plugin loading performance in remote sessions",
+   "zh": "改进远程会话中的插件加载性能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mid-stream connection drops: partial responses are now preserved instead of showing a raw error, and the spinner no longer gets stuck at \"running tool\"",
+   "zh": "修复了中流连接丢失：现在保留部分响应而不是显示原始错误，并且微调器不再卡在“运行工具”处"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mouse-wheel scrolling in WSL2 under Windows Terminal and VS Code (regression in 2.1.172)",
+   "zh": "修复了 Windows 终端和 VS Code 下 WSL2 中的鼠标滚轮滚动问题（2.1.172 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a sandbox `denyRead`/`allowRead` glob over a large directory tree making the Bash tool description enormous and the session unusable on Linux",
+   "zh": "修复了大型目录树上的沙箱`denyRead`/`allowRead`全局，导致 Bash 工具描述庞大且会话在 Linux 上无法使用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the feedback survey capturing a single-digit reply as a session rating immediately after a turn completes",
+   "zh": "修复回合刚结束时，反馈调查把单个数字的回复误记为会话评分的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the welcome screen stacking multiple promotional banners — at most one promo now shows per session",
+   "zh": "修复欢迎界面同时堆叠多条推广横幅的问题；现在每个会话最多只显示一条推广"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Ctrl+O not showing the subagent's transcript when viewing a subagent",
+   "zh": "修复了查看子代理时 Ctrl+O 不显示子代理的记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clicking the prompt input not returning focus from the subagent/footer panel",
+   "zh": "修复了单击提示输入不会从子代理/页脚面板返回焦点的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed remote session background tasks appearing stuck as \"still running\" between turns",
+   "zh": "修复了远程会话后台任务在轮次之间显示为“仍在运行”的问题"
+  }
+ ]
+}

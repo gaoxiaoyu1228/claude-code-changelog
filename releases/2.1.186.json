@@ -1,0 +1,178 @@
+{
+ "version": "2.1.186",
+ "date": "2026-06-22",
+ "published": "2026-06-22T18:03:48.955Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.186",
+ "counts": {
+  "new": 5,
+  "improved": 8,
+  "fixed": 20
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `claude mcp login <name>` and `claude mcp logout <name>` to authenticate MCP servers from the CLI without opening the interactive `/mcp` menu, with `--no-browser` stdin redirect support for completing over SSH",
+   "zh": "添加了`claude mcp login <name>`和`claude mcp logout <name>`，以从 CLI 验证 MCP 服务器，而无需打开交互式`/mcp`菜单，并通过`--no-browser`标准输入重定向支持通过 SSH 完成"
+  },
+  {
+   "type": "new",
+   "en": "Added status filtering (press `f`) to the `/workflows` agent detail view",
+   "zh": "添加状态过滤（按`f`）到`/workflows`代理详细信息视图"
+  },
+  {
+   "type": "new",
+   "en": "Added a \"Skills\" section to the `/plugin` Installed tab",
+   "zh": "在`/plugin`已安装选项卡中添加了“技能”部分"
+  },
+  {
+   "type": "new",
+   "en": "Added `teammateMode: \"iterm2\"` setting with a warning when auto mode cannot find the `it2` CLI",
+   "zh": "添加了 `teammateMode: \"iterm2\"` 设置，并在自动模式找不到 `it2` CLI 时发出警告"
+  },
+  {
+   "type": "new",
+   "en": "Added \"Claude Platform on AWS - refresh credentials\" option to `/login` when `awsAuthRefresh` is configured",
+   "zh": "配置`awsAuthRefresh`时，在`/login`中添加了“AWS 上的 Claude Platform - 刷新凭证”选项"
+  },
+  {
+   "type": "improved",
+   "en": "`!` bash commands now trigger Claude to respond to the output automatically; set `\"respondToBashCommands\": false` in settings.json to keep the previous context-only behavior",
+   "zh": "`!` 开头的 bash 命令现在会触发 Claude 自动对输出作出回应；如需保留之前仅作为上下文的行为，请在 settings.json 中设置 `\"respondToBashCommands\": false`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `claude mcp get` and `claude mcp remove` to suggest the closest configured server name on a typo and truncate long server lists",
+   "zh": "改进 `claude mcp get` 和 `claude mcp remove`：拼错服务器名时，建议最接近的已配置名称；服务器列表过长时会截断显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory: the agent is now reminded to compact its `MEMORY.md` index when nearing the size limit",
+   "zh": "改进内存：接近大小上限时，会提醒 agent 压缩其 `MEMORY.md` 索引"
+  },
+  {
+   "type": "improved",
+   "en": "Improved skill frontmatter: `display-name`, `default-enabled`, `fallback`, and `metadata.*` keys now accept kebab-case, snake_case, and camelCase",
+   "zh": "改进技能 frontmatter：`display-name`、`default-enabled`、`fallback` 和 `metadata.*` 等键现在支持 kebab-case、snake_case 和 camelCase 三种写法"
+  },
+  {
+   "type": "improved",
+   "en": "Improved malformed `SKILL.md` YAML frontmatter handling: loads the skill body with empty metadata instead of failing silently",
+   "zh": "改进 `SKILL.md` 的 YAML frontmatter 格式错误处理：以空元数据加载技能正文，而不是静默失败"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `CLAUDE_CODE_MAX_RETRIES` to cap at 15; for unattended sessions, use `CLAUDE_CODE_RETRY_WATCHDOG` instead",
+   "zh": "将 `CLAUDE_CODE_MAX_RETRIES` 更改为上限为 15；对于无人值守会话，请改用`CLAUDE_CODE_RETRY_WATCHDOG`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed background subagents to surface permission prompts in the main session instead of auto-denying; the dialog shows which agent is asking, and Esc denies just that tool",
+   "zh": "将后台子代理更改为在主会话中显示权限提示，而不是自动拒绝；对话框显示哪个代理正在询问，Esc 拒绝该工具"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/review <pr>` to use the same review engine as `/code-review medium`",
+   "zh": "更改了`/review <pr>`以使用与“/code-reviewmedium”相同的审核引擎"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed streaming requests failing with \"Content block not found\" or JSON parse errors after the machine wakes from sleep",
+   "zh": "修复了机器从睡眠状态唤醒后，流请求因“未找到内容块”或 JSON 解析错误而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagent transcript scroll position bleeding into the main transcript on exit",
+   "zh": "修复了退出时子代理记录滚动位置渗入主记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background task previews flashing raw tool names before the agent's plan loaded",
+   "zh": "修复了后台任务预览在加载代理计划之前闪烁原始工具名称的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Chrome tab-group isolation not applying when the in-product permissions gate is off for concurrent CLI sessions",
+   "zh": "修复了当并发 CLI 会话的产品内权限门关闭时 Chrome 选项卡组隔离不适用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background session recaps being duplicated; the agent's own end-of-turn summary now shows as the recap line",
+   "zh": "修复了后台会话回顾重复的问题；代理自己的回合结束摘要现在显示为回顾行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed opening a background session from `claude agents` leaving the previous screen painted behind it",
+   "zh": "修复了从“claude Agents”打开后台会话并将前一个屏幕绘制在其后面的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Agent(type)` deny rules and `Agent(x,y)` allowed-types restrictions not being enforced for named subagent spawns",
+   "zh": "修复了`Agent(type)`拒绝规则和`Agent(x,y)`允许类型限制未对命名子代理生成强制执行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc and Ctrl+C not responding while background agents are still running after the main turn ends",
+   "zh": "修复了主回合结束后后台代理仍在运行时 Esc 和 Ctrl+C 没有响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed misaligned option numbers in permission prompts when the option text overflows",
+   "zh": "修复了选项文本溢出时权限提示中选项编号未对齐的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing `x` on a finished subagent in the agent panel not dismissing it",
+   "zh": "修复了在代理面板中按已完成的子代理上的`x`不会将其关闭的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a misleading \"MCP server disconnected\" notice for intentionally retired tools when resuming older sessions",
+   "zh": "修复了恢复旧会话时故意停用的工具的误导性“MCP 服务器已断开连接”通知"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/plugin` Installed showing a \"more above\" indicator when already scrolled to the top",
+   "zh": "修复了已安装的`/plugin`在滚动到顶部时显示“更多上方”指示器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `~~strikethrough~~` showing literal tildes in assistant messages instead of rendering as strikethrough",
+   "zh": "修复了“~~删除线~~”在助理消息中显示文字波浪线而不是呈现为删除线的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--tools` allowing feature-gated tools to slip through before flags loaded on a cold first launch",
+   "zh": "修复了`--tools`，允许功能门控工具在首次冷启动时加载标志之前滑过"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background job status in `claude agents` showing a stale \"needs input\" message after replying",
+   "zh": "修复了“克劳德代理”中的后台作业状态，在回复后显示陈旧的“需要输入”消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a dark-theme flash when opening a background session from `claude agents` on a light terminal",
+   "zh": "修复了在轻型终端上从“克劳德代理”打开后台会话时出现的深色主题闪烁问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mouse-selected text staying highlighted after deleting it in `claude agents`",
+   "zh": "修复了在“克劳德代理”中删除鼠标选择的文本后保持突出显示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session cost not showing for usage-based Enterprise and Team subscribers",
+   "zh": "修复了基于使用情况的企业和团队订阅者不显示会话成本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent teams: teammates spawned via tmux/pane backends now inherit the leader's `--effort` level",
+   "zh": "修复了代理团队：通过 tmux/pane 后端生成的队友现在继承领导者的`--effort`级别"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Workflow `agent({schema})` subagents looping forever on repeated schema validation failures instead of aborting after 5 attempts",
+   "zh": "修复了工作流程`agent({schema})`子代理在重复的架构验证失败时永远循环，而不是在 5 次尝试后中止"
+  }
+ ]
+}

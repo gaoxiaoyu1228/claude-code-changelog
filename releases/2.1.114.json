@@ -1,0 +1,16 @@
+{
+ "version": "2.1.114",
+ "date": "2026-04-17",
+ "published": "2026-04-17T23:26:20.555Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.114",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a crash in the permission dialog when an agent teams teammate requested tool permission",
+   "zh": "修复了当代理团队队友请求工具权限时权限对话框中的崩溃"
+  }
+ ]
+}

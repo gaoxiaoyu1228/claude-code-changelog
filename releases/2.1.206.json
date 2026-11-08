@@ -1,0 +1,148 @@
+{
+ "version": "2.1.206",
+ "date": "2026-07-09",
+ "published": "2026-07-09T17:54:03.009Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.206",
+ "counts": {
+  "new": 3,
+  "improved": 6,
+  "fixed": 18
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added directory path suggestions to `/cd`, matching `/add-dir` behavior",
+   "zh": "向`/cd`添加了目录路径建议，匹配`/add-dir`行为"
+  },
+  {
+   "type": "new",
+   "en": "Added a `/doctor` check that proposes trimming checked-in `CLAUDE.md` files by cutting content Claude could derive from the codebase",
+   "zh": "添加了`/doctor`检查，建议通过剪切 Claude 可能从代码库派生的内容来修剪签入的`CLAUDE.md`文件"
+  },
+  {
+   "type": "new",
+   "en": "Gateway: `/login` now supports Anthropic-operated public gateway endpoints",
+   "zh": "网关：`/login` 现在支持 Anthropic 运营的公共网关端点"
+  },
+  {
+   "type": "improved",
+   "en": "`/commit-push-pr` now auto-allows `git push` to the repo's configured push remote (`remote.pushDefault`, or the sole remote when only one is configured) in addition to `origin`",
+   "zh": "`/commit-push-pr` 现在除 `origin` 外，还会自动允许对仓库配置的推送远端（`remote.pushDefault`，或仅配置了一个远端时的该远端）执行 `git push`"
+  },
+  {
+   "type": "improved",
+   "en": "`EnterWorktree` now asks for confirmation before entering a git worktree outside the project's `.claude/worktrees/` directory",
+   "zh": "`EnterWorktree` 进入项目 `.claude/worktrees/` 目录之外的 git worktree 前，现在会先请求确认"
+  },
+  {
+   "type": "improved",
+   "en": "Background agents now upgrade to a new version in the background right after a Claude Code update, instead of paying a slow stale-session upgrade when you attach",
+   "zh": "后台代理现在在克劳德代码更新后立即在后台升级到新版本，而不是在附加时支付缓慢的陈旧会话升级费用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/code-review` findings quality on claude-opus-4-8 across all effort levels",
+   "zh": "改进 claude-opus-4-8 上 `/code-review` 的评审质量，覆盖所有 effort 级别"
+  },
+  {
+   "type": "improved",
+   "en": "Improved agents view: status column now uses full terminal width instead of truncating at 64 characters",
+   "zh": "改进 agents 视图：状态列使用整个终端宽度，不再在 64 个字符处截断"
+  },
+  {
+   "type": "improved",
+   "en": "Changed agents view: Ctrl+X now permanently removes a completed session, and sessions no longer render twice; deleted background jobs stay deleted",
+   "zh": "更改了代理视图：Ctrl+X 现在永久删除已完成的会话，并且会话不再渲染两次；已删除的后台作业仍保持删除状态"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an expired login failing every model with a misleading \"There's an issue with the selected model\" error instead of prompting to run `/login`",
+   "zh": "修复了过期登录导致每个模型失败的问题，并出现误导性的“所选模型存在问题”错误，而不是提示运行`/login`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --resume` and `--continue` not responding to keyboard input on startup",
+   "zh": "修复了`claude --resume`和“-- continue”在启动时不响应键盘输入的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers configured via `--mcp-config` or `.mcp.json` ignoring a per-server `request_timeout_ms`, which caused long-running MCP tool calls to time out at the 60s default in fresh sessions",
+   "zh": "修复了通过`--mcp-config`或`.mcp.json`配置的 MCP 服务器忽略每个服务器的`request_timeout_ms`，这导致长时间运行的 MCP 工具调用在新会话中默认为 60 秒超时"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_EXTRA_BODY` being silently ignored by `claude agents` / `--bg` background workers; the shell-exported override now follows the dispatching session",
+   "zh": "修复了`CLAUDE_CODE_EXTRA_BODY`被“claude Agents”/`--bg`后台工作人员默默忽略的问题； shell 导出的覆盖现在遵循调度会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OAuth MCP servers requiring manual re-authentication after a single failed token refresh",
+   "zh": "修复了在单次失败的令牌刷新后需要手动重新身份验证的 OAuth MCP 服务器"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--permission-prompt-tool` pointing at an MCP server crashing with \"MCP tool not found\" on cold start before the server finishes connecting",
+   "zh": "修复了`--permission-prompt-tool`指向 MCP 服务器在服务器完成连接之前冷启动时崩溃并显示“未找到 MCP 工具”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/model` picker rows printing a price for a different model than the row named, and stopped quoting first-party list prices on providers that don't bill them",
+   "zh": "修复了`/model`选择器行打印与指定行不同型号的价格，并停止引用不向其开具账单的提供商的第一方标价"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed server-provided model rows being misplaced in the `/model` picker when an entitlement or allowlist restriction drops the row they were positioned against",
+   "zh": "修复了当权利或白名单限制删除了它们所针对的行时，服务器提供的模型行在`/model`选择器中被放错位置的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed desktop sessions getting stuck showing \"running\" after a slash command was sent mid-turn",
+   "zh": "修复了在中途发送斜杠命令后桌面会话卡住显示“正在运行”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed keyboard input being ignored in the agents view when a setup prompt appeared before a bare `claude --resume` on Windows",
+   "zh": "修复了当 Windows 上的`claude --resume`之前出现设置提示时，代理视图中的键盘输入被忽略的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude rm` leaving the removed job in the daemon roster, causing the row to reappear in `claude agents`",
+   "zh": "修复了`claude rm`将删除的作业留在守护进程名册中，导致该行重新出现在“claude Agents”中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/remote-control` showing \"Unknown command\" when logged out — it now explains how to sign in",
+   "zh": "修复了`/remote-control`在注销时显示“未知命令”的问题 - 现在它解释了如何登录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed left arrow not stepping back out of a phase or agent in the workflow detail view",
+   "zh": "修复了左箭头未退出工作流详细信息视图中的阶段或代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/status` listing the same broken-install warning twice",
+   "zh": "修复了`/status`两次列出相同的损坏安装警告的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed false \"disused plugin\" tips and skewed disuse telemetry for LSP plugins",
+   "zh": "修复了错误的“废弃插件”提示以及 LSP 插件废弃遥测的偏差"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/doctor`'s update check to compare Homebrew installs against their cask's channel instead of the settings channel",
+   "zh": "修复了`/doctor`的更新检查，以将 Homebrew 安装与其木桶的频道而不是设置频道进行比较"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the fullscreen jump-to-bottom pill suggesting Ctrl+End on macOS, not showing rebound chords, and wrapping over the transcript",
+   "zh": "修复全屏\"跳到底部\"提示在 macOS 上建议使用 Ctrl+End、不显示已重绑定的组合键、且会在转录上方换行的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Bedrock: fixed a multi-minute startup hang when using an `awsCredentialExport` helper on networks with restricted egress",
+   "zh": "基岩：修复了在出口受限的网络上使用`awsCredentialExport`帮助程序时出现的多分钟启动挂起问题"
+  }
+ ]
+}

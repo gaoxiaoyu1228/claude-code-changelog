@@ -1,0 +1,273 @@
+{
+ "version": "2.1.136",
+ "date": "2026-05-08",
+ "published": "2026-05-08T16:30:41.957Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.136",
+ "counts": {
+  "new": 2,
+  "improved": 3,
+  "fixed": 47
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL` to re-enable the session quality survey for enterprises capturing responses through OpenTelemetry",
+   "zh": "添加了`CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL`，以便为通过 OpenTelemetry 捕获响应的企业重新启用会话质量调查"
+  },
+  {
+   "type": "new",
+   "en": "Added `settings.autoMode.hard_deny` for auto mode classifier rules that block unconditionally regardless of user intent or allow exceptions",
+   "zh": "为自动模式分类器规则添加了`settings.autoMode.hard_deny`，无论用户意图如何，都会无条件阻止或允许例外"
+  },
+  {
+   "type": "improved",
+   "en": "Improved visual consistency across slash command dialogs: standardized footer hints, dialog spacing, and arrow-key styling, and the dialog frame now appears immediately during loading instead of popping in after",
+   "zh": "改进斜杠命令对话框的视觉一致性：统一底部提示、对话框间距和方向键样式；加载时对话框外框立即显示，不再突然弹出"
+  },
+  {
+   "type": "improved",
+   "en": "Improved error message when `--worktree` collides with an existing or stale worktree",
+   "zh": "改进 `--worktree` 与已有或过期 worktree 冲突时的错误提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plugin marketplace removal key to `d` (matching delete elsewhere) instead of `r` which collided with retry",
+   "zh": "将插件市场删除键更改为`d`（与其他地方的删除匹配）而不是与重试发生冲突的`r`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers configured in `.mcp.json`, plugins, and claude.ai connectors silently disappearing after `/clear` in the VS Code extension, JetBrains plugin, and Agent SDK",
+   "zh": "修复了`.mcp.json`、插件和 claude.ai 连接器中配置的 MCP 服务器在 VS Code 扩展、JetBrains 插件和 Agent SDK 中的`/clear`之后默默消失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare login loop where a concurrent credential write could overwrite a freshly-rotated OAuth token and force re-login",
+   "zh": "修复了罕见的登录循环，其中并发凭据写入可能会覆盖新旋转的 OAuth 令牌并强制重新登录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP OAuth refresh tokens being lost when multiple servers refresh concurrently — users with several remote MCP servers should no longer need daily re-authentication",
+   "zh": "修复了多个服务器同时刷新时 MCP OAuth 刷新令牌丢失的问题 — 拥有多个远程 MCP 服务器的用户不再需要每天重新进行身份验证"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an API error (400) when extended thinking emitted a redacted thinking block after a tool call",
+   "zh": "修复了工具调用后扩展思维发出经过编辑的思维块时的 API 错误 (400)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` / `--continue` not finding sessions when the project path contains underscores",
+   "zh": "修复了当项目路径包含下划线时 `--resume` / `--continue` 找不到会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan mode not blocking file writes when a matching `Edit(...)` allow rule exists",
+   "zh": "修复了当存在匹配的`Edit(...)`允许规则时，计划模式不会阻止文件写入的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "WSL2: image paste from Windows clipboard now works via a PowerShell fallback when xclip/wl-paste cannot read image data",
+   "zh": "WSL2：当 xclip/wl-paste 无法读取图片数据时，可通过 PowerShell 备用方式粘贴 Windows 剪贴板中的图片"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin `Stop`/`UserPromptSubmit` hooks failing when cache cleanup deletes a version still in use by a running session",
+   "zh": "修复了当缓存清理删除正在运行的会话仍在使用的版本时插件`Stop`/`UserPromptSubmit`挂钩失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed colors appearing at wrong positions in bash command output and markdown code blocks",
+   "zh": "修复了 bash 命令输出和 Markdown 代码块中出现错误位置的颜色"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed ReasonML diffs rendering corrupted \"undefined\" text artifacts at word-diff boundaries",
+   "zh": "修复了 ReasonML 差异在单词差异边界处渲染损坏的“未定义”文本工件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree exit dialog warning about uncommitted files in the wrong directory after worktree removal",
+   "zh": "修复工作树移除后，退出对话框在错误目录中警告有未提交文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `@` file picker not matching files created mid-session in small non-git directories",
+   "zh": "修复了`@`文件选择器与小型非 git 目录中会话中创建的文件不匹配的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `@`-mention file picker not finding files in directories with more than 100 entries",
+   "zh": "修复了`@`提及文件选择器无法在条目超过 100 的目录中找到文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed failed tool calls not being click-to-expand in fullscreen mode when their output was truncated",
+   "zh": "修复了失败的工具调用在其输出被截断时无法在全屏模式下单击展开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Backspace and Ctrl+Backspace getting swapped after using Ctrl+G to open an external editor on terminals with persistent extended-key modes",
+   "zh": "修复了使用 Ctrl+G 在具有持久扩展键模式的终端上打开外部编辑器后 Backspace 和 Ctrl+Backspace 发生交换的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/usage` weekly reset showing time of day instead of the calendar date",
+   "zh": "修复了`/usage`每周重置显示一天中的时间而不是日历日期的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed welcome banner ellipsis causing column overflow on CJK terminals",
+   "zh": "修复欢迎横幅的省略号在中日韩字符终端中导致列溢出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/insights` crash when session history contains tool calls with malformed input fields",
+   "zh": "修复了当会话历史记录包含带有格式错误的输入字段的工具调用时`/insights`崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a renderer crash when a tool's collapsibility classification changes mid-session",
+   "zh": "修复了工具的可折叠性分类在会话中更改时渲染器崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a `skills` entry in `plugin.json` hiding the plugin's default `skills/` directory, and listing a file path now shows an error instead of failing silently",
+   "zh": "修复了`plugin.json`中隐藏插件默认`skills/`目录的`skills`条目，列出文件路径现在显示错误而不是默默失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed IDE shell-integration lock files not respecting `CLAUDE_CONFIG_DIR`",
+   "zh": "修复了 IDE shell 集成锁定文件不遵守`CLAUDE_CONFIG_DIR`的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed trailing whitespace in copied terminal output during streaming",
+   "zh": "修复流式输出时复制终端输出，末尾多出空白字符的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin uninstall and enable/disable not matching slugs case-insensitively",
+   "zh": "修复了插件卸载和启用/禁用不匹配 slugs 的问题（不区分大小写）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed tool error truncation marker showing a negative count for surrogate-pair strings",
+   "zh": "修复工具错误截断标记对于代理对（surrogate pair）字符串显示负数计数的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed env vars from `CLAUDE_ENV_FILE` SessionStart hooks going stale after `/resume` or `/clear`",
+   "zh": "修复了 `CLAUDE_ENV_FILE` SessionStart 挂钩中的环境变量在 `/resume` 或 `/clear` 之后变得过时的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/branch` saving a multi-line session title when given a pasted multi-line name",
+   "zh": "修复了在给定粘贴的多行名称时保存多行会话标题的`/branch`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a stray leading space on the second line of wrapped text at the column boundary",
+   "zh": "修复了列边界处换行文本第二行上的杂散前导空格"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc not dismissing dialogs in `/install-github-app`, `/desktop`, `/resume`, and `/web-setup`",
+   "zh": "修复了 Esc 不会关闭 `/install-github-app`、`/desktop`、`/resume` 和 `/web-setup` 中的对话框"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/doctor` MCP schema errors not naming the missing field or showing the source file path",
+   "zh": "修复了`/doctor`MCP 架构错误，未命名缺失字段或显示源文件路径"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash permission prompts showing an internal parser diagnostic instead of a user-readable explanation",
+   "zh": "修复了 Bash 权限提示，显示内部解析器诊断而不是用户可读的解释"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin slash commands with spaces (e.g. `/myplugin review`) not resolving to their namespaced form",
+   "zh": "修复了带有空格的插件斜杠命令（例如`/myplugin review`）未解析为其命名空间形式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `AskUserQuestion` discarding multi-select answers when supplied as an array",
+   "zh": "修复了`AskUserQuestion`在作为数组提供时丢弃多选答案的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/clear <name>` not labeling the cleared session for `/resume`",
+   "zh": "修复了`/clear <name>`未标记`/resume`已清除会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CronList` output missing qualifiers and the scheduled prompt",
+   "zh": "修复了`CronList`输出缺少限定符和预定提示的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Jump to bottom\" overlay leaving color artifacts on CJK characters in fullscreen mode",
+   "zh": "修复了“跳到底部”叠加在全屏模式下 CJK 字符上留下颜色伪影的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed wide markdown tables leaving a stale bordered render in terminal scrollback while streaming",
+   "zh": "修复宽 Markdown 表格在流式输出时，在终端滚动缓冲区中留下过期的带边框渲染的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pasted text being silently dropped when a long prompt with a pasted-text placeholder was auto-truncated",
+   "zh": "修复了当带有粘贴文本占位符的长提示被自动截断时，粘贴的文本会被静默丢弃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/release-notes` getting stuck on an old version after a failed changelog refresh",
+   "zh": "修复了更新日志刷新失败后`/release-notes`卡在旧版本上的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/mcp` server list not scrolling when there are more servers than fit in the terminal",
+   "zh": "修复了当服务器数量超出终端容量时`/mcp`服务器列表不滚动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed mid-input slash command autocomplete not working after an initial slash command",
+   "zh": "修复了中间输入斜杠命令自动完成在初始斜杠命令后不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed scrolling to bottom re-engaging auto-follow with `autoScrollEnabled: false`",
+   "zh": "修复了使用`autoScrollEnabled: false`滚动到底部重新启用自动跟随的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt suggestions being auto-submitted by Enter on an empty input instead of requiring Tab or arrow to accept",
+   "zh": "修复了在空输入上按 Enter 键自动提交的提示建议，而不是需要 Tab 或箭头来接受"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed keyboard shortcut hints not reflecting rebound keys from `keybindings.json`",
+   "zh": "修复了键盘快捷键提示不反映`keybindings.json`中的反弹键的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/settings` language change being reverted on Escape after confirming",
+   "zh": "修复了确认后在 Escape 上恢复的`/settings`语言更改"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/terminal-setup` only appearing in autocomplete on exact name match instead of partial prefixes",
+   "zh": "修复了`/terminal-setup`仅出现在精确名称匹配而不是部分前缀的自动完成中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Chat about this\" on an `AskUserQuestion` dialog erasing the question text",
+   "zh": "修复了`AskUserQuestion`对话框中的“对此进行聊天”会删除问题文本的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool results being invisible when the server returns content blocks",
+   "zh": "修复了服务器返回内容块时 MCP 工具结果不可见的问题"
+  }
+ ]
+}

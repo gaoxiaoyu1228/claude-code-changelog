@@ -1,0 +1,353 @@
+{
+ "version": "2.1.47",
+ "date": "2026-02-18",
+ "published": "2026-02-18T20:15:11.998Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.47",
+ "counts": {
+  "new": 4,
+  "improved": 11,
+  "fixed": 53
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Use `ctrl+f` to kill all background agents instead of double-pressing ESC. Background agents now continue running when you press ESC to cancel the main thread, giving you more control over agent lifecycle.",
+   "zh": "使用 `ctrl+f` 结束所有后台代理，不再需要连按两次 ESC。按 ESC 取消主线程时，后台代理现在会继续运行，让你更好地控制代理的生命周期"
+  },
+  {
+   "type": "new",
+   "en": "Added `last_assistant_message` field to Stop and SubagentStop hook inputs, providing the final assistant response text so hooks can access it without parsing transcript files.",
+   "zh": "在 Stop 和 SubagentStop 挂钩输入中添加了`last_assistant_message`字段，提供最终的助手响应文本，以便挂钩可以访问它而无需解析脚本文件。"
+  },
+  {
+   "type": "new",
+   "en": "Added `chat:newline` keybinding action for configurable multi-line input (anthropics/claude-code#26075)",
+   "zh": "添加了`chat:newline`键绑定操作以用于可配置的多行输入（anthropics/claude-code#26075）"
+  },
+  {
+   "type": "new",
+   "en": "Added `added_dirs` to the statusline JSON `workspace` section, exposing directories added via `/add-dir` to external scripts (anthropics/claude-code#26096)",
+   "zh": "将 `added_dirs` 添加到状态行 JSON `workspace` 部分，将通过 `/add-dir` 添加的目录公开到外部脚本 (anthropics/claude-code#26096)"
+  },
+  {
+   "type": "improved",
+   "en": "Improved VS Code plan preview: auto-updates as Claude iterates, enables commenting only when the plan is ready for review, and keeps the preview open when rejecting so Claude can revise.",
+   "zh": "改进 VS Code 计划预览：随 Claude 迭代自动更新；仅在计划可供审阅时才允许评论；拒绝计划时预览保持打开，方便 Claude 修改"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage in long-running sessions by releasing API stream buffers, agent context, and skill state after use",
+   "zh": "改进长时间运行会话的内存占用：API 流缓冲区、agent 上下文和技能状态在使用后即释放"
+  },
+  {
+   "type": "improved",
+   "en": "Improved startup performance by deferring SessionStart hook execution, reducing time-to-interactive by ~500ms.",
+   "zh": "改进启动性能：推迟执行 SessionStart hook，可交互时间约缩短 500 毫秒"
+  },
+  {
+   "type": "improved",
+   "en": "Improved performance of `@` file mentions - file suggestions now appear faster by pre-warming the index on startup and using session-based caching with background refresh.",
+   "zh": "改进 `@` 文件提及的性能：启动时预热索引，并采用基于会话的缓存加后台刷新，文件建议出现更快"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage by trimming agent task message history after tasks complete",
+   "zh": "改进 agent 任务完成后修剪任务消息历史，降低内存占用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage during long agent sessions by eliminating O(n²) message accumulation in progress updates",
+   "zh": "改进长时间 agent 会话的内存占用：消除了进度更新中 O(n²) 的消息累积"
+  },
+  {
+   "type": "improved",
+   "en": "Search patterns in collapsed tool results are now displayed in quotes for clarity",
+   "zh": "折叠的工具结果中的搜索模式现在用引号括起来显示，更清楚"
+  },
+  {
+   "type": "improved",
+   "en": "Simplified teammate navigation to use only Shift+Down (with wrapping) instead of both Shift+Up and Shift+Down.",
+   "zh": "队友导航只使用 Shift+Down（循环切换），不再同时使用 Shift+Up 和 Shift+Down"
+  },
+  {
+   "type": "improved",
+   "en": "Increased initial session count in resume picker from 10 to 50 for faster session discovery (anthropics/claude-code#26123)",
+   "zh": "将恢复会话选择器的初始会话数从 10 提高到 50，便于更快找到会话（anthropics/claude-code#26123）"
+  },
+  {
+   "type": "improved",
+   "en": "Moved config backup files from home directory root to `~/.claude/backups/` to reduce home directory clutter (anthropics/claude-code#26130)",
+   "zh": "配置备份文件从主目录根目录移到 `~/.claude/backups/`，减少主目录的杂乱（anthropics/claude-code#26130）"
+  },
+  {
+   "type": "improved",
+   "en": "The `/rename` command now updates the terminal tab title by default (anthropics/claude-code#25789)",
+   "zh": "`/rename` 命令现在默认会更新终端标签页的标题（anthropics/claude-code#25789）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed FileWriteTool line counting to preserve intentional trailing blank lines instead of stripping them with `trimEnd()`.",
+   "zh": "修复了 FileWriteTool 行计数以保留有意的尾随空白行，而不是使用`trimEnd()`删除它们。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Windows terminal rendering bugs caused by `os.EOL` (`\\r\\n`) in display code — line counts now show correct values instead of always showing 1 on Windows.",
+   "zh": "修复了显示代码中由 `os.EOL` (`\\r\\n`) 引起的 Windows 终端渲染错误 — 行计数现在显示正确的值，而不是在 Windows 上始终显示 1。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where bold and colored text in markdown output could shift to the wrong characters on Windows due to `\\r\\n` line endings.",
+   "zh": "修复了以下错误：由于`\\r\\n`行结尾，Markdown 输出中的粗体和彩色文本可能会在 Windows 上转换为错误字符。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed compaction failing when conversation contains many PDF documents by stripping document blocks alongside images before sending to the compaction API (anthropics/claude-code#26188)",
+   "zh": "通过在发送到压缩 API 之前剥离文档块和图像来修复对话包含许多 PDF 文档时压缩失败的问题 (anthropics/claude-code#26188)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where bash tool output was silently discarded on Windows when using MSYS2 or Cygwin shells.",
+   "zh": "修复了使用 MSYS2 或 Cygwin shell 时 bash 工具输出在 Windows 上被默默丢弃的问题。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the bash permission classifier to validate that returned match descriptions correspond to actual input rules, preventing hallucinated descriptions from incorrectly granting permissions",
+   "zh": "修复 bash 权限分类器未校验返回的匹配描述是否对应真实输入规则，导致幻觉出来的描述可能错误放行权限的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed user-defined agents only loading one file on NFS/FUSE filesystems that report zero inodes (anthropics/claude-code#26044)",
+   "zh": "修复用户自定义智能体在报告 inode 数为零的 NFS/FUSE 文件系统上只加载一个文件的问题（anthropics/claude-code#26044）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin agent skills silently failing to load when referenced by bare name instead of fully-qualified plugin name (anthropics/claude-code#25834)",
+   "zh": "修复了当通过裸名称而不是完全限定的插件名称引用时插件代理技能静默加载失败的问题 (anthropics/claude-code#25834)"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed CWD tracking temp files never being cleaned up, causing them to accumulate indefinitely (anthropics/claude-code#17600)",
+   "zh": "Windows：修复了工作目录追踪的临时文件从不清理、无限累积的问题（anthropics/claude-code#17600）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed API 400 errors (\"thinking blocks cannot be modified\") that occurred in sessions with concurrent agents, caused by interleaved streaming content blocks preventing proper message merging.",
+   "zh": "修复了在具有并发代理的会话中发生的 API 400 错误（“思维块无法修改”），该错误是由交错的流内容块阻止正确的消息合并引起的。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where a single file write/edit error would abort all other parallel file write/edit operations. Independent file mutations now complete even when a sibling fails.",
+   "zh": "修复了单个文件写入/编辑错误会中止所有其他并行文件写入/编辑操作的问题。即使同级文件失败，独立文件突变现在也会完成。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom session titles set via `/rename` being lost after resuming a conversation (anthropics/claude-code#23610)",
+   "zh": "修复了通过`/rename`设置的自定义会话标题在恢复对话后丢失的问题（anthropics/claude-code#23610）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed collapsed read/search hint text overflowing on narrow terminals by truncating from the start.",
+   "zh": "通过从头开始截断，修复了折叠的读取/搜索提示文本在狭窄终端上溢出的问题。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where bash commands with backslash-newline continuation lines (e.g., long commands split across multiple lines with `\\`) would produce spurious empty arguments, potentially breaking command execution.",
+   "zh": "修复了带有反斜杠换行符连续行的 bash 命令（例如，用`\\`跨多行分割的长命令）会产生虚假的空参数，可能会破坏命令执行的问题。"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed built-in slash commands (`/help`, `/model`, `/compact`, etc.) being hidden from the autocomplete dropdown when many user skills are installed (anthropics/claude-code#22020)",
+   "zh": "修复了安装许多用户技能时，内置斜杠命令（`/help`、`/model`、`/compact` 等）从自动完成下拉列表中隐藏的问题 (anthropics/claude-code#22020)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers not appearing in the MCP Management Dialog after deferred loading",
+   "zh": "修复了延迟加载后 MCP 服务器未出现在 MCP 管理对话框中的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session name persisting in status bar after `/clear` command (anthropics/claude-code#26082)",
+   "zh": "修复了`/clear`命令后会话名称在状态栏中持续存在的问题 (anthropics/claude-code#26082)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crash when a skill's `name` or `description` in SKILL.md frontmatter is a bare number (e.g., `name: 3000`) — the value is now properly coerced to a string (anthropics/claude-code#25837)",
+   "zh": "修复了当 SKILL.md frontmatter 中技能的“名称”或“描述”为裸数字（例如“名称：3000”）时发生的崩溃 - 该值现在已正确强制为字符串（anthropics/claude-code#25837）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed /resume silently dropping sessions when the first message exceeds 16KB or uses array-format content (anthropics/claude-code#25721)",
+   "zh": "修复了当第一条消息超过 16KB 或使用数组格式内容时 /resume 静默删除会话 (anthropics/claude-code#25721)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude doctor` misclassifying mise and asdf-managed installations as native installs (anthropics/claude-code#26033)",
+   "zh": "修复了`claude doctor`将 mise 和 asdf 管理的安装错误分类为本机安装的问题 (anthropics/claude-code#26033)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed zsh heredoc failing with \"read-only file system\" error in sandboxed commands (anthropics/claude-code#25990)",
+   "zh": "修复 zsh heredoc 在沙盒命令中报\"read-only file system\"错误的问题（anthropics/claude-code#25990）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent progress indicator showing inflated tool use count (anthropics/claude-code#26023)",
+   "zh": "修复了代理进度指示器，显示夸大的工具使用计数（anthropics/claude-code#26023）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed image pasting not working on WSL2 systems where Windows copies images as BMP format (anthropics/claude-code#25935)",
+   "zh": "修复了图像粘贴在 Windows 将图像复制为 BMP 格式的 WSL2 系统上不起作用的问题 (anthropics/claude-code#25935)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent results returning raw transcript data instead of the agent's final answer (anthropics/claude-code#26012)",
+   "zh": "修复了后台代理结果返回原始转录数据而不是代理的最终答案（anthropics/claude-code#26012）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Warp terminal incorrectly prompting for Shift+Enter setup when it supports it natively (anthropics/claude-code#25957)",
+   "zh": "修复了 Warp 终端在本机支持时错误提示 Shift+Enter 设置的问题 (anthropics/claude-code#25957)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed CJK wide characters causing misaligned timestamps and layout elements in the TUI (anthropics/claude-code#26084)",
+   "zh": "修复了导致 TUI 中时间戳和布局元素未对齐的 CJK 宽字符 (anthropics/claude-code#26084)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom agent `model` field in `.claude/agents/*.md` being ignored when spawning team teammates (anthropics/claude-code#26064)",
+   "zh": "修复了在生成团队队友时忽略`.claude/agents/*.md`中的自定义代理`model`字段（anthropics/claude-code#26064）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan mode being lost after context compaction, causing the model to switch from planning to implementation mode (anthropics/claude-code#26061)",
+   "zh": "修复了上下文压缩后计划模式丢失，导致模型从计划模式切换到实施模式的问题 (anthropics/claude-code#26061)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `alwaysThinkingEnabled: true` in settings.json not enabling thinking mode on Bedrock and Vertex providers (anthropics/claude-code#26074)",
+   "zh": "修复了 settings.json 中的`alwaysThinkingEnabled: true`未在 Bedrock 和 Vertex 提供程序上启用思考模式的问题 (anthropics/claude-code#26074)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `tool_decision` OTel telemetry event not being emitted in headless/SDK mode (anthropics/claude-code#26059)",
+   "zh": "修复了在 headless/SDK 模式下未发出`tool_decision` OTel 遥测事件的问题 (anthropics/claude-code#26059)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed session name being lost after context compaction — renamed sessions now preserve their custom title through compaction (anthropics/claude-code#26121)",
+   "zh": "修复了上下文压缩后会话名称丢失的问题 - 重命名的会话现在通过压缩保留其自定义标题 (anthropics/claude-code#26121)"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: fixed worktree session matching when drive letter casing differs (anthropics/claude-code#26123)",
+   "zh": "Windows：修复盘符大小写不同时工作树会话匹配失败的问题（anthropics/claude-code#26123）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/resume <session-id>` failing to find sessions whose first message exceeds 16KB (anthropics/claude-code#25920)",
+   "zh": "修复了 `/resume <session-id>` 无法找到第一条消息超过 16KB 的会话的问题 (anthropics/claude-code#25920)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"Always allow\" on multiline bash commands creating invalid permission patterns that corrupt settings (anthropics/claude-code#25909)",
+   "zh": "修复了多行 bash 命令上的“始终允许”创建损坏设置的无效权限模式 (anthropics/claude-code#25909)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed React crash (error #31) when a skill's `argument-hint` in SKILL.md frontmatter uses YAML sequence syntax (e.g., `[topic: foo | bar]`) — the value is now properly coerced to a string (anthropics/claude-code#25826)",
+   "zh": "修复了当 SKILL.md frontmatter 中技能的`argument-hint`使用 YAML 序列语法（例如`[topic: foo | bar]`）时 React 崩溃（错误 #31） - 该值现在已正确强制为字符串（anthropics/claude-code#25826）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crash when using `/fork` on sessions that used web search — null entries in search results from transcript deserialization are now handled gracefully (anthropics/claude-code#25811)",
+   "zh": "修复了在使用 Web 搜索的会话上使用 `/fork` 时发生的崩溃 — 现在可以妥善处理来自转录本反序列化的搜索结果中的空条目 (anthropics/claude-code#25811)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed read-only git commands triggering FSEvents file watcher loops on macOS by adding --no-optional-locks flag (anthropics/claude-code#25750)",
+   "zh": "通过添加 --no-optional-locks 标志，修复了在 macOS 上触发 FSEvents 文件观察程序循环的只读 git 命令 (anthropics/claude-code#25750)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom agents and skills not being discovered when running from a git worktree — project-level `.claude/agents/` and `.claude/skills/` from the main repository are now included (anthropics/claude-code#25816)",
+   "zh": "修复了从 git 工作树运行时未发现的自定义代理和技能 - 现在包含主存储库中的项目级 `.claude/agents/` 和 `.claude/skills/` (anthropics/claude-code#25816)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed non-interactive subcommands like `claude doctor` and `claude plugin validate` being blocked inside nested Claude sessions (anthropics/claude-code#25803)",
+   "zh": "修复了诸如`claude doctor`和`claude plugin validate`之类的非交互式子命令在嵌套的 Claude 会话中被阻止的问题 (anthropics/claude-code#25803)"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: Fixed the same CLAUDE.md file being loaded twice when drive letter casing differs between paths (anthropics/claude-code#25756)",
+   "zh": "Windows：修复了路径的盘符大小写不同时，同一个 CLAUDE.md 文件被加载两次的问题（anthropics/claude-code#25756）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed inline code spans in markdown being incorrectly parsed as bash commands (anthropics/claude-code#25792)",
+   "zh": "修复了 markdown 中的内联代码跨度被错误地解析为 bash 命令的问题 (anthropics/claude-code#25792)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed teammate spinners not respecting custom spinnerVerbs from settings (anthropics/claude-code#25748)",
+   "zh": "修复队友旋转动画未遵循设置中自定义 `spinnerVerbs` 的问题（anthropics/claude-code#25748）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell commands permanently failing after a command deletes its own working directory (anthropics/claude-code#26136)",
+   "zh": "修复了命令删除其自己的工作目录后 shell 命令永久失败的问题 (anthropics/claude-code#26136)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hooks (PreToolUse, PostToolUse) silently failing to execute on Windows by using Git Bash instead of cmd.exe (anthropics/claude-code#25981)",
+   "zh": "修复了使用 Git Bash 而不是 cmd.exe 时挂钩（PreToolUse、PostToolUse）无法在 Windows 上静默执行的问题 (anthropics/claude-code#25981)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed LSP `findReferences` and other location-based operations returning results from gitignored files (e.g., `node_modules/`, `venv/`) (anthropics/claude-code#26051)",
+   "zh": "修复了 LSP `findReferences` 和其他基于位置的操作从 gitignored 文件返回结果的问题（例如，`node_modules/`、`venv/`）（anthropics/claude-code#26051）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions with large first prompts (>16KB) disappearing from the /resume list (anthropics/claude-code#26140)",
+   "zh": "修复了带有较大第一个提示 (>16KB) 的会话从 /resume 列表中消失的问题 (anthropics/claude-code#26140)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed shell functions with double-underscore prefixes (e.g., `__git_ps1`) not being preserved across shell sessions (anthropics/claude-code#25824)",
+   "zh": "修复了带有双下划线前缀的 shell 函数（例如，`__git_ps1`）未在 shell 会话中保留的问题 (anthropics/claude-code#25824)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spinner showing \"0 tokens\" counter before any tokens have been received (anthropics/claude-code#26105)",
+   "zh": "修复了在收到任何令牌之前显示“0 令牌”计数器的微调器（anthropics/claude-code#26105）"
+  },
+  {
+   "type": "fixed",
+   "en": "VSCode: Fixed conversation messages appearing dimmed while the AskUserQuestion dialog is open (anthropics/claude-code#26078)",
+   "zh": "VS Code：修复了 AskUserQuestion 对话框打开时，对话消息显示为暗淡的问题（anthropics/claude-code#26078）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background tasks failing in git worktrees due to remote URL resolution reading from worktree-specific gitdir instead of the main repository config (anthropics/claude-code#26065)",
+   "zh": "修复了由于从特定于工作树的 gitdir 而不是主存储库配置读取远程 URL 解析而导致 git 工作树中后台任务失败的问题 (anthropics/claude-code#26065)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Right Alt key leaving visible `[25~` escape sequence residue in the input field on Windows/Git Bash terminals (anthropics/claude-code#25943)",
+   "zh": "修复了右 Alt 键在 Windows/Git Bash 终端上的输入字段中留下可见的`[25~`转义序列残基的问题 (anthropics/claude-code#25943)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Edit tool silently corrupting Unicode curly quotes (\\u201c\\u201d \\u2018\\u2019) by replacing them with straight quotes when making edits (anthropics/claude-code#26141)",
+   "zh": "修复了编辑工具在编辑时将 Unicode 弯引号 (\\u201c\\u201d \\u2018\\u2019) 替换为直引号（anthropics/claude-code#26141）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed OSC 8 hyperlinks only being clickable on the first line when link text wraps across multiple terminal lines.",
+   "zh": "修复了当链接文本跨多个终端行换行时，OSC 8 超链接只能在第一行单击。"
+  }
+ ]
+}

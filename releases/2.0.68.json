@@ -1,0 +1,43 @@
+{
+ "version": "2.0.68",
+ "date": "2025-12-12",
+ "published": "2025-12-12T22:56:02.877Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.68",
+ "counts": {
+  "new": 1,
+  "improved": 1,
+  "fixed": 4
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Add support for enterprise managed settings. Contact your Anthropic account team to enable this feature.",
+   "zh": "添加对企业托管设置的支持。请联系您的 Anthropic 客户团队以启用此功能。"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plan mode exit UX: show simplified yes/no dialog when exiting with empty or missing plan instead of throwing an error",
+   "zh": "改进计划模式退出体验：计划为空或缺失时，显示简化的是/否对话框，而不是报错"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed IME (Input Method Editor) support for languages like Chinese, Japanese, and Korean by correctly positioning the composition window at the cursor",
+   "zh": "通过将合成窗口正确定位在光标处，修复了 IME（输入法编辑器）对中文、日语和韩语等语言的支持"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where disallowed MCP tools were visible to the model",
+   "zh": "修复了模型可以看到不允许的 MCP 工具的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed an issue where steering messages could be lost while a subagent is working",
+   "zh": "修复了子代理工作时转向消息可能丢失的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Option+Arrow word navigation treating entire CJK (Chinese, Japanese, Korean) text sequences as a single word instead of navigating by word boundaries",
+   "zh": "修复了选项+箭头单词导航将整个 CJK（中文、日语、韩语）文本序列视为单个单词，而不是按单词边界导航"
+  }
+ ]
+}

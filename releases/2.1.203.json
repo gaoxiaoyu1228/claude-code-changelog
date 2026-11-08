@@ -1,0 +1,199 @@
+{
+ "version": "2.1.203",
+ "date": "2026-07-07",
+ "published": "2026-07-07T17:40:17.341Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.203",
+ "counts": {
+  "new": 4,
+  "improved": 5,
+  "fixed": 26,
+  "removed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added a warning when your login is about to expire, so you can re-authenticate before background sessions are interrupted",
+   "zh": "添加了登录即将过期时的警告，以便您可以在后台会话中断之前重新进行身份验证"
+  },
+  {
+   "type": "new",
+   "en": "Added a grey ⏸ badge to the footer when in manual permission mode, making the active mode always visible",
+   "zh": "在手动权限模式下，在页脚添加了灰色 ⏸ 徽章，使活动模式始终可见"
+  },
+  {
+   "type": "new",
+   "en": "Added the session's additional working directories to MCP `roots/list`, with `notifications/roots/list_changed` sent when the set changes",
+   "zh": "将会话的附加工作目录添加到 MCP `roots/list`，并在集合更改时发送 `notifications/roots/list_changed`"
+  },
+  {
+   "type": "new",
+   "en": "[VSCode] Added a Settings toggle for \"Enable Remote Control for all sessions\"",
+   "zh": "[VSCode] 设置中新增「Enable Remote Control for all sessions」开关"
+  },
+  {
+   "type": "improved",
+   "en": "Improved responsiveness while long responses stream: live-preview updates no longer re-render the whole screen",
+   "zh": "改进长回复流式输出时的响应速度：实时预览更新不再重绘整个屏幕"
+  },
+  {
+   "type": "improved",
+   "en": "Improved subagent behavior: agents are now less likely to re-delegate their entire task to another subagent",
+   "zh": "改进子智能体行为：智能体更不容易把整个任务再交给另一个子智能体"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced binary size by ~7 MB and startup memory by ~7 MB by loading a large bundled dependency lazily instead of inlining it",
+   "zh": "通过按需加载一个大型内置依赖（而不是直接打包进来），二进制体积减小约 7 MB，启动内存减少约 7 MB"
+  },
+  {
+   "type": "improved",
+   "en": "Changed left arrow to no longer close the background tasks, diff, and workflow detail views — press Esc instead",
+   "zh": "更改了向左箭头，不再关闭后台任务、差异和工作流程详细信息视图 - 按 Esc 键"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the empty `claude agents` view to always show the organized sections (Needs input / Working / Completed) with descriptions",
+   "zh": "更改了空的“克劳德代理”视图，以始终显示有组织的部分（需要输入/工作/已完成）和描述"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed opening or switching background agent sessions on macOS stalling for 15–20 seconds due to a false low-memory detection (regression in 2.1.196)",
+   "zh": "修复了由于错误的低内存检测而导致 macOS 上打开或切换后台代理会话停滞 15-20 秒的问题（2.1.196 中的回归）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions becoming permanently unresponsive to attach, replies, and stop when the daemon's session token went stale — the session now recovers automatically",
+   "zh": "修复了后台会话在守护进程的会话令牌过时时永久无响应附加、回复和停止的问题 - 会话现在会自动恢复"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed returning to `claude agents` silently stopping running subagents and re-running the prompt from scratch — their work now carries over",
+   "zh": "修复了返回到“克劳德代理”时默默停止运行子代理并从头开始重新运行提示的问题 - 他们的工作现在继续进行"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory and per-turn CPU regression in interactive sessions: the context-usage indicator no longer re-analyzes the entire transcript after every turn",
+   "zh": "修复了交互式会话中的内存和每回合 CPU 回归：上下文使用指示器不再在每回合后重新分析整个记录"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents inheriting a stale `PATH` from the daemon instead of the dispatching shell, causing missing tools on Windows",
+   "zh": "修复了后台代理从守护进程而不是调度 shell 继承过时的`PATH`，导致 Windows 上缺少工具的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background and agent-view sessions dropping a shell-exported `ANTHROPIC_BASE_URL`, which sent API keys to the default endpoint and failed with 401",
+   "zh": "修复了后台和代理视图会话删除 shell 导出的`ANTHROPIC_BASE_URL`的问题，该会话将 API 密钥发送到默认端点并失败并返回 401"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash failing with \"argument list too long\" in repos with many git worktrees",
+   "zh": "修复了 Bash 在具有许多 git 工作树的存储库中因“参数列表太长”而失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree-isolated subagents sometimes running shell commands in the parent checkout instead of their own worktree",
+   "zh": "修复工作树隔离的子智能体有时在父检出目录而非自己的工作树中运行 shell 命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed worktree creation rejecting nested repositories in multi-repo workspaces, leaving background sessions unable to isolate and edit",
+   "zh": "修复多仓库工作区中，工作树创建会拒绝嵌套仓库，导致后台会话无法隔离和编辑的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents crash-looping when their working directory was deleted, replaced by a file, or became an invalid path — they now fail once with a clear error",
+   "zh": "修复了后台代理在其工作目录被删除、替换为文件或成为无效路径时崩溃循环的问题 - 现在它们会失败一次并出现明显错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a background daemon auto-upgrade failure silently killing all running background sessions",
+   "zh": "修复了后台守护程序自动升级失败，以静默方式终止所有正在运行的后台会话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `TaskStop` and `TaskOutput` failing to find background agents spawned by another agent — errors now list running agents by id and description",
+   "zh": "修复了`TaskStop`和`TaskOutput`无法找到另一个代理生成的后台代理的问题 - 错误现在按 ID 和描述列出正在运行的代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `claude agents` composer discarding your typed message when a slash command isn't available there",
+   "zh": "修复 `claude agents` 编辑器在输入斜杠命令而该命令在此不可用时，丢弃已输入消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the agent list crashing when opening a stopped session whose conversation was already open in another session",
+   "zh": "修复打开已在另一个会话中打开过的已停止会话时，智能体列表崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions showing \"Needs input\" in the agent list after the question was already answered",
+   "zh": "修复了问题已得到解答后，后台会话在代理列表中显示“需要输入”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agent startup failures showing only \"exit_with_message\" instead of the actual error",
+   "zh": "修复了后台代理启动失败仅显示“exit_with_message”而不是实际错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions ignoring `effortLevel` changes in settings.json when forked through the daemon",
+   "zh": "修复了后台会话在通过守护进程分叉时忽略 settings.json 中`effortLevel`更改的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed attached background sessions ignoring `CLAUDE_CODE_DISABLE_MOUSE` and `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` opt-outs",
+   "zh": "修复了附加后台会话忽略`CLAUDE_CODE_DISABLE_MOUSE`和`CLAUDE_CODE_DISABLE_MOUSE_CLICKS`选择退出的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/exit` incorrectly warning about running background agents after all named agents had completed",
+   "zh": "修复了`/exit`在所有指定代理完成后错误地警告运行后台代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions started from a non-git directory unable to edit files when a `WorktreeCreate` hook was configured",
+   "zh": "修复了配置`WorktreeCreate`挂钩时从非 git 目录启动的后台会话无法编辑文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `@` directory picker in `claude agents` not showing registered git worktrees",
+   "zh": "修复 `claude agents` 中的 `@` 目录选择器不显示已注册的 git 工作树的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background task output on Windows being permanently replaced by an empty file after `/clear`",
+   "zh": "修复了 Windows 上的后台任务输出在`/clear`之后被永久替换为空文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed content jumping when scrolling up through long transcript history",
+   "zh": "修复了向上滚动长记录历史记录时内容跳跃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the terminal flickering and jumping while typing in bash mode when a shell-history suggestion was shown",
+   "zh": "修复 bash 模式下显示 shell 历史建议时，输入过程中终端闪烁和跳动的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed literal `^[[I` / `^[[O` escape codes being printed when reattaching to a background session",
+   "zh": "修复了重新附加到后台会话时打印的文字`^[[I`/`^[[O`转义代码"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed LSP-only plugins being incorrectly flagged for disuse when their language servers deliver diagnostics or answer navigation requests",
+   "zh": "修复了当语言服务器提供诊断或应答导航请求时仅 LSP 插件被错误标记为不使用的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the startup \"claude command missing or broken\" warnings — they now appear in `/doctor` and `/status` instead",
+   "zh": "移除启动时的 \"claude command missing or broken\" 警告，改为在 `/doctor` 和 `/status` 中显示"
+  },
+  {
+   "type": "removed",
+   "en": "Removed a redundant navigation hint from the `claude agents` footer",
+   "zh": "移除 `claude agents` 底部一条多余的导航提示"
+  }
+ ]
+}

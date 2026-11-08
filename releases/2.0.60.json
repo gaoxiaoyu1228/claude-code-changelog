@@ -1,0 +1,42 @@
+{
+ "version": "2.0.60",
+ "date": "2025-12-05",
+ "published": "2025-12-05T21:53:25.502Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.60",
+ "counts": {
+  "new": 5,
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added background agent support. Agents run in the background while you work",
+   "zh": "添加了后台代理支持。当您工作时，代理会在后台运行"
+  },
+  {
+   "type": "new",
+   "en": "Added --disable-slash-commands CLI flag to disable all slash commands",
+   "zh": "添加了 --disable-slash-commands CLI 标志以禁用所有斜杠命令"
+  },
+  {
+   "type": "new",
+   "en": "Added model name to \"Co-Authored-By\" commit messages",
+   "zh": "将模型名称添加到“Co-Authored-By”提交消息中"
+  },
+  {
+   "type": "new",
+   "en": "Enabled \"/mcp enable [server-name]\" or \"/mcp disable [server-name]\" to quickly toggle all servers",
+   "zh": "启用“/mcp启用[服务器名称]”或“/mcp禁用[服务器名称]”以快速切换所有服务器"
+  },
+  {
+   "type": "new",
+   "en": "VSCode: Added support for multiple terminal clients connecting to the IDE server simultaneously",
+   "zh": "VS Code：支持多个终端客户端同时连接到 IDE 服务器"
+  },
+  {
+   "type": "improved",
+   "en": "Updated Fetch to skip summarization for pre-approved websites",
+   "zh": "对预先批准的网站，Fetch 跳过摘要"
+  }
+ ]
+}

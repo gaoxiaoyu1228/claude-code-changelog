@@ -1,0 +1,33 @@
+{
+ "version": "1.0.55",
+ "date": "2025-07-17",
+ "published": "2025-07-17T18:36:30.054Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.55",
+ "counts": {
+  "new": 2,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "SDK: Added ability to capture error logging",
+   "zh": "SDK：新增捕获错误日志的功能"
+  },
+  {
+   "type": "new",
+   "en": "Add --system-prompt-file option to override system prompt in print mode",
+   "zh": "添加 --system-prompt-file 选项以覆盖打印模式下的系统提示"
+  },
+  {
+   "type": "improved",
+   "en": "Clarified knowledge cutoff for Opus 4 and Sonnet 4 models",
+   "zh": "澄清了 Opus 4 和 Sonnet 4 模型的知识截止点"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows: fixed Ctrl+Z crash",
+   "zh": "Windows：修复 Ctrl+Z 导致崩溃的问题"
+  }
+ ]
+}

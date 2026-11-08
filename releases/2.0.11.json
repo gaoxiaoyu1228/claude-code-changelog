@@ -1,0 +1,32 @@
+{
+ "version": "2.0.11",
+ "date": "2025-10-08",
+ "published": "2025-10-08T20:13:03.929Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.11",
+ "counts": {
+  "improved": 1,
+  "fixed": 3
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Reduced system prompt size by 1.4k tokens",
+   "zh": "系统提示词体积减少 1.4k token"
+  },
+  {
+   "type": "fixed",
+   "en": "IDE: Fixed keyboard shortcuts and focus issues for smoother interaction",
+   "zh": "IDE：修复键盘快捷键和焦点问题，操作更顺畅"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Opus fallback rate limit errors appearing incorrectly",
+   "zh": "修复了 Opus 回退速率限制错误显示不正确的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed /add-dir command selecting wrong default tab",
+   "zh": "修复了 /add-dir 命令选择错误的默认选项卡的问题"
+  }
+ ]
+}

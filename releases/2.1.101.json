@@ -1,0 +1,243 @@
+{
+ "version": "2.1.101",
+ "date": "2026-04-10",
+ "published": "2026-04-10T18:41:55.480Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.101",
+ "counts": {
+  "new": 2,
+  "improved": 13,
+  "fixed": 31
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added `/team-onboarding` command to generate a teammate ramp-up guide from your local Claude Code usage",
+   "zh": "添加了`/team-onboarding`命令，以根据您当地的克劳德代码使用情况生成队友入门指南"
+  },
+  {
+   "type": "new",
+   "en": "Added OS CA certificate store trust by default, so enterprise TLS proxies work without extra setup (set `CLAUDE_CODE_CERT_STORE=bundled` to use only bundled CAs)",
+   "zh": "默认情况下添加了 OS CA 证书存储信任，因此企业 TLS 代理无需额外设置即可工作（设置`CLAUDE_CODE_CERT_STORE=bundled`以仅使用捆绑 CA）"
+  },
+  {
+   "type": "improved",
+   "en": "`/ultraplan` and other remote-session features now auto-create a default cloud environment instead of requiring web setup first",
+   "zh": "`/ultraplan` 和其他远程会话功能现在会自动创建默认的云端环境，而不再需要先进行网页设置"
+  },
+  {
+   "type": "improved",
+   "en": "Improved brief mode to retry once when Claude responds with plain text instead of a structured message",
+   "zh": "改进 brief 模式：Claude 以纯文本而非结构化消息回复时，会自动重试一次"
+  },
+  {
+   "type": "improved",
+   "en": "Improved focus mode: Claude now writes more self-contained summaries since it knows you only see its final message",
+   "zh": "改进专注模式：Claude 写的总结更加自洽，因为它知道你只会看到它的最终消息"
+  },
+  {
+   "type": "improved",
+   "en": "Improved tool-not-available errors to explain why and how to proceed when the model calls a tool that exists but isn't available in the current context",
+   "zh": "改进工具不可用的报错：当模型调用一个存在但在当前上下文中不可用的工具时，会说明原因以及接下来该怎么做"
+  },
+  {
+   "type": "improved",
+   "en": "Improved rate-limit retry messages to show which limit was hit and when it resets instead of an opaque seconds countdown",
+   "zh": "改进限流重试提示：显示触发的是哪个限额以及何时重置，而不是只显示一个不透明的秒数倒计时"
+  },
+  {
+   "type": "improved",
+   "en": "Improved refusal error messages to include the API-provided explanation when available",
+   "zh": "改进拒绝错误信息：在 API 提供解释时，会包含该解释"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `claude -p --resume <name>` to accept session titles set via `/rename` or `--name`",
+   "zh": "改进 `claude -p --resume <name>`：可接受通过 `/rename` 或 `--name` 设置的会话标题"
+  },
+  {
+   "type": "improved",
+   "en": "Improved settings resilience: an unrecognized hook event name in `settings.json` no longer causes the entire file to be ignored",
+   "zh": "改进设置容错：`settings.json` 中无法识别的 hook 事件名不再导致整个文件被忽略"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plugin hooks from plugins force-enabled by managed settings to run when `allowManagedHooksOnly` is set",
+   "zh": "改进：被托管设置强制启用的插件，在设置了 `allowManagedHooksOnly` 时，其 hook 也能正常运行"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/plugin` and `claude plugin update` to show a warning when the marketplace could not be refreshed, instead of silently reporting a stale version",
+   "zh": "改进 `/plugin` 和 `claude plugin update`：无法刷新市场时显示警告，而不是悄悄报告过期的版本"
+  },
+  {
+   "type": "improved",
+   "en": "Improved plan mode to hide the \"Refine with Ultraplan\" option when the user's org or auth setup can't reach Claude Code on the web",
+   "zh": "改进计划模式：当组织或认证设置无法访问 Claude Code 网页版时，隐藏「用 Ultraplan 优化」选项"
+  },
+  {
+   "type": "improved",
+   "en": "Improved beta tracing to honor `OTEL_LOG_USER_PROMPTS`, `OTEL_LOG_TOOL_DETAILS`, and `OTEL_LOG_TOOL_CONTENT`; sensitive span attributes are no longer emitted unless opted in",
+   "zh": "改进 beta 追踪：遵循 `OTEL_LOG_USER_PROMPTS`、`OTEL_LOG_TOOL_DETAILS` 和 `OTEL_LOG_TOOL_CONTENT`；敏感的 span 属性只有主动开启后才会输出"
+  },
+  {
+   "type": "improved",
+   "en": "Improved SDK `query()` to clean up subprocess and temp files when consumers `break` from `for await` or use `await using`",
+   "zh": "改进 SDK `query()`：调用方用 `break` 退出 `for await`，或使用 `await using` 时，会清理子进程和临时文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a command injection vulnerability in the POSIX `which` fallback used by LSP binary detection",
+   "zh": "修复了 LSP 二进制检测使用的 POSIX `which` 回退中的命令注入漏洞"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a memory leak where long sessions retained dozens of historical copies of the message list in the virtual scroller",
+   "zh": "修复了内存泄漏，其中长会话在虚拟滚动条中保留了数十个消息列表的历史副本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume`/`--continue` losing conversation context on large sessions when the loader anchored on a dead-end branch instead of the live conversation",
+   "zh": "修复了当加载程序锚定在死胡同分支而不是实时对话时，`--resume`/`--continue`在大型会话中丢失对话上下文的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--resume` chain recovery bridging into an unrelated subagent conversation when a subagent message landed near a main-chain write gap",
+   "zh": "修复了当子代理消息落在主链写入间隙附近时，`--resume`链恢复桥接到不相关的子代理对话的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash on `--resume` when a persisted Edit/Write tool result was missing its `file_path`",
+   "zh": "修复了当持久编辑/写入工具结果缺少其“文件路径”时`--resume`崩溃的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a hardcoded 5-minute request timeout that aborted slow backends (local LLMs, extended thinking, slow gateways) regardless of `API_TIMEOUT_MS`",
+   "zh": "修复了硬编码的 5 分钟请求超时，该超时会中止缓慢的后端（本地 LLM、扩展思维、缓慢的网关），无论`API_TIMEOUT_MS`如何"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `permissions.deny` rules not overriding a PreToolUse hook's `permissionDecision: \"ask\"` — previously the hook could downgrade a deny into a prompt",
+   "zh": "修复了`permissions.deny`规则不覆盖 PreToolUse 钩子的“permissionDecision:“ask””的问题——之前该钩子可以将拒绝降级为提示"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--setting-sources` without `user` causing background cleanup to ignore `cleanupPeriodDays` and delete conversation history older than 30 days",
+   "zh": "修复了没有`user`的`--setting-sources`导致后台清理忽略`cleanupPeriodDays`并删除超过 30 天的对话历史记录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock SigV4 authentication failing with 403 when `ANTHROPIC_AUTH_TOKEN`, `apiKeyHelper`, or `ANTHROPIC_CUSTOM_HEADERS` set an Authorization header",
+   "zh": "修复了当`ANTHROPIC_AUTH_TOKEN`、`apiKeyHelper`或`ANTHROPIC_CUSTOM_HEADERS`设置授权标头时，Bedrock SigV4 身份验证失败并显示 403"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude -w <name>` failing with \"already exists\" after a previous session's worktree cleanup left a stale directory",
+   "zh": "修复了在上一个会话的工作树清理留下过时目录后`claude -w <name>`失败并显示“已存在”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed subagents not inheriting MCP tools from dynamically-injected servers",
+   "zh": "修复了子代理不从动态注入服务器继承 MCP 工具的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sub-agents running in isolated worktrees being denied Read/Edit access to files inside their own worktree",
+   "zh": "修复了在独立工作树中运行的子代理被拒绝对其自己的工作树内的文件进行读取/编辑访问的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandboxed Bash commands failing with `mktemp: No such file or directory` after a fresh boot",
+   "zh": "修复了沙盒 Bash 命令在全新启动后失败并显示“mktemp：没有此类文件或目录”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude mcp serve` tool calls failing with \"Tool execution failed\" in MCP clients that validate `outputSchema`",
+   "zh": "修复了在验证`outputSchema`的 MCP 客户端中“claude mcpserve”工具调用失败并显示“工具执行失败”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `RemoteTrigger` tool's `run` action sending an empty body and being rejected by the server",
+   "zh": "修复了`RemoteTrigger`工具的`run`操作发送空正文并被服务器拒绝的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several `/resume` picker issues: narrow default view hiding sessions from other projects, unreachable preview on Windows Terminal, incorrect cwd in worktrees, session-not-found errors not surfacing in stderr, terminal title not being set, and resume hint overlapping the prompt input",
+   "zh": "修复了几个`/resume`选择器问题：狭窄的默认视图隐藏来自其他项目的会话、Windows 终端上无法预览、工作树中的 cwd 不正确、未在 stderr 中显示会话未找到的错误、未设置终端标题以及恢复提示与提示输入重叠"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Grep tool ENOENT when the embedded ripgrep binary path becomes stale (VS Code extension auto-update, macOS App Translocation); now falls back to system `rg` and self-heals mid-session",
+   "zh": "修复了嵌入式 ripgrep 二进制路径过时时的 Grep 工具 ENOENT（VS Code 扩展自动更新、macOS 应用易位）；现在回退到系统`rg`并在会话中进行自我修复"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/btw` writing a copy of the entire conversation to disk on every use",
+   "zh": "修复了每次使用时将整个对话的副本写入磁盘的`/btw`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/context` Free space and Messages breakdown disagreeing with the header percentage",
+   "zh": "修复了`/context`可用空间和消息细分与标题百分比不一致的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several plugin issues: slash commands resolving to the wrong plugin with duplicate `name:` frontmatter, `/plugin update` failing with `ENAMETOOLONG`, Discover showing already-installed plugins, directory-source plugins loading from a stale version cache, and skills not honoring `context: fork` and `agent` frontmatter fields",
+   "zh": "修复了几个插件问题：斜杠命令解析为具有重复`name:`frontmatter的错误插件，`/plugin update`因`ENAMETOOLONG`失败，发现显示已安装的插件，从过时版本缓存加载目录源插件，以及不尊重`context: fork`和`agent` frontmatter字段的技能"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `/mcp` menu offering OAuth-specific actions for MCP servers configured with `headersHelper`; Reconnect is now offered instead to re-invoke the helper script",
+   "zh": "修复 `/mcp` 菜单对配置了 `headersHelper` 的 MCP 服务器仍提供 OAuth 专用操作的问题；现在改为提供\"重新连接\"，以重新调用该辅助脚本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `ctrl+]`, `ctrl+\\`, and `ctrl+^` keybindings not firing in terminals that send raw C0 control bytes (Terminal.app, default iTerm2, xterm)",
+   "zh": "修复了`ctrl+]`、`ctrl+\\`和`ctrl+^`键绑定在发送原始 C0 控制字节的终端中不触发的问题（Terminal.app、默认 iTerm2、xterm）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/login` OAuth URL rendering with padding that prevented clean mouse selection",
+   "zh": "修复了`/login`OAuth URL 渲染，并使用填充阻止了干净的鼠标选择"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed rendering issues: flicker in non-fullscreen mode when content above the visible area changed, terminal scrollback being wiped during long sessions in non-fullscreen mode, and mouse-scroll escape sequences occasionally leaking into the prompt as text",
+   "zh": "修复了渲染问题：当可见区域上方的内容发生更改时，在非全屏模式下闪烁；在非全屏模式下的长时间会话期间终端回滚被擦除；鼠标滚动转义序列偶尔会作为文本泄漏到提示中"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed crash when `settings.json` env values are numbers instead of strings",
+   "zh": "修复了`settings.json`环境值是数字而不是字符串时的崩溃问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed in-app settings writes (e.g. `/add-dir --remember`, `/config`) not refreshing the in-memory snapshot, preventing removed directories from being revoked mid-session",
+   "zh": "修复了应用内设置写入（例如`/add-dir --remember`、`/config`）不刷新内存快照的问题，从而防止已删除的目录在会话中被撤销"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom keybindings (`~/.claude/keybindings.json`) not loading on Bedrock, Vertex, and other third-party providers",
+   "zh": "修复了未在 Bedrock、Vertex 和其他第三方提供商上加载的自定义键绑定 (`~/.claude/keybindings.json`)"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude --continue -p` not correctly continuing sessions created by `-p` or the SDK",
+   "zh": "修复了 `claude --continue -p` 无法正确继续由 `-p` 或 SDK 创建的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several Remote Control issues: worktrees removed on session crash, connection failures not persisting in the transcript, spurious \"Disconnected\" indicator in brief mode for local sessions, and `/remote-control` failing over SSH when only `CLAUDE_CODE_ORGANIZATION_UUID` is set",
+   "zh": "修复了几个远程控制问题：会话崩溃时删除了工作树、连接失败未在记录中持续存在、本地会话的简短模式下虚假的“断开连接”指示器，以及仅设置`CLAUDE_CODE_ORGANIZATION_UUID`时`/remote-control`在 SSH 上失败"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/insights` sometimes omitting the report file link from its response",
+   "zh": "修复了`/insights`有时会从其响应中省略报告文件链接的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed the file attachment below the chat input not clearing when the last editor tab is closed",
+   "zh": "[VSCode] 修复关闭最后一个编辑器标签页后，聊天输入框下方的文件附件没有被清除的问题"
+  }
+ ]
+}

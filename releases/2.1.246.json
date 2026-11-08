@@ -1,0 +1,318 @@
+{
+ "version": "2.1.246",
+ "date": "2026-08-25",
+ "published": "2026-08-25T19:17:34.421Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.246",
+ "counts": {
+  "new": 3,
+  "improved": 9,
+  "fixed": 49
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added a startup warning for Bash allow rules with a wildcard before the subcommand (e.g. `Bash(git * main)`), since they also match options inserted before the subcommand",
+   "zh": "在子命令之前添加了针对带有通配符的 Bash 允许规则的启动警告（例如`Bash(git * main)`），因为它们还匹配在子命令之前插入的选项"
+  },
+  {
+   "type": "new",
+   "en": "Added an Auto mode tab to `/permissions` for viewing and editing auto mode classifier rules",
+   "zh": "在`/permissions`中添加了自动模式选项卡，用于查看和编辑自动模式分类器规则"
+  },
+  {
+   "type": "new",
+   "en": "Added the turn's completion time to the end-of-turn duration line, e.g. `✻ Sautéed for 23s · done 6:05 PM`",
+   "zh": "将回合的完成时间添加到回合结束持续时间线中，例如`✻炒23秒·下午6:05完成`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/cd`: the new directory's project settings, hooks, `.mcp.json` servers (behind the usual approval prompt), skills, and agents now take effect right after the move instead of on `--resume`",
+   "zh": "改进 `/cd`：切换目录后，新目录的项目设置、钩子、`.mcp.json` 服务器（仍需通常的批准提示）、技能和代理立即生效，不必等到 `--resume`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Bash tool latency on bash shells by replaying snapshot functions without a base64 subshell per function",
+   "zh": "改进 Bash 工具延迟：重放快照函数时，不再为每个函数单独启动一个 base64 子 shell"
+  },
+  {
+   "type": "improved",
+   "en": "Improved subagent results: a subagent that stops at its `maxTurns` limit now returns its output marked as partial, with a hint to continue it via `SendMessage`, instead of appearing finished",
+   "zh": "改进子智能体结果：子智能体达到 `maxTurns` 上限而停止时，其输出会标为不完整，并提示可通过 `SendMessage` 继续，而不是看起来已经完成"
+  },
+  {
+   "type": "improved",
+   "en": "Improved non-interactive sessions (`-p`, SDK, cloud sessions) to automatically continue a response cut off mid-stream by a server error, connection loss, or stall instead of ending with an error",
+   "zh": "改进非交互会话（`-p`、SDK、云会话）：回复因服务器错误、连接丢失或停滞而中途被截断时，会自动继续，而不是以错误结束"
+  },
+  {
+   "type": "improved",
+   "en": "Improved attribution of usage telemetry to your organization for workload identity federation sessions, events sent while `apiKeyHelper` runs at startup, and after a login token expired while idle",
+   "zh": "改进工作负载身份联合会话、启动时运行 `apiKeyHelper` 期间发出的事件，以及登录令牌空闲过期后的用量遥测归属：归属到你所在的组织"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/code-review` so Claude can also start it on its own on Bedrock, Vertex AI, and Foundry, through the Claude apps gateway, and when telemetry or non-essential traffic is disabled",
+   "zh": "更改了`/code-review`，以便 Claude 还可以在禁用遥测或非必要流量时，通过 Claude 应用程序网关在 Bedrock、Vertex AI 和 Foundry 上自行启动它"
+  },
+  {
+   "type": "improved",
+   "en": "`/goal`: Changed idle sessions to start at most three check-ins on long-running background work per goal; your next message allows three more",
+   "zh": "`/goal`：空闲会话对每个目标针对长时间运行的后台工作，最多只会自动检查三次；你的下一条消息会再允许三次"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `claude install` and `claude update` to defer a pending managed-settings consent prompt to the next interactive session instead of prompting mid-command",
+   "zh": "更改了`claude install`和`claude update`，以将待处理的托管设置同意提示推迟到下一个交互式会话，而不是在命令中提示"
+  },
+  {
+   "type": "improved",
+   "en": "Changed OpenTelemetry plugin events for plugins synced from claude.ai: `plugin_id_hash` now reflects the plugin's real marketplace, and `enabled_via` is `admin-install` for admin-installed plugins",
+   "zh": "更改了从 claude.ai 同步的插件的 OpenTelemetry 插件事件：`plugin_id_hash`现在反映了插件的真实市场，`enabled_via`是管理员安装的插件的`admin-install`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fullscreen mode showing a blank transcript after resizing the terminal and jumping to the bottom until the next keypress",
+   "zh": "修复了调整终端大小并跳到底部直到下一次按键后显示空白记录的全屏模式"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a severe transcript slowdown when a diff contained a very long single line (e.g. a base64 string); such lines now render truncated with a marker",
+   "zh": "修复了当 diff 包含很长的单行（例如，base64 字符串）时，转录严重减慢的问题；这些行现在用标记截断呈现"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed erratic fullscreen scrolling when positioned at an earlier message, including jump-to-bottom getting stuck mid-transcript",
+   "zh": "修复了定位到较早消息时不稳定的全屏滚动，包括跳到底部卡在脚本中间"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions failing to open after 45 seconds when Claude Code's starting directory had been deleted, the machine had slept, or the host is slow to start processes",
+   "zh": "修复了当 Claude Code 的起始目录被删除、机器已休眠或主机启动进程缓慢时，后台会话在 45 秒后无法打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions failing to open with \"Couldn't start the background service … EACCES\" when another Claude Code process was re-installing the npm package at that moment",
+   "zh": "修复了当另一个 Claude Code 进程当时重新安装 npm 包时后台会话无法打开并显示“无法启动后台服务... EACCES”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed markdown rendering being disabled for a whole message when its first 500 characters contained no markdown, and for `+`/`N)` lists and setext headings",
+   "zh": "修复了当前 500 个字符不包含 Markdown 时整条消息以及`+`/`N)`列表和 setext 标题禁用 Markdown 渲染的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool calls interrupted by an incoming message in headless/remote sessions being reported to the model as \"completed with no output\" instead of an explicit interrupted error",
+   "zh": "修复了 MCP 工具调用因无头/远程会话中的传入消息而中断的问题，并报告给模型“已完成，无输出”，而不是显式中断错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tool arguments being sent as JSON strings when the parameter's schema is empty (`{}`), instead of their real type",
+   "zh": "修复了当参数架构为空 (`{}`) 时 MCP 工具参数作为 JSON 字符串发送，而不是其真实类型"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a command interrupted mid-run showing as \"Ran 1 shell command\" with no sign it was cut",
+   "zh": "修复了一个命令在运行中中断，显示为“Ran 1 shell 命令”，没有任何迹象表明它被切断"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed pressing ← or running `/background` during a dynamic workflow restarting its finished subagents; it now asks first and says how many subagents would restart",
+   "zh": "修复了在动态工作流程重新启动其已完成的子代理期间按 ← 或运行`/background`的问题；现在它首先询问并说明将重新启动多少个子代理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed opening a just-started session in `claude agents` while its worker was still booting (common on Windows) stopping it with \"was stopped while the respawn was in flight\"",
+   "zh": "修复了在“克劳德代理”中打开刚刚启动的会话，而其工作人员仍在启动（在 Windows 上常见）的问题，并以“重生正在飞行中时停止”来停止它"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents` listing a backgrounded named session twice; backgrounding the same conversation again now numbers the new row (e.g. `my-session (2)`)",
+   "zh": "修复了“克劳德代理”两次列出后台命名会话的问题；现在再次将同一对话置于后台对新行进行编号（例如`my-session (2)`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the background retention sweep removing git worktrees under `.claude/worktrees/` that you created yourself when an old background-session record pointed at them",
+   "zh": "修复后台保留期清理会删除你自己创建的、位于 `.claude/worktrees/` 下的 git 工作树（因为某个旧后台会话记录指向了它们）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto mode tool calls being denied as \"temporarily unavailable\" on very large sessions by scaling the safety-check deadline with prompt size",
+   "zh": "通过按提示大小调整安全检查期限，修复了在大型会话中自动模式工具调用被拒绝为“暂时不可用”的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the plugin cache creating duplicate SHA-named directories for the same plugin",
+   "zh": "修复插件缓存为同一插件创建了重复的 SHA 命名目录的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin skills whose frontmatter `name` already includes the `<plugin>:` prefix showing it doubled in the slash menu (e.g. `/plugin:plugin:skill`)",
+   "zh": "修复了其 frontmatter `name` 已经包含 `<plugin>:` 前缀的插件技能，显示它在斜杠菜单中加倍（例如 `/plugin:plugin:skill`）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin update` failing for an installed plugin given its bare name (only the fully-qualified name worked)",
+   "zh": "修复了“claude 插件更新”对于给定其裸名称的已安装插件失败的问题（只有完全限定的名称有效）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin installation failing when `plugin.json` was saved with a UTF-8 byte-order mark (BOM)",
+   "zh": "修复了使用 UTF-8 字节顺序标记 (BOM) 保存`plugin.json`时插件安装失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/reload-plugins` reporting 0 skills for plugins that define skills under `skills/*/SKILL.md`",
+   "zh": "修复了在`skills/*/SKILL.md`下定义技能的插件的`/reload-plugins`报告 0 技能的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed hook error messages showing a literal `${CLAUDE_PLUGIN_ROOT}` instead of the resolved plugin path",
+   "zh": "修复了显示文字`${CLAUDE_PLUGIN_ROOT}`而不是解析的插件路径的挂钩错误消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/rename` replacing the theme's prompt border color (including a custom theme's `promptBorder`) with the default cyan; the border now keeps your theme's color unless you pick one with `/color`",
+   "zh": "修复了`/rename`将主题的提示边框颜色（包括自定义主题的`promptBorder`）替换为默认青色的问题；边框现在会保留主题的颜色，除非您选择带有`/color`的颜色"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed custom theme diff colors (`diffAdded`/`diffRemoved` and their dimmed variants) being ignored in diffs and the `/theme` preview",
+   "zh": "修复了差异和`/theme`预览中忽略的自定义主题差异颜色（`diffAdded`/`diffRemoved`及其变暗变体）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a `keybindings.json` binding with an unknown action name silently deadening that key; it is now skipped so the default binding keeps working, and a warning is logged under `--debug`",
+   "zh": "修复了`keybindings.json`与未知操作名称的绑定，默默地使该键失效；现在它被跳过，因此默认绑定继续工作，并且在`--debug`下记录警告"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/stats` activity heatmap showing each day's activity one cell off (Sunday's count under Monday) in timezones east of UTC",
+   "zh": "修复了`/stats`活动热图，显示 UTC 以东时区每天的活动相差一个单元格（周日的计数低于周一）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/fork` from an already-forked or backgrounded session starting the new session with an empty conversation",
+   "zh": "修复了已分叉或后台会话中的`/fork`，以空对话启动新会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompts beginning with `/--` (e.g. Lean doc comments) being rejected as an unknown slash command instead of being sent to Claude",
+   "zh": "修复了以`/--`开头的提示（例如精益文档注释）被作为未知斜杠命令拒绝而不是发送给克劳德"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `@` file picker staying open after the typed text stopped matching a real path",
+   "zh": "修复输入的文字已与真实路径不匹配后，`@` 文件选择器仍保持打开的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the status line's cost and duration resetting to zero after navigating to the agents view and back",
+   "zh": "修复导航到智能体视图再返回后，状态行的费用和时长被重置为零的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed fullscreen mode moving keyboard focus onto the control under the pointer when you clicked the terminal window only to bring it back into focus",
+   "zh": "修复了当您单击终端窗口时仅将其重新聚焦到全屏模式时，将键盘焦点移动到指针下方的控件上的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed path completion failing when the completion token or working directory contained a null byte",
+   "zh": "修复了当完成标记或工作目录包含空字节时路径完成失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Windows/macOS: Fixed headless sessions not cleaning up stale entries in `~/.claude/sessions` left by sessions that exited uncleanly",
+   "zh": "Windows/macOS：修复了无界面会话未清理 `~/.claude/sessions` 中因异常退出而残留的过期条目的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the UI stopping with a render error on the first tool call when a third-party Anthropic-compatible endpoint (`ANTHROPIC_BASE_URL`) streams a `tool_use` block without an `id`",
+   "zh": "修复第三方 Anthropic 兼容端点（`ANTHROPIC_BASE_URL`）发送的 `tool_use` 块缺少 `id` 时，界面在第一次工具调用时出现渲染错误并停止的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the Write tool reporting \"Out of memory\" or freezing for a long time after overwriting a very large existing file, even though the file had been written",
+   "zh": "修复 Write 工具覆盖一个很大的已有文件后报告\"Out of memory\"或长时间卡死（尽管文件已写入）的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude plugin install <name>` exiting silently (or hanging in a terminal) instead of reporting an error when `~/.claude/plugins/known_marketplaces.json` is empty or corrupted",
+   "zh": "修复了当`~/.claude/plugins/known_marketplaces.json`为空或损坏时`claude plugin install <name>`静默退出（或挂在终端中）而不是报告错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed resumed sessions failing every turn with a 400 when the saved history contains tool blocks the Anthropic API does not accept (typically written by a third-party API proxy)",
+   "zh": "修复了当保存的历史记录包含 Anthropic API 不接受的工具块（通常由第三方 API 代理编写）时，恢复的会话每次都会失败并显示 400"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `curl -fsSL https://claude.ai/install.sh | bash` failing with \"Raw mode is not supported\" for some Team/Enterprise users with server-managed settings",
+   "zh": "修复了 `curl -fsSL https://claude.ai/install.sh |对于某些具有服务器管理设置的团队/企业用户，bash` 失败并显示“不支持原始模式”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sessions that ended in plan mode resuming outside plan mode in the VS Code extension, and in `claude -p --continue`/`--resume` with a permission prompt tool, when no permission mode was set",
+   "zh": "修复了在 VS Code 扩展中以计划模式结束的会话，以及在未设置权限模式时使用权限提示工具在“claude -p --Continue”/`--resume`中恢复计划模式之外的会话"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the `Notification` hook not firing while the sandbox \"Network request outside of sandbox\" permission prompt is waiting",
+   "zh": "修复沙盒\"沙盒外网络请求\"权限提示等待期间，`Notification` 钩子不触发的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bash permission checks to always require approval for malformed commands with a dangling `&&` or `||` operator",
+   "zh": "修复了 Bash 权限检查，始终要求使用悬空的`&&`或`||`运算符批准格式错误的命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--strict-mcp-config` sessions prompting to approve `.mcp.json` servers they would never load, which left background sessions waiting at startup",
+   "zh": "修复了`--strict-mcp-config`会话提示批准它们永远不会加载的`.mcp.json`服务器，这导致后台会话在启动时等待"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed telemetry and metrics requests to Anthropic carrying the API key configured for a third-party gateway (`ANTHROPIC_BASE_URL`); a credential is now only sent to its own host",
+   "zh": "修复发给 Anthropic 的遥测和指标请求携带了第三方网关（`ANTHROPIC_BASE_URL`）所配置的 API 密钥的问题；现在凭证只会发送到其自身的主机"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a visible API error on the first prompt after idle when `apiKeyHelper` returns short-lived JWTs: an expired cached token is now refreshed before sending, and 401/403 auth errors retry quietly",
+   "zh": "修复了当`apiKeyHelper`返回短暂的 JWT 时空闲后第一个提示上的可见 API 错误：现在会在发送之前刷新过期的缓存令牌，并且 401/403 身份验证错误会安静地重试"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed memory growing with session length in the fullscreen and Ctrl+O transcript views: each rendered message row no longer retains a full copy of the transcript-wide tool lookups",
+   "zh": "修复了全屏和 Ctrl+O 记录视图中的内存随着会话长度而增长的问题：每个渲染的消息行不再保留记录范围工具查找的完整副本"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/ultrareview` runs and cloud sessions launched at the same time from one repository (e.g. from several worktrees) sometimes starting with another launch's uncommitted changes",
+   "zh": "修复了从一个存储库（例如从多个工作树）同时启动的`/ultrareview`运行和云会话，有时会从另一次启动的未提交更改开始"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the task progress count (e.g. `3/5`) shown for background cloud sessions such as `/autofix-pr` occasionally missing a task",
+   "zh": "修复后台云会话（如 `/autofix-pr`）显示的任务进度计数（如 `3/5`）偶尔漏计任务的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Remote Control sessions keeping their placeholder name in claude.ai and the Claude app until the second prompt; the auto-generated title now appears after the first prompt",
+   "zh": "修复了远程控制会话在出现第二个提示之前将其占位符名称保留在 claude.ai 和 Claude 应用程序中的问题；自动生成的标题现在出现在第一个提示之后"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP tools marked `requiresUserInteraction` still offering \"Yes, and don't ask again\" in their permission prompt; the option wrote an allow rule the tool then ignored",
+   "zh": "修复了标记为`requiresUserInteraction`的 MCP 工具在权限提示中仍提供“是，不再询问”的问题；该选项写入了允许规则，然后该工具忽略了"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the self-hosted runner ending its live sessions or exiting when a work-poll response is malformed (e.g. an intercepting proxy's HTML page); it now retries the poll",
+   "zh": "修复自托管运行器在工作轮询响应格式错误（例如被拦截代理返回的 HTML 页面）时，结束正在进行的会话或退出的问题；现在会重试轮询"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the command sandbox's filesystem configuration not respecting `--setting-sources`",
+   "zh": "修复命令沙盒的文件系统配置未遵守 `--setting-sources` 的问题"
+  }
+ ]
+}

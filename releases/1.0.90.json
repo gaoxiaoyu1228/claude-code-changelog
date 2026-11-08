@@ -1,0 +1,16 @@
+{
+ "version": "1.0.90",
+ "date": "2025-08-24",
+ "published": "2025-08-24T22:41:06.467Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.90",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Settings file changes take effect immediately - no restart required",
+   "zh": "设置文件的修改立即生效，无需重启"
+  }
+ ]
+}

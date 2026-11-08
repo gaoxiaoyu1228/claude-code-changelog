@@ -1,0 +1,188 @@
+{
+ "version": "2.1.76",
+ "date": "2026-03-14",
+ "published": "2026-03-14T00:14:17.770Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.76",
+ "counts": {
+  "new": 7,
+  "improved": 8,
+  "fixed": 20
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added MCP elicitation support — MCP servers can now request structured input mid-task via an interactive dialog (form fields or browser URL)",
+   "zh": "添加了 MCP 启发支持 - MCP 服务器现在可以通过交互式对话框（表单字段或浏览器 URL）在任务中请求结构化输入"
+  },
+  {
+   "type": "new",
+   "en": "Added new `Elicitation` and `ElicitationResult` hooks to intercept and override responses before they're sent back",
+   "zh": "添加了新的`Elicitation`和`ElicitationResult`挂钩，以在发送回之前拦截和覆盖响应"
+  },
+  {
+   "type": "new",
+   "en": "Added `-n` / `--name <name>` CLI flag to set a display name for the session at startup",
+   "zh": "添加了 `-n` / `--name <name>` CLI 标志以设置启动时会话的显示名称"
+  },
+  {
+   "type": "new",
+   "en": "Added `worktree.sparsePaths` setting for `claude --worktree` in large monorepos to check out only the directories you need via git sparse-checkout",
+   "zh": "在大型 monorepos 中为`claude --worktree`添加了`worktree.sparsePaths`设置，以通过 git稀疏签出仅检查您需要的目录"
+  },
+  {
+   "type": "new",
+   "en": "Added `PostCompact` hook that fires after compaction completes",
+   "zh": "添加了在压缩完成后触发的`PostCompact`钩子"
+  },
+  {
+   "type": "new",
+   "en": "Added `/effort` slash command to set model effort level",
+   "zh": "添加了`/effort`斜杠命令来设置模型的努力级别"
+  },
+  {
+   "type": "new",
+   "en": "Added session quality survey — enterprise admins can configure the sample rate via the `feedbackSurveyRate` setting",
+   "zh": "添加了会话质量调查 - 企业管理员可以通过`feedbackSurveyRate`设置配置采样率"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `--worktree` startup performance by reading git refs directly and skipping redundant `git fetch` when the remote branch is already available locally",
+   "zh": "改进 `--worktree` 启动性能：直接读取 git 引用；远程分支本地已有时，跳过多余的 `git fetch`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved background agent behavior — killing a background agent now preserves its partial results in the conversation context",
+   "zh": "改进后台 agent：终止后台 agent 时，保留其部分结果在对话上下文中"
+  },
+  {
+   "type": "improved",
+   "en": "Improved model fallback notifications — now always visible instead of hidden behind verbose mode, with human-friendly model names",
+   "zh": "改进模型降级通知：现在始终可见，不再隐藏在详细模式里，并使用更友好的模型名称"
+  },
+  {
+   "type": "improved",
+   "en": "Improved blockquote readability on dark terminal themes — text is now italic with a left bar instead of dim",
+   "zh": "改进深色终端主题下引用块的可读性：文字改为斜体并带左侧竖线，不再是暗淡显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved stale worktree cleanup — worktrees left behind after an interrupted parallel run are now automatically cleaned up",
+   "zh": "改进陈旧工作树清理：并行运行被中断后留下的工作树现在会被自动清理"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Remote Control session titles — now derived from your first prompt instead of showing \"Interactive session\"",
+   "zh": "改进远程控制会话标题：改为根据你的第一条提示词生成，不再显示“Interactive session”"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/voice` to show your dictation language on enable and warn when your `language` setting isn't supported for voice input",
+   "zh": "改进 `/voice`：开启时显示你的听写语言；如果 `language` 设置不支持语音输入，会给出警告"
+  },
+  {
+   "type": "improved",
+   "en": "Updated `--plugin-dir` to only accept one path to support subcommands — use repeated `--plugin-dir` for multiple directories",
+   "zh": "`--plugin-dir` 现在只接受一个路径，以支持子命令；如需多个目录，请重复使用 `--plugin-dir`"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed deferred tools (loaded via `ToolSearch`) losing their input schemas after conversation compaction, causing array and number parameters to be rejected with type errors",
+   "zh": "修复了延迟工具（通过`ToolSearch`加载）在对话压缩后丢失其输入模式，导致数组和数字参数因类型错误而被拒绝"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash commands showing \"Unknown skill\"",
+   "zh": "修复了显示“未知技能”的斜杠命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plan mode asking for re-approval after the plan was already accepted",
+   "zh": "固定计划模式在计划被接受后要求重新批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed voice mode swallowing keypresses while a permission dialog or plan editor was open",
+   "zh": "修复权限对话框或计划编辑器打开时，语音模式吞掉按键的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/voice` not working on Windows when installed via npm",
+   "zh": "修复了通过 npm 安装时`/voice`在 Windows 上不起作用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed spurious \"Context limit reached\" when invoking a skill with `model:` frontmatter on a 1M-context session",
+   "zh": "修复了在 1M 上下文会话上使用`model:`frontmatter 调用技能时出现的虚假“已达到上下文限制”"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"adaptive thinking is not supported on this model\" error when using non-standard model strings",
+   "zh": "修复了使用非标准模型字符串时“此模型不支持自适应思维”的错误"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `Bash(cmd:*)` permission rules not matching when a quoted argument contains `#`",
+   "zh": "修复了当带引号的参数包含`#`时`Bash(cmd:*)`权限规则不匹配的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed \"don't ask again\" in the Bash permission dialog showing the full raw command for pipes and compound commands",
+   "zh": "修复了 Bash 权限对话框中的“不再询问”，显示管道和复合命令的完整原始命令"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed auto-compaction retrying indefinitely after consecutive failures — a circuit breaker now stops after 3 attempts",
+   "zh": "修复了自动压缩在连续失败后无限期重试的问题 - 断路器现在在 3 次尝试后停止"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP reconnect spinner persisting after successful reconnection",
+   "zh": "修复了 MCP 重新连接微调器在成功重新连接后仍然存在的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed LSP plugins not registering servers when the LSP Manager initialized before marketplaces were reconciled",
+   "zh": "修复了 LSP 管理器在市场协调之前初始化时 LSP 插件不注册服务器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed clipboard copying in tmux over SSH — now attempts both direct terminal write and tmux clipboard integration",
+   "zh": "修复了通过 SSH 在 tmux 中进行剪贴板复制的问题 — 现在尝试直接终端写入和 tmux 剪贴板集成"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/export` showing only the filename instead of the full file path in the success message",
+   "zh": "修复了`/export`在成功消息中仅显示文件名而不是完整文件路径的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed transcript not auto-scrolling to new messages after selecting text",
+   "zh": "修复选中文本后转录不会自动滚动到新消息的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Escape key not working to exit the login method selection screen",
+   "zh": "修复了 Escape 键无法退出登录方法选择屏幕的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed several Remote Control issues: sessions silently dying when the server reaps an idle environment, rapid messages being queued one-at-a-time instead of batched, and stale work items causing redelivery after JWT refresh",
+   "zh": "修复了几个远程控制问题：当服务器获得空闲环境时，会话会默默地终止，快速消息一次排队一个而不是批量，以及陈旧的工作项目导致 JWT 刷新后重新传递"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed bridge sessions failing to recover after extended WebSocket disconnects",
+   "zh": "修复了扩展 WebSocket 断开连接后桥接会话无法恢复的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed slash commands not found when typing the exact name of a soft-hidden command",
+   "zh": "修复了键入软隐藏命令的确切名称时找不到斜杠命令的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "[VSCode] Fixed gitignore patterns containing commas silently excluding entire filetypes from the @-mention file picker",
+   "zh": "[VSCode] 修复 gitignore 规则中含逗号的模式，导致整个文件类型被 @ 提及文件选择器静默排除的问题"
+  }
+ ]
+}

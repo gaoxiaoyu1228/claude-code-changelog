@@ -1,0 +1,37 @@
+{
+ "version": "1.0.64",
+ "date": "2025-07-30",
+ "published": "2025-07-30T21:26:57.879Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.64",
+ "counts": {
+  "new": 3,
+  "fixed": 2
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Agents: Added model customization support - you can now specify which model an agent should use",
+   "zh": "代理：添加了模型自定义支持 - 您现在可以指定代理应使用哪个模型"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Added systemMessage field to hook JSON output for displaying warnings and context",
+   "zh": "Hooks：hook 的 JSON 输出新增 systemMessage 字段，用于显示警告和上下文"
+  },
+  {
+   "type": "new",
+   "en": "Added hidden files to file search and @-mention suggestions",
+   "zh": "在文件搜索和@提及建议中添加了隐藏文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Agents: Fixed unintended access to the recursive agent tool",
+   "zh": "代理：修复了对递归代理工具的意外访问"
+  },
+  {
+   "type": "fixed",
+   "en": "SDK: Fixed user input tracking across multi-turn conversations",
+   "zh": "SDK：修复多轮对话中的用户输入追踪"
+  }
+ ]
+}

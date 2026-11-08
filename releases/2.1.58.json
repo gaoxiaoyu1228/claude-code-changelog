@@ -1,0 +1,16 @@
+{
+ "version": "2.1.58",
+ "date": "2026-02-25",
+ "published": "2026-02-25T19:22:07.859Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.58",
+ "counts": {
+  "improved": 1
+ },
+ "entries": [
+  {
+   "type": "improved",
+   "en": "Expand Remote Control to more users",
+   "zh": "将远程控制扩展到更多用户"
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "version": "2.0.70",
+ "date": "2025-12-15",
+ "published": "2025-12-15T22:38:58.864Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.70",
+ "counts": {
+  "new": 4,
+  "improved": 3,
+  "fixed": 4,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added Enter key to accept and submit prompt suggestions immediately (tab still accepts for editing)",
+   "zh": "添加回车键以立即接受并提交提示建议（选项卡仍接受编辑）"
+  },
+  {
+   "type": "new",
+   "en": "Added wildcard syntax `mcp__server__*` for MCP tool permissions to allow or deny all tools from a server",
+   "zh": "为 MCP 工具权限添加了通配符语法`mcp__server__*`，以允许或拒绝来自服务器的所有工具"
+  },
+  {
+   "type": "new",
+   "en": "Added auto-update toggle for plugin marketplaces, allowing per-marketplace control over automatic updates",
+   "zh": "为插件市场添加了自动更新切换，允许每个市场控制自动更新"
+  },
+  {
+   "type": "new",
+   "en": "Added `current_usage` field to status line input, enabling accurate context window percentage calculations",
+   "zh": "在状态行输入中添加了`current_usage`字段，以实现准确的上下文窗口百分比计算"
+  },
+  {
+   "type": "improved",
+   "en": "Improved memory usage by 3x for large conversations",
+   "zh": "改进大型对话的内存占用，降低为原来的三分之一"
+  },
+  {
+   "type": "improved",
+   "en": "Improved resolution of stats screenshots copied to clipboard (Ctrl+S) for crisper images",
+   "zh": "改进用 Ctrl+S 复制到剪贴板的统计截图清晰度"
+  },
+  {
+   "type": "improved",
+   "en": "Improve UI for file creation permission dialog",
+   "zh": "改进文件创建权限对话框的界面"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed input being cleared when processing queued commands while the user was typing",
+   "zh": "修复了用户键入时处理排队命令时输入被清除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed prompt suggestions replacing typed input when pressing Tab",
+   "zh": "修复了按 Tab 时替换键入输入的提示建议"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed diff view not updating when terminal is resized",
+   "zh": "修复了调整终端大小时差异视图不更新的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fix thinking mode toggle in /config not persisting correctly",
+   "zh": "修复 /config 中的思维模式切换未正确持续的问题"
+  },
+  {
+   "type": "removed",
+   "en": "Removed # shortcut for quick memory entry (tell Claude to edit your CLAUDE.md instead)",
+   "zh": "移除用 `#` 快速添加记忆的快捷方式（请让 Claude 直接编辑你的 CLAUDE.md）"
+  }
+ ]
+}

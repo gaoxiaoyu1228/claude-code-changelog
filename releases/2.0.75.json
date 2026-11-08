@@ -1,0 +1,16 @@
+{
+ "version": "2.0.75",
+ "date": "2025-12-20",
+ "published": "2025-12-20T17:19:09.800Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.0.75",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Minor bugfixes",
+   "zh": "若干小错误修复"
+  }
+ ]
+}

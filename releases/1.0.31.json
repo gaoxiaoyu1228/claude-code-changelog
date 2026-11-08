@@ -1,0 +1,16 @@
+{
+ "version": "1.0.31",
+ "date": "2025-06-20",
+ "published": "2025-06-20T18:55:21.438Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.31",
+ "counts": {
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where ~/.claude.json would get reset when file contained invalid JSON",
+   "zh": "修复了当文件包含无效 JSON 时 ~/.claude.json 会被重置的错误"
+  }
+ ]
+}

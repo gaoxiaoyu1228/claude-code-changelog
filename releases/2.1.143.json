@@ -1,0 +1,178 @@
+{
+ "version": "2.1.143",
+ "date": "2026-05-15",
+ "published": "2026-05-15T18:45:53.727Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.143",
+ "counts": {
+  "new": 5,
+  "improved": 7,
+  "fixed": 21
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added plugin dependency enforcement: `claude plugin disable` now refuses when another enabled plugin depends on the target (with a copy-pasteable disable-chain hint), and `claude plugin enable` force-enables transitive dependencies",
+   "zh": "添加了插件依赖项强制执行：当另一个启用的插件依赖于目标（带有可复制粘贴禁用链提示）时，“claude 插件禁用”现在会拒绝，并且“claude 插件启用”强制启用传递依赖项"
+  },
+  {
+   "type": "new",
+   "en": "Added projected context cost (per-turn and per-invocation token estimates) to the `/plugin` marketplace browse pane",
+   "zh": "在`/plugin`市场浏览窗格中添加了预计的上下文成本（每轮和每次调用令牌估计）"
+  },
+  {
+   "type": "new",
+   "en": "Added `worktree.bgIsolation: \"none\"` setting to let background sessions edit the working copy directly without `EnterWorktree`, for repos where worktrees are impractical",
+   "zh": "添加了 `worktree.bgIsolation: \"none\"` 设置，让后台会话直接编辑工作副本，而无需使用 `EnterWorktree`，适用于工作树不切实际的存储库"
+  },
+  {
+   "type": "new",
+   "en": "`claude agents` now accepts `--add-dir`, `--settings`, `--mcp-config`, and `--plugin-dir` and applies them to the dashboard and to background sessions dispatched from it",
+   "zh": "`claude agents` 现在接受 `--add-dir`、`--settings`、`--mcp-config` 和 `--plugin-dir`，并将其应用于仪表盘以及从仪表盘派发的后台会话"
+  },
+  {
+   "type": "new",
+   "en": "`claude agents` accepts `--permission-mode`, `--model`, `--effort`, and `--dangerously-skip-permissions` to set defaults for sessions dispatched from the view",
+   "zh": "`claude agents` 现在接受 `--permission-mode`、`--model`、`--effort` 和 `--dangerously-skip-permissions`，用于设置从该视图派发的会话的默认值"
+  },
+  {
+   "type": "improved",
+   "en": "PowerShell tool now passes `-ExecutionPolicy Bypass`. Opt out with `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1`",
+   "zh": "PowerShell 工具现在会传入 `-ExecutionPolicy Bypass`。如需退出，设置 `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1`"
+  },
+  {
+   "type": "improved",
+   "en": "Shift+Tab in attached agent sessions now includes auto mode in the cycle",
+   "zh": "已连接的代理会话中，Shift+Tab 的循环现在包含自动模式"
+  },
+  {
+   "type": "improved",
+   "en": "The PowerShell tool is now enabled by default on Windows for Bedrock, Vertex, and Foundry users. Opt out with `CLAUDE_CODE_USE_POWERSHELL_TOOL=0`.",
+   "zh": "PowerShell 工具现在在 Windows 上对 Bedrock、Vertex 和 Foundry 用户默认启用。可用 `CLAUDE_CODE_USE_POWERSHELL_TOOL=0` 关闭"
+  },
+  {
+   "type": "improved",
+   "en": "`claude --bg --dangerously-skip-permissions` now persists across retire→wake",
+   "zh": "`claude --bg --dangerously-skip-permissions` 现在在 retire→wake 之后仍然保持生效"
+  },
+  {
+   "type": "improved",
+   "en": "`/bg` now preserves `--mcp-config`, `--settings`, `--add-dir`, `--plugin-dir`, and `--strict-mcp-config`, so backgrounded sessions keep their MCP servers and settings across respawn.",
+   "zh": "`/bg` 现在会保留 `--mcp-config`、`--settings`、`--add-dir`、`--plugin-dir` 和 `--strict-mcp-config`，使后台会话在重新启动后仍保留其 MCP 服务器和设置"
+  },
+  {
+   "type": "improved",
+   "en": "`/bg` and `←`-detach now preserve `--fallback-model`, so backgrounded workers degrade to the fallback model on overload instead of hard-failing.",
+   "zh": "`/bg` 和 `←` 分离现在会保留 `--fallback-model`，使后台工作进程在过载时降级到备用模型，而不是直接失败。"
+  },
+  {
+   "type": "improved",
+   "en": "`/bg` and `←`-detach now preserve `--allow-dangerously-skip-permissions`, so the forked worker keeps bypass-permissions available in its Shift+Tab cycle.",
+   "zh": "`/bg` 和 `←` 分离现在会保留 `--allow-dangerously-skip-permissions`，因此分叉出的工作进程仍可在 Shift+Tab 循环中使用 bypass permissions 模式。"
+  },
+  {
+   "type": "fixed",
+   "en": "Background sessions now preserve the model and effort level you set after waking from idle",
+   "zh": "后台会话现在保留您从空闲状态唤醒后设置的模型和工作量级别"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a corrupt `.credentials.json` with a non-array `scopes` value hanging the CLI on startup or silently aborting OAuth token refresh",
+   "zh": "修复了损坏的`.credentials.json`，其非数组`scopes`值在启动时挂起 CLI 或静默中止 OAuth 令牌刷新"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed right-click paste in `claude agents` on Windows Terminal and WSL",
+   "zh": "修复了 Windows 终端和 WSL 上“克劳德代理”中的右键单击粘贴问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stop hooks that block repeatedly looping forever — the turn now ends with a warning after 8 consecutive blocks (override via `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`)",
+   "zh": "修复了永远阻止重复循环的停止钩子 — 现在，回合在连续 8 个块后以警告结束（通过`CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`覆盖）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Esc/Ctrl+C not cancelling a pending `/loop` wakeup while Claude is idle between iterations",
+   "zh": "修复了当克劳德在迭代之间空闲时 Esc/Ctrl+C 不会取消挂起的`/loop`唤醒"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/goal` evaluator firing while background shells or delegated subagents are still running",
+   "zh": "修复了后台 shell 或委托子代理仍在运行时触发`/goal`评估器的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `NO_COLOR`/`FORCE_COLOR` in settings.json `env` stripping Claude Code's own UI colors — they now apply to subprocesses only",
+   "zh": "修复了 settings.json `env` 中的 `NO_COLOR`/`FORCE_COLOR` 剥离 Claude Code 自己的 UI 颜色 - 它们现在仅适用于子进程"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed agent view spawning repeated PowerShell processes on Windows when listing sessions",
+   "zh": "修复了列出会话时代理视图在 Windows 上生成重复的 PowerShell 进程的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `/bg` without a prompt sending \"continue\" to the forked session — the fork now waits for input",
+   "zh": "修复了`/bg`，没有提示发送“继续”到分叉会话 - 分叉现在等待输入"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `--agent <name>` not finding plugin-contributed agents without the `plugin:` prefix",
+   "zh": "修复了`--agent <name>`找不到没有`plugin:`前缀的插件贡献的代理的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed deleting a session from agent view not removing its transcript file",
+   "zh": "修复了从代理视图中删除会话而不删除其脚本文件的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed stale-fragment rendering when scrolling in attached background sessions on Windows Terminal",
+   "zh": "修复了在 Windows 终端上附加的后台会话中滚动时出现陈旧片段渲染的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background agents false-positive worker-stall detection storm after host sleep or macOS App Nap",
+   "zh": "修复了主机睡眠或 macOS App Nap 后后台代理误报工作停止检测风暴"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed 5xx error messages pointing at status.claude.com instead of naming the configured gateway or cloud provider",
+   "zh": "修复了指向 status.claude.com 而不是命名已配置网关或云提供商的 5xx 错误消息"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background sessions silently capturing IDE file references into the warm spare's input, which caused the reference to be prepended to the next prompt dispatched from `claude agents`",
+   "zh": "修复了后台会话以静默方式将 IDE 文件引用捕获到热备用输入中的问题，这导致该引用被添加到从“claude Agents”调度的下一个提示符之前"
+  },
+  {
+   "type": "fixed",
+   "en": "Worktree cleanup no longer falls back to `rm -rf` when `git worktree remove` fails, preventing loss of gitignored or in-progress files",
+   "zh": "工作树清理在 `git worktree remove` 失败时不再回退到 `rm -rf`，避免丢失被 gitignore 的文件或正在编辑的文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed background-job sessions on macOS getting \"Operation not permitted\" errors when reading files under `~/Documents`, `~/Desktop`, or `~/Downloads`, even with Full Disk Access granted.",
+   "zh": "修复了 macOS 上的后台作业会话在读取 `~/Documents`、`~/Desktop` 或 `~/Downloads` 下的文件时出现“不允许操作”错误的问题，即使授予了完全磁盘访问权限也是如此。"
+  },
+  {
+   "type": "fixed",
+   "en": "Background sessions launched from `claude agents` now honor `permissions.defaultMode` from settings.json (was previously overridden to auto mode)",
+   "zh": "从“claude Agents”启动的后台会话现在支持 settings.json 中的`permissions.defaultMode`（之前被覆盖为自动模式）"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: on Windows, pressing ← in `claude agents` while a response was streaming could leave the agents list unresponsive to all input",
+   "zh": "修复：在 Windows 上，回复流式输出时在 `claude agents` 中按 ←，可能导致智能体列表对所有输入都无响应的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed: background daemon spawn now falls back to the running binary when the `~/.local/bin/claude` launcher is missing or non-executable",
+   "zh": "修复：当 `~/.local/bin/claude` 启动器缺失或不可执行时，后台守护进程启动会回退到正在运行的二进制文件"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `claude agents --allow-dangerously-skip-permissions` defaulting dispatched sessions to bypass mode instead of making it available in the permission cycle",
+   "zh": "修复了“claude Agents --allow-dangerously-skip-permissions”，默认分派会话为绕过模式，而不是使其在权限周期中可用"
+  }
+ ]
+}

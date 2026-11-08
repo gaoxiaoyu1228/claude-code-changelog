@@ -1,0 +1,209 @@
+{
+ "version": "2.1.221",
+ "date": "2026-08-03",
+ "published": "2026-08-03T22:16:25.561Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.221",
+ "counts": {
+  "new": 4,
+  "improved": 17,
+  "fixed": 17,
+  "removed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "[VSCode] Added Focus view: a chat-menu toggle that hides tool activity behind an expandable per-turn summary with a live running-tool indicator, toggled with `Ctrl+Alt+F` or the \"Claude Code: Toggle Focus view\" command",
+   "zh": "[VSCode] 新增 Focus 视图：聊天菜单中的开关，把工具活动隐藏到每轮可展开的摘要中，并显示正在运行的工具指示器；可用 `Ctrl+Alt+F` 或「Claude Code: Toggle Focus view」命令切换"
+  },
+  {
+   "type": "new",
+   "en": "Added `mode: \"mask\"` for sandbox credential files on Linux and WSL — sandboxed commands read a sentinel copy (the whole file, or just the spans captured by an `extract` regex) while the sandbox proxy substitutes the real value on egress; on macOS file masking falls back to `deny`",
+   "zh": "为 Linux 和 WSL 上的沙箱凭证文件添加了“mode:“mask””——沙箱命令读取哨兵副本（整个文件，或只是`extract`正则表达式捕获的跨度），而沙箱代理替换出口上的实际值；在 macOS 上，文件屏蔽会退回到“拒绝”"
+  },
+  {
+   "type": "new",
+   "en": "Added warnings to `claude plugin validate` when a marketplace or plugin name would be rejected by Claude Desktop's managed marketplace sync",
+   "zh": "当 Claude Desktop 的托管市场同步拒绝市场或插件名称时，向“claude 插件验证”添加了警告"
+  },
+  {
+   "type": "new",
+   "en": "Added a `prompt-audit` subcommand to the `claude-api` skill for auditing prompts and tool descriptions for patterns written for older models",
+   "zh": "在`claude-api`技能中添加了`prompt-audit`子命令，用于审核为旧模型编写的模式的提示和工具描述"
+  },
+  {
+   "type": "improved",
+   "en": "Improved tool search on Google Vertex AI: re-enabled for Claude 4.5-generation and newer models",
+   "zh": "改进 Google Vertex AI 上的工具搜索：已为 Claude 4.5 及更新的模型重新启用"
+  },
+  {
+   "type": "improved",
+   "en": "Improved auto mode: permission checks for parallel tool calls are now cache-efficient, and switching modes while a check is pending reliably prompts instead of applying the stale result",
+   "zh": "改进自动模式：并行工具调用的权限检查更节省缓存；检查等待期间切换模式，会可靠地弹出提示，而不是套用过期的结果"
+  },
+  {
+   "type": "improved",
+   "en": "Reduced prompt-cache costs for auto-mode permission checks by reusing the cached conversation prefix across decisions",
+   "zh": "自动模式的权限检查复用缓存的对话前缀，提示词缓存成本降低"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Stats panel to count cache tokens in its token totals, with a breakdown by input, output, cache read, and cache write",
+   "zh": "改进统计面板：token 总数计入缓存 token，并按输入、输出、缓存读取、缓存写入分项显示"
+  },
+  {
+   "type": "improved",
+   "en": "Improved `/ultrareview` error messages when a repo shares no history with its base: a checkout with no branches is now refused up front with advice to create one, and refusal hints no longer suggest `git fetch --unshallow` on clones that are already complete",
+   "zh": "改进仓库与基准分支没有共同历史时 `/ultrareview` 的错误提示：没有分支的检出会被提前拒绝，并建议新建分支；对已经是完整克隆的仓库，不再建议执行 `git fetch --unshallow`"
+  },
+  {
+   "type": "improved",
+   "en": "Improved Windows startup: process creation times are now read via a native kernel32 call instead of spawning PowerShell, so endpoint security tools that gate `powershell.exe` no longer prompt",
+   "zh": "改进 Windows 启动：进程创建时间改用原生 kernel32 调用读取，不再启动 PowerShell，因此拦截 `powershell.exe` 的终端安全工具不会再弹窗"
+  },
+  {
+   "type": "improved",
+   "en": "Changed background sessions to commit and push to preserve work, open a draft PR only when the task calls for one, follow your CLAUDE.md git instructions, and always end by reporting where the work lives",
+   "zh": "更改了后台会话以提交并推送以保留工作，仅在任务需要时打开草稿 PR，遵循 CLAUDE.md git 说明，并始终以报告工作所在位置结束"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/plugin install` to refresh a stale marketplace catalog and retry before reporting a plugin not found",
+   "zh": "更改了`/plugin install`以刷新过时的市场目录并在报告找不到插件之前重试"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plugins installed from `/plugin` to activate immediately when safe, instead of always requiring `/reload-plugins`",
+   "zh": "更改了从`/plugin`安装的插件，以在安全时立即激活，而不是总是需要`/reload-plugins`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed plugins to accept `\".\"` as a `skills` path, and the root-level `SKILL.md` validation error now suggests using the plugin root",
+   "zh": "更改插件以接受“.”作为“技能”路径，并且根级别`SKILL.md`验证错误现在建议使用插件根"
+  },
+  {
+   "type": "improved",
+   "en": "Changed `/status` to show the session kind: `interactive`, or a background job that is `attached` or `unattended`",
+   "zh": "更改了`/status`以显示会话类型：“交互式”，或“附加”或“无人值守”的后台作业"
+  },
+  {
+   "type": "improved",
+   "en": "Changed emoji autocomplete to accept common alternate shortcodes like `:thumbsup:`, `:thumbsdown:`, and `:love:`",
+   "zh": "更改了表情符号自动完成以接受常见的替代短代码，例如`:thumbsup:`、`:thumbsdown:`和`:love:`"
+  },
+  {
+   "type": "improved",
+   "en": "Changed sessions forked with `/fork` to create a new worktree of their own instead of working in the original session's checkout",
+   "zh": "更改了使用`/fork`分叉的会话，以创建自己的新工作树，而不是在原始会话的结账中工作"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Claude in Chrome to close the browser tabs it opens once it no longer needs them",
+   "zh": "更改了 Chrome 中的 Claude，以便在不再需要时关闭它打开的浏览器选项卡"
+  },
+  {
+   "type": "improved",
+   "en": "Changed fast mode to report on the stream when usage credits run out mid-session, instead of failing silently",
+   "zh": "更改了快速模式，以便在使用积分在会话中用完时报告流，而不是静默失败"
+  },
+  {
+   "type": "improved",
+   "en": "Changed Monitor: a watch that exits without producing any output now says so instead of reporting \"stream ended\"",
+   "zh": "更改了监视器：退出时不产生任何输出的手表现在会这样说，而不是报告“流结束”"
+  },
+  {
+   "type": "improved",
+   "en": "Changed the Gateway `model` field validation: non-string values are rejected with a 400 instead of being forwarded",
+   "zh": "更改了网关`model`字段验证：非字符串值将被拒绝并返回 400，而不是被转发"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a Bash tool permission-check bypass where zsh could execute hidden commands in `[[ ]]` regex conditionals; affected commands now prompt for permission",
+   "zh": "修复了 Bash 工具权限检查绕过，其中 zsh 可以执行`[[ ]]`正则表达式条件中的隐藏命令；受影响的命令现在提示权限"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed PowerShell permission checks mishandling paths containing quote characters on Windows; such paths now prompt for approval",
+   "zh": "修复了 Windows 上 PowerShell 权限检查错误处理包含引号字符的路径；此类路径现在提示批准"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the thinking toggle having no effect for the rest of a session that started with thinking off; disabling an MCP server mid-connect no longer silently reverts",
+   "zh": "修复会话以关闭思考模式开始后，思考开关在本会话中无效的问题；另外，在 MCP 服务器连接过程中将其禁用，不再静默回退"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed MCP servers from `--mcp-config` not being connected before the first turn in print mode (`-p`), which made the model emit tool calls as literal text",
+   "zh": "修复了`--mcp-config`中的 MCP 服务器在第一次进入打印模式（`-p`）之前未连接的问题，这使得模型以文字文本形式发出工具调用"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed @-mentioned files being silently dropped when pressing Esc to retract a prompt and resubmitting it",
+   "zh": "修复了按 Esc 键撤回提示并重新提交时@提到的文件被默默删除的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a crash when preparing API requests for SDK MCP tools named after built-in object properties such as `constructor`",
+   "zh": "修复了为以内置对象属性（例如“构造函数”）命名的 SDK MCP 工具准备 API 请求时发生的崩溃"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed WebSearch failing with a 400 error at effort `xhigh`/`max` when thinking is disabled",
+   "zh": "修复了禁用思考时`xhigh`/`max`时 WebSearch 失败并出现 400 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed sandboxed large uploads failing with TLS errors through the sandbox proxy",
+   "zh": "修复了沙盒大型上传通过沙盒代理失败并出现 TLS 错误的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Team and Enterprise spend-limit message incorrectly blaming the org's monthly limit instead of your individual spend limit",
+   "zh": "修复了团队和企业支出限制消息错误地将组织的每月限额归咎于您的个人支出限额的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Bedrock authentication with AWS SSO named profiles failing in desktop-managed sessions on Windows machines that set a stray `HOME` environment variable",
+   "zh": "修复了在设置了杂散`HOME`环境变量的 Windows 计算机上的桌面管理会话中使用 AWS SSO 命名配置文件进行的 Bedrock 身份验证失败的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed `CLAUDE_CODE_RESUME_INTERRUPTED_TURN=0` not disabling interrupted-turn auto-resume; falsy values are now honored",
+   "zh": "修复了`CLAUDE_CODE_RESUME_INTERRUPTED_TURN=0`不禁用中断转弯自动恢复的问题；错误的价值观现在受到尊重"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a rare wake-from-sleep race where two Claude Code processes could both refresh the same MCP connector or WIF OAuth token at once, forcing re-authentication",
+   "zh": "修复了罕见的睡眠唤醒竞赛，其中两个 Claude Code 进程都可以同时刷新相同的 MCP 连接器或 WIF OAuth 令牌，从而强制重新进行身份验证"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed renaming a session from Claude Code Desktop or claude.ai not updating the CLI's session name; session names from every rename surface are now sanitized",
+   "zh": "修复了从 Claude Code Desktop 或 claude.ai 重命名会话而不更新 CLI 会话名称的问题；每个重命名表面的会话名称现在都已清理"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed plugin- and org-delivered skills named after terminal-only built-ins (e.g. `/help`, `/feedback`) being un-invocable in non-interactive sessions",
+   "zh": "修复了以仅终端内置程序命名的插件和组织提供的技能（例如`/help`、`/feedback`）在非交互式会话中不可调用的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed the \"Plugins changed\" notification lingering after plugins were reloaded instead of clearing",
+   "zh": "修复了重新加载插件而不是清除后“插件已更改”通知挥之不去的问题"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Vim mode: the yank register now survives dialogs, history search, and the transcript view instead of being silently emptied",
+   "zh": "修复了 Vim 模式：复制寄存器现在可以在对话框、历史搜索和记录视图中保留下来，而不是默默地清空"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed Vim mode: undoing back to an empty prompt now arms the \"press ← again\" confirm before returning to the agent view",
+   "zh": "修复了 Vim 模式：撤消回到空提示，现在在返回代理视图之前启用“再次按 ←”确认"
+  },
+  {
+   "type": "removed",
+   "en": "Removed the repeated \"Permission mode changed while the auto-mode classifier call was queued\" notice from approval prompts",
+   "zh": "移除权限提示中反复出现的 \"Permission mode changed while the auto-mode classifier call was queued\" 通知"
+  }
+ ]
+}

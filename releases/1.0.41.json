@@ -1,0 +1,38 @@
+{
+ "version": "1.0.41",
+ "date": "2025-07-02",
+ "published": "2025-07-02T17:45:22.596Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v1.0.41",
+ "counts": {
+  "new": 3,
+  "improved": 1,
+  "fixed": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Hooks: Enabled optional timeout configuration for each command",
+   "zh": "Hooks：每个命令都可以单独设置可选的超时时间"
+  },
+  {
+   "type": "new",
+   "en": "Hooks: Added \"hook_event_name\" to hook input",
+   "zh": "Hooks：hook 输入中新增 \"hook_event_name\""
+  },
+  {
+   "type": "new",
+   "en": "New tool parameters JSON for Bash tool in `tool_decision` event",
+   "zh": "`tool_decision` 事件中，Bash 工具新增工具参数 JSON"
+  },
+  {
+   "type": "improved",
+   "en": "Hooks: Split Stop hook triggering into Stop and SubagentStop",
+   "zh": "Hooks：把 Stop 钩子的触发拆分为 Stop 和 SubagentStop 两个"
+  },
+  {
+   "type": "fixed",
+   "en": "Fixed a bug where MCP tools would display twice in tool list",
+   "zh": "修复了 MCP 工具在工具列表中显示两次的错误"
+  }
+ ]
+}
