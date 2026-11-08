@@ -12,7 +12,7 @@ Claude Code release notes from Anthropic's official CHANGELOG, synced once a day
 
 | Way | What you get | Address |
 |---|---|---|
-| RSS | One item per version in any reader, or an RSS bot in Slack / Teams. Pasting the site URL also works | [`feed.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.xml) · [`feed.zh.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.zh.xml) |
+| RSS | One item per version, grouped by type with code, links and source links. Works in any reader or an RSS bot in Slack / Teams; pasting the site URL also works | [`feed.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.xml) · [`feed.zh.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.zh.xml) |
 | Card | An image that always shows the latest version — summary or detailed | see below |
 | Agents | The last 7 release days as JSON | [`latest.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.json) · [`llms.txt`](https://gaoxiaoyu1228.github.io/claude-code-changelog/llms.txt) |
 | Webhook | A message in your own Slack / Discord / Feishu / WeCom / DingTalk group | copy [`templates/notify-webhook.yml`](templates/notify-webhook.yml) into your repo |
@@ -66,7 +66,7 @@ Claude Code 版本更新记录，来源 Anthropic 官方 CHANGELOG，每天同�
 
 | 方式 | 效果 | 地址 |
 |---|---|---|
-| RSS | 每个版本一条，放进阅读器或 Slack、飞书的 RSS 机器人；直接贴网址也能自动找到 | `feed.zh.xml`（中文）/ `feed.xml`（英文） |
+| RSS | 每个版本一篇，按类型分小标题，保留代码和链接格式，附来源链接；放进阅读器或 Slack、飞书的 RSS 机器人；直接贴网址也能自动找到 | `feed.zh.xml`（中文）/ `feed.xml`（英文） |
 | 最新版本卡片 | 概要版（版本号、时间、各类条数）/ 明细版（再加每类前 5 条），每天自动变成最新版本；网页「订阅」里可复制代码或下载 PNG | 概要 `latest.zh.svg` · 明细 `latest-detail.zh.svg` |
 | 给 Agent 用 | 最近 7 个发布日的整理结果（JSON） | `latest.json`，字段说明见 `llms.txt` |
 | Webhook | 推到你自己的群机器人 | 把 `templates/notify-webhook.yml` 复制到你自己的仓库，填上地址；地址只存在你那里 |
