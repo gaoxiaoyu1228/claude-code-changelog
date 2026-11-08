@@ -1,17 +1,17 @@
-# Claude Code changelog → your webhook
+# Claude Code Changelog Calendar → your webhook
 #
-# 1. Copy this file into YOUR OWN repo as .github/workflows/claude-code-changelog.yml
+# 1. Copy this file into YOUR OWN repo as .github/workflows/claude-code-changelog-calendar.yml
 # 2. Settings → Secrets and variables → Actions:
 #    - Secret   WEBHOOK_URL     your incoming-webhook URL (it never leaves your repo)
 #    - Variable FORMAT          slack | discord | feishu | wecom | dingtalk | generic (default: generic = raw JSON)
 #    - Variable CHANGELOG_LANG  en | zh (default: en)
-# 3. Actions tab → "Claude Code changelog → webhook" → Run workflow, to test once.
+# 3. Actions tab → "Claude Code Changelog Calendar → webhook" → Run workflow, to test once.
 #
 # The first run sends only the newest version; after that, every version you haven't received yet.
 # Feishu / DingTalk bots with "signature" security turned on will reject this; use keyword or IP allowlist instead.
 # GitHub pauses scheduled workflows in repos with no activity for 60 days; re-enable it in the Actions tab.
 
-name: Claude Code changelog → webhook
+name: Claude Code Changelog Calendar → webhook
 on:
   schedule:
     - cron: "17 3 * * *"   # daily 03:17 UTC, after the site syncs (off the hour: on-the-hour runs are often delayed)
@@ -34,7 +34,7 @@ jobs:
         run: |
           python3 - <<'EOF'
           import json, os, pathlib, urllib.request
-          d = json.load(urllib.request.urlopen("https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.json", timeout=30))
+          d = json.load(urllib.request.urlopen("https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.json", timeout=30))
           last = pathlib.Path(".last"); seen = last.read_text().strip() if last.exists() else ""
           rel = d["releases"]; vs = [r["version"] for r in rel]   # newest first
           new = rel[:vs.index(seen)] if seen in vs else rel[:1]

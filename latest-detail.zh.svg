@@ -266,5 +266,5 @@
 <text x="28" y="5047" font-size="12.5" fill="#6b6a66">·</text><text x="38" y="5047" font-size="12.5" fill="#1f1f1f">自托管运行器：删除了会话调试日志的会话结束上传；除非设置了</text>
 <text x="38" y="5064" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--remove-session-state</tspan>，否则失败的会话日志将保留在运行器主机上</text>
 <line x1="20" x2="540" y1="5086" y2="5086" stroke="#e4e2dc"/>
-<text x="20" y="5106" font-size="11" fill="#6b6a66">全部 146 条 → gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.319</text>
+<text x="20" y="5106" font-size="11" fill="#6b6a66">全部 146 条 → gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.319</text>
 </svg>

@@ -1,13 +1,13 @@
-# Claude Code Changelog
+# Claude Code Changelog Calendar
 
-> Claude Code release notes from Anthropic's official CHANGELOG, synced once a day, with Chinese translations. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog
+> Claude Code release notes from Anthropic's official CHANGELOG, synced once a day, with Chinese translations. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog-calendar
 
 ## Data
-- [latest.json](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.json): the last 7 release days. `latest` = newest version; `releases[]` = versions with `counts` and `entries[]` (`type`, `en`, `zh`).
-- [data/all.json](https://gaoxiaoyu1228.github.io/claude-code-changelog/data/all.json): full history. `entries[]` = one line each (`date`, `version`, `type`, `en`, `zh`); `focus[]` = monthly highlights.
-- [feed.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.xml) / [feed.zh.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.zh.xml): RSS, one item per version, newest 30.
-- [changelog.csv](https://gaoxiaoyu1228.github.io/claude-code-changelog/changelog.csv): same as all.json, as CSV.
-- [latest.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.svg) / [latest-detail.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest-detail.svg): image card of the newest version (summary / with every entry); `.zh.svg` for Chinese.
+- [latest.json](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.json): the last 7 release days. `latest` = newest version; `releases[]` = versions with `counts` and `entries[]` (`type`, `en`, `zh`).
+- [data/all.json](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/data/all.json): full history. `entries[]` = one line each (`date`, `version`, `type`, `en`, `zh`); `focus[]` = monthly highlights.
+- [feed.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/feed.xml) / [feed.zh.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/feed.zh.xml): RSS, one item per version, newest 30.
+- [changelog.csv](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/changelog.csv): same as all.json, as CSV.
+- [latest.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.svg) / [latest-detail.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest-detail.svg): image card of the newest version (summary / with every entry); `.zh.svg` for Chinese.
 
 ## Notes
 - `type` is one of: new, improved, fixed, removed, other.

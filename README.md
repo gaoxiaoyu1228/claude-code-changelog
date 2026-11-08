@@ -1,22 +1,22 @@
-# Claude Code Changelog
+# Claude Code Changelog Calendar
 
-Claude Code release notes from Anthropic's official CHANGELOG, synced once a day, in a calendar-style page with Chinese translation, RSS, JSON and an embeddable card.
+Not a flat changelog: a release calendar built from Anthropic's official Claude Code CHANGELOG, so you can see what changed the way you'd naturally look at time — on a calendar. Synced once a day, in English and Chinese, with RSS, JSON and an embeddable card.
 
-**Page:** https://gaoxiaoyu1228.github.io/claude-code-changelog/
+**Page:** https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/
 
 > Source: Anthropic's official [CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm release data, synced daily. Original text © Anthropic. Dates and times are UTC, based on npm publish time.
 >
-> Curated by @ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog](https://github.com/gaoxiaoyu1228/claude-code-changelog)
+> Curated by @ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog-calendar](https://github.com/gaoxiaoyu1228/claude-code-changelog-calendar)
 
 ## Get updates
 
 | Way | What you get | Address |
 |---|---|---|
-| RSS | One item per version, grouped by type with code, links and source links. Works in any reader or an RSS bot in Slack / Teams; pasting the site URL also works | [`feed.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.xml) · [`feed.zh.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog/feed.zh.xml) |
+| RSS | One item per version, grouped by type with code, links and source links. Works in any reader or an RSS bot in Slack / Teams; pasting the site URL also works | [`feed.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/feed.xml) · [`feed.zh.xml`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/feed.zh.xml) |
 | Card | An image that always shows the latest version — summary or detailed | see below |
-| Agents | The last 7 release days as JSON | [`latest.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.json) · [`llms.txt`](https://gaoxiaoyu1228.github.io/claude-code-changelog/llms.txt) |
+| Agents | The last 7 release days as JSON | [`latest.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.json) · [`llms.txt`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/llms.txt) |
 | Webhook | A message in your own Slack / Discord / Feishu / WeCom / DingTalk group | copy [`templates/notify-webhook.yml`](templates/notify-webhook.yml) into your repo |
-| Full data | Every entry since 2025-03 | [`data/all.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog/data/all.json) · [`changelog.csv`](https://gaoxiaoyu1228.github.io/claude-code-changelog/changelog.csv) |
+| Full data | Every entry since 2025-03 | [`data/all.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/data/all.json) · [`changelog.csv`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/changelog.csv) |
 
 ## Latest version card
 
@@ -28,7 +28,7 @@ Two versions, both refreshed daily. Add `.zh` before `.svg` for Chinese (`latest
 | Detailed | The above + first 5 entries of each type | Weekly notes, team wiki, chat shares | `latest-detail.svg` |
 
 ```markdown
-[![Claude Code latest](https://gaoxiaoyu1228.github.io/claude-code-changelog/latest.svg)](https://gaoxiaoyu1228.github.io/claude-code-changelog/)
+[![Claude Code latest](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.svg)](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/)
 ```
 
 ![Claude Code latest](latest.svg)
@@ -56,13 +56,13 @@ How to use it (any tool):
 
 ## Links to a version
 
-Every version has a stable link: `…/claude-code-changelog/#v2.1.319`.
+Every version has a stable link: `…/claude-code-changelog-calendar/#v2.1.319`.
 
 ---
 
 ## 中文说明
 
-Claude Code 版本更新记录，来源 Anthropic 官方 CHANGELOG，每天同步一次。日期和时间均为 UTC（国际标准时间）。网页默认英文，右上角可切换中文；其他语言请用浏览器自带的翻译。
+**Claude Code 更新日历**：不是一份平铺的更新日志，而是基于 Anthropic 官方 CHANGELOG 做的「更新日历」，用最自然的方式（看日历）了解 Claude Code 的变化。每天同步一次。日期和时间均为 UTC（国际标准时间）。网页默认英文，右上角可切换中文；其他语言请用浏览器自带的翻译。
 
 | 方式 | 效果 | 地址 |
 |---|---|---|
@@ -73,4 +73,4 @@ Claude Code 版本更新记录，来源 Anthropic 官方 CHANGELOG，每天同�
 
 内容来自 Anthropic 官方 CHANGELOG.md 与 npm 发布记录，每日自动同步；原文版权归 Anthropic。
 
-整理：@ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog](https://github.com/gaoxiaoyu1228/claude-code-changelog)
+整理：@ Xiaoyu Gao · [gaoxiaoyu1228/claude-code-changelog-calendar](https://github.com/gaoxiaoyu1228/claude-code-changelog-calendar)

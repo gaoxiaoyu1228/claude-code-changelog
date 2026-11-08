@@ -358,5 +358,5 @@
 <text x="38" y="6611" font-size="12.5" fill="#1f1f1f">log; a failed session's log stays on the runner host unless </text>
 <text x="38" y="6628" font-size="12.5" fill="#1f1f1f"><tspan font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11.5" fill="#c96442">--remove-session-state</tspan> is set</text>
 <line x1="20" x2="540" y1="6650" y2="6650" stroke="#e4e2dc"/>
-<text x="20" y="6670" font-size="11" fill="#6b6a66">All 146 entries → gaoxiaoyu1228.github.io/claude-code-changelog/#v2.1.319</text>
+<text x="20" y="6670" font-size="11" fill="#6b6a66">All 146 entries → gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.319</text>
 </svg>
