@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-10T15:36:44Z",
+ "generated": "2026-11-10T17:10:23Z",
  "note": "Source: Anthropic's official CHANGELOG.md (https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) and npm publish times, synced daily. Original text © Anthropic. Dates and times are UTC. Curated by @ Xiaoyu Gao: https://github.com/gaoxiaoyu1228/claude-code-changelog-calendar",
  "latest": {
   "version": "2.1.322",
