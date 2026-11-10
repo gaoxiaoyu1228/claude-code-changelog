@@ -54,6 +54,8 @@ The page adapts to small screens and follows your system's light or dark setting
 | Card | An image that always shows the latest version — summary or detailed | see below |
 | Agents | A ready-to-paste prompt (on the page: Subscribe → For agents), plus JSON your agent can poll: a small index of the newest 30 versions and one file per version, so it only fetches what is new | [`releases/index.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/index.json) · [`llms.txt`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/llms.txt) (guide for agents) · [`latest.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.json) (last 7 release days) |
 | Webhook | A message in your own Slack / Discord / Feishu / WeCom / DingTalk group when a new version ships | paste your webhook URL in **Get updates** on the site; unsubscribe there anytime. Or run [`templates/notify-webhook.yml`](templates/notify-webhook.yml) in your own repo |
+
+Renamed on 2026-11-08 (was `claude-code-changelog`); the old site and feed URLs no longer work. Subscribed before that? Re-add the feed with the URL above.
 | GitHub | Follow the official repo to see each new version as it ships | [anthropics/claude-code](https://github.com/anthropics/claude-code) |
 | Full data | Every entry since 2025-03 | [`data/all.json`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/data/all.json) · [`changelog.csv`](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/changelog.csv) |
 
@@ -138,6 +140,8 @@ Every version has a stable link: `…/claude-code-changelog-calendar/#v2.1.319`.
 | 最新版本卡片 | 概要版（版本号、时间、各类条数）/ 明细版（再加全部条目，按类型分组），每天自动变成最新版本；网页「订阅」里可复制代码或下载 PNG | 概要 `latest.zh.svg` · 明细 `latest-detail.zh.svg` |
 | 给 Agent 用 | 网页「订阅 → 给 Agent 用」可复制一段指令直接贴给 Agent；数据按版本拆分（最近 30 个版本的目录 + 每个版本一个文件），Agent 只取比上次新的 | `releases/index.json`；`llms.txt` 是写给 Agent 的说明书；`latest.json` 是最近 7 个发布日 |
 | Webhook | 有新版本时推到你的飞书 / 钉钉 / 企业微信 / Slack / Discord 群 | 在网站「订阅更新」里粘贴群机器人地址，随时可在那里取消；也可以把 `templates/notify-webhook.yml` 复制到你自己的仓库里跑 |
+
+2026-11-08 起项目改名（原 `claude-code-changelog`），旧网址和旧订阅地址已失效；之前订阅过的，请换成新地址 https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/feed.zh.xml 重新订阅。
 | 关注 GitHub | 关注 Claude Code 官方仓库，第一时间看到每个新版本 | [anthropics/claude-code](https://github.com/anthropics/claude-code) |
 
 内容来自 Anthropic 官方 CHANGELOG.md 与 npm 发布记录，每日自动同步；原文版权归 Anthropic。
