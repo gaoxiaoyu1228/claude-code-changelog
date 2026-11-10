@@ -1,0 +1,16 @@
+{
+ "version": "2.1.322",
+ "date": "2026-11-10",
+ "published": "2026-11-10T01:58:41.811Z",
+ "url": "https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/#v2.1.322",
+ "counts": {
+  "new": 1
+ },
+ "entries": [
+  {
+   "type": "new",
+   "en": "Added fast mode on Vertex in the global, us and eu regions, falling back to standard speed if Vertex refuses it",
+   "zh": "在全球、美国和欧盟地区的 Vertex 上添加了快速模式，如果 Vertex 拒绝，则恢复到标准速度"
+  }
+ ]
+}
