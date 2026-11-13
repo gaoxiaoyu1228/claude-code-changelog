@@ -106,8 +106,8 @@
   },
   {
    "type": "fixed",
-   "en": "Fixed a crash when a GrowthBook feature evaluates to null, and a bug where a malformed flag payload could wipe the cached feature flags",
-   "zh": "修复了 GrowthBook 功能评估为 null 时发生的崩溃，以及格式错误的标志负载可能会擦除缓存的功能标志的错误"
+   "en": "Fixed a crash when a feature flag evaluates to null, and a bug where a malformed flag payload could wipe the cached feature flags",
+   "zh": "修复了功能标志评估为空时发生的崩溃，以及格式错误的标志有效负载可能会擦除缓存的功能标志的错误"
   },
   {
    "type": "fixed",

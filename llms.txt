@@ -6,7 +6,7 @@ This file is the guide for agents and scripts. Everything below is public JSON o
 
 ## Check for new releases
 1. Read [releases/index.json](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/index.json): the newest 30 versions, newest first. Each item has `version`, `date`, `published`, `url`, `counts` and `json`.
-2. Keep the items that are newer than the last version you saw (the first time, take only the newest). For each, read its `json` URL, for example [releases/2.1.322.json](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.322.json).
+2. Keep the items that are newer than the last version you saw (the first time, take only the newest). For each, read its `json` URL, for example [releases/2.1.323.json](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/releases/2.1.323.json).
 3. Summarize `entries[]` by type and link to each version's `url`. Remember the newest `version` for next time.
 4. Once a day is enough. Missed more than 30 versions? Use data/all.json.
 

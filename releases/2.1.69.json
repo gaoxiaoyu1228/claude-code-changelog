@@ -356,8 +356,8 @@
   },
   {
    "type": "fixed",
-   "en": "Fixed voice space bar getting stuck after a failed voice activation (module loading race, cold GrowthBook)",
-   "zh": "修复语音激活失败后（模块加载竞态、GrowthBook 冷启动）空格键卡住的问题"
+   "en": "Fixed voice space bar getting stuck after a failed voice activation (module loading race, feature flags not yet fetched)",
+   "zh": "修复了语音激活失败后语音空格键卡住的问题（模块加载竞赛，尚未获取功能标志）"
   },
   {
    "type": "fixed",
