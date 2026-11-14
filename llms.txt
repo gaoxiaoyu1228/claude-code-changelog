@@ -17,7 +17,8 @@ This file is the guide for agents and scripts. Everything below is public JSON o
 - [data/all.json](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/data/all.json): full history. `entries[]` = one line each (`date`, `version`, `type`, `en`, `zh`); `published` = version → exact time; `focus[]` = monthly highlights.
 - [feed.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/feed.xml) / [feed.zh.xml](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/feed.zh.xml): RSS, one item per version, newest 30.
 - [changelog.csv](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/changelog.csv): same as all.json, as CSV.
-- [latest.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.svg) / [latest-detail.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest-detail.svg): image card of the newest version (summary / with every entry); `.zh.svg` for Chinese.
+- [latest.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest.svg) / [latest-detail.svg](https://gaoxiaoyu1228.github.io/claude-code-changelog-calendar/latest-detail.svg): image card of the newest version with its month calendar (summary / with every entry); `.zh.svg` for Chinese.
+- `cards/<version>.png` / `cards/<version>.zh.png`: PNG summary card of one version (newest 30 versions). The URL never changes.
 
 ## Fields
 - `type` is one of: new, improved, fixed, removed, other. Entries are grouped in that order.
