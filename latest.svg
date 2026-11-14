@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="440" height="176" viewBox="0 0 440 176" role="img" aria-label="Claude Code v2.1.323" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC',Helvetica,Arial,sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="176" viewBox="0 0 440 176" role="img" aria-label="Claude Code v2.1.325" font-family="-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei','Noto Sans SC',Helvetica,Arial,sans-serif">
 <rect x=".5" y=".5" width="439" height="175" rx="12" fill="#fff" stroke="#e4e2dc"/>
 <text x="20" y="30" font-size="13" fill="#6b6a66">Claude Code latest</text>
-<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.323</text>
-<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-12 · 20:29 UTC</text>
-<rect x="20" y="102" width="58" height="22" rx="5" fill="#c8e8d2"/><text x="28" y="117" font-size="12" fill="#1d6b3f">New 16</text>
-<rect x="83.52" y="102" width="92" height="22" rx="5" fill="#cddff7"/><text x="91.52" y="117" font-size="12" fill="#1f5fb8">Improved 60</text>
-<rect x="181.83999999999997" y="102" width="74" height="22" rx="5" fill="#f6e1ad"/><text x="189.83999999999997" y="117" font-size="12" fill="#8a5a00">Fixed 154</text>
-<rect x="261.67999999999995" y="102" width="78" height="22" rx="5" fill="#f6cdc9"/><text x="269.67999999999995" y="117" font-size="12" fill="#a32d2d">Removed 2</text>
-<rect x="346.0799999999999" y="102" width="67" height="22" rx="5" fill="#e2e0da"/><text x="354.0799999999999" y="117" font-size="12" fill="#5f5e5a">Other 62</text>
+<text x="20" y="64" font-size="30" font-weight="600" fill="#c96442">v2.1.325</text>
+<text x="20" y="88" font-size="13" fill="#1f1f1f">2026-11-13 · 20:07 UTC</text>
+<rect x="20" y="102" width="51" height="22" rx="5" fill="#c8e8d2"/><text x="28" y="117" font-size="12" fill="#1d6b3f">New 3</text>
+<rect x="76.56" y="102" width="92" height="22" rx="5" fill="#cddff7"/><text x="84.56" y="117" font-size="12" fill="#1f5fb8">Improved 39</text>
+<rect x="174.88" y="102" width="67" height="22" rx="5" fill="#f6e1ad"/><text x="182.88" y="117" font-size="12" fill="#8a5a00">Fixed 79</text>
+<rect x="247.76" y="102" width="78" height="22" rx="5" fill="#f6cdc9"/><text x="255.76" y="117" font-size="12" fill="#a32d2d">Removed 1</text>
+<rect x="332.15999999999997" y="102" width="67" height="22" rx="5" fill="#e2e0da"/><text x="340.15999999999997" y="117" font-size="12" fill="#5f5e5a">Other 17</text>
 <line x1="20" x2="420" y1="140" y2="140" stroke="#e4e2dc"/>
 <text x="20" y="160" font-size="11" fill="#6b6a66">gaoxiaoyu1228.github.io/claude-code-changelog-calendar</text>
 </svg>
